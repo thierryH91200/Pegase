@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		034EC81A23F87C5B006944DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC81923F87C5B006944DD /* AppDelegate.swift */; };
+		034EC81C23F87C5B006944DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC81B23F87C5B006944DD /* Document.swift */; };
+		034EC81F23F87C5B006944DD /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034EC81D23F87C5B006944DD /* Document.xib */; };
+		034EC82223F87C5B006944DD /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 034EC82023F87C5B006944DD /* Document.xcdatamodeld */; };
+		034EC82423F87C5F006944DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034EC82323F87C5F006944DD /* Assets.xcassets */; };
+		034EC82723F87C5F006944DD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034EC82523F87C5F006944DD /* MainMenu.xib */; };
+		034EC83323F87C60006944DD /* PegaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC83223F87C60006944DD /* PegaseUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		034EC82F23F87C5F006944DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 034EC80E23F87C5B006944DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 034EC81523F87C5B006944DD;
+			remoteInfo = Pegase;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		034EC81623F87C5B006944DD /* Pegase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pegase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		034EC81923F87C5B006944DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		034EC81B23F87C5B006944DD /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		034EC81E23F87C5B006944DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		034EC82123F87C5B006944DD /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
+		034EC82323F87C5F006944DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		034EC82623F87C5F006944DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		034EC82823F87C5F006944DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		034EC82923F87C5F006944DD /* Pegase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pegase.entitlements; sourceTree = "<group>"; };
+		034EC82E23F87C5F006944DD /* PegaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PegaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		034EC83223F87C60006944DD /* PegaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegaseUITests.swift; sourceTree = "<group>"; };
+		034EC83423F87C60006944DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		034EC81323F87C5B006944DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		034EC82B23F87C5F006944DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034EC80D23F87C5B006944DD = {
+			isa = PBXGroup;
+			children = (
+				034EC81823F87C5B006944DD /* Pegase */,
+				034EC83123F87C5F006944DD /* PegaseUITests */,
+				034EC81723F87C5B006944DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		034EC81723F87C5B006944DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				034EC81623F87C5B006944DD /* Pegase.app */,
+				034EC82E23F87C5F006944DD /* PegaseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		034EC81823F87C5B006944DD /* Pegase */ = {
+			isa = PBXGroup;
+			children = (
+				034EC81923F87C5B006944DD /* AppDelegate.swift */,
+				034EC81B23F87C5B006944DD /* Document.swift */,
+				034EC81D23F87C5B006944DD /* Document.xib */,
+				034EC82323F87C5F006944DD /* Assets.xcassets */,
+				034EC82523F87C5F006944DD /* MainMenu.xib */,
+				034EC82823F87C5F006944DD /* Info.plist */,
+				034EC82923F87C5F006944DD /* Pegase.entitlements */,
+				034EC82023F87C5B006944DD /* Document.xcdatamodeld */,
+			);
+			path = Pegase;
+			sourceTree = "<group>";
+		};
+		034EC83123F87C5F006944DD /* PegaseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				034EC83223F87C60006944DD /* PegaseUITests.swift */,
+				034EC83423F87C60006944DD /* Info.plist */,
+			);
+			path = PegaseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		034EC81523F87C5B006944DD /* Pegase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034EC83723F87C60006944DD /* Build configuration list for PBXNativeTarget "Pegase" */;
+			buildPhases = (
+				034EC81223F87C5B006944DD /* Sources */,
+				034EC81323F87C5B006944DD /* Frameworks */,
+				034EC81423F87C5B006944DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pegase;
+			productName = Pegase;
+			productReference = 034EC81623F87C5B006944DD /* Pegase.app */;
+			productType = "com.apple.product-type.application";
+		};
+		034EC82D23F87C5F006944DD /* PegaseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034EC83A23F87C60006944DD /* Build configuration list for PBXNativeTarget "PegaseUITests" */;
+			buildPhases = (
+				034EC82A23F87C5F006944DD /* Sources */,
+				034EC82B23F87C5F006944DD /* Frameworks */,
+				034EC82C23F87C5F006944DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				034EC83023F87C5F006944DD /* PBXTargetDependency */,
+			);
+			name = PegaseUITests;
+			productName = PegaseUITests;
+			productReference = 034EC82E23F87C5F006944DD /* PegaseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		034EC80E23F87C5B006944DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "thierry hentic";
+				TargetAttributes = {
+					034EC81523F87C5B006944DD = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					034EC82D23F87C5F006944DD = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 034EC81523F87C5B006944DD;
+					};
+				};
+			};
+			buildConfigurationList = 034EC81123F87C5B006944DD /* Build configuration list for PBXProject "Pegase" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 034EC80D23F87C5B006944DD;
+			productRefGroup = 034EC81723F87C5B006944DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				034EC81523F87C5B006944DD /* Pegase */,
+				034EC82D23F87C5F006944DD /* PegaseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		034EC81423F87C5B006944DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034EC82423F87C5F006944DD /* Assets.xcassets in Resources */,
+				034EC81F23F87C5B006944DD /* Document.xib in Resources */,
+				034EC82723F87C5F006944DD /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		034EC82C23F87C5F006944DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		034EC81223F87C5B006944DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034EC82223F87C5B006944DD /* Document.xcdatamodeld in Sources */,
+				034EC81C23F87C5B006944DD /* Document.swift in Sources */,
+				034EC81A23F87C5B006944DD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		034EC82A23F87C5F006944DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034EC83323F87C60006944DD /* PegaseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		034EC83023F87C5F006944DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 034EC81523F87C5B006944DD /* Pegase */;
+			targetProxy = 034EC82F23F87C5F006944DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		034EC81D23F87C5B006944DD /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034EC81E23F87C5B006944DD /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		034EC82523F87C5F006944DD /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034EC82623F87C5F006944DD /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		034EC83523F87C60006944DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		034EC83623F87C60006944DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		034EC83823F87C60006944DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pegase/Pegase.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Pegase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = thierry.Pegase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		034EC83923F87C60006944DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pegase/Pegase.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Pegase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = thierry.Pegase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		034EC83B23F87C60006944DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PegaseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = thierry.PegaseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Pegase;
+			};
+			name = Debug;
+		};
+		034EC83C23F87C60006944DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PegaseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = thierry.PegaseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Pegase;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		034EC81123F87C5B006944DD /* Build configuration list for PBXProject "Pegase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034EC83523F87C60006944DD /* Debug */,
+				034EC83623F87C60006944DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		034EC83723F87C60006944DD /* Build configuration list for PBXNativeTarget "Pegase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034EC83823F87C60006944DD /* Debug */,
+				034EC83923F87C60006944DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		034EC83A23F87C60006944DD /* Build configuration list for PBXNativeTarget "PegaseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034EC83B23F87C60006944DD /* Debug */,
+				034EC83C23F87C60006944DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		034EC82023F87C5B006944DD /* Document.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				034EC82123F87C5B006944DD /* Document.xcdatamodel */,
+			);
+			currentVersion = 034EC82123F87C5B006944DD /* Document.xcdatamodel */;
+			path = Document.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 034EC80E23F87C5B006944DD /* Project object */;
+}
