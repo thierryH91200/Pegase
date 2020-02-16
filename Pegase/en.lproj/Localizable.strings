@@ -57,7 +57,7 @@
 "ImportSimplifiee.category" = "Category";
 "ImportSimplifiee.comment" = "Comment";
 "ImportSimplifiee.compte" = "account";
-"ImportSimplifiee.dateOperation" = "Date Operation";
+"ImportSimplifiee.dateOperation" = "Date_Operation";
 "ImportSimplifiee.datePointage" = "Date Pointage";
 "ImportSimplifiee.mode" = "Mode Paiement";
 "ImportSimplifiee.montant" = "Amount";
@@ -86,7 +86,7 @@
 "ModePaiement.Bank_Card" = "Bank Card";
 "ModePaiement.Cheque" = "Check";
 "ModePaiement.Especes" = "Espéces";
-"ModePaiement.Prelevement" = "Prélévement";
+"ModePaiement.Prelevement" = "Prelevement";
 "ModePaiement.Remise" = "Discount";
 "ModePaiement.RetraitEspeces" = "Retrait espéces";
 "ModePaiement.Virement" = "Virement";
