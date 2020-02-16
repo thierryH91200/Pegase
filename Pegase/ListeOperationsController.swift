@@ -1,0 +1,467 @@
+import AppKit
+//import SwiftDate
+import TFDate
+
+// ListeOperationsController -> OperationController
+@objc public protocol ListeOperationsDelegate
+{
+    /// Called when a value has been selected inside the outline.
+    func editionOperations(_ quakes: [EntityOperations])
+    func resetOperation()
+}
+
+// xxxxController -> ListeOperationsController
+@objc public protocol  FilterDelegate
+{
+    func applyFilter( fetchRequest: NSFetchRequest<EntityOperations>)
+    func updateListeOperations( liste: [EntityOperations])
+}
+
+final class ListeOperationsController: NSViewController {
+    
+    public typealias TrackingYear           = [ GroupedYearOperations ]
+    public typealias TrackingMonth          = GroupedYearOperations
+    public typealias TrackingIdOperations   = GroupedMonthOperations
+    public typealias TrackingSubOperations  = IdOperations
+    public typealias TrackingSubOperation   = EntitySousOperations
+
+    @objc var managedObjectContext2 = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    var theDocument = NSPersistentDocument()
+
+    enum ListeOperationsDisplayProperty: String {
+        case categorie
+        case dateOperation
+        case datePointage
+        case depense
+        case libelle
+        case liee
+        case mode
+        case montant
+        case recette
+        case releveBancaire
+        case rubrique
+        case solde
+        case statut
+    }
+
+    enum TypeOfColor: String {
+        case unie     = "unie"
+        case recette  = "recette/depense"
+        case rubrique = "rubrique"
+        case statut   = "statut"
+        case mode     = "mode"
+    }
+    
+    enum TypeOfStatut: Int {
+        case planifie
+        case engage
+        case realise
+        
+        var label: String
+        {
+            switch self {
+            case .planifie: return Localizations.Statut.Planifie
+            case .engage: return Localizations.Statut.Engaged
+            case .realise: return Localizations.Statut.Realise
+            }
+        }
+        var color: NSColor
+        {
+            switch self {
+            case .planifie:
+                return .green
+            case .engage:
+                return .blue
+            case .realise:
+                return .black
+            }
+        }
+        var attribut: [NSAttributedString.Key: Any]
+        {
+            var attribut = [NSAttributedString.Key: Any]()
+            attribut[.foregroundColor] = self.color
+
+            switch self {
+            case .planifie:
+                attribut[.font ] = NSFont(name: "Avenir-Oblique", size: 12.0)!
+            case .engage:
+                attribut[.font ] = NSFont(name: "Avenir", size: 12.0)!
+            case .realise:
+                attribut[.font ] = NSFont(name: "Avenir", size: 12.0)!
+            }
+            return attribut
+        }
+    }
+    
+//    private let _undoManager = UndoManager()
+//    override var undoManager: UndoManager {
+//        return _undoManager
+//    }
+
+    public weak var delegate: ListeOperationsDelegate?
+    
+    @IBOutlet weak var outlineListView: NSOutlineView!
+    
+    @IBOutlet weak var theBox1: NSBox!
+    @IBOutlet weak var theBox2: NSBox!
+    @IBOutlet weak var theBox3: NSBox!
+    
+    @IBOutlet weak var removeButton: NSButton!
+    
+    @IBOutlet weak var soldeBanque: NSTextField!
+    @IBOutlet weak var soldeReel: NSTextField!
+    @IBOutlet weak var soldeFinal: NSTextField!
+    @IBOutlet weak var labelInfo: NSTextField!
+    @IBOutlet weak var datePicker: TFDatePicker!
+    
+    var colorBackGround = #colorLiteral(red: 0.8157508969, green: 0.8595363498, blue: 0.9023539424, alpha: 1)
+
+    let attribute: [NSAttributedString.Key: Any] = [
+        .font: NSFont.systemFont(ofSize: NSFont.systemFontSize, weight: .semibold),
+        .foregroundColor: NSColor.black]
+    
+    var listeOperations = [EntityOperations]()
+    
+    let formatterPrice: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
+        return formatter
+    }()
+    
+    let formatterDate: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .short
+        return formatter
+    }()
+    
+    
+    var groupedSorted = [ GroupedYearOperations ]()
+
+    override func viewDidDisappear()
+    {
+        super.viewDidDisappear()
+        NotificationCenter.remove( instance: self, name: .updateAccount )
+        NotificationCenter.remove( instance: self, name: .selectionDidChangeOutLine)
+    }
+    
+    override func viewDidAppear()
+    {
+        super.viewDidAppear()
+        view.window!.title = Localizations.General.Liste_des_opérations
+    }
+    
+    // -----------------------------------------------------------------------
+    //    viewWillAppear
+    // listen for selection changes from the NSOutlineView inside MainWindowController
+    // note: we start observing after our outline view is populated so we don't receive unnecessary notifications at startup
+    // -----------------------------------------------------------------------
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
+        NotificationCenter.receive(instance: self, name: .selectionDidChangeOutLine, selector: #selector(selectionDidChange(_:)))
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupHeaderMenu()
+        
+        //vintage playback view
+        self.theBox1.contentView?.isHidden = false
+        self.theBox1.boxType = .custom
+        self.theBox1.borderType = .bezelBorder
+        self.theBox1.borderWidth = 1.1
+        self.theBox1.cornerRadius = 3
+        self.theBox1.fillColor = NSColor(patternImage: NSImage(named: NSImage.Name( "Gradient"))!)
+        
+        //vintage playback view
+        self.theBox2.contentView?.isHidden = false
+        self.theBox2.boxType = .custom
+        self.theBox2.borderType = .bezelBorder
+        self.theBox2.borderWidth = 1.1
+        self.theBox2.cornerRadius = 3
+        self.theBox2.fillColor = NSColor(patternImage: NSImage(named: NSImage.Name( "Gradient"))!)
+        
+        //vintage playback view
+        self.theBox3.contentView?.isHidden = false
+        self.theBox3.boxType = .custom
+        self.theBox3.borderType = .bezelBorder
+        self.theBox3.borderWidth = 1.1
+        self.theBox3.cornerRadius = 3
+        self.theBox3.fillColor = NSColor(patternImage: NSImage(named: NSImage.Name( "Gradient"))!)
+        
+        //        outlineListView.doubleAction = #selector(doubleClicked)
+
+        self.outlineListView.rowSizeStyle = .custom
+        self.outlineListView.reloadData()
+        self.outlineListView.allowsEmptySelection = true
+        self.outlineListView.expandItem(nil, expandChildren: true)
+        
+        let count = listeOperations.count
+        let str = String(format: "%d opérations", count)
+        
+        let attributedText = NSAttributedString(string: str, attributes: attribute)
+        self.labelInfo.attributedStringValue = attributedText
+        
+        self.datePicker.delegate = self
+        
+        self.datePicker.allowEmptyDate = false
+        self.datePicker.showPromptWhenEmpty = false
+        self.datePicker.referenceDate = Date()
+        self.datePicker.dateFieldPlaceHolder = ""
+        self.datePicker.dateValue = (compteCourant?.dateEcheancier!)!
+        self.datePicker.minDate = Date()
+    }
+    
+    /// Called when the a row in the sidebar is double clicked
+    @objc private func doubleClicked(_ sender: Any?) {
+        let clickedRow = outlineListView.item(atRow: outlineListView.clickedRow)
+        
+        if outlineListView.isItemExpanded(clickedRow) {
+            outlineListView.collapseItem(clickedRow)
+        } else {
+            outlineListView.expandItem(clickedRow)
+        }
+    }
+    
+    @objc func updateChangeAccount(_ notification: Notification) {
+        
+        self.datePicker.dateValue = (compteCourant?.dateEcheancier!)!
+        self.delegate?.resetOperation()
+        self.getAllData()
+        self.reloadData()
+        
+        let count = listeOperations.count
+        let str = String(format: "%d opérations", count)
+        self.labelInfo.stringValue = str
+    }
+    
+    // ------------------------------------------------------------------------
+    //    dealloc
+    // ------------------------------------------------------------------------
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self, name: .selectionDidChangeOutLine, object: nil)
+    }
+    
+    @objc func selectionDidChange(_ notification: Notification) {
+        
+        guard let outlineView = notification.object as? NSOutlineView,
+            outlineView == outlineListView else { return }
+        
+        let selectedRow = outlineView.selectedRowIndexes
+        let selectRow = outlineView.selectedRow
+        
+        guard selectRow != -1 else {
+            self.removeButton.isHidden = true
+            let count = listeOperations.count
+            let info = String(format: "%d opérations", count)
+            let attributedText = NSAttributedString(string: info, attributes: attribute)
+            self.labelInfo.attributedStringValue = attributedText
+
+            self.delegate?.resetOperation()
+            return }
+        
+        let rowView = outlineView.rowView(atRow: selectRow, makeIfNecessary: false)
+        rowView?.isEmphasized = true
+        
+        if selectedRow.count > 0 {
+            
+            self.removeButton.isHidden = false
+            var operationsSelected = [EntityOperations]()
+            
+            var amount = 0.0
+            var solde = 0.0
+            var depense = 0.0
+            var revenu = 0.0
+            
+            let formatter = NumberFormatter()
+            formatter.locale = Locale.current
+            formatter.numberStyle = .currency
+            
+            for (_, index) in selectedRow.enumerated() {
+                let item = outlineView.item(atRow: index) as? IdOperations
+                
+                operationsSelected.append((item?.entityOperations)!)
+
+                amount = (item?.entityOperations.amount)!
+                solde += amount
+                if amount < 0 {
+                    depense += amount
+                } else {
+                    revenu += amount
+                }
+            }
+            
+            // Info
+            let amountStr = formatter.string(from: solde as NSNumber)!
+            let strDepense = formatter.string(from: depense as NSNumber)!
+            let strRevenu = formatter.string(from: revenu as NSNumber)!
+            let count = selectedRow.count
+            
+            let info = Localizations.ListeOperation.info(count, strDepense, strRevenu, amountStr)
+            let attributedText = NSAttributedString(string: info, attributes: attribute)
+            self.labelInfo.attributedStringValue = attributedText
+            
+            // delegate -> Edition Operation
+            self.delegate?.editionOperations(operationsSelected)
+
+            self.becomeFirstResponder()
+        }
+    }
+    
+    func printTimeElapsedWhenRunningCode(title:String, operation:()->()) {
+        let startTime = CFAbsoluteTimeGetCurrent()
+        operation()
+        let timeElapsed = (CFAbsoluteTimeGetCurrent() - startTime) * 1000
+        print("Time elapsed for \(title): \(timeElapsed) ms.")
+    }
+
+    private func transformData()
+    {
+        var groupedID : [ String:  [ String :  [IdOperations]]] = [:]
+
+        calculSolde()
+        let IdOperation = (0 ..< listeOperations.count).map { (i) -> IdOperations in
+            return IdOperations(year : listeOperations[i].sectionYear!, id: listeOperations[i].sectionIdentifier!, entityOperations: listeOperations[i])
+        }
+        
+        // Grouped year / month
+        let groupedYear = Dictionary(grouping: IdOperation, by: { $0.year })
+        for (key, value) in groupedYear {
+            let valueID = Dictionary(grouping: value, by: {$0.id})
+            groupedID[key] = valueID
+        }
+
+        // convert to struct - more fast and easy to sort
+        var allGroupedYear : [ GroupedYearOperations ] = []
+
+        printTimeElapsedWhenRunningCode(title:"convert dict to struct : ") {
+            for grouped in groupedID {
+                let groupedYear = GroupedYearOperations(dictionary: grouped)
+                allGroupedYear.append(groupedYear)
+            }
+            groupedSorted = allGroupedYear.sorted(by: {$0.year > $1.year })
+        }
+    }
+    
+    private func calculSolde()
+    {
+        let initCompte = InitCompte.shared.getAll()
+        var soldeRealise = initCompte.realise
+        var soldePrevu  = initCompte.prevu
+        var soldeEngage = initCompte.engage
+        let soldeInitial = soldePrevu + soldeEngage + soldeRealise
+        let count = listeOperations.count
+        
+        for index in stride(from: count - 1, to: -1, by: -1)
+        {
+            let propertyEnum = TypeOfStatut(rawValue: Int(listeOperations[index].statut))!
+            switch propertyEnum
+            {
+            case .planifie:
+                soldePrevu += listeOperations[index].amount
+            case .engage:
+                soldeEngage += self.listeOperations[index].amount
+            case .realise:
+                soldeRealise += self.listeOperations[index].amount
+            }
+            listeOperations[index].solde = index == count - 1 ? listeOperations[index].amount + soldeInitial : listeOperations[index + 1].solde + listeOperations[index ].amount
+        }
+        
+        self.soldeBanque.doubleValue = soldeRealise
+        self.soldeReel.doubleValue   = soldeRealise + soldeEngage
+        self.soldeFinal.doubleValue  = soldeRealise + soldeEngage + soldePrevu
+        
+        NotificationCenter.send(.updateSolde)
+    }
+    
+    @IBAction func removeOperation(_ sender: Any) {
+        let selectedRow = outlineListView.selectedRowIndexes
+        guard selectedRow.count > 0 else { return }
+        
+        for (_, index) in selectedRow.enumerated() {
+            let item = outlineListView.item(atRow: index) as? IdOperations
+            ListeOperations.shared.remove(entity: (item?.entityOperations)!)
+        }
+        
+        self.getAllData()
+        self.outlineListView.reloadData()
+        self.outlineListView.expandItem(nil, expandChildren: true)
+    }
+    
+}
+
+extension ListeOperationsController: FilterDelegate {
+    
+    func applyFilter( fetchRequest: NSFetchRequest<EntityOperations>) {
+        do {
+            listeOperations = try mainObjectContext.fetch(fetchRequest)
+        } catch {
+            print("Error fetching data from CoreData")
+        }
+        transformData()
+        reloadData()
+    }
+    
+    func updateListeOperations( liste: [EntityOperations]) {
+        
+        listeOperations = liste
+        
+        self.transformData()
+        self.reloadData()
+    }
+    
+}
+
+extension ListeOperationsController: OperationsDelegate {
+    
+    func getAllData() {
+        
+////        DispatchQueue.main.async(execute: {() -> Void in
+//            self.progressIndicator.isHidden = false
+//            self.progressIndicator.startAnimation(nil)
+//
+////            for _ in 0..<1000 {
+//                self.listeOperations.removeAll()
+//                self.listeOperations = ListeOperations.shared.getAll(ascending: false)
+//                self.transformData()
+////            }
+//
+//            self.progressIndicator.isHidden = true
+//            self.progressIndicator.stopAnimation(nil)
+////        })
+//
+        
+//        progressIndicator.isHidden = false
+//        progressIndicator.startAnimation(nil)
+
+//        for _ in 0..<1000 {
+            listeOperations = ListeOperations.shared.getAll(ascending: false)
+            self.transformData()
+//        }
+
+    }
+    
+    func reloadData() {
+        self.outlineListView.reloadData()
+        
+//        var item = [Any]()
+//        let numberOfChildren = self.outlineListView.numberOfChildren(ofItem: nil)
+//
+//        for i in 0 ..< numberOfChildren {
+//            item.append( self.outlineListView.item(atRow: i)!)
+//            self.outlineListView.expandItem(item[i])
+//        }
+//        for i in 0 ..< numberOfChildren {
+//            self.outlineListView.expandItem(item[i])
+//        }
+        
+//        self.outlineListView.selectRowIndexes(NSIndexSet(index: 1) as IndexSet, byExtendingSelection: false)
+        self.outlineListView.expandItem(nil, expandChildren: true)
+
+    }
+}

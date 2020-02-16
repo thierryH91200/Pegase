@@ -1,0 +1,145 @@
+
+// MARK: Chart
+"Chart.No_chart_Data_Available." = "No chart Data available.";
+
+// MARK: Check
+"Check.Delete" = "Supprimer";
+"Check.InformativeText" = "Are you sure you would like to delete the check ?";
+"Check.MessageText" = "Delete the check ?";
+
+// MARK: Document
+"Document.Bank_Account" = "Bank account";
+"Document.Carte_de_crédit" = "Bank card";
+"Document.Compte_Courant" = "Current account";
+"Document.Epargne" = "Sauver";
+"Document.Especes" = "Cash account";
+"Document.File_Uploaded" = "File Uploaded";
+"Document.OpenProjectPanelMessage" = "OpenProject";
+
+// MARK: General
+"General.Account" = "Compte";
+"General.Account1" = "Compte1";
+"General.Amount" = "Amount";
+"General.BankAccount.Plural" = "Bank accounts";
+"General.BankAccount.Singular" = "Bank account";
+"General.Cancel" = "Cancel";
+"General.Category" = "Categories";
+"General.Compte.Plural" = "%d comptes";
+"General.Compte.Singular" = "1 account";
+"General.Compte.Zero" = "0 account";
+"General.Date Operation" = "Date Operation";
+"General.Date Pointage" = "Date Pointage";
+"General.Depense" = "Spent";
+"General.Identity" = "Identity";
+"General.Libelle" = "Comment";
+"General.Liste des opérations" = "List of operations";
+"General.Mode Paiement" = "Payment Mode";
+"General.Operation" = "Operation";
+"General.Recette" = "Recipe";
+"General.Rubrique" = "Rubrique";
+"General.Scheduler" = "Scheduler";
+"General.Solde" = "Balance";
+"General.Statut" = "Statut";
+
+// MARK: GroupeCompte
+"GroupeCompte.Compte.Menu.Add" = "Add an account";
+"GroupeCompte.Compte.Menu.Edit" = "Edit an account";
+"GroupeCompte.Compte.Menu.Remove" = "Delete an account";
+"GroupeCompte.Folder.Menu.Add" = "Add folder";
+"GroupeCompte.Folder.Menu.Edit" = "Edit folder";
+"GroupeCompte.Folder.Menu.Remove" = "Remove folder";
+"GroupeCompte.RemoveAlert.Cancel" = "Cancel";
+"GroupeCompte.RemoveAlert.Delete" = "Remove";
+"GroupeCompte.RemoveAlert.InformativeText" = "Are you sure you would like to delete this item ?";
+"GroupeCompte.RemoveAlert.MessageText" = "Supprimer cet élement";
+
+// MARK: ImportSimplifiee
+"ImportSimplifiee.category" = "Category";
+"ImportSimplifiee.comment" = "Comment";
+"ImportSimplifiee.compte" = "account";
+"ImportSimplifiee.dateOperation" = "Date Operation";
+"ImportSimplifiee.datePointage" = "Date Pointage";
+"ImportSimplifiee.mode" = "Mode Paiement";
+"ImportSimplifiee.montant" = "Amount";
+"ImportSimplifiee.statut" = "Statut";
+
+"ImportSimplifiee.Menu.ignoreCol" = "Ignore_Column";
+"ImportSimplifiee.Menu.dateOperation" = "Date Opération";
+"ImportSimplifiee.Menu.datePointage" = "Date Pointage";
+"ImportSimplifiee.Menu.libelle" = "Libellé";
+"ImportSimplifiee.Menu.montant" = "Montant";
+"ImportSimplifiee.Menu.statut" = "Statut";
+"ImportSimplifiee.Menu.rubrique" = "Rubric";
+"ImportSimplifiee.Menu.catégorie" = "Category";
+"ImportSimplifiee.Menu.modePaiement" = "Mode Paiement";
+
+// MARK: ListeOperation
+"ListeOperation.info" = "%d opérations Dépenses : %@ Revenus : %@ Solde : %@";
+
+// MARK: Mode Alert
+"Mode.Impossible" = "Impossible de supprimer le mode de paiement par défaut. Changez la valeur dans les références du compte";
+"Mode.Delete" = "Delete";
+"Mode.InformativeText" = "Are you sure you would like to delete the item ?";
+"Mode.MessageText" = "Delete this element";
+
+// MARK: ModePaiement
+"ModePaiement.Bank_Card" = "Bank Card";
+"ModePaiement.Cheque" = "Check";
+"ModePaiement.Especes" = "Espéces";
+"ModePaiement.Prelevement" = "Prélévement";
+"ModePaiement.Remise" = "Discount";
+"ModePaiement.RetraitEspeces" = "Retrait espéces";
+"ModePaiement.Virement" = "Virement";
+
+// MARK: Operation
+"Operation.Mode" = "Mode ";
+"Operation.ModeCreation" = "Creative mode";
+"Operation.ModeEdition" = "Editing mode";
+"Operation.MultipleValue" = "Multiple value";
+"Operation.NoTransfert" = "(no transfert)";
+"Operation.Multi" = "Multi";
+
+// MARK: RateConfigure
+"RateConfigure.detailText" = "We look forward to your Star and Pull Request to make Pegase better and better : )\n⭐️⭐️⭐️⭐️⭐️?";
+"RateConfigure.ignoreButtonTitle" = "Peut-être plus tard";
+"RateConfigure.likeButtonTitle" = "Star Now!";
+"RateConfigure.name" = "Love Pegase?";
+
+// MARK: Rubric
+"Rubric.Delete" = "Delete";
+"Rubric.InformativeText" = "L'élement supprimé ne pourra pas être restauré. Il sera remplacé dans les opérations par la valeur par défaut";
+"Rubric.MessageText" = "Delete this element";
+
+// MARK: Statut
+"Statut.Engaged" = "Engaged";
+"Statut.Planifie" = "Plannifie";
+"Statut.Realise" = "Executed";
+
+// MARK: alert
+"alert.title_error" = "Error";
+"alert.title_info" = "Information";
+"alert.title_warning" = "Warning";
+
+// MARK: search Menu
+"searchMenu.title.libelle" = "libelle";
+"searchMenu.title.all" = "all";
+"searchMenu.title.menu" = "menu";
+
+// MARK: Menu Bar
+"MenuBar.SuivieDeTresorerie.Name" = "Suivie de Tresorerie";
+"MenuBar.SuivieDeTresorerie.ListeDesOpérations" = "List of operations";
+"MenuBar.SuivieDeTresorerie.CourbeDeTrésorerie" = "Courbe de trésorerie";
+"MenuBar.SuivieDeTresorerie.SiteWebDeLaBanque" = "Site Web de la banque";
+
+"MenuBar.Rapports.Name" = "Rapports";
+"MenuBar.Rapports.Rubrique Pie" = "Rubrique Pie";
+"MenuBar.Rapports.Catégorie Bar" = "Catégorie Bar";
+"MenuBar.Rapports.Catégorie Bar1" = "Catégorie Bar1";
+"MenuBar.Rapports.Mode de paiement" = "Mode de paiement";
+"MenuBar.Rapports.Recette Depense" = "Recette Depense";
+"MenuBar.Rapports.Rubrique Bar" = "Rubrique";
+
+"MenuBar.RéférenceCompte.Name" = "Référence compte";
+"MenuBar.RéférenceCompte.Identite" = "Identite";
+"MenuBar.RéférenceCompte.Scheduler" = "Scheduler";
+"MenuBar.RéférenceCompte.Settings" = "Settings";

@@ -1,0 +1,425 @@
+import AppKit
+import Charts
+
+final class TresorerieController: NSViewController
+{
+    public weak var delegate: FilterDelegate?
+    
+    @IBOutlet var chartView: LineChartView!
+    @IBOutlet weak var viewHorizontal: NSView!
+    
+    var sliderViewHorizontalController: SliderViewHorizontalController?
+    
+    var listeOperations : [EntityOperations] = []
+    var firstDate: TimeInterval = 0.0
+    var lastDate: TimeInterval = 0.0
+    
+    let hourSeconds = 3600.0 * 24.0 // one day
+    
+    var dataGraph : [DataTresorerie] = []
+    
+    public override func viewDidDisappear()
+    {
+        super.viewDidDisappear()
+        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+    }
+    
+    override public func viewDidAppear()
+    {
+        super.viewDidAppear()
+        view.window!.title = "Time Line Chart"
+    }
+    
+    override public func viewWillAppear()
+    {
+        super.viewWillAppear()
+        chartView.animate(xAxisDuration: 1, yAxisDuration: 1)
+    }
+    
+    override public func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        var vc = NSView()
+        
+        if self.sliderViewHorizontalController == nil {
+            self.sliderViewHorizontalController = SliderViewHorizontalController(nibName: "SliderViewHorizontalController", bundle: nil)
+            self.sliderViewHorizontalController?.delegate = self
+        }
+        
+        vc = (self.sliderViewHorizontalController?.view)!
+        Commun.shared.addSubview(subView: vc, toView: viewHorizontal)
+        Commun.shared.setUpLayoutConstraints(item: vc, toItem: viewHorizontal)
+        
+        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
+        
+        self.initGraph()
+                
+        self.updateAccount()
+        self.updateChartData()
+        self.setData()
+    }
+    
+    @objc func updateChangeAccount(_ notification: Notification) {
+        
+        self.updateAccount()
+        updateChartData()
+        setData()
+    }
+    
+    func updateAccount () {
+        listeOperations = ListeOperations.shared.getAll()
+        if listeOperations.count > 0 {
+            
+            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
+            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
+            
+            sliderViewHorizontalController?.initData(firstDate: firstDate, lastDate: lastDate)
+            sliderViewHorizontalController?.mySlider.isEnabled = true
+            
+        } else {
+            sliderViewHorizontalController?.mySlider.isEnabled = false
+        }
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+    }
+    
+    func initGraph() {
+        
+        // MARK: General
+        chartView.delegate = self
+        
+        chartView.dragEnabled = false
+        chartView.setScaleEnabled(true)
+        chartView.pinchZoomEnabled = false
+        chartView.drawGridBackgroundEnabled = false
+        chartView.highlightPerDragEnabled = true
+        chartView.noDataText = Localizations.Chart.No_chart_Data_Available
+        
+        chartView.scaleYEnabled = false
+        chartView.scaleXEnabled = false
+        
+        // MARK: xAxis
+        let xAxis = chartView.xAxis
+        xAxis.labelPosition = .bottom
+        xAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        xAxis.drawAxisLineEnabled = true
+        xAxis.drawGridLinesEnabled = true
+        xAxis.drawLimitLinesBehindDataEnabled = true
+        xAxis.avoidFirstLastClippingEnabled = false
+        xAxis.granularity = 1.0
+        xAxis.spaceMin = xAxis.granularity / 5
+        xAxis.spaceMax = xAxis.granularity / 5
+        xAxis.labelRotationAngle = -45.0
+        
+//        xAxis.nameAxis = "Date (s)"
+//        xAxis.nameAxisEnabled = true
+        
+        // MARK: leftAxis
+        let leftAxis = chartView.leftAxis
+        leftAxis.labelPosition = .outsideChart
+        leftAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(12.0))!
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.granularityEnabled = true
+        leftAxis.yOffset = -9.0
+        
+//        leftAxis.nameAxis = "Montant"
+//        leftAxis.nameAxisEnabled = true
+
+        // MARK: rightAxis
+        chartView.rightAxis.enabled = false
+        
+        // MARK: legend
+        let legend = chartView.legend
+        legend.enabled = true
+        legend.form = .square
+        legend.drawInside = false
+        legend.orientation = .horizontal
+        legend.verticalAlignment = .bottom
+        legend.horizontalAlignment = .left
+        
+        // MARK: description
+        chartView.chartDescription?.enabled = false
+    }
+    
+    func updateChartData() {
+        
+        self.dataGraph.removeAll()
+        guard listeOperations.count != 0 else { return }
+        
+        var dataTresorerie = DataTresorerie()
+        var index = 0
+        var indexDate = 0.0
+        var sameDate = true
+        
+        var soldeRealise = 0.0
+        var soldePrevu  = 0.0
+        var soldeEngage = 0.0
+        
+        var prevu  = 0.0
+        var engage = 0.0
+        
+        let minValue = Int((sliderViewHorizontalController?.mySlider.minValue)!)
+        let maxValue = Int((sliderViewHorizontalController?.mySlider.maxValue)!)
+        
+        for indexSlider in minValue..<maxValue + 1 {
+            
+            sameDate = true
+            while sameDate == true {
+                
+                indexDate = ( (listeOperations[index ].dateOperation?.timeIntervalSince1970)! - firstDate ) / hourSeconds
+                
+                // même jour mais le statut peut être différent ??
+                if Int(indexDate) == indexSlider {
+                    
+                    let propertyEnum = TypeOfStatut(rawValue: listeOperations[index].statut)!
+                    switch propertyEnum
+                    {
+                    case .planifie:
+                        prevu += listeOperations[index].amount
+                    case .engage:
+                        engage += listeOperations[index].amount
+                    case .realise:
+                        soldeRealise += listeOperations[index].amount
+                    }
+                    index += 1
+                    if index == listeOperations.count {
+                        sameDate = false
+                    }
+                } else {
+                    sameDate = false
+                }
+            }            
+            soldePrevu = soldeRealise + engage + prevu
+            soldeEngage = soldeRealise + engage
+            
+            dataTresorerie.x = Double(indexSlider)
+            dataTresorerie.soldeRealise = soldeRealise
+            dataTresorerie.soldeEngage = soldeEngage
+            dataTresorerie.soldePrevu = soldePrevu
+            dataGraph.append(dataTresorerie)
+        }
+    }
+    
+    func addLimit( index: Double, x: Double) {
+        
+        let calendar = Calendar.current
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM yy"
+        
+        let date2 = Date(timeIntervalSince1970: x )
+        if calendar.day(date2) == 1 {
+            let dateStr = dateFormatter.string(from: date2)
+            let llXAxis = ChartLimitLine(limit: index, label: dateStr)
+            llXAxis.lineColor = #colorLiteral(red: 0.08062536269, green: 0.2148533463, blue: 1, alpha: 1)
+            llXAxis.valueTextColor = NSColor.blue
+            llXAxis.valueFont = NSFont.systemFont(ofSize: CGFloat(12.0))
+            llXAxis.labelPosition = .bottomRight
+            
+            let xAxis = chartView.xAxis
+            xAxis.addLimitLine(llXAxis)
+        }
+    }
+    
+    func setData()
+    {
+        guard listeOperations.count != 0 || dataGraph.count != 0 else {
+            chartView.data = nil
+            chartView.data?.notifyDataChanged()
+            chartView.notifyDataSetChanged()
+            return }
+        
+        chartView.xAxis.axisMaximum = sliderViewHorizontalController?.mySlider.end ?? 0.0
+        chartView.xAxis.axisMinimum = sliderViewHorizontalController?.mySlider.start ?? 0.0
+        
+        chartView.xAxis.removeAllLimitLines()
+        
+        // MARK: ChartDataEntry
+        var values0 = [ChartDataEntry]()
+        var values1 = [ChartDataEntry]()
+        var values2 = [ChartDataEntry]()
+        
+        let from = Int((sliderViewHorizontalController?.mySlider.start)!)
+        let to = Int((sliderViewHorizontalController?.mySlider.end)!)
+                
+        for i in from..<to {
+            values0.append(ChartDataEntry(x: dataGraph[i].x, y: dataGraph[i].soldeRealise))
+            values1.append(ChartDataEntry(x: dataGraph[i].x, y: dataGraph[i].soldeEngage))
+            values2.append(ChartDataEntry(x: dataGraph[i].x, y: dataGraph[i].soldePrevu))
+            
+            addLimit(index: dataGraph[i].x, x: (dataGraph[i].x * hourSeconds) + firstDate)
+        }
+        
+        if values0.count == 0 {
+            chartView.data = nil
+            sliderViewHorizontalController?.mySlider.isEnabled = false
+            return
+        }
+        
+        sliderViewHorizontalController?.mySlider.isEnabled = true
+        chartView.xAxis.labelCount = 300
+        chartView.xAxis.valueFormatter = DateValueFormatter(miniTime: firstDate, interval: hourSeconds)
+        
+        let  marker = RectMarker( color: #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1),
+                                  font: NSFont.systemFont(ofSize: 12.0),
+                                  insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 20.0, right: 8.0))
+        
+        marker.minimumSize = CGSize( width: 80.0, height: 40.0)
+        marker.chartView = chartView
+        chartView.marker = marker
+        marker.miniTime = firstDate
+        marker.interval = hourSeconds
+        
+        // MARK: LineChartDataSet
+        var dataSetPointe =  LineChartDataSet()
+        var dataSetEngage =  LineChartDataSet()
+        var dataSetPrevu =  LineChartDataSet()
+        
+        let pFormatter = NumberFormatter()
+        pFormatter.numberStyle = .currency
+        pFormatter.maximumFractionDigits = 2
+        
+        /// Point
+        dataSetPointe = LineChartDataSet(entries: values0, label: Localizations.Statut.Realise)
+        dataSetPointe.axisDependency = .left
+        dataSetPointe.mode = .stepped
+        dataSetPointe.valueTextColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        dataSetPointe.lineWidth = 1.5
+
+        dataSetPointe.drawCirclesEnabled = false
+        dataSetPointe.drawValuesEnabled = true
+        dataSetPointe.valueFormatter = DefaultValueFormatter(formatter: pFormatter  )
+        
+        dataSetPointe.drawFilledEnabled = false //true
+        dataSetPointe.fillAlpha = 0.26
+        dataSetPointe.fillColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        dataSetPointe.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
+        dataSetPointe.highlightLineWidth = 4.0
+        dataSetPointe.drawHorizontalHighlightIndicatorEnabled = false
+        dataSetPointe.formSize = 15.0
+        dataSetPointe.colors = [#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)]
+        
+        /// Engage
+        dataSetEngage = LineChartDataSet(entries: values1, label: Localizations.Statut.Engaged)
+        dataSetEngage.axisDependency = .left
+        dataSetEngage.mode = .stepped
+        dataSetEngage.valueTextColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        dataSetEngage.lineWidth = 1.5
+        
+        dataSetEngage.drawCirclesEnabled = false
+        dataSetEngage.drawValuesEnabled = true
+        dataSetEngage.valueFormatter = DefaultValueFormatter(formatter: pFormatter  )
+        
+        dataSetEngage.drawFilledEnabled = false //true
+        dataSetEngage.fillAlpha = 0.26
+        dataSetEngage.fillColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        dataSetEngage.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
+        dataSetEngage.highlightLineWidth = 4.0
+        dataSetEngage.drawHorizontalHighlightIndicatorEnabled = false
+        dataSetEngage.formSize = 15.0
+        dataSetEngage.colors = [#colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1)]
+        
+        /// Planned
+        dataSetPrevu = LineChartDataSet(entries: values2, label: Localizations.Statut.Planifie)
+        dataSetPrevu.axisDependency = .left
+        dataSetPrevu.mode = .stepped
+        dataSetPrevu.valueTextColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        dataSetPrevu.lineWidth = 1.5
+        
+        dataSetPrevu.drawCirclesEnabled = false
+        dataSetPrevu.drawValuesEnabled = true
+        dataSetPrevu.valueFormatter = DefaultValueFormatter(formatter: pFormatter  )
+        
+        dataSetPrevu.drawFilledEnabled = false // true
+        dataSetPrevu.fillAlpha = 0.26
+        dataSetPrevu.fillColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        dataSetPrevu.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
+        dataSetPrevu.highlightLineWidth = 4.0
+        dataSetPrevu.drawHorizontalHighlightIndicatorEnabled = false
+        dataSetPrevu.formSize = 15.0
+        dataSetPrevu.colors = [#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)]
+        
+        var dataSets = [LineChartDataSet]()
+        
+        dataSets.append(dataSetPointe)
+        dataSets.append(dataSetEngage)
+        dataSets.append(dataSetPrevu)
+        
+        // MARK: LineChartData
+        let data = LineChartData(dataSets: dataSets)
+        data.setValueTextColor ( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        data.setValueFont ( NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
+        
+        chartView.data = data
+    }
+    
+}
+
+extension TresorerieController: SliderHorizontalDelegate {
+    
+    func setDataHorizontal()
+    {
+        guard listeOperations.count != 0 || dataGraph.count != 0 else {
+            chartView.data = nil
+            chartView.data?.notifyDataChanged()
+            chartView.notifyDataSetChanged()
+            return }
+        
+        chartView.xAxis.axisMaximum = sliderViewHorizontalController?.mySlider.end ?? 0.0
+        chartView.xAxis.axisMinimum = sliderViewHorizontalController?.mySlider.start ?? 0.0
+        
+        chartView.data?.notifyDataChanged()
+        chartView.notifyDataSetChanged()
+    }
+}
+
+extension TresorerieController: ChartViewDelegate
+{
+    public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        
+        let x = highlight.x
+        let intervalSince1970 = (x * hourSeconds) + firstDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .none
+        
+        let date = Date(timeIntervalSince1970: intervalSince1970 )
+        let dateOperation = date.noon
+        
+        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p3 = NSPredicate(format: "dateOperation == %@", dateOperation as CVarArg )
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p3])
+        
+        let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
+        
+        delegate?.applyFilter(fetchRequest: fetchRequest)
+    }
+    
+}
+
+struct DataTresorerie {
+    var x: Double = 0.0
+    var soldeRealise: Double = 0.0
+    var soldeEngage: Double = 0.0
+    var soldePrevu: Double = 0.0
+    
+    init(x: Double, soldeRealise: Double, soldeEngage: Double, soldePrevu: Double)
+    {
+        self.x  = x
+        self.soldeRealise = soldeRealise
+        self.soldeEngage = soldeEngage
+        self.soldePrevu = soldePrevu
+    }
+    init() {
+        self.x  = 0
+        self.soldeRealise = 0
+        self.soldeEngage = 0
+        self.soldePrevu = 0
+    }
+}
+

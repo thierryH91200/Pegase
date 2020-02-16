@@ -1,0 +1,87 @@
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "2hW-A4-2or"; */
+"2hW-A4-2or.title" = "Cancel";
+
+/* Class = "NSTextFieldCell"; title = "Encoding"; ObjectID = "2qh-Ft-dH3"; */
+"2qh-Ft-dH3.title" = "Encoding";
+
+/* Class = "NSButtonCell"; title = "Import"; ObjectID = "7Zz-xV-gA6"; */
+"7Zz-xV-gA6.title" = "Import";
+
+/* Class = "NSTextFieldCell"; title = "Quote"; ObjectID = "A2l-Uw-arU"; */
+"A2l-Uw-arU.title" = "Quote";
+
+/* Class = "NSMenuItem"; title = "No String Encodings Configured"; ObjectID = "azY-g1-sDt"; */
+"azY-g1-sDt.title" = "No String Encodings Configured";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "bfv-tQ-GjM"; */
+"bfv-tQ-GjM.title" = "Item 3";
+
+/* Class = "NSSegmentedCell"; C2o-jP-EF2.ibShadowedLabels[0] = ","; ObjectID = "C2o-jP-EF2"; */
+"C2o-jP-EF2.ibShadowedLabels[0]" = ",";
+
+/* Class = "NSSegmentedCell"; C2o-jP-EF2.ibShadowedLabels[1] = ";"; ObjectID = "C2o-jP-EF2"; */
+"C2o-jP-EF2.ibShadowedLabels[1]" = ";";
+
+/* Class = "NSSegmentedCell"; C2o-jP-EF2.ibShadowedLabels[2] = "⇥"; ObjectID = "C2o-jP-EF2"; */
+"C2o-jP-EF2.ibShadowedLabels[2]" = "⇥";
+
+/* Class = "NSSegmentedCell"; C2o-jP-EF2.ibShadowedLabels[3] = "|"; ObjectID = "C2o-jP-EF2"; */
+"C2o-jP-EF2.ibShadowedLabels[3]" = "|";
+
+/* Class = "NSButtonCell"; title = "Header"; ObjectID = "cgT-F0-Q53"; */
+"cgT-F0-Q53.title" = "Header";
+
+/* Class = "NSSegmentedCell"; d4a-n0-Zii.ibShadowedLabels[0] = "."; ObjectID = "d4a-n0-Zii"; */
+"d4a-n0-Zii.ibShadowedLabels[0]" = ".";
+
+/* Class = "NSSegmentedCell"; d4a-n0-Zii.ibShadowedLabels[1] = ","; ObjectID = "d4a-n0-Zii"; */
+"d4a-n0-Zii.ibShadowedLabels[1]" = ",";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "fUa-sZ-q2u"; */
+"fUa-sZ-q2u.title" = "Item 2";
+
+/* Class = "NSTextFieldCell"; title = "Intitulé :"; ObjectID = "fuo-9n-gke"; */
+"fuo-9n-gke.title" = "Intitulé :";
+
+/* Class = "NSTextFieldCell"; title = "Prénom :"; ObjectID = "fYO-98-wQh"; */
+"fYO-98-wQh.title" = "Prénom :";
+
+/* Class = "NSTextFieldCell"; title = "Separator"; ObjectID = "g3k-Et-CPk"; */
+"g3k-Et-CPk.title" = "Separator";
+
+/* Class = "NSTextFieldCell"; placeholderString = "dd/MM/yy"; ObjectID = "GhB-7p-bZR"; */
+"GhB-7p-bZR.placeholderString" = "dd/MM/yy";
+
+/* Class = "NSTextFieldCell"; title = "dd/MM/yy"; ObjectID = "GhB-7p-bZR"; */
+"GhB-7p-bZR.title" = "dd/MM/yy";
+
+/* Class = "NSBox"; title = "Configuration"; ObjectID = "GZe-o8-YX4"; */
+"GZe-o8-YX4.title" = "Configuration";
+
+/* Class = "NSTextFieldCell"; title = "Format de Date :"; ObjectID = "nMU-pt-sxu"; */
+"nMU-pt-sxu.title" = "Format de Date :";
+
+/* Class = "NSTextFieldCell"; title = "Nom :"; ObjectID = "pL9-gA-ghM"; */
+"pL9-gA-ghM.title" = "Nom :";
+
+/* Class = "NSTextFieldCell"; title = "Decimal"; ObjectID = "rhn-U5-DWG"; */
+"rhn-U5-DWG.title" = "Decimal";
+
+/* Class = "NSTextFieldCell"; title = "File :"; ObjectID = "vHZ-wi-gCr"; */
+"vHZ-wi-gCr.title" = "File :";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "woK-yA-5eQ"; */
+"woK-yA-5eQ.title" = "Item 1";
+
+/* Class = "NSSegmentedCell"; XAD-11-Jjs.ibShadowedLabels[0] = "\"\""; ObjectID = "XAD-11-Jjs"; */
+"XAD-11-Jjs.ibShadowedLabels[0]" = "\"\"";
+
+/* Class = "NSSegmentedCell"; XAD-11-Jjs.ibShadowedLabels[1] = "\\\""; ObjectID = "XAD-11-Jjs"; */
+"XAD-11-Jjs.ibShadowedLabels[1]" = "\\\"";
+
+/* Class = "NSSegmentedCell"; XAD-11-Jjs.ibShadowedLabels[2] = "none"; ObjectID = "XAD-11-Jjs"; */
+"XAD-11-Jjs.ibShadowedLabels[2]" = "none";
+
+/* Class = "NSTextFieldCell"; title = "Transfert vers compte :"; ObjectID = "ylb-t9-JW0"; */
+"ylb-t9-JW0.title" = "Transfert vers compte :";

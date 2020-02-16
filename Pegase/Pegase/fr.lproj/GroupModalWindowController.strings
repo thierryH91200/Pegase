@@ -1,0 +1,21 @@
+
+/* Class = "NSButtonCell"; title = "Ok"; ObjectID = "1ls-qV-UCR"; */
+"1ls-qV-UCR.title" = "Ok";
+
+/* Class = "NSButtonCell"; title = "Creation mode"; ObjectID = "Asq-7y-Fnt"; */
+"Asq-7y-Fnt.title" = "Mode Création";
+
+/* Class = "NSWindow"; title = "Add group"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Ajouter un groupe";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "P76-cz-P6f"; */
+"P76-cz-P6f.title" = "Annuler";
+
+/* Class = "NSTextFieldCell"; title = "Name"; ObjectID = "pNJ-X0-KVS"; */
+"pNJ-X0-KVS.title" = "Nom";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Bank account"; ObjectID = "Von-4k-iC8"; */
+"Von-4k-iC8.placeholderString" = "Compte bancaire";
+
+/* Class = "NSTextFieldCell"; title = "Bank account"; ObjectID = "Von-4k-iC8"; */
+"Von-4k-iC8.title" = "Compte bancaire";

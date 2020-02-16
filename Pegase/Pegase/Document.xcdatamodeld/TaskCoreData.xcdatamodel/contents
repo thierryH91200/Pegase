@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="EntityAccount" representedClassName=".EntityAccount" syncable="YES">
+        <attribute name="dateEcheancier" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isAccount" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isFolder" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isHeader" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isRoot" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nameImage" optional="YES" attributeType="String"/>
+        <attribute name="solde" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="banque" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="EntityBanque" inverseName="account" inverseEntity="EntityBanque"/>
+        <relationship name="carnetCheques" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityCarnetCheques" inverseName="account" inverseEntity="EntityCarnetCheques"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="EntityAccount" inverseName="parent" inverseEntity="EntityAccount"/>
+        <relationship name="compteLie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityEcheancier" inverseName="compteLie" inverseEntity="EntityEcheancier"/>
+        <relationship name="echeanciers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityEcheancier" inverseName="account" inverseEntity="EntityEcheancier"/>
+        <relationship name="identite" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="EntityIdentite" inverseName="account" inverseEntity="EntityIdentite"/>
+        <relationship name="initCompte" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="EntityInitCompte" inverseName="account" inverseEntity="EntityInitCompte"/>
+        <relationship name="modePaiement" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityModePaiement" inverseName="account" inverseEntity="EntityModePaiement"/>
+        <relationship name="operations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityOperations" inverseName="account" inverseEntity="EntityOperations"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="children" inverseEntity="EntityAccount"/>
+        <relationship name="preference" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="EntityPreference" inverseName="account" inverseEntity="EntityPreference"/>
+        <relationship name="rubrique" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityRubrique" inverseName="account" inverseEntity="EntityRubrique"/>
+    </entity>
+    <entity name="EntityBanque" representedClassName=".EntityBanque" syncable="YES" codeGenerationType="class">
+        <attribute name="adresse" optional="YES" attributeType="String"/>
+        <attribute name="banque" optional="YES" attributeType="String"/>
+        <attribute name="complement" optional="YES" attributeType="String"/>
+        <attribute name="cp" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="fonction" optional="YES" attributeType="String"/>
+        <attribute name="mobile" optional="YES" attributeType="String"/>
+        <attribute name="nom" optional="YES" attributeType="String"/>
+        <attribute name="pays" optional="YES" attributeType="String"/>
+        <attribute name="telephone" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="ville" optional="YES" attributeType="String"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="banque" inverseEntity="EntityAccount"/>
+    </entity>
+    <entity name="EntityCarnetCheques" representedClassName=".EntityCarnetCheques" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nbCheques" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="numPremier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="numSuivant" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="prefix" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="carnetCheques" inverseEntity="EntityAccount"/>
+    </entity>
+    <entity name="EntityCategory" representedClassName="EntityCategory" syncable="YES">
+        <attribute name="name" attributeType="String"/>
+        <attribute name="objectif" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="echeancier" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntityEcheancier" inverseName="category" inverseEntity="EntityEcheancier"/>
+        <relationship name="preference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityPreference" inverseName="category" inverseEntity="EntityPreference"/>
+        <relationship name="rubrique" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityRubrique" inverseName="category" inverseEntity="EntityRubrique"/>
+        <relationship name="sousOperations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntitySousOperations" inverseName="category" inverseEntity="EntitySousOperations"/>
+    </entity>
+    <entity name="EntityEcheancier" representedClassName=".EntityEcheancier" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="dateCree" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateDebut" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateFin" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateModifie" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateValeur" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="frequence" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="libelle" optional="YES" attributeType="String"/>
+        <attribute name="nextOccurence" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="occurence" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="typeFrequence" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="echeanciers" inverseEntity="EntityAccount"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityCategory" inverseName="echeancier" inverseEntity="EntityCategory"/>
+        <relationship name="compteLie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="compteLie" inverseEntity="EntityAccount"/>
+        <relationship name="modePaiement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityModePaiement" inverseName="echeancier" inverseEntity="EntityModePaiement"/>
+    </entity>
+    <entity name="EntityIdentite" representedClassName=".EntityIdentite" syncable="YES" codeGenerationType="class">
+        <attribute name="idAdresse" optional="YES" attributeType="String"/>
+        <attribute name="idComplement" optional="YES" attributeType="String"/>
+        <attribute name="idCp" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idEmail" optional="YES" attributeType="String"/>
+        <attribute name="idMobile" optional="YES" attributeType="String"/>
+        <attribute name="idName" optional="YES" attributeType="String" defaultValueString="&quot;&quot;"/>
+        <attribute name="idNameImage" optional="YES" attributeType="String"/>
+        <attribute name="idPays" optional="YES" attributeType="String"/>
+        <attribute name="idPrenom" optional="YES" attributeType="String"/>
+        <attribute name="idTelephone" optional="YES" attributeType="String"/>
+        <attribute name="idVille" optional="YES" attributeType="String"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="identite" inverseEntity="EntityAccount"/>
+    </entity>
+    <entity name="EntityInitCompte" representedClassName=".EntityInitCompte" syncable="YES" codeGenerationType="class">
+        <attribute name="bic" optional="YES" attributeType="String"/>
+        <attribute name="cleRib" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="codeBanque" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="codeCompte" optional="YES" attributeType="String"/>
+        <attribute name="codeGuichet" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="engage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="iban1" optional="YES" attributeType="String"/>
+        <attribute name="iban2" optional="YES" attributeType="String"/>
+        <attribute name="iban3" optional="YES" attributeType="String"/>
+        <attribute name="iban4" optional="YES" attributeType="String"/>
+        <attribute name="iban5" optional="YES" attributeType="String"/>
+        <attribute name="iban6" optional="YES" attributeType="String"/>
+        <attribute name="iban7" optional="YES" attributeType="String"/>
+        <attribute name="iban8" optional="YES" attributeType="String"/>
+        <attribute name="iban9" optional="YES" attributeType="String"/>
+        <attribute name="prevu" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="realise" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="initCompte" inverseEntity="EntityAccount"/>
+    </entity>
+    <entity name="EntityModePaiement" representedClassName=".EntityModePaiement" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName=""/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="modePaiement" inverseEntity="EntityAccount"/>
+        <relationship name="echeancier" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntityEcheancier" inverseName="modePaiement" inverseEntity="EntityEcheancier"/>
+        <relationship name="operations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntityOperations" inverseName="modePaiement" inverseEntity="EntityOperations"/>
+        <relationship name="preference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityPreference" inverseName="modePaiement" inverseEntity="EntityPreference"/>
+    </entity>
+    <entity name="EntityOperations" representedClassName=".EntityOperations" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="dateCree" optional="YES" attributeType="Date" defaultDateTimeInterval="526815360" usesScalarValueType="NO"/>
+        <attribute name="dateModifie" optional="YES" attributeType="Date" defaultDateTimeInterval="526815360" usesScalarValueType="NO"/>
+        <attribute name="dateOperation" optional="YES" attributeType="Date" defaultDateTimeInterval="526815360" usesScalarValueType="NO"/>
+        <attribute name="datePointage" optional="YES" attributeType="Date" defaultDateTimeInterval="526815360" usesScalarValueType="NO"/>
+        <attribute name="numCheque" optional="YES" attributeType="String"/>
+        <attribute name="releveBancaire" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sectionIdentifier" optional="YES" transient="YES" attributeType="String"/>
+        <attribute name="sectionYear" optional="YES" transient="YES" attributeType="String"/>
+        <attribute name="solde" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="statut" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="operations" inverseEntity="EntityAccount"/>
+        <relationship name="modePaiement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityModePaiement" inverseName="operations" inverseEntity="EntityModePaiement"/>
+        <relationship name="operationLiee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityOperations" inverseName="operationLiee" inverseEntity="EntityOperations"/>
+        <relationship name="sousOperations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntitySousOperations" inverseName="operation" inverseEntity="EntitySousOperations"/>
+    </entity>
+    <entity name="EntityPreference" representedClassName="EntityPreference" syncable="YES" codeGenerationType="class">
+        <attribute name="signe" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="statut" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="preference" inverseEntity="EntityAccount"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityCategory" inverseName="preference" inverseEntity="EntityCategory"/>
+        <relationship name="modePaiement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityModePaiement" inverseName="preference" inverseEntity="EntityModePaiement"/>
+    </entity>
+    <entity name="EntityRubrique" representedClassName="EntityRubrique" syncable="YES">
+        <attribute name="color" attributeType="Transformable" valueTransformerName=""/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="total" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="rubrique" inverseEntity="EntityAccount"/>
+        <relationship name="category" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityCategory" inverseName="rubrique" inverseEntity="EntityCategory"/>
+    </entity>
+    <entity name="EntitySousOperations" representedClassName="EntitySousOperations" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="libelle" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityCategory" inverseName="sousOperations" inverseEntity="EntityCategory"/>
+        <relationship name="operation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityOperations" inverseName="sousOperations" inverseEntity="EntityOperations"/>
+    </entity>
+    <elements>
+        <element name="EntityAccount" positionX="-533" positionY="27" width="128" height="373"/>
+        <element name="EntityBanque" positionX="-72.7109375" positionY="-148.14453125" width="128" height="238"/>
+        <element name="EntityCarnetCheques" positionX="151" positionY="-45" width="128" height="148"/>
+        <element name="EntityCategory" positionX="621" positionY="542" width="128" height="148"/>
+        <element name="EntityEcheancier" positionX="-18.20703125" positionY="345.83203125" width="128" height="283"/>
+        <element name="EntityIdentite" positionX="-542" positionY="-324" width="128" height="223"/>
+        <element name="EntityInitCompte" positionX="-758" positionY="108" width="128" height="313"/>
+        <element name="EntityModePaiement" positionX="-603" positionY="458" width="128" height="148"/>
+        <element name="EntityOperations" positionX="-243" positionY="657" width="128" height="283"/>
+        <element name="EntityPreference" positionX="-306" positionY="-234" width="128" height="118"/>
+        <element name="EntityRubrique" positionX="160" positionY="192" width="128" height="133"/>
+        <element name="EntitySousOperations" positionX="121.11328125" positionY="806.98828125" width="128" height="103"/>
+    </elements>
+</model>
