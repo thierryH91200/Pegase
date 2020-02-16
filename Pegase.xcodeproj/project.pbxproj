@@ -36,12 +36,10 @@
 		03213B3D23F9053A00002DD7 /* OperationViewControllerOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B3723F9053A00002DD7 /* OperationViewControllerOutline.swift */; };
 		03213B3E23F9053A00002DD7 /* OperationViewControllerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B3823F9053A00002DD7 /* OperationViewControllerPopUp.swift */; };
 		03213B3F23F9053A00002DD7 /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B3923F9053A00002DD7 /* OperationViewController.swift */; };
-		03213B4023F9053A00002DD7 /* OperationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B3A23F9053A00002DD7 /* OperationViewController.xib */; };
 		03213B4123F9053A00002DD7 /* OperationViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B3B23F9053A00002DD7 /* OperationViewControllerDelegate.swift */; };
 		03213B4223F9053A00002DD7 /* OperationViewControllerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B3C23F9053A00002DD7 /* OperationViewControllerAction.swift */; };
 		03213B4723F9055400002DD7 /* SousOperationModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4323F9055400002DD7 /* SousOperationModalWindowController.swift */; };
 		03213B4823F9055400002DD7 /* SousOperationComboBoxDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4423F9055400002DD7 /* SousOperationComboBoxDelegate.swift */; };
-		03213B4923F9055400002DD7 /* SousOperationModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B4523F9055400002DD7 /* SousOperationModalWindowController.xib */; };
 		03213B4A23F9055400002DD7 /* SousOperationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4623F9055400002DD7 /* SousOperationAction.swift */; };
 		03213B5323F9058800002DD7 /* SuggestibleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4C23F9058700002DD7 /* SuggestibleTextFieldCell.swift */; };
 		03213B5423F9058800002DD7 /* HighlightingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4D23F9058700002DD7 /* HighlightingView.swift */; };
@@ -143,6 +141,11 @@
 		03213C2823F90C3300002DD7 /* ChequierModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213C2423F90C3200002DD7 /* ChequierModalWindowController.swift */; };
 		03213C2923F90C3300002DD7 /* ChequiersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C2523F90C3300002DD7 /* ChequiersViewController.xib */; };
 		03213C2C23F90DDF00002DD7 /* AdvancedFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C2E23F90DDF00002DD7 /* AdvancedFilterViewController.xib */; };
+		03213C3723F924D600002DD7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C3923F924D600002DD7 /* MainMenu.xib */; };
+		03213C4223F925B200002DD7 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C4423F925B200002DD7 /* MainWindowController.xib */; };
+		03213C4D23F9269000002DD7 /* OperationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C4F23F9269000002DD7 /* OperationViewController.xib */; };
+		03213C5823F926AD00002DD7 /* SousOperationModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C5A23F926AD00002DD7 /* SousOperationModalWindowController.xib */; };
+		03213C6423F9287E00002DD7 /* SourceListViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213C6323F9287E00002DD7 /* SourceListViewDelegate.swift */; };
 		034EC83323F87C60006944DD /* PegaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC83223F87C60006944DD /* PegaseUITests.swift */; };
 		034EC89823F87CC0006944DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89723F87CC0006944DD /* README.md */; };
 		034EC89E23F87CE2006944DD /* CodingGuidelines.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89A23F87CE1006944DD /* CodingGuidelines.md */; };
@@ -158,7 +161,6 @@
 		034EC8B223F87CFA006944DD /* Capture7.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8A923F87CFA006944DD /* Capture7.png */; };
 		034EC8B323F87CFA006944DD /* Capture2.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8AA23F87CFA006944DD /* Capture2.png */; };
 		034EC8B423F87CFB006944DD /* Capture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8AB23F87CFA006944DD /* Capture1.png */; };
-		034EC8B723F87E32006944DD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8B623F87E31006944DD /* Info.plist */; };
 		034EC8BB23F87E8B006944DD /* AdvancedFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BA23F87E8B006944DD /* AdvancedFilterViewController.swift */; };
 		034EC8BD23F87E97006944DD /* NSPredicateEditorRowTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BC23F87E97006944DD /* NSPredicateEditorRowTemplate.swift */; };
 		034EC8C223F87EA1006944DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BE23F87EA1006944DD /* Document.swift */; };
@@ -169,11 +171,9 @@
 		034EC8D123F87EB2006944DD /* RateWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8C723F87EB1006944DD /* RateWindowController.swift */; };
 		034EC8D223F87EB2006944DD /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8C823F87EB1006944DD /* MainWindowController.swift */; };
 		034EC8D323F87EB2006944DD /* RateConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8C923F87EB1006944DD /* RateConfigure.swift */; };
-		034EC8D423F87EB2006944DD /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8CA23F87EB1006944DD /* MainWindowController.xib */; };
 		034EC8D523F87EB2006944DD /* MainWindowToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8CB23F87EB1006944DD /* MainWindowToolBar.swift */; };
 		034EC8D623F87EB2006944DD /* MainWindowSplitViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8CC23F87EB2006944DD /* MainWindowSplitViewDelegate.swift */; };
 		034EC8D723F87EB2006944DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8CD23F87EB2006944DD /* Localizable.strings */; };
-		034EC8D823F87EB2006944DD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8CE23F87EB2006944DD /* MainMenu.xib */; };
 		034EC8E223F87EDB006944DD /* EntityAccount+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DA23F87EDB006944DD /* EntityAccount+CoreDataClass.swift */; };
 		034EC8E323F87EDB006944DD /* EntityOperations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DB23F87EDB006944DD /* EntityOperations+CoreDataClass.swift */; };
 		034EC8E423F87EDB006944DD /* EntityRubrique+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DC23F87EDB006944DD /* EntityRubrique+CoreDataProperties.swift */; };
@@ -349,12 +349,10 @@
 		03213B3723F9053A00002DD7 /* OperationViewControllerOutline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewControllerOutline.swift; sourceTree = "<group>"; };
 		03213B3823F9053A00002DD7 /* OperationViewControllerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewControllerPopUp.swift; sourceTree = "<group>"; };
 		03213B3923F9053A00002DD7 /* OperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
-		03213B3A23F9053A00002DD7 /* OperationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperationViewController.xib; sourceTree = "<group>"; };
 		03213B3B23F9053A00002DD7 /* OperationViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewControllerDelegate.swift; sourceTree = "<group>"; };
 		03213B3C23F9053A00002DD7 /* OperationViewControllerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewControllerAction.swift; sourceTree = "<group>"; };
 		03213B4323F9055400002DD7 /* SousOperationModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SousOperationModalWindowController.swift; sourceTree = "<group>"; };
 		03213B4423F9055400002DD7 /* SousOperationComboBoxDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SousOperationComboBoxDelegate.swift; sourceTree = "<group>"; };
-		03213B4523F9055400002DD7 /* SousOperationModalWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SousOperationModalWindowController.xib; sourceTree = "<group>"; };
 		03213B4623F9055400002DD7 /* SousOperationAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SousOperationAction.swift; sourceTree = "<group>"; };
 		03213B4C23F9058700002DD7 /* SuggestibleTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestibleTextFieldCell.swift; sourceTree = "<group>"; };
 		03213B4D23F9058700002DD7 /* HighlightingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightingView.swift; sourceTree = "<group>"; };
@@ -460,6 +458,27 @@
 		03213C3223F90DEA00002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AdvancedFilterViewController.strings; sourceTree = "<group>"; };
 		03213C3423F90DEB00002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AdvancedFilterViewController.strings; sourceTree = "<group>"; };
 		03213C3623F90DEC00002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AdvancedFilterViewController.strings; sourceTree = "<group>"; };
+		03213C3823F924D600002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		03213C3B23F924DD00002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		03213C3D23F924DE00002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		03213C3F23F924DE00002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		03213C4123F924DF00002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		03213C4323F925B200002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindowController.xib; sourceTree = "<group>"; };
+		03213C4623F925B700002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainWindowController.strings; sourceTree = "<group>"; };
+		03213C4823F925B800002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/MainWindowController.strings; sourceTree = "<group>"; };
+		03213C4A23F925B900002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainWindowController.strings; sourceTree = "<group>"; };
+		03213C4C23F925B900002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainWindowController.strings; sourceTree = "<group>"; };
+		03213C4E23F9269000002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OperationViewController.xib; sourceTree = "<group>"; };
+		03213C5123F9269200002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OperationViewController.strings; sourceTree = "<group>"; };
+		03213C5323F9269300002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/OperationViewController.strings; sourceTree = "<group>"; };
+		03213C5523F9269400002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/OperationViewController.strings; sourceTree = "<group>"; };
+		03213C5723F9269600002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/OperationViewController.strings; sourceTree = "<group>"; };
+		03213C5923F926AD00002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SousOperationModalWindowController.xib; sourceTree = "<group>"; };
+		03213C5C23F926B200002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SousOperationModalWindowController.strings; sourceTree = "<group>"; };
+		03213C5E23F926B200002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/SousOperationModalWindowController.strings; sourceTree = "<group>"; };
+		03213C6023F926B300002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SousOperationModalWindowController.strings; sourceTree = "<group>"; };
+		03213C6223F926B400002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SousOperationModalWindowController.strings; sourceTree = "<group>"; };
+		03213C6323F9287E00002DD7 /* SourceListViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceListViewDelegate.swift; sourceTree = "<group>"; };
 		034EC81623F87C5B006944DD /* Pegase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pegase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EC82E23F87C5F006944DD /* PegaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PegaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EC83223F87C60006944DD /* PegaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegaseUITests.swift; sourceTree = "<group>"; };
@@ -493,11 +512,9 @@
 		034EC8C723F87EB1006944DD /* RateWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateWindowController.swift; sourceTree = "<group>"; };
 		034EC8C823F87EB1006944DD /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		034EC8C923F87EB1006944DD /* RateConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateConfigure.swift; sourceTree = "<group>"; };
-		034EC8CA23F87EB1006944DD /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		034EC8CB23F87EB1006944DD /* MainWindowToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowToolBar.swift; sourceTree = "<group>"; };
 		034EC8CC23F87EB2006944DD /* MainWindowSplitViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowSplitViewDelegate.swift; sourceTree = "<group>"; };
 		034EC8CD23F87EB2006944DD /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		034EC8CE23F87EB2006944DD /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		034EC8DA23F87EDB006944DD /* EntityAccount+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityAccount+CoreDataClass.swift"; sourceTree = "<group>"; };
 		034EC8DB23F87EDB006944DD /* EntityOperations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityOperations+CoreDataClass.swift"; sourceTree = "<group>"; };
 		034EC8DC23F87EDB006944DD /* EntityRubrique+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityRubrique+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -641,14 +658,14 @@
 		03213B3523F9051600002DD7 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				03213B4B23F9056F00002DD7 /* Suggestions Popup */,
 				03213B3923F9053A00002DD7 /* OperationViewController.swift */,
-				03213B3A23F9053A00002DD7 /* OperationViewController.xib */,
+				03213C4F23F9269000002DD7 /* OperationViewController.xib */,
 				03213B3C23F9053A00002DD7 /* OperationViewControllerAction.swift */,
 				03213B3B23F9053A00002DD7 /* OperationViewControllerDelegate.swift */,
 				03213B3723F9053A00002DD7 /* OperationViewControllerOutline.swift */,
 				03213B3823F9053A00002DD7 /* OperationViewControllerPopUp.swift */,
 				03213B3623F9051D00002DD7 /* SousOperation */,
+				03213B4B23F9056F00002DD7 /* Suggestions Popup */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -659,7 +676,7 @@
 				03213B4623F9055400002DD7 /* SousOperationAction.swift */,
 				03213B4423F9055400002DD7 /* SousOperationComboBoxDelegate.swift */,
 				03213B4323F9055400002DD7 /* SousOperationModalWindowController.swift */,
-				03213B4523F9055400002DD7 /* SousOperationModalWindowController.xib */,
+				03213C5A23F926AD00002DD7 /* SousOperationModalWindowController.xib */,
 			);
 			name = SousOperation;
 			sourceTree = "<group>";
@@ -719,6 +736,7 @@
 				03213B9323F9091200002DD7 /* Feed.swift */,
 				03213B9523F9091200002DD7 /* Feeds.plist */,
 				03213B9423F9091200002DD7 /* SourceListViewController.swift */,
+				03213C6323F9287E00002DD7 /* SourceListViewDelegate.swift */,
 				03213B9723F9091200002DD7 /* SourceListViewController.xib */,
 				03213B9623F9091200002DD7 /* SourceListViewDataSource.swift */,
 			);
@@ -995,9 +1013,9 @@
 				03213AEF23F9045600002DD7 /* Import */,
 				03213B2623F904F300002DD7 /* ListeOperations */,
 				034EC8CD23F87EB2006944DD /* Localizable.strings */,
-				034EC8CE23F87EB2006944DD /* MainMenu.xib */,
+				03213C3923F924D600002DD7 /* MainMenu.xib */,
 				034EC8C823F87EB1006944DD /* MainWindowController.swift */,
-				034EC8CA23F87EB1006944DD /* MainWindowController.xib */,
+				03213C4423F925B200002DD7 /* MainWindowController.xib */,
 				034EC8C523F87EB1006944DD /* MainWindowDelegate.swift */,
 				034EC8CC23F87EB2006944DD /* MainWindowSplitViewDelegate.swift */,
 				034EC8CB23F87EB1006944DD /* MainWindowToolBar.swift */,
@@ -1383,7 +1401,7 @@
 				034EC89E23F87CE2006944DD /* CodingGuidelines.md in Resources */,
 				03213B0923F9048200002DD7 /* TTFormatViewControllerAccessory.xib in Resources */,
 				03213B2523F904DE00002DD7 /* WebViewController.xib in Resources */,
-				034EC8D823F87EB2006944DD /* MainMenu.xib in Resources */,
+				03213C3723F924D600002DD7 /* MainMenu.xib in Resources */,
 				034ECB7123F88044006944DD /* GroupModalWindowController.xib in Resources */,
 				03213BB423F909C300002DD7 /* SliderViewController.xib in Resources */,
 				03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */,
@@ -1411,7 +1429,6 @@
 				034ECA7723F87FAE006944DD /* GroupeCompteViewController.xib in Resources */,
 				03213BE723F90B3F00002DD7 /* EcheanciersViewController.xib in Resources */,
 				03213C2C23F90DDF00002DD7 /* AdvancedFilterViewController.xib in Resources */,
-				034EC8B723F87E32006944DD /* Info.plist in Resources */,
 				03213BD423F90AAB00002DD7 /* icons8-paypal-100.png in Resources */,
 				03213B6A23F905E000002DD7 /* GeneralViewController.xib in Resources */,
 				03213BCB23F90AAB00002DD7 /* icons8-wallet-80.png in Resources */,
@@ -1421,7 +1438,7 @@
 				03213B9C23F9091200002DD7 /* SourceListViewController.xib in Resources */,
 				034EC91923F87F7E006944DD /* AccessibilityImageDescriptions.strings in Resources */,
 				03213BA423F9093700002DD7 /* SplashScreenWindowController.xib in Resources */,
-				034EC8D423F87EB2006944DD /* MainWindowController.xib in Resources */,
+				03213C4223F925B200002DD7 /* MainWindowController.xib in Resources */,
 				034ECB6A23F88033006944DD /* KSRetailCollectionViewItem.xib in Resources */,
 				03213BFD23F90BB600002DD7 /* PreferenceOperationViewController.xib in Resources */,
 				034EC8B123F87CFA006944DD /* Capture3.png in Resources */,
@@ -1442,12 +1459,12 @@
 				03213B7F23F9082600002DD7 /* CategorieBarController1.xib in Resources */,
 				03213C2723F90C3300002DD7 /* ChequierModalWindowController.xib in Resources */,
 				03213B2023F904D600002DD7 /* TresorerieController.xib in Resources */,
-				03213B4923F9055400002DD7 /* SousOperationModalWindowController.xib in Resources */,
+				03213C5823F926AD00002DD7 /* SousOperationModalWindowController.xib in Resources */,
 				03213B9023F9086600002DD7 /* RubriquePieController.xib in Resources */,
 				034ECB6923F88033006944DD /* PopOverModalViewController.xib in Resources */,
 				03213BBA23F909C300002DD7 /* SliderViewHorizontalController.xib in Resources */,
 				03213BD523F90AAB00002DD7 /* MyDB.sqlite in Resources */,
-				03213B4023F9053A00002DD7 /* OperationViewController.xib in Resources */,
+				03213C4D23F9269000002DD7 /* OperationViewController.xib in Resources */,
 				03213BD023F90AAB00002DD7 /* icons8-purse-100.png in Resources */,
 				03213B5923F9058800002DD7 /* suggestionprototype.xib in Resources */,
 				03213B8423F9083300002DD7 /* ModePaiementPieController.xib in Resources */,
@@ -1482,7 +1499,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 		03213C2B23F90D1300002DD7 /* Increment Build */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1595,6 +1612,7 @@
 				03213B1223F9048D00002DD7 /* CSV.swift in Sources */,
 				034EC8C223F87EA1006944DD /* Document.swift in Sources */,
 				03213B6923F905E000002DD7 /* GeneralViewController.swift in Sources */,
+				03213C6423F9287E00002DD7 /* SourceListViewDelegate.swift in Sources */,
 				03213B7323F905EE00002DD7 /* Preferenceable.swift in Sources */,
 				03213BB323F909C300002DD7 /* ColorUtilities.swift in Sources */,
 				03213B7023F905EE00002DD7 /* util.swift in Sources */,
@@ -1680,6 +1698,54 @@
 				03213C3623F90DEC00002DD7 /* en */,
 			);
 			name = AdvancedFilterViewController.xib;
+			sourceTree = "<group>";
+		};
+		03213C3923F924D600002DD7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03213C3823F924D600002DD7 /* Base */,
+				03213C3B23F924DD00002DD7 /* es */,
+				03213C3D23F924DE00002DD7 /* it */,
+				03213C3F23F924DE00002DD7 /* fr */,
+				03213C4123F924DF00002DD7 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		03213C4423F925B200002DD7 /* MainWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03213C4323F925B200002DD7 /* Base */,
+				03213C4623F925B700002DD7 /* es */,
+				03213C4823F925B800002DD7 /* it */,
+				03213C4A23F925B900002DD7 /* fr */,
+				03213C4C23F925B900002DD7 /* en */,
+			);
+			name = MainWindowController.xib;
+			sourceTree = "<group>";
+		};
+		03213C4F23F9269000002DD7 /* OperationViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03213C4E23F9269000002DD7 /* Base */,
+				03213C5123F9269200002DD7 /* en */,
+				03213C5323F9269300002DD7 /* fr */,
+				03213C5523F9269400002DD7 /* it */,
+				03213C5723F9269600002DD7 /* es */,
+			);
+			name = OperationViewController.xib;
+			sourceTree = "<group>";
+		};
+		03213C5A23F926AD00002DD7 /* SousOperationModalWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03213C5923F926AD00002DD7 /* Base */,
+				03213C5C23F926B200002DD7 /* es */,
+				03213C5E23F926B200002DD7 /* it */,
+				03213C6023F926B300002DD7 /* en */,
+				03213C6223F926B400002DD7 /* fr */,
+			);
+			name = SousOperationModalWindowController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
