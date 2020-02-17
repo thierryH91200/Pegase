@@ -28,6 +28,7 @@ final class MyPrintViewOutline: NSView
     let bottomMargin: CGFloat =  0.0
     var leftMargin: CGFloat = 0
     var topMargin: CGFloat = 0
+    
     var numberOfRows = 0
     var numberOfRowsByPage = 0
 

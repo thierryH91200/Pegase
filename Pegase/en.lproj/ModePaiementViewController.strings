@@ -1,0 +1,60 @@
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "3mj-Dv-puu"; */
+"3mj-Dv-puu.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "4JG-B1-sxb"; */
+"4JG-B1-sxb.title" = "Table View Cell";
+
+/* Class = "NSTableColumn"; headerCell.title = "Color"; ObjectID = "4wM-cm-o4Q"; */
+"4wM-cm-o4Q.headerCell.title" = "Color";
+
+/* Class = "NSTableColumn"; headerCell.title = "Surname"; ObjectID = "5ky-cX-ejd"; */
+"5ky-cX-ejd.headerCell.title" = "Surname";
+
+/* Class = "NSTableColumn"; headerCell.title = "Name"; ObjectID = "87f-Hc-Uiu"; */
+"87f-Hc-Uiu.headerCell.title" = "Name";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "CSS-8r-Nl7"; */
+"CSS-8r-Nl7.title" = "Text Cell";
+
+/* Class = "NSTableColumn"; headerCell.title = "Number"; ObjectID = "Ciz-dI-09N"; */
+"Ciz-dI-09N.headerCell.title" = "Number";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "DX1-Fy-fAS"; */
+"DX1-Fy-fAS.title" = "Table View Cell";
+
+/* Class = "NSMenuItem"; title = "Edit mode"; ObjectID = "P7b-4r-fn7"; */
+"P7b-4r-fn7.title" = "Edit mode";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "XRm-gd-TPy"; */
+"XRm-gd-TPy.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "Remove mode"; ObjectID = "Xjc-Ez-JdF"; */
+"Xjc-Ez-JdF.title" = "Remove mode";
+
+/* Class = "NSMenuItem"; title = "Create mode"; ObjectID = "b7E-lQ-ZD1"; */
+"b7E-lQ-ZD1.title" = "Create mode";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "dA6-fC-zGK"; */
+"dA6-fC-zGK.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "eJv-rm-dD7"; */
+"eJv-rm-dD7.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "gEr-Q9-ddV"; */
+"gEr-Q9-ddV.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "hZV-Vo-lsX"; */
+"hZV-Vo-lsX.title" = "Text Cell";
+
+/* Class = "NSTableColumn"; headerCell.title = "Account"; ObjectID = "htd-JM-ocA"; */
+"htd-JM-ocA.headerCell.title" = "Account";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "uxh-9N-ZHT"; */
+"uxh-9N-ZHT.title" = "Table View Cell";
+
+/* Class = "NSTableColumn"; headerCell.title = "Name"; ObjectID = "vyS-R4-sMZ"; */
+"vyS-R4-sMZ.headerCell.title" = "Name";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "zyb-Ko-403"; */
+"zyb-Ko-403.title" = "Text Cell";

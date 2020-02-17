@@ -1,0 +1,21 @@
+
+/* Class = "NSTextFieldCell"; title = "Color"; ObjectID = "G7z-lj-Jf4"; */
+"G7z-lj-Jf4.title" = "Color";
+
+/* Class = "NSWindow"; title = "Mode Paiement"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Mode Paiement";
+
+/* Class = "NSButtonCell"; title = "Mode création"; ObjectID = "f1v-ah-cLU"; */
+"f1v-ah-cLU.title" = "Mode création";
+
+/* Class = "NSTextFieldCell"; title = "Mode Paiement"; ObjectID = "fhH-ed-s6k"; */
+"fhH-ed-s6k.title" = "Mode Paiement";
+
+/* Class = "NSTextFieldCell"; title = "Name"; ObjectID = "gRi-NO-pFQ"; */
+"gRi-NO-pFQ.title" = "Name";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "gem-cu-3Ow"; */
+"gem-cu-3Ow.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "m9e-pW-Y7v"; */
+"m9e-pW-Y7v.title" = "OK";
