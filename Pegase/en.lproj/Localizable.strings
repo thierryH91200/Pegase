@@ -11,13 +11,13 @@
 "Document.Bank_Account" = "Bank account";
 "Document.Carte_de_crédit" = "Bank card";
 "Document.Compte_Courant" = "Current account";
-"Document.Epargne" = "Sauver";
+"Document.Epargne" = "Save";
 "Document.Especes" = "Cash account";
 "Document.File_Uploaded" = "File Uploaded";
 "Document.OpenProjectPanelMessage" = "OpenProject";
 
 // MARK: General
-"General.Account" = "Compte";
+"General.Account" = "Account";
 "General.Account1" = "Compte1";
 "General.Amount" = "Amount";
 "General.BankAccount.Plural" = "Bank accounts";

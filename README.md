@@ -104,6 +104,12 @@ Pegase now include Carthage
 
 Feel free to contribute to this project by providing ideas or opening pull requests with new features or solving an existing issue.
 
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/thierryH91200/Pegase.svg)](https://starchart.cc/thierryH91200/Pegase)
+
+
 
 $(SRCROOT)/Carthage/Build/Mac/Charts.framework
 $(SRCROOT)/Carthage/Build/Mac/SwiftDate.framework
+
