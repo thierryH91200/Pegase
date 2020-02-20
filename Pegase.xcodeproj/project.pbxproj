@@ -305,13 +305,6 @@
 			remoteGlobalIDString = 6434DD8C20C809B2007626EF;
 			remoteInfo = TestApplication;
 		};
-		03ACCCCF23FACFFF00098CFC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 03ACCCCB23FACFFE00098CFC /* TFDate.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0314C3DE23D6D68700C7A76E;
-			remoteInfo = TFDate;
-		};
 		03ACCCD523FAD00500098CFC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 03ACCCD123FAD00500098CFC /* TFDate.xcodeproj */;
@@ -622,7 +615,6 @@
 		034ECB6D23F88044006944DD /* GroupModalWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupModalWindowController.xib; sourceTree = "<group>"; };
 		034ECB6E23F88044006944DD /* GroupModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupModalWindowController.swift; sourceTree = "<group>"; };
 		034ECB6F23F88044006944DD /* CompteModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompteModalWindowController.swift; sourceTree = "<group>"; };
-		03ACCCCB23FACFFE00098CFC /* TFDate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TFDate.xcodeproj; path = "../../../NSCustomControl/ZZZ DatePicker/TFDate/TFDate/TFDate.xcodeproj"; sourceTree = "<group>"; };
 		03ACCCD123FAD00500098CFC /* TFDate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TFDate.xcodeproj; path = "../../NSCustomControl/ZZZ DatePicker/TFDate/TFDate/TFDate.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1146,7 +1138,6 @@
 		034EC8A223F87CE7006944DD /* Doc */ = {
 			isa = PBXGroup;
 			children = (
-				03ACCCCB23FACFFE00098CFC /* TFDate.xcodeproj */,
 				034EC8AB23F87CFA006944DD /* Capture1.png */,
 				034EC8AA23F87CFA006944DD /* Capture2.png */,
 				034EC8A823F87CFA006944DD /* Capture3.png */,
@@ -1261,14 +1252,6 @@
 			name = PopUp;
 			sourceTree = "<group>";
 		};
-		03ACCCCC23FACFFE00098CFC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				03ACCCD023FACFFF00098CFC /* TFDate.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		03ACCCD223FAD00500098CFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1372,10 +1355,6 @@
 					ProductGroup = 03ACCCD223FAD00500098CFC /* Products */;
 					ProjectRef = 03ACCCD123FAD00500098CFC /* TFDate.xcodeproj */;
 				},
-				{
-					ProductGroup = 03ACCCCC23FACFFE00098CFC /* Products */;
-					ProjectRef = 03ACCCCB23FACFFE00098CFC /* TFDate.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1454,13 +1433,6 @@
 			fileType = wrapper.application;
 			path = TestApplication.app;
 			remoteRef = 034EC89523F87CAD006944DD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		03ACCCD023FACFFF00098CFC /* TFDate.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = TFDate.framework;
-			remoteRef = 03ACCCCF23FACFFF00098CFC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		03ACCCD623FAD00500098CFC /* TFDate.framework */ = {
@@ -1968,6 +1940,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2028,6 +2001,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2083,6 +2057,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pegase/Pegase.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Pegase/Info.plist;
@@ -2103,6 +2078,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pegase/Pegase.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Pegase/Info.plist;

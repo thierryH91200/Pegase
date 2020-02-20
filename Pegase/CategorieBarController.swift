@@ -119,7 +119,8 @@ final class CategorieBarController: NSViewController
         xAxis.drawGridLinesEnabled     = true
         xAxis.granularity              = 1
         xAxis.enabled                  = true
-        
+        xAxis.labelTextColor           = .labelColor
+
         // MARK: leftAxis
         let leftAxis                   = chartView.leftAxis
         leftAxis.labelFont             = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
@@ -129,6 +130,8 @@ final class CategorieBarController: NSViewController
         leftAxis.granularityEnabled    = true
         leftAxis.granularity           = 1
         leftAxis.valueFormatter        = CurrencyValueFormatter()
+        leftAxis.labelTextColor        = .labelColor
+
         
         // MARK: rightAxis
         chartView.rightAxis.enabled    = false
@@ -183,7 +186,6 @@ final class CategorieBarController: NSViewController
         var color = NSColor.blue
         
         for listeOperation in listeOperations {
-            
             let sousOperations = listeOperation.sousOperations?.allObjects  as! [EntitySousOperations]
             for sousOperation in sousOperations {
                 name  = (sousOperation.category?.rubrique!.name)!

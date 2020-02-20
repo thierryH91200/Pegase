@@ -114,7 +114,8 @@ final class TresorerieController: NSViewController
         xAxis.spaceMin = xAxis.granularity / 5
         xAxis.spaceMax = xAxis.granularity / 5
         xAxis.labelRotationAngle = -45.0
-        
+        xAxis.labelTextColor           = .labelColor
+
 //        xAxis.nameAxis = "Date (s)"
 //        xAxis.nameAxisEnabled = true
         
@@ -125,8 +126,9 @@ final class TresorerieController: NSViewController
         leftAxis.drawGridLinesEnabled = true
         leftAxis.granularityEnabled = true
         leftAxis.yOffset = -9.0
-        
-//        leftAxis.nameAxis = "Montant"
+        leftAxis.labelTextColor           = .labelColor
+
+//        leftAxis.nameAxis = "Amount"
 //        leftAxis.nameAxisEnabled = true
 
         // MARK: rightAxis
@@ -214,8 +216,8 @@ final class TresorerieController: NSViewController
         if calendar.day(date2) == 1 {
             let dateStr = dateFormatter.string(from: date2)
             let llXAxis = ChartLimitLine(limit: index, label: dateStr)
-            llXAxis.lineColor = #colorLiteral(red: 0.08062536269, green: 0.2148533463, blue: 1, alpha: 1)
-            llXAxis.valueTextColor = NSColor.blue
+            llXAxis.lineColor = .linkColor
+            llXAxis.valueTextColor = NSColor.controlAccentColor
             llXAxis.valueFont = NSFont.systemFont(ofSize: CGFloat(12.0))
             llXAxis.labelPosition = .bottomRight
             

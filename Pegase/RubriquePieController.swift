@@ -115,7 +115,6 @@ final class RubriquePieController: NSViewController
         self.chartView.centerAttributedText = centerText
         self.chartView.chartDescription?.enabled = false
         self.chartView.noDataText = Localizations.Chart.No_chart_Data_Available
-        self.chartView.backgroundColor = .white
         
         centerText = NSMutableAttributedString(string: "Recettes")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
@@ -129,7 +128,6 @@ final class RubriquePieController: NSViewController
         self.chartView2.centerAttributedText = centerText
         self.chartView2.chartDescription?.enabled = false
         self.chartView2.noDataText = Localizations.Chart.No_chart_Data_Available
-        self.chartView2.backgroundColor = .white
     }
     
     private func updateChartData()
@@ -218,17 +216,19 @@ final class RubriquePieController: NSViewController
         dataSet.sliceSpace = 2.0
         dataSet.colors = colors
         dataSet.valueLinePart1OffsetPercentage = 0.8
-        dataSet.valueLinePart1Length = 0.2
-        dataSet.valueLinePart2Length = 0.4
+        dataSet.valueLinePart1Length = 0.4
+        dataSet.valueLinePart2Length = 0.5
         dataSet.xValuePosition = .outsideSlice
         dataSet.yValuePosition = .outsideSlice
-        
+        dataSet.entryLabelColor = .labelColor
+        dataSet.valueColors = [.labelColor]
+
         // MARK: PieChartData
         let data = PieChartData(dataSet: dataSet)
         
         data.setValueFormatter(DefaultValueFormatter(formatter: formatterPrice))
         data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!)
-        data.setValueTextColor(NSColor.black)
+        data.setValueTextColor(NSColor.labelColor)
         self.chartView.data = data
         self.chartView.highlightValues(nil)
     }
@@ -254,17 +254,19 @@ final class RubriquePieController: NSViewController
         dataSet.sliceSpace = 2.0
         dataSet.colors = colors
         dataSet.valueLinePart1OffsetPercentage = 0.8
-        dataSet.valueLinePart1Length = 0.2
-        dataSet.valueLinePart2Length = 0.4
+        dataSet.valueLinePart1Length = 0.4
+        dataSet.valueLinePart2Length = 0.5
         dataSet.xValuePosition = .outsideSlice
         dataSet.yValuePosition = .outsideSlice
+        dataSet.entryLabelColor = .labelColor
+
         
         // MARK: PieChartData
         let data = PieChartData(dataSet: dataSet)
         
         data.setValueFormatter(DefaultValueFormatter(formatter: formatterPrice))
         data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!)
-        data.setValueTextColor(NSColor.black)
+        data.setValueTextColor(NSColor.labelColor)
         self.chartView2.data = data
         self.chartView2.highlightValues(nil)
     }

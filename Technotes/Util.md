@@ -115,3 +115,8 @@ Affichage des opérations concernées pour la période donnée
 
 Possibilité de choisir facilement la date début et la date de fin pour pouvoir zoomer sur une période définie
 
+## Dark Mode
+
+// macOS
+let aColor = NSColor(named: NSColor.Name("customControlColor"))
+

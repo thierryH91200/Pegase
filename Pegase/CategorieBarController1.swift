@@ -121,10 +121,14 @@ final class CategorieBarController1: NSViewController
         xAxis.labelCount = 20
         xAxis.labelFont                = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
         xAxis.labelPosition            = .bottom
+        xAxis.labelTextColor           = .labelColor
+
         
         // MARK: leftAxis
         let leftAxis                   = chartView.leftAxis
         leftAxis.labelFont             = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        leftAxis.labelTextColor        = .labelColor
+
         leftAxis.labelCount            = 10
         leftAxis.granularityEnabled    = true
         leftAxis.granularity           = 1

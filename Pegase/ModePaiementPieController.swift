@@ -58,7 +58,6 @@ final class ModePaiementPieController: NSViewController {
         splitView.addSubview((sliderViewController?.view)!, positioned: .above, relativeTo: splitView)
         
         initChart()
-        
         updateAccount ()
     }
     
@@ -86,38 +85,46 @@ final class ModePaiementPieController: NSViewController {
 
     func initChart() {
         
-        let paragraphStyle: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        let paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.lineBreakMode = .byTruncatingTail
         paragraphStyle.alignment = .center
         
         let attribut: [ NSAttributedString.Key: Any] =
-            [  .font: NSFont(name: "HelveticaNeue-Light", size: 15.0)!,
-               .foregroundColor: NSColor.gray,
-               .paragraphStyle: paragraphStyle]
+          [ .font: NSFont(name: "HelveticaNeue-Light", size: 15.0)!,
+            .foregroundColor: NSColor.labelColor,
+            .paragraphStyle: paragraphStyle]
 
+        // MARK: Chart View
         var centerText = NSMutableAttributedString(string: "Dépenses")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
         chartView.delegate = self
         chartView.centerAttributedText = centerText
         
+        chartView.chartDescription?.enabled = false
+        chartView.noDataText = Localizations.Chart.No_chart_Data_Available
+//        chartView.backgroundColor = .windowBackgroundColor
+
         // MARK: legend
         let legend = chartView.legend
         legend.horizontalAlignment = .left
         legend.verticalAlignment = .top
         legend.orientation = .vertical
         legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
-        
+        legend.textColor = .labelColor
 
-        chartView.chartDescription?.enabled = false
-        chartView.noDataText = Localizations.Chart.No_chart_Data_Available
-        chartView.backgroundColor = .white
 
+        // MARK: Chart View2
         centerText = NSMutableAttributedString(string: "Recettes")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
         chartView2.delegate = self
         chartView2.centerAttributedText = centerText
+//        chartView2.centert = centerText
+
+        chartView2.chartDescription?.enabled = false
+        chartView2.noDataText = Localizations.Chart.No_chart_Data_Available
+//        chartView2.backgroundColor = .windowBackgroundColor
         
         // MARK: legend
         let legend2 = chartView2.legend
@@ -125,10 +132,7 @@ final class ModePaiementPieController: NSViewController {
         legend2.verticalAlignment = .top
         legend2.orientation = .vertical
         legend2.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
-
-        chartView2.chartDescription?.enabled = false
-        chartView2.noDataText = Localizations.Chart.No_chart_Data_Available
-        chartView2.backgroundColor = .white
+        legend2.textColor = .labelColor
     }
     
     func updateChartData()
@@ -209,17 +213,19 @@ final class ModePaiementPieController: NSViewController {
         dataSet.sliceSpace = 2.0
         dataSet.colors = colors
         dataSet.valueLinePart1OffsetPercentage = 0.8
-        dataSet.valueLinePart1Length = 0.2
+        dataSet.valueLinePart1Length = 0.4
         dataSet.valueLinePart2Length = 1.0
         dataSet.xValuePosition = .outsideSlice
         dataSet.yValuePosition = .outsideSlice
-        
+        dataSet.valueLineColor = .labelColor
+        dataSet.entryLabelColor = .labelColor
+
         // MARK: PieChartData
         let data = PieChartData(dataSet: dataSet)
         
         data.setValueFormatter(DefaultValueFormatter(formatter: formatterPrice))
         data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!)
-        data.setValueTextColor(NSColor.black)
+        data.setValueTextColor(NSColor.labelColor)
         chartView.data = data
         
     }
@@ -249,13 +255,16 @@ final class ModePaiementPieController: NSViewController {
         dataSet.valueLinePart2Length = 1.0
         dataSet.xValuePosition = .outsideSlice
         dataSet.yValuePosition = .outsideSlice
+        dataSet.valueLineColor = .labelColor
+        dataSet.entryLabelColor = .labelColor
+
         
         // MARK: PieChartData
         let data = PieChartData(dataSet: dataSet)
         
         data.setValueFormatter(DefaultValueFormatter(formatter: formatterPrice))
         data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!)
-        data.setValueTextColor(NSColor.black)
+        data.setValueTextColor(NSColor.labelColor)
         chartView2.data = data
     }
 

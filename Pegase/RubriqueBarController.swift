@@ -138,7 +138,8 @@ final class RubriqueBarController: NSViewController
         xAxis.granularity = 1
         xAxis.gridLineWidth = 2.0
         xAxis.labelPosition = .bottom
-        
+        xAxis.labelTextColor           = .labelColor
+
         // MARK: leftAxis
         let leftAxis                   = chartView.leftAxis
         leftAxis.labelFont             = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
@@ -147,7 +148,8 @@ final class RubriqueBarController: NSViewController
         leftAxis.granularityEnabled    = true
         leftAxis.granularity           = 1
         leftAxis.valueFormatter        = CurrencyValueFormatter()
-        
+        leftAxis.labelTextColor           = .labelColor
+
         // MARK: rightAxis
         chartView.rightAxis.enabled    = false
         

@@ -71,7 +71,6 @@
 </p>
 
 
-
 carthage update --platform macos --use-submodules
 
 # Personal account software
