@@ -83,10 +83,10 @@ struct GroupedYearOperations {
         self.year = dictionary.key
         
         self.allMonth = [GroupedMonthOperations]()
-        let oneMonth = (dictionary.value).map { (key: String , value: [IdOperations]) -> GroupedMonthOperations in
+        let months = (dictionary.value).map { (key: String , value: [IdOperations]) -> GroupedMonthOperations in
             return GroupedMonthOperations(month : key , idOperations: value)
         }
-        self.allMonth = oneMonth.sorted(by: {$0.month > $1.month})
+        self.allMonth = months.sorted(by: {$0.month > $1.month})
     }
 }
 

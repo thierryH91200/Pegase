@@ -45,18 +45,16 @@ extension ImportWindowController: NSMenuDelegate {
         dataArray.append(Localizations.ImportSimplifiee.Menu.rubrique)
         dataArray.append(Localizations.ImportSimplifiee.Menu.catégorie)
         
-        for i in 0..<tableColumns.count {
+        headerColumnForMenu.removeAll()
+        headerColumnForMenu = (0 ..< tableColumns.count).map { (i) -> HeaderColumnForMenu in
             
             tableColumns[i].identifier = NSUserInterfaceItemIdentifier("\(i)")
             let nameCol = "\(i)"
-            
-            let headerMenu = HeaderColumnForMenu(numCol: i, nameCol: nameCol, numMenu: 0, nameMenu: dataArray[0])
-            headerColumnForMenu.append(headerMenu)
+            return HeaderColumnForMenu(numCol: i, nameCol: nameCol, numMenu: 0, nameMenu: dataArray[0])
         }
         
         menuHeader.removeAllItems()
         menuHeader.delegate = self
-        
         for i in 0 ..< dataArray.count
         {
             let menuItem = NSMenuItem(title: dataArray[i], action: #selector(self.toggleColumn), keyEquivalent: "")

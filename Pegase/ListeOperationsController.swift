@@ -167,7 +167,7 @@ final class ListeOperationsController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupHeaderMenu()
+        setupHeaderMenuColumn()
         
         //vintage playback view
         self.theBox1.contentView?.isHidden = false
@@ -322,7 +322,7 @@ final class ListeOperationsController: NSViewController {
 
     private func transformData()
     {
-        var groupedID : [ String:  [ String :  [IdOperations]]] = [:]
+        var groupedID : [ String:  [ String :  [IdOperations] ] ] = [:]
 
         calculSolde()
         let IdOperation = (0 ..< listeOperations.count).map { (i) -> IdOperations in

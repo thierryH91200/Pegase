@@ -12,7 +12,7 @@ extension ListeOperationsController: NSMenuDelegate {
         }
     }
     
-    func setupHeaderMenu()
+    func setupHeaderMenuColumn()
     {
         let savedCols = Defaults.dictionary(forKey: "kUserDefaultsKeyVisisbleColumns")
         let menu = NSMenu()
