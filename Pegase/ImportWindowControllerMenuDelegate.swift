@@ -5,8 +5,6 @@ extension ImportWindowController: NSMenuDelegate {
     
     func menuWillOpen( _ menu: NSMenu) {
         
-        print("Begin menuWillOpen")
-
         guard anTableView.clickedColumn != -1 else { return }
         guard menu == menuHeader else { return }
 
@@ -19,14 +17,10 @@ extension ImportWindowController: NSMenuDelegate {
             
             headerColumnForMenu = menu.items[i].representedObject as!  [HeaderColumnForMenu]
             let index = headerColumnForMenu.firstIndex { $0.numCol == indexCol }
-            print("index : ", index ?? "nil")
             if index != nil {
                 menu.items[i].state =  .on
-                print(menu.items[i].title, "  ", menu.items[i].state.rawValue)
             }
         }
-        print("End menuWillOpen")
-        print()
     }
     
     func setupHeaderMenu()

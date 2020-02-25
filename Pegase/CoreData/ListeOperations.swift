@@ -78,10 +78,10 @@ public extension Sequence where Element: Equatable {
 struct GroupedYearOperations {
     let year : String
     var allMonth : [GroupedMonthOperations]
-    
+
     init( dictionary: (key: String, value: [String: [IdOperations]])) {
         self.year = dictionary.key
-        
+
         self.allMonth = [GroupedMonthOperations]()
         let months = (dictionary.value).map { (key: String , value: [IdOperations]) -> GroupedMonthOperations in
             return GroupedMonthOperations(month : key , idOperations: value)
@@ -93,9 +93,9 @@ struct GroupedYearOperations {
 struct GroupedMonthOperations {
     let month : String
     let idOperation : [ IdOperations ]
-    
+
     init( month: String, idOperations: [IdOperations]) {
-        
+
         self.month = month
         let idAllOperation = (0 ..< idOperations.count).map { (i) -> IdOperations in
             return IdOperations(year : idOperations[i].year, id: idOperations[i].id, entityOperations: idOperations[i].entityOperations)
@@ -115,3 +115,39 @@ struct IdOperations {
         self.entityOperations = entityOperations
     }
 }
+
+//struct GroupedYearOperations {
+//    let year : String
+//    var allMonth : [GroupedMonthOperations]
+//
+//    init( dictionary: ((key: String, value: [String: [IdOperations]]))) {
+//        self.year = dictionary.key
+//
+//        let groupedID = dictionary.value
+//        allMonth = [GroupedMonthOperations]()
+//        var oneMonth : [GroupedMonthOperations] = []
+//
+//        for grouped in groupedID {
+//            let groupedMonth = GroupedMonthOperations(month: grouped.key, idOpes: grouped.value)
+//            oneMonth.append(groupedMonth)
+//        }
+//        self.allMonth = oneMonth.sorted(by: {$0.month > $1.month})
+//    }
+//}
+//
+//struct GroupedMonthOperations {
+//    let month : String
+//    let idOperation : [ IdOperations ]
+//
+//    init( month: String, idOpes: [IdOperations]) {
+//        self.month = month
+//
+//        var idAllOperation : [IdOperations] = []
+//        for idOpe in idOpes {
+//            let idOperation = IdOperations(year: idOpe.year, id: idOpe.id, entityOperations: idOpe.entityOperations)
+//            idAllOperation.append(idOperation)
+//        }
+//        self.idOperation = idAllOperation.sorted(by: {Double($0.entityOperations.dateOperation!.timeIntervalSince1970) > Double($1.entityOperations.dateOperation!.timeIntervalSince1970)})
+//    }
+//}
+//

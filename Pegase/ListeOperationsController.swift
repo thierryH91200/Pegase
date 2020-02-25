@@ -136,7 +136,8 @@ final class ListeOperationsController: NSViewController {
         return formatter
     }()
     
-    
+    let kUserDefaultsKeyVisibleColumns = "kUserDefaultsKeyVisibleColumns"
+
     var groupedSorted = [ GroupedYearOperations ]()
 
     override func viewDidDisappear()
@@ -167,7 +168,7 @@ final class ListeOperationsController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupHeaderMenuColumn()
+        createOutlineContextMenu()
         
         //vintage playback view
         self.theBox1.contentView?.isHidden = false

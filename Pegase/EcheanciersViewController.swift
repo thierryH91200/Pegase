@@ -20,7 +20,7 @@ final class EcheanciersViewController: NSViewController {
         formatter.dateStyle = .short
         return formatter
     }()
-        
+    
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
@@ -78,17 +78,19 @@ final class EcheanciersViewController: NSViewController {
         let selectedRow = tableView.selectedRow
         if selectedRow >= 0 {
             let quake = entityEcheancier[selectedRow]
-            
             Echeanciers.shared.removeEntity(entity: quake )
         }
     }
 }
-extension EcheanciersViewController: NSTableViewDelegate, NSTableViewDataSource {
 
+extension EcheanciersViewController: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return entityEcheancier.count
     }
+}
+
+extension EcheanciersViewController: NSTableViewDelegate {
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
@@ -168,6 +170,18 @@ extension EcheanciersViewController: NSTableViewDelegate, NSTableViewDataSource 
         }
     }
     
+    func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
+        
+        if edge == .trailing {
+            let deleteAction = NSTableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
+                let quake = self.entityEcheancier[row]
+                Echeanciers.shared.removeEntity(entity: quake )
+                self.updateData()
+            }
+            return [deleteAction]
+        }
+        return []
+    }
 }
 
 extension EcheanciersViewController: EcheanciersDelegate {
