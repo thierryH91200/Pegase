@@ -136,6 +136,7 @@ final class ListeOperationsController: NSViewController {
         return formatter
     }()
     
+    /// the key in user defaults
     let kUserDefaultsKeyVisibleColumns = "kUserDefaultsKeyVisibleColumns"
 
     var groupedSorted = [ GroupedYearOperations ]()

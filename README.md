@@ -100,7 +100,15 @@ Trying to control yourself without depriving yourself too much and especially no
 
 Pegase now include Carthage
 
+
+
 # Contributing 🙌
+
+- If you **need help** or you'd like to **ask a general question**, open an issue.
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
+
 
 Feel free to contribute to this project by providing ideas or opening pull requests with new features or solving an existing issue.
 
