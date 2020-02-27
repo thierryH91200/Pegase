@@ -32,7 +32,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
 
     let preferencesWindowController = PreferencesWindowController(
         viewControllers: [
-//           GeneralViewController() //,
+           GeneralViewController() ,
             AccountViewController() ,
             PersonViewController()
         ]

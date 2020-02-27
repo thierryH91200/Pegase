@@ -2,6 +2,7 @@
 
 import Cocoa
 
+let defaults = UserDefaults.standard
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDelegate {
@@ -31,11 +32,23 @@ class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDel
     }
     
     func applicationShouldTerminateAfterLastWindowClosed (_ sender: NSApplication) -> Bool {
-        return true
+        return false
     }
     
     func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
         return true
     }
+    
+    // Reopen mainWindow, when the user clicks on the dock icon.
+    func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag {
+            _ = self.splashScreenWindowController
+//                if let splashScreenWindowController = self.splashScreenWindowController {
+//                splashScreenWindowController.showWindow(self)
+//            }
+        }
+        return true
+    }
+    
 
 }

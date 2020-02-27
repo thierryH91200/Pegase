@@ -65,12 +65,10 @@ extension ListeOperationsController: NSMenuDelegate {
             
             let item = parentMenu?.item(withTitle: recette)
             item?.state = menuItem.state
-            item?.isHidden = columnVisibilityDictionary!["recette"] as! Bool
             
             columnVisibilityDictionary!["montant"] = menuItem.state == .on ? false : true
             let itemMontant = parentMenu?.item(withTitle: montant)
             itemMontant?.state = menuItem.state == .on ? .off : .on
-            item?.isHidden = columnVisibilityDictionary!["montant"] as! Bool
         }
         
         if nameCol == "recette" {
@@ -79,12 +77,10 @@ extension ListeOperationsController: NSMenuDelegate {
             
             let item = parentMenu?.item(withTitle: depense)
             item?.state = menuItem.state
-            item?.isHidden = columnVisibilityDictionary!["recette"] as! Bool
 
             columnVisibilityDictionary!["montant"] = menuItem.state == .on ? false : true
             let itemMontant = parentMenu?.item(withTitle: montant)
             itemMontant?.state = menuItem.state == .on ? .off : .on
-            item?.isHidden = columnVisibilityDictionary!["montant"] as! Bool
         }
         
         if nameCol == "montant" {
@@ -95,13 +91,6 @@ extension ListeOperationsController: NSMenuDelegate {
             columnVisibilityDictionary!["depense"] = false
             let itemDepense = parentMenu?.item(withTitle: depense)
             itemDepense?.state = menuItem.state == .on ? .off : .on
-        }
-        
-        for menuItem in (parentMenu?.items)!
-        {
-            let col = menuItem.representedObject as? NSTableColumn
-            let shouldHide = menuItem.state == .off ? true : false
-            col?.isHidden = shouldHide
         }
         
         for column in outlineListView.tableColumns
