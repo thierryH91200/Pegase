@@ -15,7 +15,6 @@ final class ModePaiementPieController: NSViewController {
     var firstDate: TimeInterval = 0.0
     var lastDate: TimeInterval = 0.0
 
-    
     var startDate = Date()
     var endDate = Date()
     
@@ -68,7 +67,10 @@ final class ModePaiementPieController: NSViewController {
     }
     
     func updateAccount () {
-        listeOperations = ListeOperations.shared.getAll()
+        listeOperations = ListeOperations.shared.entities
+        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
+            listeOperations = ListeOperations.shared.getAll()
+        }
         if listeOperations.count > 0 {
             
             firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!

@@ -41,8 +41,8 @@ class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDel
     
     // Reopen mainWindow, when the user clicks on the dock icon.
     func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        if !flag {
-            _ = self.splashScreenWindowController
+        if flag == false {
+//            _ = self.splashScreenWindowController
 //                if let splashScreenWindowController = self.splashScreenWindowController {
 //                splashScreenWindowController.showWindow(self)
 //            }

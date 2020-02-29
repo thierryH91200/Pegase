@@ -96,9 +96,58 @@ Set an annual budget for trips, trips or vacations.
 
 Trying to control yourself without depriving yourself too much and especially not buying what you don't need, because by doing so you would be risking selling what you need most.
 
+## Installation
+
+## CocoaPods
+
+CocoaPods is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate Diagnostics into your Xcode project using CocoaPods, specify it in your Podfile:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :osx, '10.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'Diagnostics', '~> 1.0.0'
+end
+```
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
 ## Carthage Install
 
-Pegase now include Carthage
+Pegase not include Carthage
+
+## Carthage
+
+Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with Homebrew using the following command:
+
+$ brew update
+$ brew install carthage
+To integrate Diagnostics into your Xcode project using Carthage, specify it in your Cartfile:
+
+github "thierryH91200/TFDate" ~> 1.00
+Run carthage update to build the framework and drag the built Diagnostics.framework into your Xcode project.
+
+## Manually
+
+You must integrate into your project manually.
+- Charts  
+- SwiftDate
+- TFDate
+
+
 
 
 

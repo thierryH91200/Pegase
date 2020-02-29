@@ -77,7 +77,10 @@ final class RubriquePieController: NSViewController
     }
     
     func updateAccount () {
-        listeOperations = ListeOperations.shared.getAll()
+        listeOperations = ListeOperations.shared.entities
+        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
+            listeOperations = ListeOperations.shared.getAll()
+        }
         if listeOperations.count > 0 {
             
             firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!

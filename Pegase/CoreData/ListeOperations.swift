@@ -4,6 +4,7 @@ final class ListeOperations {
     
     static let shared = ListeOperations()
     var entities = [EntityOperations]()
+    var ascending = false
     
     // delete Operation
     func remove(entity: EntityOperations)
@@ -46,6 +47,7 @@ final class ListeOperations {
     func getAll(ascending: Bool = true ) -> [EntityOperations] {
         
         guard compteCourant != nil else { return [] }
+        self.ascending = ascending
         
         let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
         let predicate = NSPredicate(format: "account == %@", compteCourant!)
