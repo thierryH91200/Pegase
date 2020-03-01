@@ -91,17 +91,15 @@ Possibilité de lier une opération à un autre compte
 
 - **Libéllé** : Description de l'opération
 - **Mode paiement** : Choix du mode de paiement 
-- Rubrique : Famille de la catégorie
-- Catégorie
- -Date opération : Date à laquelle l'opération a été réalisée
-- Date de pointage : Date à laquelle l'opération est prise en compte
-- Statut : 
+- **Rubrique** : Famille de la catégorie
+- **Catégorie**
+- **Date opération** : Date à laquelle l'opération a été réalisée
+- **Date de pointage** : Date à laquelle l'opération est prise en compte
+- **Statut** : 
 
 	- L'opération est prévue. Elle n'est ni réalisée ni pointée. Je pense faire un achat quel est la conséquence sur le compte  
 	- L'opération est réalisée
 	- L'opération est pointée
-
-
 
 ## Trésorerie
 Possibilité de choisir facilement la date début et la date de fin pour pouvoir zoomer sur une période définie

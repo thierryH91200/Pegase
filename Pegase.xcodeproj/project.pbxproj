@@ -100,7 +100,6 @@
 		03213BD223F90AAB00002DD7 /* icons8-money-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 03213BC723F90AAB00002DD7 /* icons8-money-100.png */; };
 		03213BD323F90AAB00002DD7 /* icons8-expensive-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 03213BC823F90AAB00002DD7 /* icons8-expensive-100.png */; };
 		03213BD423F90AAB00002DD7 /* icons8-paypal-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 03213BC923F90AAB00002DD7 /* icons8-paypal-100.png */; };
-		03213BD523F90AAB00002DD7 /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 03213BCA23F90AAB00002DD7 /* MyDB.sqlite */; };
 		03213BDD23F90B3500002DD7 /* IdentiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BDB23F90B3500002DD7 /* IdentiteViewController.swift */; };
 		03213BE523F90B3F00002DD7 /* EcheanciersSaisieControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BDF23F90B3E00002DD7 /* EcheanciersSaisieControllerDelegate.swift */; };
 		03213BE623F90B3F00002DD7 /* EcheanciersSaisieControllerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BE023F90B3E00002DD7 /* EcheanciersSaisieControllerPopUp.swift */; };
@@ -148,21 +147,10 @@
 		03213CD423F977DD00002DD7 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CD623F977DD00002DD7 /* AccountViewController.xib */; };
 		03213CDF23F9780900002DD7 /* RubriqueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CE123F9780900002DD7 /* RubriqueViewController.xib */; };
 		03213CEA23F9781E00002DD7 /* ParametreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CEC23F9781E00002DD7 /* ParametreController.xib */; };
+		03363DAB240BCB1F00831CA2 /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 03363DAA240BCA2600831CA2 /* MyDB.sqlite */; };
 		034EC83323F87C60006944DD /* PegaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC83223F87C60006944DD /* PegaseUITests.swift */; };
-		034EC89823F87CC0006944DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89723F87CC0006944DD /* README.md */; };
 		034EC89E23F87CE2006944DD /* CodingGuidelines.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89A23F87CE1006944DD /* CodingGuidelines.md */; };
-		034EC89F23F87CE2006944DD /* DevelopmentAlphaBeta.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89B23F87CE1006944DD /* DevelopmentAlphaBeta.md */; };
-		034EC8A023F87CE2006944DD /* Util.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89C23F87CE2006944DD /* Util.md */; };
-		034EC8A123F87CE2006944DD /* memo.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89D23F87CE2006944DD /* memo.md */; };
-		034EC8AC23F87CFA006944DD /* Capture6.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8A323F87CF9006944DD /* Capture6.png */; };
-		034EC8AD23F87CFA006944DD /* Capture9.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8A423F87CF9006944DD /* Capture9.png */; };
 		034EC8AE23F87CFA006944DD /* Capture4.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8A523F87CF9006944DD /* Capture4.png */; };
-		034EC8AF23F87CFA006944DD /* Capture8.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8A623F87CF9006944DD /* Capture8.png */; };
-		034EC8B023F87CFA006944DD /* Capture5.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8A723F87CFA006944DD /* Capture5.png */; };
-		034EC8B123F87CFA006944DD /* Capture3.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8A823F87CFA006944DD /* Capture3.png */; };
-		034EC8B223F87CFA006944DD /* Capture7.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8A923F87CFA006944DD /* Capture7.png */; };
-		034EC8B323F87CFA006944DD /* Capture2.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8AA23F87CFA006944DD /* Capture2.png */; };
-		034EC8B423F87CFB006944DD /* Capture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8AB23F87CFA006944DD /* Capture1.png */; };
 		034EC8BB23F87E8B006944DD /* AdvancedFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BA23F87E8B006944DD /* AdvancedFilterViewController.swift */; };
 		034EC8BD23F87E97006944DD /* NSPredicateEditorRowTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BC23F87E97006944DD /* NSPredicateEditorRowTemplate.swift */; };
 		034EC8C223F87EA1006944DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BE23F87EA1006944DD /* Document.swift */; };
@@ -422,7 +410,6 @@
 		03213BC723F90AAB00002DD7 /* icons8-money-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-money-100.png"; sourceTree = "<group>"; };
 		03213BC823F90AAB00002DD7 /* icons8-expensive-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-expensive-100.png"; sourceTree = "<group>"; };
 		03213BC923F90AAB00002DD7 /* icons8-paypal-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-paypal-100.png"; sourceTree = "<group>"; };
-		03213BCA23F90AAB00002DD7 /* MyDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyDB.sqlite; sourceTree = "<group>"; };
 		03213BDB23F90B3500002DD7 /* IdentiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentiteViewController.swift; sourceTree = "<group>"; };
 		03213BDF23F90B3E00002DD7 /* EcheanciersSaisieControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcheanciersSaisieControllerDelegate.swift; sourceTree = "<group>"; };
 		03213BE023F90B3E00002DD7 /* EcheanciersSaisieControllerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcheanciersSaisieControllerPopUp.swift; sourceTree = "<group>"; };
@@ -533,6 +520,7 @@
 		03213CF023F9782200002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ParametreController.strings; sourceTree = "<group>"; };
 		03213CF223F9782300002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ParametreController.strings; sourceTree = "<group>"; };
 		03213CF423F9782400002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ParametreController.strings; sourceTree = "<group>"; };
+		03363DAA240BCA2600831CA2 /* MyDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyDB.sqlite; sourceTree = "<group>"; };
 		034EC81623F87C5B006944DD /* Pegase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pegase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EC82E23F87C5F006944DD /* PegaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PegaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EC83223F87C60006944DD /* PegaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegaseUITests.swift; sourceTree = "<group>"; };
@@ -908,7 +896,7 @@
 				03213BC523F90AAB00002DD7 /* icons8-purse-100.png */,
 				03213BC223F90AAA00002DD7 /* icons8-safe-100.png */,
 				03213BC023F90AAA00002DD7 /* icons8-wallet-80.png */,
-				03213BCA23F90AAB00002DD7 /* MyDB.sqlite */,
+				03363DAA240BCA2600831CA2 /* MyDB.sqlite */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1453,6 +1441,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03363DAB240BCB1F00831CA2 /* MyDB.sqlite in Resources */,
 				03213C9D23F9320600002DD7 /* IdentiteViewController.xib in Resources */,
 				034EC8AE23F87CFA006944DD /* Capture4.png in Resources */,
 				03213B8023F9082600002DD7 /* CategorieBarController.xib in Resources */,
@@ -1465,11 +1454,7 @@
 				03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */,
 				03213C6F23F92F1C00002DD7 /* Localizable.strings in Resources */,
 				03213C2123F90C1B00002DD7 /* RubriqueModalWindowController.xib in Resources */,
-				034EC89823F87CC0006944DD /* README.md in Resources */,
-				034EC8B423F87CFB006944DD /* Capture1.png in Resources */,
-				034EC8B323F87CFA006944DD /* Capture2.png in Resources */,
 				03213CD423F977DD00002DD7 /* AccountViewController.xib in Resources */,
-				034EC8AD23F87CFA006944DD /* Capture9.png in Resources */,
 				03213BA323F9093700002DD7 /* SplashScreenRecentDocumentView.xib in Resources */,
 				034ECB7023F88044006944DD /* CompteModalWindowController.xib in Resources */,
 				03213CBE23F9327400002DD7 /* ModeModalWindowController.xib in Resources */,
@@ -1477,9 +1462,7 @@
 				03213C2923F90C3300002DD7 /* ChequiersViewController.xib in Resources */,
 				03213B9A23F9091200002DD7 /* Feeds.plist in Resources */,
 				03213CC923F9328300002DD7 /* ModePaiementViewController.xib in Resources */,
-				034EC8A123F87CE2006944DD /* memo.md in Resources */,
 				03213BD223F90AAB00002DD7 /* icons8-money-100.png in Resources */,
-				034EC8A023F87CE2006944DD /* Util.md in Resources */,
 				03213B0523F9048200002DD7 /* TTFormatViewController.xib in Resources */,
 				03213B8723F9084800002DD7 /* RecetteDepenseBarController.xib in Resources */,
 				03213BD123F90AAB00002DD7 /* icons8-credit-card-100.png in Resources */,
@@ -1491,7 +1474,6 @@
 				03213BD423F90AAB00002DD7 /* icons8-paypal-100.png in Resources */,
 				03213B6A23F905E000002DD7 /* GeneralViewController.xib in Resources */,
 				03213BCB23F90AAB00002DD7 /* icons8-wallet-80.png in Resources */,
-				034EC8B023F87CFA006944DD /* Capture5.png in Resources */,
 				03213BB923F909C300002DD7 /* SliderViewVerticalController.xib in Resources */,
 				035082E624028F0400F8A0D4 /* ListeOperationsController.xib in Resources */,
 				03213B9C23F9091200002DD7 /* SourceListViewController.xib in Resources */,
@@ -1500,7 +1482,6 @@
 				03213C4223F925B200002DD7 /* MainWindowController.xib in Resources */,
 				034ECB6A23F88033006944DD /* KSRetailCollectionViewItem.xib in Resources */,
 				03213BFD23F90BB600002DD7 /* PreferenceOperationViewController.xib in Resources */,
-				034EC8B123F87CFA006944DD /* Capture3.png in Resources */,
 				03213CDF23F9780900002DD7 /* RubriqueViewController.xib in Resources */,
 				03213BCD23F90AAB00002DD7 /* icons8-safe-100.png in Resources */,
 				03213C7B23F931BC00002DD7 /* CurtainViewController.xib in Resources */,
@@ -1508,9 +1489,6 @@
 				03213B8B23F9085700002DD7 /* RubriqueBarController.xib in Resources */,
 				03213C1E23F90C1B00002DD7 /* CategorieModalWindowController.xib in Resources */,
 				03213BCE23F90AAB00002DD7 /* curtain.jpg in Resources */,
-				034EC89F23F87CE2006944DD /* DevelopmentAlphaBeta.md in Resources */,
-				034EC8AC23F87CFA006944DD /* Capture6.png in Resources */,
-				034EC8AF23F87CFA006944DD /* Capture8.png in Resources */,
 				03213CA823F9321A00002DD7 /* EcheanciersSaisieController.xib in Resources */,
 				03213B6823F905E000002DD7 /* PersonViewController.xib in Resources */,
 				03213BD323F90AAB00002DD7 /* icons8-expensive-100.png in Resources */,
@@ -1521,12 +1499,10 @@
 				03213B9023F9086600002DD7 /* RubriquePieController.xib in Resources */,
 				034ECB6923F88033006944DD /* PopOverModalViewController.xib in Resources */,
 				03213BBA23F909C300002DD7 /* SliderViewHorizontalController.xib in Resources */,
-				03213BD523F90AAB00002DD7 /* MyDB.sqlite in Resources */,
 				03213C4D23F9269000002DD7 /* OperationViewController.xib in Resources */,
 				03213BD023F90AAB00002DD7 /* icons8-purse-100.png in Resources */,
 				03213B5923F9058800002DD7 /* suggestionprototype.xib in Resources */,
 				03213B8423F9083300002DD7 /* ModePaiementPieController.xib in Resources */,
-				034EC8B223F87CFA006944DD /* Capture7.png in Resources */,
 				03213BCC23F90AAB00002DD7 /* icons8-museum-80.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

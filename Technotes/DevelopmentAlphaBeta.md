@@ -33,10 +33,8 @@ L'application atteint sa fin lorsque les développeurs sont convaincus qu'elle e
 
 ## ThemeKit
 
-### Summary
-ThemeKit is a lightweight theming library completely written in Swift that provides theming capabilities to both Swift and Objective-C macOS applications.
 
-### Link
+## Link
 https://github.com/luckymarmot/ThemeKit
 
 ## SwiftDate
@@ -57,6 +55,7 @@ https://github.com/ThesaurusSoftware/TFDatePicker
 https://github.com/xxxx/xxxxx
 
 
+## TFDate
 https://stackoverflow.com/questions/14401755/can-i-clear-a-nsdatepicker
 
 Can I clear a NSDatePicker ?

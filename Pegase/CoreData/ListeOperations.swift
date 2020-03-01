@@ -58,8 +58,22 @@ final class ListeOperations {
             entities = try mainObjectContext.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
+            return []
+        }
+        if compteCourant?.isDemo == true {
+            adjustDate()
         }
         return entities
+    }
+    
+    func adjustDate () {
+        guard entities.count > 0 else {return}
+        let diffDate = (entities.first?.dateOperation!.timeIntervalSinceNow)!
+        for entityOperation in entities {
+            entityOperation.datePointage = entityOperation.datePointage! - diffDate
+            entityOperation.dateOperation = entityOperation.dateOperation! - diffDate
+        }
+        compteCourant?.isDemo = false
     }
     
 }

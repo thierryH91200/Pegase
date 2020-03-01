@@ -7,7 +7,7 @@
 
 ### Requirements
 
-Xcode 9/10 and Swift 4.2
+Xcode 11 and Swift 5.0
 
 
 

@@ -12,6 +12,7 @@ extension EntityAccount {
     @NSManaged public var name: String?
     @NSManaged public var nameImage: String?
     @NSManaged public var isFolder: Bool
+    @NSManaged public var isDemo: Bool
     @NSManaged public var isAccount: Bool
     @NSManaged public var isHeader: Bool
     @NSManaged public var isRoot: Bool

@@ -1,3 +1,26 @@
+# Personal account software
+
+Pegase is a beautifully easy tool to keep track of your financial life on all your macOS 
+
+
+
+#  How to manage your monthly budget well ?
+
+Comment bien gérer son budget mensuel ?
+
+
+It is necessary, in part:
+
+Know your fixed monthly expenses (rent, transport, electricity / water, telephone, internet, etc.)
+
+Define a budget to control expenses that vary from one month to another and this by category, examples: Entertainment and outings, Shopping, etc.
+
+Monitor this budget monthly, correct in case of overruns or even redefine it if necessary!
+
+Set an annual budget for trips, trips or vacations.
+
+Trying to control yourself without depriving yourself too much and especially not buying what you don't need, because by doing so you would be risking selling what you need most.
+
 
 
 <p align="center">
@@ -57,7 +80,7 @@
 </p>
 
 <p align="center">
-<img src="Doc/Capture.png" alt="Sample">
+<img src="Doc/Capture8.png" alt="Sample">
 <p align="center">
 <em>Tresorerie</em>
 </p>
@@ -73,28 +96,6 @@
 
 carthage update --platform macos --use-submodules
 
-# Personal account software
-
-Pegase is a beautifully easy tool to keep track of your financial life on all your macOS 
-
-
-
-#  How to manage your monthly budget well ?
-
-Comment bien gérer son budget mensuel ?
-
-
-It is necessary, in part:
-
-Know your fixed monthly expenses (rent, transport, electricity / water, telephone, internet, etc.)
-
-Define a budget to control expenses that vary from one month to another and this by category, examples: Entertainment and outings, Shopping, etc.
-
-Monitor this budget monthly, correct in case of overruns or even redefine it if necessary!
-
-Set an annual budget for trips, trips or vacations.
-
-Trying to control yourself without depriving yourself too much and especially not buying what you don't need, because by doing so you would be risking selling what you need most.
 
 ## Installation
 
