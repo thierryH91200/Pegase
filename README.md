@@ -4,6 +4,7 @@ Pegase is a beautifully easy tool to keep track of your financial life on all yo
 
 
 
+---
 #  How to manage your monthly budget well ?
 
 Comment bien gérer son budget mensuel ?
@@ -97,6 +98,7 @@ Trying to control yourself without depriving yourself too much and especially no
 carthage update --platform macos --use-submodules
 
 
+---
 ## Installation
 
 ## CocoaPods
