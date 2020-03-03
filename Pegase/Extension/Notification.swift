@@ -4,7 +4,7 @@ import AppKit
 public extension Notification.Name {
     
     static let updateOperation           = Notification.Name( "updateOperation")
-    static let updateSolde               = Notification.Name( "updateSolde")
+    static let updateBalance               = Notification.Name( "updateBalance")
     static let updateAccount             = Notification.Name( "updateAccount")
 
     static let selectionDidChangeTable   = NSTableView.selectionDidChangeNotification

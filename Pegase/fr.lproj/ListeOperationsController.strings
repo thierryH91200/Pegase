@@ -21,7 +21,7 @@
 "8fI-3H-gS5.headerCell.title" = "Dépense";
 
 /* Class = "NSTableColumn"; headerCell.title = "Balance"; ObjectID = "Cvu-vg-O3S"; */
-"Cvu-vg-O3S.headerCell.title" = "Balance";
+"Cvu-vg-O3S.headerCell.title" = "Solde";
 
 /* Class = "NSTextFieldCell"; title = "0,00 €"; ObjectID = "Giz-9P-iSF"; */
 "Giz-9P-iSF.title" = "0,00 €";

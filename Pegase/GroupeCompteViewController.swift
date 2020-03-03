@@ -14,7 +14,7 @@ final class GroupeCompteViewController: NSViewController {
     var groupModalWindowController: GroupModalWindowController!
     var compteModalWindowController: CompteModalWindowController!
     
-    let key = Notification.Name.updateSolde
+    let key = Notification.Name.updateBalance
     
     var rootSourceListItem: EntityAccount!
     
@@ -67,7 +67,7 @@ final class GroupeCompteViewController: NSViewController {
     // -------------------------------------------------------------------------
     deinit {
         NotificationCenter.default.removeObserver(self, name: .selectionDidChangeOutLine, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .updateSolde, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .updateBalance, object: nil)
     }
     
     @objc func updateSolde(_ notification: Notification) {

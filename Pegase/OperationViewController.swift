@@ -225,16 +225,14 @@ final class OperationViewController: NSViewController {
         
         data.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
         data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(8.0))!)
-        data.setValueTextColor( .black)
+        data.setValueTextColor( .labelColor)
         self.pieChartView.data = data
         self.pieChartView.highlightValues(nil)
     }
     
-    // MARK: saveActions
     // edition = false => creation 1 operation
     // edition = true => edition 1 to n operation(s)
-    @IBAction func saveActions(_ sender: Any) {
-        
+    func contextSaveEdition() {
         // creation = one operation
         if edition == false {
             self.entityOperation = EntityOperations(context: mainObjectContext)
@@ -253,6 +251,15 @@ final class OperationViewController: NSViewController {
             let setSousOperation = NSSet(array: sousOperations)
             self.entityOperations.first?.addToSousOperations(setSousOperation)
         }
+
+    }
+    
+    // MARK: saveActions
+    // edition = false => create 1 operation
+    // edition = true => edition 1 to n operation(s)
+    @IBAction func saveActions(_ sender: Any) {
+        
+        self.contextSaveEdition()
         
         /// Multiple value
         for oneOperation in self.entityOperations {
@@ -288,7 +295,6 @@ final class OperationViewController: NSViewController {
                 oneOperation.statut = statut
             }
             
-            
             // Operation Liée
             if (setTransfert.count >= 0 && popUpTransfert.indexOfSelectedItem != 0)  {
                 createOperationLiee(oneOperation: oneOperation)
@@ -298,7 +304,7 @@ final class OperationViewController: NSViewController {
         self.delegate?.getAllData()
         self.delegate?.reloadData()
                 
-        NotificationCenter.send(.updateSolde)
+        NotificationCenter.send(.updateBalance)
         self.resetOperation()
     }
     

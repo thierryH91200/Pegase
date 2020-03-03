@@ -27,7 +27,6 @@ Trying to control yourself without depriving yourself too much and especially no
 <p align="center">
 <img src="https://img.shields.io/badge/Swift-5.0-orange.svg" />
 <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
-<img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" />
 </p>
 
 

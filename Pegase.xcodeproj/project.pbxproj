@@ -147,7 +147,6 @@
 		03213CD423F977DD00002DD7 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CD623F977DD00002DD7 /* AccountViewController.xib */; };
 		03213CDF23F9780900002DD7 /* RubriqueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CE123F9780900002DD7 /* RubriqueViewController.xib */; };
 		03213CEA23F9781E00002DD7 /* ParametreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CEC23F9781E00002DD7 /* ParametreController.xib */; };
-		03363DAB240BCB1F00831CA2 /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 03363DAA240BCA2600831CA2 /* MyDB.sqlite */; };
 		034EC83323F87C60006944DD /* PegaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC83223F87C60006944DD /* PegaseUITests.swift */; };
 		034EC89E23F87CE2006944DD /* CodingGuidelines.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89A23F87CE1006944DD /* CodingGuidelines.md */; };
 		034EC8AE23F87CFA006944DD /* Capture4.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8A523F87CF9006944DD /* Capture4.png */; };
@@ -211,6 +210,7 @@
 		034ECB7223F88044006944DD /* GroupModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6E23F88044006944DD /* GroupModalWindowController.swift */; };
 		034ECB7323F88044006944DD /* CompteModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6F23F88044006944DD /* CompteModalWindowController.swift */; };
 		035082E624028F0400F8A0D4 /* ListeOperationsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035082E824028F0400F8A0D4 /* ListeOperationsController.xib */; };
+		038FFFBA240E72CD0019A183 /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 038FFFBC240E72CD0019A183 /* MyDB.sqlite */; };
 		03ACCCD823FAD03A00098CFC /* TFDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ACCCD623FAD00500098CFC /* TFDate.framework */; };
 		03ACCCD923FAD03A00098CFC /* TFDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03ACCCD623FAD00500098CFC /* TFDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -520,7 +520,6 @@
 		03213CF023F9782200002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ParametreController.strings; sourceTree = "<group>"; };
 		03213CF223F9782300002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ParametreController.strings; sourceTree = "<group>"; };
 		03213CF423F9782400002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ParametreController.strings; sourceTree = "<group>"; };
-		03363DAA240BCA2600831CA2 /* MyDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyDB.sqlite; sourceTree = "<group>"; };
 		034EC81623F87C5B006944DD /* Pegase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pegase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EC82E23F87C5F006944DD /* PegaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PegaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EC83223F87C60006944DD /* PegaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegaseUITests.swift; sourceTree = "<group>"; };
@@ -607,6 +606,11 @@
 		035082F724028F0800F8A0D4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
 		035082F924028F0900F8A0D4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
 		035082FB24028F0B00F8A0D4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
+		038FFFBB240E72CD0019A183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/MyDB.sqlite; sourceTree = "<group>"; };
+		038FFFC8240E72D40019A183 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/MyDB.sqlite; sourceTree = "<group>"; };
+		038FFFC9240E72D50019A183 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/MyDB.sqlite; sourceTree = "<group>"; };
+		038FFFCA240E72D60019A183 /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/MyDB.sqlite; sourceTree = "<group>"; };
+		038FFFCB240E72D70019A183 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/MyDB.sqlite; sourceTree = "<group>"; };
 		03ACCCD123FAD00500098CFC /* TFDate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TFDate.xcodeproj; path = "../../NSCustomControl/ZZZ DatePicker/TFDate/TFDate/TFDate.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -896,7 +900,7 @@
 				03213BC523F90AAB00002DD7 /* icons8-purse-100.png */,
 				03213BC223F90AAA00002DD7 /* icons8-safe-100.png */,
 				03213BC023F90AAA00002DD7 /* icons8-wallet-80.png */,
-				03363DAA240BCA2600831CA2 /* MyDB.sqlite */,
+				038FFFBC240E72CD0019A183 /* MyDB.sqlite */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1441,7 +1445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03363DAB240BCB1F00831CA2 /* MyDB.sqlite in Resources */,
+				038FFFBA240E72CD0019A183 /* MyDB.sqlite in Resources */,
 				03213C9D23F9320600002DD7 /* IdentiteViewController.xib in Resources */,
 				034EC8AE23F87CFA006944DD /* Capture4.png in Resources */,
 				03213B8023F9082600002DD7 /* CategorieBarController.xib in Resources */,
@@ -1923,6 +1927,18 @@
 				035082FB24028F0B00F8A0D4 /* es */,
 			);
 			name = ListeOperationsController.xib;
+			sourceTree = "<group>";
+		};
+		038FFFBC240E72CD0019A183 /* MyDB.sqlite */ = {
+			isa = PBXVariantGroup;
+			children = (
+				038FFFBB240E72CD0019A183 /* Base */,
+				038FFFC8240E72D40019A183 /* en */,
+				038FFFC9240E72D50019A183 /* fr */,
+				038FFFCA240E72D60019A183 /* it */,
+				038FFFCB240E72D70019A183 /* es */,
+			);
+			name = MyDB.sqlite;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

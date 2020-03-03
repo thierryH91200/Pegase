@@ -378,7 +378,7 @@ final class ListeOperationsController: NSViewController {
         self.soldeReel.doubleValue   = soldeRealise + soldeEngage
         self.soldeFinal.doubleValue  = soldeRealise + soldeEngage + soldePrevu
         
-        NotificationCenter.send(.updateSolde)
+        NotificationCenter.send(.updateBalance)
     }
     
     @IBAction func removeOperation(_ sender: Any) {

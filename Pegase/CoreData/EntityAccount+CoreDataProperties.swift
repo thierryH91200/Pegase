@@ -159,16 +159,16 @@ extension EntityAccount {
         guard isAccount == true else { return 0.0 }
         
         self.willAccessValue(forKey: "solde")
-        var _solde = self.primitiveValue(forKey: "solde") as! Double
+        var _balance = self.primitiveValue(forKey: "solde") as! Double
         self.didAccessValue(forKey: "solde")
         
-        _solde = 0.0
+        _balance = 0.0
         let arrayOperations = operations?.allObjects as! [EntityOperations]
         for operation in arrayOperations {
-            _solde += operation.amount
+            _balance += operation.amount
         }
-        self.setPrimitiveValue(_solde, forKey: "total")
-        return _solde
+        self.setPrimitiveValue(_balance, forKey: "total")
+        return _balance
     }
 }
 

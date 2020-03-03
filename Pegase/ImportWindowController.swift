@@ -233,7 +233,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         delegate?.getAllData()
         delegate?.reloadData()
         
-        NotificationCenter.send(.updateSolde)
+        NotificationCenter.send(.updateBalance)
         
         self.close()
     }
