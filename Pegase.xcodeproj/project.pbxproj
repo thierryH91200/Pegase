@@ -211,6 +211,10 @@
 		034ECB7323F88044006944DD /* CompteModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6F23F88044006944DD /* CompteModalWindowController.swift */; };
 		035082E624028F0400F8A0D4 /* ListeOperationsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035082E824028F0400F8A0D4 /* ListeOperationsController.xib */; };
 		038FFFBA240E72CD0019A183 /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 038FFFBC240E72CD0019A183 /* MyDB.sqlite */; };
+		038FFFCC240EAB2C0019A183 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC87923F87CA5006944DD /* Charts.framework */; };
+		038FFFCD240EAB2C0019A183 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC87923F87CA5006944DD /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		038FFFCE240EAB970019A183 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC88A23F87CAD006944DD /* SwiftDate.framework */; };
+		038FFFCF240EAB970019A183 /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC88A23F87CAD006944DD /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03ACCCD823FAD03A00098CFC /* TFDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ACCCD623FAD00500098CFC /* TFDate.framework */; };
 		03ACCCD923FAD03A00098CFC /* TFDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03ACCCD623FAD00500098CFC /* TFDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -310,6 +314,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				03ACCCD923FAD03A00098CFC /* TFDate.framework in Embed Frameworks */,
+				038FFFCF240EAB970019A183 /* SwiftDate.framework in Embed Frameworks */,
+				038FFFCD240EAB2C0019A183 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +626,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				03ACCCD823FAD03A00098CFC /* TFDate.framework in Frameworks */,
+				038FFFCE240EAB970019A183 /* SwiftDate.framework in Frameworks */,
+				038FFFCC240EAB2C0019A183 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

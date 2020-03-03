@@ -102,6 +102,8 @@ carthage update --platform macos --use-submodules
 
 ## CocoaPods
 
+it is not my priority
+
 CocoaPods is a dependency manager for Cocoa projects. You can install it with the following command:
 
 ```bash
@@ -126,6 +128,8 @@ $ pod install
 ```
 
 ## Carthage Install
+
+it is not my priority
 
 Pegase not include Carthage
 
