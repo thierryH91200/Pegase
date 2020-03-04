@@ -1545,7 +1545,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+			shellScript = "set -x\n\necho \"Laurine\"\n\n#--------- START OF CONFIGURATION\n\n# Get base path to project\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\n\n# Get path to Laurine Generator script\nLAURINE_PATH=\"$PROJECT_DIR/ConfString/LaurineGenerator.swift\"\n#LAURINE_BIN_PATH=\"$BASE_PATH/../bin/laurine\"\n\n# Get path to main localization file (usually english).\nSOURCE_PATH=\"$BASE_PATH/Base.lproj/Localizable.strings\"\n\n# Get path to output. If you use ObjC version of output, set implementation file (.m), as header will be generated automatically\nOUTPUT_PATH=\"$BASE_PATH/Generated/Localizations.swift\"\n\n#--------- END OF CONFIGURATION\n\nmkdir -p $LAURINE_BIN_PATH\n\n# Build laurine binary if necessary\n#if [ ! -f $LAURINE_BIN_PATH ]; then\n#env -i swiftc -emit-executable -o$LAURINE_BIN_PATH $LAURINE_PATH\n#fi\n\n# Add permission to generator for script execution\nchmod 755 \"$LAURINE_PATH\"\n\n# Actually generate output. -- CUSTOMIZE -- parameters to your needs (see documentation).\n# Will only re-generate script if something changed\nif [ \"$OUTPUT_PATH\" -ot \"$SOURCE_PATH\" ]; then\n    echo \"hello laurine\"\n\n    \"$LAURINE_PATH\" -i \"$SOURCE_PATH\" -o \"$OUTPUT_PATH\"\nfi\n\n";
 		};
 		03213C2B23F90D1300002DD7 /* Increment Build */ = {
 			isa = PBXShellScriptBuildPhase;
