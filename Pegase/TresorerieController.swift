@@ -265,6 +265,7 @@ final class TresorerieController: NSViewController
         chartView.xAxis.labelCount = 300
         chartView.xAxis.valueFormatter = DateValueFormatter(miniTime: firstDate, interval: hourSeconds)
         
+        // MARK: Marker
         let  marker = RectMarker( color: #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1),
                                   font: NSFont.systemFont(ofSize: 12.0),
                                   insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 20.0, right: 8.0))
@@ -276,16 +277,41 @@ final class TresorerieController: NSViewController
         marker.interval = hourSeconds
         
         // MARK: LineChartDataSet
+        
+        /// Pointe
+        var label = Localizations.Statut.Realise
+        let dataSetPointe = setDataSet(values: values0, label: label, color: #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1) )
+        
+        /// Engage
+        label = Localizations.Statut.Engaged
+        let dataSetEngage = setDataSet(values: values1, label: label, color: #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1) )
+        
+        /// Planned
+        label = Localizations.Statut.Planifie
+        let dataSetPrevu = setDataSet(values: values2, label: label, color: #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1) )
+        
+        var dataSets = [LineChartDataSet]()
+        dataSets.append(dataSetPointe)
+        dataSets.append(dataSetEngage)
+        dataSets.append(dataSetPrevu)
+        
+        // MARK: LineChartData
+        let data = LineChartData(dataSets: dataSets)
+        data.setValueTextColor ( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        data.setValueFont ( NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
+        
+        chartView.data = data
+    }
+    
+    func setDataSet (values : [ChartDataEntry], label: String, color : NSColor) -> LineChartDataSet
+    {
         var dataSetPointe =  LineChartDataSet()
-        var dataSetEngage =  LineChartDataSet()
-        var dataSetPrevu =  LineChartDataSet()
         
         let pFormatter = NumberFormatter()
         pFormatter.numberStyle = .currency
         pFormatter.maximumFractionDigits = 2
-        
-        /// Point
-        dataSetPointe = LineChartDataSet(entries: values0, label: Localizations.Statut.Realise)
+
+        dataSetPointe = LineChartDataSet(entries: values, label: label)
         dataSetPointe.axisDependency = .left
         dataSetPointe.mode = .stepped
         dataSetPointe.valueTextColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
@@ -302,60 +328,8 @@ final class TresorerieController: NSViewController
         dataSetPointe.highlightLineWidth = 4.0
         dataSetPointe.drawHorizontalHighlightIndicatorEnabled = false
         dataSetPointe.formSize = 15.0
-        dataSetPointe.colors = [#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)]
-        
-        /// Engage
-        dataSetEngage = LineChartDataSet(entries: values1, label: Localizations.Statut.Engaged)
-        dataSetEngage.axisDependency = .left
-        dataSetEngage.mode = .stepped
-        dataSetEngage.valueTextColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        dataSetEngage.lineWidth = 1.5
-        
-        dataSetEngage.drawCirclesEnabled = false
-        dataSetEngage.drawValuesEnabled = true
-        dataSetEngage.valueFormatter = DefaultValueFormatter(formatter: pFormatter  )
-        
-        dataSetEngage.drawFilledEnabled = false //true
-        dataSetEngage.fillAlpha = 0.26
-        dataSetEngage.fillColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-        dataSetEngage.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
-        dataSetEngage.highlightLineWidth = 4.0
-        dataSetEngage.drawHorizontalHighlightIndicatorEnabled = false
-        dataSetEngage.formSize = 15.0
-        dataSetEngage.colors = [#colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1)]
-        
-        /// Planned
-        dataSetPrevu = LineChartDataSet(entries: values2, label: Localizations.Statut.Planifie)
-        dataSetPrevu.axisDependency = .left
-        dataSetPrevu.mode = .stepped
-        dataSetPrevu.valueTextColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        dataSetPrevu.lineWidth = 1.5
-        
-        dataSetPrevu.drawCirclesEnabled = false
-        dataSetPrevu.drawValuesEnabled = true
-        dataSetPrevu.valueFormatter = DefaultValueFormatter(formatter: pFormatter  )
-        
-        dataSetPrevu.drawFilledEnabled = false // true
-        dataSetPrevu.fillAlpha = 0.26
-        dataSetPrevu.fillColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-        dataSetPrevu.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
-        dataSetPrevu.highlightLineWidth = 4.0
-        dataSetPrevu.drawHorizontalHighlightIndicatorEnabled = false
-        dataSetPrevu.formSize = 15.0
-        dataSetPrevu.colors = [#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)]
-        
-        var dataSets = [LineChartDataSet]()
-        
-        dataSets.append(dataSetPointe)
-        dataSets.append(dataSetEngage)
-        dataSets.append(dataSetPrevu)
-        
-        // MARK: LineChartData
-        let data = LineChartData(dataSets: dataSets)
-        data.setValueTextColor ( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-        data.setValueFont ( NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
-        
-        chartView.data = data
+        dataSetPointe.colors = [color]
+        return dataSetPointe
     }
     
 }
