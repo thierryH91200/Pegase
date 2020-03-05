@@ -282,6 +282,7 @@ final class TresorerieController: NSViewController
         var label = Localizations.Statut.Realise
         let dataSetPointe = setDataSet(values: values0, label: label, color: #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1) )
         
+        
         /// Engage
         label = Localizations.Statut.Engaged
         let dataSetEngage = setDataSet(values: values1, label: label, color: #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1) )
