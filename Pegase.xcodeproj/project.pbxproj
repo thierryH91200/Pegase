@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0303E7102410D4E3003B17D9 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0303E70E2410D4E3003B17D9 /* Document.xcdatamodeld */; };
 		03213B0523F9048200002DD7 /* TTFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFD23F9048200002DD7 /* TTFormatViewController.xib */; };
 		03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFE23F9048200002DD7 /* ImportWindowController.xib */; };
 		03213B0723F9048200002DD7 /* ImportWindowControllerParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */; };
@@ -210,6 +209,7 @@
 		034ECB7323F88044006944DD /* CompteModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6F23F88044006944DD /* CompteModalWindowController.swift */; };
 		035082E624028F0400F8A0D4 /* ListeOperationsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035082E824028F0400F8A0D4 /* ListeOperationsController.xib */; };
 		037993932412386E001ADDA6 /* Feeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037993952412386E001ADDA6 /* Feeds.plist */; };
+		037993B0241385AD001ADDA6 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 037993AE241385AD001ADDA6 /* Document.xcdatamodeld */; };
 		038FFFBA240E72CD0019A183 /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 038FFFBC240E72CD0019A183 /* MyDB.sqlite */; };
 		038FFFCC240EAB2C0019A183 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC87923F87CA5006944DD /* Charts.framework */; };
 		038FFFCD240EAB2C0019A183 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC87923F87CA5006944DD /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -323,7 +323,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0303E70F2410D4E3003B17D9 /* TaskCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskCoreData.xcdatamodel; sourceTree = "<group>"; };
 		03213AFD23F9048200002DD7 /* TTFormatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTFormatViewController.xib; sourceTree = "<group>"; };
 		03213AFE23F9048200002DD7 /* ImportWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportWindowController.xib; sourceTree = "<group>"; };
 		03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportWindowControllerParserDelegate.swift; sourceTree = "<group>"; };
@@ -615,6 +614,7 @@
 		037993A224123875001ADDA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Feeds.plist; sourceTree = "<group>"; };
 		037993A324123876001ADDA6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = it; path = it.lproj/Feeds.plist; sourceTree = "<group>"; };
 		037993A424123877001ADDA6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/Feeds.plist; sourceTree = "<group>"; };
+		037993AF241385AD001ADDA6 /* TaskCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskCoreData.xcdatamodel; sourceTree = "<group>"; };
 		038FB16C2410234D00945A27 /* Pegase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pegase.entitlements; sourceTree = "<group>"; };
 		038FFFBB240E72CD0019A183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/MyDB.sqlite; sourceTree = "<group>"; };
 		038FFFC8240E72D40019A183 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/MyDB.sqlite; sourceTree = "<group>"; };
@@ -1061,7 +1061,7 @@
 		034EC81823F87C5B006944DD /* Pegase */ = {
 			isa = PBXGroup;
 			children = (
-				0303E70E2410D4E3003B17D9 /* Document.xcdatamodeld */,
+				037993AE241385AD001ADDA6 /* Document.xcdatamodeld */,
 				038FB16C2410234D00945A27 /* Pegase.entitlements */,
 				034EC8B623F87E31006944DD /* Info.plist */,
 				034EC8BA23F87E8B006944DD /* AdvancedFilterViewController.swift */,
@@ -1644,7 +1644,7 @@
 				03213BBD23F909D400002DD7 /* CommunShared.swift in Sources */,
 				03213BB523F909C300002DD7 /* RangeSliderHorizontal.swift in Sources */,
 				034EC8D123F87EB2006944DD /* RateWindowController.swift in Sources */,
-				0303E7102410D4E3003B17D9 /* Document.xcdatamodeld in Sources */,
+				037993B0241385AD001ADDA6 /* Document.xcdatamodeld in Sources */,
 				03213BE523F90B3F00002DD7 /* EcheanciersSaisieControllerDelegate.swift in Sources */,
 				03213B9B23F9091200002DD7 /* SourceListViewDataSource.swift in Sources */,
 				03213B8F23F9086600002DD7 /* RubriquePieController.swift in Sources */,
@@ -2195,14 +2195,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0303E70E2410D4E3003B17D9 /* Document.xcdatamodeld */ = {
+		037993AE241385AD001ADDA6 /* Document.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0303E70F2410D4E3003B17D9 /* TaskCoreData.xcdatamodel */,
+				037993AF241385AD001ADDA6 /* TaskCoreData.xcdatamodel */,
 			);
-			currentVersion = 0303E70F2410D4E3003B17D9 /* TaskCoreData.xcdatamodel */;
-			name = Document.xcdatamodeld;
-			path = ../../../../../.Trash/PegaseA/Pegase/Document.xcdatamodeld;
+			currentVersion = 037993AF241385AD001ADDA6 /* TaskCoreData.xcdatamodel */;
+			path = Document.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

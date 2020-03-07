@@ -1,9 +1,9 @@
 
 /* Class = "NSTableColumn"; headerCell.title = "Date opération"; ObjectID = "4qb-Xa-RCM"; */
-"4qb-Xa-RCM.headerCell.title" = "Date opération";
+"4qb-Xa-RCM.headerCell.title" = "Operation date";
 
 /* Class = "NSTableColumn"; headerCell.title = "Date pointage"; ObjectID = "4yh-0M-4ko"; */
-"4yh-0M-4ko.headerCell.title" = "Date pointage";
+"4yh-0M-4ko.headerCell.title" = "Check-in date";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "5Wn-P2-WSQ"; */
 "5Wn-P2-WSQ.title" = "Text Cell";
@@ -72,7 +72,7 @@
 "XUf-CO-lvj.title" = "Bank balance";
 
 /* Class = "NSTextFieldCell"; title = "Créer les opérations prévus "; ObjectID = "YBl-JO-F9l"; */
-"YBl-JO-F9l.title" = "Créer les opérations prévus ";
+"YBl-JO-F9l.title" = "Create planned operations ";
 
 /* Class = "NSTextFieldCell"; title = "Real balance"; ObjectID = "ZZ9-MU-ZrS"; */
 "ZZ9-MU-ZrS.title" = "Real balance";
