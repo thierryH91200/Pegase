@@ -16,7 +16,6 @@ final class RubriquePieController: NSViewController
     var firstDate: TimeInterval = 0.0
     var lastDate: TimeInterval = 0.0
 
-    
     var startDate = Date()
     var endDate = Date()
     
@@ -103,7 +102,7 @@ final class RubriquePieController: NSViewController
         
         let attribut: [ NSAttributedString.Key: Any] =
             [  .font: NSFont(name: "HelveticaNeue-Light", size: 15.0)!,
-               .foregroundColor: NSColor.gray,
+               .foregroundColor: NSColor.textColor,
                .paragraphStyle: paragraphStyle]
         
         var centerText = NSMutableAttributedString(string: "Dépenses")
@@ -118,6 +117,7 @@ final class RubriquePieController: NSViewController
         self.chartView.centerAttributedText = centerText
         self.chartView.chartDescription?.enabled = false
         self.chartView.noDataText = Localizations.Chart.No_chart_Data_Available
+        chartView.holeColor = .windowBackgroundColor
         
         centerText = NSMutableAttributedString(string: "Recettes")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
@@ -131,6 +131,7 @@ final class RubriquePieController: NSViewController
         self.chartView2.centerAttributedText = centerText
         self.chartView2.chartDescription?.enabled = false
         self.chartView2.noDataText = Localizations.Chart.No_chart_Data_Available
+        chartView2.holeColor = .windowBackgroundColor
     }
     
     private func updateChartData()

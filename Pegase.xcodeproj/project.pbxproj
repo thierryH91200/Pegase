@@ -211,6 +211,7 @@
 		037993932412386E001ADDA6 /* Feeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037993952412386E001ADDA6 /* Feeds.plist */; };
 		037993B0241385AD001ADDA6 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 037993AE241385AD001ADDA6 /* Document.xcdatamodeld */; };
 		037993B524139AE7001ADDA6 /* CommonGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037993B424139AE7001ADDA6 /* CommonGraph.swift */; };
+		037993B72413F353001ADDA6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037993B62413F353001ADDA6 /* ChartView.swift */; };
 		038FFFBA240E72CD0019A183 /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 038FFFBC240E72CD0019A183 /* MyDB.sqlite */; };
 		038FFFCC240EAB2C0019A183 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC87923F87CA5006944DD /* Charts.framework */; };
 		038FFFCD240EAB2C0019A183 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC87923F87CA5006944DD /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -617,6 +618,7 @@
 		037993A424123877001ADDA6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/Feeds.plist; sourceTree = "<group>"; };
 		037993AF241385AD001ADDA6 /* TaskCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskCoreData.xcdatamodel; sourceTree = "<group>"; };
 		037993B424139AE7001ADDA6 /* CommonGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonGraph.swift; sourceTree = "<group>"; };
+		037993B62413F353001ADDA6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		038FB16C2410234D00945A27 /* Pegase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pegase.entitlements; sourceTree = "<group>"; };
 		038FFFBB240E72CD0019A183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/MyDB.sqlite; sourceTree = "<group>"; };
 		038FFFC8240E72D40019A183 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/MyDB.sqlite; sourceTree = "<group>"; };
@@ -1209,6 +1211,7 @@
 				034EC90823F87F51006944DD /* NSTableCellView.swift */,
 				034EC90023F87F50006944DD /* NSUserInterfaceItemIdentifier.swift */,
 				034EC90323F87F51006944DD /* NSWindow.swift */,
+				037993B62413F353001ADDA6 /* ChartView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1654,6 +1657,7 @@
 				03213B8F23F9086600002DD7 /* RubriquePieController.swift in Sources */,
 				03213B3F23F9053A00002DD7 /* OperationViewController.swift in Sources */,
 				03213BA123F9093700002DD7 /* TulsiDocumentController.swift in Sources */,
+				037993B72413F353001ADDA6 /* ChartView.swift in Sources */,
 				03213B2F23F9050000002DD7 /* ListeOperationsDelegate.swift in Sources */,
 				03213C0623F90BD200002DD7 /* RubriqueViewControllerDragDrop.swift in Sources */,
 				034ECA7923F87FAE006944DD /* GroupeCompteViewController.swift in Sources */,

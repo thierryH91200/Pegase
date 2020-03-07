@@ -177,8 +177,6 @@ extension RubriqueViewController : NSMenuDelegate {
             }
             print("This element was 🗑! : ", entityRubrique!.name!)
             self.managedObjectContext.delete(entityRubrique!)
-            
-            
             self.updateData()
         })
     }

@@ -9,12 +9,6 @@ final class ModePaiementPieController: CommonGraph {
     @IBOutlet var chartView2: PieChartView!
     @IBOutlet weak var splitView: NSSplitView!
     
-//    var sliderViewController: SliderViewHorizontalController?
-    
-//    var listeOperations = [EntityOperations]()
-//    var firstDate: TimeInterval = 0.0
-//    var lastDate: TimeInterval = 0.0
-
     var startDate = Date()
     var endDate = Date()
     
@@ -25,8 +19,8 @@ final class ModePaiementPieController: CommonGraph {
         return _formatter
     }()
     
-    var resultArrayD = [DataGraph]()
-    var resultArrayR = [DataGraph]()
+    var resultArrayDepense = [DataGraph]()
+    var resultArrayRecette = [DataGraph]()
 
     public override func viewDidDisappear()
     {
@@ -48,6 +42,10 @@ final class ModePaiementPieController: CommonGraph {
         // Do view setup here.
         
         NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeCompte(_:)))
+        
+        chartView.delegate = self
+        chartView2.delegate = self
+
 
         if sliderViewController == nil {
             sliderViewController = SliderViewHorizontalController(nibName: "SliderViewHorizontalController", bundle: nil)
@@ -66,25 +64,6 @@ final class ModePaiementPieController: CommonGraph {
         setDataHorizontal()
     }
     
-//    func updateAccount () {
-//        listeOperations = ListeOperations.shared.entities
-//        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
-//            listeOperations = ListeOperations.shared.getAll()
-//        }
-//        if listeOperations.count > 0 {
-//            
-//            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
-//            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
-//            
-//            sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
-//            sliderViewController?.mySlider.isEnabled = true
-//            
-//        } else {
-//            sliderViewController?.mySlider.isEnabled = false
-//        }
-//        
-//    }
-
     func initChart() {
         
         let paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
@@ -93,19 +72,19 @@ final class ModePaiementPieController: CommonGraph {
         
         let attribut: [ NSAttributedString.Key: Any] =
           [ .font: NSFont(name: "HelveticaNeue-Light", size: 15.0)!,
-            .foregroundColor: NSColor.labelColor,
+            .foregroundColor: NSColor.textColor,
             .paragraphStyle: paragraphStyle]
 
-        // MARK: Chart View
+        // MARK: - Chart View Depense
         var centerText = NSMutableAttributedString(string: "Dépenses")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
-        
-        chartView.delegate = self
         chartView.centerAttributedText = centerText
         
         chartView.chartDescription?.enabled = false
         chartView.noDataText = Localizations.Chart.No_chart_Data_Available
 //        chartView.backgroundColor = .windowBackgroundColor
+        chartView.holeColor = .windowBackgroundColor
+//        chartView.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
 
         // MARK: legend
         let legend = chartView.legend
@@ -115,18 +94,18 @@ final class ModePaiementPieController: CommonGraph {
         legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
         legend.textColor = .labelColor
 
-
-        // MARK: Chart View2
+        // MARK: -  Chart View2 Recette
         centerText = NSMutableAttributedString(string: "Recettes")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
-        chartView2.delegate = self
+//        chartView2.delegate = self
         chartView2.centerAttributedText = centerText
-//        chartView2.centert = centerText
+//        chartView2.centerText = "Recettes"
 
         chartView2.chartDescription?.enabled = false
         chartView2.noDataText = Localizations.Chart.No_chart_Data_Available
 //        chartView2.backgroundColor = .windowBackgroundColor
+        chartView2.holeColor = .windowBackgroundColor
         
         // MARK: legend
         let legend2 = chartView2.legend
@@ -175,28 +154,28 @@ final class ModePaiementPieController: CommonGraph {
             }
         }
 
-        self.resultArrayD.removeAll()
+        self.resultArrayDepense.removeAll()
         let allKeys = Set<String>(dataArrayD.map { $0.name })
         for key in allKeys {
             let data = dataArrayD.filter({ $0.name == key })
             let sum = data.map({ $0.value }).reduce(0, +)
-            self.resultArrayD.append(DataGraph(name: key, value: sum, color: data[0].color))
+            self.resultArrayDepense.append(DataGraph(name: key, value: sum, color: data[0].color))
         }
-        self.resultArrayD = self.resultArrayD.sorted(by: { $0.name < $1.name })
+        self.resultArrayDepense = self.resultArrayDepense.sorted(by: { $0.name < $1.name })
         
-        resultArrayR.removeAll()
+        resultArrayRecette.removeAll()
         let allKeysR = Set<String>(dataArrayR.map { $0.name })
         for key in allKeysR {
             let data = dataArrayR.filter({ $0.name == key })
             let sum = data.map({ $0.value }).reduce(0, +)
-            resultArrayR.append(DataGraph(name: key, value: sum, color: data[0].color))
+            resultArrayRecette.append(DataGraph(name: key, value: sum, color: data[0].color))
         }
-        resultArrayR = resultArrayR.sorted(by: { $0.name < $1.name })
+        resultArrayRecette = resultArrayRecette.sorted(by: { $0.name < $1.name })
     }
     
     func setDataCount1()
     {
-        guard resultArrayD.count != 0  else {
+        guard resultArrayDepense.count != 0  else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
@@ -205,7 +184,7 @@ final class ModePaiementPieController: CommonGraph {
         // MARK: PieChartDataEntry
         var colors : [NSColor] = []
         var entries = [PieChartDataEntry]()
-        for result in resultArrayD {
+        for result in resultArrayDepense {
             entries.append(PieChartDataEntry(value: abs(result.value), label: result.name))
             colors.append(result.color)
         }
@@ -234,7 +213,7 @@ final class ModePaiementPieController: CommonGraph {
     
     private func setDataCount2()
     {
-        guard resultArrayR.count != 0  else {
+        guard resultArrayRecette.count != 0  else {
             chartView2.data = nil
             chartView2.data?.notifyDataChanged()
             chartView2.notifyDataSetChanged()
@@ -243,7 +222,7 @@ final class ModePaiementPieController: CommonGraph {
         // MARK: PieChartDataEntry
         var colors : [NSColor] = []
         var entries : [PieChartDataEntry] = []
-        for result in self.resultArrayR {
+        for result in self.resultArrayRecette {
             entries.append(PieChartDataEntry(value: abs(result.value), label: result.name))
             colors.append(result.color)
         }

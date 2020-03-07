@@ -148,6 +148,10 @@ Run carthage update to build the framework and drag the built Diagnostics.framew
 
 ## Manually
 
+Download and drop /Sources folder in your project.
+Congratulations!
+
+
 You must integrate into your project manually.
 - Charts  
 - SwiftDate

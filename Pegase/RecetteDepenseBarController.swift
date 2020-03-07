@@ -28,6 +28,9 @@ final class RecetteDepenseBarController: CommonGraph {
         return _formatter
     }()
     
+    var resultArrayDepense = [DataGraph]()
+    var resultArrayRecette = [DataGraph]()
+
     let formatterDate: DateFormatter = {
         let fmt = DateFormatter()
         fmt.dateFormat = DateFormatter.dateFormat(fromTemplate: "MM yy", options: 0, locale: Locale.current)
@@ -35,8 +38,6 @@ final class RecetteDepenseBarController: CommonGraph {
     }()
     
     var label  = [String]()
-    var resultArrayDepense = [DataGraph]()
-    var resultArrayRecette = [DataGraph]()
     
     override func viewDidAppear() {
         super.viewDidAppear()
@@ -81,25 +82,6 @@ final class RecetteDepenseBarController: CommonGraph {
         setDataHorizontal()
     }
     
-//    func updateAccount () {
-//        listeOperations = ListeOperations.shared.entities
-//        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
-//            listeOperations = ListeOperations.shared.getAll()
-//        }
-//        if listeOperations.count > 0 {
-//
-//            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
-//            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
-//
-//            sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
-//            sliderViewController?.mySlider.isEnabled = true
-//
-//        } else {
-//            sliderViewController?.mySlider.isEnabled = false
-//        }
-//
-//    }
-
     private func initChart() {
         
         // MARK: General
@@ -109,7 +91,7 @@ final class RecetteDepenseBarController: CommonGraph {
         chartView.drawValueAboveBarEnabled  = false
         chartView.maxVisibleCount           = 60
         chartView.drawGridBackgroundEnabled = true
-        chartView.backgroundColor = .white
+        chartView.backgroundColor = .windowBackgroundColor
         chartView.fitBars                   = true
         chartView.drawBordersEnabled = true
         
