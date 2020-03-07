@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="EntityAccount" representedClassName=".EntityAccount" syncable="YES">
         <attribute name="dateEcheancier" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isAccount" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isDemo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isFolder" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isHeader" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isRoot" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -158,7 +159,7 @@
         <relationship name="operation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityOperations" inverseName="sousOperations" inverseEntity="EntityOperations"/>
     </entity>
     <elements>
-        <element name="EntityAccount" positionX="-533" positionY="27" width="128" height="373"/>
+        <element name="EntityAccount" positionX="-533" positionY="27" width="128" height="388"/>
         <element name="EntityBanque" positionX="-72.7109375" positionY="-148.14453125" width="128" height="238"/>
         <element name="EntityCarnetCheques" positionX="151" positionY="-45" width="128" height="148"/>
         <element name="EntityCategory" positionX="621" positionY="542" width="128" height="148"/>

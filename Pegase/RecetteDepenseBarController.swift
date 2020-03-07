@@ -3,18 +3,18 @@ import Charts
 import SwiftDate
 
 
-final class RecetteDepenseBarController: NSViewController {
+final class RecetteDepenseBarController: CommonGraph {
     
     public weak var delegate: FilterDelegate?
     
     @IBOutlet var chartView: BarChartView!
     @IBOutlet weak var splitView: NSSplitView!
     
-    var sliderViewController: SliderViewHorizontalController?
-    
-    var listeOperations = [EntityOperations]()
-    var firstDate: TimeInterval = 0.0
-    var lastDate: TimeInterval = 0.0
+//    var sliderViewController: SliderViewHorizontalController?
+//    
+//    var listeOperations = [EntityOperations]()
+//    var firstDate: TimeInterval = 0.0
+//    var lastDate: TimeInterval = 0.0
 
     let hourSeconds = 3600.0 * 24.0 // one day
 
@@ -54,7 +54,7 @@ final class RecetteDepenseBarController: NSViewController {
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        print("\(self) viewDidDisappear : ", ".updateCompte")
+        print("\(self) viewDidDisappear : ", ".updateAccount")
         NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
     }
     
@@ -81,24 +81,24 @@ final class RecetteDepenseBarController: NSViewController {
         setDataHorizontal()
     }
     
-    func updateAccount () {
-        listeOperations = ListeOperations.shared.entities
-        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
-            listeOperations = ListeOperations.shared.getAll()
-        }
-        if listeOperations.count > 0 {
-            
-            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
-            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
-            
-            sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
-            sliderViewController?.mySlider.isEnabled = true
-            
-        } else {
-            sliderViewController?.mySlider.isEnabled = false
-        }
-        
-    }
+//    func updateAccount () {
+//        listeOperations = ListeOperations.shared.entities
+//        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
+//            listeOperations = ListeOperations.shared.getAll()
+//        }
+//        if listeOperations.count > 0 {
+//
+//            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
+//            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
+//
+//            sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
+//            sliderViewController?.mySlider.isEnabled = true
+//
+//        } else {
+//            sliderViewController?.mySlider.isEnabled = false
+//        }
+//
+//    }
 
     private func initChart() {
         

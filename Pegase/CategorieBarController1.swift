@@ -1,22 +1,22 @@
 import AppKit
 import Charts
 
-final class CategorieBarController1: NSViewController
+final class CategorieBarController1: CommonGraph
 {
     public weak var delegate: FilterDelegate?
     
     @IBOutlet var chartView: BarChartView!
     @IBOutlet weak var splitView: NSSplitView!
     
-    var sliderViewController: SliderViewHorizontalController?
+//    var sliderViewController: SliderViewHorizontalController?
     
     private var numericIDs  = [String]()
     private var resultArray = [DataGraph]()
     private var arrayUniqueRubriques   = [String]()
     
-    private var listeOperations = [EntityOperations]()
-    var firstDate: TimeInterval = 0.0
-    var lastDate: TimeInterval = 0.0
+//    private var listeOperations = [EntityOperations]()
+//    var firstDate: TimeInterval = 0.0
+//    var lastDate: TimeInterval = 0.0
 
     private var startDate = Date()
     private var endDate = Date()
@@ -64,7 +64,7 @@ final class CategorieBarController1: NSViewController
         }
         splitView.addSubview((sliderViewController?.view)!, positioned: .above, relativeTo: splitView)
         
-        updateCompte ()
+        updateAccount ()
         initChart()
         updateChartData()
         setDataHorizontal()
@@ -72,27 +72,27 @@ final class CategorieBarController1: NSViewController
     
     @objc func updateChangeCompte(_ note: Notification) {
         
-        updateCompte ()
+        updateAccount ()
         updateChartData()
         setDataHorizontal()
     }
     
-    func updateCompte () {
-        listeOperations = ListeOperations.shared.getAll()
-        if listeOperations.count > 0 {
-            
-            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
-            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
-            
-            sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
-            sliderViewController?.mySlider.isEnabled = true
-            
-        } else {
-            sliderViewController?.mySlider.isEnabled = false
-        }
-        
-    }
-
+//    func updateAccount () {
+//        listeOperations = ListeOperations.shared.getAll()
+//        if listeOperations.count > 0 {
+//            
+//            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
+//            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
+//            
+//            sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
+//            sliderViewController?.mySlider.isEnabled = true
+//            
+//        } else {
+//            sliderViewController?.mySlider.isEnabled = false
+//        }
+//        
+//    }
+//
     
     private func initChart() {
         // MARK: General

@@ -2,7 +2,7 @@ import AppKit
 import Charts
 
 
-final class CategorieBarController: NSViewController
+final class CategorieBarController: CommonGraph
 {
     public weak var delegate: FilterDelegate?
     
@@ -10,7 +10,7 @@ final class CategorieBarController: NSViewController
     @IBOutlet weak var backToBrands: NSButton!
     @IBOutlet weak var splitView: NSSplitView!
     
-    var sliderViewController: SliderViewHorizontalController?
+//    var sliderViewController: SliderViewHorizontalController?
     
     var label  = [String]()
     var data = [DataGraph]()
@@ -23,9 +23,9 @@ final class CategorieBarController: NSViewController
         return _formatter
     }()
     
-    var listeOperations = [EntityOperations]()
-    var firstDate: TimeInterval = 0.0
-    var lastDate: TimeInterval = 0.0
+//    var listeOperations = [EntityOperations]()
+//    var firstDate: TimeInterval = 0.0
+//    var lastDate: TimeInterval = 0.0
 
     var startDate = Date()
     var endDate = Date()
@@ -79,24 +79,24 @@ final class CategorieBarController: NSViewController
         setDataHorizontal()
     }
     
-    func updateAccount () {
-        listeOperations = ListeOperations.shared.entities
-        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
-            listeOperations = ListeOperations.shared.getAll()
-        }
-        if listeOperations.count > 0 {
-            
-            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
-            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
-            
-            sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
-            sliderViewController?.mySlider.isEnabled = true
-            
-        } else {
-            sliderViewController?.mySlider.isEnabled = false
-        }
-        
-    }
+//    func updateAccount () {
+//        listeOperations = ListeOperations.shared.entities
+//        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
+//            listeOperations = ListeOperations.shared.getAll()
+//        }
+//        if listeOperations.count > 0 {
+//
+//            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
+//            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
+//
+//            sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
+//            sliderViewController?.mySlider.isEnabled = true
+//
+//        } else {
+//            sliderViewController?.mySlider.isEnabled = false
+//        }
+//
+//    }
 
     private func initChart() {
         // MARK: General
