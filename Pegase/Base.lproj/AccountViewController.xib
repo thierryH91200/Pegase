@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16095" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14810.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16095"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,8 +38,8 @@
                     <gridCells>
                         <gridCell row="aSx-OV-qs8" column="UvT-za-VYn" id="xt5-li-AUq">
                             <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2j5-7O-7cL">
-                                <rect key="frame" x="-2" y="61" width="131" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Ancien mot de passe" id="WZF-eu-ezI">
+                                <rect key="frame" x="-2" y="61" width="87" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Old password" id="WZF-eu-ezI">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -65,8 +65,8 @@
                         <gridCell row="Ydz-GP-Cg9" column="dVX-8E-IzT" id="wd4-H3-umN"/>
                         <gridCell row="qDs-UT-PEq" column="UvT-za-VYn" id="Eje-0Q-9gm">
                             <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4dW-sE-Clp">
-                                <rect key="frame" x="-2" y="28" width="143" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Nouveau mot de passe" id="NMY-ef-juL">
+                                <rect key="frame" x="-2" y="28" width="93" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="New password" id="NMY-ef-juL">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -74,7 +74,7 @@
                             </textField>
                         </gridCell>
                         <gridCell row="qDs-UT-PEq" column="xhp-n6-Ieo" id="aOm-Bw-Cem">
-                            <secureTextField key="contentView" toolTip="Use libdvdnav to read DVDs. Only disable this for problematic DVDs where libdvdread works better (rare)." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YVt-bN-c1g">
+                            <secureTextField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YVt-bN-c1g">
                                 <rect key="frame" x="176" y="28" width="151" height="21"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="qES-Wa-gqE">
                                     <font key="font" metaFont="system"/>
@@ -89,8 +89,8 @@
                         <gridCell row="qDs-UT-PEq" column="dVX-8E-IzT" id="aDe-fK-KY8"/>
                         <gridCell row="vE4-W6-1FP" column="UvT-za-VYn" id="wP4-cH-qaW">
                             <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qli-Ll-TbY">
-                                <rect key="frame" x="-2" y="0.0" width="164" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Confirmer le mot de passe" id="NmD-nk-XKJ">
+                                <rect key="frame" x="-2" y="0.0" width="114" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Confirm password" id="NmD-nk-XKJ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

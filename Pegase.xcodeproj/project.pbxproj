@@ -513,10 +513,6 @@
 		03213CD123F9328800002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ModePaiementViewController.strings; sourceTree = "<group>"; };
 		03213CD323F9328900002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ModePaiementViewController.strings; sourceTree = "<group>"; };
 		03213CD523F977DD00002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AccountViewController.xib; sourceTree = "<group>"; };
-		03213CD823F977E200002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AccountViewController.strings; sourceTree = "<group>"; };
-		03213CDA23F977E300002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AccountViewController.strings; sourceTree = "<group>"; };
-		03213CDC23F977E400002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AccountViewController.strings; sourceTree = "<group>"; };
-		03213CDE23F977E400002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AccountViewController.strings; sourceTree = "<group>"; };
 		03213CE023F9780900002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RubriqueViewController.xib; sourceTree = "<group>"; };
 		03213CE323F9780B00002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RubriqueViewController.strings; sourceTree = "<group>"; };
 		03213CE523F9780C00002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/RubriqueViewController.strings; sourceTree = "<group>"; };
@@ -626,6 +622,10 @@
 		038FFFCA240E72D60019A183 /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/MyDB.sqlite; sourceTree = "<group>"; };
 		038FFFCB240E72D70019A183 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/MyDB.sqlite; sourceTree = "<group>"; };
 		03ACCCD123FAD00500098CFC /* TFDate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TFDate.xcodeproj; path = "../../NSCustomControl/ZZZ DatePicker/TFDate/TFDate/TFDate.xcodeproj"; sourceTree = "<group>"; };
+		03F3F4D324169CD60040700D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AccountViewController.strings; sourceTree = "<group>"; };
+		03F3F4D524169CE20040700D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AccountViewController.strings; sourceTree = "<group>"; };
+		03F3F4D724169CE30040700D /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AccountViewController.strings; sourceTree = "<group>"; };
+		03F3F4D924169CE50040700D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AccountViewController.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1905,10 +1905,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				03213CD523F977DD00002DD7 /* Base */,
-				03213CD823F977E200002DD7 /* es */,
-				03213CDA23F977E300002DD7 /* it */,
-				03213CDC23F977E400002DD7 /* fr */,
-				03213CDE23F977E400002DD7 /* en */,
+				03F3F4D324169CD60040700D /* en */,
+				03F3F4D524169CE20040700D /* fr */,
+				03F3F4D724169CE30040700D /* it */,
+				03F3F4D924169CE50040700D /* es */,
 			);
 			name = AccountViewController.xib;
 			sourceTree = "<group>";

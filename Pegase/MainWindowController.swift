@@ -177,6 +177,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     {
         self.listeOperationsController = ListeOperationsController()
         let vc = (self.listeOperationsController?.view)!
+        self.listeOperationsController?.datePicker.isEnabled = false
         
         Commun.shared.addSubview(subView: vc, toView: operationViewSecondary)
         vc.translatesAutoresizingMaskIntoConstraints = false

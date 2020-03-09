@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16095" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16095"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ModeModalWindowController" customModule="Pegase" customModuleProvider="target">
             <connections>
-                <outlet property="color" destination="tED-tV-fXt" id="bLv-S7-lrv"/>
+                <outlet property="cancel" destination="KHw-db-qk6" id="n7z-pi-7Xa"/>
+                <outlet property="colorWell" destination="tED-tV-fXt" id="p5V-O9-xzg"/>
                 <outlet property="mode" destination="2HL-oc-Ddz" id="Ywb-uH-h1r"/>
                 <outlet property="name" destination="xRh-Nj-5sI" id="0yu-TM-mR8"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="o5l-Zi-Tq2"/>

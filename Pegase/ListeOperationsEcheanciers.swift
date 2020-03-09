@@ -7,6 +7,8 @@ extension ListeOperationsController: NSDatePickerCellDelegate {
                         validateProposedDateValue proposedDateValue: AutoreleasingUnsafeMutablePointer<NSDate>,
                         timeInterval proposedTimeInterval: UnsafeMutablePointer<TimeInterval>?) {
         
+        guard datePicker.isEnabled == true else { return }
+        
         let proposedDate = proposedDateValue.pointee as Date
         guard proposedDate != datePicker.dateValue else { return }
         
@@ -41,6 +43,7 @@ extension ListeOperationsController: NSDatePickerCellDelegate {
             entityEcheancier.dateValeur = dateValeur
         }
         
+        print("datePickerCell")
         getAllData()
         reloadData()
         compteCourant?.dateEcheancier = proposedDate

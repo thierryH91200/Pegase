@@ -15,8 +15,9 @@ extension MainWindowController: SourceListDelegate
         case "Liste des opérations":
             self.listeOperationsController = ListeOperationsController()
             vc = (self.listeOperationsController?.view)!
-//            self.listeOperationsController?.representedObject = self
-            
+            self.listeOperationsController?.setUpDatePicker()
+            self.listeOperationsController?.datePicker.isEnabled = true
+
             setUpViewOperation()
             listeOperationsController?.delegate = operationController
             

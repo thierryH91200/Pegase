@@ -76,15 +76,13 @@ final class ModePaiementPieController: CommonGraph {
             .paragraphStyle: paragraphStyle]
 
         // MARK: - Chart View Depense
-        var centerText = NSMutableAttributedString(string: "Dépenses")
+        var centerText = NSMutableAttributedString(string: Localizations.General.Depense)
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         chartView.centerAttributedText = centerText
         
         chartView.chartDescription?.enabled = false
         chartView.noDataText = Localizations.Chart.No_chart_Data_Available
-//        chartView.backgroundColor = .windowBackgroundColor
         chartView.holeColor = .windowBackgroundColor
-//        chartView.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
 
         // MARK: legend
         let legend = chartView.legend
@@ -95,7 +93,7 @@ final class ModePaiementPieController: CommonGraph {
         legend.textColor = .labelColor
 
         // MARK: -  Chart View2 Recette
-        centerText = NSMutableAttributedString(string: "Recettes")
+        centerText = NSMutableAttributedString(string: Localizations.General.Recette)
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
 //        chartView2.delegate = self

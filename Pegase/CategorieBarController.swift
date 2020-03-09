@@ -48,7 +48,6 @@ final class CategorieBarController: CommonGraph
             self.chartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
         })
         delegate?.updateListeOperations(liste: [])
-        
     }
     
     override func viewDidLoad()
@@ -79,25 +78,6 @@ final class CategorieBarController: CommonGraph
         setDataHorizontal()
     }
     
-//    func updateAccount () {
-//        listeOperations = ListeOperations.shared.entities
-//        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
-//            listeOperations = ListeOperations.shared.getAll()
-//        }
-//        if listeOperations.count > 0 {
-//
-//            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
-//            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
-//
-//            sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
-//            sliderViewController?.mySlider.isEnabled = true
-//
-//        } else {
-//            sliderViewController?.mySlider.isEnabled = false
-//        }
-//
-//    }
-
     private func initChart() {
         // MARK: General
         chartView.delegate = self

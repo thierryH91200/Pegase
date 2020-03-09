@@ -207,9 +207,13 @@ final class ListeOperationsController: NSViewController {
         
         let attributedText = NSAttributedString(string: str, attributes: attribute)
         self.labelInfo.attributedStringValue = attributedText
+
+    }
+    
+    func setUpDatePicker() {
         
         self.datePicker.delegate = self
-        
+
         self.datePicker.allowEmptyDate = false
         self.datePicker.showPromptWhenEmpty = false
         self.datePicker.referenceDate = Date()
