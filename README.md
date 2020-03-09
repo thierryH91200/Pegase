@@ -105,14 +105,10 @@ carthage update --platform macos --use-submodules
 it is not my priority
 Pegase not include CocoaPods
 
-## Carthage Install
-
-it is not my priority
-Pegase not include Carthage
-
 ## Carthage
 
 it is not my priority
+Pegase not include Carthage
 
 
 ## Manually
