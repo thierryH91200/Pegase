@@ -34,7 +34,7 @@ extension MainWindowController: SourceListDelegate
             self.tresorerieController = TresorerieController()
             vc = (tresorerieController?.view)!
             
-            setUpGroupeListeOperationsSecondary()
+            setUpGroupeListeOperationsSecondary(true)
             tresorerieController?.delegate = listeOperationsController
             
             isSplitDroitHidden = true

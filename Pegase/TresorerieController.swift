@@ -366,6 +366,7 @@ extension TresorerieController: ChartViewDelegate
         let dateOperation = date.noon
         
         let p1 = NSPredicate(format: "account == %@", compteCourant!)
+//        let p3 = NSPredicate(format: "account == %@", compteCourant!)
         let p3 = NSPredicate(format: "dateOperation == %@", dateOperation as CVarArg )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p3])
         

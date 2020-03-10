@@ -120,7 +120,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
                 }
                 entityOperation.dateOperation = dateOperation
             } else {
-                entityOperation.dateOperation = Date()
+                entityOperation.dateOperation = Date().noon
             }
             
             /// Date Pointage

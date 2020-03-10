@@ -15,7 +15,7 @@ final class SourceListViewController: NSViewController {
     
     @IBOutlet weak var sidebarOutlineView: NSOutlineView!
     
-    var datas        = [Donnees]()
+    var datas       = [Donnees]()
     var selectIndex = [1]
     
     var colorBackGround = NSColor.clear

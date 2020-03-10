@@ -173,11 +173,18 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
         self.operationController?.delegate = listeOperationsController
     }
     
-    func setUpGroupeListeOperationsSecondary()
+    func setUpGroupeListeOperationsSecondary(_ forced : Bool = false)
     {
         self.listeOperationsController = ListeOperationsController()
         let vc = (self.listeOperationsController?.view)!
-        self.listeOperationsController?.datePicker.isEnabled = false
+        
+        if forced == true {
+            self.listeOperationsController?.setUpDatePicker()
+            self.listeOperationsController?.datePicker.isEnabled = true
+
+        } else {
+            self.listeOperationsController?.datePicker.isEnabled = false
+        }
         
         Commun.shared.addSubview(subView: vc, toView: operationViewSecondary)
         vc.translatesAutoresizingMaskIntoConstraints = false
