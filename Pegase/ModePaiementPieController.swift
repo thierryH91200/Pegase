@@ -46,7 +46,6 @@ final class ModePaiementPieController: CommonGraph {
         chartView.delegate = self
         chartView2.delegate = self
 
-
         if sliderViewController == nil {
             sliderViewController = SliderViewHorizontalController(nibName: "SliderViewHorizontalController", bundle: nil)
             sliderViewController?.delegate = self

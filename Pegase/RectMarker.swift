@@ -10,7 +10,7 @@ import Charts
 //  https://github.com/danielgindi/Charts
 //
 
-import Foundation
+import AppKit
 
 open class RectMarker: MarkerImage
 {

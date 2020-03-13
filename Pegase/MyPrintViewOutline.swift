@@ -158,7 +158,7 @@ final class MyPrintViewOutline: NSView
         
         let center = CGPoint(x: rectDis.midX, y: rectDis.midY)
         let side = rectDis.width
-        let bezierPathDis = trianglePathWithCenter(center: center, side: side)
+        let bezierPathDis = trianglePath(center: center, side: side)
         
         bezierPathDis.stroke()
         bezierPathDis.fill()
@@ -318,7 +318,7 @@ final class MyPrintViewOutline: NSView
 //        }
 //    }
         
-    func trianglePathWithCenter(center: CGPoint, side: CGFloat) -> NSBezierPath {
+    func trianglePath(center: CGPoint, side: CGFloat) -> NSBezierPath {
         let path = NSBezierPath()
         
         let startX = center.x - side / 2

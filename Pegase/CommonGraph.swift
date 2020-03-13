@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Charts
 
 class CommonGraph: NSViewController {
     
@@ -16,12 +17,22 @@ class CommonGraph: NSViewController {
     
     var sliderViewController: SliderViewHorizontalController?
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
+    
+    func initializeLegend(_ legend: Legend) {
+        legend.horizontalAlignment           = .left
+        legend.verticalAlignment             = .top
+        legend.orientation                   = .vertical
+        legend.drawInside                    = true
+        legend.form                          = .square
+        legend.formSize                      = 9.0
+        legend.font                          = NSFont.systemFont(ofSize: CGFloat(11.0))
+        legend.xEntrySpace                   = 4.0
+    }
+
     
     func updateAccount () {
         listeOperations = ListeOperations.shared.entities

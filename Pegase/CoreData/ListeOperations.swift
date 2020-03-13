@@ -70,7 +70,7 @@ final class ListeOperations {
         guard entities.count > 0 else {return}
         let diffDate = (entities.first?.dateOperation!.timeIntervalSinceNow)!
         for entityOperation in entities {
-            entityOperation.datePointage  = (entityOperation.datePointage! - diffDate).noon
+            entityOperation.datePointage  = (entityOperation.datePointage!  - diffDate).noon
             entityOperation.dateOperation = (entityOperation.dateOperation! - diffDate).noon
         }
         compteCourant?.isDemo = false

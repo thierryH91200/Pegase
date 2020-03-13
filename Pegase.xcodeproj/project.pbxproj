@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03057FFF241A5878001E17A8 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 03057FFE241A5878001E17A8 /* Charts */; };
 		03213B0523F9048200002DD7 /* TTFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFD23F9048200002DD7 /* TTFormatViewController.xib */; };
 		03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFE23F9048200002DD7 /* ImportWindowController.xib */; };
 		03213B0723F9048200002DD7 /* ImportWindowControllerParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */; };
@@ -213,8 +214,6 @@
 		037993B524139AE7001ADDA6 /* CommonGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037993B424139AE7001ADDA6 /* CommonGraph.swift */; };
 		037993B72413F353001ADDA6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037993B62413F353001ADDA6 /* ChartView.swift */; };
 		038FFFBA240E72CD0019A183 /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 038FFFBC240E72CD0019A183 /* MyDB.sqlite */; };
-		038FFFCC240EAB2C0019A183 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC87923F87CA5006944DD /* Charts.framework */; };
-		038FFFCD240EAB2C0019A183 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC87923F87CA5006944DD /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		038FFFCE240EAB970019A183 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC88A23F87CAD006944DD /* SwiftDate.framework */; };
 		038FFFCF240EAB970019A183 /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC88A23F87CAD006944DD /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03ACCCD823FAD03A00098CFC /* TFDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ACCCD623FAD00500098CFC /* TFDate.framework */; };
@@ -228,20 +227,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 034EC81523F87C5B006944DD;
 			remoteInfo = Pegase;
-		};
-		034EC87823F87CA5006944DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 034EC87323F87CA5006944DD /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
-			remoteInfo = Charts;
-		};
-		034EC87A23F87CA5006944DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 034EC87323F87CA5006944DD /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
-			remoteInfo = ChartsTests;
 		};
 		034EC88723F87CAD006944DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -317,7 +302,6 @@
 			files = (
 				03ACCCD923FAD03A00098CFC /* TFDate.framework in Embed Frameworks */,
 				038FFFCF240EAB970019A183 /* SwiftDate.framework in Embed Frameworks */,
-				038FFFCD240EAB2C0019A183 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,7 +511,6 @@
 		034EC82E23F87C5F006944DD /* PegaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PegaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EC83223F87C60006944DD /* PegaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegaseUITests.swift; sourceTree = "<group>"; };
 		034EC83423F87C60006944DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		034EC87323F87CA5006944DD /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		034EC87C23F87CAD006944DD /* SwiftDate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftDate.xcodeproj; path = "../SwiftDate-master/SwiftDate.xcodeproj"; sourceTree = "<group>"; };
 		034EC89723F87CC0006944DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		034EC89A23F87CE1006944DD /* CodingGuidelines.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CodingGuidelines.md; sourceTree = "<group>"; };
@@ -635,7 +618,7 @@
 			files = (
 				03ACCCD823FAD03A00098CFC /* TFDate.framework in Frameworks */,
 				038FFFCE240EAB970019A183 /* SwiftDate.framework in Frameworks */,
-				038FFFCC240EAB2C0019A183 /* Charts.framework in Frameworks */,
+				03057FFF241A5878001E17A8 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,7 +1027,6 @@
 				03ACCCD123FAD00500098CFC /* TFDate.xcodeproj */,
 				034EC8A223F87CE7006944DD /* Doc */,
 				034EC89923F87CD2006944DD /* Technotes */,
-				034EC87323F87CA5006944DD /* Charts.xcodeproj */,
 				034EC87C23F87CAD006944DD /* SwiftDate.xcodeproj */,
 				034EC89723F87CC0006944DD /* README.md */,
 				034EC81823F87C5B006944DD /* Pegase */,
@@ -1111,15 +1093,6 @@
 				034EC83423F87C60006944DD /* Info.plist */,
 			);
 			path = PegaseUITests;
-			sourceTree = "<group>";
-		};
-		034EC87423F87CA5006944DD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				034EC87923F87CA5006944DD /* Charts.framework */,
-				034EC87B23F87CA5006944DD /* ChartsTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		034EC87D23F87CAD006944DD /* Products */ = {
@@ -1300,6 +1273,9 @@
 			dependencies = (
 			);
 			name = Pegase;
+			packageProductDependencies = (
+				03057FFE241A5878001E17A8 /* Charts */,
+			);
 			productName = Pegase;
 			productReference = 034EC81623F87C5B006944DD /* Pegase.app */;
 			productType = "com.apple.product-type.application";
@@ -1354,13 +1330,12 @@
 				fr,
 			);
 			mainGroup = 034EC80D23F87C5B006944DD;
+			packageReferences = (
+				03057FFD241A5878001E17A8 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 034EC81723F87C5B006944DD /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = 034EC87423F87CA5006944DD /* Products */;
-					ProjectRef = 034EC87323F87CA5006944DD /* Charts.xcodeproj */;
-				},
 				{
 					ProductGroup = 034EC87D23F87CAD006944DD /* Products */;
 					ProjectRef = 034EC87C23F87CAD006944DD /* SwiftDate.xcodeproj */;
@@ -1379,20 +1354,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		034EC87923F87CA5006944DD /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = 034EC87823F87CA5006944DD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		034EC87B23F87CA5006944DD /* ChartsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsTests.xctest;
-			remoteRef = 034EC87A23F87CA5006944DD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		034EC88823F87CAD006944DD /* SwiftDate.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -2201,6 +2162,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		03057FFD241A5878001E17A8 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		03057FFE241A5878001E17A8 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03057FFD241A5878001E17A8 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		037993AE241385AD001ADDA6 /* Document.xcdatamodeld */ = {
