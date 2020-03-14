@@ -10,25 +10,21 @@ extension ListeOperationsController: NSOutlineViewDataSource {
         // Root number year
         if item == nil {
             let nbYear = groupedSorted.count
-//            debugPrint("nbYear : ", nbYear)
             return nbYear
         }
         // Root number month
         if let folderItem = item as? TrackingMonth  {
             let nbMonths = folderItem.allMonth.count
-//            debugPrint("nbMonths : ", nbMonths)
             return nbMonths
         }
         // number EntityOperations
         if let folderItem = item as?  TrackingIdOperations {
             let nbIdOperations = folderItem.idOperation.count
-//            debugPrint("nbIdOperations : ",nbIdOperations)
             return nbIdOperations
         }
         // number EntitySousOperations
         if let idOperation = item as? TrackingSubOperations {
             let nbSousOperations = idOperation.entityOperations.sousOperations?.count ?? 0
-//            debugPrint("nbSousOperations : ", nbSousOperations)
             return nbSousOperations
         }
         debugPrint("numberOfChildrenOfItem : BAD ITEM")

@@ -430,24 +430,4 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         return false
     }
     
-    func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
-        
-        if edge == .leading {
-            let printAction = NSTableViewRowAction(style: .regular, title: "Print") { (action, index) in
-                print("Now printing...")
-            }
-            printAction.backgroundColor = NSColor.gray
-            return [printAction]
-            
-        } else {
-            let deleteAction = NSTableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
-//                self.viewModel.removePurchase(atIndex: row)
-                self.outlineListView.reloadData()
-            }
-            
-            return [deleteAction]
-        }
-    }
-
-    
 }

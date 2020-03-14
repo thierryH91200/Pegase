@@ -95,6 +95,43 @@ final class CategorieBarController: CommonGraph
         chartView.dragEnabled               = false
         chartView.noDataText = Localizations.Chart.No_chart_Data_Available
         
+        // MARK: Axis
+        setUpAxis()
+        
+//        let xAxis                      = chartView.xAxis
+//        xAxis.labelPosition            = .bottom
+//        xAxis.labelFont                = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
+//        xAxis.drawGridLinesEnabled     = true
+//        xAxis.granularity              = 1
+//        xAxis.enabled                  = true
+//        xAxis.labelTextColor           = .labelColor
+//
+//        // MARK: leftAxis
+//        let leftAxis                   = chartView.leftAxis
+//        leftAxis.labelFont             = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+//        leftAxis.labelCount            = 6
+//        leftAxis.drawGridLinesEnabled  = true
+//        leftAxis.granularityEnabled    = true
+//        leftAxis.granularity           = 1
+//        leftAxis.valueFormatter        = CurrencyValueFormatter()
+//        leftAxis.labelTextColor        = .labelColor
+//
+//        // MARK: rightAxis
+//        chartView.rightAxis.enabled    = false
+        
+        // MARK: legend
+        initializeLegend(chartView.legend)
+        
+        // MARK: description
+        let bounds                           = chartView.bounds
+        let point    = CGPoint( x: bounds.width / 2, y: bounds.height * 0.25)
+        chartView.chartDescription?.enabled  = true
+        chartView.chartDescription?.text     = "Rubrique"
+        chartView.chartDescription?.position = point
+        chartView.chartDescription?.font     = NSFont(name: "HelveticaNeue-Light", size: CGFloat(24.0))!
+    }
+    
+    func setUpAxis() {
         // MARK: xAxis
         let xAxis                      = chartView.xAxis
         xAxis.labelPosition            = .bottom
@@ -108,19 +145,18 @@ final class CategorieBarController: CommonGraph
         let leftAxis                   = chartView.leftAxis
         leftAxis.labelFont             = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
         leftAxis.labelCount            = 6
-        //        leftAxis.axisMinimum = 0
         leftAxis.drawGridLinesEnabled  = true
         leftAxis.granularityEnabled    = true
         leftAxis.granularity           = 1
         leftAxis.valueFormatter        = CurrencyValueFormatter()
         leftAxis.labelTextColor        = .labelColor
 
-        
         // MARK: rightAxis
         chartView.rightAxis.enabled    = false
-        
-        // MARK: legend
-        let legend                           = chartView.legend
+
+    }
+    
+    override func initializeLegend(_ legend: Legend) {
         legend.horizontalAlignment           = .left
         legend.verticalAlignment             = .bottom
         legend.orientation                   = .horizontal
@@ -129,16 +165,8 @@ final class CategorieBarController: CommonGraph
         legend.formSize                      = 9.0
         legend.font                          = NSFont.systemFont(ofSize: CGFloat(11.0))
         legend.xEntrySpace                   = 4.0
-        
-        // MARK: description
-        let bounds                           = chartView.bounds
-        let point    = CGPoint( x: bounds.width / 2, y: bounds.height * 0.25)
-        chartView.chartDescription?.enabled  = true
-        chartView.chartDescription?.text     = "Rubrique"
-        chartView.chartDescription?.position = point
-        chartView.chartDescription?.font     = NSFont(name: "HelveticaNeue-Light", size: CGFloat(24.0))!
     }
-    
+
     /// Récupére les données entre 2 dates.
     /// Les dates proviennent du slider
     /// https://stackoverflow.com/questions/40657193/swift-3-sum-value-with-group-by-of-an-array-of-objects
