@@ -3,21 +3,27 @@ import Charts
 
 final class CategorieBarController1: CommonGraph
 {
+    
+    struct RubricColor : Hashable {
+        var name: String
+        var color  : NSColor
+        
+        init(name:String, color : NSColor) {
+            self.name = name
+            self.color = color
+        }
+    }
+    
+
     public weak var delegate: FilterDelegate?
     
     @IBOutlet var chartView: BarChartView!
     @IBOutlet weak var splitView: NSSplitView!
     
-//    var sliderViewController: SliderViewHorizontalController?
-    
     private var numericIDs  = [String]()
     private var resultArray = [DataGraph]()
-    private var arrayUniqueRubriques   = [String]()
+    private var arrayUniqueRubriques   = [RubricColor]()
     
-//    private var listeOperations = [EntityOperations]()
-//    var firstDate: TimeInterval = 0.0
-//    var lastDate: TimeInterval = 0.0
-
     private var startDate = Date()
     private var endDate = Date()
     
@@ -125,7 +131,6 @@ final class CategorieBarController1: CommonGraph
         xAxis.labelPosition            = .bottom
         xAxis.labelTextColor           = .labelColor
 
-        
         // MARK: leftAxis
         let leftAxis                   = chartView.leftAxis
         leftAxis.labelFont             = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
@@ -159,6 +164,8 @@ final class CategorieBarController1: CommonGraph
     /// https://stackoverflow.com/questions/40657193/swift-3-sum-value-with-group-by-of-an-array-of-objects
     private func updateChartData()
     {
+//        var rubricColor : RubricColor
+
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
         
         let p1 = NSPredicate(format: "account == %@", compteCourant!)
@@ -179,7 +186,7 @@ final class CategorieBarController1: CommonGraph
 
         // Récupere le nom de toutes les rubriques
         // Récupere les datas pour la période choisie
-        var setUniqueRubrique     = Set<String>()
+        var setUniqueRubrique     = Set<RubricColor>()
         var dataRubrique = [DataGraph]()
         
         for listeOperation in listeOperations {
@@ -189,30 +196,32 @@ final class CategorieBarController1: CommonGraph
             let sousOperations = listeOperation.sousOperations?.allObjects  as! [EntitySousOperations]
             for sousOperation in sousOperations {
                 
-                let value    = sousOperation.amount
+                let amount    = sousOperation.amount
                 
                 let nameRubrique = sousOperation.category?.rubrique?.name
-                setUniqueRubrique.insert(nameRubrique!)
-                
                 let color    = sousOperation.category?.rubrique?.color as! NSColor
+                let rubricColor = RubricColor(name : nameRubrique!, color: color)
+
+                setUniqueRubrique.insert(rubricColor)
                 
-                let data = DataGraph(section: id, name: nameRubrique!, value: value, color: color)
+                
+                let data = DataGraph(section: id, name: nameRubrique!, value: amount, color: color)
                 dataRubrique.append( data)
             }
         }
-        arrayUniqueRubriques = setUniqueRubrique.sorted()
+        arrayUniqueRubriques = setUniqueRubrique.sorted { $0.name > $1.name }
         
         // somme par rubrique pour chaque période
         resultArray.removeAll()
         let allRubriqueKeys = Set<String>(dataRubrique.map { $0.section })
         for keyRubrique in allRubriqueKeys {
-            for nameRubrique in arrayUniqueRubriques {
-                let data = dataRubrique.filter({ $0.section == keyRubrique && $0.name == nameRubrique  })
+            for nameRubric in arrayUniqueRubriques {
+                let data = dataRubrique.filter({ $0.section == keyRubrique && $0.name == nameRubric.name  })
                 if data.count > 0 {
                     let sum = data.map({ $0.value }).reduce(0, +)
-                    resultArray.append(DataGraph(section: keyRubrique ,name: nameRubrique, value: sum, color: data.first!.color))
+                    resultArray.append(DataGraph(section: keyRubrique ,name: nameRubric.name, value: sum, color: data.first!.color))
                 } else {
-                    resultArray.append(DataGraph(section: keyRubrique ,name: nameRubrique, value: 0, color: NSColor.black))
+                    resultArray.append(DataGraph(section: keyRubrique ,name: nameRubric.name, value: 0, color: nameRubric.color))
                 }
             }
         }
@@ -238,7 +247,7 @@ final class CategorieBarController1: CommonGraph
         // MARK: ChartDataSet
         let dataSets = (0 ..< arrayUniqueRubriques.count).map { (i) -> BarChartDataSet in
             
-            let dataRubrique = resultArray.filter({ $0.name == arrayUniqueRubriques[i]  })
+            let dataRubrique = resultArray.filter({ $0.name == arrayUniqueRubriques[i].name  })
             entries.removeAll()
             for i in 0 ..< dataRubrique.count {
                 entries.append(BarChartDataEntry(x: Double(i), y: abs(dataRubrique[i].value)))
@@ -314,7 +323,7 @@ extension CategorieBarController1: ChartViewDelegate
         let endDate = date!.endOfMonth()
         
         let p1 = NSPredicate(format: "account == %@", compteCourant!)
-        let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubrique.name == %@).@count > 0", nameRubrique)
+        let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubrique.name == %@).@count > 0", nameRubrique.name)
         let p3 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )
         let p4 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )
         

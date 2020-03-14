@@ -95,13 +95,9 @@ final class ModePaiementPieController: CommonGraph {
         centerText = NSMutableAttributedString(string: Localizations.General.Recette)
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
-//        chartView2.delegate = self
         chartView2.centerAttributedText = centerText
-//        chartView2.centerText = "Recettes"
-
         chartView2.chartDescription?.enabled = false
         chartView2.noDataText = Localizations.Chart.No_chart_Data_Available
-//        chartView2.backgroundColor = .windowBackgroundColor
         chartView2.holeColor = .windowBackgroundColor
         
         // MARK: legend

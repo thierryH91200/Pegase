@@ -92,7 +92,6 @@ final class RecetteDepenseBarController: CommonGraph {
         chartView.maxVisibleCount           = 60
         chartView.drawBordersEnabled = true
         chartView.drawGridBackgroundEnabled = true
-//        chartView.backgroundColor = .windowBackgroundColor
         chartView.gridBackgroundColor = .windowBackgroundColor
         chartView.fitBars                   = true
 
@@ -104,7 +103,7 @@ final class RecetteDepenseBarController: CommonGraph {
         // MARK: xAxis
         let xAxis            = chartView.xAxis
         xAxis.centerAxisLabelsEnabled = true
-        xAxis.drawGridLinesEnabled     = true
+        xAxis.drawGridLinesEnabled    = true
         xAxis.granularity = 1.0
         xAxis.gridLineWidth = 2.0
         xAxis.labelCount = 20
@@ -122,7 +121,6 @@ final class RecetteDepenseBarController: CommonGraph {
         leftAxis.valueFormatter        = CurrencyValueFormatter()
         leftAxis.labelTextColor        = .labelColor
 
-        
         // MARK: rightAxis
         chartView.rightAxis.enabled    = false
         
@@ -137,7 +135,6 @@ final class RecetteDepenseBarController: CommonGraph {
         legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!
         legend.textColor = NSColor.labelColor
 
-        
         // MARK: description
         chartView.chartDescription?.enabled  = false
     }

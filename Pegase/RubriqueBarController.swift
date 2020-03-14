@@ -101,25 +101,6 @@ final class RubriqueBarController: CommonGraph
         setDataHorizontal()
     }
     
-//    func updateAccount () {
-//        listeOperations = ListeOperations.shared.entities
-//        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
-//            listeOperations = ListeOperations.shared.getAll()
-//        }
-//        if listeOperations.count > 0 {
-//
-//            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
-//            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
-//
-//            sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
-//            sliderViewController?.mySlider.isEnabled = true
-//
-//        } else {
-//            sliderViewController?.mySlider.isEnabled = false
-//        }
-//    }
-//
-    
     private func initChart() {
         // MARK: General
         chartView.delegate = self
@@ -156,7 +137,13 @@ final class RubriqueBarController: CommonGraph
         chartView.rightAxis.enabled    = false
         
         // MARK: legend
-        let legend = chartView.legend
+        initializeLegend(chartView.legend)
+
+        // MARK: description
+        chartView.chartDescription?.enabled  = false
+    }
+    
+    override func initializeLegend(_ legend: Legend) {
         legend.horizontalAlignment = .right
         legend.verticalAlignment = .top
         legend.orientation = .vertical
@@ -165,11 +152,8 @@ final class RubriqueBarController: CommonGraph
         legend.yEntrySpace = 0.0
         legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!
         legend.textColor = NSColor.labelColor
-
-        // MARK: description
-        chartView.chartDescription?.enabled  = false
     }
-    
+
     /// Récupére les données entre 2 dates puis les additionnent.
     /// Les dates proviennent du slider
     /// https://stackoverflow.com/questions/40657193/swift-3-sum-value-with-group-by-of-an-array-of-objects
@@ -369,7 +353,6 @@ extension RubriqueBarController: ChartViewDelegate
     public func chartValueNothingSelected(_ chartView: ChartViewBase)
     {
         print("Nothing RubriqueBarController")
-        //        chartView.select
     }
     
 }
