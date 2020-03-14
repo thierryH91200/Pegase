@@ -104,7 +104,9 @@ final class CategorieBarController1: CommonGraph
         chartView.drawValueAboveBarEnabled  = false
         chartView.maxVisibleCount           = 60
         chartView.drawGridBackgroundEnabled = true
-        chartView.backgroundColor = .controlBackgroundColor
+//        chartView.backgroundColor = .windowBackgroundColor
+        chartView.gridBackgroundColor = .windowBackgroundColor
+
         chartView.fitBars                   = true
         chartView.drawBordersEnabled = true
         
@@ -146,6 +148,7 @@ final class CategorieBarController1: CommonGraph
         legend.font                          = NSFont.systemFont(ofSize: CGFloat(11.0))
         legend.xOffset = 10.0
         legend.yEntrySpace = 0.0
+        legend.textColor = NSColor.labelColor
         
         // MARK: description
         chartView.chartDescription?.enabled  = false

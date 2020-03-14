@@ -128,17 +128,17 @@ final class RubriqueBarController: CommonGraph
         chartView.doubleTapToZoomEnabled    = false
         chartView.drawBarShadowEnabled      = false
         chartView.drawGridBackgroundEnabled = true
-        chartView.fitBars                   = true
         chartView.drawValueAboveBarEnabled  = false
         chartView.drawBordersEnabled = true
         chartView.noDataText = Localizations.Chart.No_chart_Data_Available
-        chartView.backgroundColor = .white
-        
+        chartView.gridBackgroundColor = .windowBackgroundColor
+        chartView.fitBars                   = true
+
         // MARK: xAxis
         let xAxis                      = chartView.xAxis
-        xAxis.labelFont      = NSFont(name: "HelveticaNeue-Light", size: CGFloat(12.0))!
         xAxis.granularity = 1
         xAxis.gridLineWidth = 2.0
+        xAxis.labelFont      = NSFont(name: "HelveticaNeue-Light", size: CGFloat(12.0))!
         xAxis.labelPosition = .bottom
         xAxis.labelTextColor           = .labelColor
 
@@ -150,7 +150,7 @@ final class RubriqueBarController: CommonGraph
         leftAxis.granularityEnabled    = true
         leftAxis.granularity           = 1
         leftAxis.valueFormatter        = CurrencyValueFormatter()
-        leftAxis.labelTextColor           = .labelColor
+        leftAxis.labelTextColor        = .labelColor
 
         // MARK: rightAxis
         chartView.rightAxis.enabled    = false
@@ -163,7 +163,8 @@ final class RubriqueBarController: CommonGraph
         legend.drawInside = true
         legend.xOffset = 10.0
         legend.yEntrySpace = 0.0
-        legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(8.0))!
+        legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!
+        legend.textColor = NSColor.labelColor
 
         // MARK: description
         chartView.chartDescription?.enabled  = false

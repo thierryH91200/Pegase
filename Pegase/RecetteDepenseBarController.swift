@@ -90,11 +90,12 @@ final class RecetteDepenseBarController: CommonGraph {
         chartView.drawBarShadowEnabled      = false
         chartView.drawValueAboveBarEnabled  = false
         chartView.maxVisibleCount           = 60
-        chartView.drawGridBackgroundEnabled = true
-        chartView.backgroundColor = .windowBackgroundColor
-        chartView.fitBars                   = true
         chartView.drawBordersEnabled = true
-        
+        chartView.drawGridBackgroundEnabled = true
+//        chartView.backgroundColor = .windowBackgroundColor
+        chartView.gridBackgroundColor = .windowBackgroundColor
+        chartView.fitBars                   = true
+
         chartView.pinchZoomEnabled          = false
         chartView.doubleTapToZoomEnabled    = false
         chartView.dragEnabled               = false
@@ -111,7 +112,6 @@ final class RecetteDepenseBarController: CommonGraph {
         xAxis.labelPosition = .bottom
         xAxis.labelTextColor = .labelColor
 
-        
         // MARK: leftAxis
         let leftAxis                   = chartView.leftAxis
         leftAxis.labelFont             = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
@@ -120,7 +120,7 @@ final class RecetteDepenseBarController: CommonGraph {
         leftAxis.granularityEnabled    = true
         leftAxis.granularity           = 1
         leftAxis.valueFormatter        = CurrencyValueFormatter()
-        leftAxis.labelTextColor           = .labelColor
+        leftAxis.labelTextColor        = .labelColor
 
         
         // MARK: rightAxis
@@ -135,11 +135,11 @@ final class RecetteDepenseBarController: CommonGraph {
         legend.xOffset = 10.0
         legend.yEntrySpace = 0.0
         legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!
+        legend.textColor = NSColor.labelColor
+
         
         // MARK: description
         chartView.chartDescription?.enabled  = false
-        chartView.noDataText = Localizations.Chart.No_chart_Data_Available
-        chartView.backgroundColor = .white
     }
     
     /// Recover data between 2 dates.

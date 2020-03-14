@@ -87,7 +87,8 @@ final class CategorieBarController: CommonGraph
         chartView.drawValueAboveBarEnabled  = true
         chartView.maxVisibleCount           = 60
         chartView.drawGridBackgroundEnabled = true
-        chartView.backgroundColor = .controlBackgroundColor
+//        chartView.backgroundColor = .windowBackgroundColor
+        chartView.gridBackgroundColor = .windowBackgroundColor
         chartView.fitBars                   = true
         
         chartView.highlightPerTapEnabled    = true
@@ -97,27 +98,6 @@ final class CategorieBarController: CommonGraph
         
         // MARK: Axis
         setUpAxis()
-        
-//        let xAxis                      = chartView.xAxis
-//        xAxis.labelPosition            = .bottom
-//        xAxis.labelFont                = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
-//        xAxis.drawGridLinesEnabled     = true
-//        xAxis.granularity              = 1
-//        xAxis.enabled                  = true
-//        xAxis.labelTextColor           = .labelColor
-//
-//        // MARK: leftAxis
-//        let leftAxis                   = chartView.leftAxis
-//        leftAxis.labelFont             = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
-//        leftAxis.labelCount            = 6
-//        leftAxis.drawGridLinesEnabled  = true
-//        leftAxis.granularityEnabled    = true
-//        leftAxis.granularity           = 1
-//        leftAxis.valueFormatter        = CurrencyValueFormatter()
-//        leftAxis.labelTextColor        = .labelColor
-//
-//        // MARK: rightAxis
-//        chartView.rightAxis.enabled    = false
         
         // MARK: legend
         initializeLegend(chartView.legend)
@@ -159,12 +139,13 @@ final class CategorieBarController: CommonGraph
     override func initializeLegend(_ legend: Legend) {
         legend.horizontalAlignment           = .left
         legend.verticalAlignment             = .bottom
-        legend.orientation                   = .horizontal
+        legend.orientation                   = .vertical
         legend.drawInside                    = false
         legend.form                          = .square
         legend.formSize                      = 9.0
         legend.font                          = NSFont.systemFont(ofSize: CGFloat(11.0))
         legend.xEntrySpace                   = 4.0
+        legend.textColor = NSColor.labelColor
     }
 
     /// Récupére les données entre 2 dates.

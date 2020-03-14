@@ -113,6 +113,7 @@ final class RubriquePieController: NSViewController
         legend.verticalAlignment = .top
         legend.orientation = .vertical
         legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
+        legend.textColor = NSColor.labelColor
         
         self.chartView.centerAttributedText = centerText
         self.chartView.chartDescription?.enabled = false
@@ -127,7 +128,8 @@ final class RubriquePieController: NSViewController
         legend2.verticalAlignment = .top
         legend2.orientation = .vertical
         legend2.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
-        
+        legend2.textColor = NSColor.labelColor
+
         self.chartView2.centerAttributedText = centerText
         self.chartView2.chartDescription?.enabled = false
         self.chartView2.noDataText = Localizations.Chart.No_chart_Data_Available
