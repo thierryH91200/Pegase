@@ -4,14 +4,20 @@
 <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
 </p>
 
+<p align="center">
+<img src="Doc/Pefase2.png" alt="Sample">
+<p align="center">
+<em>Principale</em>
+</p>
+</p>
+
+
 # Personal account software
 
 Pegase is a beautifully easy tool to keep track of your financial life on all your macOS 
 
 ---
 #  How to manage your monthly budget well ?
-
-Comment bien gérer son budget mensuel ?
 
 
 It is necessary, in part:
@@ -22,7 +28,7 @@ Define a budget to control expenses that vary from one month to another and this
 
 Monitor this budget monthly, correct in case of overruns or even redefine it if necessary!
 
-Set an annual budget for trips, trips or vacations.
+Set an annual budget for trips or vacations.
 
 Trying to control yourself without depriving yourself too much and especially not buying what you don't need, because by doing so you would be risking selling what you need most.
 
@@ -58,7 +64,7 @@ Trying to control yourself without depriving yourself too much and especially no
 <p align="center">
 <img src="Doc/Capture5.png" alt="Sample">
 <p align="center">
-<em>Tresorerie</em>
+<em>Category Bar</em>
 </p>
 </p>
 
@@ -79,14 +85,14 @@ Trying to control yourself without depriving yourself too much and especially no
 <p align="center">
 <img src="Doc/Capture8.png" alt="Sample">
 <p align="center">
-<em>Tresorerie</em>
+<em>Mode paiement</em>
 </p>
 </p>
 
 <p align="center">
 <img src="Doc/Capture9.png" alt="Sample">
 <p align="center">
-<em>Tresorerie</em>
+<em>Revenue and expense</em>
 </p>
 </p>
 

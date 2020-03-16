@@ -54,42 +54,42 @@ extension ListeOperationsController: NSMenuDelegate {
         {
             columnVisibilityDictionary![column.identifier.rawValue] = !column.isHidden
         }
-        let nameCol = column?.identifier.rawValue
-        let depense = Localizations.General.Depense
-        let recette = Localizations.General.Recette
-        let montant = Localizations.General.Amount
+        let identifierCol = column?.identifier.rawValue
+        let expenses = Localizations.General.Expenses
+        let incomes = Localizations.General.Income
+        let amount = Localizations.General.Amount
 
-        if nameCol == "depense" {
+        if identifierCol == "depense" {
             columnVisibilityDictionary!["recette"] = menuItem.state == .on ? true : false
             columnVisibilityDictionary!["depense"] = menuItem.state == .on ? true : false
             
-            let item = parentMenu?.item(withTitle: recette)
+            let item = parentMenu?.item(withTitle: incomes)
             item?.state = menuItem.state
             
             columnVisibilityDictionary!["montant"] = menuItem.state == .on ? false : true
-            let itemMontant = parentMenu?.item(withTitle: montant)
+            let itemMontant = parentMenu?.item(withTitle: amount)
             itemMontant?.state = menuItem.state == .on ? .off : .on
         }
         
-        if nameCol == "recette" {
+        if identifierCol == "recette" {
             columnVisibilityDictionary!["recette"] = menuItem.state == .on ? true : false
             columnVisibilityDictionary!["depense"] = menuItem.state == .on ? true : false
             
-            let item = parentMenu?.item(withTitle: depense)
+            let item = parentMenu?.item(withTitle: expenses)
             item?.state = menuItem.state
 
             columnVisibilityDictionary!["montant"] = menuItem.state == .on ? false : true
-            let itemMontant = parentMenu?.item(withTitle: montant)
+            let itemMontant = parentMenu?.item(withTitle: amount)
             itemMontant?.state = menuItem.state == .on ? .off : .on
         }
         
-        if nameCol == "montant" {
+        if identifierCol == "montant" {
             columnVisibilityDictionary!["recette"] = false
-            let itemRecette = parentMenu?.item(withTitle: recette)
+            let itemRecette = parentMenu?.item(withTitle: incomes)
             itemRecette?.state = menuItem.state == .on ? .off : .on
             
             columnVisibilityDictionary!["depense"] = false
-            let itemDepense = parentMenu?.item(withTitle: depense)
+            let itemDepense = parentMenu?.item(withTitle: expenses)
             itemDepense?.state = menuItem.state == .on ? .off : .on
         }
         

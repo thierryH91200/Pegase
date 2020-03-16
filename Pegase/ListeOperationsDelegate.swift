@@ -43,26 +43,26 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 let operationsString = "\(nbOperations) opérations"
                 let operationsFormatted = operationsString.padding(toLength: 30, withPad: " ", startingAt: 0)
                 
-                var depense = 0.0
-                var recette = 0.0
+                var expenses = 0.0
+                var incomes = 0.0
                 var amount = 0.0
                 
                 for itemF in folderItem.idOperation
                 {
                     amount = itemF.entityOperations.amount
                     if amount < 0.0 {
-                        depense += amount
+                        expenses += amount
                     } else {
-                        recette += amount
+                        incomes += amount
                     }
                 }
-                let depenseStr = formatterPrice.string(from: NSDecimalNumber(value: depense))
+                let depenseStr = formatterPrice.string(from: NSDecimalNumber(value: expenses))
                 let depenseFormatted = "Dépense : \( depenseStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
                 
-                let recetteStr = formatterPrice.string(from: NSDecimalNumber(value: recette))
+                let recetteStr = formatterPrice.string(from: NSDecimalNumber(value: incomes))
                 let recetteFormatted = "Recette : \( recetteStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
                 
-                let totalStr = formatterPrice.string(from: NSDecimalNumber(value: recette + depense))
+                let totalStr = formatterPrice.string(from: NSDecimalNumber(value: incomes + expenses))
                 let totalFormatted = "Total : \(totalStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
                 
                 titre = "     " + dateFormatted + operationsFormatted + depenseFormatted + recetteFormatted + totalFormatted

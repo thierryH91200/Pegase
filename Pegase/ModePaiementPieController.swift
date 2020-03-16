@@ -75,7 +75,7 @@ final class ModePaiementPieController: CommonGraph {
             .paragraphStyle: paragraphStyle]
 
         // MARK: - Chart View Depense
-        var centerText = NSMutableAttributedString(string: Localizations.General.Depense)
+        var centerText = NSMutableAttributedString(string: Localizations.General.Expenses)
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         chartView.centerAttributedText = centerText
         
@@ -92,7 +92,7 @@ final class ModePaiementPieController: CommonGraph {
         legend.textColor = .labelColor
 
         // MARK: -  Chart View2 Recette
-        centerText = NSMutableAttributedString(string: Localizations.General.Recette)
+        centerText = NSMutableAttributedString(string: Localizations.General.Income)
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
         chartView2.centerAttributedText = centerText

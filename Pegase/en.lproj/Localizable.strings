@@ -29,14 +29,14 @@
 "General.Compte.Zero" = "0 account";
 "General.Date Operation" = "Date Operation";
 "General.Date Pointage" = "Date Pointage";
-"General.Depense" = "Spent";
+"General.Expenses" = "Expenses";
 "General.Identity" = "Identity";
 "General.Libelle" = "Comment";
 "General.Liste des opérations" = "List of operations";
 "General.Mode Paiement" = "Payment Mode";
 "General.Operation" = "Operation";
-"General.Recette" = "Recipe";
-"General.Rubrique" = "Rubrique";
+"General.Income" = "Incomes";
+"General.Rubric" = "Rubric";
 "General.Scheduler" = "Scheduler";
 "General.Solde" = "Balance";
 "General.Statut" = "Statut";
@@ -101,7 +101,7 @@
 
 // MARK: RateConfigure
 "RateConfigure.detailText" = "We look forward to your Star and Pull Request to make Pegase better and better : )\n⭐️⭐️⭐️⭐️⭐️?";
-"RateConfigure.ignoreButtonTitle" = "Peut-être plus tard";
+"RateConfigure.ignoreButtonTitle" = "Perhaps later";
 "RateConfigure.likeButtonTitle" = "Star Now!";
 "RateConfigure.name" = "Love Pegase?";
 

@@ -149,7 +149,6 @@
 		03213CEA23F9781E00002DD7 /* ParametreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CEC23F9781E00002DD7 /* ParametreController.xib */; };
 		034EC83323F87C60006944DD /* PegaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC83223F87C60006944DD /* PegaseUITests.swift */; };
 		034EC89E23F87CE2006944DD /* CodingGuidelines.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89A23F87CE1006944DD /* CodingGuidelines.md */; };
-		034EC8AE23F87CFA006944DD /* Capture4.png in Resources */ = {isa = PBXBuildFile; fileRef = 034EC8A523F87CF9006944DD /* Capture4.png */; };
 		034EC8BB23F87E8B006944DD /* AdvancedFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BA23F87E8B006944DD /* AdvancedFilterViewController.swift */; };
 		034EC8BD23F87E97006944DD /* NSPredicateEditorRowTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BC23F87E97006944DD /* NSPredicateEditorRowTemplate.swift */; };
 		034EC8C223F87EA1006944DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BE23F87EA1006944DD /* Document.swift */; };
@@ -590,6 +589,7 @@
 		035082F724028F0800F8A0D4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
 		035082F924028F0900F8A0D4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
 		035082FB24028F0B00F8A0D4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
+		035115C7241FEFEC001AF54B /* Pegase2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pegase2.png; sourceTree = "<group>"; };
 		037993942412386E001ADDA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Feeds.plist; sourceTree = "<group>"; };
 		037993A124123874001ADDA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Feeds.plist; sourceTree = "<group>"; };
 		037993A224123875001ADDA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Feeds.plist; sourceTree = "<group>"; };
@@ -1124,6 +1124,7 @@
 		034EC8A223F87CE7006944DD /* Doc */ = {
 			isa = PBXGroup;
 			children = (
+				035115C7241FEFEC001AF54B /* Pegase2.png */,
 				034EC8AB23F87CFA006944DD /* Capture1.png */,
 				034EC8AA23F87CFA006944DD /* Capture2.png */,
 				034EC8A823F87CFA006944DD /* Capture3.png */,
@@ -1426,7 +1427,6 @@
 			files = (
 				038FFFBA240E72CD0019A183 /* MyDB.sqlite in Resources */,
 				03213C9D23F9320600002DD7 /* IdentiteViewController.xib in Resources */,
-				034EC8AE23F87CFA006944DD /* Capture4.png in Resources */,
 				03213B8023F9082600002DD7 /* CategorieBarController.xib in Resources */,
 				034EC89E23F87CE2006944DD /* CodingGuidelines.md in Resources */,
 				03213B0923F9048200002DD7 /* TTFormatViewControllerAccessory.xib in Resources */,
@@ -1516,7 +1516,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -x\n\necho \"Laurine\"\n\n#--------- START OF CONFIGURATION\n\n# Get base path to project\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\n\n# Get path to Laurine Generator script\nLAURINE_PATH=\"$PROJECT_DIR/ConfString/LaurineGenerator.swift\"\n#LAURINE_BIN_PATH=\"$BASE_PATH/../bin/laurine\"\n\n# Get path to main localization file (usually english).\nSOURCE_PATH=\"$BASE_PATH/Base.lproj/Localizable.strings\"\n\n# Get path to output. If you use ObjC version of output, set implementation file (.m), as header will be generated automatically\nOUTPUT_PATH=\"$BASE_PATH/Generated/Localizations.swift\"\n\n#--------- END OF CONFIGURATION\n\nmkdir -p $LAURINE_BIN_PATH\n\n# Build laurine binary if necessary\n#if [ ! -f $LAURINE_BIN_PATH ]; then\n#env -i swiftc -emit-executable -o$LAURINE_BIN_PATH $LAURINE_PATH\n#fi\n\n# Add permission to generator for script execution\nchmod 755 \"$LAURINE_PATH\"\n\n# Actually generate output. -- CUSTOMIZE -- parameters to your needs (see documentation).\n# Will only re-generate script if something changed\nif [ \"$OUTPUT_PATH\" -ot \"$SOURCE_PATH\" ]; then\n    echo \"hello laurine\"\n\n    \"$LAURINE_PATH\" -i \"$SOURCE_PATH\" -o \"$OUTPUT_PATH\"\nfi\n\n";
+			shellScript = "set -x\n\necho \"Laurine\"\n\n#--------- START OF CONFIGURATION\n\n# Get base path to project\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\n\n# Get path to Laurine Generator script\nLAURINE_PATH=\"$PROJECT_DIR/ConfString/LaurineGenerator.swift\"\n#LAURINE_BIN_PATH=\"$BASE_PATH/../bin/laurine\"\n\n# Get path to main localization file (usually english).\nSOURCE_PATH=\"$BASE_PATH/en.lproj/Localizable.strings\"\n\n# Get path to output. If you use ObjC version of output, set implementation file (.m), as header will be generated automatically\nOUTPUT_PATH=\"$BASE_PATH/Generated/Localizations.swift\"\n\n#--------- END OF CONFIGURATION\n\nmkdir -p $LAURINE_BIN_PATH\n\n# Build laurine binary if necessary\nif [ ! -f $LAURINE_BIN_PATH ]; then\nenv -i swiftc -emit-executable -o$LAURINE_BIN_PATH $LAURINE_PATH\nfi\n\n# Add permission to generator for script execution\nchmod 755 \"$LAURINE_PATH\"\n\n# Actually generate output. -- CUSTOMIZE -- parameters to your needs (see documentation).\n# Will only re-generate script if something changed\nif [ \"$OUTPUT_PATH\" -ot \"$SOURCE_PATH\" ]; then\n    echo \"hello laurine\"\n\n    \"$LAURINE_PATH\" -i \"$SOURCE_PATH\" -o \"$OUTPUT_PATH\"\nfi\n\n";
 		};
 		03213C2B23F90D1300002DD7 /* Increment Build */ = {
 			isa = PBXShellScriptBuildPhase;

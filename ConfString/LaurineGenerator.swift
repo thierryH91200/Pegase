@@ -1120,6 +1120,7 @@ private extension FileManager {
         catch _ {
             return false
         }
+        return false
     }
 }
 

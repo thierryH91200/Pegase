@@ -31,13 +31,13 @@
 "General.Compte.Zero" = "0 compte";
 "General.Date Operation" = "Date Operation";
 "General.Date Pointage" = "Date Pointage";
-"General.Depense" = "Dépense";
+"General.Expenses" = "Dépense";
 "General.Identity" = "Identité";
 "General.Libelle" = "Commentaire";
 "General.Liste des opérations" = "Liste des opérations";
 "General.Mode Paiement" = "Mode Paiement";
 "General.Operation" = "Operation";
-"General.Recette" = "Recipe";
+"General.Income" = "Recette";
 "General.Rubrique" = "Rubrique";
 "General.Scheduler" = "Scheduler";
 "General.Solde" = "Balance";
