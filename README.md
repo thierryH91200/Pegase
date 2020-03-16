@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-<img src="Doc/Pegase2.png" alt="Sample">
+<img src="Doc/Pegase.png" alt="Sample">
 <p align="center">
 <em>Principale</em>
 </p>
