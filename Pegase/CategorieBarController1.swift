@@ -204,24 +204,23 @@ final class CategorieBarController1: CommonGraph
 
                 setUniqueRubrique.insert(rubricColor)
                 
-                
                 let data = DataGraph(section: id, name: nameRubrique!, value: amount, color: color)
                 dataRubrique.append( data)
             }
         }
         arrayUniqueRubriques = setUniqueRubrique.sorted { $0.name > $1.name }
         
-        // somme par rubrique pour chaque période
+        // sum per rubric for each period
         resultArray.removeAll()
-        let allRubriqueKeys = Set<String>(dataRubrique.map { $0.section })
-        for keyRubrique in allRubriqueKeys {
+        let allRubricKeys = Set<String>(dataRubrique.map { $0.section })
+        for keyRubric in allRubricKeys {
             for nameRubric in arrayUniqueRubriques {
-                let data = dataRubrique.filter({ $0.section == keyRubrique && $0.name == nameRubric.name  })
+                let data = dataRubrique.filter({ $0.section == keyRubric && $0.name == nameRubric.name  })
                 if data.count > 0 {
                     let sum = data.map({ $0.value }).reduce(0, +)
-                    resultArray.append(DataGraph(section: keyRubrique ,name: nameRubric.name, value: sum, color: data.first!.color))
+                    resultArray.append(DataGraph(section: keyRubric ,name: nameRubric.name, value: sum, color: nameRubric.color))
                 } else {
-                    resultArray.append(DataGraph(section: keyRubrique ,name: nameRubric.name, value: 0, color: nameRubric.color))
+                    resultArray.append(DataGraph(section: keyRubric ,name: nameRubric.name, value: 0, color: nameRubric.color))
                 }
             }
         }

@@ -1,8 +1,12 @@
+
+<p align="center">
+<img src="https://img.shields.io/badge/Swift-5.0-orange.svg" />
+<img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
+</p>
+
 # Personal account software
 
 Pegase is a beautifully easy tool to keep track of your financial life on all your macOS 
-
-
 
 ---
 #  How to manage your monthly budget well ?
@@ -21,13 +25,6 @@ Monitor this budget monthly, correct in case of overruns or even redefine it if 
 Set an annual budget for trips, trips or vacations.
 
 Trying to control yourself without depriving yourself too much and especially not buying what you don't need, because by doing so you would be risking selling what you need most.
-
-
-
-<p align="center">
-<img src="https://img.shields.io/badge/Swift-5.0-orange.svg" />
-<img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
-</p>
 
 
 <p align="center">
