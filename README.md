@@ -1,13 +1,16 @@
 
+Pegase
+======================
 <p align="center">
 <img src="https://img.shields.io/badge/Swift-5.0-orange.svg" />
 <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
 </p>
 
 <p align="center">
-<img src="Doc/Pegase.png" alt="Sample">
+<img src="Doc/Pegase.png" alt="Sample"
+sizes="(min-width: 600px) 200px, 50vw">>
 <p align="center">
-<em>Principale</em>
+<em></em>
 </p>
 </p>
 
@@ -32,6 +35,7 @@ Set an annual budget for trips or vacations.
 
 Trying to control yourself without depriving yourself too much and especially not buying what you don't need, because by doing so you would be risking selling what you need most.
 
+## Screenshot
 
 <p align="center">
 <img src="Doc/Capture1.png" alt="Sample">
