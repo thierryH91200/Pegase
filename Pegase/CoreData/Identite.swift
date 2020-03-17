@@ -51,7 +51,7 @@ final class InitCompte {
     var entitiesInitCompte = [EntityInitCompte]()
     
     // MARK: - InitCompte
-    func create(numCompte : String = "", isAddAccount: Bool = true) -> EntityInitCompte {
+    func create(numCompte : String = "" ) -> EntityInitCompte {
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitCompte", into: mainObjectContext) as! EntityInitCompte
         
         entity.bic = ""
@@ -71,14 +71,10 @@ final class InitCompte {
         entity.iban9 = ""
         entity.prevu = 0
         entity.realise = 0
-        
-        if isAddAccount == true {
-            entity.account = compteCourant
-        }
         return entity
     }
     
-    @discardableResult  func getAll() -> EntityInitCompte {
+    @discardableResult func getAll() -> EntityInitCompte {
         
         do {
             let fetchRequest = NSFetchRequest<EntityInitCompte>(entityName: "EntityInitCompte")
@@ -104,7 +100,7 @@ final class Identite {
     var entitiesIdentite = [EntityIdentite]()
     
     // MARK: - Identite
-    func create(name: String = "", prenom: String = "", isAddAccount: Bool = true) -> EntityIdentite {
+    func create(name: String = "", prenom: String = "") -> EntityIdentite {
         
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityIdentite", into: mainObjectContext) as! EntityIdentite
         entity.idName        = name
@@ -117,10 +113,6 @@ final class Identite {
         entity.idPays        = ""
         entity.idMobile      = ""
         entity.idEmail       = ""
-        
-        if isAddAccount == true {
-            entity.account = compteCourant
-        }
         return entity
     }
     
