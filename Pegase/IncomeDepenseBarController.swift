@@ -3,7 +3,7 @@ import Charts
 import SwiftDate
 
 
-final class RecetteDepenseBarController: CommonGraph {
+final class IncomeDepenseBarController: CommonGraph {
     
     public weak var delegate: FilterDelegate?
     
@@ -29,7 +29,7 @@ final class RecetteDepenseBarController: CommonGraph {
     }()
     
     var resultArrayDepense = [DataGraph]()
-    var resultArrayRecette = [DataGraph]()
+    var resultArrayIncome = [DataGraph]()
 
     let formatterDate: DateFormatter = {
         let fmt = DateFormatter()
@@ -164,7 +164,7 @@ final class RecetteDepenseBarController: CommonGraph {
         
         // grouped and sum
         self.resultArrayDepense.removeAll()
-        self.resultArrayRecette.removeAll()
+        self.resultArrayIncome.removeAll()
         var dataArray = [DataGraph]()
         
         for listeOperation in listeOperations {
@@ -184,16 +184,16 @@ final class RecetteDepenseBarController: CommonGraph {
             
             data = dataArray.filter({ $0.name == key && $0.value >= 0 })
             sum = data.map({ $0.value }).reduce(0, +)
-            self.resultArrayRecette.append(DataGraph(name: key, value: sum))
+            self.resultArrayIncome.append(DataGraph(name: key, value: sum))
         }
         
         self.resultArrayDepense = resultArrayDepense.sorted(by: { $0.name < $1.name })
-        self.resultArrayRecette = resultArrayRecette.sorted(by: { $0.name < $1.name })
+        self.resultArrayIncome = resultArrayIncome.sorted(by: { $0.name < $1.name })
     }
     
     private func setDataCount()
     {
-        guard resultArrayDepense.count != 0 && resultArrayRecette.count != 0 else {
+        guard resultArrayDepense.count != 0 && resultArrayIncome.count != 0 else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
@@ -214,7 +214,7 @@ final class RecetteDepenseBarController: CommonGraph {
         
         for i in 0 ..< resultArrayDepense.count {
             entriesDepense.append(BarChartDataEntry(x: Double(i), y: abs(resultArrayDepense[i].value)))
-            entriesRecette.append(BarChartDataEntry(x: Double(i), y: resultArrayRecette[i].value))
+            entriesRecette.append(BarChartDataEntry(x: Double(i), y: resultArrayIncome[i].value))
             
             let numericSection = Int(resultArrayDepense[i].name)
             components.year = numericSection! / 100
@@ -274,7 +274,7 @@ final class RecetteDepenseBarController: CommonGraph {
     
 }
 
-extension RecetteDepenseBarController: SliderHorizontalDelegate {
+extension IncomeDepenseBarController: SliderHorizontalDelegate {
     func setDataHorizontal() {
         updateChartData()
         setDataCount()
@@ -282,7 +282,7 @@ extension RecetteDepenseBarController: SliderHorizontalDelegate {
 
 }
 
-extension RecetteDepenseBarController: ChartViewDelegate
+extension IncomeDepenseBarController: ChartViewDelegate
 {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
     {

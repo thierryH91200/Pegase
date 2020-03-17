@@ -63,8 +63,8 @@
 		03213B8023F9082600002DD7 /* CategorieBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B7C23F9082600002DD7 /* CategorieBarController.xib */; };
 		03213B8323F9083300002DD7 /* ModePaiementPieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8123F9083300002DD7 /* ModePaiementPieController.swift */; };
 		03213B8423F9083300002DD7 /* ModePaiementPieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8223F9083300002DD7 /* ModePaiementPieController.xib */; };
-		03213B8723F9084800002DD7 /* RecetteDepenseBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8523F9084800002DD7 /* RecetteDepenseBarController.xib */; };
-		03213B8823F9084800002DD7 /* RecetteDepenseBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8623F9084800002DD7 /* RecetteDepenseBarController.swift */; };
+		03213B8723F9084800002DD7 /* IncomeDepenseBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8523F9084800002DD7 /* IncomeDepenseBarController.xib */; };
+		03213B8823F9084800002DD7 /* IncomeDepenseBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8623F9084800002DD7 /* IncomeDepenseBarController.swift */; };
 		03213B8B23F9085700002DD7 /* RubriqueBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8923F9085700002DD7 /* RubriqueBarController.xib */; };
 		03213B8C23F9085700002DD7 /* RubriqueBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8A23F9085700002DD7 /* RubriqueBarController.swift */; };
 		03213B8F23F9086600002DD7 /* RubriquePieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8D23F9086500002DD7 /* RubriquePieController.swift */; };
@@ -364,8 +364,8 @@
 		03213B7C23F9082600002DD7 /* CategorieBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategorieBarController.xib; sourceTree = "<group>"; };
 		03213B8123F9083300002DD7 /* ModePaiementPieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModePaiementPieController.swift; sourceTree = "<group>"; };
 		03213B8223F9083300002DD7 /* ModePaiementPieController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModePaiementPieController.xib; sourceTree = "<group>"; };
-		03213B8523F9084800002DD7 /* RecetteDepenseBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecetteDepenseBarController.xib; sourceTree = "<group>"; };
-		03213B8623F9084800002DD7 /* RecetteDepenseBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecetteDepenseBarController.swift; sourceTree = "<group>"; };
+		03213B8523F9084800002DD7 /* IncomeDepenseBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeDepenseBarController.xib; sourceTree = "<group>"; };
+		03213B8623F9084800002DD7 /* IncomeDepenseBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeDepenseBarController.swift; sourceTree = "<group>"; };
 		03213B8923F9085700002DD7 /* RubriqueBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RubriqueBarController.xib; sourceTree = "<group>"; };
 		03213B8A23F9085700002DD7 /* RubriqueBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubriqueBarController.swift; sourceTree = "<group>"; };
 		03213B8D23F9086500002DD7 /* RubriquePieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubriquePieController.swift; sourceTree = "<group>"; };
@@ -837,8 +837,8 @@
 		03213B7623F9062000002DD7 /* RecetteDepenseBar */ = {
 			isa = PBXGroup;
 			children = (
-				03213B8623F9084800002DD7 /* RecetteDepenseBarController.swift */,
-				03213B8523F9084800002DD7 /* RecetteDepenseBarController.xib */,
+				03213B8623F9084800002DD7 /* IncomeDepenseBarController.swift */,
+				03213B8523F9084800002DD7 /* IncomeDepenseBarController.xib */,
 			);
 			name = RecetteDepenseBar;
 			sourceTree = "<group>";
@@ -1449,7 +1449,7 @@
 				03213CC923F9328300002DD7 /* ModePaiementViewController.xib in Resources */,
 				03213BD223F90AAB00002DD7 /* icons8-money-100.png in Resources */,
 				03213B0523F9048200002DD7 /* TTFormatViewController.xib in Resources */,
-				03213B8723F9084800002DD7 /* RecetteDepenseBarController.xib in Resources */,
+				03213B8723F9084800002DD7 /* IncomeDepenseBarController.xib in Resources */,
 				03213BD123F90AAB00002DD7 /* icons8-credit-card-100.png in Resources */,
 				034EC8F423F87EF1006944DD /* rubrique.csv in Resources */,
 				03213BCF23F90AAB00002DD7 /* Assets.xcassets in Resources */,
@@ -1565,7 +1565,7 @@
 				034EC8BB23F87E8B006944DD /* AdvancedFilterViewController.swift in Sources */,
 				034EC90F23F87F51006944DD /* NSPasteboard+Additions.swift in Sources */,
 				03213B4723F9055400002DD7 /* SousOperationModalWindowController.swift in Sources */,
-				03213B8823F9084800002DD7 /* RecetteDepenseBarController.swift in Sources */,
+				03213B8823F9084800002DD7 /* IncomeDepenseBarController.swift in Sources */,
 				03213BFF23F90BB600002DD7 /* PreferenceOperationViewController.swift in Sources */,
 				034EC8E923F87EDB006944DD /* EntityCategory+CoreDataClass.swift in Sources */,
 				03213B4A23F9055400002DD7 /* SousOperationAction.swift in Sources */,
@@ -2061,8 +2061,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pegase/Pegase.entitlements;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 84WLNJ2YG4;
 				INFOPLIST_FILE = Pegase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2070,6 +2071,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = thierry.Pegase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2082,8 +2084,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pegase/Pegase.entitlements;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 84WLNJ2YG4;
 				INFOPLIST_FILE = Pegase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2091,6 +2094,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = thierry.Pegase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2099,8 +2103,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 84WLNJ2YG4;
 				INFOPLIST_FILE = PegaseUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2109,6 +2114,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = thierry.PegaseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Pegase;
 			};
@@ -2118,8 +2124,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 84WLNJ2YG4;
 				INFOPLIST_FILE = PegaseUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2128,6 +2135,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = thierry.PegaseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Pegase;
 			};

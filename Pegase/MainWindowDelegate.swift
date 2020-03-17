@@ -66,12 +66,12 @@ extension MainWindowController: SourceListDelegate
             segmentedControl.setEnabled(false, forSegment: 2)
             
         case "Recette Depense":
-            self.recetteDepenseBarController = RecetteDepenseBarController()
-            vc = (recetteDepenseBarController?.view)!
+            self.incomeDepenseBarController = IncomeDepenseBarController()
+            vc = (incomeDepenseBarController?.view)!
             
             setUpGroupeListeOperationsSecondary()
-            recetteDepenseBarController?.delegate = listeOperationsController
-            recetteDepenseBarController?.setDataHorizontal()
+            incomeDepenseBarController?.delegate = listeOperationsController
+            incomeDepenseBarController?.setDataHorizontal()
             
             isSplitDroitHidden  = true
             isSplitCentreHidden =  false

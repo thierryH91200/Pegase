@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16085" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16095" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16095"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -153,23 +153,6 @@
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="sBm-44-Q0i"/>
-                    <toolbarItem implicitItemIdentifier="5F1A35DE-472C-449B-9B16-9ECD993C2A5D" label="" paletteLabel="Custom View" sizingBehavior="auto" id="Edf-CO-OTM">
-                        <nil key="toolTip"/>
-                        <segmentedControl key="view" verticalHuggingPriority="750" id="fc0-YR-fgy">
-                            <rect key="frame" x="0.0" y="14" width="116" height="24"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="h6j-Qp-yUc">
-                                <font key="font" metaFont="system"/>
-                                <segments>
-                                    <segment label="Light" selected="YES"/>
-                                    <segment label="Dark" tag="1"/>
-                                </segments>
-                            </segmentedCell>
-                            <connections>
-                                <action selector="appearanceSelection:" target="-2" id="zdk-gh-JOK"/>
-                            </connections>
-                        </segmentedControl>
-                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="AFA8898A-6F50-402C-9EF7-4B280109128B" label="" paletteLabel="" id="1Dz-AB-dni">
                         <nil key="toolTip"/>
                         <size key="minSize" width="102" height="24"/>
@@ -232,7 +215,7 @@
                             <action selector="AdvancedFilter:" target="-1" id="aKL-eu-j3L"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="F56F9473-A77A-470B-9BCD-07F3FBC7F2BB" label="" paletteLabel="Debug Mode" sizingBehavior="auto" id="V8X-L8-Pcz" userLabel="Debug  Mode">
+                    <toolbarItem implicitItemIdentifier="F56F9473-A77A-470B-9BCD-07F3FBC7F2BB" label="Debug Mode" paletteLabel="Debug Mode" sizingBehavior="auto" id="V8X-L8-Pcz" userLabel="Debug  Mode">
                         <nil key="toolTip"/>
                         <segmentedControl key="view" verticalHuggingPriority="750" id="IBi-3q-Ji7">
                             <rect key="frame" x="0.0" y="14" width="116" height="24"/>

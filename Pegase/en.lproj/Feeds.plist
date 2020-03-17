@@ -72,7 +72,7 @@
 				<key>icon</key>
 				<string>009-pie-chart</string>
 				<key>name</key>
-				<string>Rubrique</string>
+				<string>Rubric</string>
 			</dict>
 			<dict>
 				<key>nameView</key>
@@ -80,7 +80,7 @@
 				<key>icon</key>
 				<string>034-bars</string>
 				<key>name</key>
-				<string>Catégorie Bar</string>
+				<string>Catégory Bar</string>
 			</dict>
 			<dict>
 				<key>nameView</key>
@@ -88,7 +88,7 @@
 				<key>icon</key>
 				<string>034-bars</string>
 				<key>name</key>
-				<string>Catégorie</string>
+				<string>Catégory</string>
 			</dict>
 			<dict>
 				<key>nameView</key>
@@ -104,7 +104,7 @@
 				<key>icon</key>
 				<string>034-bars</string>
 				<key>name</key>
-				<string>Recette Depense</string>
+				<string>Incomes Expenses</string>
 			</dict>
 			<dict>
 				<key>nameView</key>
@@ -112,7 +112,7 @@
 				<key>icon</key>
 				<string>034-bars</string>
 				<key>name</key>
-				<string>Rubrique</string>
+				<string>Rubric</string>
 			</dict>
 		</array>
 	</dict>
@@ -129,7 +129,7 @@
 				<key>icon</key>
 				<string>Bookmark-add</string>
 				<key>name</key>
-				<string>Identite</string>
+				<string>Identity</string>
 			</dict>
 			<dict>
 				<key>nameView</key>

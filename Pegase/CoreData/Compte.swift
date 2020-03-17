@@ -25,11 +25,11 @@ final class Compte {
         account.isAccount = true
         account.uuid = UUID()
         
-        let identite = Identite.shared.create(name: idName, prenom: idPrenom)
+        let identite = Identite.shared.create(name: idName, prenom: idPrenom, isAddAccount: false)
         identite.account = account
         account.identite = identite
         
-        let initCompte = InitCompte.shared.create(numCompte: numCompte)
+        let initCompte = InitCompte.shared.create(numCompte: numCompte, isAddAccount: false)
         initCompte.account = account
         account.initCompte = initCompte
 

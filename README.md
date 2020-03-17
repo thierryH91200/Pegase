@@ -7,8 +7,7 @@ Pegase
 </p>
 
 <p align="center">
-<img src="Doc/Pegase.png" alt="Sample"
-sizes="(min-width: 600px) 200px, 50vw">>
+<img src="Doc/Pegase.png" alt="Sample">
 <p align="center">
 <em></em>
 </p>
@@ -103,23 +102,26 @@ Trying to control yourself without depriving yourself too much and especially no
 
 carthage update --platform macos --use-submodules
 
+## Compatibility
+
+OS X 10.14 or later, 64-bit processor
 
 ---
 ## Installation
 
 ## CocoaPods
-
 it is not my priority
 Pegase not include CocoaPods
 
 ## Carthage
-
 it is not my priority
 Pegase not include Carthage
+carthage update --platform macos --use-submodules
+$(SRCROOT)/Carthage/Build/Mac/Charts.framework
+$(SRCROOT)/Carthage/Build/Mac/SwiftDate.framework
 
 
 ## Manually
-
 Download and drop /Sources folder in your project.
 Congratulations!
 
@@ -145,6 +147,4 @@ Feel free to contribute to this project by providing ideas or opening pull reque
 
 
 
-$(SRCROOT)/Carthage/Build/Mac/Charts.framework
-$(SRCROOT)/Carthage/Build/Mac/SwiftDate.framework
 

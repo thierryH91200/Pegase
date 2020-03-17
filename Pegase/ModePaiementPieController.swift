@@ -19,8 +19,8 @@ final class ModePaiementPieController: CommonGraph {
         return _formatter
     }()
     
-    var resultArrayDepense = [DataGraph]()
-    var resultArrayRecette = [DataGraph]()
+    var resultArrayExpense = [DataGraph]()
+    var resultArrayIncome = [DataGraph]()
 
     public override func viewDidDisappear()
     {
@@ -111,8 +111,8 @@ final class ModePaiementPieController: CommonGraph {
     
     func updateChartData()
     {
-        var dataArrayD = [DataGraph]()
-        var dataArrayR = [DataGraph]()
+        var dataArrayExpense = [DataGraph]()
+        var dataArrayIncome = [DataGraph]()
 
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
         
@@ -140,35 +140,35 @@ final class ModePaiementPieController: CommonGraph {
             
             if amount < 0 {
                 let data  = DataGraph(name : nameModePaiement!, value : amount, color : color)
-                dataArrayD.append(data)
+                dataArrayExpense.append(data)
             } else {
                 let data  = DataGraph(name : nameModePaiement!, value : amount, color : color)
-                dataArrayR.append(data)
+                dataArrayIncome.append(data)
             }
         }
 
-        self.resultArrayDepense.removeAll()
-        let allKeys = Set<String>(dataArrayD.map { $0.name })
+        self.resultArrayExpense.removeAll()
+        let allKeys = Set<String>(dataArrayExpense.map { $0.name })
         for key in allKeys {
-            let data = dataArrayD.filter({ $0.name == key })
+            let data = dataArrayExpense.filter({ $0.name == key })
             let sum = data.map({ $0.value }).reduce(0, +)
-            self.resultArrayDepense.append(DataGraph(name: key, value: sum, color: data[0].color))
+            self.resultArrayExpense.append(DataGraph(name: key, value: sum, color: data[0].color))
         }
-        self.resultArrayDepense = self.resultArrayDepense.sorted(by: { $0.name < $1.name })
+        self.resultArrayExpense = self.resultArrayExpense.sorted(by: { $0.name < $1.name })
         
-        resultArrayRecette.removeAll()
-        let allKeysR = Set<String>(dataArrayR.map { $0.name })
+        resultArrayIncome.removeAll()
+        let allKeysR = Set<String>(dataArrayIncome.map { $0.name })
         for key in allKeysR {
-            let data = dataArrayR.filter({ $0.name == key })
+            let data = dataArrayIncome.filter({ $0.name == key })
             let sum = data.map({ $0.value }).reduce(0, +)
-            resultArrayRecette.append(DataGraph(name: key, value: sum, color: data[0].color))
+            resultArrayIncome.append(DataGraph(name: key, value: sum, color: data[0].color))
         }
-        resultArrayRecette = resultArrayRecette.sorted(by: { $0.name < $1.name })
+        resultArrayIncome = resultArrayIncome.sorted(by: { $0.name < $1.name })
     }
     
     func setDataCount1()
     {
-        guard resultArrayDepense.count != 0  else {
+        guard resultArrayExpense.count != 0  else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
@@ -177,7 +177,7 @@ final class ModePaiementPieController: CommonGraph {
         // MARK: PieChartDataEntry
         var colors : [NSColor] = []
         var entries = [PieChartDataEntry]()
-        for result in resultArrayDepense {
+        for result in resultArrayExpense {
             entries.append(PieChartDataEntry(value: abs(result.value), label: result.name))
             colors.append(result.color)
         }
@@ -201,12 +201,11 @@ final class ModePaiementPieController: CommonGraph {
         data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!)
         data.setValueTextColor(NSColor.labelColor)
         chartView.data = data
-        
     }
     
     private func setDataCount2()
     {
-        guard resultArrayRecette.count != 0  else {
+        guard resultArrayIncome.count != 0  else {
             chartView2.data = nil
             chartView2.data?.notifyDataChanged()
             chartView2.notifyDataSetChanged()
@@ -215,7 +214,7 @@ final class ModePaiementPieController: CommonGraph {
         // MARK: PieChartDataEntry
         var colors : [NSColor] = []
         var entries : [PieChartDataEntry] = []
-        for result in self.resultArrayRecette {
+        for result in self.resultArrayIncome {
             entries.append(PieChartDataEntry(value: abs(result.value), label: result.name))
             colors.append(result.color)
         }

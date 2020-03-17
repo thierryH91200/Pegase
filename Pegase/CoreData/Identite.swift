@@ -51,7 +51,7 @@ final class InitCompte {
     var entitiesInitCompte = [EntityInitCompte]()
     
     // MARK: - InitCompte
-    func create(numCompte : String = "") -> EntityInitCompte {
+    func create(numCompte : String = "", isAddAccount: Bool = true) -> EntityInitCompte {
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitCompte", into: mainObjectContext) as! EntityInitCompte
         
         entity.bic = ""
@@ -72,7 +72,9 @@ final class InitCompte {
         entity.prevu = 0
         entity.realise = 0
         
-        entity.account = compteCourant
+        if isAddAccount == true {
+            entity.account = compteCourant
+        }
         return entity
     }
     
@@ -102,7 +104,7 @@ final class Identite {
     var entitiesIdentite = [EntityIdentite]()
     
     // MARK: - Identite
-    func create(name: String = "", prenom: String = "") -> EntityIdentite {
+    func create(name: String = "", prenom: String = "", isAddAccount: Bool = true) -> EntityIdentite {
         
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityIdentite", into: mainObjectContext) as! EntityIdentite
         entity.idName        = name
@@ -116,7 +118,9 @@ final class Identite {
         entity.idMobile      = ""
         entity.idEmail       = ""
         
-        entity.account = compteCourant
+        if isAddAccount == true {
+            entity.account = compteCourant
+        }
         return entity
     }
     
