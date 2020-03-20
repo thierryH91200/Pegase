@@ -1,9 +1,8 @@
 import AppKit
 import Charts
 
-final class CategorieBarController1: CommonGraph
+final class CategoryBarController1: CommonGraph
 {
-    
     struct RubricColor : Hashable {
         var name: String
         var color  : NSColor
@@ -14,7 +13,6 @@ final class CategorieBarController1: CommonGraph
         }
     }
     
-
     public weak var delegate: FilterDelegate?
     
     @IBOutlet var chartView: BarChartView!
@@ -295,15 +293,14 @@ final class CategorieBarController1: CommonGraph
     
 }
 
-extension CategorieBarController1: SliderHorizontalDelegate {
+extension CategoryBarController1: SliderHorizontalDelegate {
     func setDataHorizontal() {
         self.updateChartData()
         self.setDataCount()
     }
-    
 }
 
-extension CategorieBarController1: ChartViewDelegate
+extension CategoryBarController1: ChartViewDelegate
 {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
     {

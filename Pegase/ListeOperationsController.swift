@@ -281,8 +281,8 @@ final class ListeOperationsController: NSViewController {
             
             var amount = 0.0
             var solde = 0.0
-            var depense = 0.0
-            var revenu = 0.0
+            var expense = 0.0
+            var income = 0.0
             
             let formatter = NumberFormatter()
             formatter.locale = Locale.current
@@ -296,23 +296,22 @@ final class ListeOperationsController: NSViewController {
                 amount = (item?.entityOperations.amount)!
                 solde += amount
                 if amount < 0 {
-                    depense += amount
+                    expense += amount
                 } else {
-                    revenu += amount
+                    income += amount
                 }
             }
             
             // Info
             let amountStr = formatter.string(from: solde as NSNumber)!
-            let strDepense = formatter.string(from: depense as NSNumber)!
-            let strRevenu = formatter.string(from: revenu as NSNumber)!
+            let strExpense = formatter.string(from: expense as NSNumber)!
+            let strIncome = formatter.string(from: income as NSNumber)!
             let count = selectedRow.count
             
-            let info = Localizations.ListeOperation.info(count, strDepense, strRevenu, amountStr)
+            let info = Localizations.ListeOperation.info(count, strExpense, strIncome, amountStr)
             let attributedText = NSAttributedString(string: info, attributes: attribute)
             self.labelInfo.attributedStringValue = attributedText
             
-            // delegate -> Edition Operation
             self.delegate?.editionOperations(operationsSelected)
 
             self.becomeFirstResponder()
@@ -330,7 +329,7 @@ final class ListeOperationsController: NSViewController {
     {
         var groupedID : [ String:  [ String :  [IdOperations] ] ] = [:]
 
-        calculSolde()
+        balanceCalculation()
         let IdOperation = (0 ..< listeOperations.count).map { (i) -> IdOperations in
             return IdOperations(year : listeOperations[i].sectionYear!, id: listeOperations[i].sectionIdentifier!, entityOperations: listeOperations[i])
         }
@@ -354,7 +353,7 @@ final class ListeOperationsController: NSViewController {
         }
     }
     
-    private func calculSolde()
+    private func balanceCalculation()
     {
         let initCompte = InitCompte.shared.getAll()
         var soldeRealise = initCompte.realise

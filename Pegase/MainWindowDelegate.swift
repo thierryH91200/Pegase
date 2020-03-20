@@ -66,12 +66,12 @@ extension MainWindowController: SourceListDelegate
             segmentedControl.setEnabled(false, forSegment: 2)
             
         case "Recette Depense":
-            self.incomeDepenseBarController = IncomeDepenseBarController()
-            vc = (incomeDepenseBarController?.view)!
+            self.incomeExpenseBarController = IncomeExpenseBarController()
+            vc = (incomeExpenseBarController?.view)!
             
             setUpGroupeListeOperationsSecondary()
-            incomeDepenseBarController?.delegate = listeOperationsController
-            incomeDepenseBarController?.setDataHorizontal()
+            incomeExpenseBarController?.delegate = listeOperationsController
+            incomeExpenseBarController?.setDataHorizontal()
             
             isSplitDroitHidden  = true
             isSplitCentreHidden =  false
@@ -79,12 +79,12 @@ extension MainWindowController: SourceListDelegate
             segmentedControl.setEnabled(false, forSegment: 2)
             
         case "Rubrique Bar":
-            self.rubriqueBarController = RubriqueBarController()
-            vc = (rubriqueBarController?.view)!
+            self.rubricBarController = RubricBarController()
+            vc = (rubricBarController?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.rubriqueBarController?.delegate = listeOperationsController
-            self.rubriqueBarController?.setDataHorizontal()
+            self.rubricBarController?.delegate = listeOperationsController
+            self.rubricBarController?.setDataHorizontal()
             
             isSplitDroitHidden  = true
             isSplitCentreHidden =  false
@@ -92,11 +92,11 @@ extension MainWindowController: SourceListDelegate
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
         case "Categorie Bar":
-            self.categorieBarController = CategorieBarController()
-            vc = (categorieBarController?.view)!
+            self.categoryBarController = CategoryBarController()
+            vc = (categoryBarController?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.categorieBarController?.delegate = listeOperationsController
+            self.categoryBarController?.delegate = listeOperationsController
             
             isSplitDroitHidden  = true
             isSplitCentreHidden =  false
@@ -104,11 +104,11 @@ extension MainWindowController: SourceListDelegate
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
         case "Categorie Bar1":
-            self.categorieBarController1 = CategorieBarController1()
-            vc = (categorieBarController1?.view)!
+            self.categoryBarController1 = CategoryBarController1()
+            vc = (categoryBarController1?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.categorieBarController1?.delegate = listeOperationsController
+            self.categoryBarController1?.delegate = listeOperationsController
             
             isSplitDroitHidden  = true
             isSplitCentreHidden =  false

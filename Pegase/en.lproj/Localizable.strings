@@ -66,7 +66,7 @@
 "ImportSimplifiee.Menu.ignoreCol" = "Ignore_Column";
 "ImportSimplifiee.Menu.dateOperation" = "Date Opération";
 "ImportSimplifiee.Menu.datePointage" = "Date Pointage";
-"ImportSimplifiee.Menu.libelle" = "Libellé";
+"ImportSimplifiee.Menu.libelle" = "Comment";
 "ImportSimplifiee.Menu.montant" = "Montant";
 "ImportSimplifiee.Menu.statut" = "Statut";
 "ImportSimplifiee.Menu.rubrique" = "Rubric";
@@ -74,7 +74,7 @@
 "ImportSimplifiee.Menu.modePaiement" = "Mode Paiement";
 
 // MARK: ListeOperation
-"ListeOperation.info" = "%d opérations Dépenses : %@ Revenus : %@ Solde : %@";
+"ListeOperation.info" = "%d opérations Expenses : %@ Income : %@ Balance : %@";
 
 // MARK: Mode Alert
 "Mode.Impossible" = "Impossible de supprimer le mode de paiement par défaut. Changez la valeur dans les références du compte";

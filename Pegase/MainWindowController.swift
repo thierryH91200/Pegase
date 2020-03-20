@@ -13,11 +13,11 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var groupeCompteViewController: GroupeCompteViewController?
     
     var rubriquePieController: RubriquePieController?
-    var categorieBarController: CategorieBarController?
-    var categorieBarController1: CategorieBarController1?
-    var rubriqueBarController: RubriqueBarController?
+    var categoryBarController: CategoryBarController?
+    var categoryBarController1: CategoryBarController1?
+    var rubricBarController: RubricBarController?
     var modePaiementPieController: ModePaiementPieController?
-    var incomeDepenseBarController: IncomeDepenseBarController?
+    var incomeExpenseBarController: IncomeExpenseBarController?
     var tresorerieController: TresorerieController?
     
     var parametreController: ParametreController?
@@ -108,8 +108,8 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
         self.justForTheFun()
         
         self.splitViewPrincipal.autosaveName = NSSplitView.AutosaveName( "splitViewPrincipal")
-        self.splitViewGauche.autosaveName = NSSplitView.AutosaveName( "splitViewGauche")
-        self.splitViewCentre.autosaveName = NSSplitView.AutosaveName( "splitViewCentre")
+        self.splitViewGauche.autosaveName = NSSplitView.AutosaveName( "splitViewLeft")
+        self.splitViewCentre.autosaveName = NSSplitView.AutosaveName( "splitViewCenter")
         
         let mainViews = splitViewPrincipal.subviews
         for mainView in mainViews {

@@ -1,12 +1,11 @@
 import AppKit
 
+// MARK: - Banque
 final class Banque {
     
     static let shared = Banque()
-
     var entitiesBanque = [EntityBanque]()
     
-    // MARK: - Banque
     func create() -> EntityBanque {
         let entity = EntityBanque(context: mainObjectContext)
         
@@ -45,12 +44,12 @@ final class Banque {
     }
 }
 
+// MARK: - InitCompte
 final class InitCompte {
     
     static let shared = InitCompte()
     var entitiesInitCompte = [EntityInitCompte]()
     
-    // MARK: - InitCompte
     func create(numCompte : String = "" ) -> EntityInitCompte {
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitCompte", into: mainObjectContext) as! EntityInitCompte
         
@@ -94,12 +93,12 @@ final class InitCompte {
     
 }
 
+// MARK: - Identite
 final class Identite {
     
     static let shared = Identite()
     var entitiesIdentite = [EntityIdentite]()
     
-    // MARK: - Identite
     func create(name: String = "", prenom: String = "") -> EntityIdentite {
         
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityIdentite", into: mainObjectContext) as! EntityIdentite

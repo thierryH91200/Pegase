@@ -65,22 +65,6 @@ public struct Localizations {
     public struct MenuBar {
 
 
-        public struct RéférenceCompte {
-
-            /// Base translation: Settings
-            public static var Settings : String = NSLocalizedString("MenuBar.RéférenceCompte.Settings", comment: "")
-
-            /// Base translation: Scheduler
-            public static var Scheduler : String = NSLocalizedString("MenuBar.RéférenceCompte.Scheduler", comment: "")
-
-            /// Base translation: Identite
-            public static var Identite : String = NSLocalizedString("MenuBar.RéférenceCompte.Identite", comment: "")
-
-            /// Base translation: Référence compte
-            public static var Name : String = NSLocalizedString("MenuBar.RéférenceCompte.Name", comment: "")
-
-        }
-
         public struct Rapports {
 
             /// Base translation: Mode de paiement
@@ -121,6 +105,22 @@ public struct Localizations {
             public static var SiteWebDeLaBanque : String = NSLocalizedString("MenuBar.SuivieDeTresorerie.SiteWebDeLaBanque", comment: "")
 
         }
+
+        public struct RéférenceCompte {
+
+            /// Base translation: Settings
+            public static var Settings : String = NSLocalizedString("MenuBar.RéférenceCompte.Settings", comment: "")
+
+            /// Base translation: Scheduler
+            public static var Scheduler : String = NSLocalizedString("MenuBar.RéférenceCompte.Scheduler", comment: "")
+
+            /// Base translation: Identite
+            public static var Identite : String = NSLocalizedString("MenuBar.RéférenceCompte.Identite", comment: "")
+
+            /// Base translation: Référence compte
+            public static var Name : String = NSLocalizedString("MenuBar.RéférenceCompte.Name", comment: "")
+
+        }
     }
 
     public struct Check {
@@ -158,14 +158,14 @@ public struct Localizations {
 
     public struct General {
 
-        /// Base translation: List of operations
-        public static var Liste_des_opérations : String = NSLocalizedString("General.Liste des opérations", comment: "")
-
         /// Base translation: Comment
         public static var Libelle : String = NSLocalizedString("General.Libelle", comment: "")
 
         /// Base translation: Scheduler
         public static var Scheduler : String = NSLocalizedString("General.Scheduler", comment: "")
+
+        /// Base translation: List of operations
+        public static var Liste_des_opérations : String = NSLocalizedString("General.Liste des opérations", comment: "")
 
         /// Base translation: Operation
         public static var Operation : String = NSLocalizedString("General.Operation", comment: "")
@@ -242,20 +242,21 @@ public struct Localizations {
     public struct GroupeCompte {
 
 
-        public struct RemoveAlert {
+        public struct Folder {
 
-            /// Base translation: Cancel
-            public static var Cancel : String = NSLocalizedString("GroupeCompte.RemoveAlert.Cancel", comment: "")
 
-            /// Base translation: Supprimer cet élement
-            public static var MessageText : String = NSLocalizedString("GroupeCompte.RemoveAlert.MessageText", comment: "")
+            public struct Menu {
 
-            /// Base translation: Remove
-            public static var Delete : String = NSLocalizedString("GroupeCompte.RemoveAlert.Delete", comment: "")
+                /// Base translation: Add folder
+                public static var Add : String = NSLocalizedString("GroupeCompte.Folder.Menu.Add", comment: "")
 
-            /// Base translation: Are you sure you would like to delete this item ?
-            public static var InformativeText : String = NSLocalizedString("GroupeCompte.RemoveAlert.InformativeText", comment: "")
+                /// Base translation: Edit folder
+                public static var Edit : String = NSLocalizedString("GroupeCompte.Folder.Menu.Edit", comment: "")
 
+                /// Base translation: Remove folder
+                public static var Remove : String = NSLocalizedString("GroupeCompte.Folder.Menu.Remove", comment: "")
+
+            }
         }
 
         public struct Compte {
@@ -275,21 +276,20 @@ public struct Localizations {
             }
         }
 
-        public struct Folder {
+        public struct RemoveAlert {
 
+            /// Base translation: Cancel
+            public static var Cancel : String = NSLocalizedString("GroupeCompte.RemoveAlert.Cancel", comment: "")
 
-            public struct Menu {
+            /// Base translation: Supprimer cet élement
+            public static var MessageText : String = NSLocalizedString("GroupeCompte.RemoveAlert.MessageText", comment: "")
 
-                /// Base translation: Edit folder
-                public static var Edit : String = NSLocalizedString("GroupeCompte.Folder.Menu.Edit", comment: "")
+            /// Base translation: Remove
+            public static var Delete : String = NSLocalizedString("GroupeCompte.RemoveAlert.Delete", comment: "")
 
-                /// Base translation: Add folder
-                public static var Add : String = NSLocalizedString("GroupeCompte.Folder.Menu.Add", comment: "")
+            /// Base translation: Are you sure you would like to delete this item ?
+            public static var InformativeText : String = NSLocalizedString("GroupeCompte.RemoveAlert.InformativeText", comment: "")
 
-                /// Base translation: Remove folder
-                public static var Remove : String = NSLocalizedString("GroupeCompte.Folder.Menu.Remove", comment: "")
-
-            }
         }
     }
 
@@ -317,7 +317,7 @@ public struct Localizations {
 
     public struct ListeOperation {
 
-        /// Base translation: %d opérations Dépenses : %@ Revenus : %@ Solde : %@
+        /// Base translation: %d opérations Expenses : %@ Income : %@ Balance : %@
         public static func info(_ value1 : Int, _ value2 : String, _ value3 : String, _ value4 : String) -> String {
             return String(format: NSLocalizedString("ListeOperation.info", comment: ""), value1, value2, value3, value4)
         }
@@ -351,8 +351,8 @@ public struct Localizations {
 
     public struct Document {
 
-        /// Base translation: Cash account
-        public static var Especes : String = NSLocalizedString("Document.Especes", comment: "")
+        /// Base translation: OpenProject
+        public static var OpenProjectPanelMessage : String = NSLocalizedString("Document.OpenProjectPanelMessage", comment: "")
 
         /// Base translation: Current account
         public static var Compte_Courant : String = NSLocalizedString("Document.Compte_Courant", comment: "")
@@ -369,8 +369,8 @@ public struct Localizations {
         /// Base translation: Save
         public static var Epargne : String = NSLocalizedString("Document.Epargne", comment: "")
 
-        /// Base translation: OpenProject
-        public static var OpenProjectPanelMessage : String = NSLocalizedString("Document.OpenProjectPanelMessage", comment: "")
+        /// Base translation: Cash account
+        public static var Especes : String = NSLocalizedString("Document.Especes", comment: "")
 
     }
 
@@ -406,20 +406,20 @@ public struct Localizations {
 
     public struct ImportSimplifiee {
 
-        /// Base translation: Statut
-        public static var statut : String = NSLocalizedString("ImportSimplifiee.statut", comment: "")
-
         /// Base translation: Category
         public static var category : String = NSLocalizedString("ImportSimplifiee.category", comment: "")
-
-        /// Base translation: Mode Paiement
-        public static var mode : String = NSLocalizedString("ImportSimplifiee.mode", comment: "")
 
         /// Base translation: Date_Operation
         public static var dateOperation : String = NSLocalizedString("ImportSimplifiee.dateOperation", comment: "")
 
         /// Base translation: Amount
         public static var montant : String = NSLocalizedString("ImportSimplifiee.montant", comment: "")
+
+        /// Base translation: Mode Paiement
+        public static var mode : String = NSLocalizedString("ImportSimplifiee.mode", comment: "")
+
+        /// Base translation: Statut
+        public static var statut : String = NSLocalizedString("ImportSimplifiee.statut", comment: "")
 
         /// Base translation: account
         public static var compte : String = NSLocalizedString("ImportSimplifiee.compte", comment: "")
@@ -442,11 +442,11 @@ public struct Localizations {
             /// Base translation: Date Opération
             public static var dateOperation : String = NSLocalizedString("ImportSimplifiee.Menu.dateOperation", comment: "")
 
-            /// Base translation: Rubric
-            public static var rubrique : String = NSLocalizedString("ImportSimplifiee.Menu.rubrique", comment: "")
-
             /// Base translation: Montant
             public static var montant : String = NSLocalizedString("ImportSimplifiee.Menu.montant", comment: "")
+
+            /// Base translation: Rubric
+            public static var rubrique : String = NSLocalizedString("ImportSimplifiee.Menu.rubrique", comment: "")
 
             /// Base translation: Mode Paiement
             public static var modePaiement : String = NSLocalizedString("ImportSimplifiee.Menu.modePaiement", comment: "")
@@ -454,7 +454,7 @@ public struct Localizations {
             /// Base translation: Date Pointage
             public static var datePointage : String = NSLocalizedString("ImportSimplifiee.Menu.datePointage", comment: "")
 
-            /// Base translation: Libellé
+            /// Base translation: Comment
             public static var libelle : String = NSLocalizedString("ImportSimplifiee.Menu.libelle", comment: "")
 
             /// Base translation: Ignore_Column

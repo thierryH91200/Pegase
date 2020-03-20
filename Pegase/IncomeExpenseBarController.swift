@@ -3,7 +3,7 @@ import Charts
 import SwiftDate
 
 
-final class IncomeDepenseBarController: CommonGraph {
+final class IncomeExpenseBarController: CommonGraph {
     
     public weak var delegate: FilterDelegate?
     
@@ -274,7 +274,7 @@ final class IncomeDepenseBarController: CommonGraph {
     
 }
 
-extension IncomeDepenseBarController: SliderHorizontalDelegate {
+extension IncomeExpenseBarController: SliderHorizontalDelegate {
     func setDataHorizontal() {
         updateChartData()
         setDataCount()
@@ -282,7 +282,7 @@ extension IncomeDepenseBarController: SliderHorizontalDelegate {
 
 }
 
-extension IncomeDepenseBarController: ChartViewDelegate
+extension IncomeExpenseBarController: ChartViewDelegate
 {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
     {

@@ -2,7 +2,7 @@ import AppKit
 import Charts
 
 
-final class CategorieBarController: CommonGraph
+final class CategoryBarController: CommonGraph
 {
     public weak var delegate: FilterDelegate?
     
@@ -303,7 +303,7 @@ final class CategorieBarController: CommonGraph
     
 }
 
-extension CategorieBarController: SliderHorizontalDelegate {
+extension CategoryBarController: SliderHorizontalDelegate {
     func setDataHorizontal() {
         updateChartData()
         setDataCount()
@@ -311,7 +311,7 @@ extension CategorieBarController: SliderHorizontalDelegate {
     
 }
 
-extension CategorieBarController: ChartViewDelegate
+extension CategoryBarController: ChartViewDelegate
 {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
     {

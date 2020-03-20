@@ -53,14 +53,14 @@ Trying to control yourself without depriving yourself too much and especially no
 <p align="center">
 <img src="Doc/Capture3.png" alt="Sample">
 <p align="center">
-<em>Tresorerie</em>
+<em>Rubric Bar</em>
 </p>
 </p>
 
 <p align="center">
 <img src="Doc/Capture4.png" alt="Sample">
 <p align="center">
-<em>Tresorerie</em>
+<em>Category Bar</em>
 </p>
 </p>
 
@@ -74,7 +74,7 @@ Trying to control yourself without depriving yourself too much and especially no
 <p align="center">
 <img src="Doc/Capture6.png" alt="Sample">
 <p align="center">
-<em>Tresorerie</em>
+<em>Category</em>
 </p>
 </p>
 
@@ -95,12 +95,11 @@ Trying to control yourself without depriving yourself too much and especially no
 <p align="center">
 <img src="Doc/Capture9.png" alt="Sample">
 <p align="center">
-<em>Revenue and expense</em>
+<em>Income and expense</em>
 </p>
 </p>
 
 
-carthage update --platform macos --use-submodules
 
 ## Compatibility
 
@@ -116,6 +115,7 @@ Pegase not include CocoaPods
 ## Carthage
 it is not my priority
 Pegase not include Carthage
+
 carthage update --platform macos --use-submodules
 $(SRCROOT)/Carthage/Build/Mac/Charts.framework
 $(SRCROOT)/Carthage/Build/Mac/SwiftDate.framework

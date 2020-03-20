@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16095" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.3.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16095"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CategorieBarController" customModule="Soroban_Account" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="CategoryBarController1" customModule="Pegase" customModuleProvider="target">
             <connections>
-                <outlet property="backToBrands" destination="LCQ-i4-5dE" id="jGd-8d-vaa"/>
                 <outlet property="chartView" destination="27A-Wd-jgF" id="Cri-80-fDh"/>
                 <outlet property="splitView" destination="K7t-8U-jvJ" id="LGG-h2-PeX"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -28,26 +27,14 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="27A-Wd-jgF" customClass="BarChartView" customModule="Charts">
-                                    <rect key="frame" x="20" y="61" width="920" height="430"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="960" height="511"/>
                                 </customView>
-                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LCQ-i4-5dE">
-                                    <rect key="frame" x="876" y="13" width="70" height="32"/>
-                                    <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3jz-Lb-ylh">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="actionBack:" target="-2" id="cEV-96-SCA"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="27A-Wd-jgF" firstAttribute="top" secondItem="9Hy-sA-KSX" secondAttribute="top" constant="20" id="0hu-1W-pRz"/>
-                                <constraint firstAttribute="trailing" secondItem="27A-Wd-jgF" secondAttribute="trailing" constant="20" id="7QH-Hj-ThR"/>
-                                <constraint firstItem="27A-Wd-jgF" firstAttribute="leading" secondItem="9Hy-sA-KSX" secondAttribute="leading" constant="20" id="A2z-RI-5cc"/>
-                                <constraint firstAttribute="trailing" secondItem="LCQ-i4-5dE" secondAttribute="trailing" constant="20" id="Gna-fC-p9T"/>
-                                <constraint firstAttribute="bottom" secondItem="LCQ-i4-5dE" secondAttribute="bottom" constant="20" id="iK2-Pe-cJb"/>
-                                <constraint firstItem="LCQ-i4-5dE" firstAttribute="top" secondItem="27A-Wd-jgF" secondAttribute="bottom" constant="20" id="ler-IT-ClF"/>
+                                <constraint firstItem="27A-Wd-jgF" firstAttribute="top" secondItem="9Hy-sA-KSX" secondAttribute="top" id="0hu-1W-pRz"/>
+                                <constraint firstAttribute="bottom" secondItem="27A-Wd-jgF" secondAttribute="bottom" id="6up-AU-CeK"/>
+                                <constraint firstAttribute="trailing" secondItem="27A-Wd-jgF" secondAttribute="trailing" id="7QH-Hj-ThR"/>
+                                <constraint firstItem="27A-Wd-jgF" firstAttribute="leading" secondItem="9Hy-sA-KSX" secondAttribute="leading" id="A2z-RI-5cc"/>
                             </constraints>
                         </customView>
                     </subviews>

@@ -57,16 +57,16 @@
 		03213B7123F905EE00002DD7 /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B6D23F905EE00002DD7 /* PreferencesTabViewController.swift */; };
 		03213B7223F905EE00002DD7 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B6E23F905EE00002DD7 /* PreferencesWindowController.swift */; };
 		03213B7323F905EE00002DD7 /* Preferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B6F23F905EE00002DD7 /* Preferenceable.swift */; };
-		03213B7D23F9082600002DD7 /* CategorieBarController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B7923F9082600002DD7 /* CategorieBarController1.swift */; };
-		03213B7E23F9082600002DD7 /* CategorieBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B7A23F9082600002DD7 /* CategorieBarController.swift */; };
-		03213B7F23F9082600002DD7 /* CategorieBarController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B7B23F9082600002DD7 /* CategorieBarController1.xib */; };
-		03213B8023F9082600002DD7 /* CategorieBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B7C23F9082600002DD7 /* CategorieBarController.xib */; };
+		03213B7D23F9082600002DD7 /* CategoryBarController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B7923F9082600002DD7 /* CategoryBarController1.swift */; };
+		03213B7E23F9082600002DD7 /* CategoryBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B7A23F9082600002DD7 /* CategoryBarController.swift */; };
+		03213B7F23F9082600002DD7 /* CategoryBarController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B7B23F9082600002DD7 /* CategoryBarController1.xib */; };
+		03213B8023F9082600002DD7 /* CategoryBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B7C23F9082600002DD7 /* CategoryBarController.xib */; };
 		03213B8323F9083300002DD7 /* ModePaiementPieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8123F9083300002DD7 /* ModePaiementPieController.swift */; };
 		03213B8423F9083300002DD7 /* ModePaiementPieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8223F9083300002DD7 /* ModePaiementPieController.xib */; };
-		03213B8723F9084800002DD7 /* IncomeDepenseBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8523F9084800002DD7 /* IncomeDepenseBarController.xib */; };
-		03213B8823F9084800002DD7 /* IncomeDepenseBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8623F9084800002DD7 /* IncomeDepenseBarController.swift */; };
-		03213B8B23F9085700002DD7 /* RubriqueBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8923F9085700002DD7 /* RubriqueBarController.xib */; };
-		03213B8C23F9085700002DD7 /* RubriqueBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8A23F9085700002DD7 /* RubriqueBarController.swift */; };
+		03213B8723F9084800002DD7 /* IncomeExpenseBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8523F9084800002DD7 /* IncomeExpenseBarController.xib */; };
+		03213B8823F9084800002DD7 /* IncomeExpenseBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8623F9084800002DD7 /* IncomeExpenseBarController.swift */; };
+		03213B8B23F9085700002DD7 /* RubricBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8923F9085700002DD7 /* RubricBarController.xib */; };
+		03213B8C23F9085700002DD7 /* RubricBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8A23F9085700002DD7 /* RubricBarController.swift */; };
 		03213B8F23F9086600002DD7 /* RubriquePieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8D23F9086500002DD7 /* RubriquePieController.swift */; };
 		03213B9023F9086600002DD7 /* RubriquePieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8E23F9086600002DD7 /* RubriquePieController.xib */; };
 		03213B9223F9089300002DD7 /* NVDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B9123F9089300002DD7 /* NVDate.swift */; };
@@ -358,16 +358,16 @@
 		03213B6D23F905EE00002DD7 /* PreferencesTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesTabViewController.swift; sourceTree = "<group>"; };
 		03213B6E23F905EE00002DD7 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		03213B6F23F905EE00002DD7 /* Preferenceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferenceable.swift; sourceTree = "<group>"; };
-		03213B7923F9082600002DD7 /* CategorieBarController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorieBarController1.swift; sourceTree = "<group>"; };
-		03213B7A23F9082600002DD7 /* CategorieBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorieBarController.swift; sourceTree = "<group>"; };
-		03213B7B23F9082600002DD7 /* CategorieBarController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategorieBarController1.xib; sourceTree = "<group>"; };
-		03213B7C23F9082600002DD7 /* CategorieBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategorieBarController.xib; sourceTree = "<group>"; };
+		03213B7923F9082600002DD7 /* CategoryBarController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryBarController1.swift; sourceTree = "<group>"; };
+		03213B7A23F9082600002DD7 /* CategoryBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryBarController.swift; sourceTree = "<group>"; };
+		03213B7B23F9082600002DD7 /* CategoryBarController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryBarController1.xib; sourceTree = "<group>"; };
+		03213B7C23F9082600002DD7 /* CategoryBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryBarController.xib; sourceTree = "<group>"; };
 		03213B8123F9083300002DD7 /* ModePaiementPieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModePaiementPieController.swift; sourceTree = "<group>"; };
 		03213B8223F9083300002DD7 /* ModePaiementPieController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModePaiementPieController.xib; sourceTree = "<group>"; };
-		03213B8523F9084800002DD7 /* IncomeDepenseBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeDepenseBarController.xib; sourceTree = "<group>"; };
-		03213B8623F9084800002DD7 /* IncomeDepenseBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeDepenseBarController.swift; sourceTree = "<group>"; };
-		03213B8923F9085700002DD7 /* RubriqueBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RubriqueBarController.xib; sourceTree = "<group>"; };
-		03213B8A23F9085700002DD7 /* RubriqueBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubriqueBarController.swift; sourceTree = "<group>"; };
+		03213B8523F9084800002DD7 /* IncomeExpenseBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeExpenseBarController.xib; sourceTree = "<group>"; };
+		03213B8623F9084800002DD7 /* IncomeExpenseBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeExpenseBarController.swift; sourceTree = "<group>"; };
+		03213B8923F9085700002DD7 /* RubricBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RubricBarController.xib; sourceTree = "<group>"; };
+		03213B8A23F9085700002DD7 /* RubricBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubricBarController.swift; sourceTree = "<group>"; };
 		03213B8D23F9086500002DD7 /* RubriquePieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubriquePieController.swift; sourceTree = "<group>"; };
 		03213B8E23F9086600002DD7 /* RubriquePieController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RubriquePieController.xib; sourceTree = "<group>"; };
 		03213B9123F9089300002DD7 /* NVDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVDate.swift; sourceTree = "<group>"; };
@@ -795,9 +795,9 @@
 		03213B5E23F905B400002DD7 /* Rapports */ = {
 			isa = PBXGroup;
 			children = (
-				03213B7823F9062B00002DD7 /* CategorieBarGraph */,
+				03213B7823F9062B00002DD7 /* CategoryBarGraph */,
 				03213B7723F9062800002DD7 /* ModePaiementPie */,
-				03213B7623F9062000002DD7 /* RecetteDepenseBar */,
+				03213B7623F9062000002DD7 /* IncomeExpenseBar */,
 				03213B7523F9061B00002DD7 /* RubriqueBar */,
 				03213B7423F9061600002DD7 /* RubriquePie */,
 				037993B424139AE7001ADDA6 /* CommonGraph.swift */,
@@ -828,19 +828,19 @@
 		03213B7523F9061B00002DD7 /* RubriqueBar */ = {
 			isa = PBXGroup;
 			children = (
-				03213B8A23F9085700002DD7 /* RubriqueBarController.swift */,
-				03213B8923F9085700002DD7 /* RubriqueBarController.xib */,
+				03213B8A23F9085700002DD7 /* RubricBarController.swift */,
+				03213B8923F9085700002DD7 /* RubricBarController.xib */,
 			);
 			name = RubriqueBar;
 			sourceTree = "<group>";
 		};
-		03213B7623F9062000002DD7 /* RecetteDepenseBar */ = {
+		03213B7623F9062000002DD7 /* IncomeExpenseBar */ = {
 			isa = PBXGroup;
 			children = (
-				03213B8623F9084800002DD7 /* IncomeDepenseBarController.swift */,
-				03213B8523F9084800002DD7 /* IncomeDepenseBarController.xib */,
+				03213B8623F9084800002DD7 /* IncomeExpenseBarController.swift */,
+				03213B8523F9084800002DD7 /* IncomeExpenseBarController.xib */,
 			);
-			name = RecetteDepenseBar;
+			name = IncomeExpenseBar;
 			sourceTree = "<group>";
 		};
 		03213B7723F9062800002DD7 /* ModePaiementPie */ = {
@@ -852,15 +852,15 @@
 			name = ModePaiementPie;
 			sourceTree = "<group>";
 		};
-		03213B7823F9062B00002DD7 /* CategorieBarGraph */ = {
+		03213B7823F9062B00002DD7 /* CategoryBarGraph */ = {
 			isa = PBXGroup;
 			children = (
-				03213B7A23F9082600002DD7 /* CategorieBarController.swift */,
-				03213B7C23F9082600002DD7 /* CategorieBarController.xib */,
-				03213B7923F9082600002DD7 /* CategorieBarController1.swift */,
-				03213B7B23F9082600002DD7 /* CategorieBarController1.xib */,
+				03213B7A23F9082600002DD7 /* CategoryBarController.swift */,
+				03213B7C23F9082600002DD7 /* CategoryBarController.xib */,
+				03213B7923F9082600002DD7 /* CategoryBarController1.swift */,
+				03213B7B23F9082600002DD7 /* CategoryBarController1.xib */,
 			);
-			name = CategorieBarGraph;
+			name = CategoryBarGraph;
 			sourceTree = "<group>";
 		};
 		03213BA723F9098E00002DD7 /* Shared */ = {
@@ -1428,7 +1428,7 @@
 			files = (
 				038FFFBA240E72CD0019A183 /* MyDB.sqlite in Resources */,
 				03213C9D23F9320600002DD7 /* IdentiteViewController.xib in Resources */,
-				03213B8023F9082600002DD7 /* CategorieBarController.xib in Resources */,
+				03213B8023F9082600002DD7 /* CategoryBarController.xib in Resources */,
 				035115CA241FF2DE001AF54B /* Pegase.png in Resources */,
 				034EC89E23F87CE2006944DD /* CodingGuidelines.md in Resources */,
 				03213B0923F9048200002DD7 /* TTFormatViewControllerAccessory.xib in Resources */,
@@ -1449,7 +1449,7 @@
 				03213CC923F9328300002DD7 /* ModePaiementViewController.xib in Resources */,
 				03213BD223F90AAB00002DD7 /* icons8-money-100.png in Resources */,
 				03213B0523F9048200002DD7 /* TTFormatViewController.xib in Resources */,
-				03213B8723F9084800002DD7 /* IncomeDepenseBarController.xib in Resources */,
+				03213B8723F9084800002DD7 /* IncomeExpenseBarController.xib in Resources */,
 				03213BD123F90AAB00002DD7 /* icons8-credit-card-100.png in Resources */,
 				034EC8F423F87EF1006944DD /* rubrique.csv in Resources */,
 				03213BCF23F90AAB00002DD7 /* Assets.xcassets in Resources */,
@@ -1471,13 +1471,13 @@
 				03213BCD23F90AAB00002DD7 /* icons8-safe-100.png in Resources */,
 				03213C7B23F931BC00002DD7 /* CurtainViewController.xib in Resources */,
 				03213CEA23F9781E00002DD7 /* ParametreController.xib in Resources */,
-				03213B8B23F9085700002DD7 /* RubriqueBarController.xib in Resources */,
+				03213B8B23F9085700002DD7 /* RubricBarController.xib in Resources */,
 				03213C1E23F90C1B00002DD7 /* CategorieModalWindowController.xib in Resources */,
 				03213BCE23F90AAB00002DD7 /* curtain.jpg in Resources */,
 				03213CA823F9321A00002DD7 /* EcheanciersSaisieController.xib in Resources */,
 				03213B6823F905E000002DD7 /* PersonViewController.xib in Resources */,
 				03213BD323F90AAB00002DD7 /* icons8-expensive-100.png in Resources */,
-				03213B7F23F9082600002DD7 /* CategorieBarController1.xib in Resources */,
+				03213B7F23F9082600002DD7 /* CategoryBarController1.xib in Resources */,
 				03213C2723F90C3300002DD7 /* ChequierModalWindowController.xib in Resources */,
 				03213B2023F904D600002DD7 /* TresorerieController.xib in Resources */,
 				03213C5823F926AD00002DD7 /* SousOperationModalWindowController.xib in Resources */,
@@ -1555,8 +1555,8 @@
 				034ECB5D23F87FAF006944DD /* GroupeCompteViewDataSource.swift in Sources */,
 				03213B0A23F9048200002DD7 /* ImportWindowControllerExtension.swift in Sources */,
 				03213B1423F9048D00002DD7 /* CSVParserDelegate.swift in Sources */,
-				03213B7D23F9082600002DD7 /* CategorieBarController1.swift in Sources */,
-				03213B8C23F9085700002DD7 /* RubriqueBarController.swift in Sources */,
+				03213B7D23F9082600002DD7 /* CategoryBarController1.swift in Sources */,
+				03213B8C23F9085700002DD7 /* RubricBarController.swift in Sources */,
 				034EC8F623F87EF1006944DD /* ModePaiement.swift in Sources */,
 				03213BB723F909C300002DD7 /* RangeSlider.swift in Sources */,
 				034EC91323F87F51006944DD /* NSTableCellView.swift in Sources */,
@@ -1565,7 +1565,7 @@
 				034EC8BB23F87E8B006944DD /* AdvancedFilterViewController.swift in Sources */,
 				034EC90F23F87F51006944DD /* NSPasteboard+Additions.swift in Sources */,
 				03213B4723F9055400002DD7 /* SousOperationModalWindowController.swift in Sources */,
-				03213B8823F9084800002DD7 /* IncomeDepenseBarController.swift in Sources */,
+				03213B8823F9084800002DD7 /* IncomeExpenseBarController.swift in Sources */,
 				03213BFF23F90BB600002DD7 /* PreferenceOperationViewController.swift in Sources */,
 				034EC8E923F87EDB006944DD /* EntityCategory+CoreDataClass.swift in Sources */,
 				03213B4A23F9055400002DD7 /* SousOperationAction.swift in Sources */,
@@ -1593,7 +1593,7 @@
 				03213BF923F90B9A00002DD7 /* ModeModalWindowController.swift in Sources */,
 				034ECA7A23F87FAE006944DD /* GroupeCompteViewDelegate.swift in Sources */,
 				03213B0C23F9048200002DD7 /* ImportWindowController.swift in Sources */,
-				03213B7E23F9082600002DD7 /* CategorieBarController.swift in Sources */,
+				03213B7E23F9082600002DD7 /* CategoryBarController.swift in Sources */,
 				034EC8E523F87EDB006944DD /* EntityCategory+CoreDataProperties.swift in Sources */,
 				037993B524139AE7001ADDA6 /* CommonGraph.swift in Sources */,
 				03213BA223F9093700002DD7 /* SplashScreenWindowController.swift in Sources */,

@@ -2,7 +2,7 @@ import AppKit
 import Charts
 
 
-final class RubriqueBarController: CommonGraph
+final class RubricBarController: CommonGraph
 {
     public weak var delegate: FilterDelegate?
     
@@ -12,12 +12,6 @@ final class RubriqueBarController: CommonGraph
     @IBOutlet var chartView: BarChartView!
 
     @IBOutlet weak var splitView: NSSplitView!
-    
-//    var sliderViewController: SliderViewHorizontalController?
-//
-//    var listeOperations : [EntityOperations] = []
-//    var firstDate: TimeInterval = 0.0
-//    var lastDate: TimeInterval = 0.0
     
     var startDate = Date()
     var endDate = Date()
@@ -308,7 +302,7 @@ final class RubriqueBarController: CommonGraph
 }
 
 // NSTableViewDelegate
-extension RubriqueBarController: NSTableViewDelegate {
+extension RubricBarController: NSTableViewDelegate {
     
     public func tableViewSelectionDidChange(_ notification: Notification)
     {
@@ -329,7 +323,7 @@ extension RubriqueBarController: NSTableViewDelegate {
     
 }
 
-extension RubriqueBarController: SliderHorizontalDelegate {
+extension RubricBarController: SliderHorizontalDelegate {
     func setDataHorizontal() {
         self.updateChartData()
         self.setDataCount()
@@ -337,7 +331,7 @@ extension RubriqueBarController: SliderHorizontalDelegate {
     
 }
 
-extension RubriqueBarController: ChartViewDelegate
+extension RubricBarController: ChartViewDelegate
 {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
     {
