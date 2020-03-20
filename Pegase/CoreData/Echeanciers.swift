@@ -51,7 +51,7 @@ final class Echeanciers {
         var name = entityEcheancier.category?.rubrique?.name
         let color = entityEcheancier.category?.rubrique?.color
         var uuid = entityEcheancier.category?.rubrique?.uuid
-        let entityRubrique = Rubrique.shared.findOrCreate(compte: entityEcheancier.account!, name: name!, color: color as! NSColor, uuid: uuid!)
+        let entityRubrique = Rubric.shared.findOrCreate(compte: entityEcheancier.account!, name: name!, color: color as! NSColor, uuid: uuid!)
         
         // la categorie existe t elle ??
         name = entityEcheancier.category?.name
@@ -90,7 +90,7 @@ final class Echeanciers {
             entityOperationsTransfert.modePaiement  = entityModePaiement
 
             /// la rubrique existe t elle ??
-            let entityRubrique = Rubrique.shared.findOrCreate(compte: compteLie, name: name!, color: color as! NSColor, uuid: uuid!)
+            let entityRubrique = Rubric.shared.findOrCreate(compte: compteLie, name: name!, color: color as! NSColor, uuid: uuid!)
             
             /// la categorie existe t elle ?
             let entityCategorie = Categories.shared.findOrCreate(account: compteLie, name: name!, objectif: objectif!, uuid: uuid!)

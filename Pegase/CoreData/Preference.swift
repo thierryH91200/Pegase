@@ -23,7 +23,7 @@ final class Preference {
             
             let entityPreference = EntityPreference(context: mainObjectContext)
             
-            var rubrique = Rubrique.shared.getAll()
+            var rubrique = Rubric.shared.getAll()
             rubrique = rubrique.sorted { $0.name! < $1.name! }
             
             var categories = rubrique.first?.category?.allObjects as! [EntityCategory]

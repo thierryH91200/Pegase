@@ -5,7 +5,7 @@ extension EcheanciersSaisieController {
 
     // # MARK: PopUp Rubrique - Catégorie
     func loadRubrique() {
-        entityRubriques = Rubrique.shared.getAll()
+        entityRubriques = Rubric.shared.getAll()
         let  rubriqueMenu = NSMenu()
         for entityRubrique in entityRubriques
         {
@@ -85,7 +85,7 @@ extension EcheanciersSaisieController {
     func loadCompte () {
         let  transfertMenu = NSMenu()
         
-        let comptes = Compte.shared.getAll()
+        let comptes = Account.shared.getAll()
         for compte in comptes where compte.isAccount == true
         {
             transfertMenu.addItem(compteItemFor(compte) )

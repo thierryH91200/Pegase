@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16095" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16095"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="GroupeCompteViewController" customModule="Pegase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="GroupeAccountViewController" customModule="Pegase" customModuleProvider="target">
             <connections>
                 <outlet property="accountButton" destination="vus-5B-rad" id="ZlL-uZ-Cle"/>
                 <outlet property="anSideBar" destination="SV1-LM-vvL" id="N2n-m4-Pfs"/>
@@ -62,9 +62,9 @@
                                         <action selector="addGroupCompte:" target="-2" id="SVD-jf-3of"/>
                                     </connections>
                                 </menuItem>
-                                <menuItem title="Add Compte" id="rFB-6I-UQP">
+                                <menuItem title="Add Compte" id="rFB-6I-UQP" userLabel="Add Account">
                                     <connections>
-                                        <action selector="addCompte:" target="-2" id="SK0-KE-MGP"/>
+                                        <action selector="addAccount:" target="-2" id="432-iI-3Is"/>
                                     </connections>
                                 </menuItem>
                             </items>
@@ -93,7 +93,6 @@
                                 <tableColumns>
                                     <tableColumn width="389" minWidth="16" maxWidth="1000" id="CRy-Zc-Na1">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                            <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
@@ -166,7 +165,7 @@
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="0Ti-OE-wcs"/>
                                                         </constraints>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" title="compte" id="hWT-dv-XBb">
-                                                            <font key="font" metaFont="message" size="11"/>
+                                                            <font key="font" metaFont="label" size="11"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -343,17 +342,17 @@
                         <action selector="modifierCompte:" target="-2" id="2rq-QU-wvl"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="ntM-rm-UFT"/>
                 <menuItem title="Remove folder" id="gHt-Xm-HMQ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="removeAction:" target="-2" id="5Lw-AP-Egw"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="ntM-rm-UFT"/>
                 <menuItem title="Create account" tag="1" id="QXq-LU-8KL">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="addCompte:" target="-2" id="kGw-ia-w5b"/>
+                        <action selector="addAccount:" target="-2" id="4oa-Tw-Amt"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Edit account" tag="1" id="a4y-EE-sDS">
@@ -362,13 +361,13 @@
                         <action selector="modifierCompte:" target="-2" id="rnX-Rx-Lh6"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" tag="1" id="vmh-Ne-0RH"/>
                 <menuItem title="Remove account" tag="1" id="7W8-Sw-0XN">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="removeAction:" target="-2" id="ehT-QH-dH4"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" tag="1" id="vmh-Ne-0RH"/>
             </items>
             <connections>
                 <outlet property="delegate" destination="-2" id="rWt-3Q-9Gn"/>

@@ -44,7 +44,7 @@ final class SousOperationModalWindowController: NSWindowController {
         comboBoxCategory.removeAllItems()
         comboBoxCategory.delegate = self
         
-        self.entityRubrique = Rubrique.shared.getAll()
+        self.entityRubrique = Rubric.shared.getAll()
         arrayRub = (0..<entityRubrique.count).map { i -> String in
             return entityRubrique[i].name!
         }

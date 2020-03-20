@@ -1,8 +1,8 @@
 import AppKit
 
-final class Compte {
+final class Account {
     
-    static let shared = Compte()
+    static let shared = Account()
     var entities = [EntityAccount]()
     
     func getAll() -> [EntityAccount] {
@@ -16,9 +16,9 @@ final class Compte {
     }
     
     // MARK: create compte
-    func create(nameCompte: String, nameImage: String, idName: String, idPrenom: String, numCompte: String) -> EntityAccount {
+    func create(nameAccount: String, nameImage: String, idName: String, idPrenom: String, numCompte: String) -> EntityAccount {
         let account = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: mainObjectContext) as! EntityAccount
-        account.name = nameCompte
+        account.name = nameAccount
         account.nameImage = nameImage
         account.dateEcheancier = Date()
         account.isAccount = true

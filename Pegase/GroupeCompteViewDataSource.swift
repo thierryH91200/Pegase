@@ -1,6 +1,6 @@
 import AppKit
 
-extension GroupeCompteViewController: NSOutlineViewDataSource {
+extension GroupeAccountViewController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         

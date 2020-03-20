@@ -1,26 +1,26 @@
 import AppKit
 
-final class Rubrique {
+final class Rubric {
     
     fileprivate enum RubriqueDisplayProperty: String {
         case name
         case color
     }
     
-    static let shared = Rubrique()
+    static let shared = Rubric()
     private var entitiesRubrique = [EntityRubrique]()
     
     func findOrCreate ( compte: EntityAccount,  name: String, color: NSColor, uuid: UUID) -> EntityRubrique {
         
-        var entityRubrique = find( compte: compte, name: name )
-        if entityRubrique == nil {
-            entityRubrique = NSEntityDescription.insertNewObject(forEntityName: "EntityRubrique", into: mainObjectContext) as? EntityRubrique
-            entityRubrique!.name = name
-            entityRubrique!.color = color
-            entityRubrique!.uuid = UUID()
-            entityRubrique!.account = compte
+        var entityRubric = find( compte: compte, name: name )
+        if entityRubric == nil {
+            entityRubric = NSEntityDescription.insertNewObject(forEntityName: "EntityRubrique", into: mainObjectContext) as? EntityRubrique
+            entityRubric!.name = name
+            entityRubric!.color = color
+            entityRubric!.uuid = UUID()
+            entityRubric!.account = compte
         }
-        return entityRubrique!
+        return entityRubric!
     }
     
     func find( compte: EntityAccount = compteCourant!, name: String) -> EntityRubrique? {

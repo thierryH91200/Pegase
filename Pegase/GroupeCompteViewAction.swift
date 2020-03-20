@@ -1,6 +1,6 @@
 import AppKit
 
-extension GroupeCompteViewController: NSMenuDelegate {
+extension GroupeAccountViewController: NSMenuDelegate {
     
     func menuWillOpen( _ menu: NSMenu) {
         
@@ -37,7 +37,7 @@ extension GroupeCompteViewController: NSMenuDelegate {
                     switch returnCode {
                     case .OK:
                         
-                        let libelleCompte   = self.compteModalWindowController.libelleCompte.stringValue
+                        let libelleAccount   = self.compteModalWindowController.libelleCompte.stringValue
                         let soldeInitial    = self.compteModalWindowController.soldeInitial.doubleValue
                         let nomTitulaire    = self.compteModalWindowController.nomTitulaire.stringValue
                         let prenomTitulaire = self.compteModalWindowController.prenomTitulaire.stringValue
@@ -45,7 +45,7 @@ extension GroupeCompteViewController: NSMenuDelegate {
                         let nameImage       = self.compteModalWindowController.imageView.image?.name()
                         let type            = self.compteModalWindowController.typeAccount.indexOfSelectedItem
                         
-                        item.name                   = libelleCompte
+                        item.name                   = libelleAccount
                         item.initCompte?.realise    = soldeInitial
                         item.identite?.idName       = nomTitulaire
                         item.identite?.idPrenom     = prenomTitulaire
@@ -108,7 +108,7 @@ extension GroupeCompteViewController: NSMenuDelegate {
         }
     }
     
-    @IBAction func addCompte(_ sender: Any) {
+    @IBAction func addAccount(_ sender: Any) {
         
         self.compteModalWindowController = CompteModalWindowController()
         let windowAdd = compteModalWindowController.window!
@@ -118,15 +118,15 @@ extension GroupeCompteViewController: NSMenuDelegate {
             switch returnCode {
             case .OK:
                 
-                let libelle   = self.compteModalWindowController.libelleCompte.stringValue
+                let nameAccount   = self.compteModalWindowController.libelleCompte.stringValue
                 let soldeInitial    = self.compteModalWindowController.soldeInitial.doubleValue
                 let nom    = self.compteModalWindowController.nomTitulaire.stringValue
                 let prenom = self.compteModalWindowController.prenomTitulaire.stringValue
-                let numCompte       = self.compteModalWindowController.numCompte.stringValue
+                let numAccount       = self.compteModalWindowController.numCompte.stringValue
                 let nameImage       = self.compteModalWindowController.imageView.image?.name()!
                 let type            = self.compteModalWindowController.typeAccount.indexOfSelectedItem
                 
-                let compte   = Compte.shared.create(nameCompte: libelle, nameImage: nameImage!, idName: nom, idPrenom: prenom, numCompte: numCompte)
+                let compte   = Account.shared.create(nameAccount: nameAccount, nameImage: nameImage!, idName: nom, idPrenom: prenom, numCompte: numAccount)
                 compte.type = Int16(type)
                 compte.initCompte?.realise = soldeInitial
                 
@@ -208,7 +208,7 @@ extension GroupeCompteViewController: NSMenuDelegate {
                 self.deleteSelection()
                 //                self.rootSourceListItem.clear()
                 
-                self.rootSourceListItem = Compte.shared.getRoot().first!
+                self.rootSourceListItem = Account.shared.getRoot().first!
                 self.anSideBar.reloadData()
                 self.anSideBar.expandItem(nil, expandChildren: true)
                 self.anSideBar.selectRowIndexes([1], byExtendingSelection: false)

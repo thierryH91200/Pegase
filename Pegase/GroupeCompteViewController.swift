@@ -1,6 +1,6 @@
 import AppKit
 
-final class GroupeCompteViewController: NSViewController {
+final class GroupeAccountViewController: NSViewController {
     
     @IBOutlet weak var anSideBar: NSOutlineView!
     @IBOutlet weak var accountButton: NSButton!
@@ -28,7 +28,7 @@ final class GroupeCompteViewController: NSViewController {
         super.viewDidAppear()
         
         anSideBar.selectRowIndexes([1], byExtendingSelection: true)
-        NotificationCenter.receive(instance: self, name: key, selector: #selector(updateSolde(_:)))
+        NotificationCenter.receive(instance: self, name: key, selector: #selector(updateBalance(_:)))
     }
     
     // -------------------------------------------------------------------------
@@ -40,7 +40,7 @@ final class GroupeCompteViewController: NSViewController {
         formatter.locale = Locale.current
         formatter.numberStyle = .currency
         
-        rootSourceListItem = Compte.shared.getRoot().first!
+        rootSourceListItem = Account.shared.getRoot().first!
         anSideBar.reloadData()
 
         anSideBar.autosaveExpandedItems = true
@@ -70,7 +70,7 @@ final class GroupeCompteViewController: NSViewController {
         NotificationCenter.default.removeObserver(self, name: .updateBalance, object: nil)
     }
     
-    @objc func updateSolde(_ notification: Notification) {
+    @objc func updateBalance(_ notification: Notification) {
         indexRow = anSideBar.selectedRow
         anSideBar.reloadData()
         anSideBar.selectRowIndexes([indexRow], byExtendingSelection: false)
@@ -93,10 +93,10 @@ final class GroupeCompteViewController: NSViewController {
                 indexRow = index!
                 compteCourant = item
                 
-                Rubrique.shared.getAll()
+                Rubric.shared.getAll()
                 ModePaiement.shared.getAll()
 
-                Compte.shared.printAccount(entityCompte: compteCourant!, description: "select")
+                Account.shared.printAccount(entityCompte: compteCourant!, description: "select")
                 NotificationCenter.send(.updateAccount)
             }
         }

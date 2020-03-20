@@ -82,23 +82,23 @@ final class Document: NSPersistentDocument {
         let Epargne = Localizations.Document.Epargne
         let CarteDeCrédit = Localizations.Document.Carte_de_crédit
         
-        let pierreCompte  = Compte.shared.create(nameCompte: CurrentAccount, nameImage: "icons8-museum-80", idName: "Martin", idPrenom: "Pierre", numCompte: "00045700E")
-        pierreCompte.type = 0
+        let pierreAccount  = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: "Martin", idPrenom: "Pierre", numCompte: "00045700E")
+        pierreAccount.type = 0
         
-        let marieCompte   = Compte.shared.create(nameCompte: CurrentAccount, nameImage: "icons8-museum-80", idName: "Martin", idPrenom: "Marie", numCompte: "00045701F")
-        marieCompte.type = 0
+        let marieAccount   = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: "Martin", idPrenom: "Marie", numCompte: "00045701F")
+        marieAccount.type = 0
         
-        let carteDeCredit1 = Compte.shared.create(nameCompte: CarteDeCrédit, nameImage: "discount", idName: "Martin", idPrenom: "Pierre", numCompte: "00045702G")
+        let carteDeCredit1 = Account.shared.create(nameAccount: CarteDeCrédit, nameImage: "discount", idName: "Martin", idPrenom: "Pierre", numCompte: "00045702G")
         carteDeCredit1.type = 1
         
-        let carteDeCredit2 = Compte.shared.create(nameCompte: CarteDeCrédit, nameImage: "discount", idName: "Durand", idPrenom: "Jean", numCompte: "00045705K")
+        let carteDeCredit2 = Account.shared.create(nameAccount: CarteDeCrédit, nameImage: "discount", idName: "Durand", idPrenom: "Jean", numCompte: "00045705K")
         carteDeCredit2.type = 1
         
-        let epargne  = Compte.shared.create(nameCompte: Epargne, nameImage: "icons8-money-box-80", idName: "Durand", idPrenom: "Jean", numCompte: "00045703H")
+        let epargne  = Account.shared.create(nameAccount: Epargne, nameImage: "icons8-money-box-80", idName: "Durand", idPrenom: "Jean", numCompte: "00045703H")
         epargne.type = 2
         
-        let jeanCompte    = Compte.shared.create(nameCompte: CurrentAccount, nameImage: "icons8-museum-80", idName: "Durand", idPrenom: "Jean", numCompte: "00045704J")
-        jeanCompte.type = 0
+        let jeanAccount    = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: "Durand", idPrenom: "Jean", numCompte: "00045704J")
+        jeanAccount.type = 0
         
         // MARK: create headers
         let header1 = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: mainObjectContext) as! EntityAccount
@@ -114,17 +114,17 @@ final class Document: NSPersistentDocument {
         header2.parent = root
         
         // MARK: feed header
-        header1.addToChildren( pierreCompte)
-        header1.addToChildren( marieCompte)
+        header1.addToChildren( pierreAccount)
+        header1.addToChildren( marieAccount)
         header1.addToChildren( carteDeCredit1)
         header1.addToChildren( epargne)
 
-        header2.addToChildren( jeanCompte)
+        header2.addToChildren( jeanAccount)
         header2.addToChildren( carteDeCredit2)
     }
     
     private func initializeLibraryAndShowMainWindow() {
-        let entities = Compte.shared.getRoot()
+        let entities = Account.shared.getRoot()
         
         if entities.count == 0 {
             self.setupForNilLibrary()
@@ -134,7 +134,7 @@ final class Document: NSPersistentDocument {
     override func defaultDraftName() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd_HH_mm_ss"
-        let theDate: Date = Date()
+        let theDate = Date()
         let theDateString = dateFormatter.string(from: theDate)
         return "Pegase_" + theDateString
     }

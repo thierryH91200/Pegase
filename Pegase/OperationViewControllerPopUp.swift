@@ -7,7 +7,7 @@ extension OperationViewController {
     func loadAccount () {
         let  transfertMenu = NSMenu()
         
-        let comptes = Compte.shared.getAll()
+        let comptes = Account.shared.getAll()
         for compte in comptes where compte.isAccount == true
         {
             transfertMenu.addItem(compteItemFor(compte) )

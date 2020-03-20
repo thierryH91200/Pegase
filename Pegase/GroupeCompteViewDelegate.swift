@@ -1,7 +1,7 @@
 import AppKit
 //import ThemeKit
 
-extension GroupeCompteViewController: NSOutlineViewDelegate {
+extension GroupeAccountViewController: NSOutlineViewDelegate {
     
     // return true to indicate a particular row should have the "group row" style drawn for that row, otherwise false.
     func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool {

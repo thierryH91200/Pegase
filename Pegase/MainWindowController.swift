@@ -10,7 +10,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var listeOperationsController: ListeOperationsController?
     var operationController: OperationViewController?
     var sourceListViewController: SourceListViewController?
-    var groupeCompteViewController: GroupeCompteViewController?
+    var groupeAccountViewController: GroupeAccountViewController?
     
     var rubriquePieController: RubriquePieController?
     var categoryBarController: CategoryBarController?
@@ -97,7 +97,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
         } catch { print(error) }
         
         if entityCompte.isEmpty {
-            self.groupeCompteViewController?.addCompte(entityCompte)
+            self.groupeAccountViewController?.addAccount(entityCompte)
         } else {
             compteCourant = entityCompte.first
         }
@@ -155,12 +155,12 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     
     private func setUpGroupeAccount()
     {
-        self.groupeCompteViewController = GroupeCompteViewController()
-        let subView = self.groupeCompteViewController?.view
+        self.groupeAccountViewController = GroupeAccountViewController()
+        let subView = self.groupeAccountViewController?.view
         Commun.shared.addSubview(subView: subView!, toView: compteView)
         
-        Commun.shared.setUpLayoutConstraints(item: self.groupeCompteViewController!.view, toItem: compteView)
-        self.groupeCompteViewController!.view.setFrameSize( NSSize(width: 100, height: 200))
+        Commun.shared.setUpLayoutConstraints(item: self.groupeAccountViewController!.view, toItem: compteView)
+        self.groupeAccountViewController!.view.setFrameSize( NSSize(width: 100, height: 200))
     }
 
     func setUpViewOperation()

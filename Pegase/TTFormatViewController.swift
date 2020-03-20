@@ -117,7 +117,7 @@ final class TTFormatViewController: NSViewController {
         let  transfertMenu = NSMenu()
         popUpCompte.removeAllItems()
         
-        let comptes = Compte.shared.getAll()
+        let comptes = Account.shared.getAll()
         for compte in comptes where compte.isAccount == true
         {
             transfertMenu.addItem(compteItemFor(compte) )

@@ -1,7 +1,7 @@
 import Cocoa
 
 
-extension GroupeCompteViewController: NSPasteboardItemDataProvider {
+extension GroupeAccountViewController: NSPasteboardItemDataProvider {
     
     func pasteboard(_ pasteboard: NSPasteboard?, item: NSPasteboardItem, provideDataForType type: NSPasteboard.PasteboardType) {
         item.setString("Outline Pasteboard Item", forType: type)

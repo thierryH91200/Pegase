@@ -1069,7 +1069,7 @@
 				034EC8D923F87EC8006944DD /* CoreData */,
 				034EC8FF23F87F43006944DD /* Extension */,
 				034EC91623F87F6D006944DD /* Generated */,
-				034EC91C23F87F9E006944DD /* GroupeCompte */,
+				034EC91C23F87F9E006944DD /* GroupeAccount */,
 				03213AEF23F9045600002DD7 /* Import */,
 				03213B2623F904F300002DD7 /* ListeOperations */,
 				03213C7123F92F1C00002DD7 /* Localizable.strings */,
@@ -1200,7 +1200,7 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
-		034EC91C23F87F9E006944DD /* GroupeCompte */ = {
+		034EC91C23F87F9E006944DD /* GroupeAccount */ = {
 			isa = PBXGroup;
 			children = (
 				034ECA7623F87FAE006944DD /* CurtainViewController.swift */,
@@ -1215,7 +1215,7 @@
 				034ECB6023F87FFD006944DD /* ModalCompteGroup */,
 				034ECB6123F88011006944DD /* PopUp */,
 			);
-			name = GroupeCompte;
+			name = GroupeAccount;
 			sourceTree = "<group>";
 		};
 		034ECB6023F87FFD006944DD /* ModalCompteGroup */ = {

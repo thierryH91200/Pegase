@@ -52,7 +52,7 @@ final class PreferenceOperationViewController: NSViewController {
         comboBoxStatut.selectItem(at: i!)
         comboBoxStatut.delegate = self
 
-        self.entityRubrique = Rubrique.shared.getAll()
+        self.entityRubrique = Rubric.shared.getAll()
         comboBoxRubrique.usesDataSource = true
         comboBoxRubrique.dataSource = self
         comboBoxRubrique.delegate = self

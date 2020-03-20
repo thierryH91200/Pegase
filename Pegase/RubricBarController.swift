@@ -65,7 +65,7 @@ final class RubricBarController: CommonGraph
         
         mainContext = mainObjectContext
         
-        Rubrique.shared.getAll()
+        Rubric.shared.getAll()
         self.arrayController.sortDescriptors = customSortDescriptors
         self.arrayController.filterPredicate = NSPredicate(format: "account == %@", compteCourant!)
         self.arrayController.setSelectionIndex(0)

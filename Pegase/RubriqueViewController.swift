@@ -60,7 +60,7 @@ final class RubriqueViewController: NSViewController {
     func updateData() {
         guard compteCourant != nil else { return }
                 
-        Rubrique.shared.getAll()
+        Rubric.shared.getAll()
         anTreeController.fetchPredicate = NSPredicate(format: "account == %@", compteCourant!)
         anTreeController.rearrangeObjects()
         
