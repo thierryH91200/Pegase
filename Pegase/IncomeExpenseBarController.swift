@@ -146,7 +146,7 @@ final class IncomeExpenseBarController: CommonGraph {
     {
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
 
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )
         let p3 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p2, p3])
@@ -299,7 +299,7 @@ extension IncomeExpenseBarController: ChartViewDelegate
         let startDate = date2.startOfMonth()
         let endDate = date2.endOfMonth()
 
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = dataSetIndex == 0 ? NSPredicate(format: "amount < 0" ) : NSPredicate(format: "amount > 0" )
         
         let p3 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )

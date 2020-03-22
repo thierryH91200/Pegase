@@ -186,7 +186,7 @@ extension EcheanciersViewController: NSTableViewDelegate {
 
 extension EcheanciersViewController: EcheanciersDelegate {
     func updateData() {
-        guard compteCourant != nil else { return }
+        guard currentAccount != nil else { return }
         entityEcheancier = Echeanciers.shared.getAll()
         
         tableView.reloadData()

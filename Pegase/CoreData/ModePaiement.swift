@@ -24,7 +24,7 @@ final class ModePaiement {
         return entity!
     }
     
-    func find( account: EntityAccount = compteCourant!, name: String) -> EntityModePaiement? {
+    func find( account: EntityAccount = currentAccount!, name: String) -> EntityModePaiement? {
         
         let p1 = NSPredicate(format: "account == %@", account)
         let p2 = NSPredicate(format: "name == %@", name)
@@ -80,7 +80,7 @@ final class ModePaiement {
         
         do {
             let fetchRequest = NSFetchRequest<EntityModePaiement>(entityName: "EntityModePaiement")
-            let predicate = NSPredicate(format: "account == %@", compteCourant!)
+            let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
             fetchRequest.predicate = predicate
             
@@ -98,49 +98,49 @@ final class ModePaiement {
             let modePaiement1 = EntityModePaiement(context: mainObjectContext)
             modePaiement1.name = Localizations.ModePaiement.Bank_Card
             modePaiement1.color = NSColor.green
-            modePaiement1.account = compteCourant
+            modePaiement1.account = currentAccount
             modePaiement1.uuid = UUID()
             
             let modePaiement2 = EntityModePaiement(context: mainObjectContext)
             let name = Localizations.ModePaiement.Cheque
             modePaiement2.name = name
             modePaiement2.color = NSColor.yellow
-            modePaiement2.account = compteCourant
+            modePaiement2.account = currentAccount
             modePaiement2.uuid = UUID()
             
             let modePaiement3 = EntityModePaiement(context: mainObjectContext)
             modePaiement3.name = Localizations.ModePaiement.Especes
             modePaiement3.color = NSColor.blue
-            modePaiement3.account = compteCourant
+            modePaiement3.account = currentAccount
             modePaiement3.uuid = UUID()
             
             let modePaiement4 = EntityModePaiement(context: mainObjectContext)
             modePaiement4.name = Localizations.ModePaiement.Prelevement
             modePaiement4.color = NSColor.red
-            modePaiement4.account = compteCourant
+            modePaiement4.account = currentAccount
             modePaiement4.uuid = UUID()
             
             let modePaiement5 = EntityModePaiement(context: mainObjectContext)
             modePaiement5.name = Localizations.ModePaiement.Remise
             modePaiement5.color = NSColor.gray
-            modePaiement5.account = compteCourant
+            modePaiement5.account = currentAccount
             modePaiement5.uuid = UUID()
             
             let modePaiement6 = EntityModePaiement(context: mainObjectContext)
             modePaiement6.name = Localizations.ModePaiement.RetraitEspeces
             modePaiement6.color = NSColor.orange
-            modePaiement6.account = compteCourant
+            modePaiement6.account = currentAccount
             modePaiement6.uuid = UUID()
             
             let modePaiement8 = EntityModePaiement(context: mainObjectContext)
             modePaiement8.name = Localizations.ModePaiement.Virement
             modePaiement8.color = NSColor.brown
-            modePaiement8.account = compteCourant
+            modePaiement8.account = currentAccount
             modePaiement8.uuid = UUID()
             
             do {
                 let fetchRequest = NSFetchRequest<EntityModePaiement>(entityName: "EntityModePaiement")
-                let predicate = NSPredicate(format: "account == %@", compteCourant!)
+                let predicate = NSPredicate(format: "account == %@", currentAccount!)
                 fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
                 fetchRequest.predicate = predicate
                 

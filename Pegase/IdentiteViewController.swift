@@ -7,7 +7,7 @@ final class IdentiteViewController: NSViewController {
     @IBOutlet var arrayControllerIdentite: NSArrayController!
     
     @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
-    @objc dynamic var predicate =  NSPredicate(format: "account == %@", compteCourant!)
+    @objc dynamic var predicate =  NSPredicate(format: "account == %@", currentAccount!)
     
     public override func viewDidDisappear()
     {
@@ -41,20 +41,20 @@ final class IdentiteViewController: NSViewController {
     }
 
     func updateData() {
-        guard compteCourant != nil else {
+        guard currentAccount != nil else {
             return }
         
         Identite.shared.getAll()
         Banque.shared.getAll()
         InitCompte.shared.getAll()
 
-        arrayControllerCompte.filterPredicate = NSPredicate(format: "account == %@", compteCourant!)
+        arrayControllerCompte.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
         arrayControllerCompte.setSelectionIndex(0)
         
-        arrayControllerBanque.filterPredicate = NSPredicate(format: "account == %@", compteCourant!)
+        arrayControllerBanque.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
         arrayControllerBanque.setSelectionIndex(0)
         
-        arrayControllerIdentite.filterPredicate = NSPredicate(format: "account == %@", compteCourant!)
+        arrayControllerIdentite.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
         arrayControllerIdentite.setSelectionIndex(0)
     }
     

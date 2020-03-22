@@ -138,7 +138,7 @@
 		03213C6423F9287E00002DD7 /* SourceListViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213C6323F9287E00002DD7 /* SourceListViewDelegate.swift */; };
 		03213C6F23F92F1C00002DD7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03213C7123F92F1C00002DD7 /* Localizable.strings */; };
 		03213C7B23F931BC00002DD7 /* CurtainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C7D23F931BC00002DD7 /* CurtainViewController.xib */; };
-		03213C9223F931DC00002DD7 /* GroupeCompteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C9423F931DC00002DD7 /* GroupeCompteViewController.xib */; };
+		03213C9223F931DC00002DD7 /* GroupeAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C9423F931DC00002DD7 /* GroupeAccountViewController.xib */; };
 		03213C9D23F9320600002DD7 /* IdentiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C9F23F9320600002DD7 /* IdentiteViewController.xib */; };
 		03213CA823F9321A00002DD7 /* EcheanciersSaisieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CAA23F9321A00002DD7 /* EcheanciersSaisieController.xib */; };
 		03213CB323F9322F00002DD7 /* EcheanciersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CB523F9322F00002DD7 /* EcheanciersViewController.xib */; };
@@ -192,7 +192,7 @@
 		034EC91923F87F7E006944DD /* AccessibilityImageDescriptions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 034EC91723F87F7D006944DD /* AccessibilityImageDescriptions.strings */; };
 		034EC91A23F87F7E006944DD /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC91823F87F7D006944DD /* Localizations.swift */; };
 		034ECA7823F87FAE006944DD /* GroupeCompteViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC91E23F87FAB006944DD /* GroupeCompteViewAction.swift */; };
-		034ECA7923F87FAE006944DD /* GroupeCompteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC91F23F87FAB006944DD /* GroupeCompteViewController.swift */; };
+		034ECA7923F87FAE006944DD /* GroupeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC91F23F87FAB006944DD /* GroupeAccountViewController.swift */; };
 		034ECA7A23F87FAE006944DD /* GroupeCompteViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC92023F87FAB006944DD /* GroupeCompteViewDelegate.swift */; };
 		034ECA7B23F87FAE006944DD /* GroupeCompteViewDragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC92123F87FAB006944DD /* GroupeCompteViewDragDrop.swift */; };
 		034ECB5D23F87FAF006944DD /* GroupeCompteViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECA7423F87FAE006944DD /* GroupeCompteViewDataSource.swift */; };
@@ -209,6 +209,8 @@
 		034ECB7323F88044006944DD /* CompteModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6F23F88044006944DD /* CompteModalWindowController.swift */; };
 		035082E624028F0400F8A0D4 /* ListeOperationsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035082E824028F0400F8A0D4 /* ListeOperationsController.xib */; };
 		035115CA241FF2DE001AF54B /* Pegase.png in Resources */ = {isa = PBXBuildFile; fileRef = 035115C9241FF2DE001AF54B /* Pegase.png */; };
+		036AF0A624260445008C6564 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036AF0A524260445008C6564 /* AvatarView.swift */; };
+		036AF0A82426044E008C6564 /* AvatarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036AF0A72426044E008C6564 /* AvatarInfo.swift */; };
 		037993932412386E001ADDA6 /* Feeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037993952412386E001ADDA6 /* Feeds.plist */; };
 		037993B0241385AD001ADDA6 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 037993AE241385AD001ADDA6 /* Document.xcdatamodeld */; };
 		037993B524139AE7001ADDA6 /* CommonGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037993B424139AE7001ADDA6 /* CommonGraph.swift */; };
@@ -466,11 +468,11 @@
 		03213C8D23F931C200002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CurtainViewController.strings; sourceTree = "<group>"; };
 		03213C8F23F931C300002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/CurtainViewController.strings; sourceTree = "<group>"; };
 		03213C9123F931C300002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/CurtainViewController.strings; sourceTree = "<group>"; };
-		03213C9323F931DC00002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GroupeCompteViewController.xib; sourceTree = "<group>"; };
-		03213C9623F931DF00002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/GroupeCompteViewController.strings; sourceTree = "<group>"; };
-		03213C9823F931E000002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/GroupeCompteViewController.strings; sourceTree = "<group>"; };
-		03213C9A23F931E100002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/GroupeCompteViewController.strings; sourceTree = "<group>"; };
-		03213C9C23F931E100002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GroupeCompteViewController.strings; sourceTree = "<group>"; };
+		03213C9323F931DC00002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GroupeAccountViewController.xib; sourceTree = "<group>"; };
+		03213C9623F931DF00002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/GroupeAccountViewController.strings; sourceTree = "<group>"; };
+		03213C9823F931E000002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/GroupeAccountViewController.strings; sourceTree = "<group>"; };
+		03213C9A23F931E100002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/GroupeAccountViewController.strings; sourceTree = "<group>"; };
+		03213C9C23F931E100002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GroupeAccountViewController.strings; sourceTree = "<group>"; };
 		03213C9E23F9320600002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/IdentiteViewController.xib; sourceTree = "<group>"; };
 		03213CA123F9320B00002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/IdentiteViewController.strings; sourceTree = "<group>"; };
 		03213CA323F9320C00002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/IdentiteViewController.strings; sourceTree = "<group>"; };
@@ -570,7 +572,7 @@
 		034EC91723F87F7D006944DD /* AccessibilityImageDescriptions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = AccessibilityImageDescriptions.strings; sourceTree = "<group>"; };
 		034EC91823F87F7D006944DD /* Localizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
 		034EC91E23F87FAB006944DD /* GroupeCompteViewAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeCompteViewAction.swift; sourceTree = "<group>"; };
-		034EC91F23F87FAB006944DD /* GroupeCompteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeCompteViewController.swift; sourceTree = "<group>"; };
+		034EC91F23F87FAB006944DD /* GroupeAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeAccountViewController.swift; sourceTree = "<group>"; };
 		034EC92023F87FAB006944DD /* GroupeCompteViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeCompteViewDelegate.swift; sourceTree = "<group>"; };
 		034EC92123F87FAB006944DD /* GroupeCompteViewDragDrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeCompteViewDragDrop.swift; sourceTree = "<group>"; };
 		034ECA7423F87FAE006944DD /* GroupeCompteViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeCompteViewDataSource.swift; sourceTree = "<group>"; };
@@ -591,6 +593,8 @@
 		035082F924028F0900F8A0D4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
 		035082FB24028F0B00F8A0D4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
 		035115C9241FF2DE001AF54B /* Pegase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pegase.png; sourceTree = "<group>"; };
+		036AF0A524260445008C6564 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		036AF0A72426044E008C6564 /* AvatarInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarInfo.swift; sourceTree = "<group>"; };
 		037993942412386E001ADDA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Feeds.plist; sourceTree = "<group>"; };
 		037993A124123874001ADDA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Feeds.plist; sourceTree = "<group>"; };
 		037993A224123875001ADDA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Feeds.plist; sourceTree = "<group>"; };
@@ -707,6 +711,8 @@
 		03213B3523F9051600002DD7 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				036AF0A72426044E008C6564 /* AvatarInfo.swift */,
+				036AF0A524260445008C6564 /* AvatarView.swift */,
 				03213B3923F9053A00002DD7 /* OperationViewController.swift */,
 				03213C4F23F9269000002DD7 /* OperationViewController.xib */,
 				03213B3C23F9053A00002DD7 /* OperationViewControllerAction.swift */,
@@ -1207,8 +1213,8 @@
 				03213C7D23F931BC00002DD7 /* CurtainViewController.xib */,
 				034ECA7523F87FAE006944DD /* GroupeCompteTableCellView.swift */,
 				034EC91E23F87FAB006944DD /* GroupeCompteViewAction.swift */,
-				034EC91F23F87FAB006944DD /* GroupeCompteViewController.swift */,
-				03213C9423F931DC00002DD7 /* GroupeCompteViewController.xib */,
+				034EC91F23F87FAB006944DD /* GroupeAccountViewController.swift */,
+				03213C9423F931DC00002DD7 /* GroupeAccountViewController.xib */,
 				034ECA7423F87FAE006944DD /* GroupeCompteViewDataSource.swift */,
 				034EC92023F87FAB006944DD /* GroupeCompteViewDelegate.swift */,
 				034EC92123F87FAB006944DD /* GroupeCompteViewDragDrop.swift */,
@@ -1453,7 +1459,7 @@
 				03213BD123F90AAB00002DD7 /* icons8-credit-card-100.png in Resources */,
 				034EC8F423F87EF1006944DD /* rubrique.csv in Resources */,
 				03213BCF23F90AAB00002DD7 /* Assets.xcassets in Resources */,
-				03213C9223F931DC00002DD7 /* GroupeCompteViewController.xib in Resources */,
+				03213C9223F931DC00002DD7 /* GroupeAccountViewController.xib in Resources */,
 				03213CB323F9322F00002DD7 /* EcheanciersViewController.xib in Resources */,
 				03213C2C23F90DDF00002DD7 /* AdvancedFilterViewController.xib in Resources */,
 				03213BD423F90AAB00002DD7 /* icons8-paypal-100.png in Resources */,
@@ -1549,6 +1555,7 @@
 				03213BE823F90B3F00002DD7 /* EcheanciersViewController.swift in Sources */,
 				034EC8E223F87EDB006944DD /* EntityAccount+CoreDataClass.swift in Sources */,
 				03213B3323F9050000002DD7 /* ListeOperationsDataSource.swift in Sources */,
+				036AF0A624260445008C6564 /* AvatarView.swift in Sources */,
 				034EC8BD23F87E97006944DD /* NSPredicateEditorRowTemplate.swift in Sources */,
 				03213B1623F9048D00002DD7 /* CSVWriter.swift in Sources */,
 				03213B3423F9050000002DD7 /* ListeOperationsController.swift in Sources */,
@@ -1623,7 +1630,7 @@
 				037993B72413F353001ADDA6 /* ChartView.swift in Sources */,
 				03213B2F23F9050000002DD7 /* ListeOperationsDelegate.swift in Sources */,
 				03213C0623F90BD200002DD7 /* RubriqueViewControllerDragDrop.swift in Sources */,
-				034ECA7923F87FAE006944DD /* GroupeCompteViewController.swift in Sources */,
+				034ECA7923F87FAE006944DD /* GroupeAccountViewController.swift in Sources */,
 				034ECB6823F88033006944DD /* KSRetailCollectionViewItem.swift in Sources */,
 				03213BED23F90B5200002DD7 /* ParametreController.swift in Sources */,
 				034EC90D23F87F51006944DD /* HeaderCell.swift in Sources */,
@@ -1646,6 +1653,7 @@
 				034ECB5E23F87FAF006944DD /* GroupeCompteTableCellView.swift in Sources */,
 				03213B1523F9048D00002DD7 /* CSVConfig.swift in Sources */,
 				03213C1723F90C0E00002DD7 /* ColorView.swift in Sources */,
+				036AF0A82426044E008C6564 /* AvatarInfo.swift in Sources */,
 				03213B4823F9055400002DD7 /* SousOperationComboBoxDelegate.swift in Sources */,
 				034ECB6B23F88033006944DD /* KSBackgroundView.swift in Sources */,
 				034EC91123F87F51006944DD /* ManagedObject.swift in Sources */,
@@ -1792,7 +1800,7 @@
 			name = CurtainViewController.xib;
 			sourceTree = "<group>";
 		};
-		03213C9423F931DC00002DD7 /* GroupeCompteViewController.xib */ = {
+		03213C9423F931DC00002DD7 /* GroupeAccountViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				03213C9323F931DC00002DD7 /* Base */,
@@ -1801,7 +1809,7 @@
 				03213C9A23F931E100002DD7 /* fr */,
 				03213C9C23F931E100002DD7 /* en */,
 			);
-			name = GroupeCompteViewController.xib;
+			name = GroupeAccountViewController.xib;
 			sourceTree = "<group>";
 		};
 		03213C9F23F9320600002DD7 /* IdentiteViewController.xib */ = {

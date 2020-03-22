@@ -99,7 +99,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
         if entityCompte.isEmpty {
             self.groupeAccountViewController?.addAccount(entityCompte)
         } else {
-            compteCourant = entityCompte.first
+            currentAccount = entityCompte.first
         }
         
         self.setUpGroupeAccount()

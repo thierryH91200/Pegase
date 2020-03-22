@@ -9,7 +9,7 @@ final class CarnetCheques {
         
         do {
             let fetchRequest = NSFetchRequest<EntityCarnetCheques>(entityName: "EntityCarnetCheques")
-            let predicate = NSPredicate(format: "account == %@", compteCourant!)
+            let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
             
             entities = try mainObjectContext.fetch(fetchRequest)
@@ -30,7 +30,7 @@ final class CarnetCheques {
             chequier1.numPremier = 1_000
             chequier1.numSuivant = 1_000
             chequier1.nbCheques = 25
-            chequier1.account = compteCourant
+            chequier1.account = currentAccount
             chequier1.uuid = UUID()
         }
     }

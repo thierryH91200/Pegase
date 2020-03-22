@@ -66,7 +66,7 @@ extension RubriqueViewController : NSMenuDelegate {
                 entity.name = name
                 entity.color = color
                 entity.uuid = UUID()
-                entity.account = compteCourant
+                entity.account = currentAccount
                 
                 self.anTreeController.rearrangeObjects()
                 self.anOutlineView.reloadData()
@@ -122,7 +122,7 @@ extension RubriqueViewController : NSMenuDelegate {
         
         let entityPreference = Preference.shared.getAll()
         var entityOperations = [EntityOperations]()
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         
         let selected = self.anOutlineView.selectedRow
         
@@ -279,7 +279,7 @@ extension RubriqueViewController : NSMenuDelegate {
         
         let entityPreference = Preference.shared.getAll()
         var entityOperations = [EntityOperations]()
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         
         let selected = self.anOutlineView.selectedRow
         

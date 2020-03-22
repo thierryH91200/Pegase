@@ -51,7 +51,7 @@ final class TTFormatViewController: NSViewController {
         filePath?.isEditable = false
         if popUpCompte != nil {
             loadAccount ()
-            popUpCompte.selectItem(withTitle: (compteCourant?.initCompte?.codeCompte)!)
+            popUpCompte.selectItem(withTitle: (currentAccount?.initCompte?.codeCompte)!)
         }
         
         if self.gridView != nil {

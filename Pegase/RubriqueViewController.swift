@@ -58,10 +58,10 @@ final class RubriqueViewController: NSViewController {
     }
 
     func updateData() {
-        guard compteCourant != nil else { return }
+        guard currentAccount != nil else { return }
                 
         Rubric.shared.getAll()
-        anTreeController.fetchPredicate = NSPredicate(format: "account == %@", compteCourant!)
+        anTreeController.fetchPredicate = NSPredicate(format: "account == %@", currentAccount!)
         anTreeController.rearrangeObjects()
         
         DispatchQueue.main.async(execute: {() -> Void in
@@ -100,7 +100,7 @@ final class RubriqueViewController: NSViewController {
         
         let rubriqueName = (identity as? EntityRubrique)?.name!
         
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubrique.name == %@).@count > 0", rubriqueName!)
         
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p2])

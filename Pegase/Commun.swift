@@ -1,7 +1,7 @@
 import AppKit
 
 var mainObjectContext: NSManagedObjectContext!
-var compteCourant: EntityAccount?
+var currentAccount: EntityAccount?
 let Defaults = UserDefaults.standard
 
 

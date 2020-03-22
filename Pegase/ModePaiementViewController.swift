@@ -46,7 +46,7 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
             let quake = entityModePaiement[selectedRow]
             let label = quake.name!
             
-            let p1 = NSPredicate(format: "account == %@", compteCourant!)
+            let p1 = NSPredicate(format: "account == %@", currentAccount!)
             let p2 = NSPredicate(format: "modePaiement.name == %@", label)
             let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p2])
             
@@ -59,7 +59,7 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
     }
     
     func updateData() {
-        guard compteCourant != nil else { return }
+        guard currentAccount != nil else { return }
         
         entityModePaiement = ModePaiement.shared.getAll()
     }
@@ -82,7 +82,7 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
                 entityMode.color     = color
                 
                 entityMode.uuid = UUID()
-                entityMode.account = compteCourant
+                entityMode.account = currentAccount
                 
             case .cancel:
                 break
@@ -157,7 +157,7 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
     func changeModePaiement(oldModePaiement: EntityModePaiement, newModePaiement: EntityModePaiement) {
         var listeOperations = [EntityOperations]()
         
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = NSPredicate(format: "modePaiement.name == %@", oldModePaiement.name!)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
         

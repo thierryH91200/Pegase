@@ -91,12 +91,12 @@ final class GroupeAccountViewController: NSViewController {
         {
             if item.identite != nil {
                 indexRow = index!
-                compteCourant = item
+                currentAccount = item
                 
                 Rubric.shared.getAll()
                 ModePaiement.shared.getAll()
 
-                Account.shared.printAccount(entityCompte: compteCourant!, description: "select")
+                Account.shared.printAccount(entityCompte: currentAccount!, description: "select")
                 NotificationCenter.send(.updateAccount)
             }
         }

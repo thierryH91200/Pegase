@@ -116,7 +116,7 @@ final class ModePaiementPieController: CommonGraph {
 
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
         
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )
         let p3 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2, p3])
@@ -265,7 +265,7 @@ extension ModePaiementPieController: ChartViewDelegate {
         
         let label = (entry as! PieChartDataEntry).label!
         
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = NSPredicate(format: "modePaiement.name == %@", label)
         let p3 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )
         let p4 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )

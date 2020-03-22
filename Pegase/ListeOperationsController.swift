@@ -218,7 +218,7 @@ final class ListeOperationsController: NSViewController {
         self.datePicker.showPromptWhenEmpty = false
         self.datePicker.referenceDate = Date()
         self.datePicker.dateFieldPlaceHolder = ""
-        self.datePicker.dateValue = (compteCourant?.dateEcheancier!)!
+        self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
         self.datePicker.minDate = Date()
     }
     
@@ -235,7 +235,7 @@ final class ListeOperationsController: NSViewController {
     
     @objc func updateChangeAccount(_ notification: Notification) {
         
-        self.datePicker.dateValue = (compteCourant?.dateEcheancier!)!
+        self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
         self.delegate?.resetOperation()
         self.getAllData()
         self.reloadData()

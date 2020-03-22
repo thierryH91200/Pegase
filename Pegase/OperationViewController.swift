@@ -239,7 +239,7 @@ final class OperationViewController: NSViewController {
 
             self.entityOperation?.dateCree = Date()
             self.entityOperation?.uuid = UUID()
-            self.entityOperation?.account = compteCourant
+            self.entityOperation?.account = currentAccount
 
             let setSousOperation = NSSet(array: sousOperations)
             self.entityOperation?.addToSousOperations(setSousOperation)

@@ -46,7 +46,7 @@ extension ListeOperationsController: NSDatePickerCellDelegate {
         print("datePickerCell")
         getAllData()
         reloadData()
-        compteCourant?.dateEcheancier = proposedDate
+        currentAccount?.dateEcheancier = proposedDate
     }
     
 }

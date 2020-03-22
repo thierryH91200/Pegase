@@ -155,7 +155,7 @@ final class CategoryBarController: CommonGraph
     {
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
         
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )
         let p3 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p2, p3])
@@ -201,7 +201,7 @@ final class CategoryBarController: CommonGraph
     {
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
         
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubrique.name == %@).@count > 0", nameRubrique)
         let p3 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )
         let p4 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )
@@ -326,7 +326,7 @@ extension CategoryBarController: ChartViewDelegate
             self.setDataCount()
         } else {
             
-            let p1 = NSPredicate(format: "account == %@", compteCourant!)
+            let p1 = NSPredicate(format: "account == %@", currentAccount!)
             
             let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.name == %@).@count > 0", label[index])
 

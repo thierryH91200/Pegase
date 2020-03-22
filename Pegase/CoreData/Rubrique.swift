@@ -23,7 +23,7 @@ final class Rubric {
         return entityRubric!
     }
     
-    func find( compte: EntityAccount = compteCourant!, name: String) -> EntityRubrique? {
+    func find( compte: EntityAccount = currentAccount!, name: String) -> EntityRubrique? {
         
         let p1 = NSPredicate(format: "account == %@", compte)
         let p2 = NSPredicate(format: "name == %@", name)
@@ -51,12 +51,12 @@ final class Rubric {
     @discardableResult
     func getAll() -> [EntityRubrique] {
         
-        guard compteCourant != nil else { return [] }
+        guard currentAccount != nil else { return [] }
 
         do {
             let fetchRequest = NSFetchRequest<EntityRubrique>(entityName: "EntityRubrique")
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-            let predicate = NSPredicate(format: "account == %@", compteCourant!)
+            let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
 
             entitiesRubrique = try mainObjectContext.fetch(fetchRequest)
@@ -74,7 +74,7 @@ final class Rubric {
         var isEmpty: Bool {
             do {
                 let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "EntityRubrique")
-                let predicate = NSPredicate(format: "account == %@", compteCourant!)
+                let predicate = NSPredicate(format: "account == %@", currentAccount!)
                 
                 fetchRequest.predicate = predicate
                 let count  = try mainObjectContext.count(for: fetchRequest)
@@ -101,7 +101,7 @@ final class Rubric {
                 {
                     if isEmpty == false {
                         do {
-                            let p1 = NSPredicate(format: "account == %@", compteCourant!)
+                            let p1 = NSPredicate(format: "account == %@", currentAccount!)
                             let p2 = NSPredicate(format: "name == %@", key["rubrique"]!)
                             let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
 
@@ -122,7 +122,7 @@ final class Rubric {
                         let color = Color.init(rawValue: key["color"]!)?.color
                         entityRubrique.color = color
                         entityRubrique.uuid = UUID()
-                        entityRubrique.account = compteCourant
+                        entityRubrique.account = currentAccount
 
                         let entityCategory = EntityCategory(context: mainObjectContext)
                         entityCategory.name = key["categorie"]

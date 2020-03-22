@@ -15,7 +15,7 @@ final class Echeanciers {
         
         do {
             let fetchRequest = NSFetchRequest<EntityEcheancier>(entityName: "EntityEcheancier")
-            let predicate = NSPredicate(format: "account == %@", compteCourant!)
+            let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
             
             entities = try mainObjectContext.fetch(fetchRequest)

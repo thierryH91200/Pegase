@@ -25,7 +25,7 @@ extension OperationViewController {
         var title = value.initCompte?.codeCompte ?? "----"
         let menuItem = NSMenuItem()
         
-        if value == compteCourant {
+        if value == currentAccount {
             title = Localizations.Operation.NoTransfert
             menuItem.representedObject = nil
         } else {

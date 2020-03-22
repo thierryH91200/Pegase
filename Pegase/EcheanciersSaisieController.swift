@@ -250,7 +250,7 @@ final class EcheanciersSaisieController: NSViewController, NSTextFieldDelegate, 
             entityEcheancier = EntityEcheancier(context: mainObjectContext)
             
             entityEcheancier?.dateCree = Date()
-            entityEcheancier?.account = compteCourant
+            entityEcheancier?.account = currentAccount
             entityEcheancier?.nextOccurence = 0
         }
         entityEcheancier?.dateModifie   = Date()

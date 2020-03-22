@@ -103,7 +103,7 @@ extension EcheanciersSaisieController {
         var number = value.initCompte?.codeCompte!
         let menuItem = NSMenuItem()
         
-        if value == compteCourant {
+        if value == currentAccount {
             number = "(no transfert)"
             menuItem.representedObject = nil
         } else {

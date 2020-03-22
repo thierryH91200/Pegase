@@ -7,10 +7,10 @@ final class Preference {
     
     func getAll() -> EntityPreference {
         
-        guard compteCourant != nil else { return entityPreference[0] }
+        guard currentAccount != nil else { return entityPreference[0] }
         
         let fetchRequest = NSFetchRequest<EntityPreference>(entityName: "EntityPreference")
-        let predicate = NSPredicate(format: "account == %@", compteCourant!)
+        let predicate = NSPredicate(format: "account == %@", currentAccount!)
         fetchRequest.predicate = predicate
         
         do {
@@ -36,7 +36,7 @@ final class Preference {
             entityPreference.statut = 1
             entityPreference.signe = true
 
-            entityPreference.account = compteCourant
+            entityPreference.account = currentAccount
             return entityPreference
         }
         return entityPreference.first!

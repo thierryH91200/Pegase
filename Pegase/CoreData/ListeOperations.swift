@@ -46,11 +46,11 @@ final class ListeOperations {
     
     func getAll(ascending: Bool = true ) -> [EntityOperations] {
         
-        guard compteCourant != nil else { return [] }
+        guard currentAccount != nil else { return [] }
         self.ascending = ascending
         
         let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
-        let predicate = NSPredicate(format: "account == %@", compteCourant!)
+        let predicate = NSPredicate(format: "account == %@", currentAccount!)
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: ascending)]
         
@@ -60,7 +60,7 @@ final class ListeOperations {
             print("Error fetching data from CoreData")
             return []
         }
-        if compteCourant?.isDemo == true {
+        if currentAccount?.isDemo == true {
             adjustDate()
         }
         return entities
@@ -73,7 +73,7 @@ final class ListeOperations {
             entityOperation.datePointage  = (entityOperation.datePointage!  - diffDate).noon
             entityOperation.dateOperation = (entityOperation.dateOperation! - diffDate).noon
         }
-        compteCourant?.isDemo = false
+        currentAccount?.isDemo = false
     }
     
 }

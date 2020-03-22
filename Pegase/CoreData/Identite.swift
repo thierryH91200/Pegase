@@ -21,7 +21,7 @@ final class Banque {
         entity.ville = ""
         entity.uuid = UUID()
         
-        entity.account = compteCourant
+        entity.account = currentAccount
         return entity
     }
     
@@ -29,7 +29,7 @@ final class Banque {
         
         do {
             let fetchRequest = NSFetchRequest<EntityBanque>(entityName: "EntityBanque")
-            let predicate = NSPredicate(format: "account == %@", compteCourant!)
+            let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
             entitiesBanque = try mainObjectContext.fetch(fetchRequest)
             
@@ -77,7 +77,7 @@ final class InitCompte {
         
         do {
             let fetchRequest = NSFetchRequest<EntityInitCompte>(entityName: "EntityInitCompte")
-            let predicate = NSPredicate(format: "account == %@", compteCourant!)
+            let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
             entitiesInitCompte = try mainObjectContext.fetch(fetchRequest)
             
@@ -119,7 +119,7 @@ final class Identite {
         
         do {
             let fetchRequest = NSFetchRequest<EntityIdentite>(entityName: "EntityIdentite")
-            let predicate = NSPredicate(format: "account == %@", compteCourant!)
+            let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
             entitiesIdentite = try mainObjectContext.fetch(fetchRequest)
             

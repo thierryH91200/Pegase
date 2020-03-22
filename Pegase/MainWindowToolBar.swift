@@ -262,7 +262,7 @@ extension MainWindowController {
                         let amount = key[keyAmount] ?? "0.0"
                         
                         let entity = EntityOperations(context: mainObjectContext)
-                        entity.account = compteCourant
+                        entity.account = currentAccount
                         
                         entity.dateCree = Date()
                         entity.dateModifie = Date()
@@ -434,7 +434,7 @@ extension MainWindowController: NSControlTextEditingDelegate {
         if searchString.isEmpty {
             listeOperationsController?.getAllData()
         } else {
-            let p1 = NSPredicate(format: "account == %@", compteCourant!)
+            let p1 = NSPredicate(format: "account == %@", currentAccount!)
             
             if (self.searchField.cell as? NSSearchFieldCell)?.placeholderString == "All" {
                 let p2 = NSPredicate(format: "libelle contains %@", searchString)

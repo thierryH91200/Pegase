@@ -7,7 +7,7 @@ final class ChequiersViewController: NSViewController {
     @IBOutlet weak var menuLocal: NSMenu!
     
     @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
-    @objc dynamic var predicate =  NSPredicate(format: "account == %@", compteCourant!)
+    @objc dynamic var predicate =  NSPredicate(format: "account == %@", currentAccount!)
     
     var chequierModalWindowController: ChequierModalWindowController!
     
@@ -26,8 +26,8 @@ final class ChequiersViewController: NSViewController {
     }
     
     func updateData() {
-        guard compteCourant != nil else { return }
-        arrayController.filterPredicate = NSPredicate(format: "account == %@", compteCourant!)
+        guard currentAccount != nil else { return }
+        arrayController.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
     }
     
     @IBAction func editChequier(_ sender: Any) {
@@ -60,7 +60,7 @@ final class ChequiersViewController: NSViewController {
                 self.chequierModalWindowController = nil
             })
         }
-        arrayController.filterPredicate = NSPredicate(format: "account == %@", compteCourant!)
+        arrayController.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
     }
     
     
@@ -88,7 +88,7 @@ final class ChequiersViewController: NSViewController {
                 entityCarnetCheques.nbCheques  = numberCheques
                 
                 entityCarnetCheques.uuid = UUID()
-                entityCarnetCheques.account = compteCourant
+                entityCarnetCheques.account = currentAccount
             
             case .cancel:
                 break
@@ -97,7 +97,7 @@ final class ChequiersViewController: NSViewController {
             }
             self.chequierModalWindowController = nil
         })
-        arrayController.filterPredicate = NSPredicate(format: "account == %@", compteCourant!)
+        arrayController.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
     }
     
     @IBAction func removeChequierAction(_ sender: Any) {

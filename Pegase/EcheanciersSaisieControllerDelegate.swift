@@ -61,10 +61,10 @@ extension EcheanciersSaisieController: EcheanciersSaisieDelegate {
         modeOperation2.title = Localizations.Operation.ModeCreation
         modeOperation2.layer?.backgroundColor = NSColor.orange.cgColor
         
-        account.stringValue = (compteCourant?.name)!
-        name.stringValue = (compteCourant?.identite?.idName)!
-        surname.stringValue = (compteCourant?.identite?.idPrenom)!
-        number.stringValue = (compteCourant?.initCompte?.codeCompte)!
+        account.stringValue = (currentAccount?.name)!
+        name.stringValue = (currentAccount?.identite?.idName)!
+        surname.stringValue = (currentAccount?.identite?.idPrenom)!
+        number.stringValue = (currentAccount?.initCompte?.codeCompte)!
         
         loadCompte()
         popUpTransfert.itemTitle(at: 0)

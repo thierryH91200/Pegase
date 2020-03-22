@@ -218,7 +218,7 @@ extension ListeOperationsController {
                 let entities = ListeOperations.shared.find(uuid: uuid!)
                 let newEntities = entities.duplicate(except: ["deepcopy"]) as! EntityOperations
                 newEntities.uuid = UUID()
-                newEntities.account = compteCourant
+                newEntities.account = currentAccount
                 newEntities.operationLiee = nil
             }
         }

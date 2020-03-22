@@ -67,7 +67,7 @@ final class RubricBarController: CommonGraph
         
         Rubric.shared.getAll()
         self.arrayController.sortDescriptors = customSortDescriptors
-        self.arrayController.filterPredicate = NSPredicate(format: "account == %@", compteCourant!)
+        self.arrayController.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
         self.arrayController.setSelectionIndex(0)
         
         self.tableViewRubrique.selectRowIndexes([0], byExtendingSelection: false)
@@ -158,7 +158,7 @@ final class RubricBarController: CommonGraph
         
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
         
-        let p1 = NSPredicate(format: "account == %@", compteCourant!)
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubrique.name == %@).@count > 0", nameRubrique)
 
         let p3 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )
