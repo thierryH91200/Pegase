@@ -43,12 +43,12 @@ extension MainWindowController: SourceListDelegate
             segmentedControl.setEnabled(false, forSegment: 2)
             
         case "Rubrique Pie":
-            self.rubriquePieController = RubriquePieController()
-            vc = (self.rubriquePieController?.view)!
+            self.rubricPieController = RubricPieController()
+            vc = (self.rubricPieController?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.rubriquePieController?.delegate = listeOperationsController
-            self.rubriquePieController?.setDataHorizontal()
+            self.rubricPieController?.delegate = listeOperationsController
+            self.rubricPieController?.setDataHorizontal()
             
             isSplitDroitHidden = true
             isSplitCentreHidden =  false

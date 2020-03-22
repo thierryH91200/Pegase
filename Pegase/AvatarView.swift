@@ -11,16 +11,11 @@ import Cocoa
 class AvatarView: NSView {
 
     // MARK: - IBOutlet Properties
-    
     @IBOutlet weak var imageView: NSImageView!
-    
     @IBOutlet weak var quoteLabel: NSTextField!
 
-    
     // MARK: - Properties
-    
     var avatarInfo = AvatarInfo()
-    
     let supportedTypes: [NSPasteboard.PasteboardType] = [.tiff, .color, .string, .fileURL]
     
     
@@ -53,7 +48,6 @@ class AvatarView: NSView {
             highlight()
             return .copy
         }
-
         return NSDragOperation()
     }
     
@@ -85,29 +79,24 @@ class AvatarView: NSView {
         return true
     }
     
-    
     override func concludeDragOperation(_ sender: NSDraggingInfo?) {
         imageView.image = avatarInfo.getImage()
         imageView.layer?.borderColor = avatarInfo.getColor()?.cgColor
         quoteLabel.stringValue = avatarInfo.quote ?? ""
     }
     
-    
     override func draggingEnded(_ sender: NSDraggingInfo) {
         unhighlight()
     }
-
 
     override func draggingExited(_ sender: NSDraggingInfo?) {
         unhighlight()
     }
     
-    
     func acceptableUTITypes() -> [NSPasteboard.ReadingOptionKey : Any] {
         let types = [NSImage.imageTypes, NSString.readableTypeIdentifiersForItemProvider].flatMap { $0 }
         return [NSPasteboard.ReadingOptionKey.urlReadingContentsConformToTypes : types]
     }
-    
     
     func handleFileURLObject(_ url: URL) {
         if let image = NSImage(contentsOfFile: url.path) {
@@ -136,11 +125,9 @@ extension AvatarView: NSDraggingSource {
         return .copy
     }
     
-    
     func draggingSession(_ session: NSDraggingSession, willBeginAt screenPoint: NSPoint) {
 
     }
-
 
     func draggingSession(_ session: NSDraggingSession, movedTo screenPoint: NSPoint) {
 

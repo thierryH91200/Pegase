@@ -1,8 +1,7 @@
 import AppKit
 import Charts
 
-
-final class RubriquePieController: NSViewController
+final class RubricPieController: NSViewController
 {
     public weak var delegate: FilterDelegate?
     
@@ -10,6 +9,7 @@ final class RubriquePieController: NSViewController
     @IBOutlet var chartView2: PieChartView!
     @IBOutlet weak var splitView: NSSplitView!
     
+
     var sliderViewController: SliderViewHorizontalController?
     
     var listeOperations = [EntityOperations]()
@@ -91,7 +91,6 @@ final class RubriquePieController: NSViewController
         } else {
             sliderViewController?.mySlider.isEnabled = false
         }
-
     }
 
     private func initChart() {
@@ -108,13 +107,9 @@ final class RubriquePieController: NSViewController
         var centerText = NSMutableAttributedString(string: "Dépenses")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
-        let legend = chartView.legend
-        legend.horizontalAlignment = .left
-        legend.verticalAlignment = .top
-        legend.orientation = .vertical
-        legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
-        legend.textColor = NSColor.labelColor
-        
+        // MARK: legend
+        initializeLegend(self.chartView.legend)
+
         self.chartView.centerAttributedText = centerText
         self.chartView.chartDescription?.enabled = false
         self.chartView.noDataText = Localizations.Chart.No_chart_Data_Available
@@ -123,18 +118,23 @@ final class RubriquePieController: NSViewController
         centerText = NSMutableAttributedString(string: "Recettes")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
-        let legend2 = self.chartView2.legend
-        legend2.horizontalAlignment = .left
-        legend2.verticalAlignment = .top
-        legend2.orientation = .vertical
-        legend2.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
-        legend2.textColor = NSColor.labelColor
+        // MARK: legend
+        initializeLegend(self.chartView2.legend)
 
         self.chartView2.centerAttributedText = centerText
         self.chartView2.chartDescription?.enabled = false
         self.chartView2.noDataText = Localizations.Chart.No_chart_Data_Available
         chartView2.holeColor = .windowBackgroundColor
     }
+    
+    func initializeLegend(_ legend: Legend) {
+        legend.horizontalAlignment = .left
+        legend.verticalAlignment = .top
+        legend.orientation = .vertical
+        legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
+        legend.textColor = NSColor.labelColor
+    }
+
     
     private func updateChartData()
     {
@@ -279,7 +279,7 @@ final class RubriquePieController: NSViewController
     
 }
 
-extension RubriquePieController: SliderHorizontalDelegate {
+extension RubricPieController: SliderHorizontalDelegate {
     
     func setDataHorizontal() {
         self.updateChartData()
@@ -288,7 +288,7 @@ extension RubriquePieController: SliderHorizontalDelegate {
     }
 }
 
-extension RubriquePieController: ChartViewDelegate {
+extension RubricPieController: ChartViewDelegate {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         
         let label = (entry as! PieChartDataEntry).label!

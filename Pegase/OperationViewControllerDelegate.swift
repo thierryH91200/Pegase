@@ -246,18 +246,17 @@ extension OperationViewController: ListeOperationsDelegate {
                 popUpTransfert.menu?.removeItem(at: 0)
                 transfert = popUpTransfert.itemTitle(at: 0)
             }
-            let compteLie = quakes[0].operationLiee?.account
-            if compteLie != nil {
+            let linkedAccount = quakes[0].operationLiee?.account
+            if linkedAccount != nil {
                 popUpTransfert.selectItem(withTitle: setTransfert.first ?? transfert)
-                nameCompte.stringValue = (compteLie?.name)!
-                nomTitulaire.stringValue = (compteLie?.identite?.idName)!
-                prenomTitulaire.stringValue = (compteLie?.identite?.idPrenom)!
+                nameCompte.stringValue = (linkedAccount?.name)!
+                nomTitulaire.stringValue = (linkedAccount?.identite?.idName)!
+                prenomTitulaire.stringValue = (linkedAccount?.identite?.idPrenom)!
             } else {
                 popUpTransfert.selectItem(at: 0)
                 nameCompte.stringValue = ""
                 nomTitulaire.stringValue = ""
                 prenomTitulaire.stringValue = ""
-
             }
         }
         resignFirstResponder()

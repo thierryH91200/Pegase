@@ -12,7 +12,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var sourceListViewController: SourceListViewController?
     var groupeAccountViewController: GroupeAccountViewController?
     
-    var rubriquePieController: RubriquePieController?
+    var rubricPieController: RubricPieController?
     var categoryBarController: CategoryBarController?
     var categoryBarController1: CategoryBarController1?
     var rubricBarController: RubricBarController?

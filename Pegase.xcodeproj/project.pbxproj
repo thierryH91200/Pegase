@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03057FFF241A5878001E17A8 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 03057FFE241A5878001E17A8 /* Charts */; };
 		03213B0523F9048200002DD7 /* TTFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFD23F9048200002DD7 /* TTFormatViewController.xib */; };
 		03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFE23F9048200002DD7 /* ImportWindowController.xib */; };
 		03213B0723F9048200002DD7 /* ImportWindowControllerParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */; };
@@ -67,8 +66,8 @@
 		03213B8823F9084800002DD7 /* IncomeExpenseBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8623F9084800002DD7 /* IncomeExpenseBarController.swift */; };
 		03213B8B23F9085700002DD7 /* RubricBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8923F9085700002DD7 /* RubricBarController.xib */; };
 		03213B8C23F9085700002DD7 /* RubricBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8A23F9085700002DD7 /* RubricBarController.swift */; };
-		03213B8F23F9086600002DD7 /* RubriquePieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8D23F9086500002DD7 /* RubriquePieController.swift */; };
-		03213B9023F9086600002DD7 /* RubriquePieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8E23F9086600002DD7 /* RubriquePieController.xib */; };
+		03213B8F23F9086600002DD7 /* RubricPieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8D23F9086500002DD7 /* RubricPieController.swift */; };
+		03213B9023F9086600002DD7 /* RubricPieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8E23F9086600002DD7 /* RubricPieController.xib */; };
 		03213B9223F9089300002DD7 /* NVDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B9123F9089300002DD7 /* NVDate.swift */; };
 		03213B9823F9091200002DD7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B9323F9091200002DD7 /* Feed.swift */; };
 		03213B9923F9091200002DD7 /* SourceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B9423F9091200002DD7 /* SourceListViewController.swift */; };
@@ -220,6 +219,9 @@
 		038FFFCF240EAB970019A183 /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC88A23F87CAD006944DD /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03ACCCD823FAD03A00098CFC /* TFDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ACCCD623FAD00500098CFC /* TFDate.framework */; };
 		03ACCCD923FAD03A00098CFC /* TFDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03ACCCD623FAD00500098CFC /* TFDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03EC2AFE2427E73A00CFABBE /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034EC88A23F87CAD006944DD /* SwiftDate.framework */; };
+		03EC2AFF2427E74900CFABBE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EC2AFB2427E70700CFABBE /* Charts.framework */; };
+		03EC2B002427E74900CFABBE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03EC2AFB2427E70700CFABBE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -293,6 +295,20 @@
 			remoteGlobalIDString = 0314C3DE23D6D68700C7A76E;
 			remoteInfo = TFDate;
 		};
+		03EC2AFA2427E70700CFABBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EC2AF52427E70600CFABBE /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		03EC2AFC2427E70700CFABBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03EC2AF52427E70600CFABBE /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -302,6 +318,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				03EC2B002427E74900CFABBE /* Charts.framework in Embed Frameworks */,
 				03ACCCD923FAD03A00098CFC /* TFDate.framework in Embed Frameworks */,
 				038FFFCF240EAB970019A183 /* SwiftDate.framework in Embed Frameworks */,
 			);
@@ -370,8 +387,8 @@
 		03213B8623F9084800002DD7 /* IncomeExpenseBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeExpenseBarController.swift; sourceTree = "<group>"; };
 		03213B8923F9085700002DD7 /* RubricBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RubricBarController.xib; sourceTree = "<group>"; };
 		03213B8A23F9085700002DD7 /* RubricBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubricBarController.swift; sourceTree = "<group>"; };
-		03213B8D23F9086500002DD7 /* RubriquePieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubriquePieController.swift; sourceTree = "<group>"; };
-		03213B8E23F9086600002DD7 /* RubriquePieController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RubriquePieController.xib; sourceTree = "<group>"; };
+		03213B8D23F9086500002DD7 /* RubricPieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubricPieController.swift; sourceTree = "<group>"; };
+		03213B8E23F9086600002DD7 /* RubricPieController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RubricPieController.xib; sourceTree = "<group>"; };
 		03213B9123F9089300002DD7 /* NVDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVDate.swift; sourceTree = "<group>"; };
 		03213B9323F9091200002DD7 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		03213B9423F9091200002DD7 /* SourceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceListViewController.swift; sourceTree = "<group>"; };
@@ -610,6 +627,7 @@
 		038FFFCA240E72D60019A183 /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/MyDB.sqlite; sourceTree = "<group>"; };
 		038FFFCB240E72D70019A183 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/MyDB.sqlite; sourceTree = "<group>"; };
 		03ACCCD123FAD00500098CFC /* TFDate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TFDate.xcodeproj; path = "../../NSCustomControl/ZZZ DatePicker/TFDate/TFDate/TFDate.xcodeproj"; sourceTree = "<group>"; };
+		03EC2AF52427E70600CFABBE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		03F3F4D324169CD60040700D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AccountViewController.strings; sourceTree = "<group>"; };
 		03F3F4D524169CE20040700D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AccountViewController.strings; sourceTree = "<group>"; };
 		03F3F4D724169CE30040700D /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AccountViewController.strings; sourceTree = "<group>"; };
@@ -622,8 +640,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				03ACCCD823FAD03A00098CFC /* TFDate.framework in Frameworks */,
+				03EC2AFF2427E74900CFABBE /* Charts.framework in Frameworks */,
 				038FFFCE240EAB970019A183 /* SwiftDate.framework in Frameworks */,
-				03057FFF241A5878001E17A8 /* Charts in Frameworks */,
+				03EC2AFE2427E73A00CFABBE /* SwiftDate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,8 +823,8 @@
 				03213B7823F9062B00002DD7 /* CategoryBarGraph */,
 				03213B7723F9062800002DD7 /* ModePaiementPie */,
 				03213B7623F9062000002DD7 /* IncomeExpenseBar */,
-				03213B7523F9061B00002DD7 /* RubriqueBar */,
-				03213B7423F9061600002DD7 /* RubriquePie */,
+				03213B7523F9061B00002DD7 /* RubricBar */,
+				03213B7423F9061600002DD7 /* RubricPie */,
 				037993B424139AE7001ADDA6 /* CommonGraph.swift */,
 			);
 			name = Rapports;
@@ -822,22 +841,22 @@
 			name = Preferences;
 			sourceTree = "<group>";
 		};
-		03213B7423F9061600002DD7 /* RubriquePie */ = {
+		03213B7423F9061600002DD7 /* RubricPie */ = {
 			isa = PBXGroup;
 			children = (
-				03213B8D23F9086500002DD7 /* RubriquePieController.swift */,
-				03213B8E23F9086600002DD7 /* RubriquePieController.xib */,
+				03213B8D23F9086500002DD7 /* RubricPieController.swift */,
+				03213B8E23F9086600002DD7 /* RubricPieController.xib */,
 			);
-			name = RubriquePie;
+			name = RubricPie;
 			sourceTree = "<group>";
 		};
-		03213B7523F9061B00002DD7 /* RubriqueBar */ = {
+		03213B7523F9061B00002DD7 /* RubricBar */ = {
 			isa = PBXGroup;
 			children = (
 				03213B8A23F9085700002DD7 /* RubricBarController.swift */,
 				03213B8923F9085700002DD7 /* RubricBarController.xib */,
 			);
-			name = RubriqueBar;
+			name = RubricBar;
 			sourceTree = "<group>";
 		};
 		03213B7623F9062000002DD7 /* IncomeExpenseBar */ = {
@@ -1034,6 +1053,7 @@
 				03ACCCD123FAD00500098CFC /* TFDate.xcodeproj */,
 				034EC8A223F87CE7006944DD /* Doc */,
 				034EC89923F87CD2006944DD /* Technotes */,
+				03EC2AF52427E70600CFABBE /* Charts.xcodeproj */,
 				034EC87C23F87CAD006944DD /* SwiftDate.xcodeproj */,
 				034EC89723F87CC0006944DD /* README.md */,
 				034EC81823F87C5B006944DD /* Pegase */,
@@ -1262,6 +1282,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		03EC2AF62427E70600CFABBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03EC2AFB2427E70700CFABBE /* Charts.framework */,
+				03EC2AFD2427E70700CFABBE /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1282,7 +1311,6 @@
 			);
 			name = Pegase;
 			packageProductDependencies = (
-				03057FFE241A5878001E17A8 /* Charts */,
 			);
 			productName = Pegase;
 			productReference = 034EC81623F87C5B006944DD /* Pegase.app */;
@@ -1344,6 +1372,10 @@
 			productRefGroup = 034EC81723F87C5B006944DD /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 03EC2AF62427E70600CFABBE /* Products */;
+					ProjectRef = 03EC2AF52427E70600CFABBE /* Charts.xcodeproj */;
+				},
 				{
 					ProductGroup = 034EC87D23F87CAD006944DD /* Products */;
 					ProjectRef = 034EC87C23F87CAD006944DD /* SwiftDate.xcodeproj */;
@@ -1425,6 +1457,20 @@
 			remoteRef = 03ACCCD523FAD00500098CFC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		03EC2AFB2427E70700CFABBE /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 03EC2AFA2427E70700CFABBE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		03EC2AFD2427E70700CFABBE /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 03EC2AFC2427E70700CFABBE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1487,7 +1533,7 @@
 				03213C2723F90C3300002DD7 /* ChequierModalWindowController.xib in Resources */,
 				03213B2023F904D600002DD7 /* TresorerieController.xib in Resources */,
 				03213C5823F926AD00002DD7 /* SousOperationModalWindowController.xib in Resources */,
-				03213B9023F9086600002DD7 /* RubriquePieController.xib in Resources */,
+				03213B9023F9086600002DD7 /* RubricPieController.xib in Resources */,
 				034ECB6923F88033006944DD /* PopOverModalViewController.xib in Resources */,
 				03213BBA23F909C300002DD7 /* SliderViewHorizontalController.xib in Resources */,
 				03213C4D23F9269000002DD7 /* OperationViewController.xib in Resources */,
@@ -1624,7 +1670,7 @@
 				037993B0241385AD001ADDA6 /* Document.xcdatamodeld in Sources */,
 				03213BE523F90B3F00002DD7 /* EcheanciersSaisieControllerDelegate.swift in Sources */,
 				03213B9B23F9091200002DD7 /* SourceListViewDataSource.swift in Sources */,
-				03213B8F23F9086600002DD7 /* RubriquePieController.swift in Sources */,
+				03213B8F23F9086600002DD7 /* RubricPieController.swift in Sources */,
 				03213B3F23F9053A00002DD7 /* OperationViewController.swift in Sources */,
 				03213BA123F9093700002DD7 /* TulsiDocumentController.swift in Sources */,
 				037993B72413F353001ADDA6 /* ChartView.swift in Sources */,
@@ -2191,14 +2237,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		03057FFE241A5878001E17A8 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 03057FFD241A5878001E17A8 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		037993AE241385AD001ADDA6 /* Document.xcdatamodeld */ = {
