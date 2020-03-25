@@ -210,6 +210,7 @@
 		035115CA241FF2DE001AF54B /* Pegase.png in Resources */ = {isa = PBXBuildFile; fileRef = 035115C9241FF2DE001AF54B /* Pegase.png */; };
 		036AF0A624260445008C6564 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036AF0A524260445008C6564 /* AvatarView.swift */; };
 		036AF0A82426044E008C6564 /* AvatarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036AF0A72426044E008C6564 /* AvatarInfo.swift */; };
+		036EC934242BE4A800CF8D34 /* Capture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 036EC933242BE4A800CF8D34 /* Capture1.png */; };
 		037993932412386E001ADDA6 /* Feeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037993952412386E001ADDA6 /* Feeds.plist */; };
 		037993B0241385AD001ADDA6 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 037993AE241385AD001ADDA6 /* Document.xcdatamodeld */; };
 		037993B524139AE7001ADDA6 /* CommonGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037993B424139AE7001ADDA6 /* CommonGraph.swift */; };
@@ -544,7 +545,6 @@
 		034EC8A823F87CFA006944DD /* Capture3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture3.png; sourceTree = "<group>"; };
 		034EC8A923F87CFA006944DD /* Capture7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture7.png; sourceTree = "<group>"; };
 		034EC8AA23F87CFA006944DD /* Capture2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture2.png; sourceTree = "<group>"; };
-		034EC8AB23F87CFA006944DD /* Capture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture1.png; sourceTree = "<group>"; };
 		034EC8B623F87E31006944DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		034EC8BA23F87E8B006944DD /* AdvancedFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedFilterViewController.swift; sourceTree = "<group>"; };
 		034EC8BC23F87E97006944DD /* NSPredicateEditorRowTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPredicateEditorRowTemplate.swift; sourceTree = "<group>"; };
@@ -612,6 +612,7 @@
 		035115C9241FF2DE001AF54B /* Pegase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pegase.png; sourceTree = "<group>"; };
 		036AF0A524260445008C6564 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		036AF0A72426044E008C6564 /* AvatarInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarInfo.swift; sourceTree = "<group>"; };
+		036EC933242BE4A800CF8D34 /* Capture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture1.png; sourceTree = "<group>"; };
 		037993942412386E001ADDA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Feeds.plist; sourceTree = "<group>"; };
 		037993A124123874001ADDA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Feeds.plist; sourceTree = "<group>"; };
 		037993A224123875001ADDA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Feeds.plist; sourceTree = "<group>"; };
@@ -1152,7 +1153,7 @@
 			isa = PBXGroup;
 			children = (
 				035115C9241FF2DE001AF54B /* Pegase.png */,
-				034EC8AB23F87CFA006944DD /* Capture1.png */,
+				036EC933242BE4A800CF8D34 /* Capture1.png */,
 				034EC8AA23F87CFA006944DD /* Capture2.png */,
 				034EC8A823F87CFA006944DD /* Capture3.png */,
 				034EC8A523F87CF9006944DD /* Capture4.png */,
@@ -1482,6 +1483,7 @@
 				03213C9D23F9320600002DD7 /* IdentiteViewController.xib in Resources */,
 				03213B8023F9082600002DD7 /* CategoryBarController.xib in Resources */,
 				035115CA241FF2DE001AF54B /* Pegase.png in Resources */,
+				036EC934242BE4A800CF8D34 /* Capture1.png in Resources */,
 				034EC89E23F87CE2006944DD /* CodingGuidelines.md in Resources */,
 				03213B0923F9048200002DD7 /* TTFormatViewControllerAccessory.xib in Resources */,
 				03213B2523F904DE00002DD7 /* WebViewController.xib in Resources */,
