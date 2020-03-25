@@ -132,6 +132,12 @@ struct IdOperations {
     }
 }
 
+//public typealias TrackingYear           = [ GroupedYearOperations ]
+//public typealias TrackingMonth          = GroupedYearOperations
+//public typealias TrackingIdOperations   = GroupedMonthOperations
+//public typealias TrackingSubOperations  = IdOperations
+//public typealias TrackingSubOperation   = EntitySousOperations
+
 //struct GroupedYearOperations {
 //    let year : String
 //    var allMonth : [GroupedMonthOperations]

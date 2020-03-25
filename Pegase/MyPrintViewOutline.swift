@@ -295,28 +295,6 @@ final class MyPrintViewOutline: NSView
         }
     }
     
-//    final class CrossHatchView: UIView {
-//
-//        // MARK: - LifeCycle
-//
-//        override func draw(_ rect: CGRect) {
-//            let path:UIBezierPath = UIBezierPath(roundedRect: bounds, cornerRadius: 5)
-//            path.addClip()
-//
-//            let pathBounds = path.bounds
-//            path.removeAllPoints()
-//            let p1 = CGPoint(x:pathBounds.maxX, y:0)
-//            let p2 = CGPoint(x:0, y:pathBounds.maxX)
-//            path.move(to: p1)
-//            path.addLine(to: p2)
-//            path.lineWidth = bounds.width * 2
-//
-//            let dashes:[CGFloat] = [0.5, 7.0]
-//            path.setLineDash(dashes, count: 2, phase: 0.0)
-//            UIColor.lightGray.withAlphaComponent(0.5).set()
-//            path.stroke()
-//        }
-//    }
         
     func trianglePath(center: CGPoint, side: CGFloat) -> NSBezierPath {
         let path = NSBezierPath()

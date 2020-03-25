@@ -30,7 +30,7 @@ class AvatarView: NSView {
         // Enable layer in the image view and
         // set corner radius and border.
         imageView.wantsLayer = true
-        imageView.layer?.cornerRadius = 120.0
+        imageView.layer?.cornerRadius = 12.0
         imageView.layer?.borderWidth = 5.0
         imageView.layer?.borderColor = NSColor.lightGray.cgColor
         

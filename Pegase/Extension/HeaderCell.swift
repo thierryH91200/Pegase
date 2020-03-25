@@ -1,5 +1,6 @@
 import AppKit
 
+// MARK: - MyNSTableRowView
 final class MyNSTableRowView: NSTableRowView {
     
     override func drawSelection(in dirtyRect: NSRect) {
@@ -15,6 +16,7 @@ final class MyNSTableRowView: NSTableRowView {
     }
 }
 
+// MARK: - KSHeaderCellView
 final class KSHeaderCellView: NSTableCellView {
     
     var fillColor = NSColor.orange
@@ -28,5 +30,29 @@ final class KSHeaderCellView: NSTableCellView {
         bPath.fill()
     }
 }
+
+// MARK: - CrossHatchView
+final class CrossHatchView: NSTableCellView {
+    
+    override func draw(_ rect: CGRect) {
+        
+        let path = NSBezierPath(roundedRect: bounds, xRadius: 5, yRadius: 5)
+        //            path.addClip()
+        
+        let pathBounds = path.bounds
+        path.removeAllPoints()
+        let p1 = CGPoint(x:pathBounds.maxX, y:0)
+        let p2 = CGPoint(x:0, y:pathBounds.maxX)
+        path.move(to: p1)
+        path.line(to: p2)
+        path.lineWidth = bounds.width * 2
+        
+        let dashes:[CGFloat] = [0.5, 7.0]
+        path.setLineDash(dashes, count: 2, phase: 0.0)
+        NSColor.lightGray.withAlphaComponent(0.8).set()
+        path.stroke()
+    }
+}
+
 
 

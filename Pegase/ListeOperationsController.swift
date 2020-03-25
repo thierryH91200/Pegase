@@ -207,7 +207,6 @@ final class ListeOperationsController: NSViewController {
         
         let attributedText = NSAttributedString(string: str, attributes: attribute)
         self.labelInfo.attributedStringValue = attributedText
-
     }
     
     func setUpDatePicker() {

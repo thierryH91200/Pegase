@@ -5,8 +5,7 @@ import AppKit
 extension ListeOperationsController: NSOutlineViewDataSource {
     
     //Returns the number of child items encompassed by a given item.
-    func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
-                        
+    fileprivate func extractedFunc(_ item: Any?) -> Int {
         // Root number year
         if item == nil {
             let nbYear = groupedSorted.count
@@ -29,6 +28,11 @@ extension ListeOperationsController: NSOutlineViewDataSource {
         }
         debugPrint("numberOfChildrenOfItem : BAD ITEM")
         return 0
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
+                        
+        return extractedFunc(item)
     }
     
     // Returns the child item at the specified index of a given item
@@ -86,8 +90,8 @@ extension ListeOperationsController: NSOutlineViewDataSource {
             return true
         }
 
-        if item is IdOperations {
-            let idOperation = item as! IdOperations
+        if item is TrackingSubOperations {
+            let idOperation = item as! TrackingSubOperations
             let count = (idOperation.entityOperations.sousOperations?.count)!
             if count > 1 {
                 return true

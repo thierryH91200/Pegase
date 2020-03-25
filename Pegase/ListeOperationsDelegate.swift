@@ -9,14 +9,14 @@ extension ListeOperationsController: NSOutlineViewDelegate {
     {
         var cellView: NSTableCellView?
         
-        if let folderItem = item as?  GroupedYearOperations {
+        if let folderItem = item as?  TrackingMonth {
             cellView = outlineView.makeView(withIdentifier: .FeedCellYear, owner: self) as? KSHeaderCellView
             let textField = (cellView?.textField!)!
             textField.stringValue = folderItem.year
             return cellView
         }
 
-        if let folderItem = item as? GroupedMonthOperations
+        if let folderItem = item as? TrackingIdOperations
         {
             let formatterDate: DateFormatter = {
                 let fmt = DateFormatter()
@@ -110,18 +110,24 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 case .rubrique:
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].category?.rubrique?.name ?? ""
+                    } else {
+                        cellView = CrossHatchView()
                     }
                 
                 case .categorie:
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].category?.name ?? ""
+                    } else {
+                        cellView = CrossHatchView()
                     }
-                
+
                 case .libelle:
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].libelle ?? ""
+                    } else {
+                        cellView = CrossHatchView()
                     }
-                
+
                 case .dateOperation:
                     paragraph.alignment = .center
                     var time = Date()
@@ -203,7 +209,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 attributText.setAttributes(attrs, range: NSRange(location: 0, length: attributText.length))
                 textField.attributedStringValue = attributText
             } else
-            if let item = item as? EntitySousOperations {
+            if let item = item as? TrackingSubOperation {
                 
                 let identifier = tableColumn!.identifier
                 guard let propertyEnum = ListeOperationsDisplayProperty(rawValue: identifier.rawValue) else { return nil }
