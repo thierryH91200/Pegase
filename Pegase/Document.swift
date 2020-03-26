@@ -82,7 +82,10 @@ final class Document: NSPersistentDocument {
         let Epargne = Localizations.Document.Epargne
         let CarteDeCrédit = Localizations.Document.Carte_de_crédit
         
-        let pierreAccount  = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: "Martin", idPrenom: "Pierre", numCompte: "00045700E")
+        let idName = Localizations.Document.IdName
+        let idPrenom = Localizations.Document.IdPrenom
+
+        let pierreAccount  = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: idName, idPrenom: idPrenom, numCompte: "00045700E")
         pierreAccount.type = 0
         
         let marieAccount   = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: "Martin", idPrenom: "Marie", numCompte: "00045701F")

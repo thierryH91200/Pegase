@@ -8,6 +8,8 @@
 "Check.MessageText" = "Delete the check ?";
 
 // MARK: Document
+"Document.IdName" = "Doe";
+"Document.IdPrenom" = "John";
 "Document.Bank_Account" = "Bank account";
 "Document.Carte_de_crédit" = "Bank card";
 "Document.Compte_Courant" = "Current account";
