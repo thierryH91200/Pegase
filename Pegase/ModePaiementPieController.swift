@@ -168,7 +168,7 @@ final class ModePaiementPieController: CommonGraph {
     
     func setDataCount1()
     {
-        guard resultArrayExpense.count != 0  else {
+        guard resultArrayExpense.isEmpty == false  else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
@@ -205,7 +205,7 @@ final class ModePaiementPieController: CommonGraph {
     
     private func setDataCount2()
     {
-        guard resultArrayIncome.count != 0  else {
+        guard resultArrayIncome.isEmpty == false else {
             chartView2.data = nil
             chartView2.data?.notifyDataChanged()
             chartView2.notifyDataSetChanged()
