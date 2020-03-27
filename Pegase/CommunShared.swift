@@ -1,11 +1,8 @@
 import AppKit
 
 
-//MARK:-
-//MARK:Commun
-//MARK:-
-////////////////////////////////////////////////////////////////
-
+// MARK: -
+// MARK: Commun
 class Commun
 {
     static let shared = Commun()

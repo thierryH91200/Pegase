@@ -87,7 +87,7 @@ final class EcheanciersSaisieController: NSViewController, NSTextFieldDelegate, 
         frequence.delegate = self
         occurence.delegate = self
                 
-        token = foo.observe(\.bar, options: [.new, .old]) { [weak self] object, change in
+        token = foo.observe(\.bar, options: [.new, .old]) { [weak self] _, change in
             if change.oldValue != change.newValue {
                 self?.edit()
             }
