@@ -19,16 +19,19 @@
 "Document.OpenProjectPanelMessage" = "OpenProject";
 
 // MARK: General
-"General.Account" = "Account";
+"General.Account.Account" = "Account";
+"General.Account.Plural" = "%d comptes";
+"General.Account.Singular" = "1 account";
+"General.Account.Zero" = "0 account";
+
 "General.Account1" = "Compte1";
 "General.Amount" = "Amount";
 "General.BankAccount.Plural" = "Bank accounts";
 "General.BankAccount.Singular" = "Bank account";
 "General.Cancel" = "Cancel";
 "General.Category" = "Categories";
-"General.Compte.Plural" = "%d comptes";
-"General.Compte.Singular" = "1 account";
-"General.Compte.Zero" = "0 account";
+
+
 "General.Date Operation" = "Date Operation";
 "General.Date Pointage" = "Date Pointage";
 "General.Expenses" = "Expenses";
@@ -44,9 +47,9 @@
 "General.Statut" = "Statut";
 
 // MARK: GroupeCompte
-"GroupeCompte.Compte.Menu.Add" = "Add an account";
-"GroupeCompte.Compte.Menu.Edit" = "Edit an account";
-"GroupeCompte.Compte.Menu.Remove" = "Delete an account";
+"GroupeCompte.Account.Menu.Add" = "Add an account";
+"GroupeCompte.Account.Menu.Edit" = "Edit an account";
+"GroupeCompte.Account.Menu.Remove" = "Delete an account";
 "GroupeCompte.Folder.Menu.Add" = "Add folder";
 "GroupeCompte.Folder.Menu.Edit" = "Edit folder";
 "GroupeCompte.Folder.Menu.Remove" = "Remove folder";

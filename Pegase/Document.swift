@@ -77,7 +77,7 @@ final class Document: NSPersistentDocument {
         root.name = "Root"
         root.uuid = UUID()
         
-        // MARK: create compte
+        // MARK: create account
         let CurrentAccount = Localizations.Document.Compte_Courant
         let Epargne = Localizations.Document.Epargne
         let CarteDeCrédit = Localizations.Document.Carte_de_crédit
@@ -85,22 +85,22 @@ final class Document: NSPersistentDocument {
         let idName = Localizations.Document.IdName
         let idPrenom = Localizations.Document.IdPrenom
 
-        let pierreAccount  = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: idName, idPrenom: idPrenom, numCompte: "00045700E")
+        let pierreAccount  = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: idName, idPrenom: idPrenom, numAccount: "00045700E")
         pierreAccount.type = 0
         
-        let marieAccount   = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: "Martin", idPrenom: "Marie", numCompte: "00045701F")
+        let marieAccount   = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: "Martin", idPrenom: "Marie", numAccount: "00045701F")
         marieAccount.type = 0
         
-        let carteDeCredit1 = Account.shared.create(nameAccount: CarteDeCrédit, nameImage: "discount", idName: "Martin", idPrenom: "Pierre", numCompte: "00045702G")
+        let carteDeCredit1 = Account.shared.create(nameAccount: CarteDeCrédit, nameImage: "discount", idName: "Martin", idPrenom: "Pierre", numAccount: "00045702G")
         carteDeCredit1.type = 1
         
-        let carteDeCredit2 = Account.shared.create(nameAccount: CarteDeCrédit, nameImage: "discount", idName: "Durand", idPrenom: "Jean", numCompte: "00045705K")
+        let carteDeCredit2 = Account.shared.create(nameAccount: CarteDeCrédit, nameImage: "discount", idName: "Durand", idPrenom: "Jean", numAccount: "00045705K")
         carteDeCredit2.type = 1
         
-        let epargne  = Account.shared.create(nameAccount: Epargne, nameImage: "icons8-money-box-80", idName: "Durand", idPrenom: "Jean", numCompte: "00045703H")
-        epargne.type = 2
+        let saving  = Account.shared.create(nameAccount: Epargne, nameImage: "icons8-money-box-80", idName: "Durand", idPrenom: "Jean", numAccount: "00045703H")
+        saving.type = 2
         
-        let jeanAccount    = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: "Durand", idPrenom: "Jean", numCompte: "00045704J")
+        let jeanAccount    = Account.shared.create(nameAccount: CurrentAccount, nameImage: "icons8-museum-80", idName: "Durand", idPrenom: "Jean", numAccount: "00045704J")
         jeanAccount.type = 0
         
         // MARK: create headers
@@ -120,7 +120,7 @@ final class Document: NSPersistentDocument {
         header1.addToChildren( pierreAccount)
         header1.addToChildren( marieAccount)
         header1.addToChildren( carteDeCredit1)
-        header1.addToChildren( epargne)
+        header1.addToChildren( saving)
 
         header2.addToChildren( jeanAccount)
         header2.addToChildren( carteDeCredit2)

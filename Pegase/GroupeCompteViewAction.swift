@@ -126,7 +126,7 @@ extension GroupeAccountViewController: NSMenuDelegate {
                 let nameImage       = self.compteModalWindowController.imageView.image?.name()!
                 let type            = self.compteModalWindowController.typeAccount.indexOfSelectedItem
                 
-                let compte   = Account.shared.create(nameAccount: nameAccount, nameImage: nameImage!, idName: nom, idPrenom: prenom, numCompte: numAccount)
+                let compte   = Account.shared.create(nameAccount: nameAccount, nameImage: nameImage!, idName: nom, idPrenom: prenom, numAccount: numAccount)
                 compte.type = Int16(type)
                 compte.initCompte?.realise = soldeInitial
                 
@@ -206,7 +206,6 @@ extension GroupeAccountViewController: NSMenuDelegate {
                 print("Document 🗑")
                 
                 self.deleteSelection()
-                //                self.rootSourceListItem.clear()
                 
                 self.rootSourceListItem = Account.shared.getRoot().first!
                 self.anSideBar.reloadData()

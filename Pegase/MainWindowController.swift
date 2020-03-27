@@ -41,7 +41,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
 
     @IBOutlet weak var operationView: NSView!
     @IBOutlet weak var tableTargetView: NSView!
-    @IBOutlet weak var compteView: NSView!
+    @IBOutlet weak var accountView: NSView!
     @IBOutlet weak var affichageView: NSView!
     @IBOutlet weak var operationViewSecondary: NSView!
     
@@ -85,7 +85,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
         self.splitViewPrincipal.delegate = self
         self.createMenuForSearchField()
         
-        var entityCompte = [EntityAccount]()
+        var entityAccount = [EntityAccount]()
         let request = NSFetchRequest<EntityAccount>(entityName: "EntityAccount")
         let predicate = NSPredicate(format: "isAccount == YES")
         request.predicate = predicate
@@ -93,13 +93,13 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         do {
-            entityCompte = try mainObjectContext.fetch(request)
+            entityAccount = try mainObjectContext.fetch(request)
         } catch { print(error) }
         
-        if entityCompte.isEmpty {
-            self.groupeAccountViewController?.addAccount(entityCompte)
+        if entityAccount.isEmpty {
+            self.groupeAccountViewController?.addAccount(entityAccount)
         } else {
-            currentAccount = entityCompte.first
+            currentAccount = entityAccount.first
         }
         
         self.setUpGroupeAccount()
@@ -157,9 +157,9 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     {
         self.groupeAccountViewController = GroupeAccountViewController()
         let subView = self.groupeAccountViewController?.view
-        Commun.shared.addSubview(subView: subView!, toView: compteView)
+        Commun.shared.addSubview(subView: subView!, toView: accountView)
         
-        Commun.shared.setUpLayoutConstraints(item: self.groupeAccountViewController!.view, toItem: compteView)
+        Commun.shared.setUpLayoutConstraints(item: self.groupeAccountViewController!.view, toItem: accountView)
         self.groupeAccountViewController!.view.setFrameSize( NSSize(width: 100, height: 200))
     }
 

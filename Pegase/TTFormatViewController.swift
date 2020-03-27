@@ -29,7 +29,7 @@ final class TTFormatViewController: NSViewController {
     @IBOutlet weak var formatDate: NSTextField!
     @IBOutlet weak var popUpCompte: NSPopUpButton!
     
-    var entityCompteTransfert: EntityAccount?
+    var entityAccountTransfert: EntityAccount?
     
     override func viewDidAppear() {
         super.viewDidAppear()
@@ -156,7 +156,7 @@ final class TTFormatViewController: NSViewController {
         let selectItem = popUpCompte.selectedItem
         let compte = selectItem?.representedObject as? EntityAccount
         
-        entityCompteTransfert = compte
+        entityAccountTransfert = compte
         
         nameCompte.stringValue = (compte?.name)!
         nomTitulaire.stringValue = (compte?.identite?.idName)!

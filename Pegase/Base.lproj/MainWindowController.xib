@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16095" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16095"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="Pegase" customModuleProvider="target">
             <connections>
+                <outlet property="accountView" destination="592-qm-Sgh" id="nzg-8U-9Kp"/>
                 <outlet property="affichageView" destination="MTg-uc-flv" id="WqQ-fH-jmA"/>
                 <outlet property="colorPopUp" destination="Twh-f9-5Zl" id="maT-34-L6X"/>
-                <outlet property="compteView" destination="592-qm-Sgh" id="dfj-IN-xg2"/>
                 <outlet property="menuColor" destination="4zM-8Y-pIn" id="huS-3o-Uu9"/>
                 <outlet property="operationView" destination="UUv-fM-B7s" id="Xv2-8F-Xi1"/>
                 <outlet property="operationViewSecondary" destination="zSk-OV-6Ch" id="Aeq-CI-Aag"/>

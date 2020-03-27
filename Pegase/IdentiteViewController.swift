@@ -46,7 +46,7 @@ final class IdentiteViewController: NSViewController {
         
         Identite.shared.getAll()
         Banque.shared.getAll()
-        InitCompte.shared.getAll()
+        InitAccount.shared.getAll()
 
         arrayControllerCompte.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
         arrayControllerCompte.setSelectionIndex(0)

@@ -91,7 +91,7 @@ final class ModePaiementPieController: CommonGraph {
         legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
         legend.textColor = .labelColor
 
-        // MARK: -  Chart View2 Recette
+        // MARK: - Chart View2 Recette
         centerText = NSMutableAttributedString(string: Localizations.General.Income)
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         

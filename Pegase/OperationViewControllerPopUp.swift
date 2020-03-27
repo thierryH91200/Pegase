@@ -42,13 +42,13 @@ extension OperationViewController {
     @objc func optionCompte( menuItem: NSMenuItem)
     {
         let selectItem = popUpTransfert.selectedItem
-        let compte = selectItem?.representedObject as? EntityAccount
+        let account = selectItem?.representedObject as? EntityAccount
         
-        if compte != nil {
-            self.entityCompteTransfert = compte
-            self.nameCompte.stringValue = (compte?.name)!
-            self.nomTitulaire.stringValue = (compte?.identite?.idName)!
-            self.prenomTitulaire.stringValue = (compte?.identite?.idPrenom)!
+        if account != nil {
+            self.entityCompteTransfert = account
+            self.nameCompte.stringValue = (account?.name)!
+            self.nomTitulaire.stringValue = (account?.identite?.idName)!
+            self.prenomTitulaire.stringValue = (account?.identite?.idPrenom)!
         } else {
             self.nameCompte.stringValue = ""
             self.nomTitulaire.stringValue = ""

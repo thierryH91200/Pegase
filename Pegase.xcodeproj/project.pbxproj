@@ -171,7 +171,7 @@
 		034EC8F623F87EF1006944DD /* ModePaiement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8EC23F87EF0006944DD /* ModePaiement.swift */; };
 		034EC8F723F87EF1006944DD /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8ED23F87EF0006944DD /* Categories.swift */; };
 		034EC8F823F87EF1006944DD /* Echeanciers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8EE23F87EF0006944DD /* Echeanciers.swift */; };
-		034EC8F923F87EF1006944DD /* Compte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8EF23F87EF0006944DD /* Compte.swift */; };
+		034EC8F923F87EF1006944DD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8EF23F87EF0006944DD /* Account.swift */; };
 		034EC8FA23F87EF1006944DD /* Identite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8F023F87EF1006944DD /* Identite.swift */; };
 		034EC8FB23F87EF1006944DD /* Cheques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8F123F87EF1006944DD /* Cheques.swift */; };
 		034EC8FC23F87EF1006944DD /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8F223F87EF1006944DD /* Preference.swift */; };
@@ -565,7 +565,7 @@
 		034EC8EC23F87EF0006944DD /* ModePaiement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModePaiement.swift; sourceTree = "<group>"; };
 		034EC8ED23F87EF0006944DD /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		034EC8EE23F87EF0006944DD /* Echeanciers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Echeanciers.swift; sourceTree = "<group>"; };
-		034EC8EF23F87EF0006944DD /* Compte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compte.swift; sourceTree = "<group>"; };
+		034EC8EF23F87EF0006944DD /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		034EC8F023F87EF1006944DD /* Identite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identite.swift; sourceTree = "<group>"; };
 		034EC8F123F87EF1006944DD /* Cheques.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cheques.swift; sourceTree = "<group>"; };
 		034EC8F223F87EF1006944DD /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
@@ -1187,7 +1187,7 @@
 			children = (
 				034EC8ED23F87EF0006944DD /* Categories.swift */,
 				034EC8F123F87EF1006944DD /* Cheques.swift */,
-				034EC8EF23F87EF0006944DD /* Compte.swift */,
+				034EC8EF23F87EF0006944DD /* Account.swift */,
 				034EC8EE23F87EF0006944DD /* Echeanciers.swift */,
 				034EC8F023F87EF1006944DD /* Identite.swift */,
 				034EC8F323F87EF1006944DD /* ListeOperations.swift */,
@@ -1665,7 +1665,7 @@
 				03213BF723F90B9A00002DD7 /* ModePaiementViewController.swift in Sources */,
 				03213BB623F909C300002DD7 /* RangeSliderVertical.swift in Sources */,
 				034EC91523F87F51006944DD /* Debug.swift in Sources */,
-				034EC8F923F87EF1006944DD /* Compte.swift in Sources */,
+				034EC8F923F87EF1006944DD /* Account.swift in Sources */,
 				03213BBD23F909D400002DD7 /* CommunShared.swift in Sources */,
 				03213BB523F909C300002DD7 /* RangeSliderHorizontal.swift in Sources */,
 				034EC8D123F87EB2006944DD /* RateWindowController.swift in Sources */,

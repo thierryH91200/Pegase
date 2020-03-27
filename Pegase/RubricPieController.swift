@@ -77,10 +77,10 @@ final class RubricPieController: NSViewController
     
     func updateAccount () {
         listeOperations = ListeOperations.shared.entities
-        if listeOperations.count == 0 || ListeOperations.shared.ascending == false {
+        if listeOperations.isEmpty == true || ListeOperations.shared.ascending == false {
             listeOperations = ListeOperations.shared.getAll()
         }
-        if listeOperations.count > 0 {
+        if listeOperations.isEmpty == false {
             
             firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
             lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!

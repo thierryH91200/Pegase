@@ -15,8 +15,8 @@ final class Account {
         return entities
     }
     
-    // MARK: create compte
-    func create(nameAccount: String, nameImage: String, idName: String, idPrenom: String, numCompte: String) -> EntityAccount {
+    // MARK: create account
+    func create(nameAccount: String, nameImage: String, idName: String, idPrenom: String, numAccount: String) -> EntityAccount {
         let account = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: mainObjectContext) as! EntityAccount
         account.name = nameAccount
         account.nameImage = nameImage
@@ -28,9 +28,9 @@ final class Account {
         identite.account = account
         account.identite = identite
         
-        let initCompte = InitCompte.shared.create(numCompte: numCompte)
-        initCompte.account = account
-        account.initCompte = initCompte
+        let initAccount = InitAccount.shared.create(numAccount: numAccount)
+        initAccount.account = account
+        account.initCompte = initAccount
 
         return account
     }

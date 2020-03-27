@@ -10,22 +10,22 @@ final class Rubric {
     static let shared = Rubric()
     private var entitiesRubrique = [EntityRubrique]()
     
-    func findOrCreate ( compte: EntityAccount,  name: String, color: NSColor, uuid: UUID) -> EntityRubrique {
+    func findOrCreate ( account: EntityAccount,  name: String, color: NSColor, uuid: UUID) -> EntityRubrique {
         
-        var entityRubric = find( compte: compte, name: name )
+        var entityRubric = find( account: account, name: name )
         if entityRubric == nil {
             entityRubric = NSEntityDescription.insertNewObject(forEntityName: "EntityRubrique", into: mainObjectContext) as? EntityRubrique
             entityRubric!.name = name
             entityRubric!.color = color
             entityRubric!.uuid = UUID()
-            entityRubric!.account = compte
+            entityRubric!.account = account
         }
         return entityRubric!
     }
     
-    func find( compte: EntityAccount = currentAccount!, name: String) -> EntityRubrique? {
+    func find( account: EntityAccount = currentAccount!, name: String) -> EntityRubrique? {
         
-        let p1 = NSPredicate(format: "account == %@", compte)
+        let p1 = NSPredicate(format: "account == %@", account)
         let p2 = NSPredicate(format: "name == %@", name)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
         

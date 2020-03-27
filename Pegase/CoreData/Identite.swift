@@ -44,19 +44,19 @@ final class Banque {
     }
 }
 
-// MARK: - InitCompte
-final class InitCompte {
+// MARK: - InitAccount
+final class InitAccount {
     
-    static let shared = InitCompte()
+    static let shared = InitAccount()
     var entitiesInitCompte = [EntityInitCompte]()
     
-    func create(numCompte : String = "" ) -> EntityInitCompte {
+    func create(numAccount : String = "" ) -> EntityInitCompte {
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitCompte", into: mainObjectContext) as! EntityInitCompte
         
         entity.bic = ""
         entity.cleRib = 0
         entity.codeBanque = 0
-        entity.codeCompte = numCompte
+        entity.codeCompte = numAccount
         entity.codeGuichet = 0
         entity.engage = 0
         entity.iban1 = ""

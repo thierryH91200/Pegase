@@ -332,7 +332,7 @@ extension MainWindowController {
         
         let listeOperations = ListeOperations.shared.getAll()
         
-        var compte = ""
+        var account = ""
         var data = ""
         
         export = ""
@@ -346,7 +346,7 @@ extension MainWindowController {
         export = quote + Localizations.General.Category + "\(quote)\(delimiter)"
         export = quote + Localizations.General.Amount + "\(quote)\(delimiter)"
         
-        export = quote + Localizations.General.Account + "\(quote)\n"
+        export = quote + Localizations.General.Account.Account + "\(quote)\n"
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
@@ -381,8 +381,8 @@ extension MainWindowController {
                 data       = String(sousOperation.amount)
                 export = "\(quote)\(data)\(quote)\(delimiter)"
                 
-                compte        = (listeOperation.account?.name)!
-                export = "\(quote)\(compte)\(quote)\n"
+                account        = (listeOperation.account?.name)!
+                export = "\(quote)\(account)\(quote)\n"
             }
         }
         return export

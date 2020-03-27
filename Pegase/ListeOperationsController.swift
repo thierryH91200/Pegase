@@ -354,7 +354,7 @@ final class ListeOperationsController: NSViewController {
     
     private func balanceCalculation()
     {
-        let initCompte = InitCompte.shared.getAll()
+        let initCompte = InitAccount.shared.getAll()
         var soldeRealise = initCompte.realise
         var soldePrevu  = initCompte.prevu
         var soldeEngage = initCompte.engage

@@ -29,9 +29,9 @@
 "General.BankAccount.Singular" = "Compte bancaire";
 "General.Cancel" = "Annuler";
 "General.Category" = "Categorie";
-"General.Compte.Plural" = "%d comptes";
-"General.Compte.Singular" = "1 compte";
-"General.Compte.Zero" = "0 compte";
+"General.Account.Plural" = "%d comptes";
+"General.Account.Singular" = "1 compte";
+"General.Account.Zero" = "0 compte";
 "General.Date Operation" = "Date Operation";
 "General.Date Pointage" = "Date Pointage";
 "General.Expenses" = "Dépense";
@@ -47,9 +47,9 @@
 "General.Statut" = "Statut";
 
 // MARK: -  GroupeCompte
-"GroupeCompte.Compte.Menu.Add" = "Ajouter un compte";
-"GroupeCompte.Compte.Menu.Edit" = "Editer un compte";
-"GroupeCompte.Compte.Menu.Remove" = "Supprimer un compte";
+"GroupeCompte.Account.Menu.Add" = "Ajouter un compte";
+"GroupeCompte.Account.Menu.Edit" = "Editer un compte";
+"GroupeCompte.Account.Menu.Remove" = "Supprimer un compte";
 "GroupeCompte.Folder.Menu.Add" = "Add folder";
 "GroupeCompte.Folder.Menu.Edit" = "Edit folder";
 "GroupeCompte.Folder.Menu.Remove" = "Remove folder";
