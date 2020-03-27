@@ -35,7 +35,6 @@ extension ListeOperationsController: NSDatePickerCellDelegate {
                 
                 default:
                     print("what ????")
-                    break
                 }
                 entityEcheancier.nextOccurence += 1
                 Echeanciers.shared.createOperation(entityEcheancier: entityEcheancier, dateValeur: dateValeur)

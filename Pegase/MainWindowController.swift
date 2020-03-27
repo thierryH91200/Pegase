@@ -146,7 +146,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     {
         self.sourceListViewController = SourceListViewController()
         self.sourceListViewController?.delegate = self
-        let subView = self.sourceListViewController?.view ?? nil
+        let subView = self.sourceListViewController?.view
         Commun.shared.addSubview(subView: subView!, toView: affichageView)
         
         Commun.shared.setUpLayoutConstraints(item: self.sourceListViewController!.view, toItem: affichageView)

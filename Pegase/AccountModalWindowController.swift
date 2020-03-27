@@ -1,6 +1,6 @@
 import AppKit
 
-final class CompteModalWindowController: NSWindowController {
+final class AccountModalWindowController: NSWindowController {
     
     @IBOutlet weak var gridView: NSGridView!
     @IBOutlet weak var libelleCompte: NSTextField!
@@ -85,7 +85,7 @@ final class CompteModalWindowController: NSWindowController {
 
 }
 
-extension CompteModalWindowController: PopOverModalDelegate
+extension AccountModalWindowController: PopOverModalDelegate
 {
     func changeView(name: String)
     {

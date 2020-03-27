@@ -197,7 +197,6 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     } else {
                         textField.stringValue = ""
                     }
-                    break
                 }
                 
                 textField.sizeToFit()

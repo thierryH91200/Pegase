@@ -69,7 +69,7 @@ final class TresorerieController: NSViewController
     
     func updateAccount () {
         listeOperations = ListeOperations.shared.getAll()
-        if listeOperations.count > 0 {
+        if listeOperations.isEmpty == false {
             
             firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
             lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
@@ -150,7 +150,7 @@ final class TresorerieController: NSViewController
     func updateChartData() {
         
         self.dataGraph.removeAll()
-        guard listeOperations.count != 0 else { return }
+        guard listeOperations.isEmpty == false else { return }
         
         var dataTresorerie = DataTresorerie()
         var index = 0
@@ -228,7 +228,7 @@ final class TresorerieController: NSViewController
     
     func setData()
     {
-        guard listeOperations.count != 0 || dataGraph.count != 0 else {
+        guard listeOperations.isEmpty == false || dataGraph.isEmpty == false else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
@@ -255,7 +255,7 @@ final class TresorerieController: NSViewController
             addLimit(index: dataGraph[i].x, x: (dataGraph[i].x * hourSeconds) + firstDate)
         }
         
-        if values0.count == 0 {
+        if values0.isEmpty == true {
             chartView.data = nil
             sliderViewHorizontalController?.mySlider.isEnabled = false
             return
@@ -338,7 +338,7 @@ extension TresorerieController: SliderHorizontalDelegate {
     
     func setDataHorizontal()
     {
-        guard listeOperations.count != 0 || dataGraph.count != 0 else {
+        guard listeOperations.isEmpty == false || dataGraph.isEmpty == false else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()

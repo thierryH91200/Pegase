@@ -12,7 +12,7 @@ final class GroupeAccountViewController: NSViewController {
     var draggedNodes: [EntityAccount]?
     
     var groupModalWindowController: GroupModalWindowController!
-    var compteModalWindowController: CompteModalWindowController!
+    var accountModalWindowController: AccountModalWindowController!
     
     let key = Notification.Name.updateBalance
     

@@ -93,7 +93,7 @@ extension MainWindowController {
         printInfo.verticalPagination = .automatic
         
         printInfo.scalingFactor = 1.0
-        printInfo.paperSize = NSMakeSize(595, 842)
+        printInfo.paperSize = NSSize(width: 595, height: 842)
         
         let myPrintView = MyPrintViewOutline(tableView: view, andHeader: headerLine)
         

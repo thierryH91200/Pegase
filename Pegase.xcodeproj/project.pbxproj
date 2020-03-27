@@ -189,22 +189,22 @@
 		034EC91523F87F51006944DD /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC90A23F87F51006944DD /* Debug.swift */; };
 		034EC91923F87F7E006944DD /* AccessibilityImageDescriptions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 034EC91723F87F7D006944DD /* AccessibilityImageDescriptions.strings */; };
 		034EC91A23F87F7E006944DD /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC91823F87F7D006944DD /* Localizations.swift */; };
-		034ECA7823F87FAE006944DD /* GroupeCompteViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC91E23F87FAB006944DD /* GroupeCompteViewAction.swift */; };
+		034ECA7823F87FAE006944DD /* GroupeAccountViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC91E23F87FAB006944DD /* GroupeAccountViewAction.swift */; };
 		034ECA7923F87FAE006944DD /* GroupeAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC91F23F87FAB006944DD /* GroupeAccountViewController.swift */; };
-		034ECA7A23F87FAE006944DD /* GroupeCompteViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC92023F87FAB006944DD /* GroupeCompteViewDelegate.swift */; };
-		034ECA7B23F87FAE006944DD /* GroupeCompteViewDragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC92123F87FAB006944DD /* GroupeCompteViewDragDrop.swift */; };
-		034ECB5D23F87FAF006944DD /* GroupeCompteViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECA7423F87FAE006944DD /* GroupeCompteViewDataSource.swift */; };
-		034ECB5E23F87FAF006944DD /* GroupeCompteTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECA7523F87FAE006944DD /* GroupeCompteTableCellView.swift */; };
+		034ECA7A23F87FAE006944DD /* GroupeAccountViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC92023F87FAB006944DD /* GroupeAccountViewDelegate.swift */; };
+		034ECA7B23F87FAE006944DD /* GroupeAccountViewDragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC92123F87FAB006944DD /* GroupeAccountViewDragDrop.swift */; };
+		034ECB5D23F87FAF006944DD /* GroupeAccountViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECA7423F87FAE006944DD /* GroupeAccountViewDataSource.swift */; };
+		034ECB5E23F87FAF006944DD /* GroupeAccountTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECA7523F87FAE006944DD /* GroupeAccountTableCellView.swift */; };
 		034ECB5F23F87FAF006944DD /* CurtainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECA7623F87FAE006944DD /* CurtainViewController.swift */; };
 		034ECB6723F88033006944DD /* PopOverModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6223F88032006944DD /* PopOverModalViewController.swift */; };
 		034ECB6823F88033006944DD /* KSRetailCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6323F88032006944DD /* KSRetailCollectionViewItem.swift */; };
 		034ECB6923F88033006944DD /* PopOverModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034ECB6423F88032006944DD /* PopOverModalViewController.xib */; };
 		034ECB6A23F88033006944DD /* KSRetailCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034ECB6523F88033006944DD /* KSRetailCollectionViewItem.xib */; };
 		034ECB6B23F88033006944DD /* KSBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6623F88033006944DD /* KSBackgroundView.swift */; };
-		034ECB7023F88044006944DD /* CompteModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034ECB6C23F88043006944DD /* CompteModalWindowController.xib */; };
+		034ECB7023F88044006944DD /* AccountModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034ECB6C23F88043006944DD /* AccountModalWindowController.xib */; };
 		034ECB7123F88044006944DD /* GroupModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034ECB6D23F88044006944DD /* GroupModalWindowController.xib */; };
 		034ECB7223F88044006944DD /* GroupModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6E23F88044006944DD /* GroupModalWindowController.swift */; };
-		034ECB7323F88044006944DD /* CompteModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6F23F88044006944DD /* CompteModalWindowController.swift */; };
+		034ECB7323F88044006944DD /* AccountModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6F23F88044006944DD /* AccountModalWindowController.swift */; };
 		035082E624028F0400F8A0D4 /* ListeOperationsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035082E824028F0400F8A0D4 /* ListeOperationsController.xib */; };
 		035115CA241FF2DE001AF54B /* Pegase.png in Resources */ = {isa = PBXBuildFile; fileRef = 035115C9241FF2DE001AF54B /* Pegase.png */; };
 		036AF0A624260445008C6564 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036AF0A524260445008C6564 /* AvatarView.swift */; };
@@ -583,22 +583,22 @@
 		034EC90A23F87F51006944DD /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		034EC91723F87F7D006944DD /* AccessibilityImageDescriptions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = AccessibilityImageDescriptions.strings; sourceTree = "<group>"; };
 		034EC91823F87F7D006944DD /* Localizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
-		034EC91E23F87FAB006944DD /* GroupeCompteViewAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeCompteViewAction.swift; sourceTree = "<group>"; };
+		034EC91E23F87FAB006944DD /* GroupeAccountViewAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeAccountViewAction.swift; sourceTree = "<group>"; };
 		034EC91F23F87FAB006944DD /* GroupeAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeAccountViewController.swift; sourceTree = "<group>"; };
-		034EC92023F87FAB006944DD /* GroupeCompteViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeCompteViewDelegate.swift; sourceTree = "<group>"; };
-		034EC92123F87FAB006944DD /* GroupeCompteViewDragDrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeCompteViewDragDrop.swift; sourceTree = "<group>"; };
-		034ECA7423F87FAE006944DD /* GroupeCompteViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeCompteViewDataSource.swift; sourceTree = "<group>"; };
-		034ECA7523F87FAE006944DD /* GroupeCompteTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeCompteTableCellView.swift; sourceTree = "<group>"; };
+		034EC92023F87FAB006944DD /* GroupeAccountViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeAccountViewDelegate.swift; sourceTree = "<group>"; };
+		034EC92123F87FAB006944DD /* GroupeAccountViewDragDrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeAccountViewDragDrop.swift; sourceTree = "<group>"; };
+		034ECA7423F87FAE006944DD /* GroupeAccountViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeAccountViewDataSource.swift; sourceTree = "<group>"; };
+		034ECA7523F87FAE006944DD /* GroupeAccountTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupeAccountTableCellView.swift; sourceTree = "<group>"; };
 		034ECA7623F87FAE006944DD /* CurtainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurtainViewController.swift; sourceTree = "<group>"; };
 		034ECB6223F88032006944DD /* PopOverModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverModalViewController.swift; sourceTree = "<group>"; };
 		034ECB6323F88032006944DD /* KSRetailCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSRetailCollectionViewItem.swift; sourceTree = "<group>"; };
 		034ECB6423F88032006944DD /* PopOverModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopOverModalViewController.xib; sourceTree = "<group>"; };
 		034ECB6523F88033006944DD /* KSRetailCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSRetailCollectionViewItem.xib; sourceTree = "<group>"; };
 		034ECB6623F88033006944DD /* KSBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSBackgroundView.swift; sourceTree = "<group>"; };
-		034ECB6C23F88043006944DD /* CompteModalWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompteModalWindowController.xib; sourceTree = "<group>"; };
+		034ECB6C23F88043006944DD /* AccountModalWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountModalWindowController.xib; sourceTree = "<group>"; };
 		034ECB6D23F88044006944DD /* GroupModalWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupModalWindowController.xib; sourceTree = "<group>"; };
 		034ECB6E23F88044006944DD /* GroupModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupModalWindowController.swift; sourceTree = "<group>"; };
-		034ECB6F23F88044006944DD /* CompteModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompteModalWindowController.swift; sourceTree = "<group>"; };
+		034ECB6F23F88044006944DD /* AccountModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountModalWindowController.swift; sourceTree = "<group>"; };
 		035082E724028F0400F8A0D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ListeOperationsController.xib; sourceTree = "<group>"; };
 		035082F524028F0700F8A0D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
 		035082F724028F0800F8A0D4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
@@ -1232,28 +1232,28 @@
 			children = (
 				034ECA7623F87FAE006944DD /* CurtainViewController.swift */,
 				03213C7D23F931BC00002DD7 /* CurtainViewController.xib */,
-				034ECA7523F87FAE006944DD /* GroupeCompteTableCellView.swift */,
-				034EC91E23F87FAB006944DD /* GroupeCompteViewAction.swift */,
+				034ECA7523F87FAE006944DD /* GroupeAccountTableCellView.swift */,
+				034EC91E23F87FAB006944DD /* GroupeAccountViewAction.swift */,
 				034EC91F23F87FAB006944DD /* GroupeAccountViewController.swift */,
 				03213C9423F931DC00002DD7 /* GroupeAccountViewController.xib */,
-				034ECA7423F87FAE006944DD /* GroupeCompteViewDataSource.swift */,
-				034EC92023F87FAB006944DD /* GroupeCompteViewDelegate.swift */,
-				034EC92123F87FAB006944DD /* GroupeCompteViewDragDrop.swift */,
-				034ECB6023F87FFD006944DD /* ModalCompteGroup */,
+				034ECA7423F87FAE006944DD /* GroupeAccountViewDataSource.swift */,
+				034EC92023F87FAB006944DD /* GroupeAccountViewDelegate.swift */,
+				034EC92123F87FAB006944DD /* GroupeAccountViewDragDrop.swift */,
+				034ECB6023F87FFD006944DD /* ModalAccountGroup */,
 				034ECB6123F88011006944DD /* PopUp */,
 			);
 			name = GroupeAccount;
 			sourceTree = "<group>";
 		};
-		034ECB6023F87FFD006944DD /* ModalCompteGroup */ = {
+		034ECB6023F87FFD006944DD /* ModalAccountGroup */ = {
 			isa = PBXGroup;
 			children = (
-				034ECB6F23F88044006944DD /* CompteModalWindowController.swift */,
-				034ECB6C23F88043006944DD /* CompteModalWindowController.xib */,
+				034ECB6F23F88044006944DD /* AccountModalWindowController.swift */,
+				034ECB6C23F88043006944DD /* AccountModalWindowController.xib */,
 				034ECB6E23F88044006944DD /* GroupModalWindowController.swift */,
 				034ECB6D23F88044006944DD /* GroupModalWindowController.xib */,
 			);
-			name = ModalCompteGroup;
+			name = ModalAccountGroup;
 			sourceTree = "<group>";
 		};
 		034ECB6123F88011006944DD /* PopUp */ = {
@@ -1495,7 +1495,7 @@
 				03213C2123F90C1B00002DD7 /* RubriqueModalWindowController.xib in Resources */,
 				03213CD423F977DD00002DD7 /* AccountViewController.xib in Resources */,
 				03213BA323F9093700002DD7 /* SplashScreenRecentDocumentView.xib in Resources */,
-				034ECB7023F88044006944DD /* CompteModalWindowController.xib in Resources */,
+				034ECB7023F88044006944DD /* AccountModalWindowController.xib in Resources */,
 				03213CBE23F9327400002DD7 /* ModeModalWindowController.xib in Resources */,
 				03213C1623F90C0E00002DD7 /* ComboColorWellImages.xcassets in Resources */,
 				03213C2923F90C3300002DD7 /* ChequiersViewController.xib in Resources */,
@@ -1607,7 +1607,7 @@
 				034EC8BD23F87E97006944DD /* NSPredicateEditorRowTemplate.swift in Sources */,
 				03213B1623F9048D00002DD7 /* CSVWriter.swift in Sources */,
 				03213B3423F9050000002DD7 /* ListeOperationsController.swift in Sources */,
-				034ECB5D23F87FAF006944DD /* GroupeCompteViewDataSource.swift in Sources */,
+				034ECB5D23F87FAF006944DD /* GroupeAccountViewDataSource.swift in Sources */,
 				03213B0A23F9048200002DD7 /* ImportWindowControllerExtension.swift in Sources */,
 				03213B1423F9048D00002DD7 /* CSVParserDelegate.swift in Sources */,
 				03213B7D23F9082600002DD7 /* CategoryBarController1.swift in Sources */,
@@ -1646,7 +1646,7 @@
 				03213B3123F9050000002DD7 /* ListeOperationsMenuDelegate.swift in Sources */,
 				03213C2023F90C1B00002DD7 /* RubriqueModalWindowController.swift in Sources */,
 				03213BF923F90B9A00002DD7 /* ModeModalWindowController.swift in Sources */,
-				034ECA7A23F87FAE006944DD /* GroupeCompteViewDelegate.swift in Sources */,
+				034ECA7A23F87FAE006944DD /* GroupeAccountViewDelegate.swift in Sources */,
 				03213B0C23F9048200002DD7 /* ImportWindowController.swift in Sources */,
 				03213B7E23F9082600002DD7 /* CategoryBarController.swift in Sources */,
 				034EC8E523F87EDB006944DD /* EntityCategory+CoreDataProperties.swift in Sources */,
@@ -1654,7 +1654,7 @@
 				03213BA223F9093700002DD7 /* SplashScreenWindowController.swift in Sources */,
 				03213BA623F9098800002DD7 /* CSwiftV.swift in Sources */,
 				03213C1823F90C0E00002DD7 /* MouseTracker.swift in Sources */,
-				034ECA7823F87FAE006944DD /* GroupeCompteViewAction.swift in Sources */,
+				034ECA7823F87FAE006944DD /* GroupeAccountViewAction.swift in Sources */,
 				034EC8E323F87EDB006944DD /* EntityOperations+CoreDataClass.swift in Sources */,
 				03213B0723F9048200002DD7 /* ImportWindowControllerParserDelegate.swift in Sources */,
 				03213B1E23F904D600002DD7 /* RectMarker.swift in Sources */,
@@ -1698,7 +1698,7 @@
 				034ECB6723F88033006944DD /* PopOverModalViewController.swift in Sources */,
 				034EC8E823F87EDB006944DD /* EntityRubrique+CoreDataClass.swift in Sources */,
 				03213C1923F90C0E00002DD7 /* ComboColorWell.swift in Sources */,
-				034ECB5E23F87FAF006944DD /* GroupeCompteTableCellView.swift in Sources */,
+				034ECB5E23F87FAF006944DD /* GroupeAccountTableCellView.swift in Sources */,
 				03213B1523F9048D00002DD7 /* CSVConfig.swift in Sources */,
 				03213C1723F90C0E00002DD7 /* ColorView.swift in Sources */,
 				036AF0A82426044E008C6564 /* AvatarInfo.swift in Sources */,
@@ -1712,12 +1712,12 @@
 				034EC8CF23F87EB2006944DD /* MainWindowDelegate.swift in Sources */,
 				03213B5723F9058800002DD7 /* SuggestionsWindow.swift in Sources */,
 				03213B4223F9053A00002DD7 /* OperationViewControllerAction.swift in Sources */,
-				034ECB7323F88044006944DD /* CompteModalWindowController.swift in Sources */,
+				034ECB7323F88044006944DD /* AccountModalWindowController.swift in Sources */,
 				034ECB7223F88044006944DD /* GroupModalWindowController.swift in Sources */,
 				03213C2623F90C3300002DD7 /* ChequiersViewController.swift in Sources */,
 				03213C2823F90C3300002DD7 /* ChequierModalWindowController.swift in Sources */,
 				03213B9223F9089300002DD7 /* NVDate.swift in Sources */,
-				034ECA7B23F87FAE006944DD /* GroupeCompteViewDragDrop.swift in Sources */,
+				034ECA7B23F87FAE006944DD /* GroupeAccountViewDragDrop.swift in Sources */,
 				03213C1323F90C0E00002DD7 /* ComboColorWellCell.swift in Sources */,
 				034EC8FB23F87EF1006944DD /* Cheques.swift in Sources */,
 				034EC8F523F87EF1006944DD /* Rubrique.swift in Sources */,
