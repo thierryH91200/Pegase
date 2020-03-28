@@ -7,10 +7,10 @@ extension OperationViewController {
     func loadAccount () {
         let  transfertMenu = NSMenu()
         
-        let comptes = Account.shared.getAll()
-        for compte in comptes where compte.isAccount == true
+        let accounts = Account.shared.getAll()
+        for account in accounts where account.isAccount == true
         {
-            transfertMenu.addItem(compteItemFor(compte) )
+            transfertMenu.addItem(accountItemFor(account) )
         }
         var items = transfertMenu.items
         items.sort(by: { $0.title < $1.title })
@@ -21,7 +21,7 @@ extension OperationViewController {
         popUpTransfert.menu = transfertMenu
     }
     
-    fileprivate func compteItemFor(_ value: EntityAccount) -> NSMenuItem {
+    fileprivate func accountItemFor(_ value: EntityAccount) -> NSMenuItem {
         var title = value.initCompte?.codeCompte ?? "----"
         let menuItem = NSMenuItem()
         
@@ -32,14 +32,14 @@ extension OperationViewController {
             menuItem.representedObject = value
         }
         menuItem.title = title
-        menuItem.action = #selector(optionCompte(menuItem:))
+        menuItem.action = #selector(optionAccount(menuItem:))
         menuItem.target = self
         menuItem.keyEquivalent = ""
         menuItem.isEnabled = true
         return menuItem
     }
     
-    @objc func optionCompte( menuItem: NSMenuItem)
+    @objc func optionAccount( menuItem: NSMenuItem)
     {
         let selectItem = popUpTransfert.selectedItem
         let account = selectItem?.representedObject as? EntityAccount

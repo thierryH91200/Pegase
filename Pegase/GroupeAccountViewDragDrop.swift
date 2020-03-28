@@ -104,7 +104,7 @@ extension GroupeAccountViewController: NSPasteboardItemDataProvider {
             result = .generic
         } else {
             
-            let entityCompte = item as? EntityAccount
+            let entityAccount = item as? EntityAccount
             if draggedNodes != nil {
                 
                 let parent = draggedNodes![0].parent
@@ -114,9 +114,9 @@ extension GroupeAccountViewController: NSPasteboardItemDataProvider {
                     result =  NSDragOperation()
                 }
                 
-                if entityCompte?.isHeader == true {
+                if entityAccount?.isHeader == true {
                     result = .every
-                } else if entityCompte == rootSourceListItem && index != -1 {
+                } else if entityAccount == rootSourceListItem && index != -1 {
                     result =  .move
                 } else {
                     print("result =  NSDragOperation()")

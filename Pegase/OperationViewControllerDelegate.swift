@@ -232,7 +232,7 @@ extension OperationViewController: ListeOperationsDelegate {
         if setTransfert.count > 1 && popUpTransfert.itemTitle(at: 0) != Localizations.Operation.MultipleValue {
 
             let menuItemMultiplevalue = getMenuItemMultiplevalue()
-            menuItemMultiplevalue.action = #selector(optionCompte(menuItem:))
+            menuItemMultiplevalue.action = #selector(optionAccount(menuItem:))
             
             popUpTransfert.menu?.insertItem(menuItemMultiplevalue, at: 0)
             popUpTransfert.selectItem(at: 0)

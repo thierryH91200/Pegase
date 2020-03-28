@@ -116,8 +116,8 @@ class RangeSlider: NSView {
     }
     
     func createBarFillGradientBasedOnCurrentStyle() -> NSGradient {
-        var fillStart: NSColor? = nil
-        var fillEnd: NSColor? = nil
+        var fillStart: NSColor?
+        var fillEnd: NSColor?
         
         if colorStyle == .yellow {
             fillStart = NSColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)

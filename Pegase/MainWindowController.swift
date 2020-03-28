@@ -37,7 +37,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
             PersonViewController()
         ]
     )
-    var rateWindowController: RateWindowController? = nil
+    var rateWindowController: RateWindowController?
 
     @IBOutlet weak var operationView: NSView!
     @IBOutlet weak var tableTargetView: NSView!

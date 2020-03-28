@@ -19,14 +19,14 @@ extension GroupeAccountViewController: NSOutlineViewDelegate {
     }
     
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
-        let entityCompte = item as! EntityAccount
+        let entityAccount = item as! EntityAccount
         
-        if entityCompte.isHeader == true {
+        if entityAccount.isHeader == true {
             let view = outlineView.makeView(withIdentifier: .HeaderCell, owner: self) as! SourceListCellView
             
-            view.textField?.stringValue = entityCompte.name!
+            view.textField?.stringValue = entityAccount.name!
             
-            let count = entityCompte.children?.count ?? 0
+            let count = entityAccount.children?.count ?? 0
             var num = ""
             switch count {
             case 0:
@@ -40,7 +40,7 @@ extension GroupeAccountViewController: NSOutlineViewDelegate {
             
             var total = 0.0
             
-            let childrens = entityCompte.children
+            let childrens = entityAccount.children
             for children in childrens! {
                 let child = children as! EntityAccount
                 total += child.solde
@@ -55,37 +55,37 @@ extension GroupeAccountViewController: NSOutlineViewDelegate {
             return view
         }
         
-        if entityCompte.isFolder == true
+        if entityAccount.isFolder == true
         {
             let view = outlineView.makeView(withIdentifier: .FolderCell, owner: self) as! NSTableCellView
-            view.textField?.stringValue = entityCompte.name!
+            view.textField?.stringValue = entityAccount.name!
             return view
         }
         
-        if entityCompte.isAccount == true
+        if entityAccount.isAccount == true
         {
             let view = outlineView.makeView(withIdentifier: .AccountCell, owner: self) as! CompteListCellView
-            let name = entityCompte.name ?? "vide"
+            let name = entityAccount.name ?? "vide"
             view.textField?.stringValue = name
             
-            let titulaireNom = entityCompte.identite?.idName ?? ""
-            let titulairePrenom = entityCompte.identite?.idPrenom ?? ""
+            let titulaireNom = entityAccount.identite?.idName ?? ""
+            let titulairePrenom = entityAccount.identite?.idPrenom ?? ""
             let titulaire = titulairePrenom + " " + titulaireNom
             view.titulaire.stringValue = titulaire
             
-            let numCompte = entityCompte.initCompte?.codeCompte
+            let numCompte = entityAccount.initCompte?.codeCompte
             view.numCompte.stringValue = numCompte ?? ""
             
-            let nameImage = entityCompte.nameImage!
+            let nameImage = entityAccount.nameImage!
             
             let image = NSImage(named: nameImage)
             image?.isTemplate = true
             view.imageView?.image =  image
             
-            let formattedInLine = formatter.string(from: entityCompte.solde as NSNumber)!
+            let formattedInLine = formatter.string(from: entityAccount.solde as NSNumber)!
             view.inLine.title = formattedInLine
             view.inLine.wantsLayer = true
-            view.inLine.layer?.backgroundColor = entityCompte.solde >= 0 ? NSColor.green.cgColor : NSColor.red.cgColor
+            view.inLine.layer?.backgroundColor = entityAccount.solde >= 0 ? NSColor.green.cgColor : NSColor.red.cgColor
             view.inLine.layer?.cornerRadius = 7
             return view
         }

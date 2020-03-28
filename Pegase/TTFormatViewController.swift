@@ -144,14 +144,14 @@ final class TTFormatViewController: NSViewController {
         
         menuItem.representedObject = account
         menuItem.title = codeCompte!
-        menuItem.action = #selector(optionCompte(sender:))
+        menuItem.action = #selector(optionAccount(sender:))
         menuItem.target = self
         menuItem.keyEquivalent = ""
         menuItem.isEnabled = true
         return menuItem
     }
     
-    @objc func optionCompte( sender: NSMenuItem)
+    @objc func optionAccount( sender: NSMenuItem)
     {
         let selectItem = popUpCompte.selectedItem
         let compte = selectItem?.representedObject as? EntityAccount

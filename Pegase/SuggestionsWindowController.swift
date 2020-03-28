@@ -168,7 +168,7 @@ final class SuggestionsWindowController: NSWindowController {
         
         guard (window?.isVisible)! else { return nil }
         
-        var suggestion: [String: String]? = nil
+        var suggestion: [String: String]?
         // Find the currently selected view's controller (if there is one) and return the representedObject which is the NSMutableDictionary that was passed in via -setSuggestions:
         let selectedView: NSView? = self.selectedView
         for viewController: NSViewController in viewControllers where selectedView == viewController.view {
@@ -186,7 +186,7 @@ final class SuggestionsWindowController: NSWindowController {
      */
     func trackingArea(for view: NSView?) -> Any? {
         // make tracking data (to be stored in NSTrackingArea's userInfo) so we can later determine the imageView without hit testing
-        var trackerData: [AnyHashable: Any]? = nil
+        var trackerData: [AnyHashable: Any]?
         if let aView = view {
             trackerData = [ kTrackerKey: aView ]
         }
@@ -310,7 +310,7 @@ final class SuggestionsWindowController: NSWindowController {
      */
     override func moveUp(_ sender: Any?) {
         let selectedView: NSView? = self.selectedView
-        var previousView: NSView? = nil
+        var previousView: NSView?
         for viewController: NSViewController in viewControllers {
             let view: NSView? = viewController.view
             if view == selectedView {
@@ -326,7 +326,7 @@ final class SuggestionsWindowController: NSWindowController {
      */
     override func moveDown(_ sender: Any?) {
         let selectedView: NSView? = self.selectedView
-        var previousView: NSView? = nil
+        var previousView: NSView?
         for viewController: NSViewController in viewControllers.reversed() {
             let view: NSView? = viewController.view
             if view == selectedView {

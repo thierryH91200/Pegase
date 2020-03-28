@@ -14,14 +14,14 @@ final class ChequiersViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeCompte(_:)))
+        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
         mainContext = mainObjectContext
         
         tableView.rowHeight = 24.0
         updateData()
     }
     
-    @objc func updateChangeCompte(_ note: Notification) {
+    @objc func updateChangeAccount(_ note: Notification) {
         updateData()
     }
     
@@ -52,7 +52,7 @@ final class ChequiersViewController: NSViewController {
                     entityCheck.nbCheques  = self.chequierModalWindowController.numberCheques.intValue
                 
                 case .cancel:
-                    print("Cancel button tapped in Custom addCompte Sheet")
+                    print("Cancel button tapped in Custom addAccont Sheet")
                 
                 default:
                     break

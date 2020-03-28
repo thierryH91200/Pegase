@@ -48,7 +48,7 @@ final class Banque {
 final class InitAccount {
     
     static let shared = InitAccount()
-    var entitiesInitCompte = [EntityInitCompte]()
+    var entitiesInitAccount = [EntityInitCompte]()
     
     func create(numAccount : String = "" ) -> EntityInitCompte {
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitCompte", into: mainObjectContext) as! EntityInitCompte
@@ -79,13 +79,13 @@ final class InitAccount {
             let fetchRequest = NSFetchRequest<EntityInitCompte>(entityName: "EntityInitCompte")
             let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
-            entitiesInitCompte = try mainObjectContext.fetch(fetchRequest)
+            entitiesInitAccount = try mainObjectContext.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")
         }
-        if entitiesInitCompte.first != nil {
-            return entitiesInitCompte.first!
+        if entitiesInitAccount.first != nil {
+            return entitiesInitAccount.first!
         } else {
             return create()
         }
