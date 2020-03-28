@@ -10,7 +10,11 @@ extension NSImage {
         image.lockFocus()
         
         tintColor.set()
-        __NSRectFillUsingOperation(NSMakeRect(0, 0, image.size.width, image.size.height), NSCompositingOperation.sourceAtop)
+        __NSRectFillUsingOperation(NSRect(
+            x: 0,
+            y: 0,
+            width: image.size.width,
+            height: image.size.height), NSCompositingOperation.sourceAtop)
         
         image.unlockFocus()
         image.isTemplate = false

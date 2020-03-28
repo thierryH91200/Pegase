@@ -41,7 +41,7 @@ final class RateWindowController: NSWindowController {
         
         nTimeout = 0
         block = nil
-        let rctWindow = NSMakeRect(0, 0, 210, 306)
+        let rctWindow = NSRect(x: 0, y: 0, width: 210, height: 306)
         let window = NSWindow(contentRect: rctWindow, styleMask: [.titled, .fullSizeContentView], backing: .buffered, defer: true)
         self.window = window
         window.level = .floating
@@ -56,7 +56,12 @@ final class RateWindowController: NSWindowController {
         window.contentView?.addSubview(ivIcon)
         ivIcon.image = configure?.icon
         
-        lbName = NSTextField(frame: NSMakeRect(0, NSMinY(ivIcon.frame) - 40, NSWidth(rctWindow), 30))
+        lbName = NSTextField(frame: NSRect(
+            x: 0,
+            y: ivIcon.frame.minY - 40,
+            width: rctWindow.width,
+            height: 30))
+        
         lbName.isEditable            = false
         lbName.isBezeled             = false
         lbName.isSelectable          = false
@@ -67,7 +72,12 @@ final class RateWindowController: NSWindowController {
         lbName.stringValue           = (configure?.name)!
         window.contentView?.addSubview(lbName)
         
-        lbDetailText = NSTextField(frame: NSMakeRect(35, NSMinY(lbName.frame) - 100, NSWidth(rctWindow) - 70, 90))
+        lbDetailText = NSTextField(frame: NSRect(
+            x: 35,
+            y: NSMinY(lbName.frame) - 100,
+            width: rctWindow.width - 70,
+            height: 90))
+        
         lbDetailText.isEditable      = false
         lbDetailText.isBezeled       = false
         lbDetailText.isSelectable    = false
@@ -78,7 +88,12 @@ final class RateWindowController: NSWindowController {
         lbDetailText.stringValue     = (configure?.detailText)!
         window.contentView?.addSubview(lbDetailText)
         
-        btnLike  = NSButton(frame: NSMakeRect(30, NSMinY(lbDetailText.frame) - 50, NSWidth(rctWindow) - 60, 40))
+        btnLike  = NSButton(frame: NSRect(
+            x: 30,
+            y: lbDetailText.frame.minY - 50,
+            width: rctWindow.width - 60,
+            height: 40))
+        
         btnLike.title               = (configure?.likeButtonTitle)!
         btnLike.bezelStyle           = .rounded
         btnLike.font                 = NSFont(name: "HelveticaNeue", size: 15)
@@ -87,7 +102,11 @@ final class RateWindowController: NSWindowController {
         btnLike.action               = #selector(self.likeButton_click(_ :))
         window.contentView?.addSubview(btnLike)
         
-        btnIgnore = NSButton(frame: NSMakeRect(30, NSMinY(btnLike.frame) - 10, NSWidth(rctWindow) - 60, 15))
+        btnIgnore = NSButton(frame: NSRect(
+            x: 30,
+            y: NSMinY(btnLike.frame) - 10,
+            width: rctWindow.width - 60,
+            height: 15))
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
@@ -123,7 +142,7 @@ final class RateWindowController: NSWindowController {
             window?.makeKeyAndOrderFront(nil)
             window?.setFrame(rctTmpWnd, display: false)
             rctWnd.origin.x = rctScreen!.minX + nGap
-            rctWnd.origin.y = rctScreen!.maxY - NSHeight(rctWnd) - nGap
+            rctWnd.origin.y = rctScreen!.maxY - rctWnd.height - nGap
             window?.animator().setFrame(rctWnd, display: true)
         
         case .topRight:

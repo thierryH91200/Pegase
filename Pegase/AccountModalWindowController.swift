@@ -34,11 +34,11 @@ final class AccountModalWindowController: NSWindowController {
         
         let cell1 = gridView.cell(for: horizontal1)!
         cell1.row!.topPadding = 4
-        cell1.row!.mergeCells(in: NSMakeRange(0, 2))
+        cell1.row!.mergeCells(in: NSRange(location: 0, length: 2))
 
         let cell = gridView.cell(for: horizontal2)!
         cell.row!.topPadding = 4
-        cell.row!.mergeCells(in: NSMakeRange(0, 2))
+        cell.row!.mergeCells(in: NSRange(location: 0, length: 2))
 
         mode.isBordered = false //Important
         mode.title = Localizations.Operation.ModeCreation
@@ -52,7 +52,7 @@ final class AccountModalWindowController: NSWindowController {
             nomTitulaire.stringValue = (account.identite?.idName) ?? "empty"
             prenomTitulaire.stringValue = (account.identite?.idPrenom) ?? "empty"
             numCompte.stringValue = (account.initCompte?.codeCompte) ?? "empty"
-            imageView.image? = (NSImage(named: account.nameImage!) ?? nil)!
+            imageView.image? = NSImage(named: account.nameImage!)!
             typeAccount.selectItem(at: Int(account.type))
             
             mode.title = Localizations.Operation.ModeEdition
