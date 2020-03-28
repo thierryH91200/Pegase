@@ -118,21 +118,21 @@ final class RateWindowController: NSWindowController {
         
         switch pos {
         case .topLeft:
-            rctTmpWnd.origin.x = NSMinX(rctScreen!) - NSWidth(rctWnd)
-            rctTmpWnd.origin.y = NSMaxY(rctScreen!) - NSHeight(rctWnd) - CGFloat(nGap)
+            rctTmpWnd.origin.x = rctScreen!.minX - rctWnd.width
+            rctTmpWnd.origin.y = rctScreen!.maxY - rctWnd.height - CGFloat(nGap)
             window?.makeKeyAndOrderFront(nil)
             window?.setFrame(rctTmpWnd, display: false)
-            rctWnd.origin.x = NSMinX(rctScreen!) + nGap
-            rctWnd.origin.y = NSMaxY(rctScreen!) - NSHeight(rctWnd) - nGap
+            rctWnd.origin.x = rctScreen!.minX + nGap
+            rctWnd.origin.y = rctScreen!.maxY - NSHeight(rctWnd) - nGap
             window?.animator().setFrame(rctWnd, display: true)
         
         case .topRight:
-            rctTmpWnd.origin.x = NSMaxX(rctScreen!)
-            rctTmpWnd.origin.y = NSMaxY(rctScreen!) - NSHeight(rctWnd) - nGap
+            rctTmpWnd.origin.x = rctScreen!.maxX
+            rctTmpWnd.origin.y = rctScreen!.maxY - rctWnd.height - nGap
             window?.makeKeyAndOrderFront(nil)
             window?.setFrame(rctTmpWnd, display: false)
-            rctWnd.origin.x = NSMaxX(rctScreen!) - NSWidth(rctWnd) - nGap
-            rctWnd.origin.y = NSMaxY(rctScreen!) - NSHeight(rctWnd) - nGap
+            rctWnd.origin.x = rctScreen!.maxX - rctWnd.width - nGap
+            rctWnd.origin.y = rctScreen!.maxY - rctWnd.height - nGap
             window?.animator().setFrame(rctWnd, display: true)
         
         case .center:

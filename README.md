@@ -4,6 +4,7 @@ Pegase
 <p align="center">
 <img src="https://img.shields.io/badge/Swift-5.0-orange.svg" />
 <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
+[![CodeFactor](https://www.codefactor.io/repository/github/thierryh91200/pegase/badge)](https://www.codefactor.io/repository/github/thierryh91200/pegase)
 </p>
 
 <p align="center">
@@ -12,8 +13,6 @@ Pegase
 <em></em>
 </p>
 </p>
-
-[![CodeFactor](https://www.codefactor.io/repository/github/thierryh91200/pegase/badge)](https://www.codefactor.io/repository/github/thierryh91200/pegase)
 
 
 # Personal account software

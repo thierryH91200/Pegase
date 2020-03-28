@@ -282,7 +282,7 @@ final class MyPrintViewOutline: NSView
                     
                     horizontalOffset += self.widthQuotient * columnWidth
                     
-                    let stringRect = NSInsetRect(rect, inset, inset)
+                    let stringRect = rect.insetBy ( dx: inset, dy: inset)
                     valueAsStr.draw(in: stringRect, withAttributes: attributes)
                     
                     if ofx == 16 {
