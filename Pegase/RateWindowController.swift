@@ -74,7 +74,7 @@ final class RateWindowController: NSWindowController {
         
         lbDetailText = NSTextField(frame: NSRect(
             x: 35,
-            y: NSMinY(lbName.frame) - 100,
+            y: lbName.frame.minY - 100,
             width: rctWindow.width - 70,
             height: 90))
         
@@ -104,7 +104,7 @@ final class RateWindowController: NSWindowController {
         
         btnIgnore = NSButton(frame: NSRect(
             x: 30,
-            y: NSMinY(btnLike.frame) - 10,
+            y: btnLike.frame.minY - 10,
             width: rctWindow.width - 60,
             height: 15))
         

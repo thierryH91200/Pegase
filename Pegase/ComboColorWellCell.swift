@@ -203,8 +203,8 @@ class ComboColorWellCell: NSActionCell {
                 }
             }
         }
-        
-        #imageLiteral(resourceName: "ColorWheel").draw(in: NSInsetRect(buttonArea(withFrame: cellFrame, smoothed: true), imageInset, imageInset))
+        let rectIm = buttonArea(withFrame: cellFrame, smoothed: true)
+        #imageLiteral(resourceName: "ColorWheel").draw(in: rectIm.insetBy(dx: imageInset, dy: imageInset))
         
         // clip to fill the color area
         NSBezierPath.clip(colorArea(withFrame: cellFrame))
@@ -371,7 +371,7 @@ class ComboColorWellCell: NSActionCell {
      Get the rect of the control that displays the selected color.
      */
     private func colorArea(withFrame cellFrame: NSRect, smoothed: Bool = false) -> NSRect {
-        var rect = smoothed ? NSInsetRect(cellFrame, 0.5, 0.5) : cellFrame
+        var rect = smoothed ?cellFrame.insetBy(dx: 0.5, dy: 0.5) : cellFrame
         rect.size.width -= rect.size.height
         return rect
     }
@@ -380,7 +380,7 @@ class ComboColorWellCell: NSActionCell {
      Get the rect of the control that displays the color panel button.
      */
     private func buttonArea(withFrame cellFrame: NSRect, smoothed: Bool = false) -> NSRect {
-        var rect = smoothed ? NSInsetRect(cellFrame, 0.5, 0.5) : cellFrame
+        var rect = smoothed ? cellFrame.insetBy(dx: 0.5, dy: 0.5) : cellFrame
         rect.origin.x += (rect.width - rect.height)
         rect.size.width = rect.height
         return rect
