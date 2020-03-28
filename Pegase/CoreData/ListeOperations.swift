@@ -67,7 +67,7 @@ final class ListeOperations {
     }
     
     func adjustDate () {
-        guard entities.count > 0 else {return}
+        guard entities.isEmpty == false else {return}
         let diffDate = (entities.first?.dateOperation!.timeIntervalSinceNow)!
         for entityOperation in entities {
             entityOperation.datePointage  = (entityOperation.datePointage!  - diffDate).noon

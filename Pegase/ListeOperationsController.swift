@@ -273,7 +273,7 @@ final class ListeOperationsController: NSViewController {
         let rowView = outlineView.rowView(atRow: selectRow, makeIfNecessary: false)
         rowView?.isEmphasized = true
         
-        if selectedRow.count > 0 {
+        if selectedRow.isEmpty == false {
             
             self.removeButton.isHidden = false
             var operationsSelected = [EntityOperations]()
@@ -385,7 +385,7 @@ final class ListeOperationsController: NSViewController {
     
     @IBAction func removeOperation(_ sender: Any) {
         let selectedRow = outlineListView.selectedRowIndexes
-        guard selectedRow.count > 0 else { return }
+        guard selectedRow.isEmpty == false else { return }
         
         for (_, index) in selectedRow.enumerated() {
             let item = outlineListView.item(atRow: index) as? IdOperations

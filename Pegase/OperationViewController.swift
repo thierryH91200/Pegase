@@ -182,13 +182,13 @@ final class OperationViewController: NSViewController {
     
     func setDataCount()
     {
-        guard dataRubriquePie.count != 0  else {
+        guard dataRubriquePie.isEmpty == false else {
             pieChartView.data = nil
             pieChartView.data?.notifyDataChanged()
             pieChartView.notifyDataSetChanged()
             return }
         
-        self.addView.isHidden = groupedBonds.count > 0 ? true : false
+        self.addView.isHidden = groupedBonds.isEmpty == false ? true : false
 
         
         // MARK: PieChartDataEntry
