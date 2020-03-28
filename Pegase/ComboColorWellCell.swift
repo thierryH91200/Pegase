@@ -120,7 +120,7 @@ class ComboColorWellCell: NSActionCell {
     override var controlView: NSView? {
         didSet {
             // add a tracking area to let our mouse tracker handle significant events
-            controlView?.addTrackingArea(NSTrackingArea(rect: NSZeroRect,
+            controlView?.addTrackingArea(NSTrackingArea(rect: CGRect.zero,
                                                         options: [.mouseEnteredAndExited,
                                                                   .mouseMoved,
                                                                   .activeInKeyWindow,

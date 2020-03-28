@@ -81,7 +81,7 @@ class ColorGridView: NSGridView {
     // MARK: - init & overrided functions
     
     init() {
-        super.init(frame: NSZeroRect)
+        super.init(frame: CGRect.zero)
         
         rowSpacing = 1.0
         columnSpacing = 1.0

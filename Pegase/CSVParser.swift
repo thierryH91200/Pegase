@@ -217,7 +217,6 @@ extension CSV {
                         case .inField:
                             // Ignore error
                             fieldBuffer.append(char)
-                            break
                         case .inQuotedField:
                             state = .maybeEndOfQuotedField
                         default:

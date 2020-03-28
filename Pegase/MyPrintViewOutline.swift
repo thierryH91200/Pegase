@@ -186,7 +186,8 @@ final class MyPrintViewOutline: NSView
         bezierPath.stroke()
         bezierPath.close()
         
-        let stringRect = NSInsetRect(rect, inset, inset)
+//        let stringRect = NSInsetRect(rect, inset, inset)
+        let stringRect = rect.insetBy ( dx: inset, dy: inset)
         valueAsStr.draw(in: stringRect, withAttributes: attributes)
         
         return horizontalOffset
@@ -220,7 +221,8 @@ final class MyPrintViewOutline: NSView
             bezierPath.close()
             
             let columnTitle = column.title
-            columnTitle.draw(in: NSInsetRect(headerRect, inset, inset), withAttributes: attributes)
+            let stringRect = headerRect.insetBy ( dx: inset, dy: inset)
+            columnTitle.draw(in: stringRect, withAttributes: attributes)
         }
 
     }

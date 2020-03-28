@@ -75,7 +75,7 @@ extension CSV {
             
             let scanner = Scanner(string: string)
             
-            var firstLine: NSString? = nil
+            var firstLine: NSString?
             scanner.scanUpToCharacters(from: CharacterSet.newlines, into: &firstLine)
             
             guard let header = firstLine else {

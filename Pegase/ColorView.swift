@@ -32,7 +32,7 @@ class ColorView: NSView {
     init(color: NSColor, in colorGridView: ColorGridView) {
         self.color = color
         self.colorGridView = colorGridView
-        super.init(frame: NSZeroRect) // NSRect(origin: NSPoint(x: 0, y: 0), size: NSSize(width: 50, height: 30)))
+        super.init(frame: CGRect.zero) // NSRect(origin: NSPoint(x: 0, y: 0), size: NSSize(width: 50, height: 30)))
     }
     
     required init?(coder decoder: NSCoder) {

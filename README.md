@@ -13,6 +13,8 @@ Pegase
 </p>
 </p>
 
+[![CodeFactor](https://www.codefactor.io/repository/github/thierryh91200/pegase/badge)](https://www.codefactor.io/repository/github/thierryh91200/pegase)
+
 
 # Personal account software
 
