@@ -19,7 +19,7 @@ final class Preference {
             print("Error fetching data from CoreData")
         }
         
-        if entityPreference.count == 0 {
+        if entityPreference.isEmpty == true {
             
             let entityPreference = EntityPreference(context: mainObjectContext)
             

@@ -111,7 +111,7 @@ extension OperationViewController  {
                 print("Document 🗑")
                 self.deleteSelection()
                 
-                if self.sousOperations.count == 0 {
+                if self.sousOperations.isEmpty == true {
                     self.buttonSave.isEnabled = false
                 }
                 

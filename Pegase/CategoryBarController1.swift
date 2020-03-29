@@ -214,7 +214,7 @@ final class CategoryBarController1: CommonGraph
         for keyRubric in allRubricKeys {
             for nameRubric in arrayUniqueRubriques {
                 let data = dataRubrique.filter({ $0.section == keyRubric && $0.name == nameRubric.name  })
-                if data.count > 0 {
+                if data.isEmpty == false {
                     let sum = data.map({ $0.value }).reduce(0, +)
                     resultArray.append(DataGraph(section: keyRubric ,name: nameRubric.name, value: sum, color: nameRubric.color))
                 } else {

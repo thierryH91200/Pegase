@@ -43,7 +43,7 @@ extension ListeOperationsController {
         guard (outlineListView) != nil else { return }
         let selectedRowIndexes = outlineListView.selectedRowIndexes
         
-        if selectedRowIndexes.count > 0 {
+        if selectedRowIndexes.isEmpty == false {
             let listItems = listItemsAtIndexes(selectedRowIndexes)
             writeListItems(listItems: listItems)
         }
@@ -59,7 +59,7 @@ extension ListeOperationsController {
         let listItems = listItemsWithStringPasteboardType()
         
         // Only copy/paste if items were inserted.
-        if listItems != nil && listItems!.count > 0 {
+        if listItems != nil && listItems!.isEmpty == false {
             insertListItems(listItems: listItems!)
         }
         
@@ -85,7 +85,7 @@ extension ListeOperationsController {
         guard (outlineListView) != nil else { return }
         
         let selectedRowIndexes = outlineListView.selectedRowIndexes
-        if selectedRowIndexes.count > 0 {
+        if selectedRowIndexes.isEmpty == false {
             let listItems = listItemsAtIndexes(selectedRowIndexes)
             
             writeListItems(listItems: listItems )
@@ -96,7 +96,7 @@ extension ListeOperationsController {
     @IBAction func delete(_ sender: Any) {
         guard (outlineListView) != nil else { return }
         let selectedRowIndexes = outlineListView.selectedRowIndexes
-        if selectedRowIndexes.count > 0 {
+        if selectedRowIndexes.isEmpty == false {
             let listItems = listItemsAtIndexes(selectedRowIndexes)
             
             writeListItems(listItems: listItems )

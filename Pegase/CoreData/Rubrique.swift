@@ -77,8 +77,8 @@ final class Rubric {
                 let predicate = NSPredicate(format: "account == %@", currentAccount!)
                 
                 fetchRequest.predicate = predicate
-                let count  = try mainObjectContext.count(for: fetchRequest)
-                return count == 0 ? true : false
+                let isEmpty  = try mainObjectContext.count(for: fetchRequest)
+                return isEmpty == 0 ? true : false
             } catch {
                 return true
             }
