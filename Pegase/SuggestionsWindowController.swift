@@ -270,7 +270,7 @@ final class SuggestionsWindowController: NSWindowController {
         // Don't forget to account for the extra room needed the rounded corners.
         contentFrame?.size.height = frame.maxY + (contentView?.rcvCornerRadius)!
         
-        var winFrame: NSRect = NSRect(origin: window!.frame.origin, size: window!.frame.size)
+        var winFrame = NSRect(origin: window!.frame.origin, size: window!.frame.size)
         winFrame.origin.y = winFrame.maxY - contentFrame!.height
         winFrame.size.height = contentFrame!.height
         window?.setFrame(winFrame, display: true)
