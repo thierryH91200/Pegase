@@ -36,7 +36,7 @@ final class ModePaiement {
         
         do {
             let searchResults = try mainObjectContext.fetch(fetchRequest)
-            let result = searchResults.count > 0 ? searchResults.first : nil
+            let result = searchResults.isEmpty == false ? searchResults.first : nil
             return result
         } catch {
             print("Error with request: \(error)")
@@ -94,7 +94,7 @@ final class ModePaiement {
     
     func defaultModePaiement()
     {
-        if entitiesModePaiement.count == 0 {
+        if entitiesModePaiement.isEmpty == true {
             let modePaiement1 = EntityModePaiement(context: mainObjectContext)
             modePaiement1.name = Localizations.ModePaiement.Bank_Card
             modePaiement1.color = NSColor.green

@@ -228,7 +228,7 @@ final class CategoryBarController1: CommonGraph
     
     private func setDataCount()
     {
-        guard resultArray.count != 0 else {
+        guard resultArray.isEmpty == false else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()

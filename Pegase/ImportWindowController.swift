@@ -108,7 +108,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             
             /// Date operation
             var headerColumn = itemHeader[1].representedObject as!  [HeaderColumnForMenu]
-            if headerColumn.count > 0 {
+            if headerColumn.isEmpty == false {
                 
                 var dateOperation =  Date().noon
                 let column = headerColumn[0].numCol
@@ -125,7 +125,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             
             /// Date Pointage
             headerColumn = itemHeader[2].representedObject as!  [HeaderColumnForMenu]
-            if headerColumn.count > 0 {
+            if headerColumn.isEmpty == false {
                 
                 var datePointage =  Date().noon
                 let column = headerColumn[0].numCol
@@ -142,7 +142,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             
             /// Statut
             headerColumn = itemHeader[3].representedObject as!  [HeaderColumnForMenu]
-            if headerColumn.count > 0 {
+            if headerColumn.isEmpty == false {
                 let column = headerColumn[0].numCol
                 let statut = data[ column]
                 entityOperation.statut = findStatut(statut: statut)
@@ -152,7 +152,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             
             /// Mode Paiement
             headerColumn = itemHeader[4].representedObject as!  [HeaderColumnForMenu]
-            if headerColumn.count > 0 {
+            if headerColumn.isEmpty == false {
                 let column = headerColumn[0].numCol
                 
                 let label = data[ column]
@@ -169,7 +169,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             
             /// Libelle
             headerColumn = itemHeader[5].representedObject as!  [HeaderColumnForMenu]
-            if headerColumn.count > 0 {
+            if headerColumn.isEmpty == false {
                 
                 let column = headerColumn[0].numCol
                 if  data.count > column {
@@ -183,7 +183,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             
             /// Montant
             headerColumn = itemHeader[6].representedObject as!  [HeaderColumnForMenu]
-            if headerColumn.count > 0 {
+            if headerColumn.isEmpty == false {
                 
                 let colMontant = headerColumn[0].numCol
                 var amountStr = data[ colMontant]
@@ -213,7 +213,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             
             /// Categorie
             headerColumn = itemHeader[8].representedObject as!  [HeaderColumnForMenu]
-            if headerColumn.count > 0 {
+            if headerColumn.isEmpty == false {
                 
                 let colCat = headerColumn[0].numCol
                 let labelCat = data[ colCat]

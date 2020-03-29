@@ -193,7 +193,7 @@ final class IncomeExpenseBarController: CommonGraph {
     
     private func setDataCount()
     {
-        guard resultArrayDepense.count != 0 && resultArrayIncome.count != 0 else {
+        guard resultArrayDepense.isEmpty == false && resultArrayIncome.isEmpty == false else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()

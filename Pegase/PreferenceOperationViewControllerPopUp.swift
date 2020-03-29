@@ -1,4 +1,3 @@
-
 import AppKit
 
 extension PreferenceOperationViewController : NSComboBoxDataSource {

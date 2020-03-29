@@ -228,7 +228,7 @@ extension CSV {
                         case .inField:
                             fallthrough
                         case .inQuotedField:
-                            if fieldBuffer.count > 0 {
+                            if fieldBuffer.isEmpty == false {
                                 // Append to any existing character
                                 fieldBuffer.append(char)
                             }

@@ -129,7 +129,7 @@ final class Document: NSPersistentDocument {
     private func initializeLibraryAndShowMainWindow() {
         let entities = Account.shared.getRoot()
         
-        if entities.count == 0 {
+        if entities.isEmpty == true {
             self.setupForNilLibrary()
         }
     }

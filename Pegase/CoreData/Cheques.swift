@@ -22,7 +22,7 @@ final class CarnetCheques {
     
     func defaultCarnetCheques()
     {
-        if entities.count == 0 {
+        if entities.isEmpty == true {
             let chequier1 = EntityCarnetCheques(context: mainObjectContext)
             
             chequier1.name = Localizations.ModePaiement.Cheque

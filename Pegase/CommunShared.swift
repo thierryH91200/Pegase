@@ -10,7 +10,7 @@ class Commun
     func addSubview(subView: NSView, toView parentView: NSView)
     {
         let myView = parentView.subviews
-        if myView.count > 0
+        if myView.isEmpty == false
         {
             parentView.replaceSubview(myView[0], with: subView)
         } else

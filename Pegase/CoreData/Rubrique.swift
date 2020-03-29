@@ -35,7 +35,7 @@ final class Rubric {
         
         do {
             let searchResults = try mainObjectContext.fetch(fetchRequest)
-            let result = searchResults.count > 0 ? searchResults.first : nil
+            let result = searchResults.isEmpty == true ? searchResults.first : nil
             return result
         } catch {
             print("Error with request: \(error)")
@@ -84,7 +84,7 @@ final class Rubric {
             }
         }
         
-        if entitiesRubrique.count == 0 {
+        if entitiesRubrique.isEmpty == true {
             var content = ""
             do {
                 let url = Bundle.main.url(forResource: "rubrique", withExtension: "csv")
@@ -115,7 +115,7 @@ final class Rubric {
                         }
                     }
                     
-                    if entitiesRubrique.count == 0 {
+                    if entitiesRubrique.isEmpty == true {
                         
                         let entityRubrique = EntityRubrique(context: mainObjectContext)
                         entityRubrique.name = key["rubrique"]
