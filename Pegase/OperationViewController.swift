@@ -295,7 +295,7 @@ final class OperationViewController: NSViewController {
                 oneOperation.statut = statut
             }
             
-            // Operation Liée
+            // Operation Link
             if (setTransfert.isEmpty == false && popUpTransfert.indexOfSelectedItem != 0)  {
                 createOperationLiee(oneOperation: oneOperation)
             }
