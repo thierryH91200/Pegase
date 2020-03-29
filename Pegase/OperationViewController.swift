@@ -340,6 +340,7 @@ final class OperationViewController: NSViewController {
         let entityModePaiement = ModePaiement.shared.findOrCreate(account: compteTransfert, name: name!, color: color as! NSColor, uuid: uuid!)
         entityOperationsTransfert?.modePaiement  = entityModePaiement
         
+        
         entityOperationsTransfert?.statut        = oneOperation.statut
         entityOperationsTransfert?.releveBancaire  = oneOperation.releveBancaire
         
