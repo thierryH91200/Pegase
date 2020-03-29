@@ -203,7 +203,7 @@ final class RubricPieController: NSViewController
     
     private func setDataCount1()
     {
-        guard resultArrayD.count != 0  else {
+        guard resultArrayD.isEmpty == false  else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
@@ -241,7 +241,7 @@ final class RubricPieController: NSViewController
     
     private func setDataCount2()
     {
-        guard resultArrayR.count != 0  else {
+        guard resultArrayR.isEmpty == false  else {
             chartView2.data = nil
             chartView2.data?.notifyDataChanged()
             chartView2.notifyDataSetChanged()
