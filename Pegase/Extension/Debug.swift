@@ -1,9 +1,6 @@
-
-
 import AppKit
 
-
-// just for the debug à enlever plus tard
+// just for the debug
 extension NSView {
     
     /// ![Swift Logo](/Users/Stuart/Downloads/swift.png "The logo for the Swift programming language")

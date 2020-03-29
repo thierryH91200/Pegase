@@ -247,6 +247,7 @@ final class RubricPieController: NSViewController
             chartView2.notifyDataSetChanged()
             return }
         
+        
         // MARK: PieChartDataEntry
         var colors : [NSColor] = []
         var entries : [PieChartDataEntry] = []

@@ -1,8 +1,7 @@
-
 import AppKit
 
 final class AdvancedFilterViewController: NSViewController {
-    
+
     public weak var delegate: FilterDelegate?
     @IBOutlet weak var predicateEditor: NSPredicateEditor!
     

@@ -215,7 +215,7 @@ final class RubricBarController: CommonGraph
     
     private func setDataCount() {
         
-        guard dataArray.count != 0 else {
+        guard dataArray.isEmpty == false else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()

@@ -1,5 +1,4 @@
 
-
 import AppKit
 
 final class MainWindowController: NSWindowController , NSWindowDelegate {
