@@ -31,7 +31,7 @@ extension NSWindow {
         if let toolbar = toolbar {
             if toolbar.isVisible {
                 windowFrame = NSWindow.contentRect(forFrameRect: self.frame, styleMask: self.styleMask)
-                toolbarHeight = NSHeight(windowFrame) - NSHeight((self.contentView?.frame)!)
+                toolbarHeight = windowFrame.height - (self.contentView?.frame.height)!
             }
         }
         return toolbarHeight

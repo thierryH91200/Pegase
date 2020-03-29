@@ -171,7 +171,7 @@ class ComboColorWellCell: NSActionCell {
         NSColor.black.withAlphaComponent(0.25).setStroke()
         
         // give some space to the control rect for anti aliasing
-        let smoothRect = NSInsetRect(cellFrame, 0.5, 0.5)
+        let smoothRect = cellFrame.insetBy(dx: 0.5, dy: 0.5)
         
         // the bezier path defining the control
         let path = NSBezierPath(roundedRect: smoothRect, xRadius: 6.0, yRadius: 6.0)

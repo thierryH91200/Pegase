@@ -173,7 +173,7 @@ extension EcheanciersViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
         
         if edge == .trailing {
-            let deleteAction = NSTableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
+            let deleteAction = NSTableViewRowAction(style: .destructive, title: "Delete") { (_, _) in
                 let quake = self.entityEcheancier[row]
                 Echeanciers.shared.removeEntity(entity: quake )
                 self.updateData()
