@@ -296,7 +296,7 @@ final class OperationViewController: NSViewController {
             }
             
             // Operation Liée
-            if (setTransfert.count >= 0 && popUpTransfert.indexOfSelectedItem != 0)  {
+            if (setTransfert.isEmpty == false && popUpTransfert.indexOfSelectedItem != 0)  {
                 createOperationLiee(oneOperation: oneOperation)
             }
         }
