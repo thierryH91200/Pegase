@@ -47,16 +47,16 @@
 "General.Statut" = "Statut";
 
 // MARK: GroupeCompte
-"GroupeCompte.Account.Menu.Add" = "Add an account";
-"GroupeCompte.Account.Menu.Edit" = "Edit an account";
-"GroupeCompte.Account.Menu.Remove" = "Delete an account";
-"GroupeCompte.Folder.Menu.Add" = "Add folder";
-"GroupeCompte.Folder.Menu.Edit" = "Edit folder";
-"GroupeCompte.Folder.Menu.Remove" = "Remove folder";
-"GroupeCompte.RemoveAlert.Cancel" = "Cancel";
-"GroupeCompte.RemoveAlert.Delete" = "Remove";
-"GroupeCompte.RemoveAlert.InformativeText" = "Are you sure you would like to delete this item ?";
-"GroupeCompte.RemoveAlert.MessageText" = "Supprimer cet élement";
+"GroupeAccount.Account.Menu.Add" = "Add an account";
+"GroupeAccount.Account.Menu.Edit" = "Edit an account";
+"GroupeAccount.Account.Menu.Remove" = "Delete an account";
+"GroupeAccount.Folder.Menu.Add" = "Add folder";
+"GroupeAccount.Folder.Menu.Edit" = "Edit folder";
+"GroupeAccount.Folder.Menu.Remove" = "Remove folder";
+"GroupeAccount.RemoveAlert.Cancel" = "Cancel";
+"GroupeAccount.RemoveAlert.Delete" = "Remove";
+"GroupeAccount.RemoveAlert.InformativeText" = "Are you sure you would like to delete this item ?";
+"GroupeAccount.RemoveAlert.MessageText" = "Supprimer cet élement";
 
 // MARK: ImportSimplifiee
 "ImportSimplifiee.category" = "Category";

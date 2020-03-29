@@ -99,10 +99,10 @@ extension OperationViewController  {
         guard selectRow != -1 else { return }
         
         let alert = NSAlert()
-        alert.messageText = Localizations.GroupeCompte.RemoveAlert.MessageText
-        alert.informativeText = Localizations.GroupeCompte.RemoveAlert.InformativeText
-        alert.addButton(withTitle: Localizations.GroupeCompte.RemoveAlert.Delete)
-        alert.addButton(withTitle: Localizations.GroupeCompte.RemoveAlert.Cancel)
+        alert.messageText = Localizations.GroupeAccount.RemoveAlert.MessageText
+        alert.informativeText = Localizations.GroupeAccount.RemoveAlert.InformativeText
+        alert.addButton(withTitle: Localizations.GroupeAccount.RemoveAlert.Delete)
+        alert.addButton(withTitle: Localizations.GroupeAccount.RemoveAlert.Cancel)
         alert.alertStyle = .informational
         
         alert.beginSheetModal(for: self.outlineViewSSOpe.window!, completionHandler: { (modalResponse) -> Void in

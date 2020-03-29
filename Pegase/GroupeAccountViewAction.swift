@@ -194,10 +194,10 @@ extension GroupeAccountViewController: NSMenuDelegate {
     @IBAction func removeAction(_ sender: Any) {
         
         let alert = NSAlert()
-        alert.messageText = Localizations.GroupeCompte.RemoveAlert.MessageText
-        alert.informativeText = Localizations.GroupeCompte.RemoveAlert.InformativeText
-        alert.addButton(withTitle: Localizations.GroupeCompte.RemoveAlert.Delete)
-        alert.addButton(withTitle: Localizations.GroupeCompte.RemoveAlert.Cancel)
+        alert.messageText = Localizations.GroupeAccount.RemoveAlert.MessageText
+        alert.informativeText = Localizations.GroupeAccount.RemoveAlert.InformativeText
+        alert.addButton(withTitle: Localizations.GroupeAccount.RemoveAlert.Delete)
+        alert.addButton(withTitle: Localizations.GroupeAccount.RemoveAlert.Cancel)
         alert.alertStyle = NSAlert.Style.informational
         
         alert.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
