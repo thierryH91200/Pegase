@@ -55,7 +55,7 @@ final class AutoTextField: NSTextField, NSTextFieldDelegate {
             
             let suggestions = self.suggestions(forText: text!)
             
-            if suggestions.count > 0 {
+            if suggestions.isEmpty == false {
                 let suggestion = suggestions[0]
                 updateFieldEditor(fieldEditor, withSuggestion: suggestion[kSuggestionLabel])
                 suggestionsController?.setSuggestions(suggestions)

@@ -226,7 +226,7 @@ final class SuggestionsWindowController: NSWindowController {
             let view = viewController.view as? HighlightingView
             
             // Make the selectedView the samee as the 0th.
-            if viewControllers.count == 0 {
+            if viewControllers.isEmpty == true {
                 selectedView = view
             }
             // Use the height of set in IB of the prototype view as the heigt for the suggestion view.
