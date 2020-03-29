@@ -5,7 +5,8 @@ final class MyNSTableRowView: NSTableRowView {
     
     override func drawSelection(in dirtyRect: NSRect) {
         if self.selectionHighlightStyle != .none {
-            let selectionRect = NSInsetRect(self.bounds, 2.5, 2.5)
+//            let selectionRect = NSInsetRect(self.bounds, 2.5, 2.5)
+            let selectionRect = self.bounds.insetBy(dx: 2.5, dy: 2.5)
             let colorBack = NSColor.selectedControlColor
             colorBack.setStroke()
             colorBack.setFill()

@@ -57,7 +57,7 @@ final class TTFormatViewController: NSViewController {
         if self.gridView != nil {
             let cell1 = gridView.cell(for: horizontal1)!
             cell1.row!.topPadding = 4
-            cell1.row!.mergeCells(in: NSMakeRange(0, 2))
+            cell1.row!.mergeCells(in: NSRange(location: 0, length: 2))
         }
     }
     

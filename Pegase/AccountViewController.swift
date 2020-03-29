@@ -72,10 +72,10 @@ final class AccountViewController: NSViewController, Preferenceable {
         let shakeAnimation = CAKeyframeAnimation()
         
         let shakePath = CGMutablePath()
-        shakePath.move(to: CGPoint(x: NSMinX(frame), y: NSMinY(frame)))
+        shakePath.move(to: CGPoint(x: frame.minX, y: frame.minY))
         for _ in 1 ... numberOfShakes {
-            shakePath.addLine(to: CGPoint(x: NSMinX(frame) - frame.size.width * vigourOfShake, y: NSMinY(frame)))
-            shakePath.addLine(to: CGPoint(x: NSMinX(frame) + frame.size.width * vigourOfShake, y: NSMinY(frame)))
+            shakePath.addLine(to: CGPoint(x: frame.minX - frame.size.width * vigourOfShake, y: frame.minY))
+            shakePath.addLine(to: CGPoint(x: frame.minX + frame.size.width * vigourOfShake, y: frame.minY))
         }
         shakePath.closeSubpath()
         

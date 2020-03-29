@@ -51,7 +51,11 @@ final class RateWindowController: NSWindowController {
         window.center()
         window.backgroundColor = NSColor.textBackgroundColor
         
-        ivIcon = NSImageView(frame: NSMakeRect((NSWidth(rctWindow) - 64) / 2, NSHeight(rctWindow) - 86, 64, 64))
+        ivIcon = NSImageView(frame: NSRect(
+            x: ( rctWindow.width - 64) / 2,
+            y: rctWindow.height - 86,
+            width: 64,
+            height: 64))
         ivIcon.imageScaling = .scaleAxesIndependently
         window.contentView?.addSubview(ivIcon)
         ivIcon.image = configure?.icon
