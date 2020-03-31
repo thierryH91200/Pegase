@@ -10,12 +10,6 @@ final class IncomeExpenseBarController: CommonGraph {
     @IBOutlet var chartView: BarChartView!
     @IBOutlet weak var splitView: NSSplitView!
     
-//    var sliderViewController: SliderViewHorizontalController?
-//    
-//    var listeOperations = [EntityOperations]()
-//    var firstDate: TimeInterval = 0.0
-//    var lastDate: TimeInterval = 0.0
-
     let hourSeconds = 3600.0 * 24.0 // one day
 
     var startDate = Date()
@@ -28,7 +22,7 @@ final class IncomeExpenseBarController: CommonGraph {
         return _formatter
     }()
     
-    var resultArrayDepense = [DataGraph]()
+    var resultArrayExpense = [DataGraph]()
     var resultArrayIncome = [DataGraph]()
 
     let formatterDate: DateFormatter = {
@@ -163,7 +157,7 @@ final class IncomeExpenseBarController: CommonGraph {
         }
         
         // grouped and sum
-        self.resultArrayDepense.removeAll()
+        self.resultArrayExpense.removeAll()
         self.resultArrayIncome.removeAll()
         var dataArray = [DataGraph]()
         
@@ -180,20 +174,20 @@ final class IncomeExpenseBarController: CommonGraph {
         for key in allKeys {
             var data = dataArray.filter({ $0.name == key && $0.value < 0 })
             var sum = data.map({ $0.value }).reduce(0, +)
-            self.resultArrayDepense.append(DataGraph(name: key, value: sum))
+            self.resultArrayExpense.append(DataGraph(name: key, value: sum))
             
             data = dataArray.filter({ $0.name == key && $0.value >= 0 })
             sum = data.map({ $0.value }).reduce(0, +)
             self.resultArrayIncome.append(DataGraph(name: key, value: sum))
         }
         
-        self.resultArrayDepense = resultArrayDepense.sorted(by: { $0.name < $1.name })
+        self.resultArrayExpense = resultArrayExpense.sorted(by: { $0.name < $1.name })
         self.resultArrayIncome = resultArrayIncome.sorted(by: { $0.name < $1.name })
     }
     
     private func setDataCount()
     {
-        guard resultArrayDepense.isEmpty == false && resultArrayIncome.isEmpty == false else {
+        guard resultArrayExpense.isEmpty == false && resultArrayIncome.isEmpty == false else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
@@ -212,11 +206,11 @@ final class IncomeExpenseBarController: CommonGraph {
         var components = DateComponents()
         var dateString = ""
         
-        for i in 0 ..< resultArrayDepense.count {
-            entriesDepense.append(BarChartDataEntry(x: Double(i), y: abs(resultArrayDepense[i].value)))
+        for i in 0 ..< resultArrayExpense.count {
+            entriesDepense.append(BarChartDataEntry(x: Double(i), y: abs(resultArrayExpense[i].value)))
             entriesRecette.append(BarChartDataEntry(x: Double(i), y: resultArrayIncome[i].value))
             
-            let numericSection = Int(resultArrayDepense[i].name)
+            let numericSection = Int(resultArrayExpense[i].name)
             components.year = numericSection! / 100
             components.month = numericSection! % 100
             
@@ -258,7 +252,7 @@ final class IncomeExpenseBarController: CommonGraph {
         data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(8.0))!)
         data.setValueTextColor(NSColor.black)
         
-        let groupCount = resultArrayDepense.count + 1
+        let groupCount = resultArrayExpense.count + 1
         let startYear = 0
         let endYear = startYear + groupCount
         

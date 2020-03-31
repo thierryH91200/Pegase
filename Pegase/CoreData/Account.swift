@@ -50,13 +50,13 @@ final class Account {
     }
     
     // just for the debug
-    func printAccount(entityCompte: EntityAccount, description: String) {
-        let name = entityCompte.name ?? "nameCompte"
+    func printAccount(entityAccount: EntityAccount, description: String) {
+        let name = entityAccount.name ?? "nameCompte"
         
-        let identite = entityCompte.identite
+        let identite = entityAccount.identite
         let idName = identite?.idName ?? "name"
         let idPrenom = identite?.idPrenom ?? "prenom"
-        let idNumber = entityCompte.initCompte?.codeCompte ?? "codeCompte"
+        let idNumber = entityAccount.initCompte?.codeCompte ?? "codeCompte"
         
         print("\(description) : \(name) \(idName) \(idPrenom) \(idNumber)")
     }

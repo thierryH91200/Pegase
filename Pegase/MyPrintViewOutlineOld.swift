@@ -8,7 +8,7 @@
 
 import AppKit
 
-final class MyPrintViewOutline: NSView
+final class MyPrintViewOutlineOld: NSView
 {
     weak var tableToPrint: NSOutlineView?
     
@@ -42,7 +42,7 @@ final class MyPrintViewOutline: NSView
     
     init(tableView tableToPrint: NSOutlineView?, andHeader header: String?) {
         // Initialize with dummy frame
-        super.init(frame: NSMakeRect(0, 0, 700, 700))
+        super.init(frame: NSRect(x: 0, y: 0, width: 700, height: 700))
         
 //        let jobTitle = fileURL?.lastPathComponent ?? window.textView.printJobTitle
         
@@ -147,20 +147,55 @@ final class MyPrintViewOutline: NSView
         return true
     }
     
-    // This is where the drawing takes place
-    override func draw(_ dirtyRect: NSRect) {
+    func drawHeader(tableCellView : KSHeaderCellView, columnWidth : CGFloat, horizontalOffset : CGFloat, indexPage : Int) -> CGFloat {
         
-        NSBezierPath.defaultLineWidth = 0.1
+        var valueAsStr = ""
+        var horizontalOffset = horizontalOffset
+        let inset = (rowHeight - lineHeight - 1.0) / 2.0
+
+        // draw triangle
+        let rectDis = NSRect( x: leftMargin + horizontalOffset, y: topMargin + rowHeight * CGFloat(indexPage + 1) + 4, width: 8 , height: 8)
         
-        var originalWidth: CGFloat = 0
-        for column in tableToPrint!.tableColumns {
-            originalWidth += column.width
-        }
-        self.widthQuotient = (pageRect.size.width - margin) / originalWidth
+        let center = CGPoint(x: rectDis.midX, y: rectDis.midY)
+        let side = rectDis.width
+        let bezierPathDis = trianglePath(center: center, side: side)
+        
+        bezierPathDis.stroke()
+        bezierPathDis.fill()
+        bezierPathDis.close()
+        
+        // Now we can finally draw the entry
+        valueAsStr = (tableCellView.textField?.stringValue)!
+        attributes[.foregroundColor] = (tableCellView.textField?.textColor)!
+        
+        let fillColor = tableCellView.fillColor
+        
+        let rect = NSRect(
+            x: self.leftMargin + horizontalOffset + 10 ,
+            y: self.topMargin + self.rowHeight * CGFloat(indexPage + 1),
+            width: (self.pageRect.size.width - self.margin - 10 ),
+            height: self.rowHeight)
+        
+        horizontalOffset += self.widthQuotient * columnWidth
+        
+        let bezierPath = NSBezierPath(rect: rect)
+        fillColor.set()
+        bezierPath.fill()
+        
+        NSColor.lightGray.set()
+        bezierPath.stroke()
+        bezierPath.close()
+        
+        let stringRect = rect.insetBy ( dx: inset, dy: inset)
+        valueAsStr.draw(in: stringRect, withAttributes: attributes)
+        
+        return horizontalOffset
+    }
+
+    // Column titles
+    func drawColumnTitle() {
         
         let inset = (rowHeight - lineHeight - 1.0) / 2.0
-        
-        // Column titles
         var horizontalOffset: CGFloat = 0
         for column in tableToPrint!.tableColumns {
             
@@ -168,11 +203,11 @@ final class MyPrintViewOutline: NSView
                 continue
             }
             
-            let headerRect = NSMakeRect(
-                self.leftMargin + horizontalOffset,
-                self.topMargin,
-                self.widthQuotient * column.width,
-                self.rowHeight)
+            let headerRect = NSRect(
+                x: self.leftMargin + horizontalOffset,
+                y: self.topMargin,
+                width: self.widthQuotient * column.width,
+                height: self.rowHeight)
             
             horizontalOffset += widthQuotient * column.width
             
@@ -185,9 +220,27 @@ final class MyPrintViewOutline: NSView
             bezierPath.close()
             
             let columnTitle = column.title
-            columnTitle.draw(in: NSInsetRect(headerRect, inset, inset), withAttributes: attributes)
+            let stringRect = headerRect.insetBy ( dx: inset, dy: inset)
+            columnTitle.draw(in: stringRect, withAttributes: attributes)
         }
+
+    }
+    
+    // This is where the drawing takes place
+    override func draw(_ dirtyRect: NSRect) {
         
+        NSBezierPath.defaultLineWidth = 0.1
+        
+        var originalWidth: CGFloat = 0
+        for column in tableToPrint!.tableColumns {
+            originalWidth += column.width
+        }
+        self.widthQuotient = (pageRect.size.width - margin) / originalWidth
+        let inset = (rowHeight - lineHeight - 1.0) / 2.0
+        
+        // Column titles
+        drawColumnTitle()
+
         let firstEntryOfPage = self.currentPage * self.linesPerPage
         let lastEntryOfPage = ((currentPage + 1) * linesPerPage) > tableToPrint!.numberOfRows ? tableToPrint!.numberOfRows : ((currentPage + 1) * linesPerPage)
         self.numberOfRowsByPage = lastEntryOfPage - firstEntryOfPage
@@ -211,59 +264,24 @@ final class MyPrintViewOutline: NSView
                 
                 // Header ???
                 if let tableCellView = tableToPrint?.view(atColumn: numCol, row: row, makeIfNecessary: true) as? KSHeaderCellView {
-                                        
-                    // draw triangle
-                    let rectDis = NSMakeRect( leftMargin + horizontalOffset, topMargin + rowHeight * CGFloat(indexPage + 1) + 4, 8 , 8)
-                    
-                    let center = CGPoint(x: rectDis.midX, y: rectDis.midY)
-                    let side = rectDis.width
-                    let bezierPathDis = trianglePathWithCenter(center: center, side: side)
-                    
-                    bezierPathDis.stroke()
-                    bezierPathDis.fill()
-                    bezierPathDis.close()
-                    
-                    // Now we can finally draw the entry
-                    valueAsStr = (tableCellView.textField?.stringValue)!
-                    attributes[.foregroundColor] = (tableCellView.textField?.textColor)!
-                    
-                    let fillColor = tableCellView.fillColor
-                    
-                    let rect = NSMakeRect(
-                        self.leftMargin + horizontalOffset + 10 ,
-                        self.topMargin + self.rowHeight * CGFloat(indexPage + 1),
-                        (self.pageRect.size.width - self.margin - 10 ) ,
-                        self.rowHeight)
-                    
-                    horizontalOffset += self.widthQuotient * columnWidth
-                    
-                    let bezierPath = NSBezierPath(rect: rect)
-                    fillColor.set()
-                    bezierPath.fill()
-                    
-                    NSColor.lightGray.set()
-                    bezierPath.stroke()
-                    bezierPath.close()
-                    
-                    let stringRect = NSInsetRect(rect, inset, inset)
-                    valueAsStr.draw(in: stringRect, withAttributes: attributes)
-                } else
+                    horizontalOffset = drawHeader(tableCellView: tableCellView, columnWidth: columnWidth, horizontalOffset: horizontalOffset, indexPage: indexPage)
+               } else
                 
                 if let tableCellView = tableToPrint?.view(atColumn: numCol, row: row, makeIfNecessary: true) as? NSTableCellView {
-                    let textField = (tableCellView.textField!)
+                    let textField = tableCellView.textField!
 
                     valueAsStr = textField.stringValue
                     attributes[.foregroundColor] = (tableCellView.textField?.textColor)!
                     
-                    let rect = NSMakeRect(
-                        self.leftMargin + horizontalOffset + ofx,
-                        self.topMargin + self.rowHeight * CGFloat(indexPage + 1),
-                        self.widthQuotient * column.width - 2,
-                        self.rowHeight)
+                    let rect = NSRect(
+                        x: self.leftMargin + horizontalOffset + ofx,
+                        y: self.topMargin + self.rowHeight * CGFloat(indexPage + 1),
+                        width: self.widthQuotient * column.width - 2,
+                        height: self.rowHeight)
                     
                     horizontalOffset += self.widthQuotient * columnWidth
                     
-                    let stringRect = NSInsetRect(rect, inset, inset)
+                    let stringRect = rect.insetBy ( dx: inset, dy: inset)
                     valueAsStr.draw(in: stringRect, withAttributes: attributes)
                     
                     if ofx == 16 {
@@ -277,8 +295,9 @@ final class MyPrintViewOutline: NSView
             self.drawHorizontalGrids()
         }
     }
+    
         
-    func trianglePathWithCenter(center: CGPoint, side: CGFloat) -> NSBezierPath {
+    func trianglePath(center: CGPoint, side: CGFloat) -> NSBezierPath {
         let path = NSBezierPath()
         
         let startX = center.x - side / 2
@@ -316,13 +335,13 @@ final class MyPrintViewOutline: NSView
     func drawHorizontalGrids() {
         
         for i in 0 ... numberOfRowsByPage {
-            let fromPoint = NSMakePoint(
-                leftMargin ,
-                topMargin + rowHeight + (CGFloat(i) * rowHeight)
+            let fromPoint = NSPoint(
+                x: leftMargin ,
+                y: topMargin + rowHeight + (CGFloat(i) * rowHeight)
             )
-            let toPoint = NSMakePoint(
-                leftMargin + pageRect.size.width - rightMargin,
-                topMargin + rowHeight + (CGFloat(i) * rowHeight)
+            let toPoint = NSPoint(
+                x: leftMargin + pageRect.size.width - rightMargin,
+                y: topMargin + rowHeight + (CGFloat(i) * rowHeight)
             )
             drawLine(fromPoint, toPoint: toPoint)
         }

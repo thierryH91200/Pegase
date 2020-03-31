@@ -41,7 +41,7 @@ extension GroupeAccountViewController: NSMenuDelegate {
                         let soldeInitial    = self.accountModalWindowController.soldeInitial.doubleValue
                         let nomTitulaire    = self.accountModalWindowController.nomTitulaire.stringValue
                         let prenomTitulaire = self.accountModalWindowController.prenomTitulaire.stringValue
-                        let numCompte       = self.accountModalWindowController.numCompte.stringValue
+                        let numAccount      = self.accountModalWindowController.numCompte.stringValue
                         let nameImage       = self.accountModalWindowController.imageView.image?.name()
                         let type            = self.accountModalWindowController.typeAccount.indexOfSelectedItem
                         
@@ -49,7 +49,7 @@ extension GroupeAccountViewController: NSMenuDelegate {
                         item.initCompte?.realise    = soldeInitial
                         item.identite?.idName       = nomTitulaire
                         item.identite?.idPrenom     = prenomTitulaire
-                        item.initCompte?.codeCompte = numCompte
+                        item.initCompte?.codeCompte = numAccount
                         item.nameImage              = nameImage
                         item.type                   = Int16(type)
                         

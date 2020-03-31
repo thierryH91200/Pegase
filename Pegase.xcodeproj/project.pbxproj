@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0312B136243200D500EA13F6 /* IncomeExpensePieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0312B134243200D500EA13F6 /* IncomeExpensePieController.xib */; };
+		0312B137243200D500EA13F6 /* IncomeExpensePieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */; };
 		03213B0523F9048200002DD7 /* TTFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFD23F9048200002DD7 /* TTFormatViewController.xib */; };
 		03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFE23F9048200002DD7 /* ImportWindowController.xib */; };
 		03213B0723F9048200002DD7 /* ImportWindowControllerParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */; };
@@ -152,7 +154,7 @@
 		034EC8C223F87EA1006944DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BE23F87EA1006944DD /* Document.swift */; };
 		034EC8C323F87EA1006944DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8BF23F87EA1006944DD /* AppDelegate.swift */; };
 		034EC8CF23F87EB2006944DD /* MainWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8C523F87EB1006944DD /* MainWindowDelegate.swift */; };
-		034EC8D023F87EB2006944DD /* MyPrintViewOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8C623F87EB1006944DD /* MyPrintViewOutline.swift */; };
+		034EC8D023F87EB2006944DD /* MyPrintViewOutlineOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8C623F87EB1006944DD /* MyPrintViewOutlineOld.swift */; };
 		034EC8D123F87EB2006944DD /* RateWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8C723F87EB1006944DD /* RateWindowController.swift */; };
 		034EC8D223F87EB2006944DD /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8C823F87EB1006944DD /* MainWindowController.swift */; };
 		034EC8D323F87EB2006944DD /* RateConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8C923F87EB1006944DD /* RateConfigure.swift */; };
@@ -207,6 +209,7 @@
 		034ECB7323F88044006944DD /* AccountModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6F23F88044006944DD /* AccountModalWindowController.swift */; };
 		035082E624028F0400F8A0D4 /* ListeOperationsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035082E824028F0400F8A0D4 /* ListeOperationsController.xib */; };
 		035115CA241FF2DE001AF54B /* Pegase.png in Resources */ = {isa = PBXBuildFile; fileRef = 035115C9241FF2DE001AF54B /* Pegase.png */; };
+		0357250F2433AC720015B462 /* MyPrintViewOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357250E2433AC720015B462 /* MyPrintViewOutline.swift */; };
 		036AF0A624260445008C6564 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036AF0A524260445008C6564 /* AvatarView.swift */; };
 		036AF0A82426044E008C6564 /* AvatarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036AF0A72426044E008C6564 /* AvatarInfo.swift */; };
 		036EC934242BE4A800CF8D34 /* Capture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 036EC933242BE4A800CF8D34 /* Capture1.png */; };
@@ -329,6 +332,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0312B134243200D500EA13F6 /* IncomeExpensePieController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeExpensePieController.xib; sourceTree = "<group>"; };
+		0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpensePieController.swift; sourceTree = "<group>"; };
 		03213AFD23F9048200002DD7 /* TTFormatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTFormatViewController.xib; sourceTree = "<group>"; };
 		03213AFE23F9048200002DD7 /* ImportWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportWindowController.xib; sourceTree = "<group>"; };
 		03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportWindowControllerParserDelegate.swift; sourceTree = "<group>"; };
@@ -546,7 +551,7 @@
 		034EC8BE23F87EA1006944DD /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		034EC8BF23F87EA1006944DD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034EC8C523F87EB1006944DD /* MainWindowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowDelegate.swift; sourceTree = "<group>"; };
-		034EC8C623F87EB1006944DD /* MyPrintViewOutline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrintViewOutline.swift; sourceTree = "<group>"; };
+		034EC8C623F87EB1006944DD /* MyPrintViewOutlineOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrintViewOutlineOld.swift; sourceTree = "<group>"; };
 		034EC8C723F87EB1006944DD /* RateWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateWindowController.swift; sourceTree = "<group>"; };
 		034EC8C823F87EB1006944DD /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		034EC8C923F87EB1006944DD /* RateConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateConfigure.swift; sourceTree = "<group>"; };
@@ -605,6 +610,7 @@
 		035082F924028F0900F8A0D4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
 		035082FB24028F0B00F8A0D4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ListeOperationsController.strings; sourceTree = "<group>"; };
 		035115C9241FF2DE001AF54B /* Pegase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pegase.png; sourceTree = "<group>"; };
+		0357250E2433AC720015B462 /* MyPrintViewOutline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrintViewOutline.swift; sourceTree = "<group>"; };
 		036AF0A524260445008C6564 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		036AF0A72426044E008C6564 /* AvatarInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarInfo.swift; sourceTree = "<group>"; };
 		036EC933242BE4A800CF8D34 /* Capture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture1.png; sourceTree = "<group>"; };
@@ -863,6 +869,8 @@
 		03213B7623F9062000002DD7 /* IncomeExpenseBar */ = {
 			isa = PBXGroup;
 			children = (
+				0312B134243200D500EA13F6 /* IncomeExpensePieController.xib */,
+				0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */,
 				03213B8623F9084800002DD7 /* IncomeExpenseBarController.swift */,
 				03213B8523F9084800002DD7 /* IncomeExpenseBarController.xib */,
 			);
@@ -1087,7 +1095,8 @@
 				034EC8CC23F87EB2006944DD /* MainWindowSplitViewDelegate.swift */,
 				034EC8CB23F87EB1006944DD /* MainWindowToolBar.swift */,
 				039BAC3C242CAD4600C375BB /* MainWindowController.xib */,
-				034EC8C623F87EB1006944DD /* MyPrintViewOutline.swift */,
+				0357250E2433AC720015B462 /* MyPrintViewOutline.swift */,
+				034EC8C623F87EB1006944DD /* MyPrintViewOutlineOld.swift */,
 				034EC8BC23F87E97006944DD /* NSPredicateEditorRowTemplate.swift */,
 				03213B9123F9089300002DD7 /* NVDate.swift */,
 				034EC8C923F87EB1006944DD /* RateConfigure.swift */,
@@ -1488,6 +1497,7 @@
 				03213B0923F9048200002DD7 /* TTFormatViewControllerAccessory.xib in Resources */,
 				03213B2523F904DE00002DD7 /* WebViewController.xib in Resources */,
 				03213C3723F924D600002DD7 /* MainMenu.xib in Resources */,
+				0312B136243200D500EA13F6 /* IncomeExpensePieController.xib in Resources */,
 				034ECB7123F88044006944DD /* GroupModalWindowController.xib in Resources */,
 				03213BB423F909C300002DD7 /* SliderViewController.xib in Resources */,
 				03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */,
@@ -1626,7 +1636,7 @@
 				03213B4A23F9055400002DD7 /* SousOperationAction.swift in Sources */,
 				03213B5823F9058800002DD7 /* SuggestionsWindowController.swift in Sources */,
 				034EC8F823F87EF1006944DD /* Echeanciers.swift in Sources */,
-				034EC8D023F87EB2006944DD /* MyPrintViewOutline.swift in Sources */,
+				034EC8D023F87EB2006944DD /* MyPrintViewOutlineOld.swift in Sources */,
 				03213B2123F904D600002DD7 /* DateValueFormatter.swift in Sources */,
 				03213B9823F9091200002DD7 /* Feed.swift in Sources */,
 				034EC90E23F87F51006944DD /* NSWindow.swift in Sources */,
@@ -1665,12 +1675,14 @@
 				03213BF723F90B9A00002DD7 /* ModePaiementViewController.swift in Sources */,
 				03213BB623F909C300002DD7 /* RangeSliderVertical.swift in Sources */,
 				034EC91523F87F51006944DD /* Debug.swift in Sources */,
+				0312B137243200D500EA13F6 /* IncomeExpensePieController.swift in Sources */,
 				034EC8F923F87EF1006944DD /* Account.swift in Sources */,
 				03213BBD23F909D400002DD7 /* CommunShared.swift in Sources */,
 				03213BB523F909C300002DD7 /* RangeSliderHorizontal.swift in Sources */,
 				034EC8D123F87EB2006944DD /* RateWindowController.swift in Sources */,
 				037993B0241385AD001ADDA6 /* Document.xcdatamodeld in Sources */,
 				03213BE523F90B3F00002DD7 /* EcheanciersSaisieControllerDelegate.swift in Sources */,
+				0357250F2433AC720015B462 /* MyPrintViewOutline.swift in Sources */,
 				03213B9B23F9091200002DD7 /* SourceListViewDataSource.swift in Sources */,
 				03213B8F23F9086600002DD7 /* RubricPieController.swift in Sources */,
 				03213B3F23F9053A00002DD7 /* OperationViewController.swift in Sources */,

@@ -117,6 +117,8 @@ final class OperationViewController: NSViewController {
         self.numCheque.isEnabled = false
         self.addView.isHidden = false
         
+        dateOperation.locale = Locale.current
+        
         self.initChart()
     }
     

@@ -69,6 +69,34 @@ final class Rubric {
         return entitiesRubrique
     }
     
+    fileprivate func addRubric(_ key: [String : String]) {
+        if entitiesRubrique.isEmpty == true {
+            
+            let entityRubrique = EntityRubrique(context: mainObjectContext)
+            entityRubrique.name = key["rubrique"]
+            let color = Color.init(rawValue: key["color"]!)?.color
+            entityRubrique.color = color
+            entityRubrique.uuid = UUID()
+            entityRubrique.account = currentAccount
+            
+            let entityCategory = EntityCategory(context: mainObjectContext)
+            entityCategory.name = key["categorie"]
+            entityCategory.objectif = Double(key["objectif"] ?? "0.0")!
+            entityCategory.uuid = UUID()
+            entityCategory.rubrique = entityRubrique
+            
+            entityRubrique.category?.adding(entityCategory)
+        } else {
+            let entityCategory = EntityCategory(context: mainObjectContext)
+            entityCategory.name = key["categorie"]
+            entityCategory.objectif = Double(key["objectif"] ?? "0.0")!
+            entityCategory.uuid = UUID()
+            entityCategory.rubrique = entitiesRubrique[0]
+            
+            entitiesRubrique[0].category?.adding(entityCategory)
+        }
+    }
+    
     func defaultEntity()
     {
         var isEmpty: Bool {
@@ -115,31 +143,7 @@ final class Rubric {
                         }
                     }
                     
-                    if entitiesRubrique.isEmpty == true {
-                        
-                        let entityRubrique = EntityRubrique(context: mainObjectContext)
-                        entityRubrique.name = key["rubrique"]
-                        let color = Color.init(rawValue: key["color"]!)?.color
-                        entityRubrique.color = color
-                        entityRubrique.uuid = UUID()
-                        entityRubrique.account = currentAccount
-
-                        let entityCategory = EntityCategory(context: mainObjectContext)
-                        entityCategory.name = key["categorie"]
-                        entityCategory.objectif = Double(key["objectif"] ?? "0.0")!
-                        entityCategory.uuid = UUID()
-                        entityCategory.rubrique = entityRubrique
-
-                        entityRubrique.category?.adding(entityCategory)
-                    } else {
-                        let entityCategory = EntityCategory(context: mainObjectContext)
-                        entityCategory.name = key["categorie"]
-                        entityCategory.objectif = Double(key["objectif"] ?? "0.0")!
-                        entityCategory.uuid = UUID()
-                        entityCategory.rubrique = entitiesRubrique[0]
-                        
-                        entitiesRubrique[0].category?.adding(entityCategory)
-                    }
+                    addRubric(key)
                 }
             }
             do {

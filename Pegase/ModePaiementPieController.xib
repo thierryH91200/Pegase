@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -53,8 +53,8 @@
             </subviews>
             <constraints>
                 <constraint firstItem="jN2-EV-ZRb" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="7Yg-EW-sV7"/>
-                <constraint firstAttribute="bottom" secondItem="jN2-EV-ZRb" secondAttribute="bottom" id="nSN-gk-kf4"/>
-                <constraint firstAttribute="trailing" secondItem="jN2-EV-ZRb" secondAttribute="trailing" id="sTS-qc-Sg4"/>
+                <constraint firstItem="jN2-EV-ZRb" firstAttribute="bottom" secondItem="Hz6-mo-xeY" secondAttribute="bottom" id="nSN-gk-kf4"/>
+                <constraint firstItem="jN2-EV-ZRb" firstAttribute="trailing" secondItem="Hz6-mo-xeY" secondAttribute="trailing" id="sTS-qc-Sg4"/>
                 <constraint firstItem="jN2-EV-ZRb" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="xt6-Yz-bM6"/>
             </constraints>
             <point key="canvasLocation" x="-214" y="127"/>

@@ -215,7 +215,7 @@
                             <action selector="AdvancedFilter:" target="-1" id="aKL-eu-j3L"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="F56F9473-A77A-470B-9BCD-07F3FBC7F2BB" label="Debug Mode" paletteLabel="Debug Mode" sizingBehavior="auto" id="V8X-L8-Pcz" userLabel="Debug  Mode">
+                    <toolbarItem implicitItemIdentifier="F56F9473-A77A-470B-9BCD-07F3FBC7F2BB" label="" paletteLabel="" sizingBehavior="auto" id="V8X-L8-Pcz" userLabel="Debug  Mode">
                         <nil key="toolTip"/>
                         <segmentedControl key="view" verticalHuggingPriority="750" id="IBi-3q-Ji7">
                             <rect key="frame" x="0.0" y="14" width="116" height="24"/>

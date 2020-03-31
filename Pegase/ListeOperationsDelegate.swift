@@ -111,21 +111,21 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].category?.rubrique?.name ?? ""
                     } else {
-                        cellView = CrossHatchView()
+//                        cellView = CrossHatchView()
                     }
                 
                 case .categorie:
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].category?.name ?? ""
                     } else {
-                        cellView = CrossHatchView()
+//                        cellView = CrossHatchView()
                     }
 
                 case .libelle:
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].libelle ?? ""
                     } else {
-                        cellView = CrossHatchView()
+//                        cellView = CrossHatchView()
                     }
 
                 case .dateOperation:
