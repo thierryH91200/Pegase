@@ -35,24 +35,36 @@ final class KSHeaderCellView: NSTableCellView {
 // MARK: - CrossHatchView
 final class CrossHatchView: NSTableCellView {
     
-    override func draw(_ rect: CGRect) {
+//    override func draw(_ rect: CGRect) {
+//        
+//        let path = NSBezierPath(roundedRect: bounds, xRadius: 5, yRadius: 5)
+//        //            path.addClip()
+//        
+//        let pathBounds = path.bounds
+//        path.removeAllPoints()
+//        let p1 = CGPoint(x:pathBounds.maxX, y:0)
+//        let p2 = CGPoint(x:0, y:pathBounds.maxX)
+//        path.move(to: p1)
+//        path.line(to: p2)
+//        path.lineWidth = bounds.width * 2
+//        
+//        let dashes:[CGFloat] = [0.5, 7.0]
+//        path.setLineDash(dashes, count: 2, phase: 0.0)
+//        NSColor.lightGray.withAlphaComponent(0.8).set()
+//        path.stroke()
+//    }
+//    
+    var fillColor = NSColor.orange
+    
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
         
-        let path = NSBezierPath(roundedRect: bounds, xRadius: 5, yRadius: 5)
-        //            path.addClip()
+        let bPath = NSBezierPath(rect: dirtyRect)
         
-        let pathBounds = path.bounds
-        path.removeAllPoints()
-        let p1 = CGPoint(x:pathBounds.maxX, y:0)
-        let p2 = CGPoint(x:0, y:pathBounds.maxX)
-        path.move(to: p1)
-        path.line(to: p2)
-        path.lineWidth = bounds.width * 2
-        
-        let dashes:[CGFloat] = [0.5, 7.0]
-        path.setLineDash(dashes, count: 2, phase: 0.0)
-        NSColor.lightGray.withAlphaComponent(0.8).set()
-        path.stroke()
+        fillColor.set()
+        bPath.fill()
     }
+
 }
 
 

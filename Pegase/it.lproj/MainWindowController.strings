@@ -40,3 +40,7 @@
 
 /* Class = "NSMenuItem"; title = "Unie"; ObjectID = "p89-w6-dIS"; */
 "p89-w6-dIS.title" = "Unie";
+
+"OI4-5D-jUy.paletteLabel" = "Print";
+"OI4-5D-jUy.toolTip" = "toolTip";
+"OI4-5D-jUy.label" = "Label";

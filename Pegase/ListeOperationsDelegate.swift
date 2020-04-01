@@ -112,6 +112,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                         textField.stringValue = sousOperations[0].category?.rubrique?.name ?? ""
                     } else {
 //                        cellView = CrossHatchView()
+                        textField.stringValue = ""
                     }
                 
                 case .categorie:
@@ -119,6 +120,8 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                         textField.stringValue = sousOperations[0].category?.name ?? ""
                     } else {
 //                        cellView = CrossHatchView()
+                        textField.stringValue = ""
+
                     }
 
                 case .libelle:
@@ -126,6 +129,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                         textField.stringValue = sousOperations[0].libelle ?? ""
                     } else {
 //                        cellView = CrossHatchView()
+                        textField.stringValue = ""
                     }
 
                 case .dateOperation:
@@ -203,7 +207,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 
                 var attrs = colorText (quake: quake, propertyEnum: propertyEnum )
                 
-                attrs[ NSAttributedString.Key.paragraphStyle] = paragraph
+                attrs[ .paragraphStyle] = paragraph
                 let attributText = NSMutableAttributedString(string: textField.stringValue)
                 attributText.setAttributes(attrs, range: NSRange(location: 0, length: attributText.length))
                 textField.attributedStringValue = attributText
