@@ -6,7 +6,7 @@ final class Echeanciers {
     private var entities = [EntityEcheancier]()
     
     // delete Entity
-    func removeEntity(entity: EntityEcheancier)
+    func remove(entity: EntityEcheancier)
     {
         mainObjectContext.delete(entity)
     }

@@ -63,8 +63,8 @@
 /* Class = "NSTextFieldCell"; title = "0,00 €"; ObjectID = "UCM-Yo-Buc"; */
 "UCM-Yo-Buc.title" = "0,00 €";
 
-/* Class = "NSTableColumn"; headerCell.title = "Recipe"; ObjectID = "UQX-fx-gu7"; */
-"UQX-fx-gu7.headerCell.title" = "Recipe";
+/* Class = "NSTableColumn"; headerCell.title = "Income"; ObjectID = "UQX-fx-gu7"; */
+"UQX-fx-gu7.headerCell.title" = "Income";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Uzp-2w-9b5"; */
 "Uzp-2w-9b5.title" = "Text Cell";

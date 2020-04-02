@@ -78,7 +78,7 @@ final class EcheanciersViewController: NSViewController {
         let selectedRow = tableView.selectedRow
         if selectedRow >= 0 {
             let quake = entityEcheancier[selectedRow]
-            Echeanciers.shared.removeEntity(entity: quake )
+            Echeanciers.shared.remove(entity: quake )
         }
     }
 }
@@ -175,7 +175,7 @@ extension EcheanciersViewController: NSTableViewDelegate {
         if edge == .trailing {
             let deleteAction = NSTableViewRowAction(style: .destructive, title: "Delete") { (_, _) in
                 let quake = self.entityEcheancier[row]
-                Echeanciers.shared.removeEntity(entity: quake )
+                Echeanciers.shared.remove(entity: quake )
                 self.updateData()
             }
             return [deleteAction]
