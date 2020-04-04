@@ -12,8 +12,8 @@ extension EntityOperations {
     @NSManaged public var dateModifie: Date?
 //    @NSManaged public var dateOperation: Date?
     @NSManaged public var datePointage: Date?
-    @NSManaged public var numCheque: String?
-    @NSManaged public var releveBancaire: Double
+    @NSManaged public var checkNumber: String?
+    @NSManaged public var bankStatement: Double
 //    @NSManaged public var sectionIdentifier: String?
 //    @NSManaged public var sectionYear: String?
     @NSManaged public var solde: Double

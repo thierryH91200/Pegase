@@ -31,7 +31,7 @@ extension OperationViewController: ListeOperationsDelegate {
         self.setReleve.insert(0)
         self.setStatut.insert(0)
 
-        self.entityPreference = Preference.shared.getAll()
+        self.entityPreference = Preference.shared.getAllDatas()
         
         self.loadAccount()
         self.popUpTransfert.itemTitle(at: 0)
@@ -130,7 +130,7 @@ extension OperationViewController: ListeOperationsDelegate {
         
         for quake in quakes {
             
-            let releveBancaire = quake.releveBancaire
+            let releveBancaire = quake.bankStatement
             self.setReleve.insert(releveBancaire)
             
             let amount = quake.amount
@@ -143,7 +143,7 @@ extension OperationViewController: ListeOperationsDelegate {
             self.setStatut.insert(statut)
             
             let compteLie = quake.operationLiee?.account
-            let transfert = compteLie?.initCompte?.codeCompte ?? ""
+            let transfert = compteLie?.initAccount?.codeAccount ?? ""
 //            if transfert != "" {
             self.setTransfert.insert(transfert)
 //            }
@@ -250,8 +250,8 @@ extension OperationViewController: ListeOperationsDelegate {
             if linkedAccount != nil {
                 popUpTransfert.selectItem(withTitle: setTransfert.first ?? transfert)
                 nameCompte.stringValue = (linkedAccount?.name)!
-                nomTitulaire.stringValue = (linkedAccount?.identite?.idName)!
-                prenomTitulaire.stringValue = (linkedAccount?.identite?.idPrenom)!
+                nomTitulaire.stringValue = (linkedAccount?.identity?.name)!
+                prenomTitulaire.stringValue = (linkedAccount?.identity?.surName)!
             } else {
                 popUpTransfert.selectItem(at: 0)
                 nameCompte.stringValue = ""

@@ -6,15 +6,15 @@ final class SousOperationModalWindowController: NSWindowController {
     @IBOutlet weak var comboBoxCategory: NSComboBox!
     
     @IBOutlet weak var textFieldLibelle: AutoTextField!
-    @IBOutlet weak var textFieldMontant: NSTextField!
-    @IBOutlet weak var signeMontant: NSButton!
+    @IBOutlet weak var textFieldAmount: NSTextField!
+    @IBOutlet weak var amountSign: NSButton!
     
     @IBOutlet weak var modeOperation: NSButton!
 
     var libelles = [String]()
     var edition = false
     
-    var entityRubrique = [EntityRubrique]()
+    var entityRubric = [EntityRubric]()
     var entityPreference: EntityPreference?
     var entitySousOperation: EntitySousOperations?
     var entityCategories = [EntityCategory]()
@@ -44,9 +44,9 @@ final class SousOperationModalWindowController: NSWindowController {
         comboBoxCategory.removeAllItems()
         comboBoxCategory.delegate = self
         
-        self.entityRubrique = Rubric.shared.getAll()
-        arrayRub = (0..<entityRubrique.count).map { i -> String in
-            return entityRubrique[i].name!
+        self.entityRubric = Rubric.shared.getAllDatas()
+        arrayRub = (0..<entityRubric.count).map { i -> String in
+            return entityRubric[i].name!
         }
 
         comboBoxRubrique.removeAllItems()
@@ -55,21 +55,21 @@ final class SousOperationModalWindowController: NSWindowController {
         
         if self.edition == false {
             
-            self.entityPreference = Preference.shared.getAll()
+            self.entityPreference = Preference.shared.getAllDatas()
             
             /// Libelle
             textFieldLibelle.stringValue = ""
 
             /// Montant
-            self.textFieldMontant.doubleValue = 0.0
-            signeMontant.state = entityPreference?.signe == true ? .on : .off
+            self.textFieldAmount.doubleValue = 0.0
+            self.amountSign.state = entityPreference?.signe == true ? .on : .off
             
             /// Rubrique
-            var i = entityRubrique.firstIndex { $0 == entityPreference?.category?.rubrique }
+            var i = entityRubric.firstIndex { $0 == entityPreference?.category?.rubric }
             comboBoxRubrique.selectItem(at: i!)
             
             /// Category
-            var entityCategory = entityRubrique[i!].category?.allObjects as! [EntityCategory]
+            var entityCategory = entityRubric[i!].category?.allObjects as! [EntityCategory]
             entityCategory = entityCategory.sorted { $0.name! < $1.name! }
             
             i = entityCategory.firstIndex { $0 === entityPreference?.category }
@@ -82,11 +82,11 @@ final class SousOperationModalWindowController: NSWindowController {
             
             /// Amount
             let amount = (entitySousOperation?.amount)!
-            textFieldMontant.doubleValue = abs(amount)
-            signeMontant.state = amount < 0 ? .on : .off
+            textFieldAmount.doubleValue = abs(amount)
+            amountSign.state = amount < 0 ? .on : .off
             
             /// Rubrique
-            var i = entityRubrique.firstIndex { $0 == self.entitySousOperation?.category?.rubrique }
+            var i = entityRubric.firstIndex { $0 == self.entitySousOperation?.category?.rubric }
             comboBoxRubrique.selectItem(at: i!)
             
             /// Category

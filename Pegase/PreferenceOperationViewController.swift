@@ -9,7 +9,7 @@ final class PreferenceOperationViewController: NSViewController {
     @IBOutlet weak var signeButton: NSButton!
     
     var entityPreference: EntityPreference?
-    var entityRubrique = [EntityRubrique]()
+    var entityRubrique = [EntityRubric]()
     var entityMode = [EntityModePaiement]()
     
     var statuts = [String]()
@@ -33,9 +33,9 @@ final class PreferenceOperationViewController: NSViewController {
     
     func updateData() {
         
-        self.entityPreference = Preference.shared.getAll()
+        self.entityPreference = Preference.shared.getAllDatas()
         
-        entityMode = ModePaiement.shared.getAll()
+        entityMode = ModePaiement.shared.getAllDatas()
         comboBoxMode.usesDataSource = true
         comboBoxMode.dataSource = self
         comboBoxMode.delegate = self
@@ -52,11 +52,11 @@ final class PreferenceOperationViewController: NSViewController {
         comboBoxStatut.selectItem(at: i!)
         comboBoxStatut.delegate = self
 
-        self.entityRubrique = Rubric.shared.getAll()
+        self.entityRubrique = Rubric.shared.getAllDatas()
         comboBoxRubrique.usesDataSource = true
         comboBoxRubrique.dataSource = self
         comboBoxRubrique.delegate = self
-        i = entityRubrique.firstIndex { $0 == entityPreference?.category?.rubrique }
+        i = entityRubrique.firstIndex { $0 == entityPreference?.category?.rubric }
         comboBoxRubrique.selectItem(at: i!)
 
         comboBoxCategory.usesDataSource = true

@@ -25,10 +25,10 @@ extension RubriqueViewController: NSOutlineViewDataSource {
         let treeNode = item as? NSTreeNode
         var srcManagedObject = treeNode?.representedObject as? NSManagedObject
         
-        var result = srcManagedObject is EntityRubrique
+        var result = srcManagedObject is EntityRubric
         if result == false {
-            srcManagedObject = srcManagedObject?.value(forKey: "rubrique") as? NSManagedObject
-            result = srcManagedObject is EntityRubrique
+            srcManagedObject = srcManagedObject?.value(forKey: "rubric") as? NSManagedObject
+            result = srcManagedObject is EntityRubric
         }
 
         let draggedNode1 = draggedNode as? NSTreeNode
@@ -39,7 +39,7 @@ extension RubriqueViewController: NSOutlineViewDataSource {
             return false
         }
         
-        dstManagedObject.setValue(srcManagedObject, forKey: "rubrique")
+        dstManagedObject.setValue(srcManagedObject, forKey: "rubric")
         return true
     }
     
@@ -58,7 +58,7 @@ extension RubriqueViewController: NSOutlineViewDataSource {
         let dragged = draggedNode1?.representedObject as! NSManagedObject
         
         let managedObject = treeNode?.representedObject as! NSManagedObject
-        if managedObject is EntityRubrique {
+        if managedObject is EntityRubric {
             return .move
         }
         if category(dragged, isSubCategoryOf: managedObject) {
@@ -72,8 +72,8 @@ extension RubriqueViewController: NSOutlineViewDataSource {
         if cat == possibleSub {
             return true
         }
-        let possSubParent = possibleSub.value(forKey: "rubrique") as? NSManagedObject
-        let result = possSubParent is EntityRubrique
+        let possSubParent = possibleSub.value(forKey: "rubric") as? NSManagedObject
+        let result = possSubParent is EntityRubric
         return result
     }
     

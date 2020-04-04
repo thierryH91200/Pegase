@@ -5,7 +5,7 @@ final class CarnetCheques {
     static let shared = CarnetCheques()
     private var entities = [EntityCarnetCheques]()
     
-    func getAllCarnetCheques() -> [EntityCarnetCheques] {
+    func getAllDatas() -> [EntityCarnetCheques] {
         
         do {
             let fetchRequest = NSFetchRequest<EntityCarnetCheques>(entityName: "EntityCarnetCheques")

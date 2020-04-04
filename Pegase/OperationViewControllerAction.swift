@@ -58,7 +58,7 @@ extension OperationViewController  {
         let item = outlineViewSSOpe.item(atRow: selectRow) as? EntitySousOperations
         
         print(item?.category?.name ?? "category?.name")
-        print(item?.category?.rubrique?.name ?? "rubrique?.name")
+        print(item?.category?.rubric?.name ?? "rubric?.name")
         
         self.sousOperationModalWindowController = SousOperationModalWindowController()
         self.sousOperationModalWindowController.entitySousOperation = item

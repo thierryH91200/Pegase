@@ -128,3 +128,7 @@
 "searchMenu.title.all" = "all";
 "searchMenu.title.libelle" = "libelle";
 "searchMenu.title.menu" = "menu";
+
+
+/* Delete button. */
+"TouchBar.Delete" = "Delete";

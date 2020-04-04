@@ -24,10 +24,10 @@ extension NSUserInterfaceItemIdentifier {
     static let mpColor             = NSUserInterfaceItemIdentifier("mpColor")
     
     /// Account
-    static let Account           = NSUserInterfaceItemIdentifier("idAccount")
-    static let NameAccount       = NSUserInterfaceItemIdentifier("idNameAccount")
-    static let SurNameAccount    = NSUserInterfaceItemIdentifier("idSurnameAccount")
-    static let NumberAccount     = NSUserInterfaceItemIdentifier("idNumber")
+    static let account           = NSUserInterfaceItemIdentifier("idAccount")
+    static let nameAccount       = NSUserInterfaceItemIdentifier("idNameAccount")
+    static let surNameAccount    = NSUserInterfaceItemIdentifier("idSurnameAccount")
+    static let numberAccount     = NSUserInterfaceItemIdentifier("idNumber")
 
     /// Scheduler
     static let echLibelle        = NSUserInterfaceItemIdentifier("echLibelle")

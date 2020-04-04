@@ -8,13 +8,13 @@ final class Rubric {
     }
     
     static let shared = Rubric()
-    private var entitiesRubrique = [EntityRubrique]()
+    private var entitiesRubric = [EntityRubric]()
     
-    func findOrCreate ( account: EntityAccount,  name: String, color: NSColor, uuid: UUID) -> EntityRubrique {
+    func findOrCreate ( account: EntityAccount,  name: String, color: NSColor, uuid: UUID) -> EntityRubric {
         
         var entityRubric = find( account: account, name: name )
         if entityRubric == nil {
-            entityRubric = NSEntityDescription.insertNewObject(forEntityName: "EntityRubrique", into: mainObjectContext) as? EntityRubrique
+            entityRubric = NSEntityDescription.insertNewObject(forEntityName: "EntityRubric", into: mainObjectContext) as? EntityRubric
             entityRubric!.name = name
             entityRubric!.color = color
             entityRubric!.uuid = UUID()
@@ -23,13 +23,13 @@ final class Rubric {
         return entityRubric!
     }
     
-    func find( account: EntityAccount = currentAccount!, name: String) -> EntityRubrique? {
+    func find( account: EntityAccount = currentAccount!, name: String) -> EntityRubric? {
         
         let p1 = NSPredicate(format: "account == %@", account)
         let p2 = NSPredicate(format: "name == %@", name)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
         
-        let fetchRequest = NSFetchRequest<EntityRubrique>(entityName: "EntityRubrique")
+        let fetchRequest = NSFetchRequest<EntityRubric>(entityName: "EntityRubric")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
@@ -43,57 +43,57 @@ final class Rubric {
         }
     }
     
-    func remove(entity: EntityRubrique)
+    func remove(entity: EntityRubric)
     {
         mainObjectContext.delete(entity)
     }
     
     @discardableResult
-    func getAll() -> [EntityRubrique] {
+    func getAllDatas() -> [EntityRubric] {
         
         guard currentAccount != nil else { return [] }
 
         do {
-            let fetchRequest = NSFetchRequest<EntityRubrique>(entityName: "EntityRubrique")
+            let fetchRequest = NSFetchRequest<EntityRubric>(entityName: "EntityRubric")
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
             let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
 
-            entitiesRubrique = try mainObjectContext.fetch(fetchRequest)
+            entitiesRubric = try mainObjectContext.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")
         }
         
         defaultEntity()
-        return entitiesRubrique
+        return entitiesRubric
     }
     
     fileprivate func addRubric(_ key: [String : String]) {
-        if entitiesRubrique.isEmpty == true {
+        if entitiesRubric.isEmpty == true {
             
-            let entityRubrique = EntityRubrique(context: mainObjectContext)
-            entityRubrique.name = key["rubrique"]
+            let entityRubric = EntityRubric(context: mainObjectContext)
+            entityRubric.name = key["rubrique"]
             let color = Color.init(rawValue: key["color"]!)?.color
-            entityRubrique.color = color
-            entityRubrique.uuid = UUID()
-            entityRubrique.account = currentAccount
+            entityRubric.color = color
+            entityRubric.uuid = UUID()
+            entityRubric.account = currentAccount
             
             let entityCategory = EntityCategory(context: mainObjectContext)
             entityCategory.name = key["categorie"]
             entityCategory.objectif = Double(key["objectif"] ?? "0.0")!
             entityCategory.uuid = UUID()
-            entityCategory.rubrique = entityRubrique
+            entityCategory.rubric = entityRubric
             
-            entityRubrique.category?.adding(entityCategory)
+            entityRubric.category?.adding(entityCategory)
         } else {
             let entityCategory = EntityCategory(context: mainObjectContext)
             entityCategory.name = key["categorie"]
             entityCategory.objectif = Double(key["objectif"] ?? "0.0")!
             entityCategory.uuid = UUID()
-            entityCategory.rubrique = entitiesRubrique[0]
+            entityCategory.rubric = entitiesRubric[0]
             
-            entitiesRubrique[0].category?.adding(entityCategory)
+            entitiesRubric[0].category?.adding(entityCategory)
         }
     }
     
@@ -101,7 +101,7 @@ final class Rubric {
     {
         var isEmpty: Bool {
             do {
-                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "EntityRubrique")
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "EntityRubric")
                 let predicate = NSPredicate(format: "account == %@", currentAccount!)
                 
                 fetchRequest.predicate = predicate
@@ -112,7 +112,7 @@ final class Rubric {
             }
         }
         
-        if entitiesRubrique.isEmpty == true {
+        if entitiesRubric.isEmpty == true {
             var content = ""
             do {
                 let url = Bundle.main.url(forResource: "rubrique", withExtension: "csv")
@@ -133,11 +133,11 @@ final class Rubric {
                             let p2 = NSPredicate(format: "name == %@", key["rubrique"]!)
                             let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
 
-                            let fetchRequest = NSFetchRequest<EntityRubrique>(entityName: "EntityRubrique")
+                            let fetchRequest = NSFetchRequest<EntityRubric>(entityName: "EntityRubric")
                             fetchRequest.predicate = predicate
                             fetchRequest.sortDescriptors = [NSSortDescriptor(key: RubriqueDisplayProperty.name.rawValue, ascending: true)]
                             
-                            entitiesRubrique = try mainObjectContext.fetch(fetchRequest)
+                            entitiesRubric = try mainObjectContext.fetch(fetchRequest)
                         } catch {
                             print("Error fetching data from CoreData")
                         }
@@ -147,9 +147,9 @@ final class Rubric {
                 }
             }
             do {
-                let fetchRequest = NSFetchRequest<EntityRubrique>(entityName: "EntityRubrique")
+                let fetchRequest = NSFetchRequest<EntityRubric>(entityName: "EntityRubric")
                 fetchRequest.sortDescriptors = [NSSortDescriptor(key: RubriqueDisplayProperty.name.rawValue, ascending: true)]
-                entitiesRubrique = try mainObjectContext.fetch(fetchRequest)
+                entitiesRubric = try mainObjectContext.fetch(fetchRequest)
             } catch {
                 print("Error fetching data from CoreData")
             }

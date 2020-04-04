@@ -135,7 +135,7 @@ extension EcheanciersViewController: NSTableViewDelegate {
             
         case .echRubrique:
             let result = tableView.makeView(withIdentifier: .echRubrique, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].category?.rubrique!.name)!
+            result.textField?.stringValue = (entityEcheancier[row].category?.rubric!.name)!
             return result
         case .echCategorie:
             let result = tableView.makeView(withIdentifier: .echCategorie, owner: self) as! NSTableCellView
@@ -146,22 +146,22 @@ extension EcheanciersViewController: NSTableViewDelegate {
             result.textField?.doubleValue = entityEcheancier[row].amount
             return result
             
-        case .Account:
-            let result = tableView.makeView(withIdentifier: .Account , owner: self) as! NSTableCellView
+        case .account:
+            let result = tableView.makeView(withIdentifier: .account , owner: self) as! NSTableCellView
             result.textField?.stringValue = entityEcheancier[row].account!.name!
             return result
-        case .NameAccount:
-            let result = tableView.makeView(withIdentifier: .NameAccount, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].account?.identite?.idName)!
+        case .nameAccount:
+            let result = tableView.makeView(withIdentifier: .nameAccount, owner: self) as! NSTableCellView
+            result.textField?.stringValue = (entityEcheancier[row].account?.identity?.name)!
             return result
-        case .SurNameAccount:
-            let result = tableView.makeView(withIdentifier: .SurNameAccount, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].account?.identite?.idPrenom)!
+        case .surNameAccount:
+            let result = tableView.makeView(withIdentifier: .surNameAccount, owner: self) as! NSTableCellView
+            result.textField?.stringValue = (entityEcheancier[row].account?.identity?.surName)!
             return result
             
-        case .NumberAccount:
-            let result = tableView.makeView(withIdentifier: .NumberAccount, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].account?.initCompte?.codeCompte)!
+        case .numberAccount:
+            let result = tableView.makeView(withIdentifier: .numberAccount, owner: self) as! NSTableCellView
+            result.textField?.stringValue = (entityEcheancier[row].account?.initAccount?.codeAccount)!
             return result
             
         default:
@@ -171,23 +171,63 @@ extension EcheanciersViewController: NSTableViewDelegate {
     }
     
     func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
-        
-        if edge == .trailing {
-            let deleteAction = NSTableViewRowAction(style: .destructive, title: "Delete") { (_, _) in
-                let quake = self.entityEcheancier[row]
-                Echeanciers.shared.remove(entity: quake )
-                self.updateData()
+        switch edge {
+        case .trailing:
+            let flagAction = NSTableViewRowAction(style: .regular, title: "Flag") { (_, _) in
+                print("Flag Action")
             }
-            return [deleteAction]
+
+            return [makeDeleteAction(), flagAction]
+        case .leading:
+            return []
+        @unknown default:
+            return []
         }
-        return []
     }
+    
+    func tableView(_: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 60
+    }
+
+
+//    func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
+//
+//        if edge == .trailing {
+//            let deleteAction = NSTableViewRowAction(style: .destructive, title: "Delete") { (_, _) in
+//                let quake = self.entityEcheancier[row]
+//                Echeanciers.shared.remove(entity: quake )
+//                self.updateData()
+//            }
+//            let flagAction = NSTableViewRowAction(style: .regular, title: "Flag") { (_, _) in
+//                print("Flag")
+//            }
+//            return [makeDeleteAction(), flagAction]
+//        }
+//        return []
+//    }
+    
+    private func makeDeleteAction() -> NSTableViewRowAction {
+        let a = NSTableViewRowAction(
+            style: .destructive,
+            title: "Delete", //NSLocalizedString("TouchBar.Delete", comment: "Touch Bar"),
+            handler: removeRowAndRecord
+        )
+            a.image = NSImage(named: NSImage.touchBarDeleteTemplateName)
+        return a
+    }
+    
+    private func removeRowAndRecord(action: NSTableViewRowAction, row: Int) {
+        let quake = self.entityEcheancier[row]
+        Echeanciers.shared.remove(entity: quake )
+        self.updateData()
+    }
+
 }
 
 extension EcheanciersViewController: EcheanciersDelegate {
     func updateData() {
         guard currentAccount != nil else { return }
-        entityEcheancier = Echeanciers.shared.getAll()
+        entityEcheancier = Echeanciers.shared.getAllDatas()
         
         tableView.reloadData()
     }

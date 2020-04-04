@@ -11,7 +11,7 @@ final class Echeanciers {
         mainObjectContext.delete(entity)
     }
 
-    func getAll() -> [EntityEcheancier] {
+    func getAllDatas() -> [EntityEcheancier] {
         
         do {
             let fetchRequest = NSFetchRequest<EntityEcheancier>(entityName: "EntityEcheancier")
@@ -43,14 +43,14 @@ final class Echeanciers {
         entityOperation.dateOperation  = dateValeur
         entityOperation.datePointage   = dateValeur
         
-        entityOperation.releveBancaire = 0
+        entityOperation.bankStatement = 0
         
         let sousOpenation = EntitySousOperations(context: mainObjectContext)
         
         // la rubrique existe t elle ??
-        var name = entityEcheancier.category?.rubrique?.name
-        let color = entityEcheancier.category?.rubrique?.color
-        var uuid = entityEcheancier.category?.rubrique?.uuid
+        var name = entityEcheancier.category?.rubric?.name
+        let color = entityEcheancier.category?.rubric?.color
+        var uuid = entityEcheancier.category?.rubric?.uuid
         let entityRubrique = Rubric.shared.findOrCreate(account: entityEcheancier.account!, name: name!, color: color as! NSColor, uuid: uuid!)
         
         // la categorie existe t elle ??
@@ -60,7 +60,7 @@ final class Echeanciers {
         let entityCategorie = Categories.shared.findOrCreate(account: entityEcheancier.account!, name: name!, objectif: objectif!, uuid: uuid!)
         
         sousOpenation.category = entityCategorie
-        sousOpenation.category?.rubrique = entityRubrique
+        sousOpenation.category?.rubric = entityRubrique
         sousOpenation.amount       = -entityEcheancier.amount
         sousOpenation.libelle       = entityEcheancier.libelle
 
@@ -75,7 +75,7 @@ final class Echeanciers {
             entityOperationsTransfert.account        = compteLie
             entityOperationsTransfert.statut        = entityOperation.statut
             
-            entityOperationsTransfert.releveBancaire = entityOperation.releveBancaire
+            entityOperationsTransfert.bankStatement = entityOperation.bankStatement
 
             entityOperationsTransfert.dateOperation = entityOperation.dateOperation
             entityOperationsTransfert.datePointage  = entityOperation.datePointage
@@ -90,12 +90,12 @@ final class Echeanciers {
             entityOperationsTransfert.modePaiement  = entityModePaiement
 
             /// la rubrique existe t elle ??
-            let entityRubrique = Rubric.shared.findOrCreate(account: compteLie, name: name!, color: color as! NSColor, uuid: uuid!)
+            let entityRubric = Rubric.shared.findOrCreate(account: compteLie, name: name!, color: color as! NSColor, uuid: uuid!)
             
             /// la categorie existe t elle ?
             let entityCategorie = Categories.shared.findOrCreate(account: compteLie, name: name!, objectif: objectif!, uuid: uuid!)
             sousOpenation.category = entityCategorie
-            sousOpenation.category?.rubrique = entityRubrique
+            sousOpenation.category?.rubric = entityRubric
             sousOpenation.amount       = -entityEcheancier.amount
 
             entityOperationsTransfert.addToSousOperations(sousOpenation)

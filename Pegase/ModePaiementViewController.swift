@@ -61,7 +61,7 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
     func updateData() {
         guard currentAccount != nil else { return }
         
-        entityModePaiement = ModePaiement.shared.getAll()
+        entityModePaiement = ModePaiement.shared.getAllDatas()
     }
     
     // MARK: - Add ModePaiement
@@ -202,8 +202,8 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
             result.textField?.stringValue = entityModePaiement[row].name!
             return result
             
-        case .Account:
-            let result = tableView.makeView(withIdentifier: .Account , owner: self) as! NSTableCellView
+        case .account:
+            let result = tableView.makeView(withIdentifier: .account , owner: self) as! NSTableCellView
             result.textField?.stringValue = entityModePaiement[row].account!.name!
             return result
             
@@ -212,19 +212,19 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
             result.colorWell.color = entityModePaiement[row].color as! NSColor
             return result
             
-        case .NameAccount:
-            let result = tableView.makeView(withIdentifier: .NameAccount, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityModePaiement[row].account?.identite?.idName)!
+        case .nameAccount:
+            let result = tableView.makeView(withIdentifier: .nameAccount, owner: self) as! NSTableCellView
+            result.textField?.stringValue = (entityModePaiement[row].account?.identity?.name)!
             return result
             
-        case .SurNameAccount:
-            let result = tableView.makeView(withIdentifier: .SurNameAccount, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityModePaiement[row].account?.identite?.idPrenom)!
+        case .surNameAccount:
+            let result = tableView.makeView(withIdentifier: .surNameAccount, owner: self) as! NSTableCellView
+            result.textField?.stringValue = (entityModePaiement[row].account?.identity?.surName)!
             return result
             
-        case .NumberAccount:
-            let result = tableView.makeView(withIdentifier: .NumberAccount, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityModePaiement[row].account?.initCompte?.codeCompte)!
+        case .numberAccount:
+            let result = tableView.makeView(withIdentifier: .numberAccount, owner: self) as! NSTableCellView
+            result.textField?.stringValue = (entityModePaiement[row].account?.initAccount?.codeAccount)!
             return result
             
         default:

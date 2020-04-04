@@ -196,8 +196,8 @@ final class CategoryBarController1: CommonGraph
                 
                 let amount    = sousOperation.amount
                 
-                let nameRubrique = sousOperation.category?.rubrique?.name
-                let color    = sousOperation.category?.rubrique?.color as! NSColor
+                let nameRubrique = sousOperation.category?.rubric?.name
+                let color    = sousOperation.category?.rubric?.color as! NSColor
                 let rubricColor = RubricColor(name : nameRubrique!, color: color)
 
                 setUniqueRubrique.insert(rubricColor)

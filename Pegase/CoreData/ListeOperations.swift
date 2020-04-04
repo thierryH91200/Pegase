@@ -33,7 +33,7 @@ final class ListeOperations {
         
         var comments = [String]()
         
-        let entityOperations = getAll()
+        let entityOperations = getAllDatas()
         for entityOperation in entityOperations {
             let sousOperations = entityOperation.sousOperations?.allObjects as! [EntitySousOperations]
             
@@ -44,7 +44,7 @@ final class ListeOperations {
         return comments.uniqueElements
     }
     
-    func getAll(ascending: Bool = true ) -> [EntityOperations] {
+    func getAllDatas(ascending: Bool = true ) -> [EntityOperations] {
         
         guard currentAccount != nil else { return [] }
         self.ascending = ascending

@@ -12,7 +12,7 @@ extension ListeOperationsController: NSDatePickerCellDelegate {
         let proposedDate = proposedDateValue.pointee as Date
         guard proposedDate != datePicker.dateValue else { return }
         
-        let entityEcheanciers = Echeanciers.shared.getAll()
+        let entityEcheanciers = Echeanciers.shared.getAllDatas()
         
         for entityEcheancier in entityEcheanciers {
             var dateValeur =  entityEcheancier.dateValeur!

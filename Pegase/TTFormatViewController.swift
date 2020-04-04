@@ -51,7 +51,7 @@ final class TTFormatViewController: NSViewController {
         filePath?.isEditable = false
         if popUpCompte != nil {
             loadAccount ()
-            popUpCompte.selectItem(withTitle: (currentAccount?.initCompte?.codeCompte)!)
+            popUpCompte.selectItem(withTitle: (currentAccount?.initAccount?.codeAccount)!)
         }
         
         if self.gridView != nil {
@@ -117,7 +117,7 @@ final class TTFormatViewController: NSViewController {
         let  transfertMenu = NSMenu()
         popUpCompte.removeAllItems()
         
-        let comptes = Account.shared.getAll()
+        let comptes = Account.shared.getAllDatas()
         for compte in comptes where compte.isAccount == true
         {
             transfertMenu.addItem(compteItemFor(compte) )
@@ -134,12 +134,12 @@ final class TTFormatViewController: NSViewController {
         let compte = selectItem?.representedObject as? EntityAccount
         
         nameCompte.stringValue = (compte?.name)!
-        nomTitulaire.stringValue = (compte?.identite?.idName)!
-        prenomTitulaire.stringValue = (compte?.identite?.idPrenom)!
+        nomTitulaire.stringValue = (compte?.identity?.name)!
+        prenomTitulaire.stringValue = (compte?.identity?.surName)!
     }
     
     fileprivate func compteItemFor(_ account: EntityAccount) -> NSMenuItem {
-        let codeCompte = account.initCompte?.codeCompte!
+        let codeCompte = account.initAccount?.codeAccount!
         let menuItem = NSMenuItem()
         
         menuItem.representedObject = account
@@ -159,8 +159,8 @@ final class TTFormatViewController: NSViewController {
         entityAccountTransfert = compte
         
         nameCompte.stringValue = (compte?.name)!
-        nomTitulaire.stringValue = (compte?.identite?.idName)!
-        prenomTitulaire.stringValue = (compte?.identite?.idPrenom)!
+        nomTitulaire.stringValue = (compte?.identity?.name)!
+        prenomTitulaire.stringValue = (compte?.identity?.surName)!
     }
     
 }

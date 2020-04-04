@@ -180,9 +180,9 @@ final class CategoryBarController: CommonGraph
         for listeOperation in listeOperations {
             let sousOperations = listeOperation.sousOperations?.allObjects  as! [EntitySousOperations]
             for sousOperation in sousOperations {
-                name  = (sousOperation.category?.rubrique!.name)!
+                name  = (sousOperation.category?.rubric!.name)!
                 value = sousOperation.amount
-                color = sousOperation.category?.rubrique?.color as! NSColor
+                color = sousOperation.category?.rubric?.color as! NSColor
             }
             dataArray.append( DataGraph(name: name, value: value, color: color))
         }
@@ -228,7 +228,7 @@ final class CategoryBarController: CommonGraph
                 
                 let value = sousOperation.amount
                 let nameCategory   = sousOperation.category?.name
-                let color = sousOperation.category?.rubrique?.color as! NSColor
+                let color = sousOperation.category?.rubric?.color as! NSColor
                 let data  = DataGraph(name: nameCategory!, value: value, color: color)
                 dataArray.append(data)
             }

@@ -19,7 +19,7 @@ final class Categories {
 
     func find( account: EntityAccount = currentAccount!, name: String) -> EntityCategory? {
         
-        let p1 = NSPredicate(format: "rubrique.account == %@", account)
+        let p1 = NSPredicate(format: "rubric.account == %@", account)
         let p2 = NSPredicate(format: "name == %@", name)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
 
@@ -35,7 +35,7 @@ final class Categories {
             return nil
         }
     }
-    func findWithRubric( account: EntityAccount = currentAccount!, rubric: EntityRubrique, name: String) -> EntityCategory? {
+    func findWithRubric( account: EntityAccount = currentAccount!, rubric: EntityRubric, name: String) -> EntityCategory? {
         
         let categories = rubric.category?.allObjects as! [EntityCategory]
         var category = categories.filter({ $0.name == name }).first

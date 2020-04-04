@@ -65,7 +65,7 @@ final class RubricBarController: CommonGraph
         
         mainContext = mainObjectContext
         
-        Rubric.shared.getAll()
+        Rubric.shared.getAllDatas()
         self.arrayController.sortDescriptors = customSortDescriptors
         self.arrayController.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
         self.arrayController.setSelectionIndex(0)
@@ -188,10 +188,10 @@ final class RubricBarController: CommonGraph
             section = listeOperation.sectionIdentifier!
             let sousOperations = listeOperation.sousOperations?.allObjects  as! [EntitySousOperations]
             
-            for sousOperation in sousOperations where (sousOperation.category?.rubrique!.name)! == nameRubrique {
-                name  = (sousOperation.category?.rubrique!.name)!
+            for sousOperation in sousOperations where (sousOperation.category?.rubric!.name)! == nameRubrique {
+                name  = (sousOperation.category?.rubric!.name)!
                 value = sousOperation.amount
-                color = sousOperation.category?.rubrique?.color as! NSColor
+                color = sousOperation.category?.rubric?.color as! NSColor
                 self.dataArray.append( DataGraph(section: section, name: name, value: value, color: color))
             }
         }
@@ -311,7 +311,7 @@ extension RubricBarController: NSTableViewDelegate {
         let selectedRow = tableView.selectedRow
         
         if selectedRow >= 0 {
-            let quake = arrayController.selectedObjects as! [EntityRubrique]
+            let quake = arrayController.selectedObjects as! [EntityRubric]
             nameRubrique = quake[0].name!
             objectifRubrique = quake[0].total
             

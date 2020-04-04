@@ -14,9 +14,9 @@ extension SousOperationModalWindowController  {
     @IBAction func actionSigne(_ sender: NSButton) {
         
         if sender.state == .on {
-            self.textFieldMontant.textColor = NSColor.red
+            self.textFieldAmount.textColor = NSColor.red
         } else {
-            self.textFieldMontant.textColor = NSColor.green
+            self.textFieldAmount.textColor = NSColor.green
         }
     }
 
@@ -30,8 +30,8 @@ extension SousOperationModalWindowController  {
     @IBAction func didTapDoneButton(_ sender: NSButton) {
         
         /// Montant
-        let amount = textFieldMontant.doubleValue
-        let signe = signeMontant.state.rawValue
+        let amount = textFieldAmount.doubleValue
+        let signe = amountSign.state.rawValue
         entitySousOperation?.amount = signe == 0 ? amount : -amount
         
         /// Libelle
@@ -39,7 +39,7 @@ extension SousOperationModalWindowController  {
         
         /// Rubrique + Category
         let selectRub = comboBoxRubrique.indexOfSelectedItem
-        var entityCategories = entityRubrique[selectRub].category?.allObjects as! [EntityCategory]
+        var entityCategories = entityRubric[selectRub].category?.allObjects as! [EntityCategory]
         entityCategories = entityCategories.sorted { $0.name! < $1.name! }
 
         let selectCat = comboBoxCategory.indexOfSelectedItem

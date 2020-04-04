@@ -48,10 +48,10 @@ final class AccountModalWindowController: NSWindowController {
 
         if edition == true {
             libelleCompte.stringValue = account.name!
-            soldeInitial.doubleValue = account.initCompte?.realise ?? 0
-            nomTitulaire.stringValue = (account.identite?.idName) ?? "empty"
-            prenomTitulaire.stringValue = (account.identite?.idPrenom) ?? "empty"
-            numCompte.stringValue = (account.initCompte?.codeCompte) ?? "empty"
+            soldeInitial.doubleValue = account.initAccount?.realise ?? 0
+            nomTitulaire.stringValue = (account.identity?.name) ?? "empty"
+            prenomTitulaire.stringValue = (account.identity?.surName) ?? "empty"
+            numCompte.stringValue = (account.initAccount?.codeAccount) ?? "empty"
             imageView.image? = NSImage(named: account.nameImage!)!
             typeAccount.selectItem(at: Int(account.type))
             

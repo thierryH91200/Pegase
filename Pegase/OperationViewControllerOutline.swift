@@ -57,7 +57,7 @@ extension OperationViewController: NSOutlineViewDataSource {
         if item == nil {
             let root = sousOperations[index]
             attrs.removeAll()
-            attrs[.foregroundColor] = root.category?.rubrique?.color
+            attrs[.foregroundColor] = root.category?.rubric?.color
             return root
         }
         
@@ -68,7 +68,7 @@ extension OperationViewController: NSOutlineViewDataSource {
         case 0:
             child = sousOperation.libelle!
         case 1:
-            child = (sousOperation.category?.rubrique!.name)!
+            child = (sousOperation.category?.rubric!.name)!
         case 2:
             child = (sousOperation.category?.name)!
         case 3:
@@ -80,7 +80,7 @@ extension OperationViewController: NSOutlineViewDataSource {
             child = sousOperation.libelle!
         }
         attrs.removeAll()
-        attrs[.foregroundColor] = sousOperation.category?.rubrique?.color
+        attrs[.foregroundColor] = sousOperation.category?.rubric?.color
         return child
     }
     

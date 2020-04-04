@@ -7,7 +7,7 @@ extension OperationViewController {
     func loadAccount () {
         let  transfertMenu = NSMenu()
         
-        let accounts = Account.shared.getAll()
+        let accounts = Account.shared.getAllDatas()
         for account in accounts where account.isAccount == true
         {
             transfertMenu.addItem(accountItemFor(account) )
@@ -22,7 +22,7 @@ extension OperationViewController {
     }
     
     fileprivate func accountItemFor(_ value: EntityAccount) -> NSMenuItem {
-        var title = value.initCompte?.codeCompte ?? "----"
+        var title = value.initAccount?.codeAccount ?? "----"
         let menuItem = NSMenuItem()
         
         if value == currentAccount {
@@ -47,8 +47,8 @@ extension OperationViewController {
         if account != nil {
             self.entityCompteTransfert = account
             self.nameCompte.stringValue = (account?.name)!
-            self.nomTitulaire.stringValue = (account?.identite?.idName)!
-            self.prenomTitulaire.stringValue = (account?.identite?.idPrenom)!
+            self.nomTitulaire.stringValue = (account?.identity?.name)!
+            self.prenomTitulaire.stringValue = (account?.identity?.surName)!
         } else {
             self.nameCompte.stringValue = ""
             self.nomTitulaire.stringValue = ""
@@ -60,7 +60,7 @@ extension OperationViewController {
     func loadModePaiement () {
         let  modePaiementMenu = NSMenu()
         
-        let modesPaiement = ModePaiement.shared.getAll()
+        let modesPaiement = ModePaiement.shared.getAllDatas()
         for modePaiement in modesPaiement
         {
             modePaiementMenu.addItem( modePaiementItemFor( modePaiement ) )

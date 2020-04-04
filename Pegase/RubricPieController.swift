@@ -78,7 +78,7 @@ final class RubricPieController: NSViewController
     func updateAccount () {
         listeOperations = ListeOperations.shared.entities
         if listeOperations.isEmpty == true || ListeOperations.shared.ascending == false {
-            listeOperations = ListeOperations.shared.getAll()
+            listeOperations = ListeOperations.shared.getAllDatas()
         }
         if listeOperations.isEmpty == false {
             
@@ -170,8 +170,8 @@ final class RubricPieController: NSViewController
             for sousOperation in sousOperations {
                 
                 value = sousOperation.amount
-                rubrique = (sousOperation.category?.rubrique!.name)!
-                color = sousOperation.category?.rubrique?.color as! NSColor
+                rubrique = (sousOperation.category?.rubric!.name)!
+                color = sousOperation.category?.rubric?.color as! NSColor
                 
                 if value < 0 {
                     dataArrayD.append( DataGraph( name: rubrique, value: value, color: color))

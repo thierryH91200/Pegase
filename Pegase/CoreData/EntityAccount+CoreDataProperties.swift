@@ -20,11 +20,11 @@ extension EntityAccount {
 //    @NSManaged public var solde: Double
     @NSManaged public var uuid: UUID
 
-    @NSManaged public var banque: EntityBanque?
+    @NSManaged public var bank: EntityBank?
     @NSManaged public var carnetCheques: NSSet?
     @NSManaged public var echeanciers: NSSet?
-    @NSManaged public var identite: EntityIdentite?
-    @NSManaged public var initCompte: EntityInitCompte?
+    @NSManaged public var identity: EntityIdentity?
+    @NSManaged public var initAccount: EntityInitAccount?
     @NSManaged public var modePaiement: NSSet?
     @NSManaged public var operations: NSSet?
     @NSManaged public var preference: EntityPreference?
@@ -104,17 +104,17 @@ extension EntityAccount {
 // MARK: Generated accessors for rubrique
 extension EntityAccount {
 
-    @objc(addRubriqueObject:)
-    @NSManaged public func addToRubrique(_ value: EntityRubrique)
+    @objc(addRubricObject:)
+    @NSManaged public func addToRubric(_ value: EntityRubric)
 
-    @objc(removeRubriqueObject:)
-    @NSManaged public func removeFromRubrique(_ value: EntityRubrique)
+    @objc(removeRubricObject:)
+    @NSManaged public func removeFromRubrique(_ value: EntityRubric)
 
-    @objc(addRubrique:)
-    @NSManaged public func addToRubrique(_ values: NSSet)
+    @objc(addRubric:)
+    @NSManaged public func addToRubric(_ values: NSSet)
 
     @objc(removeRubrique:)
-    @NSManaged public func removeFromRubrique(_ values: NSSet)
+    @NSManaged public func removeFromRubric(_ values: NSSet)
 
 }
 

@@ -46,10 +46,10 @@ extension GroupeAccountViewController: NSMenuDelegate {
                         let type            = self.accountModalWindowController.typeAccount.indexOfSelectedItem
                         
                         item.name                   = libelleAccount
-                        item.initCompte?.realise    = soldeInitial
-                        item.identite?.idName       = nomTitulaire
-                        item.identite?.idPrenom     = prenomTitulaire
-                        item.initCompte?.codeCompte = numAccount
+                        item.initAccount?.realise    = soldeInitial
+                        item.identity?.name       = nomTitulaire
+                        item.identity?.surName     = prenomTitulaire
+                        item.initAccount?.codeAccount = numAccount
                         item.nameImage              = nameImage
                         item.type                   = Int16(type)
                         
@@ -128,7 +128,7 @@ extension GroupeAccountViewController: NSMenuDelegate {
                 
                 let compte   = Account.shared.create(nameAccount: nameAccount, nameImage: nameImage!, idName: nom, idPrenom: prenom, numAccount: numAccount)
                 compte.type = Int16(type)
-                compte.initCompte?.realise = soldeInitial
+                compte.initAccount?.realise = soldeInitial
                 
                 //                let undo = self.undoManager!
                 //                (undo.prepare(withInvocationTarget: compte) as AnyObject).setValue(compte, forKeyPath: "compte")

@@ -24,8 +24,8 @@ extension EcheanciersSaisieController: EcheanciersSaisieDelegate {
         frequence.intValue = Int32((entityEcheancier?.frequence)!)
         popUpFrequence.selectItem(at: Int(entityEcheancier?.typeFrequence ?? 0))
         
-        let rubrique = popUpRubrique.itemTitle(at: 0)
-        popUpRubrique.selectItem(withTitle: (entityEcheancier?.category?.rubrique?.name ?? rubrique)!)
+        let rubric = popUpRubrique.itemTitle(at: 0)
+        popUpRubrique.selectItem(withTitle: (entityEcheancier?.category?.rubric?.name ?? rubric)!)
         if popUpRubrique.indexOfSelectedItem == -1 {
             popUpRubrique.selectItem(at: 0)
         }
@@ -44,7 +44,7 @@ extension EcheanciersSaisieController: EcheanciersSaisieDelegate {
         montant.doubleValue = abs(valeurMontant)
         signeMontant.state = valeurMontant < 0 ? .on : .off
         
-        popUpTransfert.selectItem(withTitle: entityEcheancier?.compteLie?.initCompte?.codeCompte ?? "(no transfert)")
+        popUpTransfert.selectItem(withTitle: entityEcheancier?.compteLie?.initAccount?.codeAccount ?? "(no transfert)")
         
         becomeFirstResponder()
 //        resignFirstResponder()
@@ -52,7 +52,7 @@ extension EcheanciersSaisieController: EcheanciersSaisieDelegate {
     
     func razData()
     {
-        entityPreference = Preference.shared.getAll()
+        entityPreference = Preference.shared.getAllDatas()
         
         edition = false
         modeOperation.title = Localizations.Operation.ModeCreation
@@ -62,15 +62,15 @@ extension EcheanciersSaisieController: EcheanciersSaisieDelegate {
         modeOperation2.layer?.backgroundColor = NSColor.orange.cgColor
         
         account.stringValue = (currentAccount?.name)!
-        name.stringValue = (currentAccount?.identite?.idName)!
-        surname.stringValue = (currentAccount?.identite?.idPrenom)!
-        number.stringValue = (currentAccount?.initCompte?.codeCompte)!
+        name.stringValue = (currentAccount?.identity?.name)!
+        surname.stringValue = (currentAccount?.identity?.surName)!
+        number.stringValue = (currentAccount?.initAccount?.codeAccount)!
         
         loadCompte()
         popUpTransfert.itemTitle(at: 0)
         
         loadRubrique()
-        popUpRubrique.selectItem(withTitle: (entityPreference?.category?.rubrique?.name)!)
+        popUpRubrique.selectItem(withTitle: (entityPreference?.category?.rubric?.name)!)
         
         loadCategory()
         popUpCategorie.selectItem(withTitle: (entityPreference?.category?.name)!)

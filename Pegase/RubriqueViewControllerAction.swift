@@ -8,7 +8,7 @@ extension RubriqueViewController : NSMenuDelegate {
         
         let treeNode = item as? NSTreeNode
         let managedObject = treeNode?.representedObject as? NSManagedObject
-        let entity = managedObject is EntityRubrique
+        let entity = managedObject is EntityRubric
 
         for menuItem in menu.items
         {
@@ -36,12 +36,12 @@ extension RubriqueViewController : NSMenuDelegate {
         let treeNode = item as? NSTreeNode
         let managedObject = treeNode?.representedObject as? NSManagedObject
         
-        guard ( managedObject is EntityRubrique ) == true else { return }
+        guard ( managedObject is EntityRubric ) == true else { return }
 
         let color = sender.color
         
-        if ( managedObject is EntityRubrique ) == true {
-            let entityRubrique = managedObject as! EntityRubrique
+        if ( managedObject is EntityRubric ) == true {
+            let entityRubrique = managedObject as! EntityRubric
             entityRubrique.color = color
             
             let select: IndexSet = [selected]
@@ -62,7 +62,7 @@ extension RubriqueViewController : NSMenuDelegate {
                 let name = self.rubriqueModalWindowController.name.stringValue
                 let color = self.rubriqueModalWindowController.colorWell.color
                 
-                let entity = EntityRubrique(context: self.managedObjectContext)
+                let entity = EntityRubric(context: self.managedObjectContext)
                 entity.name = name
                 entity.color = color
                 entity.uuid = UUID()
@@ -90,7 +90,7 @@ extension RubriqueViewController : NSMenuDelegate {
          let treeNode = item as? NSTreeNode
          let managedObject = treeNode?.representedObject as? NSManagedObject
 
-        let entityRubrique = managedObject as! EntityRubrique
+        let entityRubrique = managedObject as! EntityRubric
 
         self.rubriqueModalWindowController = RubriqueModalWindowController()
         self.rubriqueModalWindowController.edition = true
@@ -120,7 +120,7 @@ extension RubriqueViewController : NSMenuDelegate {
     
     @IBAction func removeRubrique(_ sender: NSButton) {
         
-        let entityPreference = Preference.shared.getAll()
+        let entityPreference = Preference.shared.getAllDatas()
         var entityOperations = [EntityOperations]()
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
         
@@ -130,9 +130,9 @@ extension RubriqueViewController : NSMenuDelegate {
         let treeNode = item as? NSTreeNode
         let managedObject = treeNode?.representedObject as? NSManagedObject
         
-        let entityRubrique = managedObject as? EntityRubrique
+        let entityRubrique = managedObject as? EntityRubric
         
-        if entityPreference.category?.rubrique == entityRubrique {
+        if entityPreference.category?.rubric == entityRubrique {
             let alert = NSAlert()
             alert.alertStyle = NSAlert.Style.critical
             alert.icon = nil
@@ -172,7 +172,7 @@ extension RubriqueViewController : NSMenuDelegate {
                 let sousOperations = entityOperation.sousOperations?.allObjects  as! [EntitySousOperations]
                 for sousOperation in sousOperations {
                     sousOperation.category = entityPreference.category
-                    sousOperation.category?.rubrique = entityPreference.category?.rubrique
+                    sousOperation.category?.rubric = entityPreference.category?.rubric
                 }
             }
             print("This element was 🗑! : ", entityRubrique!.name!)
@@ -185,17 +185,17 @@ extension RubriqueViewController : NSMenuDelegate {
     @IBAction func addCategorie(_ sender: NSButton) {
         
         let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
-        var entityRubrique: EntityRubrique
+        var entityRubric: EntityRubric
         
         let item = anOutlineView.item(atRow: selected[0])
         let treeNode = item as? NSTreeNode
         let managedObject = treeNode?.representedObject as? NSManagedObject
         
-        if managedObject is EntityRubrique {
-            entityRubrique = managedObject as! EntityRubrique
+        if managedObject is EntityRubric {
+            entityRubric = managedObject as! EntityRubric
         } else {
             let entityCategory = managedObject as! EntityCategory
-            entityRubrique = entityCategory.rubrique!
+            entityRubric = entityCategory.rubric!
         }
         
         self.categorieModalWindowController = CategorieModalWindowController()
@@ -211,7 +211,7 @@ extension RubriqueViewController : NSMenuDelegate {
                 let entityCategory = EntityCategory(context: self.managedObjectContext)
                 entityCategory.name = name
                 entityCategory.objectif = objectif
-                entityCategory.rubrique = entityRubrique
+                entityCategory.rubric = entityRubric
                 
                 self.anTreeController.rearrangeObjects()
                 self.anOutlineView.reloadData()
@@ -236,7 +236,7 @@ extension RubriqueViewController : NSMenuDelegate {
         let treeNode = item as? NSTreeNode
         let managedObject = treeNode?.representedObject as? NSManagedObject
         
-        if managedObject is EntityRubrique {
+        if managedObject is EntityRubric {
             return
             
         } else {
@@ -277,7 +277,7 @@ extension RubriqueViewController : NSMenuDelegate {
     
     @IBAction func removeCategory(_ sender: NSButton) {
         
-        let entityPreference = Preference.shared.getAll()
+        let entityPreference = Preference.shared.getAllDatas()
         var entityOperations = [EntityOperations]()
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
         
@@ -332,7 +332,7 @@ extension RubriqueViewController : NSMenuDelegate {
                 let sousOperations = entityOperation.sousOperations?.allObjects  as! [EntitySousOperations]
                 for sousOperation in sousOperations where sousOperation.category?.name ==  entityCategory?.name {
                     sousOperation.category = entityPreference.category
-                    sousOperation.category?.rubrique = entityPreference.category?.rubrique
+                    sousOperation.category?.rubric = entityPreference.category?.rubric
                 }
             }
             print("This element was 🗑! : ", entityCategory!.name!)

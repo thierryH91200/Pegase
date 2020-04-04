@@ -2,10 +2,10 @@ import CoreData
 import Foundation
 
 
-extension EntityRubrique {
+extension EntityRubric {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<EntityRubrique> {
-        return NSFetchRequest<EntityRubrique>(entityName: "EntityRubrique")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<EntityRubric> {
+        return NSFetchRequest<EntityRubric>(entityName: "EntityRubric")
     }
 
     @NSManaged public var color: NSObject?
@@ -18,7 +18,7 @@ extension EntityRubrique {
 }
 
 // MARK: Generated accessors for category
-extension EntityRubrique {
+extension EntityRubric {
 
     @objc(addCategoryObject:)
     @NSManaged public func addToCategory(_ value: EntityCategory)
@@ -34,7 +34,7 @@ extension EntityRubrique {
 
 }
 
-extension EntityRubrique {
+extension EntityRubric {
     
     @objc var  children: NSSet {
         return category!
@@ -50,7 +50,7 @@ extension EntityRubrique {
     
 }
 
-extension EntityRubrique {
+extension EntityRubric {
     @objc var total: Double {
         // Create and cache the section total on demand.
         

@@ -2,7 +2,7 @@
 //import CoreData
 import AppKit
 
-@objc(EntityRubrique)
-public class EntityRubrique: NSManagedObject {
+@objc(EntityRubric)
+public class EntityRubric: NSManagedObject {
 
 }

@@ -5,7 +5,7 @@ extension EcheanciersSaisieController {
 
     // # MARK: PopUp Rubrique - Catégorie
     func loadRubrique() {
-        entityRubriques = Rubric.shared.getAll()
+        entityRubriques = Rubric.shared.getAllDatas()
         let  rubriqueMenu = NSMenu()
         for entityRubrique in entityRubriques
         {
@@ -14,7 +14,7 @@ extension EcheanciersSaisieController {
         popUpRubrique.menu = rubriqueMenu
     }
 
-    func rubriqueItemFor(_ value: EntityRubrique) -> NSMenuItem {
+    func rubriqueItemFor(_ value: EntityRubric) -> NSMenuItem {
         let menuItem = NSMenuItem()
         menuItem.title = value.name!
         menuItem.action = #selector(optionRubrique(sender:))
@@ -34,7 +34,7 @@ extension EcheanciersSaisieController {
     func loadCategory () {
         let selectItem = popUpRubrique.selectedItem
         let  categorieMenu = NSMenu()
-        let cat = selectItem?.representedObject as! EntityRubrique
+        let cat = selectItem?.representedObject as! EntityRubric
         let categories = cat.category?.allObjects as! [EntityCategory]
         
         for categorie in categories {
@@ -58,7 +58,7 @@ extension EcheanciersSaisieController {
     func loadModePaiement () {
         let  modePaiementMenu = NSMenu()
         
-        let modesPaiement = ModePaiement.shared.getAll()
+        let modesPaiement = ModePaiement.shared.getAllDatas()
         for modePaiement in modesPaiement
         {
             modePaiementMenu.addItem(modePaiementItemFor(modePaiement) )
@@ -85,7 +85,7 @@ extension EcheanciersSaisieController {
     func loadCompte () {
         let  transfertMenu = NSMenu()
         
-        let comptes = Account.shared.getAll()
+        let comptes = Account.shared.getAllDatas()
         for compte in comptes where compte.isAccount == true
         {
             transfertMenu.addItem(compteItemFor(compte) )
@@ -100,7 +100,7 @@ extension EcheanciersSaisieController {
     }
     
     fileprivate func compteItemFor(_ value: EntityAccount) -> NSMenuItem {
-        var number = value.initCompte?.codeCompte!
+        var number = value.initAccount?.codeAccount!
         let menuItem = NSMenuItem()
         
         if value == currentAccount {

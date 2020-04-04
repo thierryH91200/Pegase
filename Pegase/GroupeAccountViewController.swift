@@ -89,12 +89,12 @@ final class GroupeAccountViewController: NSViewController {
         
         if let item = outlineView?.item(atRow: index!) as? EntityAccount
         {
-            if item.identite != nil {
+            if item.identity != nil {
                 indexRow = index!
                 currentAccount = item
                 
-                Rubric.shared.getAll()
-                ModePaiement.shared.getAll()
+                Rubric.shared.getAllDatas()
+                ModePaiement.shared.getAllDatas()
 
                 Account.shared.printAccount(entityAccount: currentAccount!, description: "select")
                 NotificationCenter.send(.updateAccount)

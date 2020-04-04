@@ -109,7 +109,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 {
                 case .rubrique:
                     if sousOperations.count == 1 {
-                        textField.stringValue = sousOperations[0].category?.rubrique?.name ?? ""
+                        textField.stringValue = sousOperations[0].category?.rubric?.name ?? ""
                     } else {
 //                        cellView = CrossHatchView()
                         textField.stringValue = ""
@@ -182,7 +182,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 
                 case .releveBancaire:
                     paragraph.alignment = .center
-                    textField.doubleValue = quake.releveBancaire
+                    textField.doubleValue = quake.bankStatement
                 
                 case .solde:
                     let solde = quake.solde
@@ -235,29 +235,11 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 
                 switch propertyEnum
                 {
-                case .dateOperation:
+                case .dateOperation, .datePointage, .releveBancaire, .statut, .liee, .mode, .solde:
                     textField.stringValue = ""
                 
-                case .datePointage:
-                    textField.stringValue = ""
-
-                case .releveBancaire:
-                    textField.stringValue = ""
-                
-                case .solde:
-                    textField.stringValue = ""
-                
-                case .statut:
-                    textField.stringValue = ""
-                
-                case .liee:
-                    textField.stringValue = ""
-
-                case .mode:
-                    textField.stringValue = ""
-
                 case .rubrique:
-                    textField.stringValue = sousOperations.category?.rubrique?.name ?? ""
+                    textField.stringValue = sousOperations.category?.rubric?.name ?? ""
                 
                 case .categorie:
                     textField.stringValue = sousOperations.category?.name ?? ""
@@ -343,7 +325,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         
         case .some(.rubrique):
             let sousOperations = quake.sousOperations?.allObjects as! [EntitySousOperations]
-            attrs[.foregroundColor] = sousOperations.first?.category?.rubrique?.color
+            attrs[.foregroundColor] = sousOperations.first?.category?.rubric?.color
         
         case .some(.statut):
             let statutEnum = TypeOfStatut(rawValue: (Int(quake.statut)))!
@@ -388,7 +370,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
             }
         
         case .some(.rubrique):
-            attrs[.foregroundColor] = quake.category?.rubrique?.color
+            attrs[.foregroundColor] = quake.category?.rubric?.color
         
         case .some(.statut):
             break

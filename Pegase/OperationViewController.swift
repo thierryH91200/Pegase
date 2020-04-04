@@ -174,8 +174,8 @@ final class OperationViewController: NSViewController {
         for sousOperation in sousOperations {
             
             value = sousOperation.amount
-            nameRubrique = (sousOperation.category?.rubrique!.name)!
-            color = (sousOperation.category?.rubrique!.color) as! NSColor
+            nameRubrique = (sousOperation.category?.rubric!.name)!
+            color = (sousOperation.category?.rubric!.color) as! NSColor
             self.dataRubriquePie.append(DataGraph(name: nameRubrique, value: value, color: color))
         }
         self.groupedBonds = Dictionary(grouping: self.dataRubriquePie) { (DataRubriquePie) -> String in
@@ -280,7 +280,7 @@ final class OperationViewController: NSViewController {
             
             // Relevé bancaire
             if (setReleve.count > 1 && textFieldReleveBancaire.stringValue != "") || setReleve.count == 1 {
-                oneOperation.releveBancaire  = textFieldReleveBancaire.doubleValue
+                oneOperation.bankStatement  = textFieldReleveBancaire.doubleValue
             }
             
             // ModePaiement
@@ -344,9 +344,9 @@ final class OperationViewController: NSViewController {
         
         
         entityOperationsTransfert?.statut        = oneOperation.statut
-        entityOperationsTransfert?.releveBancaire  = oneOperation.releveBancaire
+        entityOperationsTransfert?.bankStatement  = oneOperation.bankStatement
         
-        let entityPreference = Preference.shared.getAll()
+        let entityPreference = Preference.shared.getAllDatas()
 
         sousOperations = oneOperation.sousOperations?.allObjects as! [EntitySousOperations]
         for sousOperation in sousOperations {

@@ -13,7 +13,7 @@ extension EntityCategory {
     @NSManaged public var uuid: UUID?
     @NSManaged public var echeancier: NSSet?
     @NSManaged public var preference: EntityPreference?
-    @NSManaged public var rubrique: EntityRubrique?
+    @NSManaged public var rubric: EntityRubric?
     @NSManaged public var sousOperations: NSSet?
 
 }

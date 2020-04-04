@@ -48,7 +48,7 @@ final class EcheanciersSaisieController: NSViewController, NSTextFieldDelegate, 
     
     @IBOutlet weak var signeMontant: NSButton!
     var categories = [EntityCategory]()
-    var entityRubriques = [EntityRubrique]()
+    var entityRubriques = [EntityRubric]()
     var modesPaiement = [EntityModePaiement]()
     var entityEcheancier: EntityEcheancier?
     var entityPreference: EntityPreference?

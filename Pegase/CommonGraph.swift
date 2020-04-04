@@ -37,7 +37,7 @@ class CommonGraph: NSViewController {
     func updateAccount () {
         listeOperations = ListeOperations.shared.entities
         if listeOperations.isEmpty == true || ListeOperations.shared.ascending == false {
-            listeOperations = ListeOperations.shared.getAll()
+            listeOperations = ListeOperations.shared.getAllDatas()
         }
         if listeOperations.isEmpty == false {
             

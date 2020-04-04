@@ -54,7 +54,7 @@ final class ModePaiement {
         let  modePaiementMenu = NSMenu()
         let popModePaiement =  NSPopUpButton()
         
-        var modesPaiement = getAll()
+        var modesPaiement = getAllDatas()
         modesPaiement = modesPaiement.sorted { $0.name! < $1.name! }
         for modePaiement in modesPaiement
         {
@@ -76,7 +76,7 @@ final class ModePaiement {
     }
     
     @discardableResult
-    func getAll() -> [EntityModePaiement] {
+    func getAllDatas() -> [EntityModePaiement] {
         
         do {
             let fetchRequest = NSFetchRequest<EntityModePaiement>(entityName: "EntityModePaiement")

@@ -43,7 +43,7 @@ extension RubriqueViewController: NSOutlineViewDelegate {
         let treeNode = item as? NSTreeNode
         let managedObject = treeNode?.representedObject as? NSManagedObject
         
-        let entityRubrique = managedObject as? EntityRubrique
+        let entityRubrique = managedObject as? EntityRubric
         if entityRubrique != nil {
             addRubric.isEnabled = true
             removeRubric.isEnabled = true
@@ -61,7 +61,7 @@ extension RubriqueViewController: NSOutlineViewDelegate {
     func isHeader(item: Any) -> Bool {
         
         let treeNode = item as? NSTreeNode
-        return treeNode?.representedObject is EntityRubrique
+        return treeNode?.representedObject is EntityRubric
     }
 
 }

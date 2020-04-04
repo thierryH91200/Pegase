@@ -87,7 +87,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
     
     @IBAction func actionImport(_ sender: NSButton) {
         
-        let entityPreference = Preference.shared.getAll()
+        let entityPreference = Preference.shared.getAllDatas()
         let formatDate = statusBarFormatViewController?.formatDate.stringValue
         
         let menuItem = statusBarFormatViewController?.popUpCompte.selectedItem

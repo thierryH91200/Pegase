@@ -5,7 +5,7 @@ final class Account {
     static let shared = Account()
     var entities = [EntityAccount]()
     
-    func getAll() -> [EntityAccount] {
+    func getAllDatas() -> [EntityAccount] {
 
         do {
             entities = try mainObjectContext.fetch(EntityAccount.fetchRequest())
@@ -24,13 +24,13 @@ final class Account {
         account.isAccount = true
         account.uuid = UUID()
         
-        let identite = Identite.shared.create(name: idName, prenom: idPrenom)
-        identite.account = account
-        account.identite = identite
+        let identity = Identity.shared.create(name: idName, prenom: idPrenom)
+        identity.account = account
+        account.identity = identity
         
         let initAccount = InitAccount.shared.create(numAccount: numAccount)
         initAccount.account = account
-        account.initCompte = initAccount
+        account.initAccount = initAccount
 
         return account
     }
@@ -51,12 +51,12 @@ final class Account {
     
     // just for the debug
     func printAccount(entityAccount: EntityAccount, description: String) {
-        let name = entityAccount.name ?? "nameCompte"
+        let name = entityAccount.name ?? "nameAccount"
         
-        let identite = entityAccount.identite
-        let idName = identite?.idName ?? "name"
-        let idPrenom = identite?.idPrenom ?? "prenom"
-        let idNumber = entityAccount.initCompte?.codeCompte ?? "codeCompte"
+        let identity = entityAccount.identity
+        let idName = identity?.name ?? "name"
+        let idPrenom = identity?.surName ?? "prenom"
+        let idNumber = entityAccount.initAccount?.codeAccount ?? "codeAccount"
         
         print("\(description) : \(name) \(idName) \(idPrenom) \(idNumber)")
     }

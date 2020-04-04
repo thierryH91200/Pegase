@@ -68,12 +68,12 @@ extension GroupeAccountViewController: NSOutlineViewDelegate {
             let name = entityAccount.name ?? "vide"
             view.textField?.stringValue = name
             
-            let titulaireNom = entityAccount.identite?.idName ?? ""
-            let titulairePrenom = entityAccount.identite?.idPrenom ?? ""
+            let titulaireNom = entityAccount.identity?.name ?? ""
+            let titulairePrenom = entityAccount.identity?.surName ?? ""
             let titulaire = titulairePrenom + " " + titulaireNom
             view.titulaire.stringValue = titulaire
             
-            let numCompte = entityAccount.initCompte?.codeCompte
+            let numCompte = entityAccount.initAccount?.codeAccount
             view.numCompte.stringValue = numCompte ?? ""
             
             let nameImage = entityAccount.nameImage!

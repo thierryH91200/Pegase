@@ -5,7 +5,7 @@ final class Preference {
     static let shared = Preference()
     var entityPreference = [EntityPreference]()
     
-    func getAll() -> EntityPreference {
+    func getAllDatas() -> EntityPreference {
         
         guard currentAccount != nil else { return entityPreference[0] }
         
@@ -23,14 +23,14 @@ final class Preference {
             
             let entityPreference = EntityPreference(context: mainObjectContext)
             
-            var rubrique = Rubric.shared.getAll()
-            rubrique = rubrique.sorted { $0.name! < $1.name! }
+            var rubric = Rubric.shared.getAllDatas()
+            rubric = rubric.sorted { $0.name! < $1.name! }
             
-            var categories = rubrique.first?.category?.allObjects as! [EntityCategory]
+            var categories = rubric.first?.category?.allObjects as! [EntityCategory]
             categories = categories.sorted { $0.name! < $1.name! }
             entityPreference.category = categories.first
 
-            let modesPaiement = ModePaiement.shared.getAll()
+            let modesPaiement = ModePaiement.shared.getAllDatas()
             entityPreference.modePaiement = modesPaiement.first
             
             entityPreference.statut = 1

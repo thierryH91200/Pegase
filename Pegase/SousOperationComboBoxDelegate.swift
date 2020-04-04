@@ -19,7 +19,7 @@ extension SousOperationModalWindowController : NSComboBoxDelegate {
         
         if comboBox == self.comboBoxRubrique
         {
-            entityCategories = entityRubrique[selectRub].category?.allObjects as! [EntityCategory]
+            entityCategories = entityRubric[selectRub].category?.allObjects as! [EntityCategory]
             entityCategories = entityCategories.sorted { $0.name! < $1.name! }
             
             arrayCat.removeAll()

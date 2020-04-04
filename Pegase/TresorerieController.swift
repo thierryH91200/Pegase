@@ -68,7 +68,7 @@ final class TresorerieController: NSViewController
     }
     
     func updateAccount () {
-        listeOperations = ListeOperations.shared.getAll()
+        listeOperations = ListeOperations.shared.getAllDatas()
         if listeOperations.isEmpty == false {
             
             firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!

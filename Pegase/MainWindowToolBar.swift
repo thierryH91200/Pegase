@@ -232,7 +232,7 @@ extension MainWindowController {
                     print(error)
                 }
                 
-                let entityPreference = Preference.shared.getAll()
+                let entityPreference = Preference.shared.getAllDatas()
                 let dateformatter = DateFormatter()
                 dateformatter.dateStyle = .short
                 let now = dateformatter.string(from: Date().noon)
@@ -330,7 +330,7 @@ extension MainWindowController {
         delimiter = String((config?.delimiter)!)
         quote = (config?.quoteCharacter)!
         
-        let listeOperations = ListeOperations.shared.getAll()
+        let listeOperations = ListeOperations.shared.getAllDatas()
         
         var account = ""
         var data = ""
@@ -372,7 +372,7 @@ extension MainWindowController {
                 data       = sousOperation.libelle!
                 export = "\(quote)\(data)\(quote)\(delimiter)"
                 
-                data      = (sousOperation.category?.rubrique?.name)!
+                data      = (sousOperation.category?.rubric?.name)!
                 export = "\(quote)\(data)\(quote)\(delimiter)"
                 
                 data     = (sousOperation.category?.name)!

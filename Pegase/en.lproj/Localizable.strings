@@ -148,3 +148,8 @@
 "MenuBar.RéférenceCompte.Identite" = "Identite";
 "MenuBar.RéférenceCompte.Scheduler" = "Scheduler";
 "MenuBar.RéférenceCompte.Settings" = "Settings";
+
+
+/* Delete button. */
+"TouchBar.Delete" = "Delete";
+

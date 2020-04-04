@@ -354,7 +354,7 @@ final class ListeOperationsController: NSViewController {
     
     private func balanceCalculation()
     {
-        let initCompte = InitAccount.shared.getAll()
+        let initCompte = InitAccount.shared.getAllDatas()
         var soldeRealise = initCompte.realise
         var soldePrevu  = initCompte.prevu
         var soldeEngage = initCompte.engage
@@ -444,7 +444,7 @@ extension ListeOperationsController: OperationsDelegate {
 //        progressIndicator.startAnimation(nil)
 
 //        for _ in 0..<1000 {
-            listeOperations = ListeOperations.shared.getAll(ascending: false)
+            listeOperations = ListeOperations.shared.getAllDatas(ascending: false)
             self.transformData()
 //        }
 
