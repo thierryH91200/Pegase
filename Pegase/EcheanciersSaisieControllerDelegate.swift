@@ -4,7 +4,7 @@ import SwiftDate
 
 extension EcheanciersSaisieController: EcheanciersSaisieDelegate {
     
-    func editionData(_ quake: EntityEcheancier) {
+    func editionData(_ quake: EntitySchedule) {
         edition = true
         modeOperation.title = Localizations.Operation.ModeEdition
         modeOperation.layer?.backgroundColor = NSColor.green.cgColor
@@ -12,39 +12,39 @@ extension EcheanciersSaisieController: EcheanciersSaisieDelegate {
         modeOperation2.title = Localizations.Operation.ModeEdition
         modeOperation2.layer?.backgroundColor = NSColor.green.cgColor
         
-        entityEcheancier = quake
+        entitySchedule = quake
         
-        libelle.stringValue = entityEcheancier?.libelle ?? ""
+        libelle.stringValue = entitySchedule?.libelle ?? ""
         libelle.becomeFirstResponder()
         
-        dateValeur.dateValue = (entityEcheancier?.dateValeur)!
-        dateDebut.dateValue = (entityEcheancier?.dateDebut)!
-        dateFin.dateValue = (entityEcheancier?.dateFin)!
-        occurence.intValue = Int32((entityEcheancier?.occurence)!)
-        frequence.intValue = Int32((entityEcheancier?.frequence)!)
-        popUpFrequence.selectItem(at: Int(entityEcheancier?.typeFrequence ?? 0))
+        dateValeur.dateValue = (entitySchedule?.dateValeur)!
+        dateDebut.dateValue = (entitySchedule?.dateDebut)!
+        dateFin.dateValue = (entitySchedule?.dateFin)!
+        occurence.intValue = Int32((entitySchedule?.occurence)!)
+        frequence.intValue = Int32((entitySchedule?.frequence)!)
+        popUpFrequence.selectItem(at: Int(entitySchedule?.typeFrequence ?? 0))
         
         let rubric = popUpRubrique.itemTitle(at: 0)
-        popUpRubrique.selectItem(withTitle: (entityEcheancier?.category?.rubric?.name ?? rubric)!)
+        popUpRubrique.selectItem(withTitle: (entitySchedule?.category?.rubric?.name ?? rubric)!)
         if popUpRubrique.indexOfSelectedItem == -1 {
             popUpRubrique.selectItem(at: 0)
         }
         
         loadCategory()
-        popUpCategorie.selectItem(withTitle: (entityEcheancier?.category?.name ?? "")!)
+        popUpCategorie.selectItem(withTitle: (entitySchedule?.category?.name ?? "")!)
         if popUpCategorie.indexOfSelectedItem == -1 {
             popUpCategorie.selectItem(at: 0)
         }
         
         let mode = popUpModePaiement.itemTitle(at: 0)
-        popUpModePaiement.selectItem(withTitle: (entityEcheancier?.modePaiement?.name ?? mode)!)
+        popUpModePaiement.selectItem(withTitle: (entitySchedule?.modePaiement?.name ?? mode)!)
         
-        let valeurMontant = entityEcheancier?.amount ?? 0.0
+        let valeurMontant = entitySchedule?.amount ?? 0.0
         montant.textColor = valeurMontant < 0 ? NSColor.red : NSColor.green
         montant.doubleValue = abs(valeurMontant)
         signeMontant.state = valeurMontant < 0 ? .on : .off
         
-        popUpTransfert.selectItem(withTitle: entityEcheancier?.compteLie?.initAccount?.codeAccount ?? "(no transfert)")
+        popUpTransfert.selectItem(withTitle: entitySchedule?.compteLie?.initAccount?.codeAccount ?? "(no transfert)")
         
         becomeFirstResponder()
 //        resignFirstResponder()

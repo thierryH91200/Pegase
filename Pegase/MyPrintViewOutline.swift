@@ -185,7 +185,7 @@ final class MyPrintViewOutline: NSView
             bezierPath.close()
             
             let columnTitle = column.title
-            columnTitle.draw(in: NSInsetRect(headerRect, inset, inset), withAttributes: attributes)
+            columnTitle.draw(in: headerRect.insetBy(dx: inset, dy: inset), withAttributes: attributes)
         }
         
         let firstEntryOfPage = self.currentPage * self.linesPerPage
@@ -245,7 +245,7 @@ final class MyPrintViewOutline: NSView
                     bezierPath.stroke()
                     bezierPath.close()
                     
-                    let stringRect = NSInsetRect(rect, inset, inset)
+                    let stringRect = rect.insetBy(dx: inset, dy: inset)
                     valueAsStr.draw(in: stringRect, withAttributes: attributes)
                 } else
                 

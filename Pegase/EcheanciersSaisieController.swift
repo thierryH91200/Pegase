@@ -8,7 +8,7 @@ class Foo: NSObject {
 
 @objc public protocol EcheanciersSaisieDelegate
 {
-    func editionData(_ quake: EntityEcheancier)
+    func editionData(_ quake: EntitySchedule)
     func razData()
 }
 
@@ -50,7 +50,7 @@ final class EcheanciersSaisieController: NSViewController, NSTextFieldDelegate, 
     var categories = [EntityCategory]()
     var entityRubriques = [EntityRubric]()
     var modesPaiement = [EntityModePaiement]()
-    var entityEcheancier: EntityEcheancier?
+    var entitySchedule: EntitySchedule?
     var entityPreference: EntityPreference?
     var entityCompteTransfert: EntityAccount?
     var entityOperationsTransfert: EntityOperations?
@@ -247,44 +247,44 @@ final class EcheanciersSaisieController: NSViewController, NSTextFieldDelegate, 
         
         if edition == false
         {
-            entityEcheancier = EntityEcheancier(context: mainObjectContext)
+            entitySchedule = EntitySchedule(context: mainObjectContext)
             
-            entityEcheancier?.dateCree = Date()
-            entityEcheancier?.account = currentAccount
-            entityEcheancier?.nextOccurence = 0
+            entitySchedule?.dateCree = Date()
+            entitySchedule?.account = currentAccount
+            entitySchedule?.nextOccurence = 0
         }
-        entityEcheancier?.dateModifie   = Date()
+        entitySchedule?.dateModifie   = Date()
         
-        entityEcheancier?.libelle       = libelle.stringValue
+        entitySchedule?.libelle       = libelle.stringValue
         
         let signe = signeMontant.state.rawValue
         let valeurMontant = montant.doubleValue
-        entityEcheancier?.amount       = signe == 0 ? valeurMontant : -valeurMontant
+        entitySchedule?.amount       = signe == 0 ? valeurMontant : -valeurMontant
 
-        entityEcheancier?.dateDebut     = dateDebut.dateValue.noon
-        entityEcheancier?.dateFin       = dateFin.dateValue.noon
-        entityEcheancier?.dateValeur    = dateValeur.dateValue.noon
-        entityEcheancier?.occurence     = Int16(occurence.intValue)
-        entityEcheancier?.frequence     = Int16(frequence.intValue)
+        entitySchedule?.dateDebut     = dateDebut.dateValue.noon
+        entitySchedule?.dateFin       = dateFin.dateValue.noon
+        entitySchedule?.dateValeur    = dateValeur.dateValue.noon
+        entitySchedule?.occurence     = Int16(occurence.intValue)
+        entitySchedule?.frequence     = Int16(frequence.intValue)
         let typeFrequence               = popUpFrequence.indexOfSelectedItem
-        entityEcheancier?.typeFrequence = Int16(typeFrequence)
+        entitySchedule?.typeFrequence = Int16(typeFrequence)
         
         var menuItem = popUpCategorie.selectedItem
         let entity = menuItem?.representedObject as! EntityCategory
-        entityEcheancier?.category = entity
+        entitySchedule?.category = entity
         
         menuItem = popUpModePaiement.selectedItem
         let entity2 = menuItem?.representedObject as! EntityModePaiement
-        entityEcheancier?.modePaiement = entity2
+        entitySchedule?.modePaiement = entity2
 
-        entityEcheancier?.uuid          = UUID()
+        entitySchedule?.uuid          = UUID()
         
         menuItem = popUpTransfert.selectedItem
         let title = menuItem?.title ?? ""
 
         if title != "(no transfert)" {
             let compte = menuItem?.representedObject as! EntityAccount
-            entityEcheancier?.compteLie = compte
+            entitySchedule?.compteLie = compte
         }
 
         delegate?.updateData()

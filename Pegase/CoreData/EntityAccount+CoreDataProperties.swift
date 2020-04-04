@@ -54,10 +54,10 @@ extension EntityAccount {
 extension EntityAccount {
 
     @objc(addEcheanciersObject:)
-    @NSManaged public func addToEcheanciers(_ value: EntityEcheancier)
+    @NSManaged public func addToEcheanciers(_ value: EntitySchedule)
 
     @objc(removeEcheanciersObject:)
-    @NSManaged public func removeFromEcheanciers(_ value: EntityEcheancier)
+    @NSManaged public func removeFromEcheanciers(_ value: EntitySchedule)
 
     @objc(addEcheanciers:)
     @NSManaged public func addToEcheanciers(_ values: NSSet)

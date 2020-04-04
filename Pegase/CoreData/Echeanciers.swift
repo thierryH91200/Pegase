@@ -3,18 +3,18 @@ import AppKit
 final class Echeanciers {
     
     static let shared = Echeanciers()
-    private var entities = [EntityEcheancier]()
+    private var entities = [EntitySchedule]()
     
     // delete Entity
-    func remove(entity: EntityEcheancier)
+    func remove(entity: EntitySchedule)
     {
         mainObjectContext.delete(entity)
     }
 
-    func getAllDatas() -> [EntityEcheancier] {
+    func getAllDatas() -> [EntitySchedule] {
         
         do {
-            let fetchRequest = NSFetchRequest<EntityEcheancier>(entityName: "EntityEcheancier")
+            let fetchRequest = NSFetchRequest<EntitySchedule>(entityName: "EntitySchedule")
             let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
             
@@ -25,7 +25,7 @@ final class Echeanciers {
         return entities
     }
     
-    func createOperation (entityEcheancier: EntityEcheancier, dateValeur: Date) {
+    func createOperation (entityEcheancier: EntitySchedule, dateValeur: Date) {
         
         entityEcheancier.nextOccurence += 1
 

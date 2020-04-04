@@ -12,7 +12,7 @@ final class EcheanciersViewController: NSViewController {
     public weak var delegate: EcheanciersSaisieDelegate?
     
     @IBOutlet weak var tableView: NSTableView!
-    var entityEcheancier =  [EntityEcheancier]()
+    var entityEcheancier =  [EntitySchedule]()
     
     let formatterDate: DateFormatter = {
         let formatter = DateFormatter()

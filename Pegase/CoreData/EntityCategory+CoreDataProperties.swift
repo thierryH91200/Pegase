@@ -22,10 +22,10 @@ extension EntityCategory {
 extension EntityCategory {
 
     @objc(addEcheancierObject:)
-    @NSManaged public func addToEcheancier(_ value: EntityEcheancier)
+    @NSManaged public func addToEcheancier(_ value: EntitySchedule)
 
     @objc(removeEcheancierObject:)
-    @NSManaged public func removeFromEcheancier(_ value: EntityEcheancier)
+    @NSManaged public func removeFromEcheancier(_ value: EntitySchedule)
 
     @objc(addEcheancier:)
     @NSManaged public func addToEcheancier(_ values: NSSet)
