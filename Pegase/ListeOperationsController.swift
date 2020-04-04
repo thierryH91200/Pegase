@@ -287,8 +287,8 @@ final class ListeOperationsController: NSViewController {
             formatter.locale = Locale.current
             formatter.numberStyle = .currency
             
-            for (_, index) in selectedRow.enumerated() {
-                let item = outlineView.item(atRow: index) as? IdOperations
+            for row in selectedRow {
+                let item = outlineView.item(atRow: row) as? IdOperations
                 
                 operationsSelected.append((item?.entityOperations)!)
 
@@ -387,8 +387,8 @@ final class ListeOperationsController: NSViewController {
         let selectedRow = outlineListView.selectedRowIndexes
         guard selectedRow.isEmpty == false else { return }
         
-        for (_, index) in selectedRow.enumerated() {
-            let item = outlineListView.item(atRow: index) as? IdOperations
+        for row in selectedRow {
+            let item = outlineListView.item(atRow: row) as? IdOperations
             ListeOperations.shared.remove(entity: (item?.entityOperations)!)
         }
         
