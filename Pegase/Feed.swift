@@ -26,3 +26,17 @@ extension Data {
     }
 }
 
+//extension Data {
+//    func decoded<T: Decodable>() throws -> T {
+//        return try JSONDecoder().decode(T.self, from: self)
+//    }
+//}
+
+
+
+protocol AnyDecoder {
+    func decode<T: Decodable>(_ type: T.Type, from data: Data) throws -> T
+}
+
+extension JSONDecoder: AnyDecoder {}
+extension PropertyListDecoder: AnyDecoder {}

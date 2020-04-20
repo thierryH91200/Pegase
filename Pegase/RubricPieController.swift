@@ -9,7 +9,6 @@ final class RubricPieController: NSViewController
     @IBOutlet var chartView2: PieChartView!
     @IBOutlet weak var splitView: NSSplitView!
     
-
     var sliderViewController: SliderViewHorizontalController?
     
     var listeOperations = [EntityOperations]()
@@ -104,7 +103,7 @@ final class RubricPieController: NSViewController
                .foregroundColor: NSColor.textColor,
                .paragraphStyle: paragraphStyle]
         
-        var centerText = NSMutableAttributedString(string: "Dépenses")
+        var centerText = NSMutableAttributedString(string: "Expenses")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
         // MARK: legend
@@ -115,7 +114,7 @@ final class RubricPieController: NSViewController
         self.chartView.noDataText = Localizations.Chart.No_chart_Data_Available
         chartView.holeColor = .windowBackgroundColor
         
-        centerText = NSMutableAttributedString(string: "Recettes")
+        centerText = NSMutableAttributedString(string: "incomes")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
         // MARK: legend
@@ -218,7 +217,7 @@ final class RubricPieController: NSViewController
         }
         
         // MARK: PieChartDataSet
-        let dataSet = PieChartDataSet(entries: entries, label: "Dépenses")
+        let dataSet = PieChartDataSet(entries: entries, label: "Expenses")
         dataSet.sliceSpace = 2.0
         dataSet.colors = colors
         dataSet.valueLinePart1OffsetPercentage = 0.8
@@ -257,7 +256,7 @@ final class RubricPieController: NSViewController
         }
 
         // MARK: PieChartDataSet
-        let dataSet = PieChartDataSet(entries: entries, label: "Recettes")
+        let dataSet = PieChartDataSet(entries: entries, label: "Incomes")
         dataSet.sliceSpace = 2.0
         dataSet.colors = colors
         dataSet.valueLinePart1OffsetPercentage = 0.8

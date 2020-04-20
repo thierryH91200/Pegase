@@ -49,7 +49,7 @@ class IncomeExpensePieController: CommonGraph {
         super.viewDidLoad()
         // Do view setup here.
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeCompte(_:)))
+        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount))
         
         chartView.delegate = self
         chartView2.delegate = self
@@ -65,7 +65,7 @@ class IncomeExpensePieController: CommonGraph {
         updateAccount ()
     }
     
-    @objc func updateChangeCompte(_ note: Notification) {
+    @objc func updateChangeAccount(_ note: Notification) {
         
         updateAccount ()
         setDataHorizontal()
@@ -82,7 +82,7 @@ class IncomeExpensePieController: CommonGraph {
             .foregroundColor: NSColor.textColor,
             .paragraphStyle: paragraphStyle]
 
-        // MARK: - Chart View Depense
+        // MARK: - Chart View Expense
         var centerText = NSMutableAttributedString(string: Localizations.General.Expenses)
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         chartView.centerAttributedText = centerText
@@ -99,7 +99,7 @@ class IncomeExpensePieController: CommonGraph {
         legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(14.0))!
         legend.textColor = .labelColor
 
-        // MARK: - Chart View2 Recette
+        // MARK: - Chart View2 Income
         centerText = NSMutableAttributedString(string: Localizations.General.Income)
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
@@ -174,7 +174,7 @@ class IncomeExpensePieController: CommonGraph {
         resultArrayIncome = resultArrayIncome.sorted(by: { $0.name < $1.name })
     }
     
-    func setDataCount1()
+    func setDataExpenses()
     {
         guard resultArrayExpense.isEmpty == false  else {
             chartView.data = nil
@@ -191,7 +191,7 @@ class IncomeExpensePieController: CommonGraph {
         }
         
         // MARK: PieChartDataSet
-        let dataSet = PieChartDataSet(entries: entries, label: "Dépenses")
+        let dataSet = PieChartDataSet(entries: entries, label: "Expenses")
         dataSet.sliceSpace = 2.0
         dataSet.colors = colors
         dataSet.valueLinePart1OffsetPercentage = 0.8
@@ -211,7 +211,7 @@ class IncomeExpensePieController: CommonGraph {
         chartView.data = data
     }
     
-    private func setDataCount2()
+    private func setDataIncomes()
     {
         guard resultArrayIncome.isEmpty == false else {
             chartView2.data = nil
@@ -228,7 +228,7 @@ class IncomeExpensePieController: CommonGraph {
         }
 
         // MARK: PieChartDataSet
-        let dataSet = PieChartDataSet(entries: entries, label: "Recettes")
+        let dataSet = PieChartDataSet(entries: entries, label: "Incomes")
         dataSet.sliceSpace = 2.0
         dataSet.colors = colors
         dataSet.valueLinePart1OffsetPercentage = 0.8
@@ -281,8 +281,8 @@ extension IncomeExpensePieController: SliderHorizontalDelegate {
     
     func setDataHorizontal() {
         self.updateChartData()
-        self.setDataCount1()
-        self.setDataCount2()
+        self.setDataExpenses()
+        self.setDataIncomes()
     }
     
 }

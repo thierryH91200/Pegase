@@ -198,8 +198,8 @@ final class IncomeExpenseBarController: CommonGraph {
         let barWidth = 0.4
         
         // MARK: BarChartDataEntry
-        var entriesDepense = [BarChartDataEntry]()
-        var entriesRecette = [BarChartDataEntry]()
+        var entriesExpense = [BarChartDataEntry]()
+        var entriesIncome = [BarChartDataEntry]()
         
         self.label.removeAll()
         
@@ -207,8 +207,8 @@ final class IncomeExpenseBarController: CommonGraph {
         var dateString = ""
         
         for i in 0 ..< resultArrayExpense.count {
-            entriesDepense.append(BarChartDataEntry(x: Double(i), y: abs(resultArrayExpense[i].value)))
-            entriesRecette.append(BarChartDataEntry(x: Double(i), y: resultArrayIncome[i].value))
+            entriesExpense.append(BarChartDataEntry(x: Double(i), y: abs(resultArrayExpense[i].value)))
+            entriesIncome.append(BarChartDataEntry(x: Double(i), y: resultArrayIncome[i].value))
             
             let numericSection = Int(resultArrayExpense[i].name)
             components.year = numericSection! / 100
@@ -226,20 +226,20 @@ final class IncomeExpenseBarController: CommonGraph {
         
         if chartView.data == nil {
             
-            dataSet1 = BarChartDataSet(entries: entriesDepense, label: "Dépense")
+            dataSet1 = BarChartDataSet(entries: entriesExpense, label: "Expense")
             dataSet1.colors = [#colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)]
             dataSet1.valueFormatter = DefaultValueFormatter(formatter: formatterPrice)
             
-            dataSet2 = BarChartDataSet(entries: entriesRecette, label: "Recette")
+            dataSet2 = BarChartDataSet(entries: entriesIncome, label: "Income")
             dataSet2.colors = [#colorLiteral(red: 1, green: 0.1474981606, blue: 0, alpha: 1)]
             dataSet2.valueFormatter = DefaultValueFormatter(formatter: formatterPrice)
         } else {
             
             dataSet1 = (chartView.data!.dataSets[0] as! BarChartDataSet )
-            dataSet1.replaceEntries( entriesDepense )
+            dataSet1.replaceEntries( entriesExpense )
             
             dataSet2 = (chartView.data!.dataSets[1] as! BarChartDataSet )
-            dataSet2.replaceEntries( entriesRecette )
+            dataSet2.replaceEntries( entriesIncome )
         }
         
         // MARK: BarChartData

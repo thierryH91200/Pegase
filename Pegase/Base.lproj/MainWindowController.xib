@@ -134,10 +134,10 @@
                                     <items>
                                         <menuItem state="on" image="NSColorPanel" hidden="YES" id="IgK-Mt-ygU"/>
                                         <menuItem title="Unie" state="on" tag="1" id="p89-w6-dIS"/>
-                                        <menuItem title="Recette/Dépense" tag="2" id="RuC-XH-w4i" userLabel="Recette/Dépense">
+                                        <menuItem title="Income/Expense" tag="2" id="RuC-XH-w4i" userLabel="Recette/Dépense">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Rubrique" tag="3" id="6Fg-pG-J1a"/>
+                                        <menuItem title="Rubric" tag="3" id="6Fg-pG-J1a"/>
                                         <menuItem title="Payment Mode" tag="4" id="p41-PP-5Gn">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>

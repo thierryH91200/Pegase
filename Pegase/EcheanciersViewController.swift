@@ -56,7 +56,7 @@ final class EcheanciersViewController: NSViewController {
         updateData()
     }
     
-    //NSOutlineViewDelegate
+    //NSTableViewDelegate
     @objc func selectionDidChange(_ notification: Notification) {
         guard let tableView = notification.object as? NSTableView else { return }
         

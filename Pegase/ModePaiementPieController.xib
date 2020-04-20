@@ -27,10 +27,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="964" height="522"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <customView identifier="Recette" translatesAutoresizingMaskIntoConstraints="NO" id="Ebf-7R-fLs" customClass="PieChartView" customModule="Charts">
+                                <customView identifier="Income" translatesAutoresizingMaskIntoConstraints="NO" id="Ebf-7R-fLs" customClass="PieChartView" customModule="Charts">
                                     <rect key="frame" x="20" y="0.0" width="452" height="502"/>
                                 </customView>
-                                <customView identifier="Depense" translatesAutoresizingMaskIntoConstraints="NO" id="sp1-e6-fUo" customClass="PieChartView" customModule="Charts">
+                                <customView identifier="Expense" translatesAutoresizingMaskIntoConstraints="NO" id="sp1-e6-fUo" customClass="PieChartView" customModule="Charts">
                                     <rect key="frame" x="492" y="0.0" width="452" height="502"/>
                                 </customView>
                             </subviews>

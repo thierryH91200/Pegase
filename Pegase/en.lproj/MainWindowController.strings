@@ -21,7 +21,7 @@
 "LcI-ZQ-t96.ibShadowedLabels[1]" = "Dark";
 
 /* Class = "NSMenuItem"; title = "Recette/Dépense"; ObjectID = "RuC-XH-w4i"; */
-"RuC-XH-w4i.title" = "Recette/Dépense";
+"RuC-XH-w4i.title" = "Income/Expense";
 
 /* Class = "NSToolbarItem"; label = "Debug Mode"; ObjectID = "V8X-L8-Pcz"; */
 "V8X-L8-Pcz.label" = "Debug Mode";

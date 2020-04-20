@@ -57,15 +57,15 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     }
                 }
                 let depenseStr = formatterPrice.string(from: NSDecimalNumber(value: expenses))
-                let depenseFormatted = "Dépense : \( depenseStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
+                let depenseFormatted = "Expense : \( depenseStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
                 
-                let recetteStr = formatterPrice.string(from: NSDecimalNumber(value: incomes))
-                let recetteFormatted = "Recette : \( recetteStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
+                let incomeStr = formatterPrice.string(from: NSDecimalNumber(value: incomes))
+                let incomeFormatted = "Income : \( incomeStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
                 
                 let totalStr = formatterPrice.string(from: NSDecimalNumber(value: incomes + expenses))
                 let totalFormatted = "Total : \(totalStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
                 
-                titre = "     " + dateFormatted + operationsFormatted + depenseFormatted + recetteFormatted + totalFormatted
+                titre = "     " + dateFormatted + operationsFormatted + depenseFormatted + incomeFormatted + totalFormatted
             }
             
             let cellView = outlineView.makeView(withIdentifier: .FeedCellMonth, owner: self) as! KSHeaderCellView
@@ -170,7 +170,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     textField.stringValue = formatted
                     paragraph.alignment = .right
                 
-                case .recette:
+                case .income:
                     var price: NSNumber = 0.0
                     var formatted = ""
                     if quake.amount > 0 {
@@ -263,7 +263,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     textField.stringValue = formatted
                     paragraph.alignment = .right
                 
-                case .recette:
+                case .income:
                     var price: NSNumber = 0.0
                     var formatted = ""
                     if sousOperations.amount > 0 {
@@ -300,10 +300,10 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         case .some(.unie):
             attrs[.foregroundColor] = NSColor.labelColor
         
-        case .some(.recette):
+        case .some(.income):
             switch propertyEnum {
             
-            case .depense, .montant, .recette:
+            case .depense, .montant, .income:
                 if quake.amount >= 0.0 {
                     attrs[.foregroundColor] = NSColor.green
                 } else {
@@ -353,10 +353,10 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         case .some(.unie):
             attrs[.foregroundColor] = NSColor.labelColor
         
-        case .some(.recette):
+        case .some(.income):
             switch propertyEnum {
             
-            case .depense, .montant, .recette:
+            case .depense, .montant, .income:
                 if quake.amount >= 0.0 {
                     attrs[.foregroundColor] = NSColor.green
                 } else {

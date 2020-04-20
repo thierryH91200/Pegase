@@ -104,10 +104,12 @@ class SplashScreenWindowController: NSWindowController {
             //            try FileManager.default.copyItem(at: URL2, to: URL5)
             //            try FileManager.default.copyItem(at: URL3, to: URL6)
             
-        } catch {
+        } catch let error {
             print("=======================")
             print("ERROR IN COPY OPERATION")
             print("=======================")
+            print("Operation failed again, abort with error: \(error)")
+
         }
         
         let documentController = NSDocumentController.shared

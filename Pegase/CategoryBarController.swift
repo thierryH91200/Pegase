@@ -9,9 +9,7 @@ final class CategoryBarController: CommonGraph
     @IBOutlet var chartView: BarChartView!
     @IBOutlet weak var backToBrands: NSButton!
     @IBOutlet weak var splitView: NSSplitView!
-    
-//    var sliderViewController: SliderViewHorizontalController?
-    
+       
     var label  = [String]()
     var data = [DataGraph]()
     var resultArray = [DataGraph]()
@@ -23,10 +21,6 @@ final class CategoryBarController: CommonGraph
         return _formatter
     }()
     
-//    var listeOperations = [EntityOperations]()
-//    var firstDate: TimeInterval = 0.0
-//    var lastDate: TimeInterval = 0.0
-
     var startDate = Date()
     var endDate = Date()
     

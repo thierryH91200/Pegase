@@ -37,7 +37,7 @@ final class ListeOperationsController: NSViewController {
         case liee
         case mode
         case montant
-        case recette
+        case income
         case releveBancaire
         case rubrique
         case solde
@@ -46,7 +46,7 @@ final class ListeOperationsController: NSViewController {
 
     enum TypeOfColor: String {
         case unie     = "unie"
-        case recette  = "recette/depense"
+        case income  = "recette/depense"
         case rubrique = "rubrique"
         case statut   = "statut"
         case mode     = "mode"
@@ -195,7 +195,7 @@ final class ListeOperationsController: NSViewController {
         self.theBox3.cornerRadius = 3
         self.theBox3.fillColor = NSColor(patternImage: NSImage(named: NSImage.Name( "Gradient"))!)
         
-        //        outlineListView.doubleAction = #selector(doubleClicked)
+                outlineListView.doubleAction = #selector(doubleClicked)
 
         self.outlineListView.rowSizeStyle = .custom
         self.outlineListView.reloadData()
@@ -203,9 +203,9 @@ final class ListeOperationsController: NSViewController {
         self.outlineListView.expandItem(nil, expandChildren: true)
         
         let count = listeOperations.count
-        let str = String(format: "%d opérations", count)
+        let strInfo = String(format: "%d opérations", count)
         
-        let attributedText = NSAttributedString(string: str, attributes: attribute)
+        let attributedText = NSAttributedString(string: strInfo, attributes: attribute)
         self.labelInfo.attributedStringValue = attributedText
     }
     

@@ -85,12 +85,12 @@ extension ListeOperationsController: NSMenuDelegate {
         
         if identifierCol == "montant" {
             columnVisibilityDictionary!["recette"] = false
-            let itemRecette = parentMenu?.item(withTitle: incomes)
-            itemRecette?.state = menuItem.state == .on ? .off : .on
+            let itemIncome = parentMenu?.item(withTitle: incomes)
+            itemIncome?.state = menuItem.state == .on ? .off : .on
             
             columnVisibilityDictionary!["depense"] = false
-            let itemDepense = parentMenu?.item(withTitle: expenses)
-            itemDepense?.state = menuItem.state == .on ? .off : .on
+            let itemExpense = parentMenu?.item(withTitle: expenses)
+            itemExpense?.state = menuItem.state == .on ? .off : .on
         }
         
         for column in outlineListView.tableColumns
