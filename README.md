@@ -41,9 +41,9 @@ Trying to control yourself without depriving yourself too much and especially no
 
 ## Screenshots
 
-![Capture1](Capture1.png)
+![Capture1](Doc/Capture1.png)
 -----
-![Capture2](Capture1.png)
+![Capture2](Doc/Capture2.png)
 
 
 
