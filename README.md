@@ -45,22 +45,6 @@ Trying to control yourself without depriving yourself too much and especially no
 -----
 ![Capture2](Doc/Capture2.png)
 
-
-
-<p align="center">
-<img src="Doc/Capture1.png" alt="Sample">
-<p align="center">
-<em>Principale</em>
-</p>
-</p>
-
-<p align="center">
-<img src="Doc/Capture2.png" alt="Sample">
-<p align="center">
-<em>Scheduler</em>
-</p>
-</p>
-
 <p align="center">
 <img src="Doc/Capture3.png" alt="Sample">
 <p align="center">
