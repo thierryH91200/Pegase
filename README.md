@@ -39,6 +39,14 @@ Trying to control yourself without depriving yourself too much and especially no
 
 ## Screenshot
 
+## Screenshots
+
+![Capture1](Capture1.png)
+-----
+![Capture2](Capture1.png)
+
+
+
 <p align="center">
 <img src="Doc/Capture1.png" alt="Sample">
 <p align="center">
