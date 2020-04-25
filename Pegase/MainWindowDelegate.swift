@@ -7,8 +7,8 @@ extension MainWindowController: SourceListDelegate
     {
         var  vc = NSView()
         
-        var isSplitDroitHidden = false
-        var isSplitCentreHidden = false
+        var isSplitRightHidden = false
+        var isSplitCenterHidden = false
         
         switch name
         {
@@ -21,8 +21,8 @@ extension MainWindowController: SourceListDelegate
             setUpViewOperation()
             listeOperationsController?.delegate = operationController
             
-            isSplitDroitHidden = false
-            isSplitCentreHidden =  true
+            isSplitRightHidden = false
+            isSplitCenterHidden =  true
             operationViewSecondary.isHidden = true
             
             let mainView = splitViewPrincipal.subviews.first!
@@ -37,8 +37,8 @@ extension MainWindowController: SourceListDelegate
             setUpGroupeListeOperationsSecondary(true)
             tresorerieController?.delegate = listeOperationsController
             
-            isSplitDroitHidden = true
-            isSplitCentreHidden =  false
+            isSplitRightHidden = true
+            isSplitCenterHidden =  false
             segmentedControl.setEnabled(true, forSegment: 1)
             segmentedControl.setEnabled(false, forSegment: 2)
             
@@ -50,8 +50,8 @@ extension MainWindowController: SourceListDelegate
             self.rubricPieController?.delegate = listeOperationsController
             self.rubricPieController?.setDataHorizontal()
             
-            isSplitDroitHidden = true
-            isSplitCentreHidden =  false
+            isSplitRightHidden = true
+            isSplitCenterHidden =  false
             self.segmentedControl.setEnabled(true, forSegment: 1)
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
@@ -60,8 +60,8 @@ extension MainWindowController: SourceListDelegate
             vc = (webViewController?.view)!
             
             operationViewSecondary.isHidden = true
-            isSplitDroitHidden = true
-            isSplitCentreHidden =  true
+            isSplitRightHidden = true
+            isSplitCenterHidden =  true
             segmentedControl.setEnabled(false, forSegment: 1)
             segmentedControl.setEnabled(false, forSegment: 2)
             
@@ -73,8 +73,8 @@ extension MainWindowController: SourceListDelegate
             incomeExpenseBarController?.delegate = listeOperationsController
             incomeExpenseBarController?.setDataHorizontal()
             
-            isSplitDroitHidden  = true
-            isSplitCentreHidden =  false
+            isSplitRightHidden  = true
+            isSplitCenterHidden =  false
             segmentedControl.setEnabled(true, forSegment: 1)
             segmentedControl.setEnabled(false, forSegment: 2)
             
@@ -86,8 +86,8 @@ extension MainWindowController: SourceListDelegate
             self.rubricBarController?.delegate = listeOperationsController
             self.rubricBarController?.setDataHorizontal()
             
-            isSplitDroitHidden  = true
-            isSplitCentreHidden =  false
+            isSplitRightHidden  = true
+            isSplitCenterHidden =  false
             self.segmentedControl.setEnabled(true, forSegment: 1)
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
@@ -98,8 +98,8 @@ extension MainWindowController: SourceListDelegate
             self.setUpGroupeListeOperationsSecondary()
             self.categoryBarController?.delegate = listeOperationsController
             
-            isSplitDroitHidden  = true
-            isSplitCentreHidden =  false
+            isSplitRightHidden  = true
+            isSplitCenterHidden =  false
             self.segmentedControl.setEnabled(true, forSegment: 1)
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
@@ -110,21 +110,21 @@ extension MainWindowController: SourceListDelegate
             self.setUpGroupeListeOperationsSecondary()
             self.categoryBarController1?.delegate = listeOperationsController
             
-            isSplitDroitHidden  = true
-            isSplitCentreHidden =  false
+            isSplitRightHidden  = true
+            isSplitCenterHidden =  false
             self.segmentedControl.setEnabled(true, forSegment: 1)
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
         case "Mode de paiement":
-            self.modePaiementPieController = ModePaiementPieController()
+            self.modePaiementPieController = PaymentModePieController()
             vc = (modePaiementPieController?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
             self.modePaiementPieController?.delegate = listeOperationsController
             self.modePaiementPieController?.setDataHorizontal()
             
-            isSplitDroitHidden  = true
-            isSplitCentreHidden =  false
+            isSplitRightHidden  = true
+            isSplitCenterHidden =  false
             self.segmentedControl.setEnabled(true, forSegment: 1)
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
@@ -136,8 +136,8 @@ extension MainWindowController: SourceListDelegate
             self.parametreController?.rubriqueViewController?.delegate = listeOperationsController
             self.parametreController?.modePaiementViewController?.delegate = listeOperationsController
             
-            isSplitDroitHidden  = true
-            isSplitCentreHidden =  false
+            isSplitRightHidden  = true
+            isSplitCenterHidden =  false
             self.segmentedControl.setEnabled(true, forSegment: 1)
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
@@ -149,8 +149,8 @@ extension MainWindowController: SourceListDelegate
             self.echeanciersViewController?.delegate = echeanciersSaisieController
             self.echeanciersSaisieController?.delegate = echeanciersViewController
             
-            isSplitDroitHidden = false
-            isSplitCentreHidden =  true
+            isSplitRightHidden = false
+            isSplitCenterHidden =  true
             self.operationViewSecondary.isHidden = true
             self.segmentedControl.setEnabled(false, forSegment: 1)
             self.segmentedControl.setEnabled(true, forSegment: 2)
@@ -159,8 +159,8 @@ extension MainWindowController: SourceListDelegate
             self.identiteViewController = IdentiteViewController()
             vc = (identiteViewController?.view)!
             
-            isSplitDroitHidden              = true
-            isSplitCentreHidden             =  true
+            isSplitRightHidden              = true
+            isSplitCenterHidden             =  true
             self.operationViewSecondary.isHidden = true
             self.segmentedControl.setEnabled(false, forSegment: 1)
             self.segmentedControl.setEnabled(false, forSegment: 2)
@@ -172,8 +172,8 @@ extension MainWindowController: SourceListDelegate
             self.setUpGroupeListeOperationsSecondary()
             self.advancedFilterViewController?.delegate = listeOperationsController
             
-            isSplitDroitHidden = true
-            isSplitCentreHidden =  false
+            isSplitRightHidden = true
+            isSplitCenterHidden =  false
             self.segmentedControl.setEnabled(true, forSegment: 1)
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
@@ -189,8 +189,8 @@ extension MainWindowController: SourceListDelegate
         tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
         tableTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
         
-        setSplitRight( isSplitDroitHidden)
-        setSplitCenter( isSplitCentreHidden)
+        setSplitRight( isSplitRightHidden)
+        setSplitCenter( isSplitCenterHidden)
         splitViewPrincipal.adjustSubviews()
     }
     

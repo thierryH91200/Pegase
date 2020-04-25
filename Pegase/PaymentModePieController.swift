@@ -243,7 +243,7 @@ final class PaymentModePieController: CommonGraph {
 
 }
 
-extension ModePaiementPieController: SliderHorizontalDelegate {
+extension PaymentModePieController: SliderHorizontalDelegate {
     
     func setDataHorizontal() {
         self.updateChartData()
@@ -253,7 +253,7 @@ extension ModePaiementPieController: SliderHorizontalDelegate {
     
 }
 
-extension ModePaiementPieController: ChartViewDelegate {
+extension PaymentModePieController: ChartViewDelegate {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         
         var p5 = NSPredicate()

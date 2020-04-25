@@ -14,7 +14,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var categoryBarController: CategoryBarController?
     var categoryBarController1: CategoryBarController1?
     var rubricBarController: RubricBarController?
-    var modePaiementPieController: ModePaiementPieController?
+    var modePaiementPieController: PaymentModePieController?
     var incomeExpenseBarController: IncomeExpenseBarController?
     var tresorerieController: TresorerieController?
     
