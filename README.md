@@ -39,19 +39,11 @@ Trying to control yourself without depriving yourself too much and especially no
 
 ## Screenshot
 
-<p align="center">
-<img src="Doc/Capture1.png" alt="Sample">
-<p align="center">
-<em>Principale</em>
-</p>
-</p>
+## Screenshots
 
-<p align="center">
-<img src="Doc/Capture2.png" alt="Sample">
-<p align="center">
-<em>Scheduler</em>
-</p>
-</p>
+![Capture1](Doc/Capture1.png)
+-----
+![Capture2](Doc/Capture2.png)
 
 <p align="center">
 <img src="Doc/Capture3.png" alt="Sample">
