@@ -62,8 +62,8 @@
 		03213B7E23F9082600002DD7 /* CategoryBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B7A23F9082600002DD7 /* CategoryBarController.swift */; };
 		03213B7F23F9082600002DD7 /* CategoryBarController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B7B23F9082600002DD7 /* CategoryBarController1.xib */; };
 		03213B8023F9082600002DD7 /* CategoryBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B7C23F9082600002DD7 /* CategoryBarController.xib */; };
-		03213B8323F9083300002DD7 /* ModePaiementPieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8123F9083300002DD7 /* ModePaiementPieController.swift */; };
-		03213B8423F9083300002DD7 /* ModePaiementPieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8223F9083300002DD7 /* ModePaiementPieController.xib */; };
+		03213B8323F9083300002DD7 /* PaymentModePieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8123F9083300002DD7 /* PaymentModePieController.swift */; };
+		03213B8423F9083300002DD7 /* PaymentModePieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8223F9083300002DD7 /* PaymentModePieController.xib */; };
 		03213B8723F9084800002DD7 /* IncomeExpenseBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8523F9084800002DD7 /* IncomeExpenseBarController.xib */; };
 		03213B8823F9084800002DD7 /* IncomeExpenseBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B8623F9084800002DD7 /* IncomeExpenseBarController.swift */; };
 		03213B8B23F9085700002DD7 /* RubricBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B8923F9085700002DD7 /* RubricBarController.xib */; };
@@ -387,8 +387,8 @@
 		03213B7A23F9082600002DD7 /* CategoryBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryBarController.swift; sourceTree = "<group>"; };
 		03213B7B23F9082600002DD7 /* CategoryBarController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryBarController1.xib; sourceTree = "<group>"; };
 		03213B7C23F9082600002DD7 /* CategoryBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryBarController.xib; sourceTree = "<group>"; };
-		03213B8123F9083300002DD7 /* ModePaiementPieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModePaiementPieController.swift; sourceTree = "<group>"; };
-		03213B8223F9083300002DD7 /* ModePaiementPieController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModePaiementPieController.xib; sourceTree = "<group>"; };
+		03213B8123F9083300002DD7 /* PaymentModePieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentModePieController.swift; sourceTree = "<group>"; };
+		03213B8223F9083300002DD7 /* PaymentModePieController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentModePieController.xib; sourceTree = "<group>"; };
 		03213B8523F9084800002DD7 /* IncomeExpenseBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeExpenseBarController.xib; sourceTree = "<group>"; };
 		03213B8623F9084800002DD7 /* IncomeExpenseBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeExpenseBarController.swift; sourceTree = "<group>"; };
 		03213B8923F9085700002DD7 /* RubricBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RubricBarController.xib; sourceTree = "<group>"; };
@@ -824,7 +824,7 @@
 			isa = PBXGroup;
 			children = (
 				03213B7823F9062B00002DD7 /* CategoryBarGraph */,
-				03213B7723F9062800002DD7 /* ModePaiementPie */,
+				03213B7723F9062800002DD7 /* PiePaymentMode */,
 				03213B7623F9062000002DD7 /* IncomeExpenseBar */,
 				03213B7523F9061B00002DD7 /* RubricBar */,
 				03213B7423F9061600002DD7 /* RubricPie */,
@@ -873,13 +873,13 @@
 			name = IncomeExpenseBar;
 			sourceTree = "<group>";
 		};
-		03213B7723F9062800002DD7 /* ModePaiementPie */ = {
+		03213B7723F9062800002DD7 /* PiePaymentMode */ = {
 			isa = PBXGroup;
 			children = (
-				03213B8123F9083300002DD7 /* ModePaiementPieController.swift */,
-				03213B8223F9083300002DD7 /* ModePaiementPieController.xib */,
+				03213B8123F9083300002DD7 /* PaymentModePieController.swift */,
+				03213B8223F9083300002DD7 /* PaymentModePieController.xib */,
 			);
-			name = ModePaiementPie;
+			name = PiePaymentMode;
 			sourceTree = "<group>";
 		};
 		03213B7823F9062B00002DD7 /* CategoryBarGraph */ = {
@@ -1547,7 +1547,7 @@
 				03213C4D23F9269000002DD7 /* OperationViewController.xib in Resources */,
 				03213BD023F90AAB00002DD7 /* icons8-purse-100.png in Resources */,
 				03213B5923F9058800002DD7 /* suggestionprototype.xib in Resources */,
-				03213B8423F9083300002DD7 /* ModePaiementPieController.xib in Resources */,
+				03213B8423F9083300002DD7 /* PaymentModePieController.xib in Resources */,
 				03213BCC23F90AAB00002DD7 /* icons8-museum-80.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1664,7 +1664,7 @@
 				034EC8E323F87EDB006944DD /* EntityOperations+CoreDataClass.swift in Sources */,
 				03213B0723F9048200002DD7 /* ImportWindowControllerParserDelegate.swift in Sources */,
 				03213B1E23F904D600002DD7 /* RectMarker.swift in Sources */,
-				03213B8323F9083300002DD7 /* ModePaiementPieController.swift in Sources */,
+				03213B8323F9083300002DD7 /* PaymentModePieController.swift in Sources */,
 				034EC8FC23F87EF1006944DD /* Preference.swift in Sources */,
 				034EC8E723F87EDB006944DD /* EntityAccount+CoreDataProperties.swift in Sources */,
 				034EC91023F87F51006944DD /* MLTextField.swift in Sources */,

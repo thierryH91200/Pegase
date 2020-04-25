@@ -107,7 +107,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 
                 switch propertyEnum
                 {
-                case .rubrique:
+                case .rubric:
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].category?.rubric?.name ?? ""
                     } else {
@@ -154,13 +154,13 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     paragraph.alignment = .left
                     textField.stringValue = quake.modePaiement?.name ?? ""
                 
-                case .montant:
+                case .amount:
                     let price = quake.amount as NSNumber
                     let formatted = formatterPrice.string(from: price)
                     textField.stringValue = formatted!
                     paragraph.alignment = .right
                 
-                case .depense:
+                case .expense:
                     var price: NSNumber = 0.0
                     var formatted = ""
                     if quake.amount < 0 {
@@ -180,7 +180,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     textField.stringValue = formatted
                     paragraph.alignment = .right
                 
-                case .releveBancaire:
+                case .bankStatement:
                     paragraph.alignment = .center
                     textField.doubleValue = quake.bankStatement
                 
@@ -235,10 +235,10 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 
                 switch propertyEnum
                 {
-                case .dateOperation, .datePointage, .releveBancaire, .statut, .liee, .mode, .solde:
+                case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .solde:
                     textField.stringValue = ""
                 
-                case .rubrique:
+                case .rubric:
                     textField.stringValue = sousOperations.category?.rubric?.name ?? ""
                 
                 case .categorie:
@@ -247,13 +247,13 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 case .libelle:
                     textField.stringValue = sousOperations.libelle ?? ""
                 
-                case .montant:
+                case .amount:
                     let price = sousOperations.amount as NSNumber
                     let formatted = formatterPrice.string(from: price)
                     textField.stringValue = formatted!
                     paragraph.alignment = .right
                 
-                case .depense:
+                case .expense:
                     var price: NSNumber = 0.0
                     var formatted = ""
                     if sousOperations.amount < 0 {
@@ -303,7 +303,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         case .some(.income):
             switch propertyEnum {
             
-            case .depense, .montant, .income:
+            case .expense, .amount, .income:
                 if quake.amount >= 0.0 {
                     attrs[.foregroundColor] = NSColor.green
                 } else {
@@ -356,7 +356,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         case .some(.income):
             switch propertyEnum {
             
-            case .depense, .montant, .income:
+            case .expense, .amount, .income:
                 if quake.amount >= 0.0 {
                     attrs[.foregroundColor] = NSColor.green
                 } else {

@@ -1,7 +1,7 @@
 import AppKit
 import Charts
 
-final class ModePaiementPieController: CommonGraph {
+final class PaymentModePieController: CommonGraph {
     
     public weak var delegate: FilterDelegate?
     

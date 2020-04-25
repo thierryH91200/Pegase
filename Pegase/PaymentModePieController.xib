@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ModePaiementPieController" customModule="Pegase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="PaymentModePieController" customModule="Pegase" customModuleProvider="target">
             <connections>
                 <outlet property="chartView" destination="sp1-e6-fUo" id="6Q1-Dc-Hlj"/>
                 <outlet property="chartView2" destination="Ebf-7R-fLs" id="d74-ak-sDi"/>

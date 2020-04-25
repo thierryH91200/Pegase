@@ -32,14 +32,14 @@ final class ListeOperationsController: NSViewController {
         case categorie
         case dateOperation
         case datePointage
-        case depense
+        case expense
         case libelle
         case liee
         case mode
-        case montant
+        case amount
         case income
-        case releveBancaire
-        case rubrique
+        case bankStatement
+        case rubric
         case solde
         case statut
     }
