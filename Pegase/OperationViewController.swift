@@ -286,8 +286,8 @@ final class OperationViewController: NSViewController {
             // ModePaiement
             if (setModePaiement.count > 1 && popUpModePaiement.indexOfSelectedItem != 0) || setModePaiement.count == 1 {
                 let menuItem = self.popUpModePaiement.selectedItem
-                let entityMode = menuItem?.representedObject as! EntityModePaiement
-                oneOperation.modePaiement = entityMode
+                let entityMode = menuItem?.representedObject as! EntityPaymentMode
+                oneOperation.paymentMode = entityMode
             }
             
             // Statut
@@ -336,12 +336,11 @@ final class OperationViewController: NSViewController {
         entityOperationsTransfert?.dateCree      = oneOperation.dateCree
         
         // le modePaiement existe t il ??
-        let name = oneOperation.modePaiement?.name
-        let color = oneOperation.modePaiement?.color
-        let uuid = oneOperation.modePaiement?.uuid
-        let entityModePaiement = ModePaiement.shared.findOrCreate(account: compteTransfert, name: name!, color: color as! NSColor, uuid: uuid!)
-        entityOperationsTransfert?.modePaiement  = entityModePaiement
-        
+        let name = oneOperation.paymentMode?.name
+        let color = oneOperation.paymentMode?.color
+        let uuid = oneOperation.paymentMode?.uuid
+        let entityModePaiement = PaymentMode.shared.findOrCreate(account: compteTransfert, name: name!, color: color as! NSColor, uuid: uuid!)
+        entityOperationsTransfert?.paymentMode  = entityModePaiement
         
         entityOperationsTransfert?.statut        = oneOperation.statut
         entityOperationsTransfert?.bankStatement  = oneOperation.bankStatement

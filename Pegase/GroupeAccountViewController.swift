@@ -94,7 +94,7 @@ final class GroupeAccountViewController: NSViewController {
                 currentAccount = item
                 
                 Rubric.shared.getAllDatas()
-                ModePaiement.shared.getAllDatas()
+                PaymentMode.shared.getAllDatas()
 
                 Account.shared.printAccount(entityAccount: currentAccount!, description: "select")
                 NotificationCenter.send(.updateAccount)

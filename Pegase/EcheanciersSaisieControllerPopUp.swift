@@ -58,7 +58,7 @@ extension EcheanciersSaisieController {
     func loadModePaiement () {
         let  modePaiementMenu = NSMenu()
         
-        let modesPaiement = ModePaiement.shared.getAllDatas()
+        let modesPaiement = PaymentMode.shared.getAllDatas()
         for modePaiement in modesPaiement
         {
             modePaiementMenu.addItem(modePaiementItemFor(modePaiement) )
@@ -66,7 +66,7 @@ extension EcheanciersSaisieController {
         popUpModePaiement.menu = modePaiementMenu
     }
 
-    func modePaiementItemFor(_ value: EntityModePaiement) -> NSMenuItem {
+    func modePaiementItemFor(_ value: EntityPaymentMode) -> NSMenuItem {
         let menuItem = NSMenuItem()
         menuItem.title = value.name!
         menuItem.action = #selector(optionModePaiement(sender:))

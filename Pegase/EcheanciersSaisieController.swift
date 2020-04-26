@@ -49,7 +49,7 @@ final class EcheanciersSaisieController: NSViewController, NSTextFieldDelegate, 
     @IBOutlet weak var signeMontant: NSButton!
     var categories = [EntityCategory]()
     var entityRubriques = [EntityRubric]()
-    var modesPaiement = [EntityModePaiement]()
+    var modesPaiement = [EntityPaymentMode]()
     var entitySchedule: EntitySchedule?
     var entityPreference: EntityPreference?
     var entityCompteTransfert: EntityAccount?
@@ -274,7 +274,7 @@ final class EcheanciersSaisieController: NSViewController, NSTextFieldDelegate, 
         entitySchedule?.category = entity
         
         menuItem = popUpModePaiement.selectedItem
-        let entity2 = menuItem?.representedObject as! EntityModePaiement
+        let entity2 = menuItem?.representedObject as! EntityPaymentMode
         entitySchedule?.modePaiement = entity2
 
         entitySchedule?.uuid          = UUID()

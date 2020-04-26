@@ -60,7 +60,7 @@ extension OperationViewController {
     func loadModePaiement () {
         let  modePaiementMenu = NSMenu()
         
-        let modesPaiement = ModePaiement.shared.getAllDatas()
+        let modesPaiement = PaymentMode.shared.getAllDatas()
         for modePaiement in modesPaiement
         {
             modePaiementMenu.addItem( modePaiementItemFor( modePaiement ) )
@@ -68,7 +68,7 @@ extension OperationViewController {
         popUpModePaiement.menu = modePaiementMenu
     }
     
-    fileprivate func modePaiementItemFor(_ value: EntityModePaiement) -> NSMenuItem {
+    fileprivate func modePaiementItemFor(_ value: EntityPaymentMode) -> NSMenuItem {
         let menuItem = NSMenuItem()
         menuItem.title = value.name!
         menuItem.action = #selector(optionModePaiement(menuItem:))

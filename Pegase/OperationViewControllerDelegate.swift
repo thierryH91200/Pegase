@@ -136,7 +136,7 @@ extension OperationViewController: ListeOperationsDelegate {
             let amount = quake.amount
             setMontant.insert(amount)
             
-            let modePaiement = quake.modePaiement?.name!
+            let modePaiement = quake.paymentMode?.name!
             self.setModePaiement.insert(modePaiement!)
             
             let statut = quake.statut

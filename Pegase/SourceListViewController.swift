@@ -42,12 +42,13 @@ final class SourceListViewController: NSViewController {
         let url = Bundle.main.url(forResource: fileName, withExtension: "plist")!
         let data = try! Data(contentsOf: url)
         datas = try! data.decoded()
-        // or
-        //datas = try! data.decoded() as [Donnees]
-
         
-//        let plistDecoder = PropertyListDecoder()
-//        datas = try! plistDecoder.decode([Donnees].self, from: data)
+        // or
+        // datas = try! data.decoded() as [Donnees]
+
+        // or
+        // let plistDecoder = PropertyListDecoder()
+        // datas = try! plistDecoder.decode([Donnees].self, from: data)
     }
     
 }

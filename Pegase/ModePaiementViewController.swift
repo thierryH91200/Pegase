@@ -10,7 +10,7 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
     var modeModalWindowController: ModeModalWindowController!
     var entityPreference: EntityPreference?
     
-    var entityModePaiement =  [EntityModePaiement]()
+    var entityModePaiement =  [EntityPaymentMode]()
     
     // -------------------------------------------------------------------------------
     //    viewWillAppear
@@ -61,7 +61,7 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
     func updateData() {
         guard currentAccount != nil else { return }
         
-        entityModePaiement = ModePaiement.shared.getAllDatas()
+        entityModePaiement = PaymentMode.shared.getAllDatas()
     }
     
     // MARK: - Add ModePaiement
@@ -77,7 +77,7 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
                 let name          = self.modeModalWindowController.name.stringValue
                 let color         = self.modeModalWindowController.colorWell.color
                 
-                let entityMode        = NSEntityDescription.insertNewObject(forEntityName: "EntityModePaiement", into: mainObjectContext) as! EntityModePaiement
+                let entityMode        = NSEntityDescription.insertNewObject(forEntityName: "EntityPaymentMode", into: mainObjectContext) as! EntityPaymentMode
                 entityMode.name       = name
                 entityMode.color     = color
                 
@@ -154,7 +154,7 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
 //                })
     }
     
-    func changeModePaiement(oldModePaiement: EntityModePaiement, newModePaiement: EntityModePaiement) {
+    func changeModePaiement(oldModePaiement: EntityPaymentMode, newModePaiement: EntityPaymentMode) {
         var listeOperations = [EntityOperations]()
         
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
@@ -171,7 +171,7 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
         }
         
         for listeOperation in listeOperations {
-            listeOperation.modePaiement = newModePaiement
+            listeOperation.paymentMode = newModePaiement
         }
     }
     

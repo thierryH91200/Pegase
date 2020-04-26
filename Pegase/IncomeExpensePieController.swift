@@ -143,8 +143,8 @@ class IncomeExpensePieController: CommonGraph {
         for listeOperation in listeOperations {
 
             let amount = listeOperation.amount
-            let nameModePaiement   = listeOperation.modePaiement?.name
-            let color = listeOperation.modePaiement?.color as! NSColor
+            let nameModePaiement   = listeOperation.paymentMode?.name
+            let color = listeOperation.paymentMode?.color as! NSColor
             
             if amount < 0 {
                 let data  = DataGraph(name : nameModePaiement!, value : amount, color : color)

@@ -22,7 +22,7 @@ extension EntityOperations {
 //    @NSManaged public var amount: Double
     @NSManaged public var sousOperations: NSSet?
     @NSManaged public var account: EntityAccount?
-    @NSManaged public var modePaiement: EntityModePaiement?
+    @NSManaged public var paymentMode: EntityPaymentMode?
     @NSManaged public var operationLiee: EntityOperations?
 
 }

@@ -270,8 +270,8 @@ extension MainWindowController {
                         entity.datePointage = dateFormatter.date(from: key[keyDatePointage] ?? now)
                         
                         let labelMode = key[keyMode] ?? (entityPreference.modePaiement?.name)!
-                        let entityModePaiement = ModePaiement.shared.find(name: labelMode) ?? (entityPreference.modePaiement)!
-                        entity.modePaiement = entityModePaiement
+                        let entityModePaiement = PaymentMode.shared.find(name: labelMode) ?? (entityPreference.modePaiement)!
+                        entity.paymentMode = entityModePaiement
                         
                         let labelStatut = TypeOfStatut(rawValue: entityPreference.statut)!.label
                         let numStatut = self.findStatut( statut: key[keyStatut] ?? labelStatut)
@@ -366,7 +366,7 @@ extension MainWindowController {
                 data        = String(listeOperation.statut)
                 export = "\(quote)\(data)\(quote)\(delimiter)"
                 
-                data  = (listeOperation.modePaiement?.name!)!
+                data  = (listeOperation.paymentMode?.name!)!
                 export = "\(quote)\(data)\(quote)\(delimiter)"
                 
                 data       = sousOperation.libelle!

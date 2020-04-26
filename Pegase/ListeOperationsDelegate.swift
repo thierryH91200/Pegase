@@ -152,7 +152,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 
                 case .mode:
                     paragraph.alignment = .left
-                    textField.stringValue = quake.modePaiement?.name ?? ""
+                    textField.stringValue = quake.paymentMode?.name ?? ""
                 
                 case .amount:
                     let price = quake.amount as NSNumber
@@ -332,7 +332,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
             attrs = statutEnum.attribut
         
         case .some(.mode):
-            let color = quake.modePaiement?.color
+            let color = quake.paymentMode?.color
             attrs[.foregroundColor] = color
         
         case .none:

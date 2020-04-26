@@ -30,7 +30,7 @@ final class Preference {
             categories = categories.sorted { $0.name! < $1.name! }
             entityPreference.category = categories.first
 
-            let modesPaiement = ModePaiement.shared.getAllDatas()
+            let modesPaiement = PaymentMode.shared.getAllDatas()
             entityPreference.modePaiement = modesPaiement.first
             
             entityPreference.statut = 1

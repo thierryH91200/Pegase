@@ -156,12 +156,12 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
                 let column = headerColumn[0].numCol
                 
                 let label = data[ column]
-                let entityModePaiement = ModePaiement.shared.find(name: label) ?? (entityPreference.modePaiement)!
-                entityOperation.modePaiement = entityModePaiement
+                let entityModePaiement = PaymentMode.shared.find(name: label) ?? (entityPreference.modePaiement)!
+                entityOperation.paymentMode = entityModePaiement
                 
             } else {
                 let modePaiement = entityPreference.modePaiement
-                entityOperation.modePaiement = modePaiement
+                entityOperation.paymentMode = modePaiement
             }
             
             /// Creation entitySousOperation

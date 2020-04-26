@@ -71,10 +71,10 @@ extension EntityAccount {
 extension EntityAccount {
 
     @objc(addModePaiementObject:)
-    @NSManaged public func addToModePaiement(_ value: EntityModePaiement)
+    @NSManaged public func addToModePaiement(_ value: EntityPaymentMode)
 
     @objc(removeModePaiementObject:)
-    @NSManaged public func removeFromModePaiement(_ value: EntityModePaiement)
+    @NSManaged public func removeFromModePaiement(_ value: EntityPaymentMode)
 
     @objc(addModePaiement:)
     @NSManaged public func addToModePaiement(_ values: NSSet)

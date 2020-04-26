@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="EntityAccount" representedClassName=".EntityAccount" syncable="YES">
         <attribute name="dateEcheancier" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isAccount" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -19,7 +19,7 @@
         <relationship name="echeanciers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntitySchedule" inverseName="account" inverseEntity="EntitySchedule"/>
         <relationship name="identity" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="EntityIdentity" inverseName="account" inverseEntity="EntityIdentity"/>
         <relationship name="initAccount" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="EntityInitAccount" inverseName="account" inverseEntity="EntityInitAccount"/>
-        <relationship name="modePaiement" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityModePaiement" inverseName="account" inverseEntity="EntityModePaiement"/>
+        <relationship name="modePaiement" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityPaymentMode" inverseName="account" inverseEntity="EntityPaymentMode"/>
         <relationship name="operations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityOperations" inverseName="account" inverseEntity="EntityOperations"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="children" inverseEntity="EntityAccount"/>
         <relationship name="preference" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="EntityPreference" inverseName="account" inverseEntity="EntityPreference"/>
@@ -92,15 +92,6 @@
         <attribute name="realise" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="initAccount" inverseEntity="EntityAccount"/>
     </entity>
-    <entity name="EntityModePaiement" representedClassName=".EntityModePaiement" syncable="YES" codeGenerationType="class">
-        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName=""/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="modePaiement" inverseEntity="EntityAccount"/>
-        <relationship name="echeancier" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntitySchedule" inverseName="modePaiement" inverseEntity="EntitySchedule"/>
-        <relationship name="operations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntityOperations" inverseName="modePaiement" inverseEntity="EntityOperations"/>
-        <relationship name="preference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityPreference" inverseName="modePaiement" inverseEntity="EntityPreference"/>
-    </entity>
     <entity name="EntityOperations" representedClassName=".EntityOperations" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="bankStatement" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -115,16 +106,25 @@
         <attribute name="statut" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="operations" inverseEntity="EntityAccount"/>
-        <relationship name="modePaiement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityModePaiement" inverseName="operations" inverseEntity="EntityModePaiement"/>
         <relationship name="operationLiee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityOperations" inverseName="operationLiee" inverseEntity="EntityOperations"/>
+        <relationship name="paymentMode" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityPaymentMode" inverseName="operations" inverseEntity="EntityPaymentMode"/>
         <relationship name="sousOperations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntitySousOperations" inverseName="operation" inverseEntity="EntitySousOperations"/>
+    </entity>
+    <entity name="EntityPaymentMode" representedClassName=".EntityPaymentMode" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName=""/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="modePaiement" inverseEntity="EntityAccount"/>
+        <relationship name="echeancier" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntitySchedule" inverseName="modePaiement" inverseEntity="EntitySchedule"/>
+        <relationship name="operations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntityOperations" inverseName="paymentMode" inverseEntity="EntityOperations"/>
+        <relationship name="preference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityPreference" inverseName="modePaiement" inverseEntity="EntityPreference"/>
     </entity>
     <entity name="EntityPreference" representedClassName="EntityPreference" syncable="YES" codeGenerationType="class">
         <attribute name="signe" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="statut" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="preference" inverseEntity="EntityAccount"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityCategory" inverseName="preference" inverseEntity="EntityCategory"/>
-        <relationship name="modePaiement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityModePaiement" inverseName="preference" inverseEntity="EntityModePaiement"/>
+        <relationship name="modePaiement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityPaymentMode" inverseName="preference" inverseEntity="EntityPaymentMode"/>
     </entity>
     <entity name="EntityRubric" representedClassName="EntityRubric" syncable="YES">
         <attribute name="color" attributeType="Transformable" valueTransformerName=""/>
@@ -150,7 +150,7 @@
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="echeanciers" inverseEntity="EntityAccount"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityCategory" inverseName="echeancier" inverseEntity="EntityCategory"/>
         <relationship name="compteLie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="compteLie" inverseEntity="EntityAccount"/>
-        <relationship name="modePaiement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityModePaiement" inverseName="echeancier" inverseEntity="EntityModePaiement"/>
+        <relationship name="modePaiement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityPaymentMode" inverseName="echeancier" inverseEntity="EntityPaymentMode"/>
     </entity>
     <entity name="EntitySousOperations" representedClassName="EntitySousOperations" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -165,7 +165,7 @@
         <element name="EntityCategory" positionX="621" positionY="542" width="128" height="148"/>
         <element name="EntityIdentity" positionX="-542" positionY="-324" width="128" height="223"/>
         <element name="EntityInitAccount" positionX="-758" positionY="108" width="128" height="313"/>
-        <element name="EntityModePaiement" positionX="-603" positionY="458" width="128" height="148"/>
+        <element name="EntityPaymentMode" positionX="-603" positionY="458" width="128" height="148"/>
         <element name="EntityOperations" positionX="-243" positionY="657" width="128" height="283"/>
         <element name="EntityPreference" positionX="-306" positionY="-234" width="128" height="118"/>
         <element name="EntityRubric" positionX="160" positionY="192" width="128" height="133"/>

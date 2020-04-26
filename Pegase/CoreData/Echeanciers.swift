@@ -37,7 +37,7 @@ final class Echeanciers {
         
         entityOperation.account         = entityEcheancier.account
                 
-        entityOperation.modePaiement   = entityEcheancier.modePaiement
+        entityOperation.paymentMode   = entityEcheancier.modePaiement
         entityOperation.statut         = Date() >= dateValeur ? 2 : 1
         
         entityOperation.dateOperation  = dateValeur
@@ -83,11 +83,11 @@ final class Echeanciers {
             entityOperationsTransfert.dateCree      = entityOperation.dateCree
             
             // le modePaiement existe t il ??
-            let name = entityOperationsTransfert.modePaiement?.name
-            let color = entityOperationsTransfert.modePaiement?.color
-            let uuid = entityOperationsTransfert.modePaiement?.uuid
-            let entityModePaiement = ModePaiement.shared.findOrCreate(account: compteLie, name: name!, color: color as! NSColor, uuid: uuid!)
-            entityOperationsTransfert.modePaiement  = entityModePaiement
+            let name = entityOperationsTransfert.paymentMode?.name
+            let color = entityOperationsTransfert.paymentMode?.color
+            let uuid = entityOperationsTransfert.paymentMode?.uuid
+            let entityModePaiement = PaymentMode.shared.findOrCreate(account: compteLie, name: name!, color: color as! NSColor, uuid: uuid!)
+            entityOperationsTransfert.paymentMode  = entityModePaiement
 
             /// la rubrique existe t elle ??
             let entityRubric = Rubric.shared.findOrCreate(account: compteLie, name: name!, color: color as! NSColor, uuid: uuid!)

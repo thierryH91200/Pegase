@@ -10,7 +10,7 @@ final class PreferenceOperationViewController: NSViewController {
     
     var entityPreference: EntityPreference?
     var entityRubrique = [EntityRubric]()
-    var entityMode = [EntityModePaiement]()
+    var entityMode = [EntityPaymentMode]()
     
     var statuts = [String]()
 
@@ -35,7 +35,7 @@ final class PreferenceOperationViewController: NSViewController {
         
         self.entityPreference = Preference.shared.getAllDatas()
         
-        entityMode = ModePaiement.shared.getAllDatas()
+        entityMode = PaymentMode.shared.getAllDatas()
         comboBoxMode.usesDataSource = true
         comboBoxMode.dataSource = self
         comboBoxMode.delegate = self
