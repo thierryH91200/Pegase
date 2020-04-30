@@ -44,12 +44,12 @@ final class RateWindowController: NSWindowController {
         let rctWindow = NSRect(x: 0, y: 0, width: 210, height: 306)
         let window = NSWindow(contentRect: rctWindow, styleMask: [.titled, .fullSizeContentView], backing: .buffered, defer: true)
         self.window = window
-        window.level = .floating
-        window.titlebarAppearsTransparent = true
-        window.titleVisibility = .hidden
+        window.level                       = .floating
+        window.titlebarAppearsTransparent  = true
+        window.titleVisibility             = .hidden
         window.isMovableByWindowBackground = true
         window.center()
-        window.backgroundColor = NSColor.textBackgroundColor
+        window.backgroundColor             = NSColor.textBackgroundColor
         
         ivIcon = NSImageView(frame: NSRect(
             x: ( rctWindow.width - 64) / 2,
