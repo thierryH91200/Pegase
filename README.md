@@ -126,9 +126,12 @@ Congratulations!
 
 
 You must integrate into your project manually.
-- Charts  
-- SwiftDate
 - TFDate
+
+#### What does “Pegase” mean?
+
+[Click here.](http://letmegooglethat.com/?q=define+pegase)
+
 
 # Contributing 🙌
 
