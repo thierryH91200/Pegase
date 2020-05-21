@@ -1,0 +1,48 @@
+
+/* Class = "NSTextFieldCell"; placeholderString = "Compte courant"; ObjectID = "3vV-HC-4JK"; */
+"3vV-HC-4JK.placeholderString" = "Compte courant";
+
+/* Class = "NSTextFieldCell"; title = "Compte courant"; ObjectID = "3vV-HC-4JK"; */
+"3vV-HC-4JK.title" = "Compte courant";
+
+/* Class = "NSTextFieldCell"; title = "Libellé du compte"; ObjectID = "Av8-K5-lRX"; */
+"Av8-K5-lRX.title" = "Libellé du compte";
+
+/* Class = "NSTextFieldCell"; title = "Type"; ObjectID = "BZm-9R-zED"; */
+"BZm-9R-zED.title" = "Type";
+
+/* Class = "NSMenuItem"; title = "Check"; ObjectID = "DhC-Fx-0dv"; */
+"DhC-Fx-0dv.title" = "Check";
+
+/* Class = "NSTextFieldCell"; title = "Surname"; ObjectID = "Eow-RR-2jN"; */
+"Eow-RR-2jN.title" = "Surname";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Window";
+
+/* Class = "NSTextFieldCell"; title = "Number"; ObjectID = "GVy-an-FET"; */
+"GVy-an-FET.title" = "Number";
+
+/* Class = "NSMenuItem"; title = "Bank card"; ObjectID = "GX7-BH-fX2"; */
+"GX7-BH-fX2.title" = "Bank card";
+
+/* Class = "NSTextFieldCell"; title = "Solde initial"; ObjectID = "WK1-4M-4nQ"; */
+"WK1-4M-4nQ.title" = "Solde initial";
+
+/* Class = "NSTextFieldCell"; title = "¤ 0.00"; ObjectID = "YNw-aI-YGe"; */
+"YNw-aI-YGe.title" = "¤ 0.00";
+
+/* Class = "NSMenuItem"; title = "Saving"; ObjectID = "bG0-oW-WqY"; */
+"bG0-oW-WqY.title" = "Saving";
+
+/* Class = "NSButtonCell"; title = "Ok"; ObjectID = "ppk-56-ZG2"; */
+"ppk-56-ZG2.title" = "Ok";
+
+/* Class = "NSButtonCell"; title = "Mode création"; ObjectID = "qzQ-4d-juT"; */
+"qzQ-4d-juT.title" = "Mode création";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "tKb-fi-50Q"; */
+"tKb-fi-50Q.title" = "Cancel";
+
+/* Class = "NSTextFieldCell"; title = "Name"; ObjectID = "wh4-ol-YmO"; */
+"wh4-ol-YmO.title" = "Name";

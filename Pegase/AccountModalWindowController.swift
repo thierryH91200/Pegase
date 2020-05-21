@@ -16,7 +16,6 @@ final class AccountModalWindowController: NSWindowController {
     
     @IBOutlet weak var mode: NSButton!
     
-    
     var account =  EntityAccount()
     var edition = false
     
@@ -61,7 +60,7 @@ final class AccountModalWindowController: NSWindowController {
     }
     
     override var windowNibName: NSNib.Name? {
-        return  "CompteModalWindowController"
+        return  "AccountModalWindowController"
     }
     
     @IBAction func didTapCancelButton(_ sender: NSButton) {

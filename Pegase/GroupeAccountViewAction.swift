@@ -20,7 +20,7 @@ extension GroupeAccountViewController: NSMenuDelegate {
         }
     }
     
-    @IBAction func modifierCompte(_ sender: Any) {
+    @IBAction func editAccount(_ sender: Any) {
         
         let index = anSideBar.selectedRow
         if let item = anSideBar.item(atRow: index) as? EntityAccount

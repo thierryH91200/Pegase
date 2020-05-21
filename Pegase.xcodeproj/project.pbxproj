@@ -10,6 +10,8 @@
 		030D80212454BDC700FEC639 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 030D80202454BDC700FEC639 /* SwiftDate */; };
 		0312B136243200D500EA13F6 /* IncomeExpensePieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0312B134243200D500EA13F6 /* IncomeExpensePieController.xib */; };
 		0312B137243200D500EA13F6 /* IncomeExpensePieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */; };
+		0315EA522475B034002505A6 /* AccountModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0315EA542475B034002505A6 /* AccountModalWindowController.xib */; };
+		0315EA5E2475B049002505A6 /* GroupModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0315EA602475B049002505A6 /* GroupModalWindowController.xib */; };
 		03213B0523F9048200002DD7 /* TTFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFD23F9048200002DD7 /* TTFormatViewController.xib */; };
 		03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFE23F9048200002DD7 /* ImportWindowController.xib */; };
 		03213B0723F9048200002DD7 /* ImportWindowControllerParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */; };
@@ -205,8 +207,6 @@
 		034ECB6923F88033006944DD /* PopOverModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034ECB6423F88032006944DD /* PopOverModalViewController.xib */; };
 		034ECB6A23F88033006944DD /* KSRetailCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034ECB6523F88033006944DD /* KSRetailCollectionViewItem.xib */; };
 		034ECB6B23F88033006944DD /* KSBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6623F88033006944DD /* KSBackgroundView.swift */; };
-		034ECB7023F88044006944DD /* AccountModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034ECB6C23F88043006944DD /* AccountModalWindowController.xib */; };
-		034ECB7123F88044006944DD /* GroupModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034ECB6D23F88044006944DD /* GroupModalWindowController.xib */; };
 		034ECB7223F88044006944DD /* GroupModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6E23F88044006944DD /* GroupModalWindowController.swift */; };
 		034ECB7323F88044006944DD /* AccountModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ECB6F23F88044006944DD /* AccountModalWindowController.swift */; };
 		035082E624028F0400F8A0D4 /* ListeOperationsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035082E824028F0400F8A0D4 /* ListeOperationsController.xib */; };
@@ -259,6 +259,16 @@
 /* Begin PBXFileReference section */
 		0312B134243200D500EA13F6 /* IncomeExpensePieController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeExpensePieController.xib; sourceTree = "<group>"; };
 		0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpensePieController.swift; sourceTree = "<group>"; };
+		0315EA532475B034002505A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AccountModalWindowController.xib; sourceTree = "<group>"; };
+		0315EA572475B03B002505A6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AccountModalWindowController.strings; sourceTree = "<group>"; };
+		0315EA592475B03C002505A6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AccountModalWindowController.strings; sourceTree = "<group>"; };
+		0315EA5B2475B03D002505A6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AccountModalWindowController.strings; sourceTree = "<group>"; };
+		0315EA5D2475B03E002505A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AccountModalWindowController.strings; sourceTree = "<group>"; };
+		0315EA5F2475B049002505A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GroupModalWindowController.xib; sourceTree = "<group>"; };
+		0315EA622475B051002505A6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/GroupModalWindowController.strings; sourceTree = "<group>"; };
+		0315EA642475B051002505A6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/GroupModalWindowController.strings; sourceTree = "<group>"; };
+		0315EA662475B052002505A6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/GroupModalWindowController.strings; sourceTree = "<group>"; };
+		0315EA682475B053002505A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GroupModalWindowController.strings; sourceTree = "<group>"; };
 		03213AFD23F9048200002DD7 /* TTFormatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTFormatViewController.xib; sourceTree = "<group>"; };
 		03213AFE23F9048200002DD7 /* ImportWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportWindowController.xib; sourceTree = "<group>"; };
 		03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportWindowControllerParserDelegate.swift; sourceTree = "<group>"; };
@@ -524,8 +534,6 @@
 		034ECB6423F88032006944DD /* PopOverModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopOverModalViewController.xib; sourceTree = "<group>"; };
 		034ECB6523F88033006944DD /* KSRetailCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSRetailCollectionViewItem.xib; sourceTree = "<group>"; };
 		034ECB6623F88033006944DD /* KSBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSBackgroundView.swift; sourceTree = "<group>"; };
-		034ECB6C23F88043006944DD /* AccountModalWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountModalWindowController.xib; sourceTree = "<group>"; };
-		034ECB6D23F88044006944DD /* GroupModalWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupModalWindowController.xib; sourceTree = "<group>"; };
 		034ECB6E23F88044006944DD /* GroupModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupModalWindowController.swift; sourceTree = "<group>"; };
 		034ECB6F23F88044006944DD /* AccountModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountModalWindowController.swift; sourceTree = "<group>"; };
 		035082E724028F0400F8A0D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ListeOperationsController.xib; sourceTree = "<group>"; };
@@ -1163,9 +1171,9 @@
 			isa = PBXGroup;
 			children = (
 				034ECB6F23F88044006944DD /* AccountModalWindowController.swift */,
-				034ECB6C23F88043006944DD /* AccountModalWindowController.xib */,
+				0315EA542475B034002505A6 /* AccountModalWindowController.xib */,
 				034ECB6E23F88044006944DD /* GroupModalWindowController.swift */,
-				034ECB6D23F88044006944DD /* GroupModalWindowController.xib */,
+				0315EA602475B049002505A6 /* GroupModalWindowController.xib */,
 			);
 			name = ModalAccountGroup;
 			sourceTree = "<group>";
@@ -1319,14 +1327,14 @@
 				03213B2523F904DE00002DD7 /* WebViewController.xib in Resources */,
 				03213C3723F924D600002DD7 /* MainMenu.xib in Resources */,
 				0312B136243200D500EA13F6 /* IncomeExpensePieController.xib in Resources */,
-				034ECB7123F88044006944DD /* GroupModalWindowController.xib in Resources */,
+				0315EA5E2475B049002505A6 /* GroupModalWindowController.xib in Resources */,
 				03213BB423F909C300002DD7 /* SliderViewController.xib in Resources */,
 				03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */,
 				03213C6F23F92F1C00002DD7 /* Localizable.strings in Resources */,
 				03213C2123F90C1B00002DD7 /* RubriqueModalWindowController.xib in Resources */,
 				03213CD423F977DD00002DD7 /* AccountViewController.xib in Resources */,
 				03213BA323F9093700002DD7 /* SplashScreenRecentDocumentView.xib in Resources */,
-				034ECB7023F88044006944DD /* AccountModalWindowController.xib in Resources */,
+				0315EA522475B034002505A6 /* AccountModalWindowController.xib in Resources */,
 				03213CBE23F9327400002DD7 /* ModeModalWindowController.xib in Resources */,
 				03213C1623F90C0E00002DD7 /* ComboColorWellImages.xcassets in Resources */,
 				03213C2923F90C3300002DD7 /* ChequiersViewController.xib in Resources */,
@@ -1598,6 +1606,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0315EA542475B034002505A6 /* AccountModalWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0315EA532475B034002505A6 /* Base */,
+				0315EA572475B03B002505A6 /* es */,
+				0315EA592475B03C002505A6 /* it */,
+				0315EA5B2475B03D002505A6 /* fr */,
+				0315EA5D2475B03E002505A6 /* en */,
+			);
+			name = AccountModalWindowController.xib;
+			sourceTree = "<group>";
+		};
+		0315EA602475B049002505A6 /* GroupModalWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0315EA5F2475B049002505A6 /* Base */,
+				0315EA622475B051002505A6 /* es */,
+				0315EA642475B051002505A6 /* it */,
+				0315EA662475B052002505A6 /* fr */,
+				0315EA682475B053002505A6 /* en */,
+			);
+			name = GroupModalWindowController.xib;
+			sourceTree = "<group>";
+		};
 		03213C2E23F90DDF00002DD7 /* AdvancedFilterViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
