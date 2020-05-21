@@ -6,13 +6,13 @@ class Foo: NSObject {
     @objc dynamic var bar = ""
 }
 
-@objc public protocol EcheanciersSaisieDelegate
+@objc public protocol SchedulersSaisieDelegate
 {
     func editionData(_ quake: EntitySchedule)
     func razData()
 }
 
-final class EcheanciersSaisieController: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate, NSDatePickerCellDelegate {
+final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate, NSDatePickerCellDelegate {
     
     public weak var delegate: EcheanciersDelegate?
     

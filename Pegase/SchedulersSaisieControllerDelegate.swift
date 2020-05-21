@@ -2,7 +2,7 @@ import AppKit
 import SwiftDate
 
 
-extension EcheanciersSaisieController: EcheanciersSaisieDelegate {
+extension SchedulersSaisieController: SchedulersSaisieDelegate {
     
     func editionData(_ quake: EntitySchedule) {
         edition = true

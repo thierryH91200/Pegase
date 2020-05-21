@@ -105,11 +105,11 @@
 		03213BD323F90AAB00002DD7 /* icons8-expensive-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 03213BC823F90AAB00002DD7 /* icons8-expensive-100.png */; };
 		03213BD423F90AAB00002DD7 /* icons8-paypal-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 03213BC923F90AAB00002DD7 /* icons8-paypal-100.png */; };
 		03213BDD23F90B3500002DD7 /* IdentiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BDB23F90B3500002DD7 /* IdentiteViewController.swift */; };
-		03213BE523F90B3F00002DD7 /* EcheanciersSaisieControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BDF23F90B3E00002DD7 /* EcheanciersSaisieControllerDelegate.swift */; };
-		03213BE623F90B3F00002DD7 /* EcheanciersSaisieControllerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BE023F90B3E00002DD7 /* EcheanciersSaisieControllerPopUp.swift */; };
-		03213BE823F90B3F00002DD7 /* EcheanciersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BE223F90B3F00002DD7 /* EcheanciersViewController.swift */; };
-		03213BE923F90B3F00002DD7 /* EcheanciersSaisieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BE323F90B3F00002DD7 /* EcheanciersSaisieController.swift */; };
-		03213BED23F90B5200002DD7 /* ParametreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BEB23F90B5200002DD7 /* ParametreController.swift */; };
+		03213BE523F90B3F00002DD7 /* SchedulersSaisieControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BDF23F90B3E00002DD7 /* SchedulersSaisieControllerDelegate.swift */; };
+		03213BE623F90B3F00002DD7 /* SchedulersSaisieControllerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BE023F90B3E00002DD7 /* SchedulersSaisieControllerPopUp.swift */; };
+		03213BE823F90B3F00002DD7 /* SchedulerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BE223F90B3F00002DD7 /* SchedulerViewController.swift */; };
+		03213BE923F90B3F00002DD7 /* SchedulersSaisieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BE323F90B3F00002DD7 /* SchedulersSaisieController.swift */; };
+		03213BED23F90B5200002DD7 /* ParameterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BEB23F90B5200002DD7 /* ParameterController.swift */; };
 		03213BF723F90B9A00002DD7 /* ModePaiementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BF323F90B9A00002DD7 /* ModePaiementViewController.swift */; };
 		03213BF923F90B9A00002DD7 /* ModeModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213BF523F90B9A00002DD7 /* ModeModalWindowController.swift */; };
 		03213BFD23F90BB600002DD7 /* PreferenceOperationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213BFA23F90BB600002DD7 /* PreferenceOperationViewController.xib */; };
@@ -143,13 +143,13 @@
 		03213C7B23F931BC00002DD7 /* CurtainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C7D23F931BC00002DD7 /* CurtainViewController.xib */; };
 		03213C9223F931DC00002DD7 /* GroupeAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C9423F931DC00002DD7 /* GroupeAccountViewController.xib */; };
 		03213C9D23F9320600002DD7 /* IdentiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213C9F23F9320600002DD7 /* IdentiteViewController.xib */; };
-		03213CA823F9321A00002DD7 /* EcheanciersSaisieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CAA23F9321A00002DD7 /* EcheanciersSaisieController.xib */; };
-		03213CB323F9322F00002DD7 /* EcheanciersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CB523F9322F00002DD7 /* EcheanciersViewController.xib */; };
+		03213CA823F9321A00002DD7 /* SchedulersSaisieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CAA23F9321A00002DD7 /* SchedulersSaisieController.xib */; };
+		03213CB323F9322F00002DD7 /* SchedulerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CB523F9322F00002DD7 /* SchedulerViewController.xib */; };
 		03213CBE23F9327400002DD7 /* ModeModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CC023F9327400002DD7 /* ModeModalWindowController.xib */; };
 		03213CC923F9328300002DD7 /* ModePaiementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CCB23F9328300002DD7 /* ModePaiementViewController.xib */; };
 		03213CD423F977DD00002DD7 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CD623F977DD00002DD7 /* AccountViewController.xib */; };
 		03213CDF23F9780900002DD7 /* RubriqueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CE123F9780900002DD7 /* RubriqueViewController.xib */; };
-		03213CEA23F9781E00002DD7 /* ParametreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CEC23F9781E00002DD7 /* ParametreController.xib */; };
+		03213CEA23F9781E00002DD7 /* ParameterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CEC23F9781E00002DD7 /* ParameterController.xib */; };
 		032C13062455A1F400831E23 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 032C13052455A1F400831E23 /* Charts */; };
 		034EC83323F87C60006944DD /* PegaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC83223F87C60006944DD /* PegaseUITests.swift */; };
 		034EC89E23F87CE2006944DD /* CodingGuidelines.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89A23F87CE1006944DD /* CodingGuidelines.md */; };
@@ -362,11 +362,11 @@
 		03213BC823F90AAB00002DD7 /* icons8-expensive-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-expensive-100.png"; sourceTree = "<group>"; };
 		03213BC923F90AAB00002DD7 /* icons8-paypal-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-paypal-100.png"; sourceTree = "<group>"; };
 		03213BDB23F90B3500002DD7 /* IdentiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentiteViewController.swift; sourceTree = "<group>"; };
-		03213BDF23F90B3E00002DD7 /* EcheanciersSaisieControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcheanciersSaisieControllerDelegate.swift; sourceTree = "<group>"; };
-		03213BE023F90B3E00002DD7 /* EcheanciersSaisieControllerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcheanciersSaisieControllerPopUp.swift; sourceTree = "<group>"; };
-		03213BE223F90B3F00002DD7 /* EcheanciersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcheanciersViewController.swift; sourceTree = "<group>"; };
-		03213BE323F90B3F00002DD7 /* EcheanciersSaisieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcheanciersSaisieController.swift; sourceTree = "<group>"; };
-		03213BEB23F90B5200002DD7 /* ParametreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametreController.swift; sourceTree = "<group>"; };
+		03213BDF23F90B3E00002DD7 /* SchedulersSaisieControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulersSaisieControllerDelegate.swift; sourceTree = "<group>"; };
+		03213BE023F90B3E00002DD7 /* SchedulersSaisieControllerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulersSaisieControllerPopUp.swift; sourceTree = "<group>"; };
+		03213BE223F90B3F00002DD7 /* SchedulerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulerViewController.swift; sourceTree = "<group>"; };
+		03213BE323F90B3F00002DD7 /* SchedulersSaisieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulersSaisieController.swift; sourceTree = "<group>"; };
+		03213BEB23F90B5200002DD7 /* ParameterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterController.swift; sourceTree = "<group>"; };
 		03213BF323F90B9A00002DD7 /* ModePaiementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModePaiementViewController.swift; sourceTree = "<group>"; };
 		03213BF523F90B9A00002DD7 /* ModeModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeModalWindowController.swift; sourceTree = "<group>"; };
 		03213BFA23F90BB600002DD7 /* PreferenceOperationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferenceOperationViewController.xib; sourceTree = "<group>"; };
@@ -431,16 +431,16 @@
 		03213CA323F9320C00002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/IdentiteViewController.strings; sourceTree = "<group>"; };
 		03213CA523F9320C00002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/IdentiteViewController.strings; sourceTree = "<group>"; };
 		03213CA723F9320D00002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IdentiteViewController.strings; sourceTree = "<group>"; };
-		03213CA923F9321A00002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EcheanciersSaisieController.xib; sourceTree = "<group>"; };
-		03213CAC23F9321E00002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/EcheanciersSaisieController.strings; sourceTree = "<group>"; };
-		03213CAE23F9321F00002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/EcheanciersSaisieController.strings; sourceTree = "<group>"; };
-		03213CB023F9321F00002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/EcheanciersSaisieController.strings; sourceTree = "<group>"; };
-		03213CB223F9322000002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EcheanciersSaisieController.strings; sourceTree = "<group>"; };
-		03213CB423F9322F00002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EcheanciersViewController.xib; sourceTree = "<group>"; };
-		03213CB723F9323500002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/EcheanciersViewController.strings; sourceTree = "<group>"; };
-		03213CB923F9323500002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/EcheanciersViewController.strings; sourceTree = "<group>"; };
-		03213CBB23F9323600002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/EcheanciersViewController.strings; sourceTree = "<group>"; };
-		03213CBD23F9323700002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EcheanciersViewController.strings; sourceTree = "<group>"; };
+		03213CA923F9321A00002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SchedulersSaisieController.xib; sourceTree = "<group>"; };
+		03213CAC23F9321E00002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SchedulersSaisieController.strings; sourceTree = "<group>"; };
+		03213CAE23F9321F00002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/SchedulersSaisieController.strings; sourceTree = "<group>"; };
+		03213CB023F9321F00002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SchedulersSaisieController.strings; sourceTree = "<group>"; };
+		03213CB223F9322000002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SchedulersSaisieController.strings; sourceTree = "<group>"; };
+		03213CB423F9322F00002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SchedulerViewController.xib; sourceTree = "<group>"; };
+		03213CB723F9323500002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SchedulerViewController.strings; sourceTree = "<group>"; };
+		03213CB923F9323500002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/SchedulerViewController.strings; sourceTree = "<group>"; };
+		03213CBB23F9323600002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SchedulerViewController.strings; sourceTree = "<group>"; };
+		03213CBD23F9323700002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SchedulerViewController.strings; sourceTree = "<group>"; };
 		03213CBF23F9327400002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ModeModalWindowController.xib; sourceTree = "<group>"; };
 		03213CC223F9327900002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ModeModalWindowController.strings; sourceTree = "<group>"; };
 		03213CC423F9327A00002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ModeModalWindowController.strings; sourceTree = "<group>"; };
@@ -457,11 +457,11 @@
 		03213CE523F9780C00002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/RubriqueViewController.strings; sourceTree = "<group>"; };
 		03213CE723F9780E00002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/RubriqueViewController.strings; sourceTree = "<group>"; };
 		03213CE923F9780F00002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/RubriqueViewController.strings; sourceTree = "<group>"; };
-		03213CEB23F9781E00002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ParametreController.xib; sourceTree = "<group>"; };
-		03213CEE23F9782100002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ParametreController.strings; sourceTree = "<group>"; };
-		03213CF023F9782200002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ParametreController.strings; sourceTree = "<group>"; };
-		03213CF223F9782300002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ParametreController.strings; sourceTree = "<group>"; };
-		03213CF423F9782400002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ParametreController.strings; sourceTree = "<group>"; };
+		03213CEB23F9781E00002DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ParameterController.xib; sourceTree = "<group>"; };
+		03213CEE23F9782100002DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ParameterController.strings; sourceTree = "<group>"; };
+		03213CF023F9782200002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ParameterController.strings; sourceTree = "<group>"; };
+		03213CF223F9782300002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ParameterController.strings; sourceTree = "<group>"; };
+		03213CF423F9782400002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ParameterController.strings; sourceTree = "<group>"; };
 		034EC81623F87C5B006944DD /* Pegase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pegase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EC82E23F87C5F006944DD /* PegaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PegaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EC83223F87C60006944DD /* PegaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegaseUITests.swift; sourceTree = "<group>"; };
@@ -887,8 +887,8 @@
 				03213BF023F90B7E00002DD7 /* PreferenceOperation */,
 				03213BEF23F90B7A00002DD7 /* Rubrique */,
 				03213BEE23F90B7400002DD7 /* Chequier */,
-				03213BEB23F90B5200002DD7 /* ParametreController.swift */,
-				03213CEC23F9781E00002DD7 /* ParametreController.xib */,
+				03213BEB23F90B5200002DD7 /* ParameterController.swift */,
+				03213CEC23F9781E00002DD7 /* ParameterController.xib */,
 			);
 			name = Parametre;
 			sourceTree = "<group>";
@@ -896,12 +896,12 @@
 		03213BD823F90AF500002DD7 /* Echeanciers */ = {
 			isa = PBXGroup;
 			children = (
-				03213BE323F90B3F00002DD7 /* EcheanciersSaisieController.swift */,
-				03213CAA23F9321A00002DD7 /* EcheanciersSaisieController.xib */,
-				03213BDF23F90B3E00002DD7 /* EcheanciersSaisieControllerDelegate.swift */,
-				03213BE023F90B3E00002DD7 /* EcheanciersSaisieControllerPopUp.swift */,
-				03213BE223F90B3F00002DD7 /* EcheanciersViewController.swift */,
-				03213CB523F9322F00002DD7 /* EcheanciersViewController.xib */,
+				03213BE323F90B3F00002DD7 /* SchedulersSaisieController.swift */,
+				03213CAA23F9321A00002DD7 /* SchedulersSaisieController.xib */,
+				03213BDF23F90B3E00002DD7 /* SchedulersSaisieControllerDelegate.swift */,
+				03213BE023F90B3E00002DD7 /* SchedulersSaisieControllerPopUp.swift */,
+				03213BE223F90B3F00002DD7 /* SchedulerViewController.swift */,
+				03213CB523F9322F00002DD7 /* SchedulerViewController.xib */,
 			);
 			name = Echeanciers;
 			sourceTree = "<group>";
@@ -1347,7 +1347,7 @@
 				034EC8F423F87EF1006944DD /* rubrique.csv in Resources */,
 				03213BCF23F90AAB00002DD7 /* Assets.xcassets in Resources */,
 				03213C9223F931DC00002DD7 /* GroupeAccountViewController.xib in Resources */,
-				03213CB323F9322F00002DD7 /* EcheanciersViewController.xib in Resources */,
+				03213CB323F9322F00002DD7 /* SchedulerViewController.xib in Resources */,
 				03213C2C23F90DDF00002DD7 /* AdvancedFilterViewController.xib in Resources */,
 				03213BD423F90AAB00002DD7 /* icons8-paypal-100.png in Resources */,
 				03213B6A23F905E000002DD7 /* GeneralViewController.xib in Resources */,
@@ -1363,11 +1363,11 @@
 				039BAC3A242CAD4600C375BB /* MainWindowController.xib in Resources */,
 				03213BCD23F90AAB00002DD7 /* icons8-safe-100.png in Resources */,
 				03213C7B23F931BC00002DD7 /* CurtainViewController.xib in Resources */,
-				03213CEA23F9781E00002DD7 /* ParametreController.xib in Resources */,
+				03213CEA23F9781E00002DD7 /* ParameterController.xib in Resources */,
 				03213B8B23F9085700002DD7 /* RubricBarController.xib in Resources */,
 				03213C1E23F90C1B00002DD7 /* CategorieModalWindowController.xib in Resources */,
 				03213BCE23F90AAB00002DD7 /* curtain.jpg in Resources */,
-				03213CA823F9321A00002DD7 /* EcheanciersSaisieController.xib in Resources */,
+				03213CA823F9321A00002DD7 /* SchedulersSaisieController.xib in Resources */,
 				03213B6823F905E000002DD7 /* PersonViewController.xib in Resources */,
 				03213BD323F90AAB00002DD7 /* icons8-expensive-100.png in Resources */,
 				03213B7F23F9082600002DD7 /* CategoryBarController1.xib in Resources */,
@@ -1439,7 +1439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				034EC8C323F87EA1006944DD /* AppDelegate.swift in Sources */,
-				03213BE823F90B3F00002DD7 /* EcheanciersViewController.swift in Sources */,
+				03213BE823F90B3F00002DD7 /* SchedulerViewController.swift in Sources */,
 				034EC8E223F87EDB006944DD /* EntityAccount+CoreDataClass.swift in Sources */,
 				03213B3323F9050000002DD7 /* ListeOperationsDataSource.swift in Sources */,
 				036AF0A624260445008C6564 /* AvatarView.swift in Sources */,
@@ -1510,7 +1510,7 @@
 				03213BB523F909C300002DD7 /* RangeSliderHorizontal.swift in Sources */,
 				034EC8D123F87EB2006944DD /* RateWindowController.swift in Sources */,
 				037993B0241385AD001ADDA6 /* Document.xcdatamodeld in Sources */,
-				03213BE523F90B3F00002DD7 /* EcheanciersSaisieControllerDelegate.swift in Sources */,
+				03213BE523F90B3F00002DD7 /* SchedulersSaisieControllerDelegate.swift in Sources */,
 				0357250F2433AC720015B462 /* MyPrintViewOutline.swift in Sources */,
 				03213B9B23F9091200002DD7 /* SourceListViewDataSource.swift in Sources */,
 				03213B8F23F9086600002DD7 /* RubricPieController.swift in Sources */,
@@ -1521,7 +1521,7 @@
 				03213C0623F90BD200002DD7 /* RubriqueViewControllerDragDrop.swift in Sources */,
 				034ECA7923F87FAE006944DD /* GroupeAccountViewController.swift in Sources */,
 				034ECB6823F88033006944DD /* KSRetailCollectionViewItem.swift in Sources */,
-				03213BED23F90B5200002DD7 /* ParametreController.swift in Sources */,
+				03213BED23F90B5200002DD7 /* ParameterController.swift in Sources */,
 				034EC90D23F87F51006944DD /* HeaderCell.swift in Sources */,
 				03213B1323F9048D00002DD7 /* CSVParser.swift in Sources */,
 				03213BB223F909C300002DD7 /* SliderViewHorizontalController.swift in Sources */,
@@ -1546,7 +1546,7 @@
 				03213B4823F9055400002DD7 /* SousOperationComboBoxDelegate.swift in Sources */,
 				034ECB6B23F88033006944DD /* KSBackgroundView.swift in Sources */,
 				034EC91123F87F51006944DD /* ManagedObject.swift in Sources */,
-				03213BE923F90B3F00002DD7 /* EcheanciersSaisieController.swift in Sources */,
+				03213BE923F90B3F00002DD7 /* SchedulersSaisieController.swift in Sources */,
 				034EC91223F87F51006944DD /* Calendar.swift in Sources */,
 				034EC8F723F87EF1006944DD /* Categories.swift in Sources */,
 				034EC90B23F87F51006944DD /* NSUserInterfaceItemIdentifier.swift in Sources */,
@@ -1583,7 +1583,7 @@
 				03213B2423F904DE00002DD7 /* WebViewController.swift in Sources */,
 				03213B5323F9058800002DD7 /* SuggestibleTextFieldCell.swift in Sources */,
 				034ECB5F23F87FAF006944DD /* CurtainViewController.swift in Sources */,
-				03213BE623F90B3F00002DD7 /* EcheanciersSaisieControllerPopUp.swift in Sources */,
+				03213BE623F90B3F00002DD7 /* SchedulersSaisieControllerPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1725,7 +1725,7 @@
 			name = IdentiteViewController.xib;
 			sourceTree = "<group>";
 		};
-		03213CAA23F9321A00002DD7 /* EcheanciersSaisieController.xib */ = {
+		03213CAA23F9321A00002DD7 /* SchedulersSaisieController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				03213CA923F9321A00002DD7 /* Base */,
@@ -1734,10 +1734,10 @@
 				03213CB023F9321F00002DD7 /* fr */,
 				03213CB223F9322000002DD7 /* en */,
 			);
-			name = EcheanciersSaisieController.xib;
+			name = SchedulersSaisieController.xib;
 			sourceTree = "<group>";
 		};
-		03213CB523F9322F00002DD7 /* EcheanciersViewController.xib */ = {
+		03213CB523F9322F00002DD7 /* SchedulerViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				03213CB423F9322F00002DD7 /* Base */,
@@ -1746,7 +1746,7 @@
 				03213CBB23F9323600002DD7 /* fr */,
 				03213CBD23F9323700002DD7 /* en */,
 			);
-			name = EcheanciersViewController.xib;
+			name = SchedulerViewController.xib;
 			sourceTree = "<group>";
 		};
 		03213CC023F9327400002DD7 /* ModeModalWindowController.xib */ = {
@@ -1797,7 +1797,7 @@
 			name = RubriqueViewController.xib;
 			sourceTree = "<group>";
 		};
-		03213CEC23F9781E00002DD7 /* ParametreController.xib */ = {
+		03213CEC23F9781E00002DD7 /* ParameterController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				03213CEB23F9781E00002DD7 /* Base */,
@@ -1806,7 +1806,7 @@
 				03213CF223F9782300002DD7 /* it */,
 				03213CF423F9782400002DD7 /* es */,
 			);
-			name = ParametreController.xib;
+			name = ParameterController.xib;
 			sourceTree = "<group>";
 		};
 		035082E824028F0400F8A0D4 /* ListeOperationsController.xib */ = {

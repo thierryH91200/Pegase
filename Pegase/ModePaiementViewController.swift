@@ -1,6 +1,6 @@
 import AppKit
 
-final class ModePaiementViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource
+final class ModePaiementViewController: NSViewController
 {
     public weak var delegate: FilterDelegate?
     
@@ -188,6 +188,9 @@ final class ModePaiementViewController: NSViewController, NSTableViewDelegate, N
         tablePaiementView.selectRowIndexes(select, byExtendingSelection: false)
         
     }
+}
+
+extension ModePaiementViewController:  NSTableViewDelegate, NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return entityModePaiement.count

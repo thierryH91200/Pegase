@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="EcheanciersViewController" customModule="Pegase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SchedulerViewController" customModule="Pegase" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="zmE-0v-Gs1" id="4ab-4G-r9U"/>
                 <outlet property="view" destination="UtS-KV-UHJ" id="bCE-Ag-ZcG"/>
@@ -19,13 +19,13 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEq-w4-Ig2">
-                    <rect key="frame" x="0.0" y="50" width="1063" height="172"/>
+                    <rect key="frame" x="0.0" y="50" width="1063" height="124"/>
                     <clipView key="contentView" id="WYS-wN-Qjk">
-                        <rect key="frame" x="1" y="0.0" width="1061" height="171"/>
+                        <rect key="frame" x="1" y="0.0" width="1061" height="123"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" autosaveName="savecolEcheancier" rowHeight="40" headerView="ypI-OX-I5J" viewBased="YES" id="zmE-0v-Gs1">
-                                <rect key="frame" x="0.0" y="0.0" width="1061" height="148"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1061" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

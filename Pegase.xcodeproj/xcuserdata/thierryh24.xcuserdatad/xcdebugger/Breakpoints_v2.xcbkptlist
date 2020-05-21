@@ -25,5 +25,161 @@
             continueAfterRunningActions = "No">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC567ADC-24DC-4D06-8A2D-5429799A33C0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/GroupeAccountViewAction.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "editAccount(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4024BB83-61BC-4A12-8EC9-9B0C31EE44A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/GroupeAccountViewAction.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "editAccount(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9F8E21C-DFB3-4D4D-AC46-A7A26A46A595"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/GroupeAccountViewAction.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "editAccount(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/AccountModalWindowController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "AccountModalWindowController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - a102aa26faba897b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pegase.AccountModalWindowController.account.getter : Swift.Optional&lt;Pegase.EntityAccount&gt;"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - f9d83999ef1cb967"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pegase.AccountModalWindowController.account.setter : Swift.Optional&lt;Pegase.EntityAccount&gt;"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - 86a9e6ec57f63576"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pegase.AccountModalWindowController.account.modify : Swift.Optional&lt;Pegase.EntityAccount&gt;"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - cf61f38e5185efdc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pegase.AccountModalWindowController.account.modify : Swift.Optional&lt;Pegase.EntityAccount&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - 94203e8535635b51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pegase.AccountModalWindowController.init(window: Swift.Optional&lt;__C.NSWindow&gt;) -&gt; Pegase.AccountModalWindowController"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1915">
+               </Location>
+               <Location
+                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - 19fd32eff94a3a3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pegase.AccountModalWindowController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Pegase.AccountModalWindowController&gt;"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1746">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

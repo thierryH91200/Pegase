@@ -7,7 +7,7 @@ final class GroupModalWindowController: NSWindowController, NSTextFieldDelegate 
     
     @IBOutlet weak var buttonOK: NSButton!
     
-    var account =  EntityAccount()
+    var account :  EntityAccount?
     var edition = false
 
     override func windowDidLoad() {
@@ -24,7 +24,7 @@ final class GroupModalWindowController: NSWindowController, NSTextFieldDelegate 
         
         if edition == true {
 
-            nameGroup.stringValue = account.name!
+            nameGroup.stringValue = account?.name ?? "name"
             
             mode.title = Localizations.Operation.ModeEdition
             mode.layer?.backgroundColor = NSColor.orange.cgColor

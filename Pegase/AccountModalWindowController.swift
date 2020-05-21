@@ -16,7 +16,7 @@ final class AccountModalWindowController: NSWindowController {
     
     @IBOutlet weak var mode: NSButton!
     
-    var account =  EntityAccount()
+    var account :  EntityAccount?
     var edition = false
     
     lazy var popover: NSPopover = {
@@ -46,13 +46,13 @@ final class AccountModalWindowController: NSWindowController {
         mode.layer?.backgroundColor = NSColor.green.cgColor
 
         if edition == true {
-            libelleCompte.stringValue = account.name!
-            soldeInitial.doubleValue = account.initAccount?.realise ?? 0
-            nomTitulaire.stringValue = (account.identity?.name) ?? "empty"
-            prenomTitulaire.stringValue = (account.identity?.surName) ?? "empty"
-            numCompte.stringValue = (account.initAccount?.codeAccount) ?? "empty"
-            imageView.image? = NSImage(named: account.nameImage!)!
-            typeAccount.selectItem(at: Int(account.type))
+            libelleCompte.stringValue = account?.name ?? "Name"
+            soldeInitial.doubleValue = account?.initAccount?.realise ?? 0
+            nomTitulaire.stringValue = (account?.identity?.name) ?? "name"
+            prenomTitulaire.stringValue = (account?.identity?.surName) ?? "surName"
+            numCompte.stringValue = (account?.initAccount?.codeAccount) ?? "codeAccount"
+            imageView.image? = NSImage(named: account?.nameImage! ?? "Add")!
+            typeAccount.selectItem(at: Int(account?.type ?? 0))
             
             mode.title = Localizations.Operation.ModeEdition
             mode.layer?.backgroundColor = NSColor.orange.cgColor

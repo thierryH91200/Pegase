@@ -129,7 +129,7 @@ extension MainWindowController: SourceListDelegate
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
         case "Settings":
-            self.parametreController = ParametreController()
+            self.parametreController = ParameterController()
             vc = ((self.parametreController)?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
@@ -142,7 +142,7 @@ extension MainWindowController: SourceListDelegate
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
         case "Scheduler":
-            self.echeanciersViewController = EcheanciersViewController()
+            self.echeanciersViewController = SchedulerViewController()
             vc = (echeanciersViewController?.view)!
             
             self.setUpViewSaisieEcheancier()

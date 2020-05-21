@@ -1,6 +1,6 @@
 import Cocoa
 
-final class ParametreController: NSViewController {
+final class ParameterController: NSViewController {
 
     @IBOutlet weak var tabView: NSTabView!
     

@@ -4,12 +4,11 @@ import AppKit
 {
     /// Called when a value has been selected inside the outline.
     func updateData()
-    
 }
 
-final class EcheanciersViewController: NSViewController {
+final class SchedulerViewController: NSViewController {
     
-    public weak var delegate: EcheanciersSaisieDelegate?
+    public weak var delegate: SchedulersSaisieDelegate?
     
     @IBOutlet weak var tableView: NSTableView!
     var entityEcheancier =  [EntitySchedule]()
@@ -83,14 +82,14 @@ final class EcheanciersViewController: NSViewController {
     }
 }
 
-extension EcheanciersViewController: NSTableViewDataSource {
+extension SchedulerViewController: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return entityEcheancier.count
     }
 }
 
-extension EcheanciersViewController: NSTableViewDelegate {
+extension SchedulerViewController: NSTableViewDelegate {
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
@@ -224,7 +223,7 @@ extension EcheanciersViewController: NSTableViewDelegate {
 
 }
 
-extension EcheanciersViewController: EcheanciersDelegate {
+extension SchedulerViewController: EcheanciersDelegate {
     func updateData() {
         guard currentAccount != nil else { return }
         entityEcheancier = Echeanciers.shared.getAllDatas()

@@ -18,11 +18,11 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var incomeExpenseBarController: IncomeExpenseBarController?
     var tresorerieController: TresorerieController?
     
-    var parametreController: ParametreController?
-    var echeanciersSaisieController: EcheanciersSaisieController?
+    var parametreController: ParameterController?
+    var echeanciersSaisieController: SchedulersSaisieController?
     var rubriqueViewController: RubriqueViewController?
     var modePaiementViewController: ModePaiementViewController?
-    var echeanciersViewController: EcheanciersViewController?
+    var echeanciersViewController: SchedulerViewController?
     var chequiersViewController: ChequiersViewController?
     var identiteViewController: IdentiteViewController?
     var webViewController: WebViewController?
@@ -195,7 +195,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     
     func setUpViewSaisieEcheancier()
     {
-        self.echeanciersSaisieController = EcheanciersSaisieController()
+        self.echeanciersSaisieController = SchedulersSaisieController()
         Commun.shared.addSubview(subView: (echeanciersSaisieController?.view)!, toView: operationView)
         
         Commun.shared.setUpLayoutConstraints(item: echeanciersSaisieController!.view, toItem: operationView)

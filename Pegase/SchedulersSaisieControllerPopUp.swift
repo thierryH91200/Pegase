@@ -1,6 +1,6 @@
 import AppKit
 
-extension EcheanciersSaisieController {
+extension SchedulersSaisieController {
     
 
     // # MARK: PopUp Rubrique - Catégorie
@@ -81,7 +81,7 @@ extension EcheanciersSaisieController {
     {
     }
     
-    // # MARK: PopUp Compte
+    // # MARK: PopUp Account
     func loadCompte () {
         let  transfertMenu = NSMenu()
         
