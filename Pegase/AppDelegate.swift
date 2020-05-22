@@ -21,21 +21,21 @@ class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDel
 
         // Register user defaults. Use a plist in real life.
         var dict = [String : Bool]()
-        dict["datePointage"] = false
-        dict["dateOperation"] = false
-        dict["libelle"] = false
-        dict["rubrique"] = false
-        dict["categorie"] = false
-        dict["mode"] = false
+        dict["datePointage"]   = false
+        dict["dateOperation"]  = false
+        dict["libelle"]        = false
+        dict["rubrique"]       = false
+        dict["categorie"]      = false
+        dict["mode"]           = false
         dict["releveBancaire"] = false
-        dict["statut"] = false
+        dict["statut"]         = false
         
-        dict["montant"] = false
-        dict["depense"] = false
-        dict["recette"] = false
-        dict["solde"] = true
-        dict["liee"] = false
-        var defaults = [String:Any]()
+        dict["montant"]        = false
+        dict["depense"]        = true
+        dict["recette"]        = true
+        dict["solde"]          = false
+        dict["liee"]           = false
+        var defaults           = [String :Any]()
         defaults[kUserDefaultsKeyVisibleColumns] = dict as Any
         UserDefaults.standard.register(defaults: defaults)
 

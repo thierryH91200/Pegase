@@ -36,10 +36,10 @@ final class ListeOperationsController: NSViewController {
         case libelle
         case liee
         case mode
-        case amount
+        case montant
         case income
         case bankStatement
-        case rubric
+        case rubrique
         case solde
         case statut
     }

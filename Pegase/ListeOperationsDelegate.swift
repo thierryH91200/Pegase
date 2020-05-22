@@ -107,7 +107,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 
                 switch propertyEnum
                 {
-                case .rubric:
+                case .rubrique:
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].category?.rubric?.name ?? ""
                     } else {
@@ -154,7 +154,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     paragraph.alignment = .left
                     textField.stringValue = quake.paymentMode?.name ?? ""
                 
-                case .amount:
+                case .montant:
                     let price = quake.amount as NSNumber
                     let formatted = formatterPrice.string(from: price)
                     textField.stringValue = formatted!
@@ -238,7 +238,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .solde:
                     textField.stringValue = ""
                 
-                case .rubric:
+                case .rubrique:
                     textField.stringValue = sousOperations.category?.rubric?.name ?? ""
                 
                 case .categorie:
@@ -247,7 +247,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 case .libelle:
                     textField.stringValue = sousOperations.libelle ?? ""
                 
-                case .amount:
+                case .montant:
                     let price = sousOperations.amount as NSNumber
                     let formatted = formatterPrice.string(from: price)
                     textField.stringValue = formatted!
@@ -303,7 +303,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         case .some(.income):
             switch propertyEnum {
             
-            case .expense, .amount, .income:
+            case .expense, .montant, .income:
                 if quake.amount >= 0.0 {
                     attrs[.foregroundColor] = NSColor.green
                 } else {
@@ -356,7 +356,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         case .some(.income):
             switch propertyEnum {
             
-            case .expense, .amount, .income:
+            case .expense, .montant, .income:
                 if quake.amount >= 0.0 {
                     attrs[.foregroundColor] = NSColor.green
                 } else {

@@ -47,7 +47,7 @@ final class ModePaiementViewController: NSViewController
             let label = quake.name!
             
             let p1 = NSPredicate(format: "account == %@", currentAccount!)
-            let p2 = NSPredicate(format: "modePaiement.name == %@", label)
+            let p2 = NSPredicate(format: "paymentMode.name == %@", label)
             let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p2])
             
             let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
