@@ -18,7 +18,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var incomeExpenseBarController: IncomeExpenseBarController?
     var tresorerieController: TresorerieController?
     
-    var parametreController: ParameterController?
+    var parameterController: ParameterController?
     var echeanciersSaisieController: SchedulersSaisieController?
     var rubriqueViewController: RubriqueViewController?
     var modePaiementViewController: ModePaiementViewController?

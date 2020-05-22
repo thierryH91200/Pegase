@@ -12,43 +12,45 @@ extension ListeOperationsController: NSMenuDelegate {
         }
     }
 
-    /// set up the table header context menu for choosing the columns.
+    //  MARK: - set up the table header context menu for choosing the columns.
     func createOutlineContextMenu()
     {
-        let dict = Defaults.dictionary(forKey: kUserDefaultsKeyVisibleColumns)
         let tableHeaderContextMenu = NSMenu(title: "Select Columns")
+
+//        let dict = Defaults.dictionary(forKey: kUserDefaultsKeyVisibleColumns)
         tableHeaderContextMenu.delegate = self
         
         for column in outlineListView.tableColumns
         {
             let title = column.headerCell.title
-            let menuItem = tableHeaderContextMenu.addItem(withTitle: title, action: #selector(self.contextMenuSelected), keyEquivalent: "")
+            let item = tableHeaderContextMenu.addItem(withTitle: title, action: #selector(self.contextMenuSelected), keyEquivalent: "")
             
-            menuItem.target = self
-            menuItem.representedObject = column
-            menuItem.state = .on
+            item.target = self
+            item.representedObject = column
+            item.state = .on
             
-            if dict != nil {
-                let isVisible = dict![column.identifier.rawValue] as! Bool
+            if let dict = UserDefaults.standard.dictionary(forKey: kUserDefaultsKeyVisibleColumns) as? [String : Bool] {
+                let isVisible = dict[column.identifier.rawValue]!
                 column.isHidden = isVisible
             }
-            menuItem.state = column.isHidden ? .off : .on
+            item.state = column.isHidden ? .off : .on
         }
         self.outlineListView.headerView?.menu = tableHeaderContextMenu
     }
     
-    /// The outline action. `addItem( withTitle` specifies this func.
+   
+    // MARK: - contextMenuSelected
+/// The outline action. `addItem( withTitle` specifies this func.
     @objc func contextMenuSelected(_ menuItem: NSMenuItem) {
         
         let column = menuItem.representedObject as? NSTableColumn
-        
         let shouldHide = !column!.isHidden
         column?.isHidden = shouldHide
         menuItem.state = (column?.isHidden)! ? .off : .on
         
         let parentMenu = menuItem.menu
         
-        var columnVisibilityDictionary = UserDefaults.standard.dictionary(forKey: "kUserDefaultsKeyVisisbleColumns")
+        var columnVisibilityDictionary = UserDefaults.standard.dictionary(forKey: kUserDefaultsKeyVisibleColumns)
         
         for column in outlineListView.tableColumns
         {
@@ -98,7 +100,7 @@ extension ListeOperationsController: NSMenuDelegate {
             column.isHidden = !((columnVisibilityDictionary![column.identifier.rawValue] )  as! Bool)
             outlineListView.sizeToFit()
         }
-        saveTableColumnDefaults()
+        self.saveTableColumnDefaults()
     }
     
     /// Writes the selection to user defaults. Called every time an item is chosen.
@@ -106,11 +108,11 @@ extension ListeOperationsController: NSMenuDelegate {
         var dict = [String: Bool]()
 
         for column in self.outlineListView.tableColumns {
-            dict[column.identifier.rawValue] = column.isHidden
+            let id = column.identifier.rawValue
+            dict[id] = column.isHidden
         }
         UserDefaults.standard.set(dict, forKey: kUserDefaultsKeyVisibleColumns)
     }
 
-    
 }
 

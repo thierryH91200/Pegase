@@ -117,7 +117,6 @@ extension RubriqueViewController : NSMenuDelegate {
          })
      }
 
-    
     @IBAction func removeRubrique(_ sender: NSButton) {
         
         let entityPreference = Preference.shared.getAllDatas()

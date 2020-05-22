@@ -129,12 +129,12 @@ extension MainWindowController: SourceListDelegate
             self.segmentedControl.setEnabled(false, forSegment: 2)
             
         case "Settings":
-            self.parametreController = ParameterController()
-            vc = ((self.parametreController)?.view)!
+            self.parameterController = ParameterController()
+            vc = ((self.parameterController)?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.parametreController?.rubriqueViewController?.delegate = listeOperationsController
-            self.parametreController?.modePaiementViewController?.delegate = listeOperationsController
+            self.parameterController?.rubriqueViewController?.delegate = listeOperationsController
+            self.parameterController?.modePaiementViewController?.delegate = listeOperationsController
             
             isSplitRightHidden  = true
             isSplitCenterHidden =  false

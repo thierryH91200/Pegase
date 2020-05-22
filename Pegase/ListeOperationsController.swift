@@ -195,7 +195,7 @@ final class ListeOperationsController: NSViewController {
         self.theBox3.cornerRadius = 3
         self.theBox3.fillColor = NSColor(patternImage: NSImage(named: NSImage.Name( "Gradient"))!)
         
-                outlineListView.doubleAction = #selector(doubleClicked)
+        self.outlineListView.doubleAction = #selector(doubleClicked)
 
         self.outlineListView.rowSizeStyle = .custom
         self.outlineListView.reloadData()

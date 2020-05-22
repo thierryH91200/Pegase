@@ -16,6 +16,29 @@ class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDel
     }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
+        
+        let kUserDefaultsKeyVisibleColumns = "kUserDefaultsKeyVisibleColumns"
+
+        // Register user defaults. Use a plist in real life.
+        var dict = [String : Bool]()
+        dict["datePointage"] = false
+        dict["dateOperation"] = false
+        dict["libelle"] = false
+        dict["rubrique"] = false
+        dict["categorie"] = false
+        dict["mode"] = false
+        dict["releveBancaire"] = false
+        dict["statut"] = false
+        
+        dict["montant"] = false
+        dict["depense"] = false
+        dict["recette"] = false
+        dict["solde"] = true
+        dict["liee"] = false
+        var defaults = [String:Any]()
+        defaults[kUserDefaultsKeyVisibleColumns] = dict as Any
+        UserDefaults.standard.register(defaults: defaults)
+
         // Create the shared document controller.
         _ = TulsiDocumentController()
     }

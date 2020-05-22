@@ -29,7 +29,6 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
     @objc var date2: Date?
     @objc var date3: Date?
 
-    
     @IBOutlet weak var occurence: NSTextField!
     @IBOutlet weak var frequence: NSTextField!
     @IBOutlet weak var popUpFrequence: NSPopUpButton!

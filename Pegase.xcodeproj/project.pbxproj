@@ -874,13 +874,13 @@
 			isa = PBXGroup;
 			children = (
 				03213BD923F90AF900002DD7 /* Identite */,
-				03213BD823F90AF500002DD7 /* Echeanciers */,
-				03213BD723F90AEF00002DD7 /* Parametre */,
+				03213BD823F90AF500002DD7 /* Schedulers */,
+				03213BD723F90AEF00002DD7 /* Parameter */,
 			);
 			name = ReferenceCompte;
 			sourceTree = "<group>";
 		};
-		03213BD723F90AEF00002DD7 /* Parametre */ = {
+		03213BD723F90AEF00002DD7 /* Parameter */ = {
 			isa = PBXGroup;
 			children = (
 				03213BF123F90B8300002DD7 /* ModePaiement */,
@@ -890,10 +890,10 @@
 				03213BEB23F90B5200002DD7 /* ParameterController.swift */,
 				03213CEC23F9781E00002DD7 /* ParameterController.xib */,
 			);
-			name = Parametre;
+			name = Parameter;
 			sourceTree = "<group>";
 		};
-		03213BD823F90AF500002DD7 /* Echeanciers */ = {
+		03213BD823F90AF500002DD7 /* Schedulers */ = {
 			isa = PBXGroup;
 			children = (
 				03213BE323F90B3F00002DD7 /* SchedulersSaisieController.swift */,
@@ -903,7 +903,7 @@
 				03213BE223F90B3F00002DD7 /* SchedulerViewController.swift */,
 				03213CB523F9322F00002DD7 /* SchedulerViewController.xib */,
 			);
-			name = Echeanciers;
+			name = Schedulers;
 			sourceTree = "<group>";
 		};
 		03213BD923F90AF900002DD7 /* Identite */ = {
