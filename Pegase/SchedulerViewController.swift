@@ -129,7 +129,7 @@ extension SchedulerViewController: NSTableViewDelegate {
             return result
         case .echModePaiement:
             let result = tableView.makeView(withIdentifier: .echModePaiement, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].modePaiement?.name)!
+            result.textField?.stringValue = (entityEcheancier[row].paymentMode?.name)!
             return result
             
         case .echRubrique:

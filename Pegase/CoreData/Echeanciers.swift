@@ -37,7 +37,7 @@ final class Echeanciers {
         
         entityOperation.account         = entityEcheancier.account
                 
-        entityOperation.paymentMode   = entityEcheancier.modePaiement
+        entityOperation.paymentMode   = entityEcheancier.paymentMode
         entityOperation.statut         = Date() >= dateValeur ? 2 : 1
         
         entityOperation.dateOperation  = dateValeur

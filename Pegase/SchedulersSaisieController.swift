@@ -274,7 +274,7 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
         
         menuItem = popUpModePaiement.selectedItem
         let entity2 = menuItem?.representedObject as! EntityPaymentMode
-        entitySchedule?.modePaiement = entity2
+        entitySchedule?.paymentMode = entity2
 
         entitySchedule?.uuid          = UUID()
         

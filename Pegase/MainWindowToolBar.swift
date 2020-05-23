@@ -269,8 +269,8 @@ extension MainWindowController {
                         entity.dateOperation = dateFormatter.date(from: key[keyDateOperation] ?? now)
                         entity.datePointage = dateFormatter.date(from: key[keyDatePointage] ?? now)
                         
-                        let labelMode = key[keyMode] ?? (entityPreference.modePaiement?.name)!
-                        let entityModePaiement = PaymentMode.shared.find(name: labelMode) ?? (entityPreference.modePaiement)!
+                        let labelMode = key[keyMode] ?? (entityPreference.paymentMode?.name)!
+                        let entityModePaiement = PaymentMode.shared.find(name: labelMode) ?? (entityPreference.paymentMode)!
                         entity.paymentMode = entityModePaiement
                         
                         let labelStatut = TypeOfStatut(rawValue: entityPreference.statut)!.label

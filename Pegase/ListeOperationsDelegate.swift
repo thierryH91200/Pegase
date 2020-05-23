@@ -160,7 +160,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     textField.stringValue = formatted!
                     paragraph.alignment = .right
                 
-                case .expense:
+                case .depense:
                     var price: NSNumber = 0.0
                     var formatted = ""
                     if quake.amount < 0 {
@@ -170,7 +170,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     textField.stringValue = formatted
                     paragraph.alignment = .right
                 
-                case .income:
+                case .recette:
                     var price: NSNumber = 0.0
                     var formatted = ""
                     if quake.amount > 0 {
@@ -253,7 +253,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     textField.stringValue = formatted!
                     paragraph.alignment = .right
                 
-                case .expense:
+                case .depense:
                     var price: NSNumber = 0.0
                     var formatted = ""
                     if sousOperations.amount < 0 {
@@ -263,7 +263,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     textField.stringValue = formatted
                     paragraph.alignment = .right
                 
-                case .income:
+                case .recette:
                     var price: NSNumber = 0.0
                     var formatted = ""
                     if sousOperations.amount > 0 {
@@ -303,7 +303,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         case .some(.income):
             switch propertyEnum {
             
-            case .expense, .montant, .income:
+            case .depense, .montant, .recette:
                 if quake.amount >= 0.0 {
                     attrs[.foregroundColor] = NSColor.green
                 } else {
@@ -356,7 +356,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         case .some(.income):
             switch propertyEnum {
             
-            case .expense, .montant, .income:
+            case .depense, .montant, .recette:
                 if quake.amount >= 0.0 {
                     attrs[.foregroundColor] = NSColor.green
                 } else {

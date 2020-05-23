@@ -37,7 +37,7 @@ extension SchedulersSaisieController: SchedulersSaisieDelegate {
         }
         
         let mode = popUpModePaiement.itemTitle(at: 0)
-        popUpModePaiement.selectItem(withTitle: (entitySchedule?.modePaiement?.name ?? mode)!)
+        popUpModePaiement.selectItem(withTitle: (entitySchedule?.paymentMode?.name ?? mode)!)
         
         let valeurMontant = entitySchedule?.amount ?? 0.0
         montant.textColor = valeurMontant < 0 ? NSColor.red : NSColor.green
@@ -76,7 +76,7 @@ extension SchedulersSaisieController: SchedulersSaisieDelegate {
         popUpCategorie.selectItem(withTitle: (entityPreference?.category?.name)!)
         
         loadModePaiement()
-        popUpModePaiement.selectItem(withTitle: (entityPreference?.modePaiement?.name)!)
+        popUpModePaiement.selectItem(withTitle: (entityPreference?.paymentMode?.name)!)
         
         libelle.stringValue = ""
         

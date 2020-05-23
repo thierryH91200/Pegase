@@ -46,7 +46,7 @@ extension OperationViewController: ListeOperationsDelegate {
         self.datePointage.dateValue = Date()
         
         self.loadModePaiement()
-        self.popUpModePaiement.selectItem(withTitle: (entityPreference?.modePaiement?.name)!)
+        self.popUpModePaiement.selectItem(withTitle: (entityPreference?.paymentMode?.name)!)
         
         self.textFieldReleveBancaire.doubleValue = 0.0
         self.textFieldReleveBancaire.placeholderString = ""

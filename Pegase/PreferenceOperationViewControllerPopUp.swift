@@ -77,7 +77,7 @@ extension PreferenceOperationViewController : NSComboBoxDelegate {
         }
         
         if comboBox == self.comboBoxMode {
-            entityPreference?.modePaiement = entityMode[ comboBoxMode.indexOfSelectedItem]
+            entityPreference?.paymentMode = entityMode[ comboBoxMode.indexOfSelectedItem]
         }
 
         NotificationCenter.send(.updateOperation)

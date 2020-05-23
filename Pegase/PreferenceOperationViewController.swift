@@ -39,7 +39,7 @@ final class PreferenceOperationViewController: NSViewController {
         comboBoxMode.usesDataSource = true
         comboBoxMode.dataSource = self
         comboBoxMode.delegate = self
-        var i = entityMode.firstIndex { $0 === entityPreference?.modePaiement }
+        var i = entityMode.firstIndex { $0 === entityPreference?.paymentMode }
         comboBoxMode.selectItem(at: i!)
 
         let planifie = Localizations.Statut.Planifie

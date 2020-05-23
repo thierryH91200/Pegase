@@ -31,7 +31,7 @@ final class Preference {
             entityPreference.category = categories.first
 
             let modesPaiement = PaymentMode.shared.getAllDatas()
-            entityPreference.modePaiement = modesPaiement.first
+            entityPreference.paymentMode = modesPaiement.first
             
             entityPreference.statut = 1
             entityPreference.signe = true
