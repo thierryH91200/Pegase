@@ -198,17 +198,17 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             
             /// Rubric
 //            headerColumn = itemHeader[7].representedObject as!  [HeaderColumnForMenu]
-//            if headerColumn.count > 0 {
+//            if headerColumn.isEmpty == false {
 //
 //                let colRub = headerColumn[0].numCol
-//                let label = data[ colRub]
+//                let labelRub = data[ colRub ]
 //
-//                let entityRubrique = Rubrique.shared.find(name: label)
-//                entitySousOperation.category?.rubrique = entityRubrique ?? entityPreference.category?.rubrique
+//                let entityRubrique = Rubric.shared.find(name: labelRub)
+//                entitySousOperation.category?.rubric = entityRubrique ?? entityPreference.category?.rubric
 //            } else {
 //
-//                let rubrique = entityPreference.category?.rubrique
-//                entitySousOperation.category?.rubrique = rubrique
+//                let rubrique = entityPreference.category?.rubric
+//                entitySousOperation.category?.rubric = rubrique
 //            }
             
             /// Categorie
@@ -216,7 +216,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             if headerColumn.isEmpty == false {
                 
                 let colCat = headerColumn[0].numCol
-                let labelCat = data[ colCat]
+                let labelCat = data[ colCat ]
                 
                 let entityCategory = Categories.shared.find(name: labelCat)
                 entitySousOperation.category = entityCategory ?? entityPreference.category

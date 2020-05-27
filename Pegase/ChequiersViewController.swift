@@ -50,6 +50,8 @@ final class ChequiersViewController: NSViewController {
                     entityCheck.numPremier = self.chequierModalWindowController.numFirst.intValue
                     entityCheck.numSuivant = self.chequierModalWindowController.numNext.intValue
                     entityCheck.nbCheques  = self.chequierModalWindowController.numberCheques.intValue
+                    
+                    self.tableView.reloadData()
                 
                 case .cancel:
                     print("Cancel button tapped in Custom addAccont Sheet")
@@ -81,6 +83,7 @@ final class ChequiersViewController: NSViewController {
                 let numberCheques = self.chequierModalWindowController.numberCheques.intValue
                 
                 let entityCarnetCheques        = NSEntityDescription.insertNewObject(forEntityName: "EntityCarnetCheques", into: mainObjectContext) as! EntityCarnetCheques
+                
                 entityCarnetCheques.name       = name
                 entityCarnetCheques.prefix     = prefix
                 entityCarnetCheques.numPremier = numFirst
@@ -88,7 +91,12 @@ final class ChequiersViewController: NSViewController {
                 entityCarnetCheques.nbCheques  = numberCheques
                 
                 entityCarnetCheques.uuid = UUID()
-                entityCarnetCheques.account = currentAccount
+//                entityCarnetCheques.account = currentAccount
+                
+                currentAccount?.addToCarnetCheques(entityCarnetCheques)
+                
+                self.tableView.reloadData()
+
             
             case .cancel:
                 break
@@ -115,6 +123,8 @@ final class ChequiersViewController: NSViewController {
                 if let selectedCheck = self.arrayController.selectedObjects.first as? EntityCarnetCheques {
                     self.arrayController.removeObject(selectedCheck)
                 }
+                self.tableView.reloadData()
+
             }
         })
     }

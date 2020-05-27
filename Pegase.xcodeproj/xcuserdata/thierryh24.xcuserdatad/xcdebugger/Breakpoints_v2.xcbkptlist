@@ -7,7 +7,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            uuid = "E803B7A3-E833-43BA-8B05-AB14A16BF74B"
+            uuid = "EF3F2DE8-7400-4CEB-9551-D9E0F6F6AAC6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -17,311 +17,66 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "72E457F0-EFA1-4CCB-936A-6AA07A5F6276"
+            uuid = "7824E176-C3C6-4002-A38F-32E5B457DBD6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
-            continueAfterRunningActions = "No">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DC567ADC-24DC-4D06-8A2D-5429799A33C0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/GroupeAccountViewAction.swift"
+            filePath = "Pegase/ChequiersViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "editAccount(_:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "editChequier(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4024BB83-61BC-4A12-8EC9-9B0C31EE44A5"
+            uuid = "2D031D8D-BCC9-48CF-A768-648530EC7266"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/GroupeAccountViewAction.swift"
+            filePath = "Pegase/ImportWindowController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "editAccount(_:)"
-            landmarkType = "7">
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D9F8E21C-DFB3-4D4D-AC46-A7A26A46A595"
-            shouldBeEnabled = "No"
+            uuid = "509A7CEA-689B-46F4-AC55-3309F308BA21"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/GroupeAccountViewAction.swift"
+            filePath = "Pegase/ImportWindowController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "editAccount(_:)"
-            landmarkType = "7">
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4"
+            uuid = "A62930BA-6749-4514-A447-0CB3BE013896"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/AccountModalWindowController.swift"
+            filePath = "Pegase/CoreData/Rubrique.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "AccountModalWindowController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - a102aa26faba897b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pegase.AccountModalWindowController.account.getter : Swift.Optional&lt;Pegase.EntityAccount&gt;"
-                  moduleName = "Pegase"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "126">
-               </Location>
-               <Location
-                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - f9d83999ef1cb967"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pegase.AccountModalWindowController.account.setter : Swift.Optional&lt;Pegase.EntityAccount&gt;"
-                  moduleName = "Pegase"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "164">
-               </Location>
-               <Location
-                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - 86a9e6ec57f63576"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pegase.AccountModalWindowController.account.modify : Swift.Optional&lt;Pegase.EntityAccount&gt;"
-                  moduleName = "Pegase"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - cf61f38e5185efdc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pegase.AccountModalWindowController.account.modify : Swift.Optional&lt;Pegase.EntityAccount&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Pegase"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - 94203e8535635b51"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pegase.AccountModalWindowController.init(window: Swift.Optional&lt;__C.NSWindow&gt;) -&gt; Pegase.AccountModalWindowController"
-                  moduleName = "Pegase"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "1915">
-               </Location>
-               <Location
-                  uuid = "7DF9E117-7C28-44AC-9BBD-01A1C98489F4 - 19fd32eff94a3a3a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pegase.AccountModalWindowController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Pegase.AccountModalWindowController&gt;"
-                  moduleName = "Pegase"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/AccountModalWindowController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "1746">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1602DA44-3579-4508-8BF8-C065E4E9C6F3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/ListeOperationsMenuDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "saveTableColumnDefaults()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D411B0D6-86BC-4CF3-8E5F-0EF415F44191"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/ListeOperationsMenuDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "saveTableColumnDefaults()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7F254C31-D399-4C2A-BDCE-D4B00D9FD79B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/ListeOperationsMenuDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "contextMenuSelected(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1F6BDF43-57EE-4DAA-A3AE-B6B84FFD2A4A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/ListeOperationsMenuDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "contextMenuSelected(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E0DF4537-FB68-4F08-8188-BD8F80202BAE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/ListeOperationsMenuDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "createOutlineContextMenu()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C272AA99-3772-4A28-BFAE-6CE6EEE84A74"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/ListeOperationsMenuDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "createOutlineContextMenu()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C88119BD-6E7C-4E28-9815-E72B5E36F128"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/ListeOperationsMenuDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "createOutlineContextMenu()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B8671FC6-B945-4614-81DA-96C726574988"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/ListeOperationsMenuDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "saveTableColumnDefaults()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "39D27B35-049F-420A-991F-E2354A6787A4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/ListeOperationsMenuDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "saveTableColumnDefaults()"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "find(account:name:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

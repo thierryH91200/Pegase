@@ -109,8 +109,9 @@ final class ModePaiementViewController: NSViewController
                 
                 switch returnCode {
                 case .OK:
-                    entityMode.name       = self.modeModalWindowController.name.stringValue
+                    entityMode.name      = self.modeModalWindowController.name.stringValue
                     entityMode.color     = self.modeModalWindowController.colorWell.color
+                    self.tablePaiementView.reloadData()
                     
                 case .cancel:
                     break
