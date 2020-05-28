@@ -25,14 +25,11 @@ final class Preference {
         return entityPreference.first!
     }
     
-    
+    // MARK: - Create
     func create ( account: EntityAccount) -> EntityPreference {
         
         let entityPreference = NSEntityDescription.insertNewObject(forEntityName: "EntityPreference", into: mainObjectContext) as? EntityPreference
 
-        
-//        let entityPreference = EntityPreference(context: mainObjectContext)
-        
         var rubric = Rubric.shared.getAllDatas()
         rubric = rubric.sorted { $0.name! < $1.name! }
         
@@ -45,11 +42,8 @@ final class Preference {
         
         entityPreference!.statut = 1
         entityPreference!.signe = true
-
         entityPreference!.account = currentAccount
+
         return entityPreference!
-
     }
-
-
 }

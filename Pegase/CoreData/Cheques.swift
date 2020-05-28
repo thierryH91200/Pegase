@@ -23,15 +23,17 @@ final class CarnetCheques {
     func defaultCarnetCheques()
     {
         if entities.isEmpty == true {
-            let chequier1 = EntityCarnetCheques(context: mainObjectContext)
             
-            chequier1.name = Localizations.ModePaiement.Cheque
-            chequier1.prefix = "CH"
-            chequier1.numPremier = 1_000
-            chequier1.numSuivant = 1_000
-            chequier1.nbCheques = 25
-            chequier1.account = currentAccount
-            chequier1.uuid = UUID()
+            
+            let entityCarnetCheques = NSEntityDescription.insertNewObject(forEntityName: "EntityCarnetCheques", into: mainObjectContext) as? EntityCarnetCheques
+            
+            entityCarnetCheques!.name = Localizations.ModePaiement.Cheque
+            entityCarnetCheques!.prefix = "CH"
+            entityCarnetCheques!.numPremier = 1_000
+            entityCarnetCheques!.numSuivant = 1_000
+            entityCarnetCheques!.nbCheques = 25
+            entityCarnetCheques!.account = currentAccount
+            entityCarnetCheques!.uuid = UUID()
         }
     }
 }

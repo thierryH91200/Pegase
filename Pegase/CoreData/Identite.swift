@@ -7,22 +7,24 @@ final class Bank {
     var entitiesBank = [EntityBank]()
     
     func create() -> EntityBank {
-        let entity = EntityBank(context: mainObjectContext)
         
-        entity.adress = ""
-        entity.bank = ""
-        entity.cp = 0
-        entity.email = ""
-        entity.fonction = ""
-        entity.mobile = ""
-        entity.name = ""
-        entity.country = ""
-        entity.phone = ""
-        entity.town = ""
-        entity.uuid = UUID()
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityBank", into: mainObjectContext) as? EntityBank
+
         
-        entity.account = currentAccount
-        return entity
+        entity!.adress = ""
+        entity!.bank = ""
+        entity!.cp = 0
+        entity!.email = ""
+        entity!.fonction = ""
+        entity!.mobile = ""
+        entity!.name = ""
+        entity!.country = ""
+        entity!.phone = ""
+        entity!.town = ""
+        entity!.uuid = UUID()
+        
+        entity!.account = currentAccount
+        return entity!
     }
     
     @discardableResult func getAllDatas() -> EntityBank {
@@ -51,26 +53,26 @@ final class InitAccount {
     var entitiesInitAccount = [EntityInitAccount]()
     
     func create(numAccount : String = "" ) -> EntityInitAccount {
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitAccount", into: mainObjectContext) as! EntityInitAccount
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitAccount", into: mainObjectContext) as? EntityInitAccount
         
-        entity.bic = ""
-        entity.cleRib = 0
-        entity.codeBank = 0
-        entity.codeAccount = numAccount
-        entity.codeGuichet = 0
-        entity.engage = 0
-        entity.iban1 = ""
-        entity.iban2 = ""
-        entity.iban3 = ""
-        entity.iban4 = ""
-        entity.iban5 = ""
-        entity.iban6 = ""
-        entity.iban7 = ""
-        entity.iban8 = ""
-        entity.iban9 = ""
-        entity.prevu = 0
-        entity.realise = 0
-        return entity
+        entity!.bic = ""
+        entity!.cleRib = 0
+        entity!.codeBank = 0
+        entity!.codeAccount = numAccount
+        entity!.codeGuichet = 0
+        entity!.engage = 0
+        entity!.iban1 = ""
+        entity!.iban2 = ""
+        entity!.iban3 = ""
+        entity!.iban4 = ""
+        entity!.iban5 = ""
+        entity!.iban6 = ""
+        entity!.iban7 = ""
+        entity!.iban8 = ""
+        entity!.iban9 = ""
+        entity!.prevu = 0
+        entity!.realise = 0
+        return entity!
     }
     
     @discardableResult func getAllDatas() -> EntityInitAccount {
@@ -101,18 +103,18 @@ final class Identity {
     
     func create(name: String = "", prenom: String = "") -> EntityIdentity {
         
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityIdentity", into: mainObjectContext) as! EntityIdentity
-        entity.name        = name
-        entity.surName     = prenom
-        entity.adress     = ""
-        entity.complement  = ""
-        entity.cp          = 0
-        entity.town       = ""
-        entity.phone  = ""
-        entity.country        = ""
-        entity.mobile      = ""
-        entity.email       = ""
-        return entity
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityIdentity", into: mainObjectContext) as? EntityIdentity
+        entity!.name       = name
+        entity!.surName    = prenom
+        entity!.adress     = ""
+        entity!.complement = ""
+        entity!.cp         = 0
+        entity!.town       = ""
+        entity!.phone      = ""
+        entity!.country    = ""
+        entity!.mobile     = ""
+        entity!.email      = ""
+        return entity!
     }
     
     @discardableResult func getAllDatas() -> EntityIdentity {
