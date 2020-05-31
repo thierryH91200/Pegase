@@ -62,7 +62,9 @@ extension RubriqueViewController : NSMenuDelegate {
                 let name = self.rubriqueModalWindowController.name.stringValue
                 let color = self.rubriqueModalWindowController.colorWell.color
                 
-                let entity = EntityRubric(context: self.managedObjectContext)
+                let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityRubric", into: mainObjectContext) as! EntityRubric
+
+                
                 entity.name = name
                 entity.color = color
                 entity.uuid = UUID()
@@ -207,7 +209,8 @@ extension RubriqueViewController : NSMenuDelegate {
                 let name = self.categorieModalWindowController.name.stringValue
                 let objectif = self.categorieModalWindowController.objectif.doubleValue
                 
-                let entityCategory = EntityCategory(context: self.managedObjectContext)
+                let entityCategory = NSEntityDescription.insertNewObject(forEntityName: "EntityCategory", into: mainObjectContext) as! EntityCategory
+
                 entityCategory.name = name
                 entityCategory.objectif = objectif
                 entityCategory.rubric = entityRubric

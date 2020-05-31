@@ -59,7 +59,7 @@
                                 <menuItem title="Add Group Compte" id="4Pt-Ut-AU8">
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                     <connections>
-                                        <action selector="addGroupCompte:" target="-2" id="SVD-jf-3of"/>
+                                        <action selector="addGroupAccount:" target="-2" id="7ge-2x-aaU"/>
                                     </connections>
                                 </menuItem>
                                 <menuItem title="Add Compte" id="rFB-6I-UQP" userLabel="Add Account">

@@ -72,14 +72,15 @@ final class Rubric {
     fileprivate func addRubric(_ key: [String : String]) {
         if entitiesRubric.isEmpty == true {
             
-            let entityRubric = EntityRubric(context: mainObjectContext)
+            let entityRubric = NSEntityDescription.insertNewObject(forEntityName: "EntityRubric", into: mainObjectContext) as! EntityRubric
+
             entityRubric.name = key["rubrique"]
             let color = Color.init(rawValue: key["color"]!)?.color
             entityRubric.color = color
             entityRubric.uuid = UUID()
             entityRubric.account = currentAccount
             
-            let entityCategory = EntityCategory(context: mainObjectContext)
+            let entityCategory = NSEntityDescription.insertNewObject(forEntityName: "EntityCategory", into: mainObjectContext) as! EntityCategory
             entityCategory.name = key["categorie"]
             entityCategory.objectif = Double(key["objectif"] ?? "0.0")!
             entityCategory.uuid = UUID()
@@ -87,7 +88,8 @@ final class Rubric {
             
             entityRubric.category?.adding(entityCategory)
         } else {
-            let entityCategory = EntityCategory(context: mainObjectContext)
+            
+            let entityCategory = NSEntityDescription.insertNewObject(forEntityName: "EntityCategory", into: mainObjectContext) as! EntityCategory
             entityCategory.name = key["categorie"]
             entityCategory.objectif = Double(key["objectif"] ?? "0.0")!
             entityCategory.uuid = UUID()

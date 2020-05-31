@@ -168,7 +168,6 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             
             let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as! EntitySousOperations
 
-//            let entitySousOperation = EntitySousOperations(context: mainObjectContext)
             
             /// Libelle
             headerColumn = itemHeader[5].representedObject as!  [HeaderColumnForMenu]

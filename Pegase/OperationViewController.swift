@@ -237,7 +237,9 @@ final class OperationViewController: NSViewController {
     func contextSaveEdition() {
         // creation = one operation
         if edition == false {
-            self.entityOperation = EntityOperations(context: mainObjectContext)
+            
+            
+            self.entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as? EntityOperations
 
             self.entityOperation?.dateCree = Date()
             self.entityOperation?.uuid = UUID()
@@ -315,8 +317,10 @@ final class OperationViewController: NSViewController {
         
         if oneOperation.operationLiee == nil {
             
-            entityOperationsTransfert = EntityOperations(context: mainObjectContext)
-            entityOperationsTransfert?.operationLiee = oneOperation
+            
+            self.entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as? EntityOperations
+
+            self.entityOperationsTransfert?.operationLiee = oneOperation
             oneOperation.operationLiee = entityOperationsTransfert
         } else {
             entityOperationsTransfert = oneOperation.operationLiee
@@ -350,14 +354,15 @@ final class OperationViewController: NSViewController {
         sousOperations = oneOperation.sousOperations?.allObjects as! [EntitySousOperations]
         for sousOperation in sousOperations {
             
-            let entitySousOperationsTransfert = EntitySousOperations(context: mainObjectContext)
+            let entitySousOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as? EntitySousOperations
+
             
             // la rubrique existe t elle ??
             
             let labelCat = (sousOperation.category?.name)!
             let entityCategory = Categories.shared.find(name: labelCat)
 //            sousOperation.category = entityCategory ?? entityPreference.category
-            entitySousOperationsTransfert.category = entityCategory ?? entityPreference.category
+            entitySousOperationsTransfert!.category = entityCategory ?? entityPreference.category
 
 
 //            let nameRub = sousOperation.category?.rubrique?.name
@@ -371,16 +376,16 @@ final class OperationViewController: NSViewController {
 //            let uuid = sousOperation.category?.uuid
 //            let entityCategory = Categories.shared.findOrCreate(account: compteTransfert, name: nameCat!, objectif: objectif!, uuid: uuid!)
             
-            entitySousOperationsTransfert.category = entityCategory
+            entitySousOperationsTransfert!.category = entityCategory
 //            entitySousOperationsTransfert.category?.rubrique = entityRubric
             
             // Montant
-            entitySousOperationsTransfert.amount       = -sousOperation.amount
+            entitySousOperationsTransfert!.amount       = -sousOperation.amount
             
             // Libelle
-            entitySousOperationsTransfert.libelle       = sousOperation.libelle
+            entitySousOperationsTransfert!.libelle       = sousOperation.libelle
            
-            entityOperationsTransfert?.addToSousOperations(entitySousOperationsTransfert)
+            entityOperationsTransfert?.addToSousOperations(entitySousOperationsTransfert!)
         }
         entityOperationsTransfert?.uuid          = UUID()
     }

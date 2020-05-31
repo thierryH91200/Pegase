@@ -159,7 +159,7 @@ final class RubricBarController: CommonGraph
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
         
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
-        let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubrique.name == %@).@count > 0", nameRubrique)
+        let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric.name == %@).@count > 0", nameRubrique)
 
         let p3 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )
         let p4 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )

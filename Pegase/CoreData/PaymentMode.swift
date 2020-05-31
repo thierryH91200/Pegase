@@ -15,21 +15,30 @@ final class PaymentMode {
         
         var entity = find( account: account, name: name )
         if entity == nil {
-            entity = NSEntityDescription.insertNewObject(forEntityName: "EntityPaymentMode", into: mainObjectContext) as? EntityPaymentMode
-            entity!.name = name
-            entity!.color = color
-            entity!.uuid = uuid
-            entity!.account = account
+            entity = create(account: currentAccount!, name: name, color: color)
         }
         return entity!
     }
+    
+    @discardableResult
+    func create ( account: EntityAccount,  name: String, color: NSColor) -> EntityPaymentMode {
+        
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityPaymentMode", into: mainObjectContext) as! EntityPaymentMode
+        entity.name = name
+        entity.color = color
+        entity.uuid = UUID()
+        entity.account = account
+        
+        return entity
+    }
+    
     
     func find( account: EntityAccount = currentAccount!, name: String) -> EntityPaymentMode? {
         
         let p1 = NSPredicate(format: "account == %@", account)
         let p2 = NSPredicate(format: "name == %@", name)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
-
+        
         let fetchRequest = NSFetchRequest<EntityPaymentMode>(entityName: "EntityPaymentMode")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
@@ -44,12 +53,12 @@ final class PaymentMode {
         }
     }
     
-    // delete ModePaiement
+    // MARK: - delete ModePaiement
     func remove(entity: EntityPaymentMode)
     {
         mainObjectContext.delete(entity)
     }
-
+    
     func loadModePaiement () -> NSPopUpButton {
         let  modePaiementMenu = NSMenu()
         let popModePaiement =  NSPopUpButton()
@@ -63,7 +72,7 @@ final class PaymentMode {
         popModePaiement.menu = modePaiementMenu
         return popModePaiement
     }
-
+    
     fileprivate func modePaiementItemFor(_ value: EntityPaymentMode) -> NSMenuItem {
         let menuItem = NSMenuItem()
         menuItem.title = value.name!
@@ -95,48 +104,26 @@ final class PaymentMode {
     func defaultModePaiement()
     {
         if entitiesModePaiement.isEmpty == true {
-            let modePaiement1 = EntityPaymentMode(context: mainObjectContext)
-            modePaiement1.name = Localizations.ModePaiement.Bank_Card
-            modePaiement1.color = NSColor.green
-            modePaiement1.account = currentAccount
-            modePaiement1.uuid = UUID()
+            var name = Localizations.ModePaiement.Bank_Card
+            create(account: currentAccount!, name: name, color : .green)
+
+            name = Localizations.ModePaiement.Cheque
+            create(account: currentAccount!, name: name, color : .yellow)
             
-            let modePaiement2 = EntityPaymentMode(context: mainObjectContext)
-            let name = Localizations.ModePaiement.Cheque
-            modePaiement2.name = name
-            modePaiement2.color = NSColor.yellow
-            modePaiement2.account = currentAccount
-            modePaiement2.uuid = UUID()
+            name = Localizations.ModePaiement.Especes
+            create(account: currentAccount!, name: name, color : .blue)
             
-            let modePaiement3 = EntityPaymentMode(context: mainObjectContext)
-            modePaiement3.name = Localizations.ModePaiement.Especes
-            modePaiement3.color = NSColor.blue
-            modePaiement3.account = currentAccount
-            modePaiement3.uuid = UUID()
+            name = Localizations.ModePaiement.Prelevement
+            create(account: currentAccount!, name: name, color : .red)
             
-            let modePaiement4 = EntityPaymentMode(context: mainObjectContext)
-            modePaiement4.name = Localizations.ModePaiement.Prelevement
-            modePaiement4.color = NSColor.red
-            modePaiement4.account = currentAccount
-            modePaiement4.uuid = UUID()
+            name = Localizations.ModePaiement.Remise
+            create(account: currentAccount!, name: name, color : .gray)
+
+            name = Localizations.ModePaiement.RetraitEspeces
+            create(account: currentAccount!, name: name, color : .orange)
             
-            let modePaiement5 = EntityPaymentMode(context: mainObjectContext)
-            modePaiement5.name = Localizations.ModePaiement.Remise
-            modePaiement5.color = NSColor.gray
-            modePaiement5.account = currentAccount
-            modePaiement5.uuid = UUID()
-            
-            let modePaiement6 = EntityPaymentMode(context: mainObjectContext)
-            modePaiement6.name = Localizations.ModePaiement.RetraitEspeces
-            modePaiement6.color = NSColor.orange
-            modePaiement6.account = currentAccount
-            modePaiement6.uuid = UUID()
-            
-            let modePaiement8 = EntityPaymentMode(context: mainObjectContext)
-            modePaiement8.name = Localizations.ModePaiement.Virement
-            modePaiement8.color = NSColor.brown
-            modePaiement8.account = currentAccount
-            modePaiement8.uuid = UUID()
+            name = Localizations.ModePaiement.Virement
+            create(account: currentAccount!, name: name, color : .brown)
             
             do {
                 let fetchRequest = NSFetchRequest<EntityPaymentMode>(entityName: "EntityPaymentMode")

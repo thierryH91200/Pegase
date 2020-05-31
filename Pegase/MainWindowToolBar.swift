@@ -262,8 +262,9 @@ extension MainWindowController {
                     for key in keys
                     {
                         let amount = key[keyAmount] ?? "0.0"
-                        
-                        let entity = EntityOperations(context: mainObjectContext)
+                                               
+                        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as! EntityOperations
+
                         entity.account = currentAccount
                         
                         entity.dateCree = Date()
@@ -280,7 +281,7 @@ extension MainWindowController {
                         entity.statut = numStatut
                         
                         // EntitySousOperations
-                        let entitySousOperation = EntitySousOperations(context: mainObjectContext)
+                        let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as! EntitySousOperations
                         entitySousOperation.amount = Double(amount)!
                         entitySousOperation.libelle = key[keyLibelle] ?? keyLibelle
                         

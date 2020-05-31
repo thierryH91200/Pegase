@@ -246,8 +246,8 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
         
         if edition == false
         {
-            entitySchedule = EntitySchedule(context: mainObjectContext)
-            
+            entitySchedule = NSEntityDescription.insertNewObject(forEntityName: "EntitySchedule", into: mainObjectContext) as? EntitySchedule
+
             entitySchedule?.dateCree = Date()
             entitySchedule?.account = currentAccount
             entitySchedule?.nextOccurence = 0

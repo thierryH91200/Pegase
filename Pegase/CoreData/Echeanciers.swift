@@ -29,23 +29,22 @@ final class Echeanciers {
         
         entityEcheancier.nextOccurence += 1
         
-        let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityOperation", into: mainObjectContext) as? EntityOperations
+        let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as! EntityOperations
         
-        entityOperation!.dateCree       = Date()
-        entityOperation!.dateModifie    = Date()
+        entityOperation.dateCree       = Date()
+        entityOperation.dateModifie    = Date()
         
-        entityOperation!.account         = entityEcheancier.account
+        entityOperation.account         = entityEcheancier.account
                 
-        entityOperation!.paymentMode   = entityEcheancier.paymentMode
-        entityOperation!.statut         = Date() >= dateValeur ? 2 : 1
+        entityOperation.paymentMode   = entityEcheancier.paymentMode
+        entityOperation.statut         = Date() >= dateValeur ? 2 : 1
         
-        entityOperation!.dateOperation  = dateValeur
-        entityOperation!.datePointage   = dateValeur
+        entityOperation.dateOperation  = dateValeur
+        entityOperation.datePointage   = dateValeur
+        entityOperation.bankStatement = 0
         
-        entityOperation!.bankStatement = 0
-        
-        let sousOperation = EntitySousOperations(context: mainObjectContext)
-        
+        let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as! EntitySousOperations
+
         // la rubrique existe t elle ??
         var name = entityEcheancier.category?.rubric?.name
         let color = entityEcheancier.category?.rubric?.color
@@ -58,28 +57,27 @@ final class Echeanciers {
         uuid = entityEcheancier.category?.uuid
         let entityCategorie = Categories.shared.findOrCreate(account: entityEcheancier.account!, name: name!, objectif: objectif!, uuid: uuid!)
         
-        sousOperation.category = entityCategorie
-        sousOperation.category?.rubric = entityRubrique
-        sousOperation.amount       = -entityEcheancier.amount
-        sousOperation.libelle       = entityEcheancier.libelle
+        entitySousOperation.category = entityCategorie
+        entitySousOperation.category?.rubric = entityRubrique
+        entitySousOperation.amount       = -entityEcheancier.amount
+        entitySousOperation.libelle       = entityEcheancier.libelle
 
-        entityOperation!.uuid           = UUID()
-        
+        entityOperation.uuid           = UUID()
         
         if entityEcheancier.compteLie != nil {
             
-            let entityOperationsTransfert = EntityOperations(context: mainObjectContext)
-            
+            let entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as! EntityOperations
+
             let compteLie = entityEcheancier.compteLie!
             entityOperationsTransfert.account        = compteLie
-            entityOperationsTransfert.statut        = entityOperation!.statut
+            entityOperationsTransfert.statut        = entityOperation.statut
             
-            entityOperationsTransfert.bankStatement = entityOperation!.bankStatement
+            entityOperationsTransfert.bankStatement = entityOperation.bankStatement
 
-            entityOperationsTransfert.dateOperation = entityOperation!.dateOperation
-            entityOperationsTransfert.datePointage  = entityOperation!.datePointage
-            entityOperationsTransfert.dateModifie   = entityOperation!.dateModifie
-            entityOperationsTransfert.dateCree      = entityOperation!.dateCree
+            entityOperationsTransfert.dateOperation = entityOperation.dateOperation
+            entityOperationsTransfert.datePointage  = entityOperation.datePointage
+            entityOperationsTransfert.dateModifie   = entityOperation.dateModifie
+            entityOperationsTransfert.dateCree      = entityOperation.dateCree
             
             // le modePaiement existe t il ??
             let name = entityOperationsTransfert.paymentMode?.name
@@ -93,11 +91,11 @@ final class Echeanciers {
             
             /// la categorie existe t elle ?
             let entityCategorie = Categories.shared.findOrCreate(account: compteLie, name: name!, objectif: objectif!, uuid: uuid!)
-            sousOperation.category = entityCategorie
-            sousOperation.category?.rubric = entityRubric
-            sousOperation.amount       = -entityEcheancier.amount
+            entitySousOperation.category = entityCategorie
+            entitySousOperation.category?.rubric = entityRubric
+            entitySousOperation.amount       = -entityEcheancier.amount
 
-            entityOperationsTransfert.addToSousOperations(sousOperation)
+            entityOperationsTransfert.addToSousOperations(entitySousOperation)
             
             entityOperationsTransfert.uuid          = UUID()
         }
