@@ -1154,13 +1154,13 @@
 			children = (
 				034ECA7623F87FAE006944DD /* CurtainViewController.swift */,
 				03213C7D23F931BC00002DD7 /* CurtainViewController.xib */,
+				034EC92123F87FAB006944DD /* GroupeAccountViewDragDrop.swift */,
 				034ECA7523F87FAE006944DD /* GroupeAccountTableCellView.swift */,
 				034EC91E23F87FAB006944DD /* GroupeAccountViewAction.swift */,
 				034EC91F23F87FAB006944DD /* GroupeAccountViewController.swift */,
 				03213C9423F931DC00002DD7 /* GroupeAccountViewController.xib */,
 				034ECA7423F87FAE006944DD /* GroupeAccountViewDataSource.swift */,
 				034EC92023F87FAB006944DD /* GroupeAccountViewDelegate.swift */,
-				034EC92123F87FAB006944DD /* GroupeAccountViewDragDrop.swift */,
 				034ECB6023F87FFD006944DD /* ModalAccountGroup */,
 				034ECB6123F88011006944DD /* PopUp */,
 			);

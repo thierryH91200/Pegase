@@ -192,6 +192,7 @@ extension MainWindowController {
         preferencesWindowController.showWindow()
     }
     
+    // MARK: - ImportOperationsDetaillee
     @IBAction func ImportOperationsDetaillee(_ sender: Any) {
         
         importWindowController = ImportWindowController()
@@ -213,6 +214,7 @@ extension MainWindowController {
         
     }
     
+    // MARK: - ImportOperationsSimplifiee
     @IBAction func ImportOperationsSimplifiee(_ sender: Any) {
         
         let panel = NSOpenPanel()

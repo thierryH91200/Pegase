@@ -45,13 +45,13 @@ extension GroupeAccountViewController: NSMenuDelegate {
                         let nameImage       = self.accountModalWindowController.imageView.image?.name()
                         let type            = self.accountModalWindowController.typeAccount.indexOfSelectedItem
                         
-                        item.name                   = libelleAccount
-                        item.initAccount?.realise    = soldeInitial
-                        item.identity?.name       = nomTitulaire
-                        item.identity?.surName     = prenomTitulaire
+                        item.name                     = libelleAccount
+                        item.initAccount?.realise     = soldeInitial
+                        item.identity?.name           = nomTitulaire
+                        item.identity?.surName        = prenomTitulaire
                         item.initAccount?.codeAccount = numAccount
-                        item.nameImage              = nameImage
-                        item.type                   = Int16(type)
+                        item.nameImage                = nameImage
+                        item.type                     = Int16(type)
                         
                         //                        let undo = self.undoManager!
                         //                        (undo.prepare(withInvocationTarget: item) as AnyObject).setValue(item, forKeyPath: "item")
@@ -118,13 +118,13 @@ extension GroupeAccountViewController: NSMenuDelegate {
             switch returnCode {
             case .OK:
                 
-                let nameAccount   = self.accountModalWindowController.libelleCompte.stringValue
-                let soldeInitial    = self.accountModalWindowController.soldeInitial.doubleValue
-                let nom    = self.accountModalWindowController.nomTitulaire.stringValue
-                let prenom = self.accountModalWindowController.prenomTitulaire.stringValue
-                let numAccount       = self.accountModalWindowController.numCompte.stringValue
-                let nameImage       = self.accountModalWindowController.imageView.image?.name()!
-                let type            = self.accountModalWindowController.typeAccount.indexOfSelectedItem
+                let nameAccount  = self.accountModalWindowController.libelleCompte.stringValue
+                let soldeInitial = self.accountModalWindowController.soldeInitial.doubleValue
+                let nom          = self.accountModalWindowController.nomTitulaire.stringValue
+                let prenom       = self.accountModalWindowController.prenomTitulaire.stringValue
+                let numAccount   = self.accountModalWindowController.numCompte.stringValue
+                let nameImage    = self.accountModalWindowController.imageView.image?.name()!
+                let type         = self.accountModalWindowController.typeAccount.indexOfSelectedItem
                 
                 let compte   = Account.shared.create(nameAccount: nameAccount, nameImage: nameImage!, idName: nom, idPrenom: prenom, numAccount: numAccount)
                 compte.type = Int16(type)
@@ -143,7 +143,7 @@ extension GroupeAccountViewController: NSMenuDelegate {
                 self.anSideBar.selectRowIndexes([1], byExtendingSelection: false)
                 
             case .cancel:
-                print("Cancel button tapped in Custom addCompte Sheet")
+                print("Cancel button tapped in Custom addAccount Sheet")
                 
             default:
                 break
@@ -153,7 +153,7 @@ extension GroupeAccountViewController: NSMenuDelegate {
         
     }
     
-    @IBAction func addGroupCompte(_ sender: Any) {
+    @IBAction func addGroupAccount(_ sender: Any) {
         self.groupModalWindowController = GroupModalWindowController()
         let windowAdd = groupModalWindowController.window!
         let windowApp = self.view.window

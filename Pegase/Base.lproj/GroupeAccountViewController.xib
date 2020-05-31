@@ -333,7 +333,7 @@
                 <menuItem title="Create folder" id="oku-yT-8qv">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="addGroupCompte:" target="-2" id="5z2-vV-0FQ"/>
+                        <action selector="addGroupAccount:" target="-2" id="1vR-cO-ysa"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Edit folder" id="a3E-Kw-wYl">

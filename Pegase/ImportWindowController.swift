@@ -72,7 +72,6 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         let row = sender.clickedRow
         
         guard column > -1, row == -1 else { return }
-//        guard row == -1 else { return }
         
         let colRect = sender.headerView?.headerRect(ofColumn: column)
         
@@ -100,7 +99,8 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         
         for data in allData {
             
-            let entityOperation = EntityOperations(context: mainObjectContext)
+            let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as! EntityOperations
+
             entityOperation.account = account
             
             entityOperation.dateCree = Date()
@@ -165,7 +165,10 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             }
             
             /// Creation entitySousOperation
-            let entitySousOperation = EntitySousOperations(context: mainObjectContext)
+            
+            let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as! EntitySousOperations
+
+//            let entitySousOperation = EntitySousOperations(context: mainObjectContext)
             
             /// Libelle
             headerColumn = itemHeader[5].representedObject as!  [HeaderColumnForMenu]

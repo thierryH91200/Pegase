@@ -56,11 +56,14 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                         incomes += amount
                     }
                 }
+                
+                let expense = Localizations.General.Expenses
+                let income = Localizations.General.Income
                 let depenseStr = formatterPrice.string(from: NSDecimalNumber(value: expenses))
-                let depenseFormatted = "Expense : \( depenseStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
+                let depenseFormatted = "\(expense) : \( depenseStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
                 
                 let incomeStr = formatterPrice.string(from: NSDecimalNumber(value: incomes))
-                let incomeFormatted = "Income : \( incomeStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
+                let incomeFormatted = "\(income) : \( incomeStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
                 
                 let totalStr = formatterPrice.string(from: NSDecimalNumber(value: incomes + expenses))
                 let totalFormatted = "Total : \(totalStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
@@ -138,8 +141,8 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     if quake.dateOperation != nil {
                         time = quake.dateOperation!
                     }
-                    let formatteddate = formatterDate.string(from: time)
-                    textField.stringValue = formatteddate
+                    let formattedDate = formatterDate.string(from: time)
+                    textField.stringValue = formattedDate
                 
                 case .datePointage:
                     paragraph.alignment = .center
