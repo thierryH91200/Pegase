@@ -20,7 +20,7 @@ final class TulsiDocumentController: NSDocumentController {
 //                   styleMask: aStyle,
 //                   backing: bufferingType,
 //                   defer: flag)
-////        self.backgroundColor                                                       = NSColor.clear
+//        self.backgroundColor                                                       = NSColor.clear
 //        self.level                                                                 = NSWindow.Level( 0)
 //        self.isOpaque                                                              = true
 //        self.hasShadow                                                             = false

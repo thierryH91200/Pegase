@@ -57,10 +57,12 @@ final class Echeanciers {
         uuid = entityEcheancier.category?.uuid
         let entityCategorie = Categories.shared.findOrCreate(account: entityEcheancier.account!, name: name!, objectif: objectif!, uuid: uuid!)
         
-        entitySousOperation.category = entityCategorie
+        entitySousOperation.category         = entityCategorie
         entitySousOperation.category?.rubric = entityRubrique
-        entitySousOperation.amount       = -entityEcheancier.amount
-        entitySousOperation.libelle       = entityEcheancier.libelle
+        entitySousOperation.amount           = -entityEcheancier.amount
+        entitySousOperation.libelle          = entityEcheancier.libelle
+        
+        entityOperation.addToSousOperations(  entitySousOperation)
 
         entityOperation.uuid           = UUID()
         

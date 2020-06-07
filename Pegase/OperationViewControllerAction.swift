@@ -18,8 +18,6 @@ extension OperationViewController  {
         
         var entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as! EntitySousOperations
 
-        
-        
         self.sousOperationModalWindowController = SousOperationModalWindowController()
         self.sousOperationModalWindowController.entitySousOperation = entitySousOperation
         

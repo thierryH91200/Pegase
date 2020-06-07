@@ -58,7 +58,7 @@ extension GroupeAccountViewController: NSPasteboardItemDataProvider {
                 fixedIndex = 0
             }
             
-            print("index :", index)
+            print("index : ", index)
             var item1: EntityAccount!
             if item != nil {
                 item1 = item as? EntityAccount
