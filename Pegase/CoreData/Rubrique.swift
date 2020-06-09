@@ -35,7 +35,7 @@ final class Rubric {
         
         do {
             let searchResults = try mainObjectContext.fetch(fetchRequest)
-            let result = searchResults.isEmpty == true ? searchResults.first : nil
+            let result = searchResults.isEmpty == false ? searchResults.first : nil
             return result
         } catch {
             print("Error with request: \(error)")

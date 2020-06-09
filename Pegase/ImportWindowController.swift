@@ -205,8 +205,8 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
 //                let colRub = headerColumn[0].numCol
 //                let labelRub = data[ colRub ]
 //
-//                let entityRubrique = Rubric.shared.find(name: labelRub)
-//                entitySousOperation.category?.rubric = entityRubrique ?? entityPreference.category?.rubric
+//                let entityRubric = Rubric.shared.find(name: labelRub)
+//                entitySousOperation.category?.rubric = entityRubric ?? entityPreference.category?.rubric
 //            } else {
 //
 //                let rubrique = entityPreference.category?.rubric

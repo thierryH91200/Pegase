@@ -189,7 +189,7 @@
             </constraints>
             <point key="canvasLocation" x="482" y="142"/>
         </customView>
-        <arrayController mode="entity" entityName="EntityRubrique" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="IXb-SH-8Hg">
+        <arrayController mode="entity" entityName="EntityRubric" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="IXb-SH-8Hg">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="self.mainContext" id="ccv-Va-61R"/>
             </connections>

@@ -20,8 +20,8 @@
 /* Class = "NSButtonCell"; title = "Sous Opération"; ObjectID = "SPw-Dy-5GA"; */
 "SPw-Dy-5GA.title" = "Sous Opération";
 
-/* Class = "NSTextFieldCell"; title = "Rubrique"; ObjectID = "dzE-1q-cpi"; */
-"dzE-1q-cpi.title" = "Rubrique";
+/* Class = "NSTextFieldCell"; title = "Rubric"; ObjectID = "dzE-1q-cpi"; */
+"dzE-1q-cpi.title" = "Rubric";
 
 /* Class = "NSComboBoxCell"; hjA-hf-URy.ibShadowedObjectValues[0] = "Item 1"; ObjectID = "hjA-hf-URy"; */
 "hjA-hf-URy.ibShadowedObjectValues[0]" = "Item 1";

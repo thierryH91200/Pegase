@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="EntityAccount" representedClassName=".EntityAccount" syncable="YES">
         <attribute name="dateEcheancier" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isAccount" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -23,7 +23,7 @@
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="children" inverseEntity="EntityAccount"/>
         <relationship name="paymentMode" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityPaymentMode" inverseName="account" inverseEntity="EntityPaymentMode"/>
         <relationship name="preference" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="EntityPreference" inverseName="account" inverseEntity="EntityPreference"/>
-        <relationship name="rubrique" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityRubric" inverseName="account" inverseEntity="EntityRubric"/>
+        <relationship name="rubric" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityRubric" inverseName="account" inverseEntity="EntityRubric"/>
     </entity>
     <entity name="EntityBank" representedClassName=".EntityBank" syncable="YES" codeGenerationType="class">
         <attribute name="adress" optional="YES" attributeType="String"/>
@@ -131,7 +131,7 @@
         <attribute name="name" attributeType="String"/>
         <attribute name="total" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="rubrique" inverseEntity="EntityAccount"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="rubric" inverseEntity="EntityAccount"/>
         <relationship name="category" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EntityCategory" inverseName="rubric" inverseEntity="EntityCategory"/>
     </entity>
     <entity name="EntitySchedule" representedClassName=".EntitySchedule" syncable="YES" codeGenerationType="class">

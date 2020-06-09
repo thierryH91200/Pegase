@@ -74,7 +74,7 @@ final class OperationViewController: NSViewController {
     
     var attrs = [NSAttributedString.Key: Any]()
     
-    var dataRubriquePie = [DataGraph]()
+    var dataRubricPie = [DataGraph]()
     var groupedBonds = [String: [DataGraph]]()
     
     let formatterPrice: NumberFormatter = {
@@ -166,25 +166,25 @@ final class OperationViewController: NSViewController {
     
     func updateChartData()
     {
-        self.dataRubriquePie.removeAll()
+        self.dataRubricPie.removeAll()
         
-        var nameRubrique = ""
+        var nameRubric = ""
         var value = 0.0
         var color = NSColor.red
         for sousOperation in sousOperations {
             
             value = sousOperation.amount
-            nameRubrique = (sousOperation.category?.rubric!.name)!
+            nameRubric = (sousOperation.category?.rubric!.name)!
             color = (sousOperation.category?.rubric!.color) as! NSColor
-            self.dataRubriquePie.append(DataGraph(name: nameRubrique, value: value, color: color))
+            self.dataRubricPie.append(DataGraph(name: nameRubric, value: value, color: color))
         }
-        self.groupedBonds = Dictionary(grouping: self.dataRubriquePie) { (DataRubriquePie) -> String in
+        self.groupedBonds = Dictionary(grouping: self.dataRubricPie) { (DataRubriquePie) -> String in
             return DataRubriquePie.name }
     }
     
     func setDataCount()
     {
-        guard dataRubriquePie.isEmpty == false else {
+        guard dataRubricPie.isEmpty == false else {
             pieChartView.data = nil
             pieChartView.data?.notifyDataChanged()
             pieChartView.notifyDataSetChanged()
@@ -377,9 +377,9 @@ final class OperationViewController: NSViewController {
 //            let entityCategory = Categories.shared.findOrCreate(account: compteTransfert, name: nameCat!, objectif: objectif!, uuid: uuid!)
             
             entitySousOperationsTransfert!.category = entityCategory
-//            entitySousOperationsTransfert.category?.rubrique = entityRubric
+//            entitySousOperationsTransfert.category?.rubric = entityRubric
             
-            // Montant
+            // Amount
             entitySousOperationsTransfert!.amount       = -sousOperation.amount
             
             // Libelle
