@@ -41,7 +41,7 @@
 "General.Mode Paiement" = "Mode Paiement";
 "General.Operation" = "Operation";
 "General.Income" = "Recette";
-"General.Rubrique" = "Rubrique";
+"General.Rubric" = "Rubrique";
 "General.Scheduler" = "Scheduler";
 "General.Solde" = "Balance";
 "General.Statut" = "Statut";

@@ -14,12 +14,12 @@ extension ListeOperationsController: NSDatePickerCellDelegate {
         
         let entityEcheanciers = Echeanciers.shared.getAllDatas()
         
-        for entityEcheancier in entityEcheanciers {
-            var dateValeur =  entityEcheancier.dateValeur!
-            let frequence = Int(entityEcheancier.frequence)
+        for entitySchedule in entityEcheanciers {
+            var dateValeur =  entitySchedule.dateValeur!
+            let frequence = Int(entitySchedule.frequence)
             
             while dateValeur < proposedDate {
-                switch entityEcheancier.typeFrequence
+                switch entitySchedule.typeFrequence
                 {
                 case 0:
                     dateValeur = dateValeur + frequence.days
@@ -36,10 +36,10 @@ extension ListeOperationsController: NSDatePickerCellDelegate {
                 default:
                     print("what ????")
                 }
-                entityEcheancier.nextOccurence += 1
-                Echeanciers.shared.createOperation(entityEcheancier: entityEcheancier, dateValeur: dateValeur)
+                entitySchedule.nextOccurence += 1
+                Echeanciers.shared.createOperation(entitySchedule: entitySchedule, dateValeur: dateValeur)
             }
-            entityEcheancier.dateValeur = dateValeur
+            entitySchedule.dateValeur = dateValeur
         }
         
         print("datePickerCell")

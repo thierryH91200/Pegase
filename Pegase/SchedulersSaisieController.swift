@@ -265,7 +265,7 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
         entitySchedule?.dateValeur    = dateValeur.dateValue.noon
         entitySchedule?.occurence     = Int16(occurence.intValue)
         entitySchedule?.frequence     = Int16(frequence.intValue)
-        let typeFrequence               = popUpFrequence.indexOfSelectedItem
+        let typeFrequence             = popUpFrequence.indexOfSelectedItem
         entitySchedule?.typeFrequence = Int16(typeFrequence)
         
         var menuItem = popUpCategorie.selectedItem

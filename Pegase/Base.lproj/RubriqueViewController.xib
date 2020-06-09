@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16085" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -112,7 +112,7 @@
                     <rect key="frame" x="312" y="76" width="600" height="400"/>
                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="Uko-1H-xnb">
                         <rect key="frame" x="1" y="0.0" width="598" height="399"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <outlineView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowHeight="18" rowSizeStyle="automatic" headerView="VdQ-ks-805" viewBased="YES" indentationPerLevel="16" outlineTableColumn="UYJ-bA-3af" id="NPp-ZC-9Pj">
                                 <rect key="frame" x="0.0" y="0.0" width="598" height="376"/>
@@ -292,7 +292,7 @@
             </constraints>
             <point key="canvasLocation" x="139.5" y="46.5"/>
         </view>
-        <treeController mode="entity" entityName="EntityRubrique" automaticallyPreparesContent="YES" childrenKeyPath="children" countKeyPath="count" leafKeyPath="isLeaf" id="0pR-JY-hO1">
+        <treeController mode="entity" entityName="EntityRubric" automaticallyPreparesContent="YES" childrenKeyPath="children" countKeyPath="count" leafKeyPath="isLeaf" id="0pR-JY-hO1">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="self.managedObjectContext" id="z5w-Tr-oEw"/>
             </connections>

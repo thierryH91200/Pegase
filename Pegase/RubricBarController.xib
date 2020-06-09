@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16095" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16095"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,23 +23,23 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <splitView dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="6v9-OP-99n">
-                    <rect key="frame" x="0.0" y="0.0" width="964" height="546"/>
+                    <rect key="frame" x="0.0" y="0.0" width="964" height="498"/>
                     <subviews>
                         <customView misplaced="YES" id="a7G-0D-5gB">
-                            <rect key="frame" x="0.0" y="0.0" width="964" height="546"/>
+                            <rect key="frame" x="0.0" y="0.0" width="964" height="498"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="27A-Wd-jgF" customClass="BarChartView" customModule="Charts">
-                                    <rect key="frame" x="200" y="-24" width="764" height="546"/>
+                                    <rect key="frame" x="200" y="0.0" width="764" height="498"/>
                                 </customView>
                                 <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="352-Ii-ufE">
-                                    <rect key="frame" x="0.0" y="-24" width="200" height="526"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="478"/>
                                     <clipView key="contentView" id="a2V-j3-qUM">
-                                        <rect key="frame" x="1" y="0.0" width="198" height="525"/>
+                                        <rect key="frame" x="1" y="0.0" width="198" height="477"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="3Lu-OT-pVc" viewBased="YES" id="0tw-tk-AX9">
-                                                <rect key="frame" x="0.0" y="0.0" width="198" height="502"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="198" height="454"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -155,7 +155,7 @@
                                     </tableHeaderView>
                                 </scrollView>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-8F-367">
-                                    <rect key="frame" x="0.0" y="501" width="200" height="22"/>
+                                    <rect key="frame" x="0.0" y="477" width="200" height="22"/>
                                     <buttonCell key="cell" type="smallSquare" title="Rubrique" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5ml-gA-Pi2">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>

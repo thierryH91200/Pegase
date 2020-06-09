@@ -41,8 +41,8 @@ extension RubriqueViewController : NSMenuDelegate {
         let color = sender.color
         
         if ( managedObject is EntityRubric ) == true {
-            let entityRubrique = managedObject as! EntityRubric
-            entityRubrique.color = color
+            let entityRubric = managedObject as! EntityRubric
+            entityRubric.color = color
             
             let select: IndexSet = [selected]
             anOutlineView.selectRowIndexes(select, byExtendingSelection: false)
@@ -131,9 +131,9 @@ extension RubriqueViewController : NSMenuDelegate {
         let treeNode = item as? NSTreeNode
         let managedObject = treeNode?.representedObject as? NSManagedObject
         
-        let entityRubrique = managedObject as? EntityRubric
+        let entityRubric = managedObject as? EntityRubric
         
-        if entityPreference.category?.rubric == entityRubrique {
+        if entityPreference.category?.rubric == entityRubric {
             let alert = NSAlert()
             alert.alertStyle = NSAlert.Style.critical
             alert.icon = nil
@@ -157,7 +157,7 @@ extension RubriqueViewController : NSMenuDelegate {
                 return
             }
             
-            let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubrique == %@).@count > 0", entityRubrique!)
+            let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric == %@).@count > 0", entityRubric!)
             
             let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p2])
             let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
@@ -176,8 +176,8 @@ extension RubriqueViewController : NSMenuDelegate {
                     sousOperation.category?.rubric = entityPreference.category?.rubric
                 }
             }
-            print("This element was 🗑! : ", entityRubrique!.name!)
-            self.managedObjectContext.delete(entityRubrique!)
+            print("This element was 🗑! : ", entityRubric!.name!)
+            self.managedObjectContext.delete(entityRubric!)
             self.updateData()
         })
     }

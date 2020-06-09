@@ -2,7 +2,6 @@ import AppKit
 
 extension SchedulersSaisieController {
     
-
     // # MARK: PopUp Rubrique - Catégorie
     func loadRubrique() {
         entityRubriques = Rubric.shared.getAllDatas()
@@ -59,8 +58,8 @@ extension SchedulersSaisieController {
         let  modePaiementMenu = NSMenu()
         
         let modesPaiement = PaymentMode.shared.getAllDatas()
-        for modePaiement in modesPaiement
-        {
+        
+        for modePaiement in modesPaiement  {
             modePaiementMenu.addItem(modePaiementItemFor(modePaiement) )
         }
         popUpModePaiement.menu = modePaiementMenu
