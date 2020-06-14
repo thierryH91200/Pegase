@@ -12,7 +12,7 @@ extension ListeOperationsController: NSMenuDelegate {
         }
     }
 
-    //  MARK: - set up the table header context menu for choosing the columns.
+    // MARK: - set up the table header context menu for choosing the columns.
     func createOutlineContextMenu()
     {
         let tableHeaderContextMenu = NSMenu(title: "Select Columns")
