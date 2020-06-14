@@ -209,8 +209,8 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
 //                entitySousOperation.category?.rubric = entityRubric ?? entityPreference.category?.rubric
 //            } else {
 //
-//                let rubrique = entityPreference.category?.rubric
-//                entitySousOperation.category?.rubric = rubrique
+//                let rubric = entityPreference.category?.rubric
+//                entitySousOperation.category?.rubric = rubric
 //            }
             
             /// Categorie

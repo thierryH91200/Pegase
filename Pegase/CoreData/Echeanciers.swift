@@ -34,7 +34,7 @@ final class Echeanciers {
         var name = entitySchedule.category?.rubric?.name
         let color = entitySchedule.category?.rubric?.color
         var uuid = entitySchedule.category?.rubric?.uuid
-        let entityRubrique = Rubric.shared.findOrCreate(account: entitySchedule.account!, name: name!, color: color as! NSColor, uuid: uuid!)
+        let entityRubric = Rubric.shared.findOrCreate(account: entitySchedule.account!, name: name!, color: color as! NSColor, uuid: uuid!)
         
         // la categorie existe t elle ??
         name = entitySchedule.category?.name
@@ -43,7 +43,7 @@ final class Echeanciers {
         let entityCategorie = Categories.shared.findOrCreate(account: entitySchedule.account!, name: name!, objectif: objectif!, uuid: uuid!)
         
         entitySousOperation.category         = entityCategorie
-        entitySousOperation.category?.rubric = entityRubrique
+        entitySousOperation.category?.rubric = entityRubric
         entitySousOperation.amount           = -entitySchedule.amount
         entitySousOperation.libelle          = entitySchedule.libelle
         

@@ -5,8 +5,8 @@
 /* Class = "NSToolbarItem"; paletteLabel = "Preference"; ObjectID = "3B0-RB-4Tk"; */
 "3B0-RB-4Tk.paletteLabel" = "Preference";
 
-/* Class = "NSMenuItem"; title = "Rubrique"; ObjectID = "6Fg-pG-J1a"; */
-"6Fg-pG-J1a.title" = "Rubrique";
+/* Class = "NSMenuItem"; title = "Rubric"; ObjectID = "6Fg-pG-J1a"; */
+"6Fg-pG-J1a.title" = "Rubric";
 
 /* Class = "NSToolbarItem"; label = "Search advanced"; ObjectID = "FZM-Br-BYZ"; */
 "FZM-Br-BYZ.label" = "Search advanced";

@@ -10,20 +10,19 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var sourceListViewController: SourceListViewController?
     var groupeAccountViewController: GroupeAccountViewController?
     
+    var tresorerieController: TresorerieController?
     var rubricPieController: RubricPieController?
     var categoryBarController: CategoryBarController?
     var categoryBarController1: CategoryBarController1?
-    var rubricBarController: RubricBarController?
     var modePaiementPieController: PaymentModePieController?
     var incomeExpenseBarController: IncomeExpenseBarController?
-    var tresorerieController: TresorerieController?
-    
+    var rubricBarController: RubricBarController?
+
     var parameterController: ParameterController?
+    
     var echeanciersSaisieController: SchedulersSaisieController?
-    var rubriqueViewController: RubriqueViewController?
-    var modePaiementViewController: ModePaiementViewController?
     var echeanciersViewController: SchedulerViewController?
-    var chequiersViewController: ChequiersViewController?
+    
     var identiteViewController: IdentiteViewController?
     var webViewController: WebViewController?
     var advancedFilterViewController: AdvancedFilterViewController?

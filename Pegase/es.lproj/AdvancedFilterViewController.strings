@@ -98,8 +98,8 @@
 /* Class = "NSMenuItem"; title = "is not"; ObjectID = "QdU-og-aHq"; */
 "QdU-og-aHq.title" = "is not";
 
-/* Class = "NSMenuItem"; title = "Rubrique"; ObjectID = "REe-cn-lOp"; */
-"REe-cn-lOp.title" = "Rubrique";
+/* Class = "NSMenuItem"; title = "Rubric"; ObjectID = "REe-cn-lOp"; */
+"REe-cn-lOp.title" = "Rubric";
 
 /* Class = "NSMenuItem"; title = "contains"; ObjectID = "S4e-GY-sl6"; */
 "S4e-GY-sl6.title" = "contains";

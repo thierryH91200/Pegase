@@ -25,6 +25,7 @@ final class ListeOperationsController: NSViewController {
     public typealias TrackingSubOperations  = IdOperations
     public typealias TrackingSubOperation   = EntitySousOperations
 
+    
     @objc var managedObjectContext2 = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var theDocument = NSPersistentDocument()
 
@@ -113,6 +114,9 @@ final class ListeOperationsController: NSViewController {
     @IBOutlet weak var soldeFinal: NSTextField!
     @IBOutlet weak var labelInfo: NSTextField!
     @IBOutlet weak var datePicker: TFDatePicker!
+    
+    @IBOutlet var menuTable: NSMenu!
+
     
     var colorBackGround = #colorLiteral(red: 0.8157508969, green: 0.8595363498, blue: 0.9023539424, alpha: 1)
 
@@ -207,6 +211,8 @@ final class ListeOperationsController: NSViewController {
         
         let attributedText = NSAttributedString(string: strInfo, attributes: attribute)
         self.labelInfo.attributedStringValue = attributedText
+        
+        outlineListView.menu = menuTable
     }
     
     func setUpDatePicker() {

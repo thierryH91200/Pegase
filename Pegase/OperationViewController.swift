@@ -313,15 +313,14 @@ final class OperationViewController: NSViewController {
     }
     
     func createOperationLiee(oneOperation: EntityOperations ) {
-        print("Operation Liée")
-        
+
+        print("Operation Liée")        
         if oneOperation.operationLiee == nil {
             
-            
             self.entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as? EntityOperations
-
             self.entityOperationsTransfert?.operationLiee = oneOperation
             oneOperation.operationLiee = entityOperationsTransfert
+        
         } else {
             entityOperationsTransfert = oneOperation.operationLiee
         }
@@ -347,7 +346,7 @@ final class OperationViewController: NSViewController {
         entityOperationsTransfert?.paymentMode  = entityModePaiement
         
         entityOperationsTransfert?.statut        = oneOperation.statut
-        entityOperationsTransfert?.bankStatement  = oneOperation.bankStatement
+        entityOperationsTransfert?.bankStatement = oneOperation.bankStatement
         
         let entityPreference = Preference.shared.getAllDatas()
 
@@ -358,7 +357,6 @@ final class OperationViewController: NSViewController {
 
             
             // la rubrique existe t elle ??
-            
             let labelCat = (sousOperation.category?.name)!
             let entityCategory = Categories.shared.find(name: labelCat)
 //            sousOperation.category = entityCategory ?? entityPreference.category

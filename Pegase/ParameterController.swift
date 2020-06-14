@@ -39,8 +39,8 @@ final class ParameterController: NSViewController {
         let modeItem = NSTabViewItem(viewController: modePaiementViewController)
         modeItem.label = Localizations.General.Mode_Paiement
         
-        let rubriqueItem = NSTabViewItem(viewController: rubriqueViewController)
-        rubriqueItem.label = Localizations.General.Rubric
+        let rubricItem = NSTabViewItem(viewController: rubriqueViewController)
+        rubricItem.label = Localizations.General.Rubric
         
         let operationItem = NSTabViewItem(viewController: preferenceOperationViewController)
         operationItem.label = Localizations.General.Operation
@@ -51,7 +51,7 @@ final class ParameterController: NSViewController {
         }
         tabView.addTabViewItem(chequiersItem)
         tabView.addTabViewItem(modeItem)
-        tabView.addTabViewItem(rubriqueItem)
+        tabView.addTabViewItem(rubricItem)
         tabView.addTabViewItem(operationItem)
         tabView.selectTabViewItem(at: 0)
     }
