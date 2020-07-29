@@ -27,11 +27,13 @@
 "General.Amount" = "Amount";
 "General.BankAccount.Plural" = "Comptes bancaires";
 "General.BankAccount.Singular" = "Compte bancaire";
+
 "General.Cancel" = "Annuler";
 "General.Category" = "Categorie";
 "General.Account.Plural" = "%d comptes";
 "General.Account.Singular" = "1 compte";
 "General.Account.Zero" = "0 compte";
+
 "General.Date Operation" = "Date Operation";
 "General.Date Pointage" = "Date Pointage";
 "General.Expenses" = "Dépense";
@@ -46,7 +48,7 @@
 "General.Solde" = "Balance";
 "General.Statut" = "Statut";
 
-// MARK: -  GroupeCompte
+// MARK: -  GroupeAccount
 "GroupeAccount.Account.Menu.Add" = "Ajouter un compte";
 "GroupeAccount.Account.Menu.Edit" = "Editer un compte";
 "GroupeAccount.Account.Menu.Remove" = "Supprimer un compte";
@@ -130,6 +132,24 @@
 "searchMenu.title.libelle" = "Libelle";
 "searchMenu.title.menu" = "Menu";
 
+// MARK: Menu Bar
+"MenuBar.SuivieDeTresorerie.Name" = "Suivie de Tresorerie";
+"MenuBar.SuivieDeTresorerie.ListeDesOpérations" = "List of operations";
+"MenuBar.SuivieDeTresorerie.CourbeDeTrésorerie" = "Courbe de trésorerie";
+"MenuBar.SuivieDeTresorerie.SiteWebDeLaBanque" = "Site Web de la banque";
+
+"MenuBar.Rapports.Name" = "Rapports";
+"MenuBar.Rapports.Rubrique Pie" = "Rubrique Pie";
+"MenuBar.Rapports.Catégorie Bar" = "Catégorie Bar";
+"MenuBar.Rapports.Catégorie Bar1" = "Catégorie Bar1";
+"MenuBar.Rapports.Mode de paiement" = "Mode de paiement";
+"MenuBar.Rapports.Recette Depense" = "Recette Depense";
+"MenuBar.Rapports.Rubrique Bar" = "Rubrique";
+
+"MenuBar.RéférenceCompte.Name" = "Référence compte";
+"MenuBar.RéférenceCompte.Identite" = "Identite";
+"MenuBar.RéférenceCompte.Scheduler" = "Scheduler";
+"MenuBar.RéférenceCompte.Settings" = "Settings";
 
 // MARK: -  TouchBar
 "TouchBar.Delete" = "Delete";

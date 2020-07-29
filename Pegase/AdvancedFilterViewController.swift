@@ -14,6 +14,9 @@ final class AdvancedFilterViewController: NSViewController {
         }
     }
     
+    /// predicateEditorAction
+    ///
+    /// - Parameter sender: <#sender description#>
     @IBAction func predicateEditorAction(_ sender: NSButton) {
         print("predicate value changed")
     }

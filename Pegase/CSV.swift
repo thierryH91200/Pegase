@@ -67,7 +67,7 @@ public struct CSV {
         
         internal func writeString(_ string: String) {
             if let data = string.data(using: configuration.encoding) {
-                _ =  data.withUnsafeBytes {
+                data.withUnsafeBytes {
                 bytes in
                     let buffer: UnsafePointer<UInt8> = bytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
                     self.outputStream.write(buffer, maxLength: bytes.count)

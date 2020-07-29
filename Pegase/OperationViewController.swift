@@ -238,7 +238,6 @@ final class OperationViewController: NSViewController {
         // creation = one operation
         if edition == false {
             
-            
             self.entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as? EntityOperations
 
             self.entityOperation?.dateCree = Date()
