@@ -24,15 +24,16 @@
 // MARK: -  General
 "General.Account" = "Compte";
 "General.Account1" = "Compte1";
+"General.Account.Plural" = "%d comptes";
+"General.Account.Singular" = "1 compte";
+"General.Account.Zero" = "0 compte";
+
 "General.Amount" = "Amount";
 "General.BankAccount.Plural" = "Comptes bancaires";
 "General.BankAccount.Singular" = "Compte bancaire";
 
 "General.Cancel" = "Annuler";
 "General.Category" = "Categorie";
-"General.Account.Plural" = "%d comptes";
-"General.Account.Singular" = "1 compte";
-"General.Account.Zero" = "0 compte";
 
 "General.Date Operation" = "Date Operation";
 "General.Date Pointage" = "Date Pointage";

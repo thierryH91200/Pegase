@@ -349,7 +349,7 @@ extension MainWindowController {
         export = quote + Localizations.General.Category + "\(quote)\(delimiter)"
         export = quote + Localizations.General.Amount + "\(quote)\(delimiter)"
         
-        export = quote + Localizations.General.Account.Account + "\(quote)\n"
+        export = quote + Localizations.General.Account.Singular + "\(quote)\n"
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short

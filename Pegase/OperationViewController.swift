@@ -258,8 +258,8 @@ final class OperationViewController: NSViewController {
     }
     
     // MARK: saveActions
-    // edition = false => create 1 operation
-    // edition = true => edition 1 to n operation(s)
+    // edition = false => create  1 operation
+    // edition = true  => edition 1 to n operation(s)
     @IBAction func saveActions(_ sender: Any) {
         
         self.contextSaveEdition()

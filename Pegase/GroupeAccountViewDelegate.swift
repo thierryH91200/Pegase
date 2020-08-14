@@ -30,11 +30,13 @@ extension GroupeAccountViewController: NSOutlineViewDelegate {
             var num = ""
             switch count {
             case 0:
-                num = Localizations.General.Account.Zero
+                num = " "
+//                num = Localizations.General.Account.Zero
             case 1:
                 num = Localizations.General.Account.Singular
             default:
-                num = Localizations.General.Account.Plural(count)
+                num = " "
+//                num = Localizations.General.Account.Plural(count)
             }
             view.nbCompte.stringValue = num
             
