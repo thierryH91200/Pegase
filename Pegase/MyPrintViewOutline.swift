@@ -16,6 +16,8 @@ final class MyPrintViewOutline: NSView
     var attributes: [NSAttributedString.Key: Any] = [:]
     
     var listFont = NSFont(name: "Helvetica", size: 10.0)
+    var listFont1 = NSFont(name: "Helvetica", size: 10.0)
+    
     var headerHeight: CGFloat = 0.0
     var footerHeight: CGFloat = 0.0
     var lineHeight: CGFloat = 0.0
