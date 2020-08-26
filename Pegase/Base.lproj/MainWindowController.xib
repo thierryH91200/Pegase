@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17147" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17147"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,7 +31,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="283" y="305" width="1430" height="733"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <view key="contentView" identifier="view5" id="vo0-HE-FO0">
                 <rect key="frame" x="0.0" y="0.0" width="1430" height="733"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,8 +108,8 @@
             <toolbar key="toolbar" implicitIdentifier="98A9D07C-EF3F-4675-8C25-00EF196A7E7E" displayMode="iconAndLabel" sizeMode="regular" id="RKk-tk-6Wo">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="DB745FC8-3855-48C1-82E7-C2A3E09F5DDB" explicitItemIdentifier="NSToolBarPreference" label="Preference" paletteLabel="Preference" tag="-1" image="NSPreferencesGeneral" id="3B0-RB-4Tk">
-                        <size key="minSize" width="128" height="128"/>
-                        <size key="maxSize" width="128" height="128"/>
+                        <size key="minSize" width="22" height="22"/>
+                        <size key="maxSize" width="22" height="22"/>
                         <connections>
                             <action selector="showPreference:" target="-1" id="mYq-N9-7ad"/>
                         </connections>
@@ -129,7 +129,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <popUpButtonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" arrowPosition="noArrow" selectedItem="IgK-Mt-ygU" id="R6I-ah-vUb">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
+                                <font key="font" metaFont="menu"/>
                                 <menu key="menu" id="4zM-8Y-pIn">
                                     <items>
                                         <menuItem state="on" image="NSColorPanel" hidden="YES" id="IgK-Mt-ygU"/>
@@ -152,7 +152,6 @@
                             <action selector="chooseCouleur:" target="-1" id="E84-8o-O6T"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="sBm-44-Q0i"/>
                     <toolbarItem implicitItemIdentifier="AFA8898A-6F50-402C-9EF7-4B280109128B" label="" paletteLabel="" id="1Dz-AB-dni">
                         <nil key="toolTip"/>
                         <size key="minSize" width="102" height="24"/>
@@ -209,8 +208,8 @@
                         </searchField>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="DFAB3495-9EC7-4592-AB5A-EFF54F52A6E5" label="Search advanced" paletteLabel="Toolbar Item" tag="-1" image="Search" id="FZM-Br-BYZ">
-                        <size key="minSize" width="128" height="128"/>
-                        <size key="maxSize" width="128" height="128"/>
+                        <size key="minSize" width="22" height="22"/>
+                        <size key="maxSize" width="22" height="22"/>
                         <connections>
                             <action selector="AdvancedFilter:" target="-1" id="aKL-eu-j3L"/>
                         </connections>
@@ -218,8 +217,8 @@
                     <toolbarItem implicitItemIdentifier="F56F9473-A77A-470B-9BCD-07F3FBC7F2BB" label="" paletteLabel="" sizingBehavior="auto" id="V8X-L8-Pcz" userLabel="Debug  Mode">
                         <nil key="toolTip"/>
                         <segmentedControl key="view" verticalHuggingPriority="750" id="IBi-3q-Ji7">
-                            <rect key="frame" x="0.0" y="14" width="116" height="24"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <rect key="frame" x="0.0" y="14" width="83" height="23"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="LcI-ZQ-t96">
                                 <font key="font" metaFont="system"/>
                                 <segments>
@@ -232,6 +231,7 @@
                             </connections>
                         </segmentedControl>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="sBm-44-Q0i"/>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="OI4-5D-jUy"/>

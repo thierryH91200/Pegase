@@ -88,23 +88,23 @@ extension ImportWindowController: TTFormatViewControllerDelegate {
     
 }
 
-extension NSOpenPanel {
-    var selectUrl: URL? {
-        title = "Select file"
-        allowsMultipleSelection = false
-        canChooseDirectories = false
-        canChooseFiles = true
-        canCreateDirectories = false
-        allowedFileTypes = ["csv", "txt"]
-        return runModal() == .OK ? urls.first : nil
-    }
-    //    var selectUrls: [URL]? {
-    //        title = "Select files"
-    //        allowsMultipleSelection = true
-    //        canChooseDirectories = false
-    //        canChooseFiles = true
-    //        canCreateDirectories = false
-    //        allowedFileTypes = ["csv", "txt"]
-    //        return runModal() == .OK ? urls : nil
-    //    }
-}
+//extension NSOpenPanel {
+//    var selectUrl: URL? {
+//        title = "Select file"
+//        allowsMultipleSelection = false
+//        canChooseDirectories = false
+//        canChooseFiles = true
+//        canCreateDirectories = false
+//        allowedFileTypes = ["csv", "txt"]
+//        return runModal() == .OK ? urls.first : nil
+//    }
+//    //    var selectUrls: [URL]? {
+//    //        title = "Select files"
+//    //        allowsMultipleSelection = true
+//    //        canChooseDirectories = false
+//    //        canChooseFiles = true
+//    //        canCreateDirectories = false
+//    //        allowedFileTypes = ["csv", "txt"]
+//    //        return runModal() == .OK ? urls : nil
+//    //    }
+//}

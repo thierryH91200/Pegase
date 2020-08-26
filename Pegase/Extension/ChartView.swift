@@ -16,7 +16,7 @@ extension BarChartView {
         legend.horizontalAlignment = .right
         legend.verticalAlignment = .top
         legend.orientation = .vertical
-        legend.drawInside                    = true
+        legend.drawInside  = true
         legend.xOffset = 10.0
         legend.yEntrySpace = 0.0
         legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!

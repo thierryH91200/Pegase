@@ -81,6 +81,12 @@ extension OperationViewController  {
                 
                 self.updateChartData()
                 self.setDataCount()
+                
+                self.delegate?.getAllData()
+                self.delegate?.reloadData()
+                
+                NotificationCenter.send(.updateBalance)
+//                self.resetOperation()
 
             case .cancel:
                 break

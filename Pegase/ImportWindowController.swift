@@ -63,6 +63,8 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         
         setupHeaderMenu()
         readParseFile()
+//        self.close()
+
     }
     
     /// Pops up the menu at the specified location.

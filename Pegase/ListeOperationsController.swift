@@ -205,6 +205,7 @@ final class ListeOperationsController: NSViewController {
         self.outlineListView.reloadData()
         self.outlineListView.allowsEmptySelection = true
         self.outlineListView.expandItem(nil, expandChildren: true)
+//        outlineListView.sizeLastColumnToFit() = true
         
         let count = listeOperations.count
         let strInfo = String(format: "%d opérations", count)
