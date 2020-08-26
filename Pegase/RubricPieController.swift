@@ -110,6 +110,7 @@ final class RubricPieController: NSViewController
         initializeLegend(self.chartView.legend)
 
         self.chartView.centerAttributedText = centerText
+        
         self.chartView.chartDescription?.enabled = false
         self.chartView.noDataText = Localizations.Chart.No_chart_Data_Available
         chartView.holeColor = .windowBackgroundColor
@@ -117,7 +118,6 @@ final class RubricPieController: NSViewController
         centerText = NSMutableAttributedString(string: "incomes")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
-        // MARK: legend
         initializeLegend(self.chartView2.legend)
 
         self.chartView2.centerAttributedText = centerText
@@ -126,6 +126,7 @@ final class RubricPieController: NSViewController
         chartView2.holeColor = .windowBackgroundColor
     }
     
+    // MARK: legend
     func initializeLegend(_ legend: Legend) {
         legend.horizontalAlignment = .left
         legend.verticalAlignment = .top
@@ -134,7 +135,6 @@ final class RubricPieController: NSViewController
         legend.textColor = NSColor.labelColor
     }
 
-    
     private func updateChartData()
     {
         var dataArrayD = [DataGraph]()

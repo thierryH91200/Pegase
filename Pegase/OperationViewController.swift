@@ -141,29 +141,37 @@ final class OperationViewController: NSViewController {
         let centerText = NSMutableAttributedString(string: "Operations")
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
+        self.pieChartView.centerAttributedText = centerText
         self.pieChartView.highlightPerTapEnabled = true
         self.pieChartView.drawSlicesUnderHoleEnabled = false
         self.pieChartView.holeRadiusPercent = 0.58
         self.pieChartView.transparentCircleRadiusPercent = 0.61
         self.pieChartView.drawCenterTextEnabled = true
-        self.pieChartView.centerAttributedText = centerText
         self.pieChartView.usePercentValuesEnabled = true
         self.pieChartView.drawEntryLabelsEnabled = false
         
-        let legend = pieChartView.legend
-        legend.horizontalAlignment = .right
+        initializeLegend(self.pieChartView.legend)
+
+        self.pieChartView.chartDescription?.enabled = false
+        self.pieChartView.noDataText = Localizations.Chart.No_chart_Data_Available
+        self.pieChartView.holeColor = .windowBackgroundColor
+    }
+    
+    // MARK: legend
+    func initializeLegend(_ legend: Legend) {
+        legend.horizontalAlignment = .left
         legend.verticalAlignment = .top
         legend.orientation = .vertical
+        
         legend.xEntrySpace = 7
         legend.yEntrySpace = 0
         legend.yOffset = 0
+
         legend.font = NSFont(name: "HelveticaNeue-Light", size: 8.0)!
-        
-        self.pieChartView.chartDescription?.enabled = false
-        self.pieChartView.noDataText = Localizations.Chart.No_chart_Data_Available
-        self.pieChartView.backgroundColor = .white
+        legend.textColor = NSColor.labelColor
     }
-    
+
+    // MARK: update Chart Data
     func updateChartData()
     {
         self.dataRubricPie.removeAll()
@@ -192,7 +200,6 @@ final class OperationViewController: NSViewController {
         
         self.addView.isHidden = groupedBonds.isEmpty == false ? true : false
 
-        
         // MARK: PieChartDataEntry
         var entries = [PieChartDataEntry]()
         var colors : [NSColor] = []

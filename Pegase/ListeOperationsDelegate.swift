@@ -16,6 +16,8 @@ extension ListeOperationsController: NSOutlineViewDelegate {
             return cellView
         }
 
+        
+        outlineView.columnAutoresizingStyle = NSTableView.ColumnAutoresizingStyle.sequentialColumnAutoresizingStyle
         if let folderItem = item as? TrackingIdOperations
         {
             let formatterDate: DateFormatter = {
@@ -75,9 +77,9 @@ extension ListeOperationsController: NSOutlineViewDelegate {
             
             cellView.fillColor = self.colorBackGround
             cellView.textField!.stringValue = titre
-            cellView.textField?.textColor = .black
-            
+            cellView.textField?.textColor = .labelColor
             cellView.backgroundStyle = .light
+  
             return cellView
         } else
         {
@@ -206,7 +208,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     }
                 }
                 
-                textField.sizeToFit()
+//                textField.sizeToFit()
                 
                 var attrs = colorText (quake: quake, propertyEnum: propertyEnum )
                 
@@ -215,6 +217,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 attributText.setAttributes(attrs, range: NSRange(location: 0, length: attributText.length))
                 textField.attributedStringValue = attributText
             } else
+            
             if let item = item as? TrackingSubOperation {
                 
                 let identifier = tableColumn!.identifier
@@ -278,7 +281,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     
                 }
                 
-                textField.sizeToFit()
+//                textField.sizeToFit()
                 
                 var attrs = colorSousText (quake: item, propertyEnum: propertyEnum )
 
