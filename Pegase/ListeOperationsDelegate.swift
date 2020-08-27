@@ -116,7 +116,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].category?.rubric?.name ?? ""
                     } else {
-//                        cellView = CrossHatchView()
+                        cellView = CrossHatchView()
                         textField.stringValue = ""
                     }
                 
@@ -124,7 +124,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].category?.name ?? ""
                     } else {
-//                        cellView = CrossHatchView()
+                        cellView = CrossHatchView()
                         textField.stringValue = ""
 
                     }
@@ -133,7 +133,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].libelle ?? ""
                     } else {
-//                        cellView = CrossHatchView()
+                        cellView = CrossHatchView()
                         textField.stringValue = ""
                     }
 

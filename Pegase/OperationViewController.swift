@@ -157,7 +157,7 @@ final class OperationViewController: NSViewController {
         self.pieChartView.holeColor = .windowBackgroundColor
     }
     
-    // MARK: legend
+    // MARK: Legend
     func initializeLegend(_ legend: Legend) {
         legend.horizontalAlignment = .left
         legend.verticalAlignment = .top
@@ -361,7 +361,6 @@ final class OperationViewController: NSViewController {
             
             let entitySousOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as? EntitySousOperations
 
-            
             // la rubrique existe t elle ??
             let labelCat = (sousOperation.category?.name)!
             let entityCategory = Categories.shared.find(name: labelCat)
