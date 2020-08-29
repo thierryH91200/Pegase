@@ -5,82 +5,96 @@ import AppKit
 // MARK: NSTableViewDelegate
 extension ListeOperationsController: NSOutlineViewDelegate {
     
-    func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView?
-    {
+    func trackingMonth(outlineView: NSOutlineView, folderItem : TrackingMonth) -> NSView? {
         var cellView: NSTableCellView?
         
-        if let folderItem = item as?  TrackingMonth {
-            cellView = outlineView.makeView(withIdentifier: .FeedCellYear, owner: self) as? KSHeaderCellView
-            let textField = (cellView?.textField!)!
-            textField.stringValue = folderItem.year
-            return cellView
-        }
-
+        cellView = outlineView.makeView(withIdentifier: .FeedCellYear, owner: self) as? KSHeaderCellView
+        let textField = (cellView?.textField!)!
+        textField.stringValue = folderItem.year
+        textField.textColor = .labelColor
+        return cellView
+    }
+    
+    func trackingIdOperations(outlineView: NSOutlineView, folderItem : TrackingIdOperations) -> NSView? {
+        //        var     cellView: NSTableCellView?
         
-        outlineView.columnAutoresizingStyle = NSTableView.ColumnAutoresizingStyle.sequentialColumnAutoresizingStyle
-        if let folderItem = item as? TrackingIdOperations
+        let formatterDate: DateFormatter = {
+            let fmt = DateFormatter()
+            fmt.dateFormat = DateFormatter.dateFormat(fromTemplate: "MMMM yyyy", options: 0, locale: Locale.current)
+            return fmt
+        }()
+        
+        var title  = ""
+        var dateFormatted  = ""
+        var dateString = ""
+        
+        // Header
+        if let numericSection = Int(folderItem.month)
         {
-            let formatterDate: DateFormatter = {
-                let fmt = DateFormatter()
-                fmt.dateFormat = DateFormatter.dateFormat(fromTemplate: "MMMM yyyy", options: 0, locale: Locale.current)
-                return fmt
-            }()
+            var components = DateComponents()
+            components.year = numericSection / 100
+            components.month = numericSection % 100
             
-            var titre  = ""
-            var dateFormatted  = ""
-            var dateString = ""
+            if let date = Calendar.current.date(from: components) {
+                dateString = formatterDate.string(from: date)
+                dateFormatted = dateString.padding(toLength: 40, withPad: " ", startingAt: 0)
+            }
+            let nbOperations = folderItem.idOperation.count
+            let operationsString = "\(nbOperations) opérations"
+            let operationsFormatted = operationsString.padding(toLength: 30, withPad: " ", startingAt: 0)
             
-            // Header
-            if let numericSection = Int(folderItem.month)
+            var expenses = 0.0
+            var incomes = 0.0
+            var amount = 0.0
+            
+            for itemF in folderItem.idOperation
             {
-                var components = DateComponents()
-                components.year = numericSection / 100
-                components.month = numericSection % 100
-                
-                if let date = Calendar.current.date(from: components) {
-                    dateString = formatterDate.string(from: date)
-                    dateFormatted = dateString.padding(toLength: 40, withPad: " ", startingAt: 0)
+                amount = itemF.entityOperations.amount
+                if amount < 0.0 {
+                    expenses += amount
+                } else {
+                    incomes += amount
                 }
-                let nbOperations = folderItem.idOperation.count
-                let operationsString = "\(nbOperations) opérations"
-                let operationsFormatted = operationsString.padding(toLength: 30, withPad: " ", startingAt: 0)
-                
-                var expenses = 0.0
-                var incomes = 0.0
-                var amount = 0.0
-                
-                for itemF in folderItem.idOperation
-                {
-                    amount = itemF.entityOperations.amount
-                    if amount < 0.0 {
-                        expenses += amount
-                    } else {
-                        incomes += amount
-                    }
-                }
-                
-                let expense = Localizations.General.Expenses
-                let income = Localizations.General.Income
-                let depenseStr = formatterPrice.string(from: NSDecimalNumber(value: expenses))
-                let depenseFormatted = "\(expense) : \( depenseStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
-                
-                let incomeStr = formatterPrice.string(from: NSDecimalNumber(value: incomes))
-                let incomeFormatted = "\(income) : \( incomeStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
-                
-                let totalStr = formatterPrice.string(from: NSDecimalNumber(value: incomes + expenses))
-                let totalFormatted = "Total : \(totalStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
-                
-                titre = "     " + dateFormatted + operationsFormatted + depenseFormatted + incomeFormatted + totalFormatted
             }
             
-            let cellView = outlineView.makeView(withIdentifier: .FeedCellMonth, owner: self) as! KSHeaderCellView
+            let expense = Localizations.General.Expenses
+            let income = Localizations.General.Income
             
-            cellView.fillColor = self.colorBackGround
-            cellView.textField!.stringValue = titre
-            cellView.textField?.textColor = .labelColor
-            cellView.backgroundStyle = .light
-  
-            return cellView
+            let expenseStr = formatterPrice.string(from: NSDecimalNumber(value: expenses))
+            let expenseFormatted = "\(expense) : \( expenseStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
+            
+            let incomeStr = formatterPrice.string(from: NSDecimalNumber(value: incomes))
+            let incomeFormatted = "\(income) : \( incomeStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
+            
+            let totalStr = formatterPrice.string(from: NSDecimalNumber(value: incomes + expenses))
+            let totalFormatted = "Total : \(totalStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
+            
+            title = "     " + dateFormatted + operationsFormatted + expenseFormatted + incomeFormatted + totalFormatted
+        }
+        
+        let cellView = outlineView.makeView(withIdentifier: .FeedCellMonth, owner: self) as! KSHeaderCellView
+        
+        cellView.fillColor = self.colorBackGround
+        cellView.textField!.stringValue = title
+        cellView.textField?.textColor = .labelColor
+        //        cellView.backgroundStyle = .light
+        return cellView
+    }
+    
+    
+    func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView?
+    {
+        var     cellView: NSTableCellView?
+        outlineView.columnAutoresizingStyle = NSTableView.ColumnAutoresizingStyle.sequentialColumnAutoresizingStyle
+        
+        
+        if let folderItem = item as?  TrackingMonth {
+            return trackingMonth( outlineView: outlineView, folderItem: folderItem)
+        }
+        
+        if let folderItem = item as? TrackingIdOperations
+        {
+            return trackingIdOperations(outlineView: outlineView, folderItem: folderItem)
         } else
         {
             if let item = item as? TrackingSubOperations
@@ -119,16 +133,16 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                         cellView = CrossHatchView()
                         textField.stringValue = ""
                     }
-                
+                    
                 case .categorie:
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].category?.name ?? ""
                     } else {
                         cellView = CrossHatchView()
                         textField.stringValue = ""
-
+                        
                     }
-
+                    
                 case .libelle:
                     if sousOperations.count == 1 {
                         textField.stringValue = sousOperations[0].libelle ?? ""
@@ -136,7 +150,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                         cellView = CrossHatchView()
                         textField.stringValue = ""
                     }
-
+                    
                 case .dateOperation:
                     paragraph.alignment = .center
                     var time = Date()
@@ -145,7 +159,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     }
                     let formattedDate = formatterDate.string(from: time)
                     textField.stringValue = formattedDate
-                
+                    
                 case .datePointage:
                     paragraph.alignment = .center
                     var time = Date()
@@ -154,17 +168,17 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     }
                     let formatteddate = formatterDate.string(from: time)
                     textField.stringValue = formatteddate
-                
+                    
                 case .mode:
                     paragraph.alignment = .left
                     textField.stringValue = quake.paymentMode?.name ?? ""
-                
+                    
                 case .montant:
                     let price = quake.amount as NSNumber
                     let formatted = formatterPrice.string(from: price)
                     textField.stringValue = formatted!
                     paragraph.alignment = .right
-                
+                    
                 case .depense:
                     var price: NSNumber = 0.0
                     var formatted = ""
@@ -174,7 +188,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     }
                     textField.stringValue = formatted
                     paragraph.alignment = .right
-                
+                    
                 case .recette:
                     var price: NSNumber = 0.0
                     var formatted = ""
@@ -184,22 +198,22 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     }
                     textField.stringValue = formatted
                     paragraph.alignment = .right
-                
+                    
                 case .bankStatement:
                     paragraph.alignment = .center
                     textField.doubleValue = quake.bankStatement
-                
+                    
                 case .solde:
                     let solde = quake.solde
                     let price = solde as NSNumber
                     let formatted = formatterPrice.string(from: price)
                     textField.stringValue = formatted!
                     paragraph.alignment = .right
-                
+                    
                 case .statut:
                     let state = TypeOfStatut(rawValue: Int(quake.statut))?.label
                     textField.stringValue = state!
-                
+                    
                 case .liee:
                     if let liee = quake.operationLiee {
                         textField.stringValue = liee.account?.name ?? ""
@@ -208,7 +222,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     }
                 }
                 
-//                textField.sizeToFit()
+                textField.sizeToFit()
                 
                 var attrs = colorText (quake: quake, propertyEnum: propertyEnum )
                 
@@ -243,22 +257,22 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 {
                 case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .solde:
                     textField.stringValue = ""
-                
+                    
                 case .rubrique:
                     textField.stringValue = sousOperations.category?.rubric?.name ?? ""
-                
+                    
                 case .categorie:
                     textField.stringValue = sousOperations.category?.name ?? ""
-                
+                    
                 case .libelle:
                     textField.stringValue = sousOperations.libelle ?? ""
-                
+                    
                 case .montant:
                     let price = sousOperations.amount as NSNumber
                     let formatted = formatterPrice.string(from: price)
                     textField.stringValue = formatted!
                     paragraph.alignment = .right
-                
+                    
                 case .depense:
                     var price: NSNumber = 0.0
                     var formatted = ""
@@ -268,7 +282,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     }
                     textField.stringValue = formatted
                     paragraph.alignment = .right
-                
+                    
                 case .recette:
                     var price: NSNumber = 0.0
                     var formatted = ""
@@ -281,10 +295,10 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     
                 }
                 
-//                textField.sizeToFit()
+                //                textField.sizeToFit()
                 
                 var attrs = colorSousText (quake: item, propertyEnum: propertyEnum )
-
+                
                 attrs[ NSAttributedString.Key.paragraphStyle] = paragraph
                 let attributText = NSMutableAttributedString(string: textField.stringValue)
                 attributText.setAttributes(attrs, range: NSRange(location: 0, length: attributText.length))
@@ -305,7 +319,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         switch typeOfColor {
         case .some(.unie):
             attrs[.foregroundColor] = NSColor.labelColor
-        
+            
         case .some(.income):
             switch propertyEnum {
             
@@ -324,23 +338,23 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                     attrs[.foregroundColor] = NSColor.red
                 }
                 attrs[.font] =  NSFont.boldSystemFont(ofSize: 12.0)
-            
+                
             default:
                 break
             }
-        
+            
         case .some(.rubrique):
             let sousOperations = quake.sousOperations?.allObjects as! [EntitySousOperations]
             attrs[.foregroundColor] = sousOperations.first?.category?.rubric?.color
-        
+            
         case .some(.statut):
             let statutEnum = TypeOfStatut(rawValue: (Int(quake.statut)))!
             attrs = statutEnum.attribut
-        
+            
         case .some(.mode):
             let color = quake.paymentMode?.color
             attrs[.foregroundColor] = color
-        
+            
         case .none:
             attrs[.foregroundColor] = NSColor.labelColor
         }
@@ -358,7 +372,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         switch typeOfColor {
         case .some(.unie):
             attrs[.foregroundColor] = NSColor.labelColor
-        
+            
         case .some(.income):
             switch propertyEnum {
             
@@ -368,16 +382,16 @@ extension ListeOperationsController: NSOutlineViewDelegate {
                 } else {
                     attrs[.foregroundColor] = NSColor.red
                 }
-            
+                
             case  .solde:
                 break
             default:
                 break
             }
-        
+            
         case .some(.rubrique):
             attrs[.foregroundColor] = quake.category?.rubric?.color
-        
+            
         case .some(.statut):
             break
         case .some(.mode):
@@ -415,7 +429,7 @@ extension ListeOperationsController: NSOutlineViewDelegate {
     //    Show the expander triangle for group items..
     func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool
     {
-       isSourceGroupItem(item)
+        isSourceGroupItem(item)
     }
     
     //Returns a Boolean value that indicates whether the outline view should select a given item.

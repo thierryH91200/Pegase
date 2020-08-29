@@ -14,7 +14,7 @@ extension OperationViewController: ListeOperationsDelegate {
         
         self.buttonSave.isEnabled = false
         self.addBUtton.isEnabled = true
-        self.removeButton.isEnabled = true
+        self.removeButton.isEnabled = false
         
         self.addView.isHidden = false
 
@@ -103,7 +103,12 @@ extension OperationViewController: ListeOperationsDelegate {
         } else {
             
             self.addBUtton.isEnabled = true
+            let sousOperation = self.entityOperations.first?.sousOperations?.allObjects as! [EntitySousOperations]
+            if sousOperation.count > 1 {
             self.removeButton.isEnabled = true
+            } else {
+                self.removeButton.isEnabled = false
+            }
 
             self.outlineViewSSOpe.isEnabled = true
             self.textFieldMontant.isEnabled = true

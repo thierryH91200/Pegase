@@ -34,6 +34,7 @@ extension OperationViewController  {
                 self.sousOperations.append(entitySousOperation)
                 self.buttonSave.isEnabled = true
                 self.outlineViewSSOpe.reloadData()
+                self.removeButton.isEnabled = true
                                 
                 self.calcAmount()
                 
@@ -105,11 +106,12 @@ extension OperationViewController  {
         guard selectRow != -1 else { return }
         
         let alert = NSAlert()
+//        alert.icon =
         alert.messageText = Localizations.GroupeAccount.RemoveAlert.MessageText
         alert.informativeText = Localizations.GroupeAccount.RemoveAlert.InformativeText
         alert.addButton(withTitle: Localizations.GroupeAccount.RemoveAlert.Delete)
         alert.addButton(withTitle: Localizations.GroupeAccount.RemoveAlert.Cancel)
-        alert.alertStyle = .informational
+        alert.alertStyle = .warning
         
         alert.beginSheetModal(for: self.outlineViewSSOpe.window!, completionHandler: { (modalResponse) -> Void in
             if modalResponse == NSApplication.ModalResponse.alertFirstButtonReturn {

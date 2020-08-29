@@ -86,11 +86,12 @@ final class SousOperationModalWindowController: NSWindowController {
             amountSign.state = amount < 0 ? .on : .off
             
             /// Rubrique
-            var i = entityRubric.firstIndex { $0 == self.entitySousOperation?.category?.rubric }
-            comboBoxRubrique.selectItem(at: i!)
+            var name = self.entitySousOperation?.category?.rubric!.name
+            var i = entityRubric.firstIndex { $0.name == name }
+            comboBoxRubrique.selectItem(at: i ?? 0)
             
             /// Category
-            let name = self.entitySousOperation?.category?.name
+            name = self.entitySousOperation?.category?.name
             i = entityCategories.firstIndex { $0.name == name }
             comboBoxCategory.selectItem(at: i!)
         }
