@@ -21,6 +21,18 @@ Pegase
 
 Pegase is a beautifully easy tool to keep track of your financial life on all your macOS 
 
+![Capture1](Doc/Capture1.png)
+
+
+<p align="center">
+<img src="Doc/Capture10.png" alt="Sample">
+<p align="center">
+<em>DarkMode</em>
+</p>
+</p>
+
+
+
 ---
 #  How to manage your monthly budget well ?
 
@@ -37,9 +49,9 @@ Set an annual budget for trips or vacations.
 
 Trying to control yourself without depriving yourself too much and especially not buying what you don't need, because by doing so you would be risking selling what you need most.
 
-## Screenshot
 
 ## Screenshots
+
 
 ![Capture1](Doc/Capture1.png)
 -----
@@ -91,13 +103,6 @@ Trying to control yourself without depriving yourself too much and especially no
 <img src="Doc/Capture9.png" alt="Sample">
 <p align="center">
 <em>Income and expense</em>
-</p>
-</p>
-
-<p align="center">
-<img src="Doc/Capture10.png" alt="Sample">
-<p align="center">
-<em>DrakMode</em>
 </p>
 </p>
 
