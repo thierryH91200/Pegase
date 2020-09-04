@@ -94,6 +94,13 @@ Trying to control yourself without depriving yourself too much and especially no
 </p>
 </p>
 
+<p align="center">
+<img src="Doc/Capture10.png" alt="Sample">
+<p align="center">
+<em>DrakMode</em>
+</p>
+</p>
+
 
 
 ## Compatibility

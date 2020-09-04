@@ -463,6 +463,7 @@
 		03213CF023F9782200002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ParameterController.strings; sourceTree = "<group>"; };
 		03213CF223F9782300002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ParameterController.strings; sourceTree = "<group>"; };
 		03213CF423F9782400002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ParameterController.strings; sourceTree = "<group>"; };
+		032A5CE12502340800D787AD /* Capture10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture10.png; sourceTree = "<group>"; };
 		032CE32824E9523100660A8B /* MyDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyDB.sqlite; sourceTree = "<group>"; };
 		032CE32A24E9B27B00660A8B /* NSOpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOpenPanel.swift; sourceTree = "<group>"; };
 		034EC81623F87C5B006944DD /* Pegase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pegase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1086,6 +1087,7 @@
 				034EC8A923F87CFA006944DD /* Capture7.png */,
 				034EC8A623F87CF9006944DD /* Capture8.png */,
 				034EC8A423F87CF9006944DD /* Capture9.png */,
+				032A5CE12502340800D787AD /* Capture10.png */,
 			);
 			path = Doc;
 			sourceTree = "<group>";
