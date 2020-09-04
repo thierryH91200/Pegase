@@ -61,6 +61,7 @@ extension GroupeAccountViewController: NSOutlineViewDelegate {
         {
             let view = outlineView.makeView(withIdentifier: .FolderCell, owner: self) as! NSTableCellView
             view.textField?.stringValue = entityAccount.name!
+            view.textField?.textColor = .textColor
             return view
         }
         
@@ -69,7 +70,8 @@ extension GroupeAccountViewController: NSOutlineViewDelegate {
             let view = outlineView.makeView(withIdentifier: .AccountCell, owner: self) as! CompteListCellView
             let name = entityAccount.name ?? "vide"
             view.textField?.stringValue = name
-            
+            view.textField?.textColor = .textColor
+
             let titulaireNom = entityAccount.identity?.name ?? ""
             let titulairePrenom = entityAccount.identity?.surName ?? ""
             let titulaire = titulairePrenom + " " + titulaireNom

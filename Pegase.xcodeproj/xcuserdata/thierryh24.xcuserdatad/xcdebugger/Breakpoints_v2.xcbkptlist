@@ -7,96 +7,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EAFFBDE8-2587-4FBC-ABDD-5001DAFFE02D"
+            uuid = "515047D8-DF1A-45C8-82F8-60F9DD530748"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/ListeOperationsEcheanciers.swift"
+            filePath = "Pegase/ListeOperationsDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "datePickerCell(_:validateProposedDateValue:timeInterval:)"
+            startingLineNumber = "427"
+            endingLineNumber = "427"
+            landmarkName = "outlineView(_:isGroupItem:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "46F4BFB8-B15B-4C3A-B1E4-C14B899EEA8C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/CoreData/Echeanciers.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "createOperation(entitySchedule:dateValeur:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BEE96442-61BC-4C86-B22F-4B672031995B"
+            uuid = "6FCE8670-0C11-43E2-BF21-5BABD607412D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/CoreData/Echeanciers.swift"
+            filePath = "Pegase/ListeOperationsDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "createSousOperation(entitySchedule:)"
+            startingLineNumber = "432"
+            endingLineNumber = "432"
+            landmarkName = "outlineView(_:isGroupItem:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9B491243-84A8-4790-9928-C59A295D66B8"
+            uuid = "224B71D3-6494-4CBD-9892-86708194CBC9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/CoreData/Echeanciers.swift"
+            filePath = "Pegase/ListeOperationsDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "createSousOperation(entitySchedule:)"
+            startingLineNumber = "431"
+            endingLineNumber = "431"
+            landmarkName = "outlineView(_:isGroupItem:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BDBF3A16-F0F3-4A87-A58D-62AE3675BDCB"
-            shouldBeEnabled = "Yes"
+            uuid = "BA3DA4E0-31A2-4244-A3AD-BD69590CCB7D"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/CoreData/Rubrique.swift"
+            filePath = "Pegase/ListeOperationsDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "find(account:name:)"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "manySubOperations(outlineView:tableColumn:item:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EF388BAB-094C-4928-B153-072E5A0A0E93"
-            shouldBeEnabled = "Yes"
+            uuid = "1D9EA607-0668-4CC4-88C7-398EF13B0D51"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/OperationViewControllerDelegate.swift"
+            filePath = "Pegase/SourceListViewDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
-            landmarkName = "getMenuItemMultiplevalue()"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "outlineView(_:viewFor:item:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

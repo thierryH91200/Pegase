@@ -91,6 +91,7 @@ extension ListeOperationsController: NSOutlineViewDataSource {
         }
 
         if item is TrackingSubOperations {
+
             let idOperation = item as! TrackingSubOperations
             let count = (idOperation.entityOperations.sousOperations?.count)!
             if count > 1 {

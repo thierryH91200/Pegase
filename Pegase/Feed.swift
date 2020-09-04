@@ -8,7 +8,6 @@ struct Donnees : Codable {
 }
 
 struct Children : Codable {
-
     var name: String
     var nameView: String
     var icon: String

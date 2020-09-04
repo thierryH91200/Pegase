@@ -7,13 +7,13 @@ extension SourceListViewController: NSOutlineViewDelegate {
 
         if let section = item as? Donnees
         {
-            let cell = outlineView.makeView(withIdentifier: .FeedCellHeader, owner: self) as! KSHeaderCellView
+            let cell = outlineView.makeView(withIdentifier: .FeedCellHeader, owner: self) as? KSHeaderCellView
 
-            cell.fillColor = self.colorBackGround
-            cell.textField!.stringValue = section.name.uppercased()
-            cell.textField!.textColor = NSColor.black
+            cell?.fillColor = self.colorBackGround
+            cell?.textField!.stringValue = section.name.uppercased()
+            cell?.textField!.textColor = NSColor.labelColor
 
-            cell.imageView!.image = #imageLiteral(resourceName: section.icon)  //  #imageLiteral(resourceName: section.icon)
+            cell?.imageView!.image =   #imageLiteral(resourceName: section.icon)  //  #imageLiteral(resourceName: section.icon)
             return cell
         } else if let account = item as? Children
         {
@@ -21,6 +21,7 @@ extension SourceListViewController: NSOutlineViewDelegate {
             
             cell?.imageView!.image       =  #imageLiteral(resourceName: account.icon)  //#imageLiteral(resourceName: account.icon)
             cell?.textField!.stringValue = account.name
+            cell?.textField!.textColor = NSColor.labelColor
             return cell
         }
         return nil
