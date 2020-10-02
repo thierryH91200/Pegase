@@ -16,15 +16,15 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView misplaced="YES" id="1X6-8f-2mg">
+        <customView id="1X6-8f-2mg">
             <rect key="frame" x="0.0" y="0.0" width="414" height="486"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ayl-Le-8aj">
-                    <rect key="frame" x="32" y="-1" width="23" height="24"/>
+                    <rect key="frame" x="32" y="-1" width="23" height="26"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="22" id="9WR-jQ-3pq"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="23" id="BWY-z4-2rj"/>
+                        <constraint firstAttribute="height" constant="24" id="9WR-jQ-3pq"/>
+                        <constraint firstAttribute="width" constant="23" id="BWY-z4-2rj"/>
                     </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fVI-Zd-mI6">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -47,7 +47,7 @@
                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="hit-Jc-lgY" userLabel="AddButton">
                     <rect key="frame" x="0.0" y="-1" width="32" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="eHC-rK-Fka"/>
+                        <constraint firstAttribute="width" constant="32" id="eHC-rK-Fka"/>
                         <constraint firstAttribute="height" constant="22" id="tcW-hs-VPG"/>
                     </constraints>
                     <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="mixed" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" id="TV8-Lo-CEd">
@@ -72,19 +72,19 @@
                     </popUpButtonCell>
                 </popUpButton>
                 <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vus-5B-rad">
-                    <rect key="frame" x="-1" y="462" width="416" height="23"/>
+                    <rect key="frame" x="-1" y="464" width="416" height="23"/>
                     <buttonCell key="cell" type="roundTextured" title="Account" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4uw-9o-I06">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGC-nl-EVD">
-                    <rect key="frame" x="0.0" y="22" width="414" height="442"/>
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="70" horizontalPageScroll="10" verticalLineScroll="70" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGC-nl-EVD">
+                    <rect key="frame" x="0.0" y="24" width="414" height="442"/>
                     <clipView key="contentView" drawsBackground="NO" id="TYy-R4-fUn">
                         <rect key="frame" x="1" y="1" width="412" height="440"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" floatsGroupRows="NO" indentationPerLevel="13" outlineTableColumn="CRy-Zc-Na1" id="SV1-LM-vvL">
+                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="70" rowSizeStyle="automatic" viewBased="YES" floatsGroupRows="NO" indentationPerLevel="13" outlineTableColumn="CRy-Zc-Na1" id="SV1-LM-vvL">
                                 <rect key="frame" x="0.0" y="0.0" width="412" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="0.0"/>
@@ -292,10 +292,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BSx-tv-IM5">
-                    <rect key="frame" x="382" y="-2" width="32" height="38"/>
+                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BSx-tv-IM5">
+                    <rect key="frame" x="382" y="-2" width="32" height="26"/>
                     <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="hOV-c0-6sy"/>
+                        <constraint firstAttribute="width" constant="32" id="hOV-c0-6sy"/>
                     </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSLockLockedTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5rp-9J-aU2">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

@@ -81,8 +81,8 @@ extension ListeOperationsController: NSOutlineViewDelegate {
 
         
         cellView?.fillColor = .gray
-//    cellView.textField!.stringValue = title
-    cellView?.textField?.stringValue = "1234"
+    cellView?.textField?.stringValue = title
+//    cellView?.textField?.stringValue = "1234"
     cellView?.textField?.textColor = .labelColor
         //        cellView.backgroundStyle = .light
         return cellView

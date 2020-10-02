@@ -37,7 +37,6 @@ final class TulsiDocumentController: NSDocumentController {
 ////        self.toolbar?.isVisible = false
 ////        self.titleVisibility = .hidden
 ////        self.titlebarAppearsTransparent = true
-//
 //    }
 //
 //}

@@ -5,13 +5,17 @@ final class SousOperationModalWindowController: NSWindowController {
     @IBOutlet weak var comboBoxRubrique: NSComboBox!
     @IBOutlet weak var comboBoxCategory: NSComboBox!
     
-    @IBOutlet weak var textFieldLibelle: AutoTextField!
+    @IBOutlet weak var textFieldLibelle: AutoCompleteTextField!
     @IBOutlet weak var textFieldAmount: NSTextField!
     @IBOutlet weak var amountSign: NSButton!
     
     @IBOutlet weak var modeOperation: NSButton!
 
     var libelles = [String]()
+    var autoCompleteFilterArray = [String]()
+
+    var completions = [[String: String]]()
+
     var edition = false
     
     var entityRubric = [EntityRubric]()
@@ -34,12 +38,16 @@ final class SousOperationModalWindowController: NSWindowController {
         self.modeOperation.wantsLayer = true
         self.modeOperation.layer?.backgroundColor = NSColor.orange.cgColor
         
+        textFieldLibelle.tableViewDelegate = self
+
+        
         self.libelles = ListeOperations.shared.getAllComment()
         var completions = [[String: String]]()
         for libelle in libelles {
             completions.append(["label": libelle])
         }
-        self.textFieldLibelle.arrNames = completions
+
+//        self.textFieldLibelle.arrNames = completions
         
         comboBoxCategory.removeAllItems()
         comboBoxCategory.delegate = self
@@ -98,4 +106,27 @@ final class SousOperationModalWindowController: NSWindowController {
     }
 
 }
+
+// MARK: - AutoCompleteTableViewDelegate
+extension SousOperationModalWindowController  : AutoCompleteTableViewDelegate {
+    
+    func textField1(_ textField: NSTextField, completions words: [String], forPartialWordRange charRange: NSRange, indexOfSelectedItem index: Int) -> [String] {
+        
+        let searchString = textField.stringValue
+
+        autoCompleteFilterArray = libelles.filter{ $0.capitalized.hasPrefix(searchString) }
+
+        let matches = (0..<autoCompleteFilterArray.count).map { (i) -> String in
+            return autoCompleteFilterArray[i]
+        }
+        return matches
+    }
+    
+    func tableViewSelection(_ notification: Notification)
+    {
+    }
+
+    
+}
+
 

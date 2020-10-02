@@ -45,13 +45,6 @@
 		03213B4723F9055400002DD7 /* SousOperationModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4323F9055400002DD7 /* SousOperationModalWindowController.swift */; };
 		03213B4823F9055400002DD7 /* SousOperationComboBoxDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4423F9055400002DD7 /* SousOperationComboBoxDelegate.swift */; };
 		03213B4A23F9055400002DD7 /* SousOperationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4623F9055400002DD7 /* SousOperationAction.swift */; };
-		03213B5323F9058800002DD7 /* SuggestibleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4C23F9058700002DD7 /* SuggestibleTextFieldCell.swift */; };
-		03213B5423F9058800002DD7 /* HighlightingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4D23F9058700002DD7 /* HighlightingView.swift */; };
-		03213B5523F9058800002DD7 /* AutoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4E23F9058700002DD7 /* AutoTextField.swift */; };
-		03213B5623F9058800002DD7 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B4F23F9058700002DD7 /* RoundedCornersView.swift */; };
-		03213B5723F9058800002DD7 /* SuggestionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B5023F9058700002DD7 /* SuggestionsWindow.swift */; };
-		03213B5823F9058800002DD7 /* SuggestionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B5123F9058700002DD7 /* SuggestionsWindowController.swift */; };
-		03213B5923F9058800002DD7 /* suggestionprototype.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B5223F9058700002DD7 /* suggestionprototype.xib */; };
 		03213B6623F905E000002DD7 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B6023F905E000002DD7 /* PersonViewController.swift */; };
 		03213B6823F905E000002DD7 /* PersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B6223F905E000002DD7 /* PersonViewController.xib */; };
 		03213B6923F905E000002DD7 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B6323F905E000002DD7 /* GeneralViewController.swift */; };
@@ -150,6 +143,7 @@
 		03213CD423F977DD00002DD7 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CD623F977DD00002DD7 /* AccountViewController.xib */; };
 		03213CDF23F9780900002DD7 /* RubriqueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CE123F9780900002DD7 /* RubriqueViewController.xib */; };
 		03213CEA23F9781E00002DD7 /* ParameterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CEC23F9781E00002DD7 /* ParameterController.xib */; };
+		0325988E2527506700FCB5BD /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325988C2527506700FCB5BD /* AutoCompleteTextField.swift */; };
 		032C13062455A1F400831E23 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 032C13052455A1F400831E23 /* Charts */; };
 		032CE32924E9529000660A8B /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 032CE32824E9523100660A8B /* MyDB.sqlite */; };
 		032CE32B24E9B27B00660A8B /* NSOpenPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032CE32A24E9B27B00660A8B /* NSOpenPanel.swift */; };
@@ -303,13 +297,6 @@
 		03213B4323F9055400002DD7 /* SousOperationModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SousOperationModalWindowController.swift; sourceTree = "<group>"; };
 		03213B4423F9055400002DD7 /* SousOperationComboBoxDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SousOperationComboBoxDelegate.swift; sourceTree = "<group>"; };
 		03213B4623F9055400002DD7 /* SousOperationAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SousOperationAction.swift; sourceTree = "<group>"; };
-		03213B4C23F9058700002DD7 /* SuggestibleTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestibleTextFieldCell.swift; sourceTree = "<group>"; };
-		03213B4D23F9058700002DD7 /* HighlightingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightingView.swift; sourceTree = "<group>"; };
-		03213B4E23F9058700002DD7 /* AutoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextField.swift; sourceTree = "<group>"; };
-		03213B4F23F9058700002DD7 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
-		03213B5023F9058700002DD7 /* SuggestionsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsWindow.swift; sourceTree = "<group>"; };
-		03213B5123F9058700002DD7 /* SuggestionsWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsWindowController.swift; sourceTree = "<group>"; };
-		03213B5223F9058700002DD7 /* suggestionprototype.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = suggestionprototype.xib; sourceTree = "<group>"; };
 		03213B6023F905E000002DD7 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		03213B6223F905E000002DD7 /* PersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonViewController.xib; sourceTree = "<group>"; };
 		03213B6323F905E000002DD7 /* GeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
@@ -463,6 +450,7 @@
 		03213CF023F9782200002DD7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ParameterController.strings; sourceTree = "<group>"; };
 		03213CF223F9782300002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ParameterController.strings; sourceTree = "<group>"; };
 		03213CF423F9782400002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ParameterController.strings; sourceTree = "<group>"; };
+		0325988C2527506700FCB5BD /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		032A5CE12502340800D787AD /* Capture10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture10.png; sourceTree = "<group>"; };
 		032CE32824E9523100660A8B /* MyDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyDB.sqlite; sourceTree = "<group>"; };
 		032CE32A24E9B27B00660A8B /* NSOpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOpenPanel.swift; sourceTree = "<group>"; };
@@ -698,13 +686,7 @@
 		03213B4B23F9056F00002DD7 /* Suggestions Popup */ = {
 			isa = PBXGroup;
 			children = (
-				03213B4E23F9058700002DD7 /* AutoTextField.swift */,
-				03213B4D23F9058700002DD7 /* HighlightingView.swift */,
-				03213B4F23F9058700002DD7 /* RoundedCornersView.swift */,
-				03213B4C23F9058700002DD7 /* SuggestibleTextFieldCell.swift */,
-				03213B5223F9058700002DD7 /* suggestionprototype.xib */,
-				03213B5023F9058700002DD7 /* SuggestionsWindow.swift */,
-				03213B5123F9058700002DD7 /* SuggestionsWindowController.swift */,
+				0325988C2527506700FCB5BD /* AutoCompleteTextField.swift */,
 			);
 			name = "Suggestions Popup";
 			sourceTree = "<group>";
@@ -1015,11 +997,10 @@
 		034EC81823F87C5B006944DD /* Pegase */ = {
 			isa = PBXGroup;
 			children = (
+				034EC8BF23F87EA1006944DD /* AppDelegate.swift */,
 				037993AE241385AD001ADDA6 /* Document.xcdatamodeld */,
 				038FB16C2410234D00945A27 /* Pegase.entitlements */,
 				034EC8B623F87E31006944DD /* Info.plist */,
-				034EC8BA23F87E8B006944DD /* AdvancedFilterViewController.swift */,
-				034EC8BF23F87EA1006944DD /* AppDelegate.swift */,
 				034EC8BE23F87EA1006944DD /* Document.swift */,
 				034EC8C823F87EB1006944DD /* MainWindowController.swift */,
 				034EC8C523F87EB1006944DD /* MainWindowDelegate.swift */,
@@ -1032,6 +1013,7 @@
 				03213B9123F9089300002DD7 /* NVDate.swift */,
 				034EC8C923F87EB1006944DD /* RateConfigure.swift */,
 				034EC8C723F87EB1006944DD /* RateWindowController.swift */,
+				034EC8BA23F87E8B006944DD /* AdvancedFilterViewController.swift */,
 				03213C2E23F90DDF00002DD7 /* AdvancedFilterViewController.xib */,
 				034EC8D923F87EC8006944DD /* CoreData */,
 				034EC8FF23F87F43006944DD /* Extension */,
@@ -1384,7 +1366,6 @@
 				03213BBA23F909C300002DD7 /* SliderViewHorizontalController.xib in Resources */,
 				03213C4D23F9269000002DD7 /* OperationViewController.xib in Resources */,
 				03213BD023F90AAB00002DD7 /* icons8-purse-100.png in Resources */,
-				03213B5923F9058800002DD7 /* suggestionprototype.xib in Resources */,
 				03213B8423F9083300002DD7 /* PaymentModePieController.xib in Resources */,
 				03213BCC23F90AAB00002DD7 /* icons8-museum-80.png in Resources */,
 			);
@@ -1460,7 +1441,6 @@
 				03213BB723F909C300002DD7 /* RangeSlider.swift in Sources */,
 				034EC91323F87F51006944DD /* NSTableCellView.swift in Sources */,
 				03213B3023F9050000002DD7 /* ListeOperationsEcheanciers.swift in Sources */,
-				03213B5523F9058800002DD7 /* AutoTextField.swift in Sources */,
 				034EC8BB23F87E8B006944DD /* AdvancedFilterViewController.swift in Sources */,
 				034EC90F23F87F51006944DD /* NSPasteboard+Additions.swift in Sources */,
 				03213B4723F9055400002DD7 /* SousOperationModalWindowController.swift in Sources */,
@@ -1468,14 +1448,12 @@
 				03213BFF23F90BB600002DD7 /* PreferenceOperationViewController.swift in Sources */,
 				034EC8E923F87EDB006944DD /* EntityCategory+CoreDataClass.swift in Sources */,
 				03213B4A23F9055400002DD7 /* SousOperationAction.swift in Sources */,
-				03213B5823F9058800002DD7 /* SuggestionsWindowController.swift in Sources */,
 				034EC8F823F87EF1006944DD /* Echeanciers.swift in Sources */,
 				034EC8D023F87EB2006944DD /* MyPrintViewOutlineOld.swift in Sources */,
 				03213B2123F904D600002DD7 /* DateValueFormatter.swift in Sources */,
 				03213B9823F9091200002DD7 /* Feed.swift in Sources */,
 				034EC90E23F87F51006944DD /* NSWindow.swift in Sources */,
 				034EC91A23F87F7E006944DD /* Localizations.swift in Sources */,
-				03213B5623F9058800002DD7 /* RoundedCornersView.swift in Sources */,
 				03213BB823F909C300002DD7 /* SliderViewVerticalController.swift in Sources */,
 				034EC8FD23F87EF1006944DD /* ListeOperations.swift in Sources */,
 				03213C1523F90C0E00002DD7 /* ColorGridView.swift in Sources */,
@@ -1508,6 +1486,7 @@
 				034EC91023F87F51006944DD /* MLTextField.swift in Sources */,
 				03213BF723F90B9A00002DD7 /* ModePaiementViewController.swift in Sources */,
 				03213BB623F909C300002DD7 /* RangeSliderVertical.swift in Sources */,
+				0325988E2527506700FCB5BD /* AutoCompleteTextField.swift in Sources */,
 				034EC91523F87F51006944DD /* Debug.swift in Sources */,
 				0312B137243200D500EA13F6 /* IncomeExpensePieController.swift in Sources */,
 				034EC8F923F87EF1006944DD /* Account.swift in Sources */,
@@ -1557,7 +1536,6 @@
 				034EC8F723F87EF1006944DD /* Categories.swift in Sources */,
 				034EC90B23F87F51006944DD /* NSUserInterfaceItemIdentifier.swift in Sources */,
 				034EC8CF23F87EB2006944DD /* MainWindowDelegate.swift in Sources */,
-				03213B5723F9058800002DD7 /* SuggestionsWindow.swift in Sources */,
 				03213B4223F9053A00002DD7 /* OperationViewControllerAction.swift in Sources */,
 				034ECB7323F88044006944DD /* AccountModalWindowController.swift in Sources */,
 				034ECB7223F88044006944DD /* GroupModalWindowController.swift in Sources */,
@@ -1584,10 +1562,8 @@
 				03213B3D23F9053A00002DD7 /* OperationViewControllerOutline.swift in Sources */,
 				03213B7223F905EE00002DD7 /* PreferencesWindowController.swift in Sources */,
 				03213C1423F90C0E00002DD7 /* ColorGridController.swift in Sources */,
-				03213B5423F9058800002DD7 /* HighlightingView.swift in Sources */,
 				03213B4123F9053A00002DD7 /* OperationViewControllerDelegate.swift in Sources */,
 				03213B2423F904DE00002DD7 /* WebViewController.swift in Sources */,
-				03213B5323F9058800002DD7 /* SuggestibleTextFieldCell.swift in Sources */,
 				034ECB5F23F87FAF006944DD /* CurtainViewController.swift in Sources */,
 				03213BE623F90B3F00002DD7 /* SchedulersSaisieControllerPopUp.swift in Sources */,
 			);
@@ -2110,7 +2086,7 @@
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.5.0;
+				minimumVersion = 3.6.0;
 			};
 		};
 		030D801F2454BDC700FEC639 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
