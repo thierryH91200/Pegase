@@ -44,7 +44,7 @@ extension OperationViewController: NSOutlineViewDataSource {
         
         // Root
         if item == nil {
-            return sousOperations.count
+            return subOperations.count
         }
         // child
         return 4
@@ -55,7 +55,7 @@ extension OperationViewController: NSOutlineViewDataSource {
         
         // Root
         if item == nil {
-            let root = sousOperations[index]
+            let root = subOperations[index]
             attrs.removeAll()
             attrs[.foregroundColor] = root.category?.rubric?.color
             return root

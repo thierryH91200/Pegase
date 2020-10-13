@@ -1,8 +1,8 @@
 import AppKit
 
 extension OperationViewController: ListeOperationsDelegate {
-
-// MARK: razData
+    
+    // MARK: razData
     func resetOperation() {
         
         self.edition = false
@@ -17,20 +17,20 @@ extension OperationViewController: ListeOperationsDelegate {
         self.removeButton.isEnabled = false
         
         self.addView.isHidden = false
-
+        
         self.setDateOperation.removeAll()
-        self.setDatePointage.removeAll()
+        self.setCheck_In_Date.removeAll()
         self.setModePaiement.removeAll()
         self.setReleve.removeAll()
         self.setStatut.removeAll()
         self.setTransfert.removeAll()
         
         self.setDateOperation.insert(Date())
-        self.setDatePointage.insert(Date())
+        self.setCheck_In_Date.insert(Date())
         self.setModePaiement.insert("string")
         self.setReleve.insert(0)
         self.setStatut.insert(0)
-
+        
         self.entityPreference = Preference.shared.getAllDatas()
         
         self.loadAccount()
@@ -52,8 +52,8 @@ extension OperationViewController: ListeOperationsDelegate {
         self.textFieldReleveBancaire.placeholderString = ""
         
         self.textFieldMontant.doubleValue = 0.0
-
-        self.sousOperations.removeAll()
+        
+        self.subOperations.removeAll()
         self.outlineViewSSOpe.isEnabled = true
         self.outlineViewSSOpe.reloadData()
         
@@ -74,7 +74,7 @@ extension OperationViewController: ListeOperationsDelegate {
         self.datePointage.dateValue = Date()
     }
     
-// MARK: editionDatas
+    // MARK: editionDatas
     func editionOperations(_ quakes: [EntityOperations]) {
         
         self.edition = true
@@ -94,10 +94,10 @@ extension OperationViewController: ListeOperationsDelegate {
             
             self.datePointage.allowEmptyDate = true
             self.datePointage.showPromptWhenEmpty = true
-
+            
             self.addBUtton.isEnabled = false
             self.removeButton.isEnabled = false
-
+            
             self.outlineViewSSOpe.isEnabled = false
             
         } else {
@@ -105,15 +105,15 @@ extension OperationViewController: ListeOperationsDelegate {
             self.addBUtton.isEnabled = true
             let sousOperation = self.entityOperations.first?.sousOperations?.allObjects as! [EntitySousOperations]
             if sousOperation.count > 1 {
-            self.removeButton.isEnabled = true
+                self.removeButton.isEnabled = true
             } else {
                 self.removeButton.isEnabled = false
             }
-
+            
             self.outlineViewSSOpe.isEnabled = true
             self.textFieldMontant.isEnabled = true
             
-            self.sousOperations.removeAll()
+            self.subOperations.removeAll()
             self.outlineViewSSOpe.isEnabled = true
             self.outlineViewSSOpe.reloadData()
             
@@ -122,11 +122,11 @@ extension OperationViewController: ListeOperationsDelegate {
             self.pieChartView.notifyDataSetChanged()
         }
         
-        self.sousOperations.removeAll()
+        self.subOperations.removeAll()
         self.outlineViewSSOpe.reloadData()
         
         self.setDateOperation.removeAll()
-        self.setDatePointage.removeAll()
+        self.setCheck_In_Date.removeAll()
         self.setModePaiement.removeAll()
         self.setMontant.removeAll()
         self.setReleve.removeAll()
@@ -149,12 +149,12 @@ extension OperationViewController: ListeOperationsDelegate {
             
             let compteLie = quake.operationLiee?.account
             let transfert = compteLie?.initAccount?.codeAccount ?? ""
-//            if transfert != "" {
+            //            if transfert != "" {
             self.setTransfert.insert(transfert)
-//            }
+            //            }
             
             let datePointage = quake.datePointage ?? Date()
-            self.setDatePointage.insert(datePointage)
+            self.setCheck_In_Date.insert(datePointage)
             
             let dateOperation = quake.dateOperation ?? Date()
             self.setDateOperation.insert(dateOperation)
@@ -180,14 +180,14 @@ extension OperationViewController: ListeOperationsDelegate {
             self.textFieldMontant.doubleValue = abs(montant)
             textFieldMontant.placeholderString = ""
             textFieldMontant.textColor = montant < 0 ? NSColor.red : NSColor.green
-//            signeMontant.state = montant < 0 ? .on : .off
+            //            signeMontant.state = montant < 0 ? .on : .off
         }
         
-        if setDatePointage.count > 1 {
+        if setCheck_In_Date.count > 1 {
             self.date5 = nil
             datePointage.updateControlValue(nil)
         } else {
-            datePointage.dateValue = setDatePointage.first!
+            datePointage.dateValue = setCheck_In_Date.first!
         }
         
         if setDateOperation.count > 1 {
@@ -235,7 +235,7 @@ extension OperationViewController: ListeOperationsDelegate {
         }
         
         if setTransfert.count > 1 && popUpTransfert.itemTitle(at: 0) != Localizations.Operation.MultipleValue {
-
+            
             let menuItemMultiplevalue = getMenuItemMultiplevalue()
             menuItemMultiplevalue.action = #selector(optionAccount(menuItem:))
             
@@ -267,7 +267,7 @@ extension OperationViewController: ListeOperationsDelegate {
         resignFirstResponder()
         
         if quakes.count == 1 {
-            sousOperations = quakes.first?.sousOperations?.allObjects as! [EntitySousOperations]
+            subOperations = quakes.first?.sousOperations?.allObjects as! [EntitySousOperations]
             self.outlineViewSSOpe.reloadData()
             
             self.updateChartData()

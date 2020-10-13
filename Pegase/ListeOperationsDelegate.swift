@@ -5,6 +5,30 @@ import AppKit
 // MARK: NSTableViewDelegate
 extension ListeOperationsController: NSOutlineViewDelegate {
     
+    
+    func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView?
+    {
+        outlineView.columnAutoresizingStyle = NSTableView.ColumnAutoresizingStyle.sequentialColumnAutoresizingStyle
+        
+        if let folderItem = item as?  TrackingMonth {
+            return trackingMonth( outlineView: outlineView, folderItem: folderItem)
+        }
+        
+        if let folderItem = item as? TrackingIdOperations  {
+            return trackingIdOperations(outlineView: outlineView, folderItem: folderItem)
+        }
+        
+        if let item = item as? TrackingSubOperations {
+            return manySubOperations(outlineView: outlineView, tableColumn: tableColumn, item: item)
+        }
+        
+        if let item = item as? TrackingSubOperation {
+            return oneSubOperation(outlineView: outlineView, tableColumn: tableColumn, item: item)
+        }
+        return nil
+    }
+
+    
 // MARK: trackingMonth
     func trackingMonth(outlineView: NSOutlineView, folderItem : TrackingMonth) -> NSView? {
         
@@ -80,11 +104,10 @@ extension ListeOperationsController: NSOutlineViewDelegate {
 //      cellView = outlineView.makeView(withIdentifier: .FeedCellYear, owner: self) as? KSHeaderCellView
 
         
-        cellView?.fillColor = .gray
+//        cellView?.fillColor = .gray
     cellView?.textField?.stringValue = title
-//    cellView?.textField?.stringValue = "1234"
     cellView?.textField?.textColor = .labelColor
-        //        cellView.backgroundStyle = .light
+    cellView?.backgroundStyle = .light
         return cellView
     }
     
@@ -293,31 +316,6 @@ extension ListeOperationsController: NSOutlineViewDelegate {
         return cellView
     }
     
-    func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView?
-    {
-//        let cellView: NSTableCellView?
-        outlineView.columnAutoresizingStyle = NSTableView.ColumnAutoresizingStyle.sequentialColumnAutoresizingStyle
-        
-        if let folderItem = item as?  TrackingMonth {
-            return trackingMonth( outlineView: outlineView, folderItem: folderItem)
-        }
-        
-        if let folderItem = item as? TrackingIdOperations
-        {
-            return trackingIdOperations(outlineView: outlineView, folderItem: folderItem)
-        }
-        if let item = item as? TrackingSubOperations
-        {
-            return manySubOperations(outlineView: outlineView, tableColumn: tableColumn, item: item)
-        }
-        
-        if let item = item as? TrackingSubOperation {
-            
-            return oneSubOperation(outlineView: outlineView, tableColumn: tableColumn, item: item)
-        }
-//        cellView?.textField?.sizeToFit()
-        return nil
-    }
     
     func colorText (quake: EntityOperations, propertyEnum: ListeOperationsDisplayProperty) -> [NSAttributedString.Key: Any]
     {

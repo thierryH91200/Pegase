@@ -12,6 +12,7 @@ extension ListeOperationsController {
         
         getAllData()
         reloadData()
+        self.resetChange()
     }
     
     // MARK: -
@@ -23,7 +24,7 @@ extension ListeOperationsController {
         
         getAllData()
         reloadData()
-
+        self.resetChange()
     }
     
     // MARK: -
@@ -34,6 +35,7 @@ extension ListeOperationsController {
         
         copy(sender)
         paste(sender)
+        
     }
     
     // MARK: -
@@ -65,6 +67,8 @@ extension ListeOperationsController {
         
         getAllData()
         reloadData()
+        self.resetChange()
+
     }
     
     private func insertListItems(listItems: [EntityOperations]) {
@@ -105,8 +109,9 @@ extension ListeOperationsController {
             for item in listItems {
                 ListeOperations.shared.remove(entity: item.entityOperations)
             }
-            
         }
+        self.resetChange()
+
     }
     
     // MARK: -

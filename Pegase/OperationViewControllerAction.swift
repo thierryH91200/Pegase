@@ -31,7 +31,7 @@ extension OperationViewController  {
                 self.addView.isHidden = true
                 
                 entitySousOperation = self.sousOperationModalWindowController.entitySousOperation!
-                self.sousOperations.append(entitySousOperation)
+                self.subOperations.append(entitySousOperation)
                 self.buttonSave.isEnabled = true
                 self.outlineViewSSOpe.reloadData()
                 self.removeButton.isEnabled = true
@@ -75,7 +75,7 @@ extension OperationViewController  {
                 let entitySousOperation = self.sousOperationModalWindowController.entitySousOperation!
                 self.entityOperations.first?.removeFromSousOperations(item!)
                 self.entityOperations.first?.addToSousOperations(entitySousOperation)
-                self.sousOperations = self.entityOperations.first?.sousOperations?.allObjects as! [EntitySousOperations]
+                self.subOperations = self.entityOperations.first?.sousOperations?.allObjects as! [EntitySousOperations]
                 self.outlineViewSSOpe.reloadData()
 
                 self.calcAmount()
@@ -119,7 +119,7 @@ extension OperationViewController  {
                 print("Document 🗑")
                 self.deleteSelection()
                 
-                if self.sousOperations.isEmpty == true {
+                if self.subOperations.isEmpty == true {
                     self.buttonSave.isEnabled = false
                 }
                 
@@ -172,7 +172,7 @@ extension OperationViewController  {
     
     func calcAmount() {
         var amount = 0.0
-        for sousOperation in self.sousOperations {
+        for sousOperation in self.subOperations {
             amount += sousOperation.amount
         }
         

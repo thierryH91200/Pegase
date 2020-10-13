@@ -53,7 +53,7 @@ final class OperationViewController: NSViewController {
     var entityOperationsTransfert: EntityOperations?
     var entityPreference: EntityPreference?
     var entityCompteTransfert: EntityAccount?
-    var sousOperations : [EntitySousOperations] = []
+    var subOperations : [EntitySousOperations] = []
     
     var sousOperationModalWindowController: SousOperationModalWindowController!
     
@@ -62,7 +62,7 @@ final class OperationViewController: NSViewController {
     var setModePaiement  = Set<String>()
     var setStatut        = Set<Int16>()
     var setTransfert     = Set<String>()
-    var setDatePointage  = Set<Date>()
+    var setCheck_In_Date  = Set<Date>()
     var setDateOperation = Set<Date>()
     
     // edition = false => creation 1 operation
@@ -179,7 +179,7 @@ final class OperationViewController: NSViewController {
         var nameRubric = ""
         var value = 0.0
         var color = NSColor.red
-        for sousOperation in sousOperations {
+        for sousOperation in subOperations {
             
             value = sousOperation.amount
             nameRubric = (sousOperation.category?.rubric!.name)!
@@ -251,17 +251,21 @@ final class OperationViewController: NSViewController {
             self.entityOperation?.uuid = UUID()
             self.entityOperation?.account = currentAccount
 
-            let setSousOperation = NSSet(array: sousOperations)
+            let setSousOperation = NSSet(array: subOperations)
             self.entityOperation?.addToSousOperations(setSousOperation)
 
             self.entityOperations.append(entityOperation!)
         }
         
+        // creation = one operation
         if self.entityOperations.count == 1 && edition == true {
-            let setSousOperation = NSSet(array: sousOperations)
+            
+            let setSousOperation = NSSet(array: subOperations)
+            
+//            let sub = entityOperations.first?.sousOperations
+//            self.entityOperations.first?.removeFromSousOperations(sub!)
             self.entityOperations.first?.addToSousOperations(setSousOperation)
         }
-
     }
     
     // MARK: saveActions
@@ -277,12 +281,12 @@ final class OperationViewController: NSViewController {
             oneOperation.dateModifie = Date()
             
             // DatePointage
-            if (setDatePointage.count > 1 && date5 != nil) || setDatePointage.count == 1 {
+            if (setCheck_In_Date.count > 1 && date5 != nil) || setCheck_In_Date.count == 1 {
                 oneOperation.datePointage  = datePointage.dateValue.noon
             }
             
             // DateOperation
-            if (setDateOperation.count > 1 && date4 != nil) || setDatePointage.count == 1 {
+            if (setDateOperation.count > 1 && date4 != nil) || setCheck_In_Date.count == 1 {
                 oneOperation.dateOperation  = dateOperation.dateValue.noon
             }
             
@@ -336,13 +340,15 @@ final class OperationViewController: NSViewController {
         
         entityOperationsTransfert?.account       = compteTransfert
         
+        entityOperationsTransfert?.dateModifie   = oneOperation.dateModifie
+        entityOperationsTransfert?.dateCree      = oneOperation.dateCree
+
+        
         /// Date operation
         entityOperationsTransfert?.dateOperation = oneOperation.dateOperation
         
         /// Date Pointage
         entityOperationsTransfert?.datePointage  = oneOperation.datePointage
-        entityOperationsTransfert?.dateModifie   = oneOperation.dateModifie
-        entityOperationsTransfert?.dateCree      = oneOperation.dateCree
         
         // le modePaiement existe t il ??
         let name = oneOperation.paymentMode?.name
@@ -356,31 +362,19 @@ final class OperationViewController: NSViewController {
         
         let entityPreference = Preference.shared.getAllDatas()
 
-        sousOperations = oneOperation.sousOperations?.allObjects as! [EntitySousOperations]
-        for sousOperation in sousOperations {
+        let setSout = oneOperation.sousOperations
+        subOperations = setSout?.allObjects as! [EntitySousOperations]
+        
+        print("count subOperations = ", subOperations.count )
+//        entityOperationsTransfert?.removeFromSousOperations(setSout!)
+        for sousOperation in subOperations {
             
             let entitySousOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as? EntitySousOperations
 
             // la rubrique existe t elle ??
             let labelCat = (sousOperation.category?.name)!
             let entityCategory = Categories.shared.find(name: labelCat)
-//            sousOperation.category = entityCategory ?? entityPreference.category
             entitySousOperationsTransfert!.category = entityCategory ?? entityPreference.category
-
-
-//            let nameRub = sousOperation.category?.rubrique?.name
-//            let colorRub = sousOperation.category?.rubrique?.color
-//            let uuidRub = sousOperation.category?.rubrique?.uuid
-//            let entityRubric = Rubrique.shared.findOrCreate(compte: compteTransfert, name: nameRub!, color: colorRub as! NSColor, uuid: uuidRub!)
-//
-//            // la categorie existe t elle ??
-//            let nameCat = sousOperation.category?.name
-//            let objectif = sousOperation.category?.objectif
-//            let uuid = sousOperation.category?.uuid
-//            let entityCategory = Categories.shared.findOrCreate(account: compteTransfert, name: nameCat!, objectif: objectif!, uuid: uuid!)
-            
-            entitySousOperationsTransfert!.category = entityCategory
-//            entitySousOperationsTransfert.category?.rubric = entityRubric
             
             // Amount
             entitySousOperationsTransfert!.amount       = -sousOperation.amount
@@ -389,6 +383,8 @@ final class OperationViewController: NSViewController {
             entitySousOperationsTransfert!.libelle       = sousOperation.libelle
            
             entityOperationsTransfert?.addToSousOperations(entitySousOperationsTransfert!)
+            
+            print("count = ", entityOperationsTransfert?.sousOperations?.count ?? 0)
         }
         entityOperationsTransfert?.uuid          = UUID()
     }
@@ -405,7 +401,7 @@ extension OperationViewController: NSMenuDelegate {
                 menuItem.isEnabled = outlineViewSSOpe.selectedRow != -1 ? true : false
             }
             if tag == 2 {
-                menuItem.isEnabled = sousOperations.count > 1 && outlineViewSSOpe.selectedRow != -1 ? true : false
+                menuItem.isEnabled = subOperations.count > 1 && outlineViewSSOpe.selectedRow != -1 ? true : false
             }
         }
     }

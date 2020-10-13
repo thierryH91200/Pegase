@@ -156,6 +156,8 @@ final class ListeOperationsController: NSViewController {
     {
         super.viewDidAppear()
         view.window!.title = Localizations.General.Liste_des_opérations
+        self.resetChange()
+
     }
     
     // -----------------------------------------------------------------------
@@ -207,12 +209,6 @@ final class ListeOperationsController: NSViewController {
         self.outlineListView.expandItem(nil, expandChildren: true)
 //        outlineListView.sizeLastColumnToFit() = true
         
-        let count = listeOperations.count
-        let strInfo = String(format: "%d opérations", count)
-        
-        let attributedText = NSAttributedString(string: strInfo, attributes: attribute)
-        self.labelInfo.attributedStringValue = attributedText
-        
         outlineListView.menu = menuTable
     }
     
@@ -259,6 +255,16 @@ final class ListeOperationsController: NSViewController {
         NotificationCenter.default.removeObserver(self, name: .selectionDidChangeOutLine, object: nil)
     }
     
+    func resetChange() {
+        self.removeButton.isHidden = true
+        let count = listeOperations.count
+        let info = String(format: "%d opérations", count)
+        let attributedText = NSAttributedString(string: info, attributes: attribute)
+        self.labelInfo.attributedStringValue = attributedText
+
+        self.delegate?.resetOperation()
+    }
+    
     @objc func selectionDidChange(_ notification: Notification) {
         
         guard let outlineView = notification.object as? NSOutlineView,
@@ -268,13 +274,7 @@ final class ListeOperationsController: NSViewController {
         let selectRow = outlineView.selectedRow
         
         guard selectRow != -1 else {
-            self.removeButton.isHidden = true
-            let count = listeOperations.count
-            let info = String(format: "%d opérations", count)
-            let attributedText = NSAttributedString(string: info, attributes: attribute)
-            self.labelInfo.attributedStringValue = attributedText
-
-            self.delegate?.resetOperation()
+            resetChange()
             return }
         
         let rowView = outlineView.rowView(atRow: selectRow, makeIfNecessary: false)
@@ -402,6 +402,8 @@ final class ListeOperationsController: NSViewController {
         self.getAllData()
         self.outlineListView.reloadData()
         self.outlineListView.expandItem(nil, expandChildren: true)
+        
+        self.resetChange()
     }
     
 }
