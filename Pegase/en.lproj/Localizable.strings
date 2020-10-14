@@ -81,7 +81,13 @@
 "ImportSimplifiee.statut" = "Statut";
 
 // MARK: -  ListeOperation
-"ListeOperation.info" = "%d opérations Expenses : %@ Income : %@ Balance : %@";
+"ListeOperation.info" = "Expenses : %@ Income : %@ Total : %@";
+
+"ListeOperation.operation.singular" = "%d opération";
+"ListeOperation.operation.plural" = "%d opérations";
+
+"ListeOperation.operation.selectionnee.singular" = "%d selected operation";
+"ListeOperation.operation.selectionnee.plural" = "%d selected operations";
 
 // MARK: -  MenuBar
 "MenuBar.Rapports.Catégorie Bar" = "Catégorie Bar";
