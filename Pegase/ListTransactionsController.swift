@@ -17,7 +17,7 @@ import TFDate
     func updateListeOperations( liste: [EntityOperations])
 }
 
-final class ListeOperationsController: NSViewController {
+final class ListTransactionsController: NSViewController {
     
     public typealias TrackingYear           = [ GroupedYearOperations ]
     public typealias TrackingMonth          = GroupedYearOperations
@@ -453,7 +453,7 @@ final class ListeOperationsController: NSViewController {
     
 }
 
-extension ListeOperationsController: FilterDelegate {
+extension ListTransactionsController: FilterDelegate {
     
     func applyFilter( fetchRequest: NSFetchRequest<EntityOperations>) {
         do {
@@ -475,7 +475,7 @@ extension ListeOperationsController: FilterDelegate {
     
 }
 
-extension ListeOperationsController: OperationsDelegate {
+extension ListTransactionsController: OperationsDelegate {
     
     func getAllData() {
         

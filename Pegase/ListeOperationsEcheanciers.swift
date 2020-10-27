@@ -1,7 +1,7 @@
 import AppKit
 import SwiftDate
 
-extension ListeOperationsController: NSDatePickerCellDelegate {
+extension ListTransactionsController: NSDatePickerCellDelegate {
     
     func datePickerCell(_ datePickerCell: NSDatePickerCell,
                         validateProposedDateValue proposedDateValue: AutoreleasingUnsafeMutablePointer<NSDate>,

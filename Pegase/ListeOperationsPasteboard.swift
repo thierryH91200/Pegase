@@ -1,7 +1,7 @@
 import AppKit
 
 
-extension ListeOperationsController {
+extension ListTransactionsController {
     
     // MARK: -
     // MARK: undo

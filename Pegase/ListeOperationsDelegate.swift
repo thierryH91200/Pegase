@@ -3,7 +3,7 @@ import AppKit
 //var groupedSorted = [ (key: String, value:  [ String :  [IdOperations]])]()
 
 // MARK: NSTableViewDelegate
-extension ListeOperationsController: NSOutlineViewDelegate {
+extension ListTransactionsController: NSOutlineViewDelegate {
     
     
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView?

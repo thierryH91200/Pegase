@@ -1,7 +1,7 @@
 import AppKit
 
 
-extension ListeOperationsController: NSMenuDelegate {
+extension ListTransactionsController: NSMenuDelegate {
 
     // MARK: - Show Hide Columns
     func menuWillOpen( _ menu: NSMenu) {

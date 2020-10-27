@@ -2,7 +2,7 @@ import AppKit
 
 //var groupedSorted = [ (key: String, value:  [ String :  [IdOperations]])]()
 
-extension ListeOperationsController: NSOutlineViewDataSource {
+extension ListTransactionsController: NSOutlineViewDataSource {
     
     //Returns the number of child items encompassed by a given item.
     fileprivate func extractedFunc(_ item: Any?) -> Int {

@@ -13,7 +13,7 @@ extension MainWindowController: SourceListDelegate
         switch name
         {
         case "Liste des opérations":
-            self.listeOperationsController = ListeOperationsController()
+            self.listeOperationsController = ListTransactionsController()
             vc = (self.listeOperationsController?.view)!
             self.listeOperationsController?.setUpDatePicker()
             self.listeOperationsController?.datePicker.isEnabled = true

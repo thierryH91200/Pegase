@@ -5,7 +5,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var importWindowController: ImportWindowController?
     var accessoryViewController: TTFormatViewController?
     
-    var listeOperationsController: ListeOperationsController?
+    var listeOperationsController: ListTransactionsController?
     var operationController: TransactionViewController?
     var sourceListViewController: SourceListViewController?
     var groupeAccountViewController: GroupeAccountViewController?
@@ -172,7 +172,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     
     func setUpGroupeListeOperationsSecondary(_ forced : Bool = false)
     {
-        self.listeOperationsController = ListeOperationsController()
+        self.listeOperationsController = ListTransactionsController()
         let vc = (self.listeOperationsController?.view)!
         
         if forced == true {
