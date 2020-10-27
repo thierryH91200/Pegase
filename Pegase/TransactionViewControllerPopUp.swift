@@ -1,6 +1,6 @@
 import AppKit
 
-extension OperationViewController {
+extension TransactionViewController {
 
     // MARK: -
     // MARK: PopUp Account
