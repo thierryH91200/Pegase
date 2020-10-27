@@ -32,11 +32,11 @@
 		03213B2123F904D600002DD7 /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B1D23F904D600002DD7 /* DateValueFormatter.swift */; };
 		03213B2423F904DE00002DD7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2223F904DE00002DD7 /* WebViewController.swift */; };
 		03213B2523F904DE00002DD7 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B2323F904DE00002DD7 /* WebViewController.xib */; };
-		03213B2F23F9050000002DD7 /* ListeOperationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2823F9050000002DD7 /* ListeOperationsDelegate.swift */; };
-		03213B3023F9050000002DD7 /* ListeOperationsEcheanciers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2923F9050000002DD7 /* ListeOperationsEcheanciers.swift */; };
-		03213B3123F9050000002DD7 /* ListeOperationsMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2A23F9050000002DD7 /* ListeOperationsMenuDelegate.swift */; };
-		03213B3223F9050000002DD7 /* ListeOperationsPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2B23F9050000002DD7 /* ListeOperationsPasteboard.swift */; };
-		03213B3323F9050000002DD7 /* ListeOperationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2C23F9050000002DD7 /* ListeOperationsDataSource.swift */; };
+		03213B2F23F9050000002DD7 /* ListTransactionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2823F9050000002DD7 /* ListTransactionsDelegate.swift */; };
+		03213B3023F9050000002DD7 /* ListTransactionsEcheanciers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2923F9050000002DD7 /* ListTransactionsEcheanciers.swift */; };
+		03213B3123F9050000002DD7 /* ListTransactionsmenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2A23F9050000002DD7 /* ListTransactionsmenuDelegate.swift */; };
+		03213B3223F9050000002DD7 /* ListTransactionsPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2B23F9050000002DD7 /* ListTransactionsPasteboard.swift */; };
+		03213B3323F9050000002DD7 /* ListTransactionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2C23F9050000002DD7 /* ListTransactionsDataSource.swift */; };
 		03213B3423F9050000002DD7 /* ListTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2D23F9050000002DD7 /* ListTransactionsController.swift */; };
 		03213B3D23F9053A00002DD7 /* TransactionViewControllerOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B3723F9053A00002DD7 /* TransactionViewControllerOutline.swift */; };
 		03213B3E23F9053A00002DD7 /* TransactionViewControllerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B3823F9053A00002DD7 /* TransactionViewControllerPopUp.swift */; };
@@ -284,11 +284,11 @@
 		03213B1D23F904D600002DD7 /* DateValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValueFormatter.swift; sourceTree = "<group>"; };
 		03213B2223F904DE00002DD7 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		03213B2323F904DE00002DD7 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
-		03213B2823F9050000002DD7 /* ListeOperationsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeOperationsDelegate.swift; sourceTree = "<group>"; };
-		03213B2923F9050000002DD7 /* ListeOperationsEcheanciers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeOperationsEcheanciers.swift; sourceTree = "<group>"; };
-		03213B2A23F9050000002DD7 /* ListeOperationsMenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeOperationsMenuDelegate.swift; sourceTree = "<group>"; };
-		03213B2B23F9050000002DD7 /* ListeOperationsPasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeOperationsPasteboard.swift; sourceTree = "<group>"; };
-		03213B2C23F9050000002DD7 /* ListeOperationsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeOperationsDataSource.swift; sourceTree = "<group>"; };
+		03213B2823F9050000002DD7 /* ListTransactionsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTransactionsDelegate.swift; sourceTree = "<group>"; };
+		03213B2923F9050000002DD7 /* ListTransactionsEcheanciers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTransactionsEcheanciers.swift; sourceTree = "<group>"; };
+		03213B2A23F9050000002DD7 /* ListTransactionsmenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTransactionsmenuDelegate.swift; sourceTree = "<group>"; };
+		03213B2B23F9050000002DD7 /* ListTransactionsPasteboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTransactionsPasteboard.swift; sourceTree = "<group>"; };
+		03213B2C23F9050000002DD7 /* ListTransactionsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTransactionsDataSource.swift; sourceTree = "<group>"; };
 		03213B2D23F9050000002DD7 /* ListTransactionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTransactionsController.swift; sourceTree = "<group>"; };
 		03213B3723F9053A00002DD7 /* TransactionViewControllerOutline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewControllerOutline.swift; sourceTree = "<group>"; };
 		03213B3823F9053A00002DD7 /* TransactionViewControllerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewControllerPopUp.swift; sourceTree = "<group>"; };
@@ -645,12 +645,12 @@
 			isa = PBXGroup;
 			children = (
 				03213B2D23F9050000002DD7 /* ListTransactionsController.swift */,
-				03213B2823F9050000002DD7 /* ListeOperationsDelegate.swift */,
+				03213B2823F9050000002DD7 /* ListTransactionsDelegate.swift */,
 				035082E824028F0400F8A0D4 /* ListTransactionsController.xib */,
-				03213B2C23F9050000002DD7 /* ListeOperationsDataSource.swift */,
-				03213B2923F9050000002DD7 /* ListeOperationsEcheanciers.swift */,
-				03213B2A23F9050000002DD7 /* ListeOperationsMenuDelegate.swift */,
-				03213B2B23F9050000002DD7 /* ListeOperationsPasteboard.swift */,
+				03213B2C23F9050000002DD7 /* ListTransactionsDataSource.swift */,
+				03213B2923F9050000002DD7 /* ListTransactionsEcheanciers.swift */,
+				03213B2A23F9050000002DD7 /* ListTransactionsmenuDelegate.swift */,
+				03213B2B23F9050000002DD7 /* ListTransactionsPasteboard.swift */,
 			);
 			name = ListeOperations;
 			sourceTree = "<group>";
@@ -1427,7 +1427,7 @@
 				034EC8C323F87EA1006944DD /* AppDelegate.swift in Sources */,
 				03213BE823F90B3F00002DD7 /* SchedulerViewController.swift in Sources */,
 				034EC8E223F87EDB006944DD /* EntityAccount+CoreDataClass.swift in Sources */,
-				03213B3323F9050000002DD7 /* ListeOperationsDataSource.swift in Sources */,
+				03213B3323F9050000002DD7 /* ListTransactionsDataSource.swift in Sources */,
 				036AF0A624260445008C6564 /* AvatarView.swift in Sources */,
 				034EC8BD23F87E97006944DD /* NSPredicateEditorRowTemplate.swift in Sources */,
 				03213B1623F9048D00002DD7 /* CSVWriter.swift in Sources */,
@@ -1440,7 +1440,7 @@
 				034EC8F623F87EF1006944DD /* PaymentMode.swift in Sources */,
 				03213BB723F909C300002DD7 /* RangeSlider.swift in Sources */,
 				034EC91323F87F51006944DD /* NSTableCellView.swift in Sources */,
-				03213B3023F9050000002DD7 /* ListeOperationsEcheanciers.swift in Sources */,
+				03213B3023F9050000002DD7 /* ListTransactionsEcheanciers.swift in Sources */,
 				034EC8BB23F87E8B006944DD /* AdvancedFilterViewController.swift in Sources */,
 				034EC90F23F87F51006944DD /* NSPasteboard+Additions.swift in Sources */,
 				03213B4723F9055400002DD7 /* SousOperationModalWindowController.swift in Sources */,
@@ -1465,7 +1465,7 @@
 				034EC8D523F87EB2006944DD /* MainWindowToolBar.swift in Sources */,
 				034EC8FA23F87EF1006944DD /* Identite.swift in Sources */,
 				03213C0823F90BD200002DD7 /* RubriqueViewControllerDelegate.swift in Sources */,
-				03213B3123F9050000002DD7 /* ListeOperationsMenuDelegate.swift in Sources */,
+				03213B3123F9050000002DD7 /* ListTransactionsmenuDelegate.swift in Sources */,
 				03213C2023F90C1B00002DD7 /* RubriqueModalWindowController.swift in Sources */,
 				03213BF923F90B9A00002DD7 /* ModeModalWindowController.swift in Sources */,
 				034ECA7A23F87FAE006944DD /* GroupeAccountViewDelegate.swift in Sources */,
@@ -1501,7 +1501,7 @@
 				03213B8F23F9086600002DD7 /* RubricPieController.swift in Sources */,
 				03213BA123F9093700002DD7 /* TulsiDocumentController.swift in Sources */,
 				037993B72413F353001ADDA6 /* ChartView.swift in Sources */,
-				03213B2F23F9050000002DD7 /* ListeOperationsDelegate.swift in Sources */,
+				03213B2F23F9050000002DD7 /* ListTransactionsDelegate.swift in Sources */,
 				03213C0623F90BD200002DD7 /* RubriqueViewControllerDragDrop.swift in Sources */,
 				034ECA7923F87FAE006944DD /* GroupeAccountViewController.swift in Sources */,
 				034ECB6823F88033006944DD /* KSRetailCollectionViewItem.swift in Sources */,
@@ -1557,7 +1557,7 @@
 				03213B0823F9048200002DD7 /* TTFormatViewController.swift in Sources */,
 				03213B3E23F9053A00002DD7 /* TransactionViewControllerPopUp.swift in Sources */,
 				03213B1F23F904D600002DD7 /* TresorerieController.swift in Sources */,
-				03213B3223F9050000002DD7 /* ListeOperationsPasteboard.swift in Sources */,
+				03213B3223F9050000002DD7 /* ListTransactionsPasteboard.swift in Sources */,
 				03213BBE23F909D400002DD7 /* Commun.swift in Sources */,
 				03213B3D23F9053A00002DD7 /* TransactionViewControllerOutline.swift in Sources */,
 				03213B7223F905EE00002DD7 /* PreferencesWindowController.swift in Sources */,
