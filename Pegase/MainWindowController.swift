@@ -6,7 +6,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var accessoryViewController: TTFormatViewController?
     
     var listeOperationsController: ListeOperationsController?
-    var operationController: OperationViewController?
+    var operationController: TransactionViewController?
     var sourceListViewController: SourceListViewController?
     var groupeAccountViewController: GroupeAccountViewController?
     
@@ -162,7 +162,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
 
     func setUpViewOperation()
     {
-        self.operationController = OperationViewController()
+        self.operationController = TransactionViewController()
         Commun.shared.addSubview(subView: operationController!.view, toView: operationView)
         
         Commun.shared.setUpLayoutConstraints(item: operationController!.view, toItem: operationView)
