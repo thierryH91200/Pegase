@@ -1,6 +1,6 @@
 import AppKit
 
-extension OperationViewController: ListeOperationsDelegate {
+extension TransactionViewController: ListeOperationsDelegate {
     
     // MARK: razData
     func resetOperation() {

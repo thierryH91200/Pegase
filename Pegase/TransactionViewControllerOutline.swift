@@ -2,7 +2,7 @@ import AppKit
 
 
 // MARK: NSOutlineViewDelegate
-extension OperationViewController: NSOutlineViewDelegate {
+extension TransactionViewController: NSOutlineViewDelegate {
     
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView?
     {
@@ -37,7 +37,7 @@ extension OperationViewController: NSOutlineViewDelegate {
 }
 
 // MARK: NSOutlineViewDataSource
-extension OperationViewController: NSOutlineViewDataSource {
+extension TransactionViewController: NSOutlineViewDataSource {
     
     /// Returns the number of child items encompassed by a given item.
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
