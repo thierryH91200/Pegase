@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0304DF8B254851E700C51A0C /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304DF8A254851E700C51A0C /* TransactionViewController.swift */; };
+		0304DF8F2548545D00C51A0C /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304DF8E2548545D00C51A0C /* TransactionViewController.swift */; };
 		030D80212454BDC700FEC639 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 030D80202454BDC700FEC639 /* SwiftDate */; };
 		0312B136243200D500EA13F6 /* IncomeExpensePieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0312B134243200D500EA13F6 /* IncomeExpensePieController.xib */; };
 		0312B137243200D500EA13F6 /* IncomeExpensePieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */; };
@@ -252,7 +252,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0304DF8A254851E700C51A0C /* TransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = SOURCE_ROOT; };
+		0304DF8E2548545D00C51A0C /* TransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		0312B134243200D500EA13F6 /* IncomeExpensePieController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeExpensePieController.xib; sourceTree = "<group>"; };
 		0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpensePieController.swift; sourceTree = "<group>"; };
 		0315EA532475B034002505A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AccountModalWindowController.xib; sourceTree = "<group>"; };
@@ -659,8 +659,8 @@
 			isa = PBXGroup;
 			children = (
 				036AF0A72426044E008C6564 /* AvatarInfo.swift */,
-				0304DF8A254851E700C51A0C /* TransactionViewController.swift */,
 				036AF0A524260445008C6564 /* AvatarView.swift */,
+				0304DF8E2548545D00C51A0C /* TransactionViewController.swift */,
 				03213C4F23F9269000002DD7 /* TransactionViewController.xib */,
 				03213B3C23F9053A00002DD7 /* TransactionViewControllerAction.swift */,
 				03213B3B23F9053A00002DD7 /* TransactionViewControllerDelegate.swift */,
@@ -1487,7 +1487,7 @@
 				03213BF723F90B9A00002DD7 /* ModePaiementViewController.swift in Sources */,
 				03213BB623F909C300002DD7 /* RangeSliderVertical.swift in Sources */,
 				0325988E2527506700FCB5BD /* AutoCompleteTextField.swift in Sources */,
-				0304DF8B254851E700C51A0C /* TransactionViewController.swift in Sources */,
+				0304DF8F2548545D00C51A0C /* TransactionViewController.swift in Sources */,
 				034EC91523F87F51006944DD /* Debug.swift in Sources */,
 				0312B137243200D500EA13F6 /* IncomeExpensePieController.swift in Sources */,
 				034EC8F923F87EF1006944DD /* Account.swift in Sources */,
