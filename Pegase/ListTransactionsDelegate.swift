@@ -426,7 +426,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             return true
         }
         if item is TrackingIdOperations {
-            print(item)
+//            print(item)
             return true
         }
         return false

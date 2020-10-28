@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17510.1" systemVersion="20A5395g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="EntityAccount" representedClassName=".EntityAccount" syncable="YES">
         <attribute name="dateEcheancier" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isAccount" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -111,7 +111,7 @@
         <relationship name="sousOperations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntitySousOperations" inverseName="operation" inverseEntity="EntitySousOperations"/>
     </entity>
     <entity name="EntityPaymentMode" representedClassName=".EntityPaymentMode" syncable="YES" codeGenerationType="class">
-        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName=""/>
+        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName="NSColorValueTransformer"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityAccount" inverseName="paymentMode" inverseEntity="EntityAccount"/>
@@ -127,7 +127,7 @@
         <relationship name="paymentMode" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EntityPaymentMode" inverseName="preference" inverseEntity="EntityPaymentMode"/>
     </entity>
     <entity name="EntityRubric" representedClassName="EntityRubric" syncable="YES">
-        <attribute name="color" attributeType="Transformable" valueTransformerName=""/>
+        <attribute name="color" attributeType="Transformable" valueTransformerName="NSColorValueTransformer"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="total" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
@@ -166,9 +166,9 @@
         <element name="EntityIdentity" positionX="-542" positionY="-324" width="128" height="223"/>
         <element name="EntityInitAccount" positionX="-758" positionY="108" width="128" height="313"/>
         <element name="EntityOperations" positionX="-243" positionY="657" width="128" height="283"/>
-        <element name="EntityPaymentMode" positionX="-603" positionY="458" width="128" height="148"/>
+        <element name="EntityPaymentMode" positionX="-603" positionY="458" width="128" height="134"/>
         <element name="EntityPreference" positionX="-306" positionY="-234" width="128" height="118"/>
-        <element name="EntityRubric" positionX="160" positionY="192" width="128" height="133"/>
+        <element name="EntityRubric" positionX="160" positionY="192" width="128" height="119"/>
         <element name="EntitySchedule" positionX="-18.20703125" positionY="345.83203125" width="128" height="283"/>
         <element name="EntitySousOperations" positionX="121.11328125" positionY="806.98828125" width="128" height="103"/>
     </elements>

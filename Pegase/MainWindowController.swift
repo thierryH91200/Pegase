@@ -6,7 +6,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var accessoryViewController: TTFormatViewController?
     
     var listeOperationsController: ListTransactionsController?
-    var operationController: TransactionViewController?
+    var transactionController: TransactionViewController?
     var sourceListViewController: SourceListViewController?
     var groupeAccountViewController: GroupeAccountViewController?
     
@@ -162,12 +162,12 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
 
     func setUpViewOperation()
     {
-        self.operationController = TransactionViewController()
-        Commun.shared.addSubview(subView: operationController!.view, toView: operationView)
+        self.transactionController = TransactionViewController()
+        Commun.shared.addSubview(subView: transactionController!.view, toView: operationView)
         
-        Commun.shared.setUpLayoutConstraints(item: operationController!.view, toItem: operationView)
-        self.operationController!.view.frame = operationView.bounds
-        self.operationController?.delegate = listeOperationsController
+        Commun.shared.setUpLayoutConstraints(item: transactionController!.view, toItem: operationView)
+        self.transactionController!.view.frame = operationView.bounds
+        self.transactionController?.delegate = listeOperationsController
     }
     
     func setUpGroupeListeOperationsSecondary(_ forced : Bool = false)

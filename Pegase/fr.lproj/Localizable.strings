@@ -81,7 +81,7 @@
 "ImportSimplifiee.statut" = "Statut";
 
 // MARK: -  ListeOperation
-"ListeOperation.info" = "Expenses : %@ Income : %@ Total : %@";
+"ListeOperation.info" = "Dépenses : %@ Recettes : %@ Total : %@";
 
 "ListeOperation.operation.singular" = "%d opération";
 "ListeOperation.operation.plural" = "%d opérations";

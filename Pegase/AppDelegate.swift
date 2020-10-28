@@ -6,7 +6,7 @@ let defaults = UserDefaults.standard
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDelegate {
-
+    
     var splashScreenWindowController: SplashScreenWindowController! = nil
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDel
     func applicationWillFinishLaunching(_ notification: Notification) {
         
         let kUserDefaultsKeyVisibleColumns = "kUserDefaultsKeyVisibleColumns"
-
+        
         // Register user defaults. Use a plist in real life.
         var dict = [String : Bool]()
         dict["datePointage"]   = false
@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDel
         var defaults           = [String :Any]()
         defaults[kUserDefaultsKeyVisibleColumns] = dict as Any
         UserDefaults.standard.register(defaults: defaults)
-
+        
         // Create the shared document controller.
         _ = TulsiDocumentController()
     }
@@ -65,13 +65,13 @@ class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDel
     // Reopen mainWindow, when the user clicks on the dock icon.
     func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if flag == false {
-//            _ = self.splashScreenWindowController
-//                if let splashScreenWindowController = self.splashScreenWindowController {
-//                splashScreenWindowController.showWindow(self)
-//            }
+            _ = self.splashScreenWindowController
+            if let splashScreenWindowController = self.splashScreenWindowController {
+                splashScreenWindowController.showWindow(self)
+            }
         }
         return true
     }
     
-
+    
 }
