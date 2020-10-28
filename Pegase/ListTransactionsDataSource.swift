@@ -35,6 +35,25 @@ extension ListTransactionsController: NSOutlineViewDataSource {
         return extractedFunc(item)
     }
     
+    func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
+        if let group = item as? GroupedMonthOperations {
+            //            print(group.month)
+            return (group.month)
+        }
+        if let group = item as? GroupedYearOperations {
+            //            print(group.year)
+            return (group.year)
+        }
+        print("nil")
+        return nil
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
+//        print(object)
+        return object
+    }
+
+    
     // Returns the child item at the specified index of a given item
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         
