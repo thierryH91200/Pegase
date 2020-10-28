@@ -13,13 +13,13 @@ extension MainWindowController: SourceListDelegate
         switch name
         {
         case "Liste des opérations":
-            self.listeOperationsController = ListTransactionsController()
-            vc = (self.listeOperationsController?.view)!
-            self.listeOperationsController?.setUpDatePicker()
-            self.listeOperationsController?.datePicker.isEnabled = true
+            self.listTransactionsController = ListTransactionsController()
+            vc = (self.listTransactionsController?.view)!
+            self.listTransactionsController?.setUpDatePicker()
+            self.listTransactionsController?.datePicker.isEnabled = true
 
-            setUpViewOperation()
-            listeOperationsController?.delegate = operationController
+            setUpViewtTansaction()
+            listTransactionsController?.delegate = transactionController
             
             isSplitRightHidden = false
             isSplitCenterHidden =  true
@@ -35,7 +35,7 @@ extension MainWindowController: SourceListDelegate
             vc = (tresorerieController?.view)!
             
             setUpGroupeListeOperationsSecondary(true)
-            tresorerieController?.delegate = listeOperationsController
+            tresorerieController?.delegate = listTransactionsController
             
             isSplitRightHidden = true
             isSplitCenterHidden =  false
@@ -47,7 +47,7 @@ extension MainWindowController: SourceListDelegate
             vc = (self.rubricPieController?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.rubricPieController?.delegate = listeOperationsController
+            self.rubricPieController?.delegate = listTransactionsController
             self.rubricPieController?.setDataHorizontal()
             
             isSplitRightHidden = true
@@ -70,7 +70,7 @@ extension MainWindowController: SourceListDelegate
             vc = (incomeExpenseBarController?.view)!
             
             setUpGroupeListeOperationsSecondary()
-            incomeExpenseBarController?.delegate = listeOperationsController
+            incomeExpenseBarController?.delegate = listTransactionsController
             incomeExpenseBarController?.setDataHorizontal()
             
             isSplitRightHidden  = true
@@ -83,7 +83,7 @@ extension MainWindowController: SourceListDelegate
             vc = (rubricBarController?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.rubricBarController?.delegate = listeOperationsController
+            self.rubricBarController?.delegate = listTransactionsController
             self.rubricBarController?.setDataHorizontal()
             
             isSplitRightHidden  = true
@@ -96,7 +96,7 @@ extension MainWindowController: SourceListDelegate
             vc = (categoryBarController?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.categoryBarController?.delegate = listeOperationsController
+            self.categoryBarController?.delegate = listTransactionsController
             
             isSplitRightHidden  = true
             isSplitCenterHidden =  false
@@ -108,7 +108,7 @@ extension MainWindowController: SourceListDelegate
             vc = (categoryBarController1?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.categoryBarController1?.delegate = listeOperationsController
+            self.categoryBarController1?.delegate = listTransactionsController
             
             isSplitRightHidden  = true
             isSplitCenterHidden =  false
@@ -120,7 +120,7 @@ extension MainWindowController: SourceListDelegate
             vc = (modePaiementPieController?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.modePaiementPieController?.delegate = listeOperationsController
+            self.modePaiementPieController?.delegate = listTransactionsController
             self.modePaiementPieController?.setDataHorizontal()
             
             isSplitRightHidden  = true
@@ -133,8 +133,8 @@ extension MainWindowController: SourceListDelegate
             vc = ((self.parameterController)?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.parameterController?.rubriqueViewController?.delegate = listeOperationsController
-            self.parameterController?.modePaiementViewController?.delegate = listeOperationsController
+            self.parameterController?.rubriqueViewController?.delegate = listTransactionsController
+            self.parameterController?.modePaiementViewController?.delegate = listTransactionsController
             
             isSplitRightHidden  = true
             isSplitCenterHidden =  false
@@ -170,7 +170,7 @@ extension MainWindowController: SourceListDelegate
             vc = (advancedFilterViewController?.view)!
             
             self.setUpGroupeListeOperationsSecondary()
-            self.advancedFilterViewController?.delegate = listeOperationsController
+            self.advancedFilterViewController?.delegate = listTransactionsController
             
             isSplitRightHidden = true
             isSplitCenterHidden =  false

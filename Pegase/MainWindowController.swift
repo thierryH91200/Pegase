@@ -5,7 +5,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var importWindowController: ImportWindowController?
     var accessoryViewController: TTFormatViewController?
     
-    var listeOperationsController: ListTransactionsController?
+    var listTransactionsController: ListTransactionsController?
     var transactionController: TransactionViewController?
     var sourceListViewController: SourceListViewController?
     var groupeAccountViewController: GroupeAccountViewController?
@@ -160,27 +160,27 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
         self.groupeAccountViewController!.view.setFrameSize( NSSize(width: 100, height: 200))
     }
 
-    func setUpViewOperation()
+    func setUpViewtTansaction()
     {
         self.transactionController = TransactionViewController()
         Commun.shared.addSubview(subView: transactionController!.view, toView: operationView)
         
         Commun.shared.setUpLayoutConstraints(item: transactionController!.view, toItem: operationView)
         self.transactionController!.view.frame = operationView.bounds
-        self.transactionController?.delegate = listeOperationsController
+        self.transactionController?.delegate = listTransactionsController
     }
     
     func setUpGroupeListeOperationsSecondary(_ forced : Bool = false)
     {
-        self.listeOperationsController = ListTransactionsController()
-        let vc = (self.listeOperationsController?.view)!
+        self.listTransactionsController = ListTransactionsController()
+        let vc = (self.listTransactionsController?.view)!
         
         if forced == true {
-            self.listeOperationsController?.setUpDatePicker()
-            self.listeOperationsController?.datePicker.isEnabled = true
+            self.listTransactionsController?.setUpDatePicker()
+            self.listTransactionsController?.datePicker.isEnabled = true
 
         } else {
-            self.listeOperationsController?.datePicker.isEnabled = false
+            self.listTransactionsController?.datePicker.isEnabled = false
         }
         
         Commun.shared.addSubview(subView: vc, toView: operationViewSecondary)

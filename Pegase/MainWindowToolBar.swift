@@ -76,7 +76,7 @@ extension MainWindowController {
     
     @IBAction  func printDocument(_ sender: Any) {
         
-        let view = listeOperationsController?.outlineListView
+        let view = listTransactionsController?.outlineListView
         
         let headerLine = "Liste Opérations"
         //        var myPrintView = NSView()
@@ -161,7 +161,7 @@ extension MainWindowController {
             for item in (button?.menu?.items)! where selectedItem != item {
                 item.state = .off
             }
-            listeOperationsController?.reloadData()
+            listTransactionsController?.reloadData()
         }
     }
     
@@ -197,7 +197,7 @@ extension MainWindowController {
         
         importWindowController = ImportWindowController()
         
-        importWindowController?.delegate = listeOperationsController
+        importWindowController?.delegate = listTransactionsController
         importWindowController?.showWindow(nil)
     }
     
@@ -295,8 +295,8 @@ extension MainWindowController {
                         entity.uuid = UUID()
                         entity.account?.name = key["compte"] ?? entityPreference.account?.name
                     }
-                    self.listeOperationsController?.getAllData()
-                    self.listeOperationsController?.reloadData()
+                    self.listTransactionsController?.getAllData()
+                    self.listTransactionsController?.reloadData()
                 }
             }
         }
@@ -436,7 +436,7 @@ extension MainWindowController: NSControlTextEditingDelegate {
         let searchString = self.searchField.stringValue
         var predicate  = NSPredicate()
         if searchString.isEmpty {
-            listeOperationsController?.getAllData()
+            listTransactionsController?.getAllData()
         } else {
             let p1 = NSPredicate(format: "account == %@", currentAccount!)
             
@@ -452,7 +452,7 @@ extension MainWindowController: NSControlTextEditingDelegate {
             fetchRequest.predicate = predicate
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: false)]
             
-            listeOperationsController?.applyFilter(fetchRequest: fetchRequest)
+            listTransactionsController?.applyFilter(fetchRequest: fetchRequest)
         }
     }
 }
