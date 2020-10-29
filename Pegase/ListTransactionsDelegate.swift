@@ -14,7 +14,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             return trackingMonth( outlineView: outlineView, folderItem: folderItem)
         }
         
-        if let folderItem = item as? TrackingIdOperations  {
+        if let folderItem = item as? TrackingIdTransactions  {
             return trackingIdOperations(outlineView: outlineView, folderItem: folderItem)
         }
         
@@ -42,7 +42,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
     }
     
 // MARK: trackingIdOperations
-   func trackingIdOperations(outlineView: NSOutlineView, folderItem : TrackingIdOperations) -> NSView? {
+   func trackingIdOperations(outlineView: NSOutlineView, folderItem : TrackingIdTransactions) -> NSView? {
     
         var cellView: KSHeaderCellView?
         
@@ -425,7 +425,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         if item is TrackingMonth {
             return true
         }
-        if item is TrackingIdOperations {
+        if item is TrackingIdTransactions {
 //            print(item)
             return true
         }

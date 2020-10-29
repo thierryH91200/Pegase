@@ -17,7 +17,7 @@ extension ListTransactionsController: NSOutlineViewDataSource {
             return nbMonths
         }
         // number EntityOperations
-        if let folderItem = item as?  TrackingIdOperations {
+        if let folderItem = item as?  TrackingIdTransactions {
             let nbIdOperations = folderItem.idOperation.count
             return nbIdOperations
         }
@@ -69,7 +69,7 @@ extension ListTransactionsController: NSOutlineViewDataSource {
             return val
         }
         // EntityOperations
-        if let folderItem = item as? TrackingIdOperations  {
+        if let folderItem = item as? TrackingIdTransactions  {
             let idOperations = folderItem.idOperation[index]
             return idOperations
         }
@@ -105,7 +105,7 @@ extension ListTransactionsController: NSOutlineViewDataSource {
         if item is TrackingMonth {
             return true
         }
-        if item is TrackingIdOperations {
+        if item is TrackingIdTransactions {
             return true
         }
 
