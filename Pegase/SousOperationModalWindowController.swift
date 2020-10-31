@@ -41,7 +41,7 @@ final class SousOperationModalWindowController: NSWindowController {
         textFieldLibelle.tableViewDelegate = self
 
         
-        self.libelles = ListeOperations.shared.getAllComment()
+        self.libelles = ListTransactions.shared.getAllComment()
         var completions = [[String: String]]()
         for libelle in libelles {
             completions.append(["label": libelle])

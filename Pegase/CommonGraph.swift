@@ -11,7 +11,7 @@ import Charts
 
 class CommonGraph: NSViewController {
     
-    var listeOperations = [EntityOperations]()
+    var listTransactions = [EntityOperations]()
     var firstDate: TimeInterval = 0.0
     var lastDate: TimeInterval = 0.0
     
@@ -35,14 +35,14 @@ class CommonGraph: NSViewController {
 
     
     func updateAccount () {
-        listeOperations = ListeOperations.shared.entities
-        if listeOperations.isEmpty == true || ListeOperations.shared.ascending == false {
-            listeOperations = ListeOperations.shared.getAllDatas()
+        listTransactions = ListTransactions.shared.entities
+        if listTransactions.isEmpty == true || ListTransactions.shared.ascending == false {
+            listTransactions = ListTransactions.shared.getAllDatas()
         }
-        if listeOperations.isEmpty == false {
+        if listTransactions.isEmpty == false {
             
-            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
-            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
+            firstDate = (listTransactions.first?.dateOperation?.timeIntervalSince1970)!
+            lastDate = (listTransactions.last?.dateOperation?.timeIntervalSince1970)!
             
             sliderViewController?.initData(firstDate: firstDate, lastDate: lastDate)
             sliderViewController?.mySlider.isEnabled = true

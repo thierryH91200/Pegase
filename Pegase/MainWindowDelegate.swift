@@ -34,7 +34,7 @@ extension MainWindowController: SourceListDelegate
             self.tresorerieController = TresorerieController()
             vc = (tresorerieController?.view)!
             
-            setUpGroupeListeOperationsSecondary(true)
+            setUpGroupeListTransactionsSecondary(true)
             tresorerieController?.delegate = listTransactionsController
             
             isSplitRightHidden = true
@@ -46,7 +46,7 @@ extension MainWindowController: SourceListDelegate
             self.rubricPieController = RubricPieController()
             vc = (self.rubricPieController?.view)!
             
-            self.setUpGroupeListeOperationsSecondary()
+            self.setUpGroupeListTransactionsSecondary()
             self.rubricPieController?.delegate = listTransactionsController
             self.rubricPieController?.setDataHorizontal()
             
@@ -69,7 +69,7 @@ extension MainWindowController: SourceListDelegate
             self.incomeExpenseBarController = IncomeExpenseBarController()
             vc = (incomeExpenseBarController?.view)!
             
-            setUpGroupeListeOperationsSecondary()
+            setUpGroupeListTransactionsSecondary()
             incomeExpenseBarController?.delegate = listTransactionsController
             incomeExpenseBarController?.setDataHorizontal()
             
@@ -82,7 +82,7 @@ extension MainWindowController: SourceListDelegate
             self.rubricBarController = RubricBarController()
             vc = (rubricBarController?.view)!
             
-            self.setUpGroupeListeOperationsSecondary()
+            self.setUpGroupeListTransactionsSecondary()
             self.rubricBarController?.delegate = listTransactionsController
             self.rubricBarController?.setDataHorizontal()
             
@@ -95,7 +95,7 @@ extension MainWindowController: SourceListDelegate
             self.categoryBarController = CategoryBarController()
             vc = (categoryBarController?.view)!
             
-            self.setUpGroupeListeOperationsSecondary()
+            self.setUpGroupeListTransactionsSecondary()
             self.categoryBarController?.delegate = listTransactionsController
             
             isSplitRightHidden  = true
@@ -107,7 +107,7 @@ extension MainWindowController: SourceListDelegate
             self.categoryBarController1 = CategoryBarController1()
             vc = (categoryBarController1?.view)!
             
-            self.setUpGroupeListeOperationsSecondary()
+            self.setUpGroupeListTransactionsSecondary()
             self.categoryBarController1?.delegate = listTransactionsController
             
             isSplitRightHidden  = true
@@ -119,7 +119,7 @@ extension MainWindowController: SourceListDelegate
             self.modePaiementPieController = PaymentModePieController()
             vc = (modePaiementPieController?.view)!
             
-            self.setUpGroupeListeOperationsSecondary()
+            self.setUpGroupeListTransactionsSecondary()
             self.modePaiementPieController?.delegate = listTransactionsController
             self.modePaiementPieController?.setDataHorizontal()
             
@@ -132,7 +132,7 @@ extension MainWindowController: SourceListDelegate
             self.parameterController = ParameterController()
             vc = ((self.parameterController)?.view)!
             
-            self.setUpGroupeListeOperationsSecondary()
+            self.setUpGroupeListTransactionsSecondary()
             self.parameterController?.rubriqueViewController?.delegate = listTransactionsController
             self.parameterController?.modePaiementViewController?.delegate = listTransactionsController
             
@@ -169,7 +169,7 @@ extension MainWindowController: SourceListDelegate
             self.advancedFilterViewController = AdvancedFilterViewController()
             vc = (advancedFilterViewController?.view)!
             
-            self.setUpGroupeListeOperationsSecondary()
+            self.setUpGroupeListTransactionsSecondary()
             self.advancedFilterViewController?.delegate = listTransactionsController
             
             isSplitRightHidden = true

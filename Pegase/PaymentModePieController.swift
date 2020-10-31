@@ -126,17 +126,17 @@ final class PaymentModePieController: CommonGraph {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listeOperations = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try mainObjectContext.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")
         }
         
-        for listeOperation in listeOperations {
+        for listTransaction in listTransactions {
 
-            let amount = listeOperation.amount
-            let nameModePaiement   = listeOperation.paymentMode?.name
-            let color = listeOperation.paymentMode?.color as! NSColor
+            let amount = listTransaction.amount
+            let nameModePaiement   = listTransaction.paymentMode?.name
+            let color = listTransaction.paymentMode?.color as! NSColor
             
             if amount < 0 {
                 let data  = DataGraph(name : nameModePaiement!, value : amount, color : color)

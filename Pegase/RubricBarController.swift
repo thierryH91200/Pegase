@@ -170,12 +170,12 @@ final class RubricBarController: CommonGraph
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listeOperations = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try mainObjectContext.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }
         
-        delegate?.updateListeOperations( liste: listeOperations)
+        delegate?.updateListeOperations( liste: listTransactions)
         
         // grouped by month/year
         var name = ""
@@ -183,10 +183,10 @@ final class RubricBarController: CommonGraph
         var color = NSColor.blue
         var section = ""
 
-        for listeOperation in listeOperations {
+        for listTransaction in listTransactions {
             
-            section = listeOperation.sectionIdentifier!
-            let sousOperations = listeOperation.sousOperations?.allObjects  as! [EntitySousOperations]
+            section = listTransaction.sectionIdentifier!
+            let sousOperations = listTransaction.sousOperations?.allObjects  as! [EntitySousOperations]
             
             for sousOperation in sousOperations where (sousOperation.category?.rubric!.name)! == nameRubrique {
                 name  = (sousOperation.category?.rubric!.name)!

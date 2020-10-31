@@ -177,7 +177,7 @@ final class CategoryBarController1: CommonGraph
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listeOperations = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try mainObjectContext.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }
@@ -187,11 +187,11 @@ final class CategoryBarController1: CommonGraph
         var setUniqueRubrique     = Set<RubricColor>()
         var dataRubrique = [DataGraph]()
         
-        for listeOperation in listeOperations {
+        for listTransaction in listTransactions {
             
-            let id = listeOperation.sectionIdentifier!
+            let id = listTransaction.sectionIdentifier!
             
-            let sousOperations = listeOperation.sousOperations?.allObjects  as! [EntitySousOperations]
+            let sousOperations = listTransaction.sousOperations?.allObjects  as! [EntitySousOperations]
             for sousOperation in sousOperations {
                 
                 let amount    = sousOperation.amount

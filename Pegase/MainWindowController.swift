@@ -27,6 +27,12 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     var webViewController: WebViewController?
     var advancedFilterViewController: AdvancedFilterViewController?
 
+    @IBOutlet weak var preferencesItem: NSToolbarItem!
+    @IBOutlet weak var printItem: NSToolbarItem!
+    @IBOutlet weak var suqreButton: NSToolbarItem!
+    @IBOutlet weak var segmentedItem: NSToolbarItem!
+    
+    
     let preferencesWindowController = PreferencesWindowController(
         viewControllers: [
 //           GeneralViewController() ,
@@ -77,6 +83,17 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
     override func windowDidLoad() {
         super.windowDidLoad()
         
+        preferencesItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+        preferencesItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+        printItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+        printItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+        suqreButton.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+        suqreButton.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+        segmentedItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+        segmentedItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+
+        printItem.label = "Print"
+
         self.window?.delegate = self
         
         self.splitViewPrincipal.delegate = self
@@ -170,7 +187,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
         self.transactionController?.delegate = listTransactionsController
     }
     
-    func setUpGroupeListeOperationsSecondary(_ forced : Bool = false)
+    func setUpGroupeListTransactionsSecondary(_ forced : Bool = false)
     {
         self.listTransactionsController = ListTransactionsController()
         let vc = (self.listTransactionsController?.view)!

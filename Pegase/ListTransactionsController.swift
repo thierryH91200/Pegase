@@ -441,7 +441,7 @@ final class ListTransactionsController: NSViewController {
         
         for row in selectedRow {
             let item = outlineListView.item(atRow: row) as? IdOperations
-            ListeOperations.shared.remove(entity: (item?.entityOperations)!)
+            ListTransactions.shared.remove(entity: (item?.entityOperations)!)
         }
         
         self.getAllData()
@@ -498,7 +498,7 @@ extension ListTransactionsController: OperationsDelegate {
 //        progressIndicator.startAnimation(nil)
 
 //        for _ in 0..<1000 {
-            listeOperations = ListeOperations.shared.getAllDatas(ascending: false)
+            listeOperations = ListTransactions.shared.getAllDatas(ascending: false)
             self.transformData()
 //        }
 

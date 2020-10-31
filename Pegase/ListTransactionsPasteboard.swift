@@ -107,7 +107,7 @@ extension ListTransactionsController {
             removeListItems(listItems)
             
             for item in listItems {
-                ListeOperations.shared.remove(entity: item.entityOperations)
+                ListTransactions.shared.remove(entity: item.entityOperations)
             }
         }
         self.resetChange()
@@ -220,7 +220,7 @@ extension ListTransactionsController {
             
             if !trimmedString.isEmpty {
                 let uuid = UUID(uuidString: trimmedString)
-                let entities = ListeOperations.shared.find(uuid: uuid!)
+                let entities = ListTransactions.shared.find(uuid: uuid!)
                 let newEntities = entities.duplicate(except: ["deepcopy"]) as! EntityOperations
                 newEntities.uuid = UUID()
                 newEntities.account = currentAccount

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17147" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17147"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,11 +15,15 @@
                 <outlet property="operationView" destination="UUv-fM-B7s" id="Xv2-8F-Xi1"/>
                 <outlet property="operationViewSecondary" destination="zSk-OV-6Ch" id="Aeq-CI-Aag"/>
                 <outlet property="popUpColor" destination="Twh-f9-5Zl" id="TzB-N2-U1X"/>
+                <outlet property="preferencesItem" destination="3B0-RB-4Tk" id="rCQ-Pk-7AY"/>
+                <outlet property="printItem" destination="OI4-5D-jUy" id="zZ1-m2-1uV"/>
                 <outlet property="searchField" destination="V9X-nK-zfa" id="Rgb-I3-X7e"/>
                 <outlet property="segmentedControl" destination="NgB-Is-paZ" id="Cfl-Vf-4W5"/>
+                <outlet property="segmentedItem" destination="1Dz-AB-dni" id="6Co-3P-4D7"/>
                 <outlet property="splitViewCentre" destination="nWI-uY-JlQ" id="F8o-qU-ncT"/>
                 <outlet property="splitViewGauche" destination="6OT-6B-eRH" id="ZPu-er-UKs"/>
                 <outlet property="splitViewPrincipal" destination="9sw-IE-OkM" id="W87-ao-3gT"/>
+                <outlet property="suqreButton" destination="bq9-jA-dQw" id="Q4V-Hy-O7J"/>
                 <outlet property="tableTargetView" destination="D4M-Yi-dH1" id="eTA-gt-slk"/>
                 <outlet property="window" destination="XTv-FI-MId" id="Nhb-Ts-lER"/>
             </connections>

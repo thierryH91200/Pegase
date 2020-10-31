@@ -150,7 +150,7 @@ final class IncomeExpenseBarController: CommonGraph {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listeOperations = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try mainObjectContext.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")
@@ -161,10 +161,10 @@ final class IncomeExpenseBarController: CommonGraph {
         self.resultArrayIncome.removeAll()
         var dataArray = [DataGraph]()
         
-        for listeOperation in listeOperations {
+        for listTransaction in listTransactions {
             
-            let value = listeOperation.amount
-            let id   = listeOperation.sectionIdentifier!
+            let value = listTransaction.amount
+            let id   = listTransaction.sectionIdentifier!
             
             let data  = DataGraph(name: id, value: value)
             dataArray.append(data)

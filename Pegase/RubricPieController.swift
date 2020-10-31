@@ -75,9 +75,9 @@ final class RubricPieController: NSViewController
     }
     
     func updateAccount () {
-        listeOperations = ListeOperations.shared.entities
-        if listeOperations.isEmpty == true || ListeOperations.shared.ascending == false {
-            listeOperations = ListeOperations.shared.getAllDatas()
+        listeOperations = ListTransactions.shared.entities
+        if listeOperations.isEmpty == true || ListTransactions.shared.ascending == false {
+            listeOperations = ListTransactions.shared.getAllDatas()
         }
         if listeOperations.isEmpty == false {
             

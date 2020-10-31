@@ -97,12 +97,12 @@ extension MainWindowController {
         
         let myPrintView = MyPrintViewOutline(tableView: view, andHeader: headerLine)
         
-        let printOperation = NSPrintOperation(view: myPrintView, printInfo: printInfo)
-        printOperation.printPanel.options.insert(NSPrintPanel.Options.showsPaperSize)
-        printOperation.printPanel.options.insert(NSPrintPanel.Options.showsOrientation)
+        let printTransaction = NSPrintOperation(view: myPrintView, printInfo: printInfo)
+        printTransaction.printPanel.options.insert(NSPrintPanel.Options.showsPaperSize)
+        printTransaction.printPanel.options.insert(NSPrintPanel.Options.showsOrientation)
         
-        printOperation.run()
-        printOperation.cleanUp()
+        printTransaction.run()
+        printTransaction.cleanUp()
     }
     
     @objc func pageLayoutDidEnd( pageLayout: NSPageLayout?, returnCode: Int, contextInfo: UnsafeMutableRawPointer?) {
@@ -250,10 +250,10 @@ extension MainWindowController {
                 
                 if let keys = allKey
                 {
-                    let keyDateOperation = Localizations.ImportSimplifiee.dateOperation
-                    let keyDatePointage = Localizations.ImportSimplifiee.datePointage
-                    let keyMode = Localizations.ImportSimplifiee.mode
-                    let keyStatut = Localizations.ImportSimplifiee.statut
+                    let dateTransaction = Localizations.ImportSimplifiee.dateOperation
+                    let datePointage = Localizations.ImportSimplifiee.datePointage
+                    let mode = Localizations.ImportSimplifiee.mode
+                    let statut = Localizations.ImportSimplifiee.statut
                     
                     // SousOperations
                     let keyAmount = Localizations.ImportSimplifiee.montant
@@ -270,15 +270,15 @@ extension MainWindowController {
                         
                         entity.dateCree = Date()
                         entity.dateModifie = Date()
-                        entity.dateOperation = dateFormatter.date(from: key[keyDateOperation] ?? now)
-                        entity.datePointage = dateFormatter.date(from: key[keyDatePointage] ?? now)
+                        entity.dateOperation = dateFormatter.date(from: key[dateTransaction] ?? now)
+                        entity.datePointage = dateFormatter.date(from: key[datePointage] ?? now)
                         
-                        let labelMode = key[keyMode] ?? (entityPreference.paymentMode?.name)!
+                        let labelMode = key[mode] ?? (entityPreference.paymentMode?.name)!
                         let entityModePaiement = PaymentMode.shared.find(name: labelMode) ?? (entityPreference.paymentMode)!
                         entity.paymentMode = entityModePaiement
                         
                         let labelStatut = TypeOfStatut(rawValue: entityPreference.statut)!.label
-                        let numStatut = self.findStatut( statut: key[keyStatut] ?? labelStatut)
+                        let numStatut = self.findStatut( statut: key[statut] ?? labelStatut)
                         entity.statut = numStatut
                         
                         // EntitySousOperations
@@ -334,7 +334,7 @@ extension MainWindowController {
         delimiter = String((config?.delimiter)!)
         quote = (config?.quoteCharacter)!
         
-        let listeOperations = ListeOperations.shared.getAllDatas()
+        let listeTransactions = ListTransactions.shared.getAllDatas()
         
         var account = ""
         var data = ""
@@ -356,21 +356,21 @@ extension MainWindowController {
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
         
-        for listeOperation in listeOperations {
+        for listeTransaction in listeTransactions {
             
-            let sousOperations = listeOperation.sousOperations!.allObjects as! [EntitySousOperations]
+            let sousOperations = listeTransaction.sousOperations!.allObjects as! [EntitySousOperations]
             for sousOperation in sousOperations {
                 
-                data  = dateFormatter.string(from: listeOperation.datePointage!)
+                data  = dateFormatter.string(from: listeTransaction.datePointage!)
                 export = "\(quote)\(data)\(quote)\(delimiter)"
                 
-                data = dateFormatter.string(from: listeOperation.dateOperation!)
+                data = dateFormatter.string(from: listeTransaction.dateOperation!)
                 export = "\(quote)\(data)\(quote)\(delimiter)"
                 
-                data        = String(listeOperation.statut)
+                data        = String(listeTransaction.statut)
                 export = "\(quote)\(data)\(quote)\(delimiter)"
                 
-                data  = (listeOperation.paymentMode?.name!)!
+                data  = (listeTransaction.paymentMode?.name!)!
                 export = "\(quote)\(data)\(quote)\(delimiter)"
                 
                 data       = sousOperation.libelle!
@@ -385,7 +385,7 @@ extension MainWindowController {
                 data       = String(sousOperation.amount)
                 export = "\(quote)\(data)\(quote)\(delimiter)"
                 
-                account        = (listeOperation.account?.name)!
+                account        = (listeTransaction.account?.name)!
                 export = "\(quote)\(account)\(quote)\n"
             }
         }

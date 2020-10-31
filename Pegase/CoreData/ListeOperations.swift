@@ -1,8 +1,8 @@
 import AppKit
 
-final class ListeOperations {
+final class ListTransactions {
     
-    static let shared = ListeOperations()
+    static let shared = ListTransactions()
     var entities = [EntityOperations]()
     var ascending = false
     

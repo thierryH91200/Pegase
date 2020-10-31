@@ -10,7 +10,7 @@ final class TresorerieController: NSViewController
     
     var sliderViewHorizontalController: SliderViewHorizontalController?
     
-    var listeOperations : [EntityOperations] = []
+    var listTransactions : [EntityOperations] = []
     var firstDate: TimeInterval = 0.0
     var lastDate: TimeInterval = 0.0
     
@@ -68,11 +68,11 @@ final class TresorerieController: NSViewController
     }
     
     func updateAccount () {
-        listeOperations = ListeOperations.shared.getAllDatas()
-        if listeOperations.isEmpty == false {
+        listTransactions = ListTransactions.shared.getAllDatas()
+        if listTransactions.isEmpty == false {
             
-            firstDate = (listeOperations.first?.dateOperation?.timeIntervalSince1970)!
-            lastDate = (listeOperations.last?.dateOperation?.timeIntervalSince1970)!
+            firstDate = (listTransactions.first?.dateOperation?.timeIntervalSince1970)!
+            lastDate = (listTransactions.last?.dateOperation?.timeIntervalSince1970)!
             
             sliderViewHorizontalController?.initData(firstDate: firstDate, lastDate: lastDate)
             sliderViewHorizontalController?.mySlider.isEnabled = true
@@ -150,7 +150,7 @@ final class TresorerieController: NSViewController
     func updateChartData() {
         
         self.dataGraph.removeAll()
-        guard listeOperations.isEmpty == false else { return }
+        guard listTransactions.isEmpty == false else { return }
         
         var dataTresorerie = DataTresorerie()
         var index = 0
@@ -172,23 +172,23 @@ final class TresorerieController: NSViewController
             sameDate = true
             while sameDate == true {
                 
-                indexDate = ( (listeOperations[index ].dateOperation?.timeIntervalSince1970)! - firstDate ) / hourSeconds
+                indexDate = ( (listTransactions[index ].dateOperation?.timeIntervalSince1970)! - firstDate ) / hourSeconds
                 
                 // même jour mais le statut peut être différent ??
                 if Int(indexDate) == indexSlider {
                     
-                    let propertyEnum = TypeOfStatut(rawValue: listeOperations[index].statut)!
+                    let propertyEnum = TypeOfStatut(rawValue: listTransactions[index].statut)!
                     switch propertyEnum
                     {
                     case .planifie:
-                        prevu += listeOperations[index].amount
+                        prevu += listTransactions[index].amount
                     case .engage:
-                        engage += listeOperations[index].amount
+                        engage += listTransactions[index].amount
                     case .realise:
-                        soldeRealise += listeOperations[index].amount
+                        soldeRealise += listTransactions[index].amount
                     }
                     index += 1
-                    if index == listeOperations.count {
+                    if index == listTransactions.count {
                         sameDate = false
                     }
                 } else {
@@ -228,7 +228,7 @@ final class TresorerieController: NSViewController
     
     func setData()
     {
-        guard listeOperations.isEmpty == false || dataGraph.isEmpty == false else {
+        guard listTransactions.isEmpty == false || dataGraph.isEmpty == false else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
@@ -338,7 +338,7 @@ extension TresorerieController: SliderHorizontalDelegate {
     
     func setDataHorizontal()
     {
-        guard listeOperations.isEmpty == false || dataGraph.isEmpty == false else {
+        guard listTransactions.isEmpty == false || dataGraph.isEmpty == false else {
             chartView.data = nil
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
