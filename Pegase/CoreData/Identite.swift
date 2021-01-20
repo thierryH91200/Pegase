@@ -1,0 +1,138 @@
+import AppKit
+
+// MARK: - Bank
+final class Bank {
+    
+    static let shared = Bank()
+    var entitiesBank = [EntityBank]()
+    
+    func create() -> EntityBank {
+        
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityBank", into: mainObjectContext) as? EntityBank
+
+        
+        entity!.adress = ""
+        entity!.bank = ""
+        entity!.cp = 0
+        entity!.email = ""
+        entity!.fonction = ""
+        entity!.mobile = ""
+        entity!.name = ""
+        entity!.country = ""
+        entity!.phone = ""
+        entity!.town = ""
+        entity!.uuid = UUID()
+        
+        entity!.account = currentAccount
+        return entity!
+    }
+    
+    @discardableResult func getAllDatas() -> EntityBank {
+        
+        do {
+            let fetchRequest = NSFetchRequest<EntityBank>(entityName: "EntityBank")
+            let predicate = NSPredicate(format: "account == %@", currentAccount!)
+            fetchRequest.predicate = predicate
+            entitiesBank = try mainObjectContext.fetch(fetchRequest)
+            
+        } catch {
+            print("Error fetching data from CoreData")
+        }
+        if entitiesBank.first != nil {
+            return entitiesBank.first!
+        } else {
+            return create()
+        }
+    }
+}
+
+// MARK: - InitAccount
+final class InitAccount {
+    
+    static let shared = InitAccount()
+    var entitiesInitAccount = [EntityInitAccount]()
+    
+    func create(numAccount : String = "" ) -> EntityInitAccount {
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitAccount", into: mainObjectContext) as? EntityInitAccount
+        
+        entity!.bic = ""
+        entity!.cleRib = 0
+        entity!.codeBank = 0
+        entity!.codeAccount = numAccount
+        entity!.codeGuichet = 0
+        entity!.engage = 0
+        entity!.iban1 = ""
+        entity!.iban2 = ""
+        entity!.iban3 = ""
+        entity!.iban4 = ""
+        entity!.iban5 = ""
+        entity!.iban6 = ""
+        entity!.iban7 = ""
+        entity!.iban8 = ""
+        entity!.iban9 = ""
+        entity!.prevu = 0
+        entity!.realise = 0
+        return entity!
+    }
+    
+    @discardableResult func getAllDatas() -> EntityInitAccount {
+        
+        do {
+            let fetchRequest = NSFetchRequest<EntityInitAccount>(entityName: "EntityInitAccount")
+            let predicate = NSPredicate(format: "account == %@", currentAccount!)
+            fetchRequest.predicate = predicate
+            entitiesInitAccount = try mainObjectContext.fetch(fetchRequest)
+            
+        } catch {
+            print("Error fetching data from CoreData")
+        }
+        if entitiesInitAccount.first != nil {
+            return entitiesInitAccount.first!
+        } else {
+            return create()
+        }
+    }
+    
+}
+
+// MARK: - Identite
+final class Identity {
+    
+    static let shared = Identity()
+    var entitiesIdentite = [EntityIdentity]()
+    
+    func create(name: String = "", prenom: String = "") -> EntityIdentity {
+        
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityIdentity", into: mainObjectContext) as? EntityIdentity
+        entity!.name       = name
+        entity!.surName    = prenom
+        entity!.adress     = ""
+        entity!.complement = ""
+        entity!.cp         = 0
+        entity!.town       = ""
+        entity!.phone      = ""
+        entity!.country    = ""
+        entity!.mobile     = ""
+        entity!.email      = ""
+        return entity!
+    }
+    
+    @discardableResult func getAllDatas() -> EntityIdentity {
+        
+        do {
+            let fetchRequest = NSFetchRequest<EntityIdentity>(entityName: "EntityIdentity")
+            let predicate = NSPredicate(format: "account == %@", currentAccount!)
+            fetchRequest.predicate = predicate
+            entitiesIdentite = try mainObjectContext.fetch(fetchRequest)
+            
+        } catch {
+            print("Error fetching data from CoreData")
+        }
+        if entitiesIdentite.first != nil {
+            return entitiesIdentite.first!
+        } else {
+            return create()
+        }
+    }
+    
+}

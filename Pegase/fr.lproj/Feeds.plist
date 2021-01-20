@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Suivie de Tresorerie</string>
+		<key>icon</key>
+		<string>displayView_detail</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>nameView</key>
+				<string>Liste des opérations</string>
+				<key>icon</key>
+				<string>content</string>
+				<key>name</key>
+				<string>Liste des opérations</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string>Courbe de trésorerie</string>
+				<key>icon</key>
+				<string>015-charts</string>
+				<key>name</key>
+				<string>Courbe de trésorerie</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string>Site Web de la banque</string>
+				<key>icon</key>
+				<string>Bookmark-add</string>
+				<key>name</key>
+				<string>Site Web de la banque</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string></string>
+				<key>icon</key>
+				<string>Bookmark-add</string>
+				<key>name</key>
+				<string>Rapprochement internet</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string></string>
+				<key>icon</key>
+				<string>Bookmark-add</string>
+				<key>name</key>
+				<string>Relevé bancaire</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string></string>
+				<key>icon</key>
+				<string>Bookmark-add</string>
+				<key>name</key>
+				<string>Notes</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Rapports</string>
+		<key>icon</key>
+		<string>stats</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>nameView</key>
+				<string>Rubrique Pie</string>
+				<key>icon</key>
+				<string>009-pie-chart</string>
+				<key>name</key>
+				<string>Rubrique</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string>Categorie Bar1</string>
+				<key>icon</key>
+				<string>034-bars</string>
+				<key>name</key>
+				<string>Catégorie Bar</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string>Categorie Bar</string>
+				<key>icon</key>
+				<string>034-bars</string>
+				<key>name</key>
+				<string>Catégorie</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string>Mode de paiement</string>
+				<key>icon</key>
+				<string>009-pie-chart</string>
+				<key>name</key>
+				<string>Mode de paiement</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string>Recette Depense</string>
+				<key>icon</key>
+				<string>034-bars</string>
+				<key>name</key>
+				<string>Recette Depense</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string>Rubrique Bar</string>
+				<key>icon</key>
+				<string>034-bars</string>
+				<key>name</key>
+				<string>Rubrique</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Référence compte</string>
+		<key>icon</key>
+		<string>displayView_detail</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>nameView</key>
+				<string>Identite</string>
+				<key>icon</key>
+				<string>Bookmark-add</string>
+				<key>name</key>
+				<string>Identite</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string>Scheduler</string>
+				<key>icon</key>
+				<string>Bookmark-add</string>
+				<key>name</key>
+				<string>Echeancier</string>
+			</dict>
+			<dict>
+				<key>nameView</key>
+				<string>Settings</string>
+				<key>icon</key>
+				<string>Bookmark-add</string>
+				<key>name</key>
+				<string>Settings</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>
