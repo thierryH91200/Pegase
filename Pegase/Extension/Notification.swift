@@ -3,7 +3,7 @@ import AppKit
 
 public extension Notification.Name {
     
-    static let updateOperation           = Notification.Name( "updateOperation")
+    static let updateTransaction           = Notification.Name( "updateTransaction")
     static let updateBalance               = Notification.Name( "updateBalance")
     static let updateAccount             = Notification.Name( "updateAccount")
 

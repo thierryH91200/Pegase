@@ -44,7 +44,7 @@ extension ListTransactionsController: NSOutlineViewDataSource {
             //            print(group.year)
             return (group.year)
         }
-        print("nil")
+//        print("nil")
         return nil
     }
     

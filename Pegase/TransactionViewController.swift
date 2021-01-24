@@ -69,7 +69,7 @@ final class TransactionViewController: NSViewController {
     // edition = true => edition 1 to n operation(s)
     var edition = false
     
-    let key1 = Notification.Name.updateOperation
+    let key1 = Notification.Name.updateTransaction
     let key2 = Notification.Name.updateAccount
     
     var attrs = [NSAttributedString.Key: Any]()

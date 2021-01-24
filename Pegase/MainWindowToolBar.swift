@@ -124,8 +124,16 @@ extension MainWindowController {
         }
         
         if isAlreadyRunning == false {
-            let path = NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: "com.apple.calculator")
-            _ = NSWorkspace.shared.launchApplication(path!)
+//            let path = NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: "com.apple.calculator")
+            guard let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.apple.calculator") else { return }
+
+            let configuration = NSWorkspace.OpenConfiguration()
+            let path = "/bin"
+            configuration.arguments = [path]
+            NSWorkspace.shared.openApplication(at: url,
+                                               configuration: configuration,
+                                               completionHandler: nil)
+//            _ = NSWorkspace.shared.launchApplication(path!)
         }
     }
     

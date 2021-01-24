@@ -80,7 +80,7 @@ extension PreferenceOperationViewController : NSComboBoxDelegate {
             entityPreference?.paymentMode = entityMode[ comboBoxMode.indexOfSelectedItem]
         }
 
-        NotificationCenter.send(.updateOperation)
+        NotificationCenter.send(.updateTransaction)
 
     }
     

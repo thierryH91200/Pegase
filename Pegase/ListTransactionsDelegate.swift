@@ -42,8 +42,8 @@ extension ListTransactionsController: NSOutlineViewDelegate {
     }
     
 // MARK: trackingIdOperations
-   func trackingIdOperations(outlineView: NSOutlineView, folderItem : TrackingIdTransactions) -> NSView? {
-    
+    func trackingIdOperations(outlineView: NSOutlineView, folderItem : TrackingIdTransactions) -> NSView? {
+        
         var cellView: KSHeaderCellView?
         
         let formatterDate: DateFormatter = {
@@ -101,13 +101,12 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         }
         
         cellView = outlineView.makeView(withIdentifier: .FeedCellMonth, owner: self) as? KSHeaderCellView
-//      cellView = outlineView.makeView(withIdentifier: .FeedCellYear, owner: self) as? KSHeaderCellView
-
+        //      cellView = outlineView.makeView(withIdentifier: .FeedCellYear, owner: self) as? KSHeaderCellView
         
-//        cellView?.fillColor = .gray
-    cellView?.textField?.stringValue = title
-    cellView?.textField?.textColor = .labelColor
-    cellView?.backgroundStyle = .light
+        //        cellView?.fillColor = .gray
+        cellView?.textField?.stringValue = title
+        cellView?.textField?.textColor = .labelColor
+        cellView?.backgroundStyle = .normal
         return cellView
     }
     
@@ -450,5 +449,41 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         }
         return false
     }
+    
+//    func outlineViewItemWillCollapse(_ notification: Notification) {
+//        let node = notification.userInfo?["NSObject"] as? IdOperations
+//        let ov = notification.object as? NSOutlineView
+////        let item = node?.representedObject as? MyModelItem
+//
+//        /*
+//                  Elements are collapsed from top to bottom. A collapsed parent
+//                  means the collapse started someplace farther up the chain than
+//                  our current item, so the expansion state of the current item is
+//                  not going to change unless the option key is held down, or you
+//                  implement a collapseItem:collapseChildren: with the second
+//                  parameter as YES. This accounts for the first; you'll have to
+//                  deal with the second in code.
+//                */
+//
+////        let optionKeyIsDown = NSApp.currentEvent?.modifierFlags != nil && .option != nil
+//
+//        if ov?.isItemExpanded(node?.parent) ?? false || optionKeyIsDown {
+//            node?.currentlyExpanded = false
+//        }
+//    }
+    
+    func outlineViewItemDidExpand(_ notification: Notification) {
+        guard let item = notification.userInfo?["NSObject"] as? IdOperations else {
+            return
+        }
+        let ov = notification.object as? NSOutlineView
+
+        
+        let isExpanded = ov?.isItemExpanded(item)
+        let isParentExpanded = ov?.parent(forItem: item).map(ov!.isItemExpanded)
+
+        print("DELEGATE DID EXPAND", isExpanded ?? "nil", isParentExpanded ?? "nil")
+    }
+
     
 }

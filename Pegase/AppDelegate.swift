@@ -1,18 +1,22 @@
 //  https://fr.365psd.com/download/beautiful-vector-1-notepad-11884
 
 import Cocoa
+import UserNotifications
+
 
 let defaults = UserDefaults.standard
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDelegate {
     
     var splashScreenWindowController: SplashScreenWindowController! = nil
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        
-        NSUserNotificationCenter.default.delegate = self
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+
+//        NSUserNotificationCenter.default.delegate = self
     }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
@@ -68,6 +72,7 @@ class AppDelegate: NSObject, NSApplicationDelegate , NSUserNotificationCenterDel
             _ = self.splashScreenWindowController
             if let splashScreenWindowController = self.splashScreenWindowController {
                 splashScreenWindowController.showWindow(self)
+                return false
             }
         }
         return true
