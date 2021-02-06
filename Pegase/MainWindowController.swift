@@ -1,6 +1,7 @@
 import AppKit
+import UserNotifications
 
-final class MainWindowController: NSWindowController , NSWindowDelegate {
+final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserNotificationCenterDelegate {
     
     var importWindowController: ImportWindowController?
     var accessoryViewController: TTFormatViewController?
@@ -145,15 +146,60 @@ final class MainWindowController: NSWindowController , NSWindowDelegate {
             }
         }
     }
-    
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // pull out the buried userInfo dictionary
+        let userInfo = response.notification.request.content.userInfo
+
+        if let customData = userInfo["customData"] as? String {
+            print("Custom data received: \(customData)")
+
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier:
+                // the user swiped to unlock
+                print("Default identifier")
+
+            case "show":
+                // the user tapped our "show more info…" button
+                print("Show more information…")
+
+            default:
+                break
+            }
+        }
+
+        // you must call the completion handler when you're done
+        completionHandler()
+    }
+
     private func justForTheFun() {
-        let notification = NSUserNotification()
-        notification.title = Localizations.Document.File_Uploaded
-        notification.subtitle = "example.txt"
-        notification.informativeText = "/Users/John/Documents/example.txt"
-        notification.soundName = NSUserNotificationDefaultSoundName
-        notification.contentImage = NSImage(named: NSImage.Name("icon_Upload-Information-icon_24x24"))
-        NSUserNotificationCenter.default.deliver(notification)
+        
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+
+        let show = UNNotificationAction(
+            identifier: "file",
+            title: Localizations.Document.File_Uploaded,
+            options: .foreground)
+        
+        let category = UNNotificationCategory(identifier: "show", actions: [show], intentIdentifiers: [])
+
+        center.setNotificationCategories([category])
+
+
+        
+//        UNNotificationAction* snoozeAction = [UNNotificationAction
+//                                              actionWithIdentifier:@"SNOOZE_ACTION"
+//                                              title:@"Snooze"
+//                                              options:UNNotificationActionOptionNone];  // 03-25-2019 The action has the default behavior.
+//
+//        let notification = NSUserNotification()
+//        notification.title = Localizations.Document.File_Uploaded
+//        notification.subtitle = "example.txt"
+//        notification.informativeText = "/Users/John/Documents/example.txt"
+//        notification.soundName = NSUserNotificationDefaultSoundName
+//        notification.contentImage = NSImage(named: NSImage.Name("icon_Upload-Information-icon_24x24"))
+//        NSUserNotificationCenter.default.deliver(notification)
     }
     
     private func setUpSourceList()

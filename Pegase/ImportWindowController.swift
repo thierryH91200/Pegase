@@ -12,7 +12,6 @@ struct HeaderColumnForMenu {
         self.numMenu  = numMenu
         self.nameMenu  = nameMenu
     }
-    
 }
 
 final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
@@ -99,6 +98,10 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         
         let itemHeader = menuHeader.items
         
+        
+        let reverse = statusBarFormatViewController?.reverseSignAmountCheckBbox.state
+        let sign = reverse == .on ? -1 : 1
+        
         for data in allData {
             
             let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as! EntityOperations
@@ -166,12 +169,11 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
                 entityOperation.paymentMode = modePaiement
             }
             
-            /// Creation entitySousOperation
-            
+            // Creation entitySousOperation
             let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as! EntitySousOperations
 
             
-            /// Libelle
+            // Libelle
             headerColumn = itemHeader[5].representedObject as!  [HeaderColumnForMenu]
             if headerColumn.isEmpty == false {
                 
@@ -194,7 +196,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
                 if amountStr != "" {
                     amountStr = amountStr.replacingOccurrences(of: ",", with: ".")
                     let amount = Double(amountStr) ?? 0.0
-                    entitySousOperation.amount = amount
+                    entitySousOperation.amount = amount * Double(sign)
                 }
             } else {
                 entitySousOperation.amount = 0.0
@@ -256,6 +258,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             var config = statusBarFormatViewController?.config
             config?.delimiter = configuration.delimiter
             config?.isFirstRowAsHeader = true
+            config?.isReverseSignAmountCheckBbox = false
             config?.encoding = configuration.encoding
             statusBarFormatViewController?.filePath.url = url
             

@@ -69,8 +69,8 @@ final class RubricPieController: NSViewController
         self.setDataHorizontal()
         
         DispatchQueue.main.async(execute: {() -> Void in
-            self.chartView.spin(duration: 1, fromAngle: 0, toAngle: 360.0)
-            self.chartView2.spin(duration: 1, fromAngle: 0, toAngle: 360.0)
+            self.chartView.spin (duration: 1, fromAngle: 0, toAngle: 180.0)
+            self.chartView2.spin(duration: 1, fromAngle: 0, toAngle: 180.0)
         })
     }
     

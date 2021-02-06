@@ -12,7 +12,6 @@ final class SourceListViewController: NSViewController {
     public weak var delegate: SourceListDelegate?
     
     @IBOutlet weak var group: NSButton!
-    
     @IBOutlet weak var sidebarOutlineView: NSOutlineView!
     
     var datas       = [Donnees]()

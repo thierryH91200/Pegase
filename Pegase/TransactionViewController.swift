@@ -286,7 +286,7 @@ final class TransactionViewController: NSViewController {
             }
             
             // DateOperation
-            if (setDateOperation.count > 1 && date4 != nil) || setCheck_In_Date.count == 1 {
+            if (setDateOperation.count > 1 && date4 != nil) || setDateOperation.count == 1 {
                 oneOperation.dateOperation  = dateOperation.dateValue.noon
             }
             

@@ -9,14 +9,16 @@ extension CSV {
         var quoteCharacter = "\""
         var escapeCharacter = "\""
         var decimalMark = "."
-        var isFirstRowAsHeader = false
+        var isFirstRowAsHeader = true
+        var isReverseSignAmountCheckBbox = false
         
         public init() {
             encoding = .utf8
             quoteCharacter = "\""
             escapeCharacter = "\""
             decimalMark = "."
-            isFirstRowAsHeader = false
+            isFirstRowAsHeader = true
+            isReverseSignAmountCheckBbox = false
             delimiter = ";"
         }
         

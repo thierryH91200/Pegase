@@ -19,7 +19,3 @@ extension NSObject {
         return type(of: self).simpleClassName
     }
 }
-
-
-
-

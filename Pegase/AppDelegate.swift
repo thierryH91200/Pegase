@@ -13,10 +13,15 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        let center = UNUserNotificationCenter.current()
-        center.delegate = self
+//        let center = UNUserNotificationCenter.current()
+//        center.delegate = self
 
 //        NSUserNotificationCenter.default.delegate = self
+        if #available(OSX 10.14, *) {
+            UNUserNotificationCenter.current().registerNotificationCategories()
+            UNUserNotificationCenter.current().delegate = self
+        }
+
     }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
