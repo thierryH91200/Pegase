@@ -10,41 +10,37 @@
 "Check.MessageText" = "Delete the check ?";
 
 // MARK: -  Document
-"Document.IdName" = "Doe";
-"Document.IdPrenom" = "John";
-
 "Document.Bank_Account" = "Bank account";
 "Document.Carte_de_crédit" = "Bank card";
 "Document.Compte_Courant" = "Current account";
 "Document.Epargne" = "Save";
 "Document.Especes" = "Cash account";
 "Document.File_Uploaded" = "File Uploaded";
+"Document.IdName" = "Doe";
+"Document.IdPrenom" = "John";
 "Document.OpenProjectPanelMessage" = "OpenProject";
 
 // MARK: -  General
 "General.Account" = "Account";
-"General.Account1" = "Account1";
 "General.Account.Plural" = "%d accounts";
 "General.Account.Singular" = "1 account";
 "General.Account.Zero" = "0 compte";
-
+"General.Account1" = "Account1";
 "General.Amount" = "Amount";
 "General.BankAccount.Plural" = "Comptes bancaires";
 "General.BankAccount.Singular" = "Compte bancaire";
-
 "General.Cancel" = "Annuler";
 "General.Category" = "Categorie";
-
 "General.Date Operation" = "Date Transaction";
 "General.Date Pointage" = "Date Pointage";
 "General.Expenses" = "Dépense";
 "General.Identity" = "Identity";
+"General.Income" = "Recette";
 "General.Libelle" = "Comment";
 "General.Liste des opérations" = "Liste des transactions";
 "General.Mode Paiement" = "Mode Paiement";
 "General.Operation" = "Transaction";
-"General.Income" = "Recette";
-"General.Rubric" = "Rubrique";
+"General.Rubrique" = "Rubrique";
 "General.Scheduler" = "Scheduler";
 "General.Solde" = "Balance";
 "General.Statut" = "Statut";
@@ -80,14 +76,12 @@
 "ImportSimplifiee.montant" = "Amount";
 "ImportSimplifiee.statut" = "Statut";
 
-// MARK: -  ListeTransaction
+// MARK: -  ListeOperation
 "ListeOperation.info" = "Expenses : %@ Income : %@ Total : %@";
-
-"ListeOperation.operation.singular" = "%d transaction";
-"ListeOperation.operation.plural" = "%d transaction";
-
-"ListeOperation.operation.selectionnee.singular" = "%d selected transaction";
-"ListeOperation.operation.selectionnee.plural" = "%d selected transactions";
+"ListeOperation.transaction.plural" = "%d transaction";
+"ListeOperation.transaction.selectionnee.plural" = "%d selected transactions";
+"ListeOperation.transaction.selectionnee.singular" = "%d selected transaction";
+"ListeOperation.transaction.singular" = "%d transaction";
 
 // MARK: -  MenuBar
 "MenuBar.Rapports.Catégorie Bar" = "Catégorie Bar";
@@ -120,13 +114,14 @@
 "ModePaiement.RetraitEspeces" = "Retrait espéces";
 "ModePaiement.Virement" = "Virement";
 
-// MARK: -  Transaction
-"Operation.Mode" = "Mode ";
-"Operation.ModeCreation" = "Creative mode";
-"Operation.ModeEdition" = "Editing mode";
-"Operation.Multi" = "Multi";
-"Operation.MultipleValue" = "Multiple value";
-"Operation.NoTransfert" = "(no transfert)";
+// MARK: -  Operation
+"Transaction.Mode" = "Mode ";
+"Transaction.ModeCreation" = "Creative mode";
+"Transaction.ModeEdition" = "Editing mode";
+"Transaction.Multi" = "Multi";
+"Transaction.MultipleValue" = "Multiple value";
+"Transaction.NoTransfert" = "(no transfert)";
+"Transaction.operation" = "Transactions";
 
 // MARK: -  RateConfigure
 "RateConfigure.detailText" = "We look forward to your Star and Pull Request to make Pegase better and better : )\n⭐️⭐️⭐️⭐️⭐️?";

@@ -1,7 +1,7 @@
 import Foundation
 
 
-public protocol ParserDelegate: class {
+public protocol ParserDelegate: AnyObject {
     
     /// Called when the parser begins parsing.
     func parserDidBeginDocument(_ parser: CSV.Parser)

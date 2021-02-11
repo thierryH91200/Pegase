@@ -67,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
         return false
     }
     
-    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, shouldPresent notification: UNNotification) -> Bool {
         return true
     }
     
@@ -82,6 +82,19 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
         }
         return true
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print(#function)
+        completionHandler([.banner, .list, .sound])
+        
+    }
+    
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        print(#function)
+//        completionHandler([.banner, .sound])
+//    }
+
+
     
     
 }

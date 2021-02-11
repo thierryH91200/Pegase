@@ -5,12 +5,14 @@ final class MyNSTableRowView: NSTableRowView {
     
     override func drawSelection(in dirtyRect: NSRect) {
         if self.selectionHighlightStyle != .none {
-//            let selectionRect = NSInsetRect(self.bounds, 2.5, 2.5)
-            let selectionRect = self.bounds.insetBy(dx: 2.5, dy: 2.5)
-            let colorBack = NSColor.selectedControlColor
+            let inset : CGFloat = 2
+            let selectionRect = self.bounds.insetBy(dx: inset, dy: inset)
+            let colorBack = NSColor.findHighlightColor
+//            let colorBack = NSColor.scrubberTexturedBackground
             colorBack.setStroke()
             colorBack.setFill()
-            let selectionPath = NSBezierPath.init(roundedRect: selectionRect, xRadius: 6, yRadius: 6)
+            let radius : CGFloat  = 0
+            let selectionPath = NSBezierPath(roundedRect: selectionRect, xRadius: radius, yRadius: radius)
             selectionPath.fill()
             selectionPath.stroke()
         }
@@ -24,9 +26,7 @@ final class KSHeaderCellView: NSTableCellView {
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        
         let bPath = NSBezierPath(rect: dirtyRect)
-        
         fillColor.set()
         bPath.fill()
     }
@@ -37,7 +37,8 @@ final class CrossHatchView: NSTableCellView {
     
     override func draw(_ rect: CGRect) {
         
-        let path = NSBezierPath(roundedRect: bounds, xRadius: 5, yRadius: 5)
+        let radius : CGFloat  = 5
+        let path = NSBezierPath(roundedRect: bounds, xRadius: radius, yRadius: radius)
         //            path.addClip()
         
         let pathBounds = path.bounds

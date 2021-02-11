@@ -80,11 +80,11 @@
 // MARK: -  ListeOperation
 "ListeOperation.info" = "Expenses : %@ Income : %@ Total : %@";
 
-"ListeOperation.operation.singular" = "%d opération";
-"ListeOperation.operation.plural" = "%d opérations";
+"ListeOperation.transaction.singular" = "%d opération";
+"ListeOperation.transaction.plural" = "%d opérations";
 
-"ListeOperation.operation.selectionnee.singular" = "%d opération sélectionnée";
-"ListeOperation.operation.selectionnee.plural" = "%d opérations selectionnees";
+"ListeOperation.transaction.selectionnee.singular" = "%d opération sélectionnée";
+"ListeOperation.transaction.selectionnee.plural" = "%d opérations selectionnees";
 
 // MARK: -  Mode
 "Mode.Delete" = "Delete";
@@ -101,12 +101,13 @@
 "ModePaiement.Virement" = "Virement";
 
 // MARK: -  Operation
-"Operation.Mode" = "Mode ";
-"Operation.ModeCreation" = "Mode création";
-"Operation.ModeEdition" = "Mode édition";
-"Operation.MultipleValue" = "Multiple valeur";
-"Operation.NoTransfert" = "(no transfert)";
-"Operation.Multi" = "Multi";
+"Transaction.operation" = "Transactions";
+"Transaction.Mode" = "Mode ";
+"Transaction.ModeCreation" = "Mode création";
+"Transaction.ModeEdition" = "Mode édition";
+"Transaction.MultipleValue" = "Multiple valeur";
+"Transaction.NoTransfert" = "(no transfert)";
+"Transaction.Multi" = "Multi";
 
 
 // MARK: -  RateConfigure

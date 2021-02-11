@@ -138,7 +138,7 @@ final class TransactionViewController: NSViewController {
                .foregroundColor: NSColor.gray,
                .paragraphStyle: paragraphStyle]
         
-        let centerText = NSMutableAttributedString(string: "Operations")
+        let centerText = NSMutableAttributedString(string: Localizations.Transaction.operation)
         centerText.setAttributes(attribut, range: NSRange(location: 0, length: centerText.length))
         
         self.pieChartView.centerAttributedText = centerText

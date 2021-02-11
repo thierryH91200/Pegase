@@ -40,7 +40,7 @@ final class ParameterController: NSViewController {
         modeItem.label = Localizations.General.Mode_Paiement
         
         let rubricItem = NSTabViewItem(viewController: rubriqueViewController)
-        rubricItem.label = Localizations.General.Rubric
+        rubricItem.label = Localizations.General.Rubrique
         
         let operationItem = NSTabViewItem(viewController: preferenceOperationViewController)
         operationItem.label = Localizations.General.Operation

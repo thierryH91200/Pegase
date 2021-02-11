@@ -26,11 +26,11 @@ final class CategorieModalWindowController: NSWindowController {
         
         if edition == true {
             
-            mode.title = Localizations.Operation.ModeEdition
+            mode.title = Localizations.Transaction.ModeEdition
             mode.layer?.backgroundColor = NSColor.orange.cgColor
         }
         else {
-            mode.title = Localizations.Operation.ModeCreation
+            mode.title = Localizations.Transaction.ModeCreation
             mode.layer?.backgroundColor = NSColor.orange.cgColor
         }
         

@@ -354,7 +354,7 @@ extension MainWindowController {
         export = quote + Localizations.General.Mode_Paiement + "\(quote)\(delimiter)"
         
         export = quote + Localizations.General.Libelle + "\(quote)\(delimiter)"
-        export = quote + Localizations.General.Rubric + "\(quote)\(delimiter)"
+        export = quote + Localizations.General.Rubrique + "\(quote)\(delimiter)"
         export = quote + Localizations.General.Category + "\(quote)\(delimiter)"
         export = quote + Localizations.General.Amount + "\(quote)\(delimiter)"
         

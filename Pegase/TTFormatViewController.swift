@@ -1,6 +1,6 @@
 import AppKit
 
-protocol TTFormatViewControllerDelegate: class {
+protocol TTFormatViewControllerDelegate: AnyObject {
     func configurationChanged(for formatViewController: TTFormatViewController?)
 }
 

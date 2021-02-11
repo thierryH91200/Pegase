@@ -6,10 +6,10 @@ extension SchedulersSaisieController: SchedulersSaisieDelegate {
     
     func editionData(_ quake: EntitySchedule) {
         edition = true
-        modeOperation.title = Localizations.Operation.ModeEdition
+        modeOperation.title = Localizations.Transaction.ModeEdition
         modeOperation.layer?.backgroundColor = NSColor.green.cgColor
         
-        modeOperation2.title = Localizations.Operation.ModeEdition
+        modeOperation2.title = Localizations.Transaction.ModeEdition
         modeOperation2.layer?.backgroundColor = NSColor.green.cgColor
         
         entitySchedule = quake
@@ -55,10 +55,10 @@ extension SchedulersSaisieController: SchedulersSaisieDelegate {
         entityPreference = Preference.shared.getAllDatas()
         
         edition = false
-        modeOperation.title = Localizations.Operation.ModeCreation
+        modeOperation.title = Localizations.Transaction.ModeCreation
         modeOperation.layer?.backgroundColor = NSColor.orange.cgColor
         
-        modeOperation2.title = Localizations.Operation.ModeCreation
+        modeOperation2.title = Localizations.Transaction.ModeCreation
         modeOperation2.layer?.backgroundColor = NSColor.orange.cgColor
         
         account.stringValue = (currentAccount?.name)!

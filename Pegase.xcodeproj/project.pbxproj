@@ -645,7 +645,7 @@
 			name = Tresorerie;
 			sourceTree = "<group>";
 		};
-		03213B2623F904F300002DD7 /* ListeOperations */ = {
+		03213B2623F904F300002DD7 /* ListTransactions */ = {
 			isa = PBXGroup;
 			children = (
 				03213B2D23F9050000002DD7 /* ListTransactionsController.swift */,
@@ -656,10 +656,10 @@
 				03213B2A23F9050000002DD7 /* ListTransactionsmenuDelegate.swift */,
 				03213B2B23F9050000002DD7 /* ListTransactionsPasteboard.swift */,
 			);
-			name = ListeOperations;
+			name = ListTransactions;
 			sourceTree = "<group>";
 		};
-		03213B3523F9051600002DD7 /* Operations */ = {
+		03213B3523F9051600002DD7 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
 				036AF0A72426044E008C6564 /* AvatarInfo.swift */,
@@ -673,7 +673,7 @@
 				03213B3623F9051D00002DD7 /* SousOperation */,
 				03213B4B23F9056F00002DD7 /* Suggestions Popup */,
 			);
-			name = Operations;
+			name = Transactions;
 			sourceTree = "<group>";
 		};
 		03213B3623F9051D00002DD7 /* SousOperation */ = {
@@ -1024,10 +1024,10 @@
 				034EC91623F87F6D006944DD /* Generated */,
 				034EC91C23F87F9E006944DD /* GroupeAccount */,
 				03213AEF23F9045600002DD7 /* Import */,
-				03213B2623F904F300002DD7 /* ListeOperations */,
+				03213B2623F904F300002DD7 /* ListTransactions */,
 				03213C7123F92F1C00002DD7 /* Localizable.strings */,
 				03213C3923F924D600002DD7 /* MainMenu.xib */,
-				03213B3523F9051600002DD7 /* Operations */,
+				03213B3523F9051600002DD7 /* Transactions */,
 				03213B5A23F905A400002DD7 /* Preferences */,
 				03213B5E23F905B400002DD7 /* Rapports */,
 				03213BD623F90AE200002DD7 /* ReferenceCompte */,

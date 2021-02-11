@@ -6,10 +6,10 @@ extension TransactionViewController: ListeOperationsDelegate {
     func resetOperation() {
         
         self.edition = false
-        self.modeOperation.title = Localizations.Operation.ModeCreation
+        self.modeOperation.title = Localizations.Transaction.ModeCreation
         self.modeOperation.layer?.backgroundColor = NSColor.orange.cgColor
         
-        self.modeOperation2.title = Localizations.Operation.ModeCreation
+        self.modeOperation2.title = Localizations.Transaction.ModeCreation
         self.modeOperation2.layer?.backgroundColor = NSColor.orange.cgColor
         
         self.buttonSave.isEnabled = false
@@ -64,13 +64,13 @@ extension TransactionViewController: ListeOperationsDelegate {
         self.dateOperation.allowEmptyDate = false
         self.dateOperation.showPromptWhenEmpty = false
         self.dateOperation.referenceDate = Date()
-        self.dateOperation.dateFieldPlaceHolder = Localizations.Operation.Multi
+        self.dateOperation.dateFieldPlaceHolder = Localizations.Transaction.Multi
         self.dateOperation.dateValue = Date()
         
         self.datePointage.allowEmptyDate = false
         self.datePointage.showPromptWhenEmpty = false
         self.datePointage.referenceDate = Date()
-        self.datePointage.dateFieldPlaceHolder = Localizations.Operation.Multi
+        self.datePointage.dateFieldPlaceHolder = Localizations.Transaction.Multi
         self.datePointage.dateValue = Date()
     }
     
@@ -78,10 +78,10 @@ extension TransactionViewController: ListeOperationsDelegate {
     func editionOperations(_ quakes: [EntityOperations]) {
         
         self.edition = true
-        self.modeOperation.title = Localizations.Operation.ModeEdition
+        self.modeOperation.title = Localizations.Transaction.ModeEdition
         self.modeOperation.layer?.backgroundColor = NSColor.green.cgColor
         
-        self.modeOperation2.title = Localizations.Operation.ModeEdition
+        self.modeOperation2.title = Localizations.Transaction.ModeEdition
         self.modeOperation2.layer?.backgroundColor = NSColor.green.cgColor
         
         self.buttonSave.isEnabled = true
@@ -163,7 +163,7 @@ extension TransactionViewController: ListeOperationsDelegate {
         if setReleve.count > 1 {
             self.textFieldReleveBancaire.stringValue =  ""
             self.textFieldReleveBancaire.alignment =  .left
-            self.textFieldReleveBancaire.placeholderString = Localizations.Operation.MultipleValue
+            self.textFieldReleveBancaire.placeholderString = Localizations.Transaction.MultipleValue
         } else {
             self.textFieldReleveBancaire.doubleValue = setReleve.first!
             self.textFieldReleveBancaire.alignment =  .right
@@ -173,7 +173,7 @@ extension TransactionViewController: ListeOperationsDelegate {
         if setMontant.count > 1 {
             textFieldMontant.stringValue =  ""
             textFieldMontant.alignment =  .left
-            textFieldMontant.placeholderString = Localizations.Operation.MultipleValue
+            textFieldMontant.placeholderString = Localizations.Transaction.MultipleValue
         } else {
             let montant = setMontant.first!
             self.textFieldMontant.alignment =  .right
@@ -197,7 +197,7 @@ extension TransactionViewController: ListeOperationsDelegate {
             dateOperation.dateValue = setDateOperation.first!
         }
         
-        if setModePaiement.count > 1 && popUpModePaiement.itemTitle(at: 0) != Localizations.Operation.MultipleValue {
+        if setModePaiement.count > 1 && popUpModePaiement.itemTitle(at: 0) != Localizations.Transaction.MultipleValue {
             let menuItemMultiplevalue = getMenuItemMultiplevalue()
             menuItemMultiplevalue.action = #selector(optionModePaiement(menuItem:))
             
@@ -206,7 +206,7 @@ extension TransactionViewController: ListeOperationsDelegate {
             
         } else {
             var mode = popUpModePaiement.itemTitle(at: 0)
-            if mode == Localizations.Operation.MultipleValue {
+            if mode == Localizations.Transaction.MultipleValue {
                 
                 self.popUpModePaiement.menu?.removeItem(at: 0)
                 mode = self.popUpModePaiement.itemTitle(at: 0)
@@ -217,7 +217,7 @@ extension TransactionViewController: ListeOperationsDelegate {
             }
         }
         
-        if setStatut.count > 1 && popUpStatut.itemTitle(at: 0) != Localizations.Operation.MultipleValue {
+        if setStatut.count > 1 && popUpStatut.itemTitle(at: 0) != Localizations.Transaction.MultipleValue {
             let menuItem = getMenuItemMultiplevalue()
             menuItem.action = #selector(optionStatut(menuItem:))
             
@@ -226,7 +226,7 @@ extension TransactionViewController: ListeOperationsDelegate {
             
         } else {
             let mode = popUpStatut.itemTitle(at: 0)
-            if mode == Localizations.Operation.MultipleValue {
+            if mode == Localizations.Transaction.MultipleValue {
                 
                 self.popUpStatut.menu?.removeItem(at: 0)
             }
@@ -234,19 +234,19 @@ extension TransactionViewController: ListeOperationsDelegate {
             self.popUpStatut.selectItem(at: (Int(setStatut.first ?? statut)))
         }
         
-        if setTransfert.count > 1 && popUpTransfert.itemTitle(at: 0) != Localizations.Operation.MultipleValue {
+        if setTransfert.count > 1 && popUpTransfert.itemTitle(at: 0) != Localizations.Transaction.MultipleValue {
             
             let menuItemMultiplevalue = getMenuItemMultiplevalue()
             menuItemMultiplevalue.action = #selector(optionAccount(menuItem:))
             
             popUpTransfert.menu?.insertItem(menuItemMultiplevalue, at: 0)
             popUpTransfert.selectItem(at: 0)
-            nameCompte.stringValue = Localizations.Operation.MultipleValue
-            nomTitulaire.stringValue = Localizations.Operation.MultipleValue
-            prenomTitulaire.stringValue = Localizations.Operation.MultipleValue
+            nameCompte.stringValue = Localizations.Transaction.MultipleValue
+            nomTitulaire.stringValue = Localizations.Transaction.MultipleValue
+            prenomTitulaire.stringValue = Localizations.Transaction.MultipleValue
         } else {
             var transfert = popUpTransfert.itemTitle(at: 0)
-            if transfert == Localizations.Operation.MultipleValue {
+            if transfert == Localizations.Transaction.MultipleValue {
                 
                 popUpTransfert.menu?.removeItem(at: 0)
                 transfert = popUpTransfert.itemTitle(at: 0)
@@ -284,7 +284,7 @@ extension TransactionViewController: ListeOperationsDelegate {
             .font: NSFont.systemFont(ofSize: 13.0), 
             .foregroundColor: NSColor.lightGray,
             .paragraphStyle: paragraphStyle]
-        let attributedText = NSAttributedString(string: Localizations.Operation.MultipleValue, attributes: labelAttrs)
+        let attributedText = NSAttributedString(string: Localizations.Transaction.MultipleValue, attributes: labelAttrs)
         
         let menuItem = NSMenuItem()
         menuItem.attributedTitle = attributedText

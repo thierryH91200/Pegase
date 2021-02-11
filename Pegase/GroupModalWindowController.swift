@@ -17,7 +17,7 @@ final class GroupModalWindowController: NSWindowController, NSTextFieldDelegate 
         nameGroup.delegate = self
 
         mode.isBordered = false //Important
-        mode.title = Localizations.Operation.ModeCreation
+        mode.title = Localizations.Transaction.ModeCreation
         mode.bezelStyle = .texturedSquare
         mode.wantsLayer = true
         mode.layer?.backgroundColor = NSColor.green.cgColor
@@ -26,7 +26,7 @@ final class GroupModalWindowController: NSWindowController, NSTextFieldDelegate 
 
             nameGroup.stringValue = account?.name ?? "name"
             
-            mode.title = Localizations.Operation.ModeEdition
+            mode.title = Localizations.Transaction.ModeEdition
             mode.layer?.backgroundColor = NSColor.orange.cgColor
         }
     }

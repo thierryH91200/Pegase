@@ -27,7 +27,7 @@ final class RubriqueViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        view.window!.title = Localizations.General.Rubric
+        view.window!.title = Localizations.General.Rubrique
         NotificationCenter.receive(instance: self, name:.selectionDidChangeOutLine, selector: #selector(selectionDidChange))
     }
     

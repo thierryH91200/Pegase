@@ -9,10 +9,6 @@
 
 import AppKit
 
-class KSHeaderCellView4: NSTableCellView {
-    
-    @IBOutlet weak var colorWell: NSColorWell!
-}
 
 class KSTableCellView2: NSTableCellView {
     
@@ -24,3 +20,9 @@ class KSHeaderCellView3: NSTableCellView {
     @IBOutlet weak var colorWell: NSColorWell!
     @IBOutlet weak var total: NSTextField!
 }
+
+class KSHeaderCellView4: NSTableCellView {
+    
+    @IBOutlet weak var colorWell: NSColorWell!
+}
+

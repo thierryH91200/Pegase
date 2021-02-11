@@ -117,7 +117,6 @@ final class ListTransactionsController: NSViewController {
     
     @IBOutlet var menuTable: NSMenu!
 
-    
     var colorBackGround = #colorLiteral(red: 0.8157508969, green: 0.8595363498, blue: 0.9023539424, alpha: 1)
 
     let attribute: [NSAttributedString.Key: Any] = [
@@ -291,9 +290,9 @@ final class ListTransactionsController: NSViewController {
         let strIncome = formatter.string(from: income as NSNumber)!
         
         if number < 2 {
-            select =   Localizations.ListeOperation.operation.singular(number)
+            select =   Localizations.ListeOperation.transaction.singular(number)
         } else {
-            select =   Localizations.ListeOperation.operation.plural(number)
+            select =   Localizations.ListeOperation.transaction.plural(number)
         }
         info = select + "  " + Localizations.ListeOperation.info(strExpense, strIncome, strAmount)
 
@@ -354,9 +353,9 @@ final class ListTransactionsController: NSViewController {
             let count = selectedRow.count
             
             if count < 2 {
-                select =   Localizations.ListeOperation.operation.selectionnee.singular(count)
+                select =   Localizations.ListeOperation.transaction.selectionnee.singular(count)
             } else {
-                select =   Localizations.ListeOperation.operation.selectionnee.plural(count)
+                select =   Localizations.ListeOperation.transaction.selectionnee.plural(count)
             }
             let info = select + Localizations.ListeOperation.info( strExpense, strIncome, amountStr)
 

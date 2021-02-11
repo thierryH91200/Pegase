@@ -26,7 +26,7 @@ extension TransactionViewController {
         let menuItem = NSMenuItem()
         
         if value == currentAccount {
-            title = Localizations.Operation.NoTransfert
+            title = Localizations.Transaction.NoTransfert
             menuItem.representedObject = nil
         } else {
             menuItem.representedObject = value

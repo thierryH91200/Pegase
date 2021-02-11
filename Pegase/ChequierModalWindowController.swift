@@ -19,7 +19,7 @@ final class ChequierModalWindowController: NSWindowController {
         mode.wantsLayer = true
         mode.isBordered = false //Important
         mode.bezelStyle = .texturedSquare
-        mode.title = Localizations.Operation.ModeCreation
+        mode.title = Localizations.Transaction.ModeCreation
         mode.layer?.backgroundColor = NSColor.green.cgColor
 
         if edition == true {
@@ -29,7 +29,7 @@ final class ChequierModalWindowController: NSWindowController {
             numNext.stringValue = String(entityCarnetCheques.numSuivant)
             numberCheques.stringValue = String(entityCarnetCheques.nbCheques)
             
-            mode.title = Localizations.Operation.ModeEdition
+            mode.title = Localizations.Transaction.ModeEdition
             mode.layer?.backgroundColor = NSColor.orange.cgColor
         }
     }
