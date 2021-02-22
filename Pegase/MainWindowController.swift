@@ -9,7 +9,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     var listTransactionsController: ListTransactionsController?
     var transactionController: TransactionViewController?
     var sourceListViewController: SourceListViewController?
-    var groupeAccountViewController: GroupeAccountViewController?
+    var groupeAccountViewController: AccountGroupViewController?
     
     var tresorerieController: TresorerieController?
     var rubricPieController: RubricPieController?
@@ -64,6 +64,13 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     var delimiter = ""
     var quote = ""
     var exportTmp = ""
+    
+    private var center: UNUserNotificationCenter?
+    private let handler = NotificationHandler()
+    private let notifyCategoryIdentifier = "test"
+    private let notificationsHelper = NotificationsHelper()
+    
+
     
     override var windowNibName: NSNib.Name? {
         return  "MainWindowController"
@@ -145,32 +152,82 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
                 item.state = .on
             }
         }
+        
+        
+        self.center = UNUserNotificationCenter.current()
+        self.center?.delegate = self.handler
+        self.initNotifications()
+        self.requestPermission()
+        notificationsHelper.requestPermission(for:  [.alert, .sound, .badge])
+        
+        notificationsHelper.scheduleNotification(timeInterval: 1, repeats: false)
+
+
+    }
+    
+    public func requestPermission(for authorization: UNAuthorizationOptions = []) {
+
+        self.center?.requestAuthorization(
+            options: authorization) { (permissionGranted, error) in
+                guard let checkedError = error else {
+                    if !permissionGranted {
+                        print("Notification permission denied")
+                    } else {
+                        print("Notification permission granted")
+                    }
+                    return
+                }
+                print("ERROR:::", checkedError.localizedDescription)
+        }
     }
 
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        // pull out the buried userInfo dictionary
-        let userInfo = response.notification.request.content.userInfo
-
-        if let customData = userInfo["customData"] as? String {
-            print("Custom data received: \(customData)")
-
-            switch response.actionIdentifier {
-            case UNNotificationDefaultActionIdentifier:
-                // the user swiped to unlock
-                print("Default identifier")
-
-            case "show":
-                // the user tapped our "show more info…" button
-                print("Show more information…")
-
-            default:
-                break
+    private func initNotifications() {
+        guard let center = self.center else { return }
+        
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Successful authorized!")
+                // Define the custom actions.
+                let byeAction = UNNotificationAction(identifier: NotificationActionsEnum.bye.rawValue, title: NSLocalizedString("Bye", comment: ""), options: UNNotificationActionOptions(rawValue: 0))
+                
+                let sayHelloAction = UNNotificationAction(identifier: NotificationActionsEnum.sayHello.rawValue, title: NSLocalizedString("Hello", comment: ""), options: UNNotificationActionOptions(rawValue: 0))
+                
+                // Define the notification type
+                let testCategory = UNNotificationCategory(identifier: self.notifyCategoryIdentifier, actions: [byeAction, sayHelloAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
+                
+                center.setNotificationCategories([testCategory])
+            } else {
+                print("Authorization denied!")
+                return
             }
         }
-
-        // you must call the completion handler when you're done
-        completionHandler()
     }
+
+
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+//        // pull out the buried userInfo dictionary
+//        let userInfo = response.notification.request.content.userInfo
+//
+//        if let customData = userInfo["customData"] as? String {
+//            print("Custom data received: \(customData)")
+//
+//            switch response.actionIdentifier {
+//            case UNNotificationDefaultActionIdentifier:
+//                // the user swiped to unlock
+//                print("Default identifier")
+//
+//            case "show":
+//                // the user tapped our "show more info…" button
+//                print("Show more information…")
+//
+//            default:
+//                break
+//            }
+//        }
+//
+//        // you must call the completion handler when you're done
+//        completionHandler()
+//    }
 
     private func justForTheFun() {
         
@@ -215,7 +272,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     
     private func setUpGroupeAccount()
     {
-        self.groupeAccountViewController = GroupeAccountViewController()
+        self.groupeAccountViewController = AccountGroupViewController()
         let subView = self.groupeAccountViewController?.view
         Commun.shared.addSubview(subView: subView!, toView: accountView)
         

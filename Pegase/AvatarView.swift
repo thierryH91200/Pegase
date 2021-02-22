@@ -6,7 +6,7 @@
 //  Copyright © 2020 Appcoda. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 class AvatarView: NSView {
 
@@ -50,7 +50,6 @@ class AvatarView: NSView {
         }
         return NSDragOperation()
     }
-    
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         guard let pasteboardObjects = sender.draggingPasteboard.readObjects(forClasses: [NSImage.self, NSColor.self, NSString.self, NSURL.self], options: acceptableUTITypes()), pasteboardObjects.count > 0 else {

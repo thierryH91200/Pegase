@@ -67,9 +67,9 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
         return false
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, shouldPresent notification: UNNotification) -> Bool {
-        return true
-    }
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, shouldPresent notification: UNNotification) -> Bool {
+//        return true
+//    }
     
     // Reopen mainWindow, when the user clicks on the dock icon.
     func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
@@ -83,11 +83,11 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
         return true
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print(#function)
-        completionHandler([.banner, .list, .sound])
-        
-    }
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        print(#function)
+//        completionHandler([.banner, .list, .sound])
+//
+//    }
     
 //    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
 //        print(#function)

@@ -1,6 +1,6 @@
 import AppKit
 
-final class GroupeAccountViewController: NSViewController {
+final class AccountGroupViewController: NSViewController {
     
     @IBOutlet weak var anSideBar: NSOutlineView!
     @IBOutlet weak var accountButton: NSButton!

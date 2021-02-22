@@ -134,7 +134,7 @@ extension MainWindowController: SourceListDelegate
             
             self.setUpGroupeListTransactionsSecondary()
             self.parameterController?.rubriqueViewController?.delegate = listTransactionsController
-            self.parameterController?.modePaiementViewController?.delegate = listTransactionsController
+            self.parameterController?.modeOfPaymentViewController?.delegate = listTransactionsController
             
             isSplitRightHidden  = true
             isSplitCenterHidden =  false

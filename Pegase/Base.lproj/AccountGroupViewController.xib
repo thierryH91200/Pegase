@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18121" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="GroupeAccountViewController" customModule="Pegase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="AccountGroupViewController" customModule="Pegase" customModuleProvider="target">
             <connections>
                 <outlet property="accountButton" destination="vus-5B-rad" id="ZlL-uZ-Cle"/>
                 <outlet property="anSideBar" destination="SV1-LM-vvL" id="N2n-m4-Pfs"/>
@@ -174,7 +173,7 @@
                                                         </connections>
                                                     </textField>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="keX-O7-AoF">
-                                                        <rect key="frame" x="340" y="15" width="39" height="14"/>
+                                                        <rect key="frame" x="348" y="15" width="31" height="14"/>
                                                         <buttonCell key="cell" type="inline" title="-100" bezelStyle="inline" alignment="center" inset="2" id="HLs-HJ-jpL">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="smallSystemBold"/>
@@ -241,7 +240,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TIr-VT-BXB">
-                                                        <rect key="frame" x="346" y="25" width="33" height="14"/>
+                                                        <rect key="frame" x="354" y="25" width="25" height="14"/>
                                                         <buttonCell key="cell" type="inline" title="100" bezelStyle="inline" alignment="center" inset="2" id="txG-6h-qoY">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="smallSystemBold"/>
@@ -377,10 +376,10 @@
     </objects>
     <resources>
         <image name="019-folder" width="256" height="256"/>
-        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSAddTemplate" width="14" height="13"/>
         <image name="NSFolder" width="32" height="32"/>
-        <image name="NSLockLockedTemplate" width="10" height="14"/>
-        <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="NSLockLockedTemplate" width="14" height="15"/>
+        <image name="NSRemoveTemplate" width="14" height="4"/>
         <image name="icons8-museum-80" width="64" height="64"/>
     </resources>
 </document>

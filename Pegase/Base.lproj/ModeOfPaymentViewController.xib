@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ModePaiementViewController" customModule="Pegase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="ModeOfPaymentViewController" customModule="Pegase" customModuleProvider="target">
             <connections>
                 <outlet property="menuLocal" destination="bOa-5n-E2z" id="k8J-cg-FQO"/>
                 <outlet property="tablePaiementView" destination="w2I-L3-nUL" id="mHl-dq-Jh2"/>

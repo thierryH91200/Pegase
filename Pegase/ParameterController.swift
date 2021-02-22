@@ -5,7 +5,7 @@ final class ParameterController: NSViewController {
     @IBOutlet weak var tabView: NSTabView!
     
     var chequiersViewController: ChequiersViewController!
-    var modePaiementViewController: ModePaiementViewController!
+    var modeOfPaymentViewController: ModeOfPaymentViewController!
     var rubriqueViewController: RubriqueViewController!
     var preferenceOperationViewController: PreferenceOperationViewController!
     
@@ -15,8 +15,8 @@ final class ParameterController: NSViewController {
         
         NotificationCenter.default.removeObserver(chequiersViewController!, name: .updateAccount, object: nil)
         
-        NotificationCenter.default.removeObserver(modePaiementViewController!, name: .updateAccount, object: nil)
-        NotificationCenter.default.removeObserver(modePaiementViewController!, name: .selectionDidChangeTable, object: nil)
+        NotificationCenter.default.removeObserver(modeOfPaymentViewController!, name: .updateAccount, object: nil)
+        NotificationCenter.default.removeObserver(modeOfPaymentViewController!, name: .selectionDidChangeTable, object: nil)
 
         NotificationCenter.default.removeObserver(rubriqueViewController!, name: .updateAccount, object: nil)
         NotificationCenter.default.removeObserver(rubriqueViewController!, name: .selectionDidChangeOutLine, object: nil)
@@ -29,14 +29,14 @@ final class ParameterController: NSViewController {
         super.viewDidLoad()
         
         chequiersViewController = ChequiersViewController()
-        modePaiementViewController = ModePaiementViewController()
+        modeOfPaymentViewController = ModeOfPaymentViewController()
         rubriqueViewController = RubriqueViewController()
         preferenceOperationViewController = PreferenceOperationViewController()
 
         let chequiersItem = NSTabViewItem(viewController: chequiersViewController)
         chequiersItem.label = Localizations.ModePaiement.Cheque
         
-        let modeItem = NSTabViewItem(viewController: modePaiementViewController)
+        let modeItem = NSTabViewItem(viewController: modeOfPaymentViewController)
         modeItem.label = Localizations.General.Mode_Paiement
         
         let rubricItem = NSTabViewItem(viewController: rubriqueViewController)

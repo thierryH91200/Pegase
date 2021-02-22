@@ -1,6 +1,6 @@
 import AppKit
 
-extension GroupeAccountViewController: NSMenuDelegate {
+extension AccountGroupViewController: NSMenuDelegate {
     
     func menuWillOpen( _ menu: NSMenu) {
         
