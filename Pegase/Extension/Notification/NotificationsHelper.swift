@@ -66,9 +66,10 @@ public struct NotificationsHelper {
             guard let checkedError = error else {
                 if !permissionGranted {
                     print("Notification permission denied")
-                } else {
-                    print("Notification permission granted")
                 }
+//                else {
+//                    print("Notification permission granted")
+//                }
                 return
             }
             print("ERROR:::", checkedError.localizedDescription)
@@ -89,51 +90,6 @@ public struct NotificationsHelper {
     ///      - timeInterval: *timeInterval* to schedule notification
     ///      - repeats: if notification should repeat
     /// Returns: `void`
-    //    public func scheduleNotifications(timeInterval: Double, repeats: Bool) {
-    //        let notificationCenter = UNUserNotificationCenter.current()
-    //
-    //        notificationCenter.getNotificationSettings(completionHandler: {(settings: UNNotificationSettings) in
-    //            if settings.authorizationStatus != .authorized { return }
-    //            for notification in self.notifications {
-    //                let content = UNMutableNotificationContent()
-    //                content.userInfo = notification.userInfo
-    //                content.title = notification.title
-    //                content.body = notification.body
-    //                content.subtitle = notification.subtitle
-    //                content.sound = notification.sound
-    //                content.categoryIdentifier = notification.categoryIdentifier
-    //                content.badge = notification.badge
-    //
-    //                if let attachment = notification.attachment,
-    //                    let attachmentIdentifier = notification.attachmentIdentifier {
-    //                    let url = URL(fileURLWithPath: attachment)
-    //                    do {
-    //                        let constructedAttachment = try UNNotificationAttachment(
-    //                            identifier: attachmentIdentifier,
-    //                            url: url, options: nil
-    //                        )
-    //                        content.attachments = [constructedAttachment]
-    //                    } catch {
-    //                        print("Couldn't attach attachment to notification")
-    //                    }
-    //                }
-    //
-    //                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: repeats)
-    //                let request = UNNotificationRequest(
-    //                    identifier: notification.id.uuidString,
-    //                    content: content,
-    //                    trigger: trigger)
-    //
-    //                notificationCenter.add(request, withCompletionHandler: { (error: Error?) in
-    //                    if let error = error {
-    //                        print("ERROR:::", error.localizedDescription)
-    //                        return
-    //                    }
-    //                    print("Scheduling notification with id: \(notification.id)")
-    //                })
-    //            }
-    //        })
-    //    }
     
     func scheduleNotification(timeInterval: Double, repeats: Bool)  {
         

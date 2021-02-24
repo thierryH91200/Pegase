@@ -17,10 +17,10 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
 //        center.delegate = self
 
 //        NSUserNotificationCenter.default.delegate = self
-        if #available(OSX 10.14, *) {
-            UNUserNotificationCenter.current().registerNotificationCategories()
-            UNUserNotificationCenter.current().delegate = self
-        }
+//        if #available(OSX 10.14, *) {
+//            UNUserNotificationCenter.current().registerNotificationCategories()
+//            UNUserNotificationCenter.current().delegate = self
+//        }
 
     }
     
@@ -66,11 +66,7 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
     func applicationShouldTerminateAfterLastWindowClosed (_ sender: NSApplication) -> Bool {
         return false
     }
-    
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, shouldPresent notification: UNNotification) -> Bool {
-//        return true
-//    }
-    
+        
     // Reopen mainWindow, when the user clicks on the dock icon.
     func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if flag == false {
@@ -82,19 +78,5 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
         }
         return true
     }
-    
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-//        print(#function)
-//        completionHandler([.banner, .list, .sound])
-//
-//    }
-    
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-//        print(#function)
-//        completionHandler([.banner, .sound])
-//    }
-
-
-    
-    
+        
 }

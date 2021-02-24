@@ -110,9 +110,7 @@
             </view>
             <toolbar key="toolbar" implicitIdentifier="98A9D07C-EF3F-4675-8C25-00EF196A7E7E" displayMode="iconAndLabel" sizeMode="regular" id="RKk-tk-6Wo">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="DB745FC8-3855-48C1-82E7-C2A3E09F5DDB" explicitItemIdentifier="NSToolBarPreference" label="Preference" paletteLabel="Preference" tag="-1" image="NSPreferencesGeneral" id="3B0-RB-4Tk">
-                        <size key="minSize" width="22" height="22"/>
-                        <size key="maxSize" width="22" height="22"/>
+                    <toolbarItem implicitItemIdentifier="DB745FC8-3855-48C1-82E7-C2A3E09F5DDB" explicitItemIdentifier="NSToolBarPreference" label="Preference" paletteLabel="Preference" tag="-1" image="NSPreferencesGeneral" sizingBehavior="auto" id="3B0-RB-4Tk">
                         <connections>
                             <action selector="showPreference:" target="-1" id="mYq-N9-7ad"/>
                         </connections>
@@ -123,13 +121,11 @@
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="n6F-Zi-st2"/>
-                    <toolbarItem implicitItemIdentifier="8A4BC928-8AF8-45DE-9C7B-F6D4A9993B33" label="" paletteLabel="" image="NSColorPanel" id="bq9-jA-dQw">
+                    <toolbarItem implicitItemIdentifier="8A4BC928-8AF8-45DE-9C7B-F6D4A9993B33" label="" paletteLabel="" image="NSColorPanel" sizingBehavior="auto" id="bq9-jA-dQw">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="63" height="28"/>
-                        <size key="maxSize" width="100" height="58"/>
                         <popUpButton key="view" id="Twh-f9-5Zl">
-                            <rect key="frame" x="0.0" y="14" width="63" height="58"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <rect key="frame" x="0.0" y="14" width="43" height="32"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <popUpButtonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" arrowPosition="noArrow" selectedItem="IgK-Mt-ygU" id="R6I-ah-vUb">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="menu"/>
@@ -155,13 +151,11 @@
                             <action selector="chooseCouleur:" target="-1" id="E84-8o-O6T"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="AFA8898A-6F50-402C-9EF7-4B280109128B" label="" paletteLabel="" id="1Dz-AB-dni">
+                    <toolbarItem implicitItemIdentifier="AFA8898A-6F50-402C-9EF7-4B280109128B" label="" paletteLabel="" sizingBehavior="auto" id="1Dz-AB-dni">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="102" height="24"/>
-                        <size key="maxSize" width="103" height="24"/>
                         <segmentedControl key="view" verticalHuggingPriority="750" id="NgB-Is-paZ">
-                            <rect key="frame" x="0.0" y="14" width="103" height="24"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <rect key="frame" x="0.0" y="14" width="112" height="23"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectAny" id="qBE-4e-rZN">
                                 <font key="font" metaFont="system"/>
                                 <segments>
@@ -177,13 +171,11 @@
                             </connections>
                         </segmentedControl>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="F791907D-DA59-4251-BEF0-7E40D31863B5" label="" paletteLabel="" image="036-calculator" id="ljO-eb-MIK">
+                    <toolbarItem implicitItemIdentifier="F791907D-DA59-4251-BEF0-7E40D31863B5" label="" paletteLabel="" image="036-calculator" sizingBehavior="auto" id="ljO-eb-MIK">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="64" height="50"/>
-                        <size key="maxSize" width="91" height="64"/>
                         <button key="view" verticalHuggingPriority="750" id="eZw-n4-LJf">
-                            <rect key="frame" x="0.0" y="14" width="64" height="53"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <rect key="frame" x="0.0" y="14" width="256" height="256"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="036-calculator" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="bmk-1H-9eg">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -193,13 +185,11 @@
                             <action selector="LaunchCalc:" target="-2" id="iqE-go-MLD"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="1F1769A0-9725-4B70-9BFB-8946954A0889" label="" paletteLabel="" id="Lhn-kH-RMc">
+                    <toolbarItem implicitItemIdentifier="1F1769A0-9725-4B70-9BFB-8946954A0889" label="" paletteLabel="" sizingBehavior="auto" id="Lhn-kH-RMc">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="96" height="22"/>
-                        <size key="maxSize" width="210" height="22"/>
                         <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="V9X-nK-zfa">
                             <rect key="frame" x="0.0" y="14" width="200" height="22"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="ncw-6t-2XV">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -210,9 +200,7 @@
                             </connections>
                         </searchField>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="DFAB3495-9EC7-4592-AB5A-EFF54F52A6E5" label="Search advanced" paletteLabel="Toolbar Item" tag="-1" image="Search" id="FZM-Br-BYZ">
-                        <size key="minSize" width="22" height="22"/>
-                        <size key="maxSize" width="22" height="22"/>
+                    <toolbarItem implicitItemIdentifier="DFAB3495-9EC7-4592-AB5A-EFF54F52A6E5" label="Search advanced" paletteLabel="Toolbar Item" tag="-1" image="Search" sizingBehavior="auto" id="FZM-Br-BYZ">
                         <connections>
                             <action selector="AdvancedFilter:" target="-1" id="aKL-eu-j3L"/>
                         </connections>

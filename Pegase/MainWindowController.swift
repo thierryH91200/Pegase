@@ -153,47 +153,44 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
             }
         }
         
-        
         self.center = UNUserNotificationCenter.current()
         self.center?.delegate = self.handler
         self.initNotifications()
-        self.requestPermission()
+//        self.requestPermission()
         notificationsHelper.requestPermission(for:  [.alert, .sound, .badge])
         
         notificationsHelper.scheduleNotification(timeInterval: 1, repeats: false)
-
-
     }
     
-    public func requestPermission(for authorization: UNAuthorizationOptions = []) {
-
-        self.center?.requestAuthorization(
-            options: authorization) { (permissionGranted, error) in
-                guard let checkedError = error else {
-                    if !permissionGranted {
-                        print("Notification permission denied")
-                    } else {
-                        print("Notification permission granted")
-                    }
-                    return
-                }
-                print("ERROR:::", checkedError.localizedDescription)
-        }
-    }
+//    public func requestPermission(for authorization: UNAuthorizationOptions = []) {
+//
+//        self.center?.requestAuthorization(
+//            options: authorization) { (permissionGranted, error) in
+//                guard let checkedError = error else {
+//                    if !permissionGranted {
+//                        print("Notification permission denied")
+//                    }
+//                    else {
+//                        print("Notification permission granted")
+//                    }
+//                    return
+//                }
+//                print("ERROR:::", checkedError.localizedDescription)
+//        }
+//    }
 
     private func initNotifications() {
         guard let center = self.center else { return }
         
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
-                print("Successful authorized!")
+  //              print("Successful authorized!")
                 // Define the custom actions.
                 let byeAction = UNNotificationAction(identifier: NotificationActionsEnum.bye.rawValue, title: NSLocalizedString("Bye", comment: ""), options: UNNotificationActionOptions(rawValue: 0))
-                
-                let sayHelloAction = UNNotificationAction(identifier: NotificationActionsEnum.sayHello.rawValue, title: NSLocalizedString("Hello", comment: ""), options: UNNotificationActionOptions(rawValue: 0))
+                let helloAction = UNNotificationAction(identifier: NotificationActionsEnum.sayHello.rawValue, title: NSLocalizedString("Hello", comment: ""), options: UNNotificationActionOptions(rawValue: 0))
                 
                 // Define the notification type
-                let testCategory = UNNotificationCategory(identifier: self.notifyCategoryIdentifier, actions: [byeAction, sayHelloAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
+                let testCategory = UNNotificationCategory(identifier: self.notifyCategoryIdentifier, actions: [byeAction, helloAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
                 
                 center.setNotificationCategories([testCategory])
             } else {

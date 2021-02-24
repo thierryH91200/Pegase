@@ -39,16 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "52D78413-31F5-4B1A-B1F2-B5580C487902"
-            shouldBeEnabled = "Yes"
+            uuid = "33FA4DF3-055E-45D1-B336-8CE961059C33"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/AppDelegate.swift"
+            filePath = "Pegase/Extension/Notification/NotificationsHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "userNotificationCenter(_:shouldPresent:)"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "requestPermission(for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

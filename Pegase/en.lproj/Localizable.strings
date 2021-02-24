@@ -10,25 +10,30 @@
 "Check.MessageText" = "Delete the check ?";
 
 // MARK: -  Document
+"Document.IdName" = "Doe";
+"Document.IdPrenom" = "John";
+
 "Document.Bank_Account" = "Bank account";
 "Document.Carte_de_crédit" = "Bank card";
 "Document.Compte_Courant" = "Current account";
 "Document.Epargne" = "Save";
 "Document.Especes" = "Cash account";
 "Document.File_Uploaded" = "File Uploaded";
-"Document.IdName" = "Doe";
-"Document.IdPrenom" = "John";
 "Document.OpenProjectPanelMessage" = "OpenProject";
 
 // MARK: -  General
-"General.Account" = "Account";
+//"General.Account" = "Account";
 "General.Account.Plural" = "%d accounts";
 "General.Account.Singular" = "1 account";
 "General.Account.Zero" = "0 compte";
+
 "General.Account1" = "Account1";
+
 "General.Amount" = "Amount";
-"General.BankAccount.Plural" = "Comptes bancaires";
+
 "General.BankAccount.Singular" = "Compte bancaire";
+"General.BankAccount.Plural" = "Comptes bancaires";
+
 "General.Cancel" = "Annuler";
 "General.Category" = "Categorie";
 "General.Date Operation" = "Date Transaction";
@@ -49,9 +54,11 @@
 "GroupeAccount.Account.Menu.Add" = "Add an account";
 "GroupeAccount.Account.Menu.Edit" = "Edit an account";
 "GroupeAccount.Account.Menu.Remove" = "Delete an account";
+
 "GroupeAccount.Folder.Menu.Add" = "Add folder";
 "GroupeAccount.Folder.Menu.Edit" = "Edit folder";
 "GroupeAccount.Folder.Menu.Remove" = "Remove folder";
+
 "GroupeAccount.RemoveAlert.Cancel" = "Cancel";
 "GroupeAccount.RemoveAlert.Delete" = "Remove";
 "GroupeAccount.RemoveAlert.InformativeText" = "Are you sure you would like to delete this item ?";
@@ -67,6 +74,7 @@
 "ImportSimplifiee.Menu.montant" = "Montant";
 "ImportSimplifiee.Menu.rubrique" = "Rubric";
 "ImportSimplifiee.Menu.statut" = "Statut";
+
 "ImportSimplifiee.category" = "Category";
 "ImportSimplifiee.comment" = "Comment";
 "ImportSimplifiee.compte" = "account";
@@ -78,27 +86,12 @@
 
 // MARK: -  ListeOperation
 "ListeOperation.info" = "Expenses : %@ Income : %@ Total : %@";
+
 "ListeOperation.transaction.plural" = "%d transaction";
 "ListeOperation.transaction.selectionnee.plural" = "%d selected transactions";
+
 "ListeOperation.transaction.selectionnee.singular" = "%d selected transaction";
 "ListeOperation.transaction.singular" = "%d transaction";
-
-// MARK: -  MenuBar
-"MenuBar.Rapports.Catégorie Bar" = "Catégorie Bar";
-"MenuBar.Rapports.Catégorie Bar1" = "Catégorie Bar1";
-"MenuBar.Rapports.Mode de paiement" = "Mode de paiement";
-"MenuBar.Rapports.Name" = "Rapports";
-"MenuBar.Rapports.Recette Depense" = "Recette Depense";
-"MenuBar.Rapports.Rubrique Bar" = "Rubrique";
-"MenuBar.Rapports.Rubrique Pie" = "Rubrique Pie";
-"MenuBar.RéférenceCompte.Identite" = "Identite";
-"MenuBar.RéférenceCompte.Name" = "Référence compte";
-"MenuBar.RéférenceCompte.Scheduler" = "Scheduler";
-"MenuBar.RéférenceCompte.Settings" = "Settings";
-"MenuBar.SuivieDeTresorerie.CourbeDeTrésorerie" = "Courbe de trésorerie";
-"MenuBar.SuivieDeTresorerie.ListeDesOpérations" = "List of Transactions";
-"MenuBar.SuivieDeTresorerie.Name" = "Suivie de Tresorerie";
-"MenuBar.SuivieDeTresorerie.SiteWebDeLaBanque" = "Site Web de la banque";
 
 // MARK: -  Mode
 "Mode.Delete" = "Delete";
@@ -139,9 +132,6 @@
 "Statut.Planifie" = "Plannifie";
 "Statut.Realise" = "Executed";
 
-// MARK: -  TouchBar
-"TouchBar.Delete" = "Delete";
-
 // MARK: -  alert
 "alert.title_error" = "Error";
 "alert.title_info" = "Information";
@@ -151,3 +141,29 @@
 "searchMenu.title.all" = "all";
 "searchMenu.title.libelle" = "libelle";
 "searchMenu.title.menu" = "menu";
+
+// MARK: -  MenuBar
+"MenuBar.SuivieDeTresorerie.CourbeDeTrésorerie" = "Courbe de trésorerie";
+"MenuBar.SuivieDeTresorerie.ListeDesOpérations" = "List of Transactions";
+"MenuBar.SuivieDeTresorerie.Name" = "Suivie de Tresorerie";
+"MenuBar.SuivieDeTresorerie.SiteWebDeLaBanque" = "Site Web de la banque";
+
+"MenuBar.Rapports.Catégorie Bar" = "Catégorie Bar";
+"MenuBar.Rapports.Catégorie Bar1" = "Catégorie Bar1";
+"MenuBar.Rapports.Mode de paiement" = "Mode de paiement";
+"MenuBar.Rapports.Name" = "Rapports";
+"MenuBar.Rapports.Recette Depense" = "Recette Depense";
+"MenuBar.Rapports.Rubrique Bar" = "Rubrique";
+"MenuBar.Rapports.Rubrique Pie" = "Rubrique Pie";
+
+"MenuBar.RéférenceCompte.Identite" = "Identite";
+"MenuBar.RéférenceCompte.Name" = "Référence compte";
+"MenuBar.RéférenceCompte.Scheduler" = "Scheduler";
+"MenuBar.RéférenceCompte.Settings" = "Settings";
+
+// MARK: -  TouchBar
+"TouchBar.Delete" = "Delete";
+
+
+"Hello" = "Hello";
+"Bye" = "Bye";
