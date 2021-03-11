@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +14,6 @@
                 <outlet property="dateOperation" destination="g4C-Zy-qyV" id="8gE-8w-AKF"/>
                 <outlet property="datePointage" destination="Eem-MR-po3" id="lGY-gK-DrB"/>
                 <outlet property="gridView" destination="xVj-Nc-rk1" id="Feo-OL-z9I"/>
-                <outlet property="labelNumCheque" destination="NKu-mY-Xgh" id="ZzU-5P-yxl"/>
                 <outlet property="menuLocal" destination="P88-j3-pWA" id="21r-28-igQ"/>
                 <outlet property="modeOperation" destination="HNV-fd-rFo" id="CeS-Ql-IS3"/>
                 <outlet property="modeOperation2" destination="hJa-1H-CrV" id="4jr-6E-jyg"/>
@@ -37,25 +35,25 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView identifier="operationView" wantsLayer="YES" misplaced="YES" id="XLY-hj-aKs">
-            <rect key="frame" x="0.0" y="0.0" width="423" height="851"/>
+            <rect key="frame" x="0.0" y="0.0" width="343" height="851"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HNV-fd-rFo">
-                    <rect key="frame" x="0.0" y="811" width="423" height="22"/>
+                    <rect key="frame" x="0.0" y="809" width="336" height="22"/>
                     <buttonCell key="cell" type="square" title="Creation mode" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Vt-JO-eHx">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="systemBold"/>
                     </buttonCell>
                 </button>
                 <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hJa-1H-CrV">
-                    <rect key="frame" x="0.0" y="0.0" width="423" height="22"/>
+                    <rect key="frame" x="0.0" y="0.0" width="336" height="22"/>
                     <buttonCell key="cell" type="square" title="Creation mode" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="imH-56-LpJ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="systemBold"/>
                     </buttonCell>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EYn-LT-ATq">
-                    <rect key="frame" x="203" y="38" width="76" height="32"/>
+                    <rect key="frame" x="116" y="38" width="76" height="32"/>
                     <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qRn-tw-gIV">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -68,7 +66,7 @@ Gw
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-5u-dsV">
-                    <rect key="frame" x="316" y="38" width="64" height="32"/>
+                    <rect key="frame" x="229" y="38" width="64" height="32"/>
                     <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O56-55-rg3">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -78,23 +76,23 @@ Gw
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-RJ-Cys">
-                    <rect key="frame" x="0.0" y="832" width="423" height="20"/>
+                    <rect key="frame" x="0.0" y="830" width="336" height="22"/>
                     <buttonCell key="cell" type="smallSquare" title="Operation" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hFD-G4-FOE">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="systemBold"/>
                     </buttonCell>
                 </button>
                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fF-HD-HLv">
-                    <rect key="frame" x="10" y="125" width="403" height="676"/>
+                    <rect key="frame" x="10" y="123" width="316" height="676"/>
                     <clipView key="contentView" id="6K4-jp-YVa">
-                        <rect key="frame" x="1" y="1" width="401" height="674"/>
+                        <rect key="frame" x="1" y="1" width="314" height="674"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="3T2-Tz-fIQ">
-                                <rect key="frame" x="0.0" y="0.0" width="401" height="674"/>
+                                <rect key="frame" x="0.0" y="0.0" width="314" height="674"/>
                                 <subviews>
                                     <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="4Wa-ec-fVy" userLabel="AddButton">
-                                        <rect key="frame" x="0.0" y="127" width="35" height="24"/>
+                                        <rect key="frame" x="0.0" y="127" width="32" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="53I-zd-VzX"/>
                                             <constraint firstAttribute="height" constant="22" id="qu3-OA-KbK"/>
@@ -131,7 +129,7 @@ Gw
                                         </popUpButtonCell>
                                     </popUpButton>
                                     <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3yh-ou-nMh">
-                                        <rect key="frame" x="58" y="127" width="343" height="24"/>
+                                        <rect key="frame" x="55" y="127" width="259" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="2tB-zY-HWF"/>
                                         </constraints>
@@ -141,7 +139,7 @@ Gw
                                         </buttonCell>
                                     </button>
                                     <gridView horizontalCompressionResistancePriority="250" xPlacement="leading" yPlacement="bottom" rowAlignment="none" translatesAutoresizingMaskIntoConstraints="NO" id="xVj-Nc-rk1">
-                                        <rect key="frame" x="0.0" y="318" width="401" height="356"/>
+                                        <rect key="frame" x="0.0" y="318" width="314" height="356"/>
                                         <rows>
                                             <gridRow id="yGe-By-jQX"/>
                                             <gridRow id="5JH-k5-oIP"/>
@@ -176,7 +174,7 @@ Gw
                                             </gridCell>
                                             <gridCell row="yGe-By-jQX" column="7a2-OZ-B6f" id="tqY-6l-oUm">
                                                 <popUpButton key="contentView" horizontalHuggingPriority="240" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Bi-vG-2Yv">
-                                                    <rect key="frame" x="163" y="332" width="242" height="25"/>
+                                                    <rect key="frame" x="163" y="332" width="155" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="5fh-LW-LIK"/>
                                                     </constraints>
@@ -271,7 +269,7 @@ Gw
                                             </gridCell>
                                             <gridCell row="kho-WZ-Hzt" column="7a2-OZ-B6f" id="WaC-KV-mB0">
                                                 <datePicker key="contentView" horizontalHuggingPriority="230" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g4C-Zy-qyV" customClass="TFDatePicker">
-                                                    <rect key="frame" x="166" y="233" width="238" height="28"/>
+                                                    <rect key="frame" x="166" y="233" width="151" height="28"/>
                                                     <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="qxj-TL-SOP" customClass="TFDatePickerCell">
                                                         <font key="font" metaFont="system"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="-595929600">
@@ -297,7 +295,7 @@ Gw
                                             </gridCell>
                                             <gridCell row="DDK-JU-Fbe" column="7a2-OZ-B6f" xPlacement="fill" id="f7u-fp-9bU">
                                                 <popUpButton key="contentView" horizontalHuggingPriority="235" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xou-fp-xTh">
-                                                    <rect key="frame" x="163" y="203" width="242" height="25"/>
+                                                    <rect key="frame" x="163" y="203" width="155" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="mrd-cM-15v"/>
                                                     </constraints>
@@ -326,7 +324,7 @@ Gw
                                             </gridCell>
                                             <gridCell row="Mag-g6-f7g" column="7a2-OZ-B6f" xPlacement="fill" id="LzY-df-CUl">
                                                 <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Icb-JM-RnW" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
-                                                    <rect key="frame" x="166" y="180" width="235" height="21"/>
+                                                    <rect key="frame" x="166" y="180" width="148" height="21"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="UFN-25-MIb">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -352,7 +350,7 @@ Gw
                                             </gridCell>
                                             <gridCell row="YJz-6b-npd" column="7a2-OZ-B6f" id="qon-0A-AfU">
                                                 <datePicker key="contentView" horizontalHuggingPriority="229" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Eem-MR-po3" customClass="TFDatePicker">
-                                                    <rect key="frame" x="166" y="130" width="238" height="28"/>
+                                                    <rect key="frame" x="166" y="130" width="151" height="28"/>
                                                     <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="wQc-OQ-y96" customClass="TFDatePickerCell">
                                                         <font key="font" metaFont="system"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="540144000">
@@ -378,7 +376,7 @@ Gw
                                             </gridCell>
                                             <gridCell row="P25-Qm-jHB" column="7a2-OZ-B6f" id="1ht-Pu-zB0">
                                                 <popUpButton key="contentView" horizontalHuggingPriority="236" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MgP-Lb-bfo">
-                                                    <rect key="frame" x="163" y="100" width="242" height="25"/>
+                                                    <rect key="frame" x="163" y="100" width="155" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="axM-af-8eK"/>
                                                     </constraints>
@@ -407,7 +405,7 @@ Gw
                                             </gridCell>
                                             <gridCell row="cgt-sT-pDj" column="7a2-OZ-B6f" xPlacement="fill" id="eBi-Fh-C4E">
                                                 <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hr3-Yd-2Mm" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
-                                                    <rect key="frame" x="166" y="76" width="235" height="22"/>
+                                                    <rect key="frame" x="166" y="76" width="148" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="eGj-Gn-hlG"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="pbz-rj-xeC"/>
@@ -437,7 +435,7 @@ Gw
                                             </gridCell>
                                             <gridCell row="w1d-9J-wri" column="7a2-OZ-B6f" xPlacement="fill" id="yG4-oN-DNV">
                                                 <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Xf-89-lQg" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
-                                                    <rect key="frame" x="166" y="20" width="235" height="21"/>
+                                                    <rect key="frame" x="166" y="20" width="148" height="21"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Csa-R9-eSX">
                                                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="currency" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="2" maximumFractionDigits="2" id="PPA-Yc-5r3"/>
                                                         <font key="font" usesAppearanceFont="YES"/>
@@ -451,26 +449,26 @@ Gw
                                         </gridCells>
                                     </gridView>
                                     <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qv9-LC-g66">
-                                        <rect key="frame" x="0.0" y="296" width="401" height="22"/>
+                                        <rect key="frame" x="0.0" y="296" width="314" height="22"/>
                                         <buttonCell key="cell" type="square" title="Sub-operation" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r1R-Hw-Rbk">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemBold"/>
                                         </buttonCell>
                                     </button>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0F-FK-TPR">
-                                        <rect key="frame" x="0.0" y="150" width="401" height="146"/>
+                                        <rect key="frame" x="0.0" y="150" width="314" height="146"/>
                                         <clipView key="contentView" ambiguous="YES" id="Adq-bN-xds">
-                                            <rect key="frame" x="1" y="1" width="399" height="144"/>
+                                            <rect key="frame" x="1" y="1" width="312" height="144"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <outlineView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="23z-uz-tS8" viewBased="YES" indentationPerLevel="16" outlineTableColumn="BaG-Ny-W5A" id="DgR-hH-UaB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="439" height="119"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="119"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="427" minWidth="40" maxWidth="1000" id="BaG-Ny-W5A">
+                                                        <tableColumn width="300" minWidth="40" maxWidth="1000" id="BaG-Ny-W5A">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Sub-operation">
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -483,11 +481,11 @@ Gw
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView identifier="FeedCellHeader" id="zBr-b4-Rku">
-                                                                    <rect key="frame" x="1" y="1" width="436" height="17"/>
+                                                                    <rect key="frame" x="1" y="1" width="309" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="AsO-vw-T9g">
-                                                                            <rect key="frame" x="0.0" y="1" width="436" height="16"/>
+                                                                            <rect key="frame" x="0.0" y="1" width="309" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="uqp-LK-iT0">
                                                                                 <font key="font" metaFont="system"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -517,8 +515,8 @@ Gw
                                                 </outlineView>
                                             </subviews>
                                         </clipView>
-                                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Xj5-Lh-7iv">
-                                            <rect key="frame" x="1" y="129" width="399" height="16"/>
+                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Xj5-Lh-7iv">
+                                            <rect key="frame" x="1" y="129" width="312" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="H5Z-84-YGo">
@@ -526,15 +524,15 @@ Gw
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" wantsLayer="YES" id="23z-uz-tS8">
-                                            <rect key="frame" x="0.0" y="0.0" width="439" height="25"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="312" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
                                     <customView horizontalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="HEa-Le-IpH">
-                                        <rect key="frame" x="0.0" y="150" width="401" height="146"/>
+                                        <rect key="frame" x="0.0" y="150" width="314" height="146"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kVY-c0-c38">
-                                                <rect key="frame" x="70" y="57" width="261" height="32"/>
+                                                <rect key="frame" x="27" y="57" width="261" height="32"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" title="Add a sub-operation" id="Kez-P4-uLX">
                                                     <font key="font" size="26" name="Arial-BoldItalicMT"/>
                                                     <color key="textColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -549,7 +547,7 @@ Gw
                                         </constraints>
                                     </customView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Keh-A9-CE0">
-                                        <rect key="frame" x="35" y="127" width="23" height="24"/>
+                                        <rect key="frame" x="32" y="127" width="23" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="gsN-p2-fak"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="23" id="om0-K2-hIE"/>
@@ -563,7 +561,7 @@ Gw
                                         </connections>
                                     </button>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="aSO-gS-etR" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="0.0" width="401" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="5AC-tO-C0x"/>
                                         </constraints>
@@ -618,11 +616,11 @@ Gw
                         <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
                     <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="8l8-uE-EzR">
-                        <rect key="frame" x="1" y="659" width="401" height="16"/>
+                        <rect key="frame" x="1" y="659" width="314" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="sba-t5-wnC">
-                        <rect key="frame" x="386" y="1" width="16" height="674"/>
+                        <rect key="frame" x="299" y="1" width="16" height="674"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>

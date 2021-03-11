@@ -111,7 +111,6 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
         dateValeur.dateValue = Date()
         
         razData()
-
     }
     
     @objc func updateChangeCompte(_ notification: Notification) {

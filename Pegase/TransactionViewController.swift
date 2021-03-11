@@ -8,7 +8,7 @@ import TFDate
     func reloadData()
 }
 
-final class TransactionViewController: NSViewController {
+final class TransactionViewController: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate {
     
     public weak var delegate: OperationsDelegate?
     
@@ -46,7 +46,6 @@ final class TransactionViewController: NSViewController {
     @objc var date5: Date?
     
     @IBOutlet weak var numCheque: NSTextField!
-    @IBOutlet weak var labelNumCheque: NSTextField!
     
     var entityOperation: EntityOperations?
     var entityOperations : [EntityOperations] = []
@@ -114,9 +113,13 @@ final class TransactionViewController: NSViewController {
 
         self.resetOperation()
         
-        self.numCheque.isEnabled = false
+        self.numCheque.isEnabled = true
         self.addView.isHidden = false
         
+        numCheque.delegate = self
+        textFieldReleveBancaire.delegate = self
+//        popUpStatut.control
+
         dateOperation.locale = Locale.current
         
         self.initChart()
@@ -125,6 +128,32 @@ final class TransactionViewController: NSViewController {
     @objc func updateChangeCompte(_ notification: Notification) {
 
         self.resetOperation()
+    }
+    
+    func controlTextDidEndEditing (_ notification: Notification) {
+    
+//        super.controlTextDidEndEditing(notification)
+
+        guard let textField = notification.object as? NSTextField else { return  }
+        
+        var bar = "rien"
+        if textField == textFieldReleveBancaire {
+            bar = "textFieldReleveBancaire"
+            saveActions(notification)
+        }
+        if textField == numCheque {
+            bar = "numCheque"
+            saveActions(notification)
+        }
+        
+        guard let popUpButton = notification.object as? NSPopUpButton else { return  }
+        if popUpButton == popUpStatut {
+            bar = "popUpStatut"
+            saveActions(notification)
+
+        }
+
+        print(bar)
     }
     
     private func initChart() {

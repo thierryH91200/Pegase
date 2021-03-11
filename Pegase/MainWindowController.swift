@@ -156,29 +156,11 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
         self.center = UNUserNotificationCenter.current()
         self.center?.delegate = self.handler
         self.initNotifications()
-//        self.requestPermission()
+
         notificationsHelper.requestPermission(for:  [.alert, .sound, .badge])
-        
         notificationsHelper.scheduleNotification(timeInterval: 1, repeats: false)
     }
     
-//    public func requestPermission(for authorization: UNAuthorizationOptions = []) {
-//
-//        self.center?.requestAuthorization(
-//            options: authorization) { (permissionGranted, error) in
-//                guard let checkedError = error else {
-//                    if !permissionGranted {
-//                        print("Notification permission denied")
-//                    }
-//                    else {
-//                        print("Notification permission granted")
-//                    }
-//                    return
-//                }
-//                print("ERROR:::", checkedError.localizedDescription)
-//        }
-//    }
-
     private func initNotifications() {
         guard let center = self.center else { return }
         
@@ -194,37 +176,11 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
                 
                 center.setNotificationCategories([testCategory])
             } else {
-                print("Authorization denied!")
+                print("Authorization denied!  ", error?.localizedDescription ?? "error")
                 return
             }
         }
     }
-
-
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-//        // pull out the buried userInfo dictionary
-//        let userInfo = response.notification.request.content.userInfo
-//
-//        if let customData = userInfo["customData"] as? String {
-//            print("Custom data received: \(customData)")
-//
-//            switch response.actionIdentifier {
-//            case UNNotificationDefaultActionIdentifier:
-//                // the user swiped to unlock
-//                print("Default identifier")
-//
-//            case "show":
-//                // the user tapped our "show more info…" button
-//                print("Show more information…")
-//
-//            default:
-//                break
-//            }
-//        }
-//
-//        // you must call the completion handler when you're done
-//        completionHandler()
-//    }
 
     private func justForTheFun() {
         

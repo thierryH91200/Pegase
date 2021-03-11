@@ -81,12 +81,12 @@ extension TransactionViewController {
     
     @objc func optionModePaiement( menuItem: NSMenuItem)
     {
-        if menuItem.title == Localizations.ModePaiement.Cheque {
+        let title = menuItem.title
+        let cheque = Localizations.ModePaiement.Cheque
+        if title == cheque {
             self.numCheque.isHidden = false
-            self.labelNumCheque.isHidden = false
         } else {
             self.numCheque.isHidden = true
-            self.labelNumCheque.isHidden = true
         }
     }
     

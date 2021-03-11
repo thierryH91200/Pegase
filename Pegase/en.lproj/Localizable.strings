@@ -34,7 +34,7 @@
 "General.BankAccount.Singular" = "Compte bancaire";
 "General.BankAccount.Plural" = "Comptes bancaires";
 
-"General.Cancel" = "Annuler";
+"General.Cancel" = "Cancel";
 "General.Category" = "Categorie";
 "General.Date Operation" = "Date Transaction";
 "General.Date Pointage" = "Date Pointage";
@@ -45,7 +45,7 @@
 "General.Liste des opérations" = "Liste des transactions";
 "General.Mode Paiement" = "Mode Paiement";
 "General.Operation" = "Transaction";
-"General.Rubrique" = "Rubrique";
+"General.Rubrique" = "Rubric";
 "General.Scheduler" = "Scheduler";
 "General.Solde" = "Balance";
 "General.Statut" = "Statut";

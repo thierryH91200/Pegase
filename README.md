@@ -155,6 +155,11 @@ You must integrate into your project manually.
 
 Feel free to contribute to this project by providing ideas or opening pull requests with new features or solving an existing issue.
 
+## Acknowledgements
+
+Thanks to everyone who helped test this software and contributed suggestions.
+
+
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/thierryH91200/Pegase.svg)](https://starchart.cc/thierryH91200/Pegase)

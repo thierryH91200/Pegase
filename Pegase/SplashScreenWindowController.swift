@@ -21,7 +21,7 @@ final class SplashScreenRecentDocumentViewController: NSViewController {
 }
 
 /// Window controller for the splash screen.
-class SplashScreenWindowController: NSWindowController {
+final class SplashScreenWindowController: NSWindowController {
     
     @IBOutlet var recentDocumentsArrayController: NSArrayController!
     @IBOutlet weak var splashScreenImageView: NSImageView!
