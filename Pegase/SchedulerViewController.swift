@@ -78,6 +78,8 @@ final class SchedulerViewController: NSViewController {
         if selectedRow >= 0 {
             let quake = entityEcheancier[selectedRow]
             Echeanciers.shared.remove(entity: quake )
+//            self.tableView.reloadData()
+            updateData()
         }
     }
 }

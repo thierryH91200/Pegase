@@ -70,8 +70,6 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     private let notifyCategoryIdentifier = "test"
     private let notificationsHelper = NotificationsHelper()
     
-
-    
     override var windowNibName: NSNib.Name? {
         return  "MainWindowController"
     }

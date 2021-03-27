@@ -222,6 +222,7 @@
 		03AC6B8B25E3CCC8004C7223 /* NotificationActionsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC6B8925E3CCC8004C7223 /* NotificationActionsEnum.swift */; };
 		03ACCCD823FAD03A00098CFC /* TFDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ACCCD623FAD00500098CFC /* TFDate.framework */; };
 		03ACCCD923FAD03A00098CFC /* TFDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03ACCCD623FAD00500098CFC /* TFDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03AF08AE260CC33B0020CD24 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AF08AC260CC33B0020CD24 /* Error.swift */; };
 		03C23B8B2449BCDF00EF0B9E /* Capture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C23B8A2449BCDF00EF0B9E /* Capture1.png */; };
 		03D6923B25C4325D0012B66A /* UNCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6923925C4325D0012B66A /* UNCenter.swift */; };
 /* End PBXBuildFile section */
@@ -570,6 +571,7 @@
 		03AC6B8825E3CCC8004C7223 /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		03AC6B8925E3CCC8004C7223 /* NotificationActionsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationActionsEnum.swift; sourceTree = "<group>"; };
 		03ACCCD123FAD00500098CFC /* TFDate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TFDate.xcodeproj; path = "../../NSCustomControl/ZZZ DatePicker/TFDate/TFDate/TFDate.xcodeproj"; sourceTree = "<group>"; };
+		03AF08AC260CC33B0020CD24 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		03C23B8A2449BCDF00EF0B9E /* Capture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture1.png; sourceTree = "<group>"; };
 		03D6923925C4325D0012B66A /* UNCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNCenter.swift; sourceTree = "<group>"; };
 		03F3F4D324169CD60040700D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AccountViewController.strings; sourceTree = "<group>"; };
@@ -1130,6 +1132,7 @@
 				034EC90A23F87F51006944DD /* Debug.swift */,
 				034EC90223F87F51006944DD /* HeaderCell.swift */,
 				034EC90623F87F51006944DD /* ManagedObject.swift */,
+				03AF08AC260CC33B0020CD24 /* Error.swift */,
 				034EC90523F87F51006944DD /* MLTextField.swift */,
 				034EC90123F87F50006944DD /* Notification.swift */,
 				034EC90923F87F51006944DD /* NSImage.swift */,
@@ -1486,6 +1489,7 @@
 				034EC91A23F87F7E006944DD /* Localizations.swift in Sources */,
 				03213BB823F909C300002DD7 /* SliderViewVerticalController.swift in Sources */,
 				034EC8FD23F87EF1006944DD /* ListeOperations.swift in Sources */,
+				03AF08AE260CC33B0020CD24 /* Error.swift in Sources */,
 				03213C1523F90C0E00002DD7 /* ColorGridView.swift in Sources */,
 				03213C1F23F90C1B00002DD7 /* CategorieModalWindowController.swift in Sources */,
 				03213BDD23F90B3500002DD7 /* IdentiteViewController.swift in Sources */,

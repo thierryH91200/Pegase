@@ -1,6 +1,8 @@
 import AppKit
 
 
+// https://www.appcoda.com/nspasteboard-macos/
+
 extension ListTransactionsController {
     
     // MARK: -
@@ -27,8 +29,7 @@ extension ListTransactionsController {
         self.resetChange()
     }
     
-    // MARK: -
-    // MARK: duplicate
+    // MARK: - duplicate
     @IBAction func duplicate(_ sender: Any) {
         
         guard (outlineListView) != nil else { return }
@@ -38,8 +39,7 @@ extension ListTransactionsController {
         
     }
     
-    // MARK: -
-    // MARK: Copy
+    // MARK: - Copy
     @IBAction func copy(_ sender: Any) {
         
         guard (outlineListView) != nil else { return }
@@ -51,8 +51,7 @@ extension ListTransactionsController {
         }
     }
     
-    // MARK: -
-    // MARK: Paste
+    // MARK: - Paste
     // If there were no pasted items that are of the Lister pasteboard type, see if there are any String contents on the pasteboard.
     @IBAction func paste(_ sender: Any) {
         
@@ -68,22 +67,20 @@ extension ListTransactionsController {
         getAllData()
         reloadData()
         self.resetChange()
-
     }
     
     private func insertListItems(listItems: [EntityOperations]) {
         guard !listItems.isEmpty else { return }
         
         for listItem in listItems {
-            let duplicate = listItem.duplicate(only: ["copy"])
+            let duplicate = listItem.copyEntireObjectGraph(context: mainObjectContext) as! EntityOperations
             print(duplicate)
         }
         let undoActionName = NSLocalizedString("Insert", comment: "")
         undoManager?.setActionName(undoActionName)
     }
 
-    // MARK: -
-    // MARK: Cut
+    // MARK: - Cut
     @IBAction func cut(_ sender: Any) {
         
         guard (outlineListView) != nil else { return }
@@ -111,11 +108,9 @@ extension ListTransactionsController {
             }
         }
         self.resetChange()
-
     }
     
-    // MARK: -
-    // MARK: Divers
+    // MARK: - Divers
     private func writeListItems(listItems: [IdOperations]) {
         
         let pasteBoard = NSPasteboard.general
@@ -221,8 +216,9 @@ extension ListTransactionsController {
             if !trimmedString.isEmpty {
                 let uuid = UUID(uuidString: trimmedString)
                 let entities = ListTransactions.shared.find(uuid: uuid!)
-                let newEntities = entities.duplicate(except: ["deepcopy"]) as! EntityOperations
-                newEntities.uuid = UUID()
+                let newEntities = entities.copyEntireObjectGraph(context: mainObjectContext) as! EntityOperations
+
+                newEntities.uuid = UUID()       // new UUID
                 newEntities.account = currentAccount
                 newEntities.operationLiee = nil
             }
