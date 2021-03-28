@@ -101,18 +101,21 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         }
         
         cellView = outlineView.makeView(withIdentifier: .FeedCellMonth, owner: self) as? KSHeaderCellView
-        //      cellView = outlineView.makeView(withIdentifier: .FeedCellYear, owner: self) as? KSHeaderCellView
         
-        //        cellView?.fillColor = .gray
         cellView?.textField?.stringValue = title
         cellView?.textField?.textColor = .labelColor
         cellView?.backgroundStyle = .normal
+        
+//        let attribute: [NSAttributedString.Key: Any] = [
+//            .font: NSFont.systemFont(ofSize: NSFont.systemFontSize, weight: .bold),
+//            .foregroundColor: NSColor.black]
+
         return cellView
     }
     
     func oneSubOperation(outlineView: NSOutlineView, tableColumn: NSTableColumn?, item: TrackingSubOperation) -> NSView? {
         
-        var     cellView: NSTableCellView?
+        var cellView: NSTableCellView?
         
         let identifier = tableColumn!.identifier
         guard let propertyEnum = ListeOperationsDisplayProperty(rawValue: identifier.rawValue) else { return nil }
@@ -135,8 +138,10 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         
         switch propertyEnum
         {
+
         case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .solde:
             textField.stringValue = ""
+            
         case .rubrique:
             textField.stringValue = sousOperations.category?.rubric?.name ?? ""
         case .categorie:
@@ -178,7 +183,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
     
     func manySubOperations(outlineView: NSOutlineView, tableColumn: NSTableColumn?, item: TrackingSubOperations) -> NSView? {
         
-        
         var     cellView: NSTableCellView?
         
         guard tableColumn != nil else { return nil }
@@ -206,6 +210,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .left
         
+        print(propertyEnum)
         switch propertyEnum
         {
         case .rubrique:
@@ -222,7 +227,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             } else {
                 cellView = CrossHatchView()
                 textField.stringValue = ""
-                
             }
             
         case .libelle:
@@ -284,7 +288,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         case .bankStatement:
             paragraph.alignment = .center
             textField.doubleValue = quake.bankStatement
-            
+
         case .solde:
             let solde = quake.solde
             let price = solde as NSNumber
@@ -314,7 +318,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         
         return cellView
     }
-    
     
     func colorText (quake: EntityOperations, propertyEnum: ListeOperationsDisplayProperty) -> [NSAttributedString.Key: Any]
     {
@@ -411,7 +414,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
     
     func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
         if !isSourceGroupItem(item) {
-            return 16.0
+            return 18.0
         } else {
             return 24.0
         }
@@ -425,7 +428,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             return true
         }
         if item is TrackingIdTransactions {
-//            print(item)
             return true
         }
         return false
@@ -475,8 +477,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
 //        let isExpanded = ov?.isItemExpanded(item)
 //        let isParentExpanded = ov?.parent(forItem: item).map(ov!.isItemExpanded)
         ov!.expandItem(item, expandChildren: optionKeyIsDown)
-//
-//
+
 //        print("DELEGATE DID EXPAND", isExpanded ?? "nil", isParentExpanded ?? "nil")
     }
 

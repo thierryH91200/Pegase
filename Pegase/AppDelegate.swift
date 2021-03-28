@@ -36,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
         dict["rubrique"]       = false
         dict["categorie"]      = false
         dict["mode"]           = false
-        dict["releveBancaire"] = false
+        dict["bankStatement"] = false
         dict["statut"]         = false
         
         dict["montant"]        = false

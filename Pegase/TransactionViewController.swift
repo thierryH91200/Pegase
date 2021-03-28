@@ -61,7 +61,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     var setModePaiement  = Set<String>()
     var setStatut        = Set<Int16>()
     var setTransfert     = Set<String>()
-    var setCheck_In_Date  = Set<Date>()
+    var setCheck_In_Date = Set<Date>()
     var setDateOperation = Set<Date>()
     
     // edition = false => creation 1 operation
@@ -118,7 +118,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         
         numCheque.delegate = self
         textFieldReleveBancaire.delegate = self
-//        popUpStatut.control
+        popUpStatut.control
 
         dateOperation.locale = Locale.current
         
@@ -136,7 +136,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
 
         guard let textField = notification.object as? NSTextField else { return  }
         
-        var bar = "rien"
+        var bar = ""
         if textField == textFieldReleveBancaire {
             bar = "textFieldReleveBancaire"
             saveActions(notification)
@@ -150,7 +150,6 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         if popUpButton == popUpStatut {
             bar = "popUpStatut"
             saveActions(notification)
-
         }
 
         print(bar)
@@ -321,7 +320,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             
             // Relevé bancaire
             if (setReleve.count > 1 && textFieldReleveBancaire.stringValue != "") || setReleve.count == 1 {
-                oneOperation.bankStatement  = textFieldReleveBancaire.doubleValue
+                oneOperation.bankStatement = textFieldReleveBancaire.doubleValue
             }
             
             // ModePaiement

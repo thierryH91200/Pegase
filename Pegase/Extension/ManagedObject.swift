@@ -2,7 +2,7 @@ import Cocoa
 
 
 
-// https://stackoverflow.com/ questions/2730832/how-can-i-duplicate-or-copy-a-core-data-managed-object
+// https://stackoverflow.com/questions/2730832/how-can-i-duplicate-or-copy-a-core-data-managed-object
 extension NSManagedObject {
     
     func copyEntireObjectGraph(context: NSManagedObjectContext) -> NSManagedObject {
@@ -26,11 +26,9 @@ extension NSManagedObject {
         alreadyCopied[self.objectID] = cloned
         
         if let attributes = NSEntityDescription.entity(forEntityName: entityName, in: context)?.attributesByName {
-            
             for key in attributes.keys {
                 cloned.setValue(self.value(forKey: key), forKey: key)
             }
-            
         }
         
         if let relationships = NSEntityDescription.entity(forEntityName: entityName, in: context)?.relationshipsByName {
@@ -38,7 +36,6 @@ extension NSManagedObject {
             for (key, value) in relationships {
                 
                 if value.isToMany {
-                    
                     if let sourceSet = self.value(forKey: key) as? NSMutableOrderedSet {
                         
                         guard let clonedSet = cloned.value(forKey: key) as? NSMutableOrderedSet else {
@@ -46,7 +43,6 @@ extension NSManagedObject {
                         }
                         
                         let enumerator = sourceSet.objectEnumerator()
-                        
                         var nextObject = enumerator.nextObject() as? NSManagedObject
                         
                         while let relatedObject = nextObject {

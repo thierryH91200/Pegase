@@ -24,17 +24,17 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView identifier="tableTargetView" misplaced="YES" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="978" height="254"/>
+            <rect key="frame" x="0.0" y="0.0" width="718" height="254"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box wantsLayer="YES" borderType="bezel" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="5Aq-FR-V7B">
-                    <rect key="frame" x="-3" y="177" width="302" height="56"/>
+                    <rect key="frame" x="-3" y="177" width="235" height="56"/>
                     <view key="contentView" wantsLayer="YES" id="foI-zE-Ey5" userLabel="Box View">
-                        <rect key="frame" x="3" y="3" width="296" height="50"/>
+                        <rect key="frame" x="3" y="3" width="229" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField identifier="valeur" horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93c-oA-AlA">
-                                <rect key="frame" x="121" y="0.0" width="47" height="16"/>
+                                <rect key="frame" x="88" y="0.0" width="47" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0,00 €" placeholderString="" usesSingleLineMode="YES" id="UCM-Yo-Buc">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="currency" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="2" maximumFractionDigits="2" id="ecx-4m-vZQ"/>
                                     <font key="font" metaFont="system"/>
@@ -43,7 +43,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMw-oU-2Gf">
-                                <rect key="frame" x="100" y="30" width="90" height="16"/>
+                                <rect key="frame" x="66" y="30" width="90" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Bank balance" placeholderString="" usesSingleLineMode="YES" id="XUf-CO-lvj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
@@ -63,13 +63,13 @@
                     </constraints>
                 </box>
                 <box wantsLayer="YES" borderType="bezel" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="kaN-fO-rVd">
-                    <rect key="frame" x="298" y="177" width="302" height="56"/>
+                    <rect key="frame" x="231" y="177" width="236" height="56"/>
                     <view key="contentView" wantsLayer="YES" id="Fgm-6q-qLH" userLabel="Box View">
-                        <rect key="frame" x="3" y="3" width="296" height="50"/>
+                        <rect key="frame" x="3" y="3" width="230" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpz-w4-PcQ">
-                                <rect key="frame" x="122" y="0.0" width="47" height="16"/>
+                                <rect key="frame" x="88" y="0.0" width="47" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0,00 €" placeholderString="" usesSingleLineMode="YES" id="Giz-9P-iSF">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="currency" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="2" maximumFractionDigits="2" id="OHt-vK-hwD"/>
                                     <font key="font" metaFont="system"/>
@@ -78,7 +78,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxu-Vg-qAZ">
-                                <rect key="frame" x="103" y="30" width="85" height="16"/>
+                                <rect key="frame" x="69" y="30" width="85" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Real balance" placeholderString="" usesSingleLineMode="YES" id="ZZ9-MU-ZrS">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
@@ -98,13 +98,13 @@
                     </constraints>
                 </box>
                 <box wantsLayer="YES" borderType="bezel" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="5kM-8m-Qig">
-                    <rect key="frame" x="599" y="177" width="302" height="56"/>
+                    <rect key="frame" x="466" y="177" width="235" height="56"/>
                     <view key="contentView" wantsLayer="YES" id="Gcg-xt-S2p" userLabel="Box View">
-                        <rect key="frame" x="3" y="3" width="296" height="50"/>
+                        <rect key="frame" x="3" y="3" width="229" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8c0-fe-A4h">
-                                <rect key="frame" x="121" y="0.0" width="47" height="16"/>
+                                <rect key="frame" x="88" y="0.0" width="47" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0,00 €" placeholderString="" usesSingleLineMode="YES" id="VgO-AB-UAd">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="currency" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="2" maximumFractionDigits="2" id="g6k-Ag-VSw"/>
                                     <font key="font" metaFont="system"/>
@@ -113,7 +113,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrZ-9j-fBt">
-                                <rect key="frame" x="100" y="30" width="88" height="16"/>
+                                <rect key="frame" x="68" y="30" width="88" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Final balance" placeholderString="" usesSingleLineMode="YES" id="xrl-4V-20n">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" red="1" green="0.52120530610000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -133,9 +133,9 @@
                     </constraints>
                 </box>
                 <scrollView identifier="bor00" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qy4-Qd-SXf">
-                    <rect key="frame" x="0.0" y="50" width="898" height="131"/>
+                    <rect key="frame" x="0.0" y="50" width="698" height="131"/>
                     <clipView key="contentView" identifier="cl00" drawsBackground="NO" copiesOnScroll="NO" id="MrU-6U-j9E">
-                        <rect key="frame" x="1" y="1" width="896" height="129"/>
+                        <rect key="frame" x="1" y="1" width="696" height="129"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <outlineView identifier="out00" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" emptySelection="NO" autosaveName="savesave" rowHeight="24" rowSizeStyle="medium" headerView="hQw-AO-gpC" viewBased="YES" indentationPerLevel="13" autosaveExpandedItems="YES" outlineTableColumn="4yh-0M-4ko" id="A4y-JU-hzv">
@@ -218,7 +218,7 @@
                                                             <constraint firstAttribute="height" constant="17" id="VHN-5d-Fba"/>
                                                         </constraints>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="aWe-hk-5VP">
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" size="18" name=".SFNS-Regular"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -243,7 +243,7 @@
                                                             <constraint firstAttribute="height" constant="17" id="ejq-Kh-GRO"/>
                                                         </constraints>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="XAN-XA-QqH">
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" metaFont="system" size="16"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -440,7 +440,7 @@
                                             </tableCellView>
                                         </prototypeCellViews>
                                     </tableColumn>
-                                    <tableColumn identifier="releveBancaire" width="100" minWidth="40" maxWidth="1000" id="cjw-hX-VVI">
+                                    <tableColumn identifier="bankStatement" width="100" minWidth="40" maxWidth="1000" id="cjw-hX-VVI">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="right" title="Statement">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -702,10 +702,10 @@
                         <nil key="backgroundColor"/>
                     </clipView>
                     <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="PZQ-a7-22V">
-                        <rect key="frame" x="1" y="114" width="896" height="16"/>
+                        <rect key="frame" x="1" y="114" width="696" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Nmh-Hq-h1i">
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Nmh-Hq-h1i">
                         <rect key="frame" x="1319" y="23" width="16" height="8"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
