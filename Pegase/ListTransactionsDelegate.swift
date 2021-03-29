@@ -11,11 +11,11 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         outlineView.columnAutoresizingStyle = NSTableView.ColumnAutoresizingStyle.sequentialColumnAutoresizingStyle
         
         if let folderItem = item as?  TrackingMonth {
-            return trackingMonth( outlineView: outlineView, folderItem: folderItem)
+            return trackingFolderYear( outlineView: outlineView, folderItem: folderItem)
         }
         
         if let folderItem = item as? TrackingIdTransactions  {
-            return trackingIdOperations(outlineView: outlineView, folderItem: folderItem)
+            return trackingFolderMonth(outlineView: outlineView, folderItem: folderItem)
         }
         
         if let item = item as? TrackingSubOperations {
@@ -29,8 +29,8 @@ extension ListTransactionsController: NSOutlineViewDelegate {
     }
 
     
-// MARK: trackingMonth
-    func trackingMonth(outlineView: NSOutlineView, folderItem : TrackingMonth) -> NSView? {
+// MARK: - trackingFolderYear
+    func trackingFolderYear(outlineView: NSOutlineView, folderItem : TrackingMonth) -> NSView? {
         
         var cellView: KSHeaderCellView?
         
@@ -41,8 +41,8 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         return cellView
     }
     
-// MARK: trackingIdOperations
-    func trackingIdOperations(outlineView: NSOutlineView, folderItem : TrackingIdTransactions) -> NSView? {
+// MARK: - trackingFolderMonth
+    func trackingFolderMonth(outlineView: NSOutlineView, folderItem : TrackingIdTransactions) -> NSView? {
         
         var cellView: KSHeaderCellView?
         
@@ -183,7 +183,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
     
     func manySubOperations(outlineView: NSOutlineView, tableColumn: NSTableColumn?, item: TrackingSubOperations) -> NSView? {
         
-        var     cellView: NSTableCellView?
+        var cellView: NSTableCellView?
         
         guard tableColumn != nil else { return nil }
         
@@ -210,7 +210,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .left
         
-        print(propertyEnum)
+//        print(propertyEnum)
         switch propertyEnum
         {
         case .rubrique:
@@ -287,7 +287,11 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             
         case .bankStatement:
             paragraph.alignment = .center
-            textField.doubleValue = quake.bankStatement
+            if quake.bankStatement != 0 {
+                textField.doubleValue = quake.bankStatement
+            } else {
+                textField.stringValue = ""
+            }
 
         case .solde:
             let solde = quake.solde

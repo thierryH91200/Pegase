@@ -26,3 +26,8 @@ class KSHeaderCellView4: NSTableCellView {
     @IBOutlet weak var colorWell: NSColorWell!
 }
 
+class KSStatutCellView: NSTableCellView {
+    @IBOutlet weak var statutPopup: NSPopUpButton?
+}
+
+

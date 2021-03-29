@@ -118,7 +118,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         
         numCheque.delegate = self
         textFieldReleveBancaire.delegate = self
-        popUpStatut.control
+//        popUpStatut.control
 
         dateOperation.locale = Locale.current
         
