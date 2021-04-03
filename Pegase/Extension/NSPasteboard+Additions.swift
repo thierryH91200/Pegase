@@ -37,5 +37,4 @@ extension NSPasteboard.PasteboardType {
             return NSPasteboard.PasteboardType(rawValue: "NSMultipleTextSelectionPboardType")
         }
     }
-    
 }

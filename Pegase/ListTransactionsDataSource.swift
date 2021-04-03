@@ -37,14 +37,11 @@ extension ListTransactionsController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
         if let group = item as? GroupedMonthOperations {
-            //            print(group.month)
             return (group.month)
         }
         if let group = item as? GroupedYearOperations {
-            //            print(group.year)
             return (group.year)
         }
-//        print("nil")
         return nil
     }
     

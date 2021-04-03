@@ -195,6 +195,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
                 var amountStr = data[ colMontant]
                 if amountStr != "" {
                     amountStr = amountStr.replacingOccurrences(of: ",", with: ".")
+                    amountStr = amountStr.replacingOccurrences(of: " ", with: "")
                     let amount = Double(amountStr) ?? 0.0
                     entitySousOperation.amount = amount * Double(sign)
                 }

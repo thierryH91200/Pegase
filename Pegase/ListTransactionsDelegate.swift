@@ -210,7 +210,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .left
         
-//        print(propertyEnum)
         switch propertyEnum
         {
         case .rubrique:

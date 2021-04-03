@@ -14,9 +14,25 @@
             filePath = "Pegase/ListTransactionsDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "manySubOperations(outlineView:tableColumn:item:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC6BADEC-A262-42D4-913F-F37AE87489D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/ImportWindowController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "actionImport(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
