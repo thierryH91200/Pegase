@@ -65,8 +65,8 @@ extension ListTransactionsController {
         }
         
         getAllData()
-        reloadData()
-        self.resetChange()
+        reloadData(true)
+//        self.resetChange()
     }
     
     private func insertListItems(listItems: [EntityOperations]) {

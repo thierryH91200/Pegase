@@ -1,6 +1,13 @@
 import AppKit
 
 extension TransactionViewController: ListeOperationsDelegate {
+    func resetChange() {
+        
+    }
+    
+    func updateAccount() {
+        
+    }
     
     // MARK: razData
     func resetOperation() {

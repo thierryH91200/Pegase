@@ -9,7 +9,8 @@ public extension Notification.Name {
 
     static let selectionDidChangeTable   = NSTableView.selectionDidChangeNotification
     static let selectionDidChangeOutLine = NSOutlineView.selectionDidChangeNotification
-//    static let selectionDidChangeComboBox = NSComboBox.selectionDidChangeNotification
+    //    static let selectionDidChangeComboBox = NSComboBox.selectionDidChangeNotification
+    static let selectionDidChangePopUp = NSPopUpButton.willPopUpNotification
 }
 
 extension NotificationCenter {

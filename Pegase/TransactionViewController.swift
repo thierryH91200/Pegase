@@ -5,15 +5,19 @@ import TFDate
 // OperationController -> ListeOperationsController
 @objc public protocol OperationsDelegate {
     func getAllData()
-    func reloadData()
+    func reloadData(_ expand: Bool )
 }
 
 final class TransactionViewController: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate {
+    
+    let appDelegate = NSApplication.shared.delegate as! AppDelegate;
+
     
     public weak var delegate: OperationsDelegate?
     
     @IBOutlet weak var outlineViewSSOpe: NSOutlineView!
     @IBOutlet var menuLocal: NSMenu!
+    
     @IBOutlet weak var addView: NSView!
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var gridView: NSGridView!
@@ -118,12 +122,52 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         
         numCheque.delegate = self
         textFieldReleveBancaire.delegate = self
-//        popUpStatut.control
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(willShowPopup), name: NSPopUpButton.willPopUpNotification, object: nil);
 
         dateOperation.locale = Locale.current
         
         self.initChart()
     }
+    
+    @IBAction func popUpButtonUsed(_ sender: Any) {
+        print("sender.indexOfSelectedItem")
+    }
+
+    @objc func willShowPopup(_ notification: Notification) {
+//                guard let btn = notification.object as? NSPopUpButton else {
+//                    return;
+//                }
+        //        guard let btn = notification.object as? NSPopUpButton, self.actionButton == btn else {
+        //            return;
+        //        }
+//
+//        guard let menu = btn.menu?.item(withTitle: "Share")?.submenu else {
+//            return;
+//        }
+//
+//        print("menu:", menu.items.map({ it in it.title }));
+//
+//        menu.removeAllItems();
+//
+//        guard let item = self.item else {
+//            return;
+//        }
+//        guard let localUrl = DownloadStore.instance.url(for: "\(item.id)") else {
+//            return;
+//        }
+//
+//        let sharingServices = NSSharingService.sharingServices(forItems: [localUrl]);
+//        for service in sharingServices {
+//            let item = menu.addItem(withTitle: service.title, action: nil, keyEquivalent: "");
+//            item.image = service.image;
+//            item.target = self;
+//            item.action = #selector(shareItemSelected);
+//            item.isEnabled = true;
+//        }
+//        print("menu:", menu.items.map({ it in it.title }));
+    }
+
     
     @objc func updateChangeCompte(_ notification: Notification) {
 
@@ -296,7 +340,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         }
     }
     
-    // MARK: saveActions
+    // MARK: - saveActions
     // edition = false => create  1 operation
     // edition = true  => edition 1 to n operation(s)
     @IBAction func saveActions(_ sender: Any) {
@@ -343,13 +387,30 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             }
         }
         
+        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
+            
         self.delegate?.getAllData()
-        self.delegate?.reloadData()
+        self.delegate?.reloadData(true)
                 
         NotificationCenter.send(.updateBalance)
+        
         self.resetOperation()
+//        self.delegate?.resetChange()
     }
     
+    func getTodoItems() {
+        if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            do {
+                entityOperations = try context.fetch(EntityOperations.fetchRequest())
+                print("get: \(entityOperations)")
+            } catch {
+            }
+            self.delegate?.getAllData()
+                    self.delegate?.reloadData(true)
+
+        }
+    }
+
     func createOperationLiee(oneOperation: EntityOperations ) {
 
         print("Operation Liée")        
@@ -416,7 +477,6 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         }
         entityOperationsTransfert?.uuid          = UUID()
     }
-    
 }
 
 extension TransactionViewController: NSMenuDelegate {

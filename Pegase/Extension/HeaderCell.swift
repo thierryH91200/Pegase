@@ -1,21 +1,35 @@
 import AppKit
 
 // MARK: - MyNSTableRowView
-final class MyNSTableRowView: NSTableRowView {
+//final class MyNSTableRowView: NSTableRowView {
+//
+//    override func drawSelection(in dirtyRect: NSRect) {
+//        if self.selectionHighlightStyle != .none {
+//            let inset : CGFloat = 2
+//            let selectionRect = self.bounds.insetBy(dx: inset, dy: inset)
+//            let colorBack = NSColor.findHighlightColor
+////            let colorBack = NSColor.scrubberTexturedBackground
+//            colorBack.setStroke()
+//            colorBack.setFill()
+//            let radius : CGFloat  = 0
+//            let selectionPath = NSBezierPath(roundedRect: selectionRect, xRadius: radius, yRadius: radius)
+//            selectionPath.fill()
+//            selectionPath.stroke()
+//        }
+//    }
+//}
+
+class MyNSTableRowView: NSTableRowView {
     
     override func drawSelection(in dirtyRect: NSRect) {
-        if self.selectionHighlightStyle != .none {
-            let inset : CGFloat = 2
-            let selectionRect = self.bounds.insetBy(dx: inset, dy: inset)
-            let colorBack = NSColor.findHighlightColor
-//            let colorBack = NSColor.scrubberTexturedBackground
-            colorBack.setStroke()
-            colorBack.setFill()
-            let radius : CGFloat  = 0
-            let selectionPath = NSBezierPath(roundedRect: selectionRect, xRadius: radius, yRadius: radius)
-            selectionPath.fill()
-            selectionPath.stroke()
+        super.drawSelection(in: dirtyRect)
+
+        struct SharedColors {
+            static let backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
         }
+        
+        NSColor.selectedControlColor.set()
+        __NSRectFill(dirtyRect)
     }
 }
 

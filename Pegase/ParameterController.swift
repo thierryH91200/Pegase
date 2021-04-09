@@ -49,10 +49,10 @@ final class ParameterController: NSViewController {
         for item in items {
             tabView.removeTabViewItem(item)
         }
-        tabView.addTabViewItem(chequiersItem)
-        tabView.addTabViewItem(modeItem)
         tabView.addTabViewItem(rubricItem)
+        tabView.addTabViewItem(modeItem)
         tabView.addTabViewItem(operationItem)
+        tabView.addTabViewItem(chequiersItem)
         tabView.selectTabViewItem(at: 0)
     }
     

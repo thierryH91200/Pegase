@@ -56,10 +56,10 @@ final class InitAccount {
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitAccount", into: mainObjectContext) as? EntityInitAccount
         
         entity!.bic = ""
-        entity!.cleRib = 0
-        entity!.codeBank = 0
+        entity!.cleRib = ""
+        entity!.codeBank = ""
         entity!.codeAccount = numAccount
-        entity!.codeGuichet = 0
+        entity!.codeGuichet = ""
         entity!.engage = 0
         entity!.iban1 = ""
         entity!.iban2 = ""

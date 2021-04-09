@@ -8,6 +8,9 @@ import TFDate
     /// Called when a value has been selected inside the outline.
     func editionOperations(_ quakes: [EntityOperations])
     func resetOperation()
+    func resetChange()
+    func updateAccount()
+
 }
 
 // xxxxController -> ListeOperationsController
@@ -204,7 +207,11 @@ final class ListTransactionsController: NSViewController {
 
         self.outlineListView.rowSizeStyle = .custom
         self.outlineListView.reloadData()
-        self.outlineListView.allowsEmptySelection = true
+        self.outlineListView.allowsEmptySelection = false
+        
+        self.outlineListView.autosaveExpandedItems = true
+        self.outlineListView.autosaveName = "listeTransaction"
+
         self.outlineListView.expandItem(nil, expandChildren: true)
         
         outlineListView.menu = menuTable
@@ -237,8 +244,9 @@ final class ListTransactionsController: NSViewController {
         
         self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
         self.delegate?.resetOperation()
+        
         self.getAllData()
-        self.reloadData()
+        self.reloadData(true)
         
         self.resetChange()
         
@@ -255,53 +263,53 @@ final class ListTransactionsController: NSViewController {
         NotificationCenter.default.removeObserver(self, name: .selectionDidChangeOutLine, object: nil)
     }
     
-    func resetChange() {
-        self.removeButton.isHidden = true
-        let count = outlineListView.numberOfRows
-        
-        var amount = 0.0
-        var total = 0.0
-        var expense = 0.0
-        var income = 0.0
-        var info = ""
-        var select = ""
-        var number = 0
-
-        let formatter = NumberFormatter()
-        formatter.locale = Locale.current
-        formatter.numberStyle = .currency
-        
-        for row in 0..<count {
-            let item = outlineListView.item(atRow: row) as? IdOperations
-            if item != nil {
-                number += 1
-                amount = (item?.entityOperations.amount)!
-                total += amount
-                if amount < 0 {
-                    expense += amount
-                } else {
-                    income += amount
-                }
-            }
-        }
-
-        let strAmount = formatter.string(from: total as NSNumber)!
-        let strExpense = formatter.string(from: expense as NSNumber)!
-        let strIncome = formatter.string(from: income as NSNumber)!
-        
-        if number < 2 {
-            select =   Localizations.ListeOperation.transaction.singular(number)
-        } else {
-            select =   Localizations.ListeOperation.transaction.plural(number)
-        }
-        info = select + "  " + Localizations.ListeOperation.info(strExpense, strIncome, strAmount)
-
-        let attributedText = NSAttributedString(string: info, attributes: attribute)
-        self.labelInfo.attributedStringValue = attributedText
-
-        self.delegate?.resetOperation()
-    }
-    
+//    func resetChange() {
+//        self.removeButton.isHidden = true
+//        let count = outlineListView.numberOfRows
+//
+//        var amount = 0.0
+//        var total = 0.0
+//        var expense = 0.0
+//        var income = 0.0
+//        var info = ""
+//        var select = ""
+//        var number = 0
+//
+//        let formatter = NumberFormatter()
+//        formatter.locale = Locale.current
+//        formatter.numberStyle = .currency
+//
+//        for row in 0..<count {
+//            let item = outlineListView.item(atRow: row) as? IdOperations
+//            if item != nil {
+//                number += 1
+//                amount = (item?.entityOperations.amount)!
+//                total += amount
+//                if amount < 0 {
+//                    expense += amount
+//                } else {
+//                    income += amount
+//                }
+//            }
+//        }
+//
+//        let strAmount = formatter.string(from: total as NSNumber)!
+//        let strExpense = formatter.string(from: expense as NSNumber)!
+//        let strIncome = formatter.string(from: income as NSNumber)!
+//
+//        if number < 2 {
+//            select =   Localizations.ListeOperation.transaction.singular(number)
+//        } else {
+//            select =   Localizations.ListeOperation.transaction.plural(number)
+//        }
+//        info = select + "  " + Localizations.ListeOperation.info(strExpense, strIncome, strAmount)
+//
+//        let attributedText = NSAttributedString(string: info, attributes: attribute)
+//        self.labelInfo.attributedStringValue = attributedText
+//
+//        self.delegate?.resetOperation()
+//    }
+//
     @objc func selectionDidChange(_ notification: Notification) {
         
         guard let outlineView = notification.object as? NSOutlineView,
@@ -381,6 +389,7 @@ final class ListTransactionsController: NSViewController {
 
         balanceCalculation()
         let IdOperation = (0 ..< listeOperations.count).map { (i) -> IdOperations in
+            print( listeOperations[i].sectionYear!)
             return IdOperations(year : listeOperations[i].sectionYear!, id: listeOperations[i].sectionIdentifier!, entityOperations: listeOperations[i])
         }
         
@@ -445,7 +454,7 @@ final class ListTransactionsController: NSViewController {
         
         self.getAllData()
         self.outlineListView.reloadData()
-        self.outlineListView.expandItem(nil, expandChildren: true)
+        self.reloadData(true)
         
         self.resetChange()
     }
@@ -471,10 +480,73 @@ extension ListTransactionsController: FilterDelegate {
         self.transformData()
         self.reloadData()
     }
-    
 }
 
 extension ListTransactionsController: OperationsDelegate {
+    
+    func resetChange() {
+        self.removeButton.isHidden = true
+        let count = outlineListView.numberOfRows
+        
+        var amount = 0.0
+        var total = 0.0
+        var expense = 0.0
+        var income = 0.0
+        var info = ""
+        var select = ""
+        var number = 0
+
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
+        
+        for row in 0..<count {
+            let item = outlineListView.item(atRow: row) as? IdOperations
+            if item != nil {
+                number += 1
+                amount = (item?.entityOperations.amount)!
+                total += amount
+                if amount < 0 {
+                    expense += amount
+                } else {
+                    income += amount
+                }
+            }
+        }
+
+        let strAmount = formatter.string(from: total as NSNumber)!
+        let strExpense = formatter.string(from: expense as NSNumber)!
+        let strIncome = formatter.string(from: income as NSNumber)!
+        
+        if number < 2 {
+            select =   Localizations.ListeOperation.transaction.singular(number)
+        } else {
+            select =   Localizations.ListeOperation.transaction.plural(number)
+        }
+        info = select + "  " + Localizations.ListeOperation.info(strExpense, strIncome, strAmount)
+
+        let attributedText = NSAttributedString(string: info, attributes: attribute)
+        self.labelInfo.attributedStringValue = attributedText
+
+        self.delegate?.resetOperation()
+    }
+    
+    func updateAccount() {
+        
+        self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
+        self.delegate?.resetOperation()
+        self.getAllData()
+        self.reloadData()
+        
+        self.resetChange()
+        
+//        let count = listeOperations.count
+//        let str = String(format: "%d opérations", count)
+//        self.labelInfo.stringValue = str
+    }
+
+    
+
     
     func getAllData() {
         
@@ -503,7 +575,7 @@ extension ListTransactionsController: OperationsDelegate {
 
     }
     
-    func reloadData() {
+    func reloadData(_ expand: Bool = true) {
         self.outlineListView.reloadData()
         
 //        var item = [Any]()
@@ -518,7 +590,7 @@ extension ListTransactionsController: OperationsDelegate {
 //        }
         
 //        self.outlineListView.selectRowIndexes(NSIndexSet(index: 1) as IndexSet, byExtendingSelection: false)
-        self.outlineListView.expandItem(nil, expandChildren: true)
+        self.outlineListView.expandItem(nil, expandChildren: expand)
 
     }
 }

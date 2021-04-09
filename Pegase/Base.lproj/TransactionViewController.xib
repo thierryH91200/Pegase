@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="TRansactionViewController" customModule="Pegase" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="TransactionViewController" customModule="Pegase" customModuleProvider="target">
             <connections>
                 <outlet property="addBUtton" destination="4Wa-ec-fVy" id="3Z6-dt-6k3"/>
                 <outlet property="addView" destination="HEa-Le-IpH" id="zR9-Jk-ehL"/>
@@ -173,7 +173,7 @@ Gw
                                                 </textField>
                                             </gridCell>
                                             <gridCell row="yGe-By-jQX" column="7a2-OZ-B6f" id="tqY-6l-oUm">
-                                                <popUpButton key="contentView" horizontalHuggingPriority="240" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Bi-vG-2Yv">
+                                                <popUpButton key="contentView" identifier="linkID" horizontalHuggingPriority="240" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Bi-vG-2Yv">
                                                     <rect key="frame" x="163" y="332" width="184" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="5fh-LW-LIK"/>
@@ -294,7 +294,7 @@ Gw
                                                 </textField>
                                             </gridCell>
                                             <gridCell row="DDK-JU-Fbe" column="7a2-OZ-B6f" xPlacement="fill" id="f7u-fp-9bU">
-                                                <popUpButton key="contentView" horizontalHuggingPriority="235" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xou-fp-xTh">
+                                                <popUpButton key="contentView" identifier="modeID" horizontalHuggingPriority="235" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xou-fp-xTh">
                                                     <rect key="frame" x="163" y="203" width="184" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="mrd-cM-15v"/>
@@ -375,7 +375,7 @@ Gw
                                                 </textField>
                                             </gridCell>
                                             <gridCell row="P25-Qm-jHB" column="7a2-OZ-B6f" id="1ht-Pu-zB0">
-                                                <popUpButton key="contentView" horizontalHuggingPriority="236" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MgP-Lb-bfo">
+                                                <popUpButton key="contentView" identifier="statutID" horizontalHuggingPriority="236" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MgP-Lb-bfo">
                                                     <rect key="frame" x="163" y="100" width="184" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="axM-af-8eK"/>
@@ -385,9 +385,21 @@ Gw
                                                         <font key="font" metaFont="menu"/>
                                                         <menu key="menu" id="gXr-cg-TAf">
                                                             <items>
-                                                                <menuItem title="Planned" id="zz3-G1-phr"/>
-                                                                <menuItem title="Engagé" id="UI6-qu-DiP"/>
-                                                                <menuItem title="Réalisé" state="on" id="7K5-sG-uvX"/>
+                                                                <menuItem title="Planned" id="zz3-G1-phr">
+                                                                    <connections>
+                                                                        <action selector="popUpButtonUsed:" target="-2" id="OGR-mO-JzB"/>
+                                                                    </connections>
+                                                                </menuItem>
+                                                                <menuItem title="Engagé" id="UI6-qu-DiP">
+                                                                    <connections>
+                                                                        <action selector="popUpButtonUsed:" target="-2" id="1jj-Pe-LPV"/>
+                                                                    </connections>
+                                                                </menuItem>
+                                                                <menuItem title="Réalisé" state="on" id="7K5-sG-uvX">
+                                                                    <connections>
+                                                                        <action selector="popUpButtonUsed:" target="-2" id="oPA-2j-bnP"/>
+                                                                    </connections>
+                                                                </menuItem>
                                                             </items>
                                                         </menu>
                                                     </popUpButtonCell>
@@ -481,7 +493,7 @@ Gw
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView identifier="FeedCellHeader" id="zBr-b4-Rku">
-                                                                    <rect key="frame" x="1" y="1" width="280" height="17"/>
+                                                                    <rect key="frame" x="11" y="1" width="280" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="AsO-vw-T9g">

@@ -51,6 +51,31 @@ extension ListTransactionsController: NSOutlineViewDataSource {
     }
 
     
+    
+    // This method should return a NSTreeNode object
+//    func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
+//        guard let uriAsString = object as? String,
+//        let uri = URL(string: uriAsString) else { return nil }
+//
+//        if let psc = self.managedObjectContext.persistentStoreCoordinator,
+//            let moID = psc.managedObjectID(forURIRepresentation: uri),
+//            let group = self.managedObjectContext.object(with: moID) as? TrackingIdTransactions,
+//            let nodes = self.expensesTreeController.arrangedObjects.children {
+//            return self.findNode(for: group, in: nodes)
+//        }
+//        return nil
+//    }
+//
+//    /// Utility method to find the corresponding NSTreeNode for a given represented object
+//    private func findNode(for object: NSManagedObject, in nodes: [NSTreeNode]) -> NSTreeNode? {
+//        for treeNode in nodes {
+//            if (treeNode.representedObject as? NSManagedObject) === object {
+//                return treeNode
+//            }
+//        }
+//        return nil
+//    }
+
     // Returns the child item at the specified index of a given item
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         

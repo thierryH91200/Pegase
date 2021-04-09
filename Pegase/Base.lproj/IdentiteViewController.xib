@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,19 +15,19 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <arrayController mode="entity" entityName="EntityInitCompte" fetchPredicateFormat="" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="iFg-Fs-WBC" userLabel="arrayControllerCompte">
+        <arrayController mode="entity" entityName="EntityInitAccount" fetchPredicateFormat="" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="iFg-Fs-WBC" userLabel="arrayControllerCompte">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="mainContext" id="JPM-90-F0I"/>
                 <binding destination="-2" name="filterPredicate" keyPath="self.predicate" id="9Gd-U8-AjT"/>
             </connections>
         </arrayController>
-        <arrayController mode="entity" entityName="EntityBanque" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="a6G-xA-GYU" userLabel="ArrayControllerBanque">
+        <arrayController mode="entity" entityName="EntityBank" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="a6G-xA-GYU" userLabel="ArrayControllerBanque">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="mainContext" id="Gzz-1k-z4u"/>
                 <binding destination="-2" name="filterPredicate" keyPath="self.predicate" id="wRu-uo-UGb"/>
             </connections>
         </arrayController>
-        <arrayController mode="entity" entityName="EntityIdentite" fetchPredicateFormat="" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="Jyf-7t-ZwQ" userLabel="ArrayControllerIdentite">
+        <arrayController mode="entity" entityName="EntityIdentity" fetchPredicateFormat="" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="Jyf-7t-ZwQ" userLabel="ArrayControllerIdentite">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="mainContext" id="Gh9-SG-tEY"/>
                 <binding destination="-2" name="filterPredicate" keyPath="self.predicate" id="0O7-zm-SXx"/>
@@ -121,7 +120,7 @@
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <connections>
-                                                                    <binding destination="iFg-Fs-WBC" name="value" keyPath="selection.codeBanque" id="Ty9-iA-L48"/>
+                                                                    <binding destination="iFg-Fs-WBC" name="value" keyPath="selection.codeBank" id="i2r-tK-1Te"/>
                                                                 </connections>
                                                             </textField>
                                                         </gridCell>
@@ -150,7 +149,7 @@
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <connections>
-                                                                    <binding destination="iFg-Fs-WBC" name="value" keyPath="selection.codeCompte" id="Jeb-Qm-6Jk"/>
+                                                                    <binding destination="iFg-Fs-WBC" name="value" keyPath="selection.codeAccount" id="4Qv-YC-t5a"/>
                                                                 </connections>
                                                             </textField>
                                                         </gridCell>
@@ -577,6 +576,80 @@
                                             <rect key="frame" x="3" y="3" width="502" height="133"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dxV-GL-niE">
+                                                    <rect key="frame" x="4" y="110" width="51" height="16"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Banque" id="yyx-ui-qZY">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JKq-ET-Vdw" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
+                                                    <rect key="frame" x="92" y="107" width="400" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="400" id="iup-gq-F3c"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Banque" drawsBackground="YES" id="au6-lT-ND3">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <binding destination="a6G-xA-GYU" name="value" keyPath="selection.bank" id="keI-Qn-ja7"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="0nc-rC-0OG">
+                                                    <rect key="frame" x="5" y="87" width="53" height="16"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Adresse" id="yXA-aD-kyZ">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="us6-6q-b3m" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
+                                                    <rect key="frame" x="92" y="82" width="400" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="400" id="rwE-5R-eQF"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Adresse" drawsBackground="YES" id="Z1X-E6-SfF">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <binding destination="a6G-xA-GYU" name="value" keyPath="selection.adress" id="eu8-Wn-RU3"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="JjA-Tt-c6w">
+                                                    <rect key="frame" x="5" y="62" width="82" height="16"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Complement" id="gGX-ap-sKb">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kLV-Qe-J5u" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
+                                                    <rect key="frame" x="93" y="57" width="400" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="400" id="Igi-Ha-qXh"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Adresse" drawsBackground="YES" id="B9H-Cw-Ede">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <binding destination="a6G-xA-GYU" name="value" keyPath="selection.complement" id="6b8-mP-VdC"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lZv-0P-MwI">
+                                                    <rect key="frame" x="4" y="32" width="22" height="16"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="CP" id="aVv-9n-1ZW">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qbC-Mh-Ico" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
                                                     <rect key="frame" x="93" y="26" width="96" height="21"/>
                                                     <constraints>
@@ -600,64 +673,6 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="us6-6q-b3m" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
-                                                    <rect key="frame" x="92" y="82" width="400" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="400" id="rwE-5R-eQF"/>
-                                                    </constraints>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Adresse" drawsBackground="YES" id="Z1X-E6-SfF">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                    <connections>
-                                                        <binding destination="a6G-xA-GYU" name="value" keyPath="selection.adresse" id="uwM-cm-Fow"/>
-                                                    </connections>
-                                                </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="JjA-Tt-c6w">
-                                                    <rect key="frame" x="5" y="62" width="82" height="16"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Complement" id="gGX-ap-sKb">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kLV-Qe-J5u" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
-                                                    <rect key="frame" x="93" y="57" width="400" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="400" id="Igi-Ha-qXh"/>
-                                                    </constraints>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Adresse" drawsBackground="YES" id="B9H-Cw-Ede">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                    <connections>
-                                                        <binding destination="a6G-xA-GYU" name="value" keyPath="selection.adresse" id="8Rn-sK-QYK"/>
-                                                    </connections>
-                                                </textField>
-                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JKq-ET-Vdw" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
-                                                    <rect key="frame" x="92" y="107" width="400" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="400" id="iup-gq-F3c"/>
-                                                    </constraints>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Banque" drawsBackground="YES" id="au6-lT-ND3">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                    <connections>
-                                                        <binding destination="a6G-xA-GYU" name="value" keyPath="selection.banque" id="NWu-g6-Uck"/>
-                                                    </connections>
-                                                </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dxV-GL-niE">
-                                                    <rect key="frame" x="4" y="110" width="51" height="16"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Banque" id="yyx-ui-qZY">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TVp-EG-ehA" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
                                                     <rect key="frame" x="241" y="26" width="252" height="22"/>
                                                     <constraints>
@@ -669,24 +684,8 @@
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                     <connections>
-                                                        <binding destination="a6G-xA-GYU" name="value" keyPath="selection.ville" id="bxt-Cp-aRz"/>
+                                                        <binding destination="a6G-xA-GYU" name="value" keyPath="selection.town" id="WiQ-7r-vCG"/>
                                                     </connections>
-                                                </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lZv-0P-MwI">
-                                                    <rect key="frame" x="4" y="32" width="22" height="16"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="CP" id="aVv-9n-1ZW">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="0nc-rC-0OG">
-                                                    <rect key="frame" x="5" y="87" width="53" height="16"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Adresse" id="yXA-aD-kyZ">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -767,7 +766,7 @@
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <connections>
-                                                                    <binding destination="a6G-xA-GYU" name="value" keyPath="selection.nom" id="I0m-PO-IZl"/>
+                                                                    <binding destination="a6G-xA-GYU" name="value" keyPath="selection.name" id="5LI-J6-uLT"/>
                                                                 </connections>
                                                             </textField>
                                                         </gridCell>
@@ -825,7 +824,7 @@
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <connections>
-                                                                    <binding destination="a6G-xA-GYU" name="value" keyPath="selection.telephone" id="DDf-EQ-ExT"/>
+                                                                    <binding destination="a6G-xA-GYU" name="value" keyPath="selection.phone" id="HvO-9b-Euv"/>
                                                                 </connections>
                                                             </textField>
                                                         </gridCell>
@@ -888,7 +887,7 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.idName" id="SgY-kD-Ke7"/>
+                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.name" id="7bx-47-Xzo"/>
                                                                     </connections>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bx2-hA-eCu">
@@ -907,7 +906,7 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.idPrenom" id="kA4-Gr-PHU"/>
+                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.surName" id="Wpe-3X-cL9"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -946,7 +945,7 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.idAdresse" id="o3q-3v-HzM"/>
+                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.adress" id="wSS-kf-cop"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -984,7 +983,7 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.idComplement" id="zxM-El-jt0"/>
+                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.complement" id="thb-hJ-rNO"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -1011,7 +1010,7 @@
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5zW-hi-oxk" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
                                                                     <rect key="frame" x="55" y="0.0" width="100" height="21"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="rvO-SN-aBj"/>
+                                                                        <constraint firstAttribute="width" constant="100" id="JzW-ph-jDf"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="CP" drawsBackground="YES" id="cyx-Sd-syE">
                                                                         <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" lenient="YES" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="9hu-HV-dDY"/>
@@ -1020,7 +1019,7 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.idCp" id="0dK-6B-Ank"/>
+                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.cp" id="zKo-ij-Tz9"/>
                                                                     </connections>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="449-Xo-ba9">
@@ -1033,13 +1032,16 @@
                                                                 </textField>
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xgw-Cc-CIc" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
                                                                     <rect key="frame" x="255" y="0.0" width="142" height="21"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="142" id="dmg-hV-rV8"/>
+                                                                    </constraints>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Ville" drawsBackground="YES" id="vx5-rR-X0y">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.idVille" id="eTd-5m-l3g"/>
+                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.town" id="iox-ic-XAG"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -1078,7 +1080,7 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.idPays" id="8hW-CO-1vd"/>
+                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.country" id="4a3-Kc-Fmp"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -1113,7 +1115,7 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.idTelephone" id="h4e-6Y-xXX"/>
+                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.phone" id="PQW-YD-I5S"/>
                                                                     </connections>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-Nr-hGy">
@@ -1132,7 +1134,7 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.idMobile" id="RQ8-Tj-dga"/>
+                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.mobile" id="1uh-U6-2Oj"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -1153,7 +1155,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="397" height="21"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5CV-FB-Ebt">
-                                                                    <rect key="frame" x="-2" y="5" width="87" height="16"/>
+                                                                    <rect key="frame" x="-2" y="5" width="37" height="16"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Email" id="0ot-5S-i6Y">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1161,17 +1163,14 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6im-9T-PvN" customClass="MLTextField" customModule="Pegase" customModuleProvider="target">
-                                                                    <rect key="frame" x="117" y="0.0" width="280" height="21"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="280" id="iT1-bk-haB"/>
-                                                                    </constraints>
+                                                                    <rect key="frame" x="67" y="0.0" width="330" height="21"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="TNt-bE-e8F">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.idEmail" id="GaP-wo-NRy"/>
+                                                                        <binding destination="Jyf-7t-ZwQ" name="value" keyPath="selection.email" id="4ym-Za-5h2"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>

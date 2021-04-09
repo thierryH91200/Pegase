@@ -196,6 +196,8 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
                 if amountStr != "" {
                     amountStr = amountStr.replacingOccurrences(of: ",", with: ".")
                     amountStr = amountStr.replacingOccurrences(of: " ", with: "")
+                    // https://stackoverflow.com/questions/5105053/iphone-uilabel-non-breaking-space
+                    amountStr = amountStr.replacingOccurrences(of: "\u{00a0}", with: "")
                     let amount = Double(amountStr) ?? 0.0
                     entitySousOperation.amount = amount * Double(sign)
                 }
@@ -238,7 +240,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         }
         
         delegate?.getAllData()
-        delegate?.reloadData()
+        delegate?.reloadData(true)
         
         NotificationCenter.send(.updateBalance)
         

@@ -11,6 +11,7 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
     
     var splashScreenWindowController: SplashScreenWindowController! = nil
     
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
 //        let center = UNUserNotificationCenter.current()
@@ -78,5 +79,40 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
         }
         return true
     }
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "myPegase")
+            container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+                if let error = error as NSError? {
+                    print("Unresolved error \(error), \(error.userInfo)")
+                }
+            })
+            return container
+        }()
+    
+    
+    
+   
+
+    @IBAction func saveAction(_ sender: AnyObject?) {
+        // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
+        let context = persistentContainer.viewContext
+        
+        if !context.commitEditing() {
+            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
+        }
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                // Customize this code block to include application-specific recovery steps.
+                let nserror = error as NSError
+                NSApplication.shared.presentError(nserror)
+            }
+        }
+    }
+
+
+    
         
 }

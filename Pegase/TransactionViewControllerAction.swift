@@ -84,7 +84,7 @@ extension TransactionViewController  {
                 self.setDataCount()
                 
                 self.delegate?.getAllData()
-                self.delegate?.reloadData()
+                self.delegate?.reloadData(true)
                 
                 NotificationCenter.send(.updateBalance)
 //                self.resetOperation()
@@ -97,7 +97,6 @@ extension TransactionViewController  {
             }
             self.sousOperationModalWindowController = nil
         })
-        
     }
     
     @IBAction func removeSubOperation(_ sender: Any) {
@@ -106,7 +105,7 @@ extension TransactionViewController  {
         guard selectRow != -1 else { return }
         
         let alert = NSAlert()
-//        alert.icon =
+
         alert.messageText = Localizations.GroupeAccount.RemoveAlert.MessageText
         alert.informativeText = Localizations.GroupeAccount.RemoveAlert.InformativeText
         alert.addButton(withTitle: Localizations.GroupeAccount.RemoveAlert.Delete)
@@ -133,7 +132,7 @@ extension TransactionViewController  {
                 self.setDataCount()
                 
                 self.delegate?.getAllData()
-                self.delegate?.reloadData()
+                self.delegate?.reloadData(true)
                 
                 NotificationCenter.send(.updateBalance)
                 self.resetOperation()
@@ -153,7 +152,6 @@ extension TransactionViewController  {
         }
         self.outlineViewSSOpe.reloadData()
     }
-    
     
     @IBAction func simpleClickedItem(_ sender: NSOutlineView) {
         //1
