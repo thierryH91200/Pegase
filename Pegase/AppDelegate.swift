@@ -14,15 +14,15 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-//        let center = UNUserNotificationCenter.current()
-//        center.delegate = self
-
-//        NSUserNotificationCenter.default.delegate = self
-//        if #available(OSX 10.14, *) {
-//            UNUserNotificationCenter.current().registerNotificationCategories()
-//            UNUserNotificationCenter.current().delegate = self
-//        }
-
+        //        let center = UNUserNotificationCenter.current()
+        //        center.delegate = self
+        
+        //        NSUserNotificationCenter.default.delegate = self
+        //        if #available(OSX 10.14, *) {
+        //            UNUserNotificationCenter.current().registerNotificationCategories()
+        //            UNUserNotificationCenter.current().delegate = self
+        //        }
+        
     }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
@@ -67,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
     func applicationShouldTerminateAfterLastWindowClosed (_ sender: NSApplication) -> Bool {
         return false
     }
-        
+    
     // Reopen mainWindow, when the user clicks on the dock icon.
     func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if flag == false {
@@ -81,19 +81,15 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
     }
     
     lazy var persistentContainer: NSPersistentContainer = {
-            let container = NSPersistentContainer(name: "myPegase")
-            container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-                if let error = error as NSError? {
-                    print("Unresolved error \(error), \(error.userInfo)")
-                }
-            })
-            return container
-        }()
+        let container = NSPersistentContainer(name: "myPegase")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                print("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
     
-    
-    
-   
-
     @IBAction func saveAction(_ sender: AnyObject?) {
         // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
         let context = persistentContainer.viewContext
@@ -112,7 +108,4 @@ class AppDelegate: NSObject, NSApplicationDelegate , UNUserNotificationCenterDel
         }
     }
 
-
-    
-        
 }

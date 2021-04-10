@@ -115,7 +115,6 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         
         self.textFieldMontant.isEnabled = false
 
-        self.resetOperation()
         
         self.numCheque.isEnabled = true
         self.addView.isHidden = false
@@ -126,6 +125,9 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
 //        NotificationCenter.default.addObserver(self, selector: #selector(willShowPopup), name: NSPopUpButton.willPopUpNotification, object: nil);
 
         dateOperation.locale = Locale.current
+        
+        //        self.resetOperation()
+
         
         self.initChart()
     }
@@ -345,57 +347,59 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     // edition = true  => edition 1 to n operation(s)
     @IBAction func saveActions(_ sender: Any) {
         
-        self.contextSaveEdition()
-        
-        /// Multiple value
-        for oneOperation in self.entityOperations {
+        printTimeElapsedWhenRunningCode(title:"saveActions ") {
+            self.contextSaveEdition()
             
-            oneOperation.dateModifie = Date()
-            
-            // DatePointage
-            if (setCheck_In_Date.count > 1 && date5 != nil) || setCheck_In_Date.count == 1 {
-                oneOperation.datePointage  = datePointage.dateValue.noon
-            }
-            
-            // DateOperation
-            if (setDateOperation.count > 1 && date4 != nil) || setDateOperation.count == 1 {
-                oneOperation.dateOperation  = dateOperation.dateValue.noon
-            }
-            
-            // Relevé bancaire
-            if (setReleve.count > 1 && textFieldReleveBancaire.stringValue != "") || setReleve.count == 1 {
-                oneOperation.bankStatement = textFieldReleveBancaire.doubleValue
-            }
-            
-            // ModePaiement
-            if (setModePaiement.count > 1 && popUpModePaiement.indexOfSelectedItem != 0) || setModePaiement.count == 1 {
-                let menuItem = self.popUpModePaiement.selectedItem
-                let entityMode = menuItem?.representedObject as! EntityPaymentMode
-                oneOperation.paymentMode = entityMode
-            }
-            
-            // Statut
-            if (setStatut.count > 1 && popUpStatut.indexOfSelectedItem != 0) || setStatut.count == 1 {
-                let item = self.popUpStatut.selectedItem
-                let statut = Int16(item?.tag ?? 0)
-                oneOperation.statut = statut
-            }
-            
-            // Operation Link
-            if (setTransfert.isEmpty == false && popUpTransfert.indexOfSelectedItem != 0)  {
-                createOperationLiee(oneOperation: oneOperation)
-            }
-        }
-        
-        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
-            
-        self.delegate?.getAllData()
-        self.delegate?.reloadData(true)
+            /// Multiple value
+            for oneOperation in self.entityOperations {
                 
-        NotificationCenter.send(.updateBalance)
-        
-        self.resetOperation()
+                oneOperation.dateModifie = Date()
+                
+                // DatePointage
+                if (setCheck_In_Date.count > 1 && date5 != nil) || setCheck_In_Date.count == 1 {
+                    oneOperation.datePointage  = datePointage.dateValue.noon
+                }
+                
+                // DateOperation
+                if (setDateOperation.count > 1 && date4 != nil) || setDateOperation.count == 1 {
+                    oneOperation.dateOperation  = dateOperation.dateValue.noon
+                }
+                
+                // Relevé bancaire
+                if (setReleve.count > 1 && textFieldReleveBancaire.stringValue != "") || setReleve.count == 1 {
+                    oneOperation.bankStatement = textFieldReleveBancaire.doubleValue
+                }
+                
+                // ModePaiement
+                if (setModePaiement.count > 1 && popUpModePaiement.indexOfSelectedItem != 0) || setModePaiement.count == 1 {
+                    let menuItem = self.popUpModePaiement.selectedItem
+                    let entityMode = menuItem?.representedObject as! EntityPaymentMode
+                    oneOperation.paymentMode = entityMode
+                }
+                
+                // Statut
+                if (setStatut.count > 1 && popUpStatut.indexOfSelectedItem != 0) || setStatut.count == 1 {
+                    let item = self.popUpStatut.selectedItem
+                    let statut = Int16(item?.tag ?? 0)
+                    oneOperation.statut = statut
+                }
+                
+                // Operation Link
+                if (setTransfert.isEmpty == false && popUpTransfert.indexOfSelectedItem != 0)  {
+                    createOperationLiee(oneOperation: oneOperation)
+                }
+            }
+            
+            (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
+            
+            self.delegate?.getAllData()
+            self.delegate?.reloadData(true)
+            
+            NotificationCenter.send(.updateBalance)
+            
+            self.resetOperation()
 //        self.delegate?.resetChange()
+        }
     }
     
     func getTodoItems() {

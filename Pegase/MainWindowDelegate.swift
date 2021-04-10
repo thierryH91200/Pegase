@@ -18,7 +18,7 @@ extension MainWindowController: SourceListDelegate
             self.listTransactionsController?.setUpDatePicker()
             self.listTransactionsController?.datePicker.isEnabled = true
 
-            setUpViewtTansaction()
+            setUpViewtTransaction()
             listTransactionsController?.delegate = transactionController
             
             isSplitRightHidden = false

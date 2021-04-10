@@ -44,10 +44,12 @@ extension ListTransactionsController {
         
         guard (outlineListView) != nil else { return }
         let selectedRowIndexes = outlineListView.selectedRowIndexes
-        
-        if selectedRowIndexes.isEmpty == false {
-            let listItems = listItemsAtIndexes(selectedRowIndexes)
-            writeListItems(listItems: listItems)
+        printTimeElapsedWhenRunningCode(title:"get Data: ") {
+            
+            if selectedRowIndexes.isEmpty == false {
+                let listItems = listItemsAtIndexes(selectedRowIndexes)
+                writeListItems(listItems: listItems)
+            }
         }
     }
     
@@ -59,22 +61,26 @@ extension ListTransactionsController {
         
         let listItems = listItemsWithStringPasteboardType()
         
-        // Only copy/paste if items were inserted.
-        if listItems != nil && listItems!.isEmpty == false {
-            insertListItems(listItems: listItems!)
+        printTimeElapsedWhenRunningCode(title:"get Data: ") {
+            
+            
+            // Only copy/paste if items were inserted.
+            if listItems != nil && listItems!.isEmpty == false {
+                insertListItems(listItems: listItems!)
+            }
+            (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
+
+            getAllData()
+            reloadData(true)
         }
-        
-        getAllData()
-        reloadData(true)
-//        self.resetChange()
+                self.resetChange()
     }
     
     private func insertListItems(listItems: [EntityOperations]) {
         guard !listItems.isEmpty else { return }
         
         for listItem in listItems {
-            let duplicate = listItem.copyEntireObjectGraph(context: mainObjectContext) as! EntityOperations
-            print(duplicate)
+            _ = listItem.copyEntireObjectGraph(context: mainObjectContext) as! EntityOperations
         }
         let undoActionName = NSLocalizedString("Insert", comment: "")
         undoManager?.setActionName(undoActionName)
@@ -107,6 +113,8 @@ extension ListTransactionsController {
                 ListTransactions.shared.remove(entity: item.entityOperations)
             }
         }
+        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
+
         self.resetChange()
     }
     

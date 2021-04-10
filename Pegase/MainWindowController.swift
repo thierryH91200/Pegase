@@ -151,12 +151,12 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
             }
         }
         
-        self.center = UNUserNotificationCenter.current()
-        self.center?.delegate = self.handler
-        self.initNotifications()
-
-        notificationsHelper.requestPermission(for:  [.alert, .sound, .badge])
-        notificationsHelper.scheduleNotification(timeInterval: 1, repeats: false)
+//        self.center = UNUserNotificationCenter.current()
+//        self.center?.delegate = self.handler
+//        self.initNotifications()
+//
+//        notificationsHelper.requestPermission(for:  [.alert, .sound, .badge])
+//        notificationsHelper.scheduleNotification(timeInterval: 1, repeats: false)
     }
     
     private func initNotifications() {
@@ -193,21 +193,6 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
         let category = UNNotificationCategory(identifier: "show", actions: [show], intentIdentifiers: [])
 
         center.setNotificationCategories([category])
-
-
-        
-//        UNNotificationAction* snoozeAction = [UNNotificationAction
-//                                              actionWithIdentifier:@"SNOOZE_ACTION"
-//                                              title:@"Snooze"
-//                                              options:UNNotificationActionOptionNone];  // 03-25-2019 The action has the default behavior.
-//
-//        let notification = NSUserNotification()
-//        notification.title = Localizations.Document.File_Uploaded
-//        notification.subtitle = "example.txt"
-//        notification.informativeText = "/Users/John/Documents/example.txt"
-//        notification.soundName = NSUserNotificationDefaultSoundName
-//        notification.contentImage = NSImage(named: NSImage.Name("icon_Upload-Information-icon_24x24"))
-//        NSUserNotificationCenter.default.deliver(notification)
     }
     
     private func setUpSourceList()
@@ -231,7 +216,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
         self.groupeAccountViewController!.view.setFrameSize( NSSize(width: 100, height: 200))
     }
 
-    func setUpViewtTansaction()
+    func setUpViewtTransaction()
     {
         self.transactionController = TransactionViewController()
         Commun.shared.addSubview(subView: transactionController!.view, toView: operationView)
