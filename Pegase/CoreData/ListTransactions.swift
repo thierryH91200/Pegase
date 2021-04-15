@@ -3,29 +3,37 @@ import AppKit
 final class ListTransactions {
     
     static let shared = ListTransactions()
-    var entities = [EntityOperations]()
+    var entities = [EntityTransactions]()
     var ascending = false
-    
-    // delete Operation
-    func remove(entity: EntityOperations)
-    {
-        mainObjectContext.undoManager?.beginUndoGrouping()
-        mainObjectContext.undoManager?.setActionName("Delete")
-        mainObjectContext.delete(entity)
-        mainObjectContext.undoManager?.endUndoGrouping()
+    var viewContext : NSManagedObjectContext?
+
+    init () {
+        if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            self.viewContext = context
+        }
     }
     
-    func find(uuid: UUID) -> EntityOperations
+    // delete Operation
+    func remove(entity: EntityTransactions)
     {
-        let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
-        do {
-            entities = try mainObjectContext.fetch(fetchRequest)
-        } catch {
-            print("Error fetching data from CoreData")
-        }
-        if let i = entities.firstIndex(where: {$0.uuid == uuid}) {
-            return entities[i]
-        }
+        viewContext!.undoManager?.beginUndoGrouping()
+        viewContext!.undoManager?.setActionName("DeleteTransaction")
+        viewContext!.delete(entity)
+        viewContext!.undoManager?.endUndoGrouping()
+    }
+    
+    func find(uuid: UUID) -> EntityTransactions
+    {
+            let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
+            do {
+                entities = try viewContext!.fetch(fetchRequest)
+            } catch {
+                print("Error fetching data from CoreData")
+            }
+            if let i = entities.firstIndex(where: {$0.uuid == uuid}) {
+                return entities[i]
+            }
+        
         return entities.first!
     }
     
@@ -44,18 +52,18 @@ final class ListTransactions {
         return comments.uniqueElements
     }
     
-    func getAllDatas(ascending: Bool = true ) -> [EntityOperations] {
+    func getAllDatas(ascending: Bool = true ) -> [EntityTransactions] {
         
         guard currentAccount != nil else { return [] }
         self.ascending = ascending
         
-        let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+        let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         let predicate = NSPredicate(format: "account == %@", currentAccount!)
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: ascending)]
         
         do {
-            entities = try mainObjectContext.fetch(fetchRequest)
+            entities = try viewContext!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
             return []
@@ -123,9 +131,9 @@ struct GroupedMonthOperations {
 struct IdOperations {
     let year : String
     let id: String
-    let entityOperations: EntityOperations
+    let entityOperations: EntityTransactions
     
-    init( year: String, id: String, entityOperations: EntityOperations) {
+    init( year: String, id: String, entityOperations: EntityTransactions) {
         self.year = year
         self.id = id
         self.entityOperations = entityOperations

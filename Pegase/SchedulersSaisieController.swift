@@ -52,7 +52,7 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
     var entitySchedule: EntitySchedule?
     var entityPreference: EntityPreference?
     var entityCompteTransfert: EntityAccount?
-    var entityOperationsTransfert: EntityOperations?
+    var entityOperationsTransfert: EntityTransactions?
 
     var dateDeb1 = Date()
     var dateFin1 = Date()

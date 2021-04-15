@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -856,7 +856,7 @@
                                 <rect key="frame" x="10" y="33" width="1122" height="609"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <box boxType="secondary" borderType="line" title="Identité" translatesAutoresizingMaskIntoConstraints="NO" id="v0D-zD-bNW">
+                                    <box borderType="line" title="Identité" translatesAutoresizingMaskIntoConstraints="NO" id="v0D-zD-bNW">
                                         <rect key="frame" x="207" y="265" width="709" height="304"/>
                                         <view key="contentView" id="lz6-dE-NTT">
                                             <rect key="frame" x="3" y="3" width="703" height="280"/>

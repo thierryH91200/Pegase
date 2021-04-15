@@ -10,6 +10,7 @@ extension ListTransactionsController {
     @IBAction func undo(_ sender: Any) {
         
         guard (outlineListView) != nil else { return }
+        
         mainObjectContext.undo()
         
         getAllData()
@@ -44,7 +45,7 @@ extension ListTransactionsController {
         
         guard (outlineListView) != nil else { return }
         let selectedRowIndexes = outlineListView.selectedRowIndexes
-        printTimeElapsedWhenRunningCode(title:"get Data: ") {
+        printTimeElapsedWhenRunningCode(title:"copy Data: ") {
             
             if selectedRowIndexes.isEmpty == false {
                 let listItems = listItemsAtIndexes(selectedRowIndexes)
@@ -61,26 +62,32 @@ extension ListTransactionsController {
         
         let listItems = listItemsWithStringPasteboardType()
         
-        printTimeElapsedWhenRunningCode(title:"get Data: ") {
-            
+        printTimeElapsedWhenRunningCode(title:"Paste Data: ") {
             
             // Only copy/paste if items were inserted.
             if listItems != nil && listItems!.isEmpty == false {
                 insertListItems(listItems: listItems!)
             }
+            
             (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
-
             getAllData()
             reloadData(true)
         }
+        
+        printTimeElapsedWhenRunningCode(title:"reset change Paste : ") {
+            DispatchQueue.main.async {
+
                 self.resetChange()
+            }
+        }
+
     }
     
-    private func insertListItems(listItems: [EntityOperations]) {
+    private func insertListItems(listItems: [EntityTransactions]) {
         guard !listItems.isEmpty else { return }
         
         for listItem in listItems {
-            _ = listItem.copyEntireObjectGraph(context: mainObjectContext) as! EntityOperations
+            _ = listItem.copyEntireObjectGraph(context: mainObjectContext) as! EntityTransactions
         }
         let undoActionName = NSLocalizedString("Insert", comment: "")
         undoManager?.setActionName(undoActionName)
@@ -119,7 +126,7 @@ extension ListTransactionsController {
     }
     
     // MARK: - Divers
-    private func writeListItems(listItems: [IdOperations]) {
+    private func writeListItems(listItems: [IdOperations]) { //, toPasteboard pasteboard: NSPasteboard ) {
         
         let pasteBoard = NSPasteboard.general
         pasteBoard.clearContents()
@@ -193,11 +200,11 @@ extension ListTransactionsController {
         //        undoManager?.setActionName(undoActionName)
     }
     
-    private func listItemsWithStringPasteboardType() -> [EntityOperations]? {
+    private func listItemsWithStringPasteboardType() -> [EntityTransactions]? {
         
         let pasteboard = NSPasteboard.general
         if pasteboard.canReadItem( withDataConformingToTypes: [NSPasteboard.PasteboardType.compatString.rawValue]) {
-            var allItems = [EntityOperations]()
+            var allItems = [EntityTransactions]()
             
             for pasteboardItem in pasteboard.pasteboardItems! {
                 if let targetType = pasteboardItem.availableType(from: [NSPasteboard.PasteboardType.compatString]),
@@ -210,8 +217,8 @@ extension ListTransactionsController {
         return nil
     }
     
-    private func entityFromString(string: String) -> [EntityOperations] {
-        let listItems = [EntityOperations]()
+    private func entityFromString(string: String) -> [EntityTransactions] {
+        let listItems = [EntityTransactions]()
         
         let enumerationOptions: NSString.EnumerationOptions = [.bySentences, .byLines]
         let range = string.startIndex ..< string.endIndex
@@ -224,7 +231,7 @@ extension ListTransactionsController {
             if !trimmedString.isEmpty {
                 let uuid = UUID(uuidString: trimmedString)
                 let entities = ListTransactions.shared.find(uuid: uuid!)
-                let newEntities = entities.copyEntireObjectGraph(context: mainObjectContext) as! EntityOperations
+                let newEntities = entities.copyEntireObjectGraph(context: mainObjectContext) as! EntityTransactions
 
                 newEntities.uuid = UUID()       // new UUID
                 newEntities.account = currentAccount

@@ -2,6 +2,7 @@
 
 import AppKit
 
+
 final class Document: NSPersistentDocument {
     
     private var mainWindowController: MainWindowController?
@@ -22,6 +23,10 @@ final class Document: NSPersistentDocument {
             newContext.persistentStoreCoordinator = persistentStoreCoordinator
 //            newContext.undoManager = undoManager
             self.managedObjectContext = newContext
+            if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                self.managedObjectContext = context
+            }
+
         }
         
         assert(self.managedObjectContext?.concurrencyType == NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)

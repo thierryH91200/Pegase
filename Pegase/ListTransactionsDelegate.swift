@@ -322,7 +322,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         return cellView
     }
     
-    func colorText (quake: EntityOperations, propertyEnum: ListeOperationsDisplayProperty) -> [NSAttributedString.Key: Any]
+    func colorText (quake: EntityTransactions, propertyEnum: ListeOperationsDisplayProperty) -> [NSAttributedString.Key: Any]
     {
         var attrs = [NSAttributedString.Key: Any]()
         

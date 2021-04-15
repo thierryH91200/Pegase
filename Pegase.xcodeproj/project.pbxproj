@@ -163,12 +163,12 @@
 		034EC8D523F87EB2006944DD /* MainWindowToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8CB23F87EB1006944DD /* MainWindowToolBar.swift */; };
 		034EC8D623F87EB2006944DD /* MainWindowSplitViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8CC23F87EB2006944DD /* MainWindowSplitViewDelegate.swift */; };
 		034EC8E223F87EDB006944DD /* EntityAccount+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DA23F87EDB006944DD /* EntityAccount+CoreDataClass.swift */; };
-		034EC8E323F87EDB006944DD /* EntityOperations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DB23F87EDB006944DD /* EntityOperations+CoreDataClass.swift */; };
-		034EC8E423F87EDB006944DD /* EntityRubrique+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DC23F87EDB006944DD /* EntityRubrique+CoreDataProperties.swift */; };
+		034EC8E323F87EDB006944DD /* EntityTransactions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DB23F87EDB006944DD /* EntityTransactions+CoreDataClass.swift */; };
+		034EC8E423F87EDB006944DD /* EntityRubric+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DC23F87EDB006944DD /* EntityRubric+CoreDataProperties.swift */; };
 		034EC8E523F87EDB006944DD /* EntityCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DD23F87EDB006944DD /* EntityCategory+CoreDataProperties.swift */; };
-		034EC8E623F87EDB006944DD /* EntityOperations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DE23F87EDB006944DD /* EntityOperations+CoreDataProperties.swift */; };
+		034EC8E623F87EDB006944DD /* EntityTransactions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DE23F87EDB006944DD /* EntityTransactions+CoreDataProperties.swift */; };
 		034EC8E723F87EDB006944DD /* EntityAccount+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8DF23F87EDB006944DD /* EntityAccount+CoreDataProperties.swift */; };
-		034EC8E823F87EDB006944DD /* EntityRubrique+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8E023F87EDB006944DD /* EntityRubrique+CoreDataClass.swift */; };
+		034EC8E823F87EDB006944DD /* EntityRubric+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8E023F87EDB006944DD /* EntityRubric+CoreDataClass.swift */; };
 		034EC8E923F87EDB006944DD /* EntityCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8E123F87EDB006944DD /* EntityCategory+CoreDataClass.swift */; };
 		034EC8F523F87EF1006944DD /* Rubrique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8EB23F87EF0006944DD /* Rubrique.swift */; };
 		034EC8F623F87EF1006944DD /* PaymentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8EC23F87EF0006944DD /* PaymentMode.swift */; };
@@ -178,7 +178,7 @@
 		034EC8FA23F87EF1006944DD /* Identite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8F023F87EF1006944DD /* Identite.swift */; };
 		034EC8FB23F87EF1006944DD /* Cheques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8F123F87EF1006944DD /* Cheques.swift */; };
 		034EC8FC23F87EF1006944DD /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8F223F87EF1006944DD /* Preference.swift */; };
-		034EC8FD23F87EF1006944DD /* ListeOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8F323F87EF1006944DD /* ListeOperations.swift */; };
+		034EC8FD23F87EF1006944DD /* ListTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC8F323F87EF1006944DD /* ListTransactions.swift */; };
 		034EC90B23F87F51006944DD /* NSUserInterfaceItemIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC90023F87F50006944DD /* NSUserInterfaceItemIdentifier.swift */; };
 		034EC90C23F87F51006944DD /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC90123F87F50006944DD /* Notification.swift */; };
 		034EC90D23F87F51006944DD /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC90223F87F51006944DD /* HeaderCell.swift */; };
@@ -496,12 +496,12 @@
 		034EC8CB23F87EB1006944DD /* MainWindowToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowToolBar.swift; sourceTree = "<group>"; };
 		034EC8CC23F87EB2006944DD /* MainWindowSplitViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowSplitViewDelegate.swift; sourceTree = "<group>"; };
 		034EC8DA23F87EDB006944DD /* EntityAccount+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityAccount+CoreDataClass.swift"; sourceTree = "<group>"; };
-		034EC8DB23F87EDB006944DD /* EntityOperations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityOperations+CoreDataClass.swift"; sourceTree = "<group>"; };
-		034EC8DC23F87EDB006944DD /* EntityRubrique+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityRubrique+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		034EC8DB23F87EDB006944DD /* EntityTransactions+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityTransactions+CoreDataClass.swift"; sourceTree = "<group>"; };
+		034EC8DC23F87EDB006944DD /* EntityRubric+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityRubric+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		034EC8DD23F87EDB006944DD /* EntityCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		034EC8DE23F87EDB006944DD /* EntityOperations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityOperations+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		034EC8DE23F87EDB006944DD /* EntityTransactions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityTransactions+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		034EC8DF23F87EDB006944DD /* EntityAccount+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityAccount+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		034EC8E023F87EDB006944DD /* EntityRubrique+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityRubrique+CoreDataClass.swift"; sourceTree = "<group>"; };
+		034EC8E023F87EDB006944DD /* EntityRubric+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityRubric+CoreDataClass.swift"; sourceTree = "<group>"; };
 		034EC8E123F87EDB006944DD /* EntityCategory+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		034EC8EB23F87EF0006944DD /* Rubrique.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rubrique.swift; sourceTree = "<group>"; };
 		034EC8EC23F87EF0006944DD /* PaymentMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMode.swift; sourceTree = "<group>"; };
@@ -511,7 +511,7 @@
 		034EC8F023F87EF1006944DD /* Identite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identite.swift; sourceTree = "<group>"; };
 		034EC8F123F87EF1006944DD /* Cheques.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cheques.swift; sourceTree = "<group>"; };
 		034EC8F223F87EF1006944DD /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
-		034EC8F323F87EF1006944DD /* ListeOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeOperations.swift; sourceTree = "<group>"; };
+		034EC8F323F87EF1006944DD /* ListTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTransactions.swift; sourceTree = "<group>"; };
 		034EC90023F87F50006944DD /* NSUserInterfaceItemIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserInterfaceItemIdentifier.swift; sourceTree = "<group>"; };
 		034EC90123F87F50006944DD /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		034EC90223F87F51006944DD /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
@@ -1099,10 +1099,10 @@
 				034EC8DF23F87EDB006944DD /* EntityAccount+CoreDataProperties.swift */,
 				034EC8E123F87EDB006944DD /* EntityCategory+CoreDataClass.swift */,
 				034EC8DD23F87EDB006944DD /* EntityCategory+CoreDataProperties.swift */,
-				034EC8DB23F87EDB006944DD /* EntityOperations+CoreDataClass.swift */,
-				034EC8DE23F87EDB006944DD /* EntityOperations+CoreDataProperties.swift */,
-				034EC8E023F87EDB006944DD /* EntityRubrique+CoreDataClass.swift */,
-				034EC8DC23F87EDB006944DD /* EntityRubrique+CoreDataProperties.swift */,
+				034EC8DB23F87EDB006944DD /* EntityTransactions+CoreDataClass.swift */,
+				034EC8DE23F87EDB006944DD /* EntityTransactions+CoreDataProperties.swift */,
+				034EC8E023F87EDB006944DD /* EntityRubric+CoreDataClass.swift */,
+				034EC8DC23F87EDB006944DD /* EntityRubric+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -1115,7 +1115,7 @@
 				034EC8EF23F87EF0006944DD /* Account.swift */,
 				034EC8EE23F87EF0006944DD /* Echeanciers.swift */,
 				034EC8F023F87EF1006944DD /* Identite.swift */,
-				034EC8F323F87EF1006944DD /* ListeOperations.swift */,
+				034EC8F323F87EF1006944DD /* ListTransactions.swift */,
 				034EC8EC23F87EF0006944DD /* PaymentMode.swift */,
 				034EC8F223F87EF1006944DD /* Preference.swift */,
 				039E0BE7247FA5FD00BE8ED7 /* rubrique.csv */,
@@ -1488,7 +1488,7 @@
 				034EC90E23F87F51006944DD /* NSWindow.swift in Sources */,
 				034EC91A23F87F7E006944DD /* Localizations.swift in Sources */,
 				03213BB823F909C300002DD7 /* SliderViewVerticalController.swift in Sources */,
-				034EC8FD23F87EF1006944DD /* ListeOperations.swift in Sources */,
+				034EC8FD23F87EF1006944DD /* ListTransactions.swift in Sources */,
 				03AF08AE260CC33B0020CD24 /* Error.swift in Sources */,
 				03213C1523F90C0E00002DD7 /* ColorGridView.swift in Sources */,
 				03213C1F23F90C1B00002DD7 /* CategorieModalWindowController.swift in Sources */,
@@ -1513,7 +1513,7 @@
 				03213C1823F90C0E00002DD7 /* MouseTracker.swift in Sources */,
 				031AF98C25494BE000B442AB /* Transformable.swift in Sources */,
 				034ECA7823F87FAE006944DD /* GroupeAccountViewAction.swift in Sources */,
-				034EC8E323F87EDB006944DD /* EntityOperations+CoreDataClass.swift in Sources */,
+				034EC8E323F87EDB006944DD /* EntityTransactions+CoreDataClass.swift in Sources */,
 				03213B0723F9048200002DD7 /* ImportWindowControllerParserDelegate.swift in Sources */,
 				03213B1E23F904D600002DD7 /* RectMarker.swift in Sources */,
 				03213B8323F9083300002DD7 /* PaymentModePieController.swift in Sources */,
@@ -1559,7 +1559,7 @@
 				03213B9923F9091200002DD7 /* SourceListViewController.swift in Sources */,
 				03213C0923F90BD200002DD7 /* RubriqueViewControllerAction.swift in Sources */,
 				034ECB6723F88033006944DD /* PopOverModalViewController.swift in Sources */,
-				034EC8E823F87EDB006944DD /* EntityRubrique+CoreDataClass.swift in Sources */,
+				034EC8E823F87EDB006944DD /* EntityRubric+CoreDataClass.swift in Sources */,
 				03213C1923F90C0E00002DD7 /* ComboColorWell.swift in Sources */,
 				034ECB5E23F87FAF006944DD /* AccountGroupTableCellView.swift in Sources */,
 				03213B1523F9048D00002DD7 /* CSVConfig.swift in Sources */,
@@ -1587,10 +1587,10 @@
 				034EC8F523F87EF1006944DD /* Rubrique.swift in Sources */,
 				03213C0523F90BD200002DD7 /* RubriqueViewController.swift in Sources */,
 				034EC91423F87F51006944DD /* NSImage.swift in Sources */,
-				034EC8E623F87EDB006944DD /* EntityOperations+CoreDataProperties.swift in Sources */,
+				034EC8E623F87EDB006944DD /* EntityTransactions+CoreDataProperties.swift in Sources */,
 				03213BFE23F90BB600002DD7 /* PreferenceOperationViewControllerPopUp.swift in Sources */,
 				03213B0B23F9048200002DD7 /* ImportWindowControllerMenuDelegate.swift in Sources */,
-				034EC8E423F87EDB006944DD /* EntityRubrique+CoreDataProperties.swift in Sources */,
+				034EC8E423F87EDB006944DD /* EntityRubric+CoreDataProperties.swift in Sources */,
 				034EC90C23F87F51006944DD /* Notification.swift in Sources */,
 				034EC8D223F87EB2006944DD /* MainWindowController.swift in Sources */,
 				03213B0823F9048200002DD7 /* TTFormatViewController.swift in Sources */,

@@ -50,7 +50,7 @@ final class ModeOfPaymentViewController: NSViewController
             let p2 = NSPredicate(format: "paymentMode.name == %@", label)
             let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p2])
             
-            let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+            let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
             fetchRequest.predicate = predicate
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
             
@@ -156,13 +156,13 @@ final class ModeOfPaymentViewController: NSViewController
     }
     
     func changeModePaiement(oldModePaiement: EntityPaymentMode, newModePaiement: EntityPaymentMode) {
-        var listeOperations = [EntityOperations]()
+        var listeOperations = [EntityTransactions]()
         
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = NSPredicate(format: "modePaiement.name == %@", oldModePaiement.name!)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
         
-        let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+        let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         fetchRequest.predicate = predicate
         
         do {

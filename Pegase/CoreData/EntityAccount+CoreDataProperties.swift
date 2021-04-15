@@ -88,10 +88,10 @@ extension EntityAccount {
 extension EntityAccount {
 
     @objc(addOperationsObject:)
-    @NSManaged public func addToOperations(_ value: EntityOperations)
+    @NSManaged public func addToOperations(_ value: EntityTransactions)
 
     @objc(removeOperationsObject:)
-    @NSManaged public func removeFromOperations(_ value: EntityOperations)
+    @NSManaged public func removeFromOperations(_ value: EntityTransactions)
 
     @objc(addOperations:)
     @NSManaged public func addToOperations(_ values: NSSet)
@@ -163,7 +163,7 @@ extension EntityAccount {
         self.didAccessValue(forKey: "solde")
         
         _balance = 0.0
-        let arrayOperations = operations?.allObjects as! [EntityOperations]
+        let arrayOperations = operations?.allObjects as! [EntityTransactions]
         for operation in arrayOperations {
             _balance += operation.amount
         }

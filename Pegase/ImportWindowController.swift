@@ -104,7 +104,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         
         for data in allData {
             
-            let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as! EntityOperations
+            let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as! EntityTransactions
 
             entityOperation.account = account
             

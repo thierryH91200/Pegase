@@ -54,7 +54,7 @@ final class Echeanciers {
 
         entitySchedule.nextOccurence += 1
         
-        let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as! EntityOperations
+        let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as! EntityTransactions
         
         entityOperation.dateCree       = Date()
         entityOperation.dateModifie    = Date()
@@ -77,7 +77,7 @@ final class Echeanciers {
         
         if entitySchedule.compteLie != nil {
             
-            let entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as! EntityOperations
+            let entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as! EntityTransactions
 
             entityOperationsTransfert.dateCree      = entityOperation.dateCree
             entityOperationsTransfert.dateModifie   = entityOperation.dateModifie

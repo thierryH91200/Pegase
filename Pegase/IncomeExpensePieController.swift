@@ -129,7 +129,7 @@ class IncomeExpensePieController: CommonGraph {
         let p3 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2, p3])
         
-        let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+        let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
@@ -268,7 +268,7 @@ extension IncomeExpensePieController: ChartViewDelegate {
         let p4 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2, p3, p4, p5 ])
         
-        let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+        let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: false)]
         

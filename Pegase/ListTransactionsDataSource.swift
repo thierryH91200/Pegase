@@ -113,7 +113,7 @@ extension ListTransactionsController: NSOutlineViewDataSource {
         if let item = byItem as? (key: String, value: [IdOperations]) {
             return item.key
         }
-        if let item = byItem as? EntityOperations {
+        if let item = byItem as? EntityTransactions {
             return item
         }
         return "???????"

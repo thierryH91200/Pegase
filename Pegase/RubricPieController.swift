@@ -11,7 +11,7 @@ final class RubricPieController: NSViewController
     
     var sliderViewController: SliderViewHorizontalController?
     
-    var listeOperations = [EntityOperations]()
+    var listeOperations = [EntityTransactions]()
     var firstDate: TimeInterval = 0.0
     var lastDate: TimeInterval = 0.0
 
@@ -147,7 +147,7 @@ final class RubricPieController: NSViewController
         let p4 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p3, p4])
         
-        let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+        let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
@@ -308,7 +308,7 @@ extension RubricPieController: ChartViewDelegate {
 
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2, p3, p4, p5])
         
-        let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+        let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: false)]
         

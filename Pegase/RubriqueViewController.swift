@@ -105,7 +105,7 @@ final class RubriqueViewController: NSViewController {
         
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p2])
         
-        let fetch = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+        let fetch = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         fetch.predicate = predicate
         fetch.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: false)]
 

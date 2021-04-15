@@ -122,7 +122,7 @@ extension RubriqueViewController : NSMenuDelegate {
     @IBAction func removeRubrique(_ sender: NSButton) {
         
         let entityPreference = Preference.shared.getAllDatas()
-        var entityOperations = [EntityOperations]()
+        var entityOperations = [EntityTransactions]()
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
         
         let selected = self.anOutlineView.selectedRow
@@ -160,7 +160,7 @@ extension RubriqueViewController : NSMenuDelegate {
             let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric == %@).@count > 0", entityRubric!)
             
             let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p2])
-            let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+            let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
             fetchRequest.predicate = predicate
             
             do {
@@ -280,7 +280,7 @@ extension RubriqueViewController : NSMenuDelegate {
     @IBAction func removeCategory(_ sender: NSButton) {
         
         let entityPreference = Preference.shared.getAllDatas()
-        var entityOperations = [EntityOperations]()
+        var entityOperations = [EntityTransactions]()
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
         
         let selected = self.anOutlineView.selectedRow
@@ -320,7 +320,7 @@ extension RubriqueViewController : NSMenuDelegate {
             let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category == %@).@count > 0", entityCategory!)
             
             let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p2])
-            let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+            let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
             fetchRequest.predicate = predicate
             
             do {

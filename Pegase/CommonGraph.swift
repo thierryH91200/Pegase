@@ -11,7 +11,7 @@ import Charts
 
 class CommonGraph: NSViewController {
     
-    var listTransactions = [EntityOperations]()
+    var listTransactions = [EntityTransactions]()
     var firstDate: TimeInterval = 0.0
     var lastDate: TimeInterval = 0.0
     

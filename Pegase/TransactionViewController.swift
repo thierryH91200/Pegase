@@ -51,9 +51,9 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     
     @IBOutlet weak var numCheque: NSTextField!
     
-    var entityOperation: EntityOperations?
-    var entityOperations : [EntityOperations] = []
-    var entityOperationsTransfert: EntityOperations?
+    var entityOperation: EntityTransactions?
+    var entityOperations : [EntityTransactions] = []
+    var entityOperationsTransfert: EntityTransactions?
     var entityPreference: EntityPreference?
     var entityCompteTransfert: EntityAccount?
     var subOperations : [EntitySousOperations] = []
@@ -319,7 +319,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         // creation = one operation
         if edition == false {
             
-            self.entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as? EntityOperations
+            self.entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as? EntityTransactions
 
             self.entityOperation?.dateCree = Date()
             self.entityOperation?.uuid = UUID()
@@ -405,7 +405,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     func getTodoItems() {
         if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             do {
-                entityOperations = try context.fetch(EntityOperations.fetchRequest())
+                entityOperations = try context.fetch(EntityTransactions.fetchRequest())
                 print("get: \(entityOperations)")
             } catch {
             }
@@ -415,12 +415,12 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         }
     }
 
-    func createOperationLiee(oneOperation: EntityOperations ) {
+    func createOperationLiee(oneOperation: EntityTransactions ) {
 
         print("Operation Liée")        
         if oneOperation.operationLiee == nil {
             
-            self.entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as? EntityOperations
+            self.entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as? EntityTransactions
             self.entityOperationsTransfert?.operationLiee = oneOperation
             oneOperation.operationLiee = entityOperationsTransfert
         

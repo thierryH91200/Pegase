@@ -2,7 +2,7 @@ import CoreData
 import Foundation
 
 
-public class EntityOperations: NSManagedObject {
+public class EntityTransactions: NSManagedObject {
 
     override public class func keyPathsForValuesAffectingValue( forKey key: String) -> Set<String> {
         var keyPaths = super.keyPathsForValuesAffectingValue(forKey: key)

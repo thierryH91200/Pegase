@@ -2,10 +2,10 @@ import CoreData
 import Foundation
 
 
-extension EntityOperations {
+extension EntityTransactions {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<EntityOperations> {
-        return NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<EntityTransactions> {
+        return NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
     }
 
     @NSManaged public var dateCree: Date?
@@ -23,12 +23,12 @@ extension EntityOperations {
     @NSManaged public var sousOperations: NSSet?
     @NSManaged public var account: EntityAccount?
     @NSManaged public var paymentMode: EntityPaymentMode?
-    @NSManaged public var operationLiee: EntityOperations?
+    @NSManaged public var operationLiee: EntityTransactions?
 
 }
 
 // MARK: Generated accessors for sousOperations
-extension EntityOperations {
+extension EntityTransactions {
 
     @objc(addSousOperationsObject:)
     @NSManaged public func addToSousOperations(_ value: EntitySousOperations)
@@ -44,7 +44,7 @@ extension EntityOperations {
 
 }
 
-extension EntityOperations {
+extension EntityTransactions {
     @objc var sectionIdentifier: String? {
         // Create and cache the section identifier on demand.
         

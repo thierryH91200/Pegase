@@ -10,7 +10,7 @@ final class TresorerieController: NSViewController
     
     var sliderViewHorizontalController: SliderViewHorizontalController?
     
-    var listTransactions : [EntityOperations] = []
+    var listTransactions : [EntityTransactions] = []
     var firstDate: TimeInterval = 0.0
     var lastDate: TimeInterval = 0.0
     
@@ -370,7 +370,7 @@ extension TresorerieController: ChartViewDelegate
         let p3 = NSPredicate(format: "dateOperation == %@", dateOperation as CVarArg )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p3])
         
-        let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+        let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         

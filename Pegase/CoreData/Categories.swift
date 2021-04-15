@@ -4,12 +4,20 @@ final class Categories {
         
     static let shared = Categories()
     private var entities = [EntityCategory]()
+    var viewContext : NSManagedObjectContext?
+
+    init () {
+        if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            self.viewContext = context
+        }
+    }
+
     
     func findOrCreate ( account: EntityAccount,  name: String, objectif: Double, uuid: UUID) -> EntityCategory {
         
         var entityCategory = find( account: account, name: name )
         if entityCategory == nil {
-            entityCategory = NSEntityDescription.insertNewObject(forEntityName: "EntityCategory", into: mainObjectContext) as? EntityCategory
+            entityCategory = NSEntityDescription.insertNewObject(forEntityName: "EntityCategory", into: viewContext!) as? EntityCategory
             entityCategory!.name = name
             entityCategory!.uuid = UUID()
             entityCategory!.objectif = objectif
@@ -27,7 +35,7 @@ final class Categories {
         fetchRequest.predicate = predicate
 
         do {
-            let searchResults = try mainObjectContext.fetch(fetchRequest)
+            let searchResults = try viewContext!.fetch(fetchRequest)
             let result = searchResults.isEmpty == false ? searchResults.first : nil
             return result
         } catch {

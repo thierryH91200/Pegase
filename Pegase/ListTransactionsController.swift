@@ -6,15 +6,15 @@ import TFDate
 @objc public protocol ListeOperationsDelegate
 {
     /// Called when a value has been selected inside the outline.
-    func editionOperations(_ quakes: [EntityOperations])
+    func editionOperations(_ quakes: [EntityTransactions])
     func resetOperation()
 }
 
 // xxxxController -> ListeOperationsController
 @objc public protocol  FilterDelegate
 {
-    func applyFilter( fetchRequest: NSFetchRequest<EntityOperations>)
-    func updateListeOperations( liste: [EntityOperations])
+    func applyFilter( fetchRequest: NSFetchRequest<EntityTransactions>)
+    func updateListeOperations( liste: [EntityTransactions])
 }
 
 final class ListTransactionsController: NSViewController {
@@ -122,7 +122,7 @@ final class ListTransactionsController: NSViewController {
         .font: NSFont.systemFont(ofSize: NSFont.systemFontSize, weight: .bold),
         .foregroundColor: NSColor.black]
     
-    var listeOperations = [EntityOperations]()
+    var listeOperations = [EntityTransactions]()
     
     let formatterPrice: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -324,7 +324,7 @@ final class ListTransactionsController: NSViewController {
         if selectedRow.isEmpty == false {
             
             self.removeButton.isHidden = false
-            var operationsSelected = [EntityOperations]()
+            var operationsSelected = [EntityTransactions]()
             
             var amount = 0.0
             var solde = 0.0
@@ -459,7 +459,7 @@ final class ListTransactionsController: NSViewController {
 
 extension ListTransactionsController: FilterDelegate {
     
-    func applyFilter( fetchRequest: NSFetchRequest<EntityOperations>) {
+    func applyFilter( fetchRequest: NSFetchRequest<EntityTransactions>) {
         do {
             listeOperations = try mainObjectContext.fetch(fetchRequest)
         } catch {
@@ -469,7 +469,7 @@ extension ListTransactionsController: FilterDelegate {
         reloadData()
     }
     
-    func updateListeOperations( liste: [EntityOperations]) {
+    func updateListeOperations( liste: [EntityTransactions]) {
         
         listeOperations = liste
         

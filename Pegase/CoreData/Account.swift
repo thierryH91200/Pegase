@@ -4,6 +4,14 @@ final class Account {
     
     static let shared = Account()
     var entities = [EntityAccount]()
+    var viewContext : NSManagedObjectContext?
+
+    init () {
+        if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            self.viewContext = context
+        }
+    }
+
     
     func getAllDatas() -> [EntityAccount] {
 
@@ -17,7 +25,7 @@ final class Account {
     
     // MARK: create account
     func create(nameAccount: String, nameImage: String, idName: String, idPrenom: String, numAccount: String) -> EntityAccount {
-        let account = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: mainObjectContext) as! EntityAccount
+        let account = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: viewContext!) as! EntityAccount
         account.name = nameAccount
         account.nameImage = nameImage
         account.dateEcheancier = Date()
@@ -42,7 +50,7 @@ final class Account {
         fetchRequest.predicate = predicate
         
         do {
-            entities = try mainObjectContext.fetch(fetchRequest)
+            entities = try viewContext!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }

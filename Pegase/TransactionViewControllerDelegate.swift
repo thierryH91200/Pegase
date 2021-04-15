@@ -78,7 +78,7 @@ extension TransactionViewController: ListeOperationsDelegate {
     }
     
     // MARK: editionDatas
-    func editionOperations(_ quakes: [EntityOperations]) {
+    func editionOperations(_ quakes: [EntityTransactions]) {
         
         self.edition = true
         self.modeOperation.title = Localizations.Transaction.ModeEdition

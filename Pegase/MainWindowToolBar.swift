@@ -272,7 +272,7 @@ extension MainWindowController {
                     {
                         let amount = key[keyAmount] ?? "0.0"
                                                
-                        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityOperations", into: mainObjectContext) as! EntityOperations
+                        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as! EntityTransactions
 
                         entity.account = currentAccount
                         
@@ -456,7 +456,7 @@ extension MainWindowController: NSControlTextEditingDelegate {
                 predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
             }
             
-            let fetchRequest = NSFetchRequest<EntityOperations>(entityName: "EntityOperations")
+            let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
             fetchRequest.predicate = predicate
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: false)]
             
