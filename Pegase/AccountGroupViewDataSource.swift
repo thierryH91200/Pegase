@@ -5,6 +5,7 @@ extension AccountGroupViewController: NSOutlineViewDataSource {
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         
         guard rootSourceListItem != nil else { return  0 }
+        
         var count = 0
         if item == nil {
             //at root

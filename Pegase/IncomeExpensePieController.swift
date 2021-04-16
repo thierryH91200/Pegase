@@ -119,6 +119,8 @@ class IncomeExpensePieController: CommonGraph {
     
     func updateChartData()
     {
+        let context = mainObjectContext
+
         var dataArrayExpense = [DataGraph]()
         var dataArrayIncome = [DataGraph]()
 
@@ -134,7 +136,7 @@ class IncomeExpensePieController: CommonGraph {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listTransactions = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try context!.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")

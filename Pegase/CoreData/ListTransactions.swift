@@ -6,9 +6,10 @@ final class ListTransactions {
     var entities = [EntityTransactions]()
     var ascending = false
     var viewContext : NSManagedObjectContext?
-
+    
     init () {
-        if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+        if let context = mainObjectContext
+ {
             self.viewContext = context
         }
     }
@@ -24,15 +25,15 @@ final class ListTransactions {
     
     func find(uuid: UUID) -> EntityTransactions
     {
-            let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
-            do {
-                entities = try viewContext!.fetch(fetchRequest)
-            } catch {
-                print("Error fetching data from CoreData")
-            }
-            if let i = entities.firstIndex(where: {$0.uuid == uuid}) {
-                return entities[i]
-            }
+        let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
+        do {
+            entities = try viewContext!.fetch(fetchRequest)
+        } catch {
+            print("Error fetching data from CoreData")
+        }
+        if let i = entities.firstIndex(where: {$0.uuid == uuid}) {
+            return entities[i]
+        }
         
         return entities.first!
     }
@@ -102,10 +103,10 @@ public extension Sequence where Element: Equatable {
 struct GroupedYearOperations {
     let year : String
     var allMonth : [GroupedMonthOperations]
-
+    
     init( dictionary: (key: String, value: [String: [IdOperations]])) {
         self.year = dictionary.key
-
+        
         self.allMonth = [GroupedMonthOperations]()
         let months = (dictionary.value).map { (key: String , value: [IdOperations]) -> GroupedMonthOperations in
             return GroupedMonthOperations(month : key , idOperations: value)
@@ -117,9 +118,9 @@ struct GroupedYearOperations {
 struct GroupedMonthOperations {
     let month : String
     let idOperation : [ IdOperations ]
-
+    
     init( month: String, idOperations: [IdOperations]) {
-
+        
         self.month = month
         let idAllOperation = (0 ..< idOperations.count).map { (i) -> IdOperations in
             return IdOperations(year : idOperations[i].year, id: idOperations[i].id, entityOperations: idOperations[i].entityOperations)

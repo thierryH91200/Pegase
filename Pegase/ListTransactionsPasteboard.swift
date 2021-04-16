@@ -9,9 +9,12 @@ extension ListTransactionsController {
     // MARK: undo
     @IBAction func undo(_ sender: Any) {
         
+        let context = mainObjectContext
+
+        
         guard (outlineListView) != nil else { return }
         
-        mainObjectContext.undo()
+        context!.undo()
         
         getAllData()
         reloadData()
@@ -22,8 +25,11 @@ extension ListTransactionsController {
     // MARK: redo
     @IBAction func redo(_ sender: Any) {
         
+        let context = mainObjectContext
+
+        
         guard (outlineListView) != nil else { return }
-        mainObjectContext.redo()
+        context!.redo()
         
         getAllData()
         reloadData()
@@ -86,8 +92,10 @@ extension ListTransactionsController {
     private func insertListItems(listItems: [EntityTransactions]) {
         guard !listItems.isEmpty else { return }
         
+        let context = mainObjectContext
+        
         for listItem in listItems {
-            _ = listItem.copyEntireObjectGraph(context: mainObjectContext) as! EntityTransactions
+            _ = listItem.copyEntireObjectGraph(context: context!) as! EntityTransactions
         }
         let undoActionName = NSLocalizedString("Insert", comment: "")
         undoManager?.setActionName(undoActionName)
@@ -218,6 +226,9 @@ extension ListTransactionsController {
     }
     
     private func entityFromString(string: String) -> [EntityTransactions] {
+        
+        let context = mainObjectContext
+
         let listItems = [EntityTransactions]()
         
         let enumerationOptions: NSString.EnumerationOptions = [.bySentences, .byLines]
@@ -231,7 +242,7 @@ extension ListTransactionsController {
             if !trimmedString.isEmpty {
                 let uuid = UUID(uuidString: trimmedString)
                 let entities = ListTransactions.shared.find(uuid: uuid!)
-                let newEntities = entities.copyEntireObjectGraph(context: mainObjectContext) as! EntityTransactions
+                let newEntities = entities.copyEntireObjectGraph(context: context!) as! EntityTransactions
 
                 newEntities.uuid = UUID()       // new UUID
                 newEntities.account = currentAccount

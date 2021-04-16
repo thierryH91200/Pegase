@@ -87,6 +87,8 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
     
     @IBAction func actionImport(_ sender: NSButton) {
         
+        let context = mainObjectContext
+
         let entityPreference = Preference.shared.getAllDatas()
         let formatDate = statusBarFormatViewController?.formatDate.stringValue
         
@@ -104,7 +106,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         
         for data in allData {
             
-            let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as! EntityTransactions
+            let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as! EntityTransactions
 
             entityOperation.account = account
             
@@ -170,7 +172,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             }
             
             // Creation entitySousOperation
-            let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as! EntitySousOperations
+            let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: context!) as! EntitySousOperations
 
             
             // Libelle

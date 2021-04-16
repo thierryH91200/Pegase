@@ -7,7 +7,8 @@ final class Categories {
     var viewContext : NSManagedObjectContext?
 
     init () {
-        if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+        if let context = mainObjectContext
+        {
             self.viewContext = context
         }
     }

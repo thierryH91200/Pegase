@@ -16,7 +16,9 @@ extension TransactionViewController  {
     
     @IBAction func addSousOperation(_ sender: Any) {
         
-        var entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as! EntitySousOperations
+        let context = mainObjectContext
+        
+        var entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: context!) as! EntitySousOperations
 
         self.sousOperationModalWindowController = SousOperationModalWindowController()
         self.sousOperationModalWindowController.entitySousOperation = entitySousOperation
@@ -142,13 +144,15 @@ extension TransactionViewController  {
     
     func deleteSelection() {
         
+        let context = mainObjectContext
+
         let selected = outlineViewSSOpe.selectedRowIndexes
         
         let sourceListItems = selected.map({ return outlineViewSSOpe.item(atRow: $0) })
         for item in sourceListItems {
             
             let entitie = item as! EntitySousOperations
-            mainObjectContext.delete(entitie)
+            context!.delete(entitie)
         }
         self.outlineViewSSOpe.reloadData()
     }

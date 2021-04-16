@@ -137,6 +137,8 @@ final class RubricPieController: NSViewController
 
     private func updateChartData()
     {
+        let context = mainObjectContext
+
         var dataArrayD = [DataGraph]()
         var dataArrayR = [DataGraph]()
 
@@ -152,7 +154,7 @@ final class RubricPieController: NSViewController
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listeOperations = try mainObjectContext.fetch(fetchRequest)
+            listeOperations = try context!.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")

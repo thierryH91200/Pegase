@@ -6,9 +6,19 @@ final class Bank {
     static let shared = Bank()
     var entitiesBank = [EntityBank]()
     
+    var viewContext : NSManagedObjectContext?
+
+    init () {
+        if let context = mainObjectContext
+ {
+            self.viewContext = context
+        }
+    }
+
+    
     func create() -> EntityBank {
         
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityBank", into: mainObjectContext) as? EntityBank
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityBank", into: viewContext!) as? EntityBank
 
         
         entity!.adress = ""
@@ -33,7 +43,7 @@ final class Bank {
             let fetchRequest = NSFetchRequest<EntityBank>(entityName: "EntityBank")
             let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
-            entitiesBank = try mainObjectContext.fetch(fetchRequest)
+            entitiesBank = try viewContext!.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")
@@ -51,9 +61,19 @@ final class InitAccount {
     
     static let shared = InitAccount()
     var entitiesInitAccount = [EntityInitAccount]()
+
+    var viewContext : NSManagedObjectContext?
+
+    init () {
+        if let context = mainObjectContext
+ {
+            self.viewContext = context
+        }
+    }
+
     
     func create(numAccount : String = "" ) -> EntityInitAccount {
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitAccount", into: mainObjectContext) as? EntityInitAccount
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitAccount", into: viewContext!) as? EntityInitAccount
         
         entity!.bic = ""
         entity!.cleRib = ""
@@ -81,7 +101,7 @@ final class InitAccount {
             let fetchRequest = NSFetchRequest<EntityInitAccount>(entityName: "EntityInitAccount")
             let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
-            entitiesInitAccount = try mainObjectContext.fetch(fetchRequest)
+            entitiesInitAccount = try viewContext!.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")
@@ -101,9 +121,19 @@ final class Identity {
     static let shared = Identity()
     var entitiesIdentite = [EntityIdentity]()
     
+    var viewContext : NSManagedObjectContext?
+
+    init () {
+        if let context = mainObjectContext
+ {
+            self.viewContext = context
+        }
+    }
+
+    
     func create(name: String = "", prenom: String = "") -> EntityIdentity {
         
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityIdentity", into: mainObjectContext) as? EntityIdentity
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityIdentity", into: viewContext!) as? EntityIdentity
         entity!.name       = name
         entity!.surName    = prenom
         entity!.adress     = ""
@@ -123,7 +153,7 @@ final class Identity {
             let fetchRequest = NSFetchRequest<EntityIdentity>(entityName: "EntityIdentity")
             let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
-            entitiesIdentite = try mainObjectContext.fetch(fetchRequest)
+            entitiesIdentite = try viewContext!.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")

@@ -147,6 +147,8 @@ final class CategoryBarController: CommonGraph
     /// https://stackoverflow.com/questions/40657193/swift-3-sum-value-with-group-by-of-an-array-of-objects
     private func updateChartData()
     {
+        let context = mainObjectContext
+
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
         
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
@@ -159,7 +161,7 @@ final class CategoryBarController: CommonGraph
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listTransactions = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try context!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }
@@ -193,6 +195,8 @@ final class CategoryBarController: CommonGraph
     
     private func updateChartDataCat(_ nameRubrique: String )
     {
+        let context = mainObjectContext
+
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
         
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
@@ -206,7 +210,7 @@ final class CategoryBarController: CommonGraph
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listTransactions = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try context!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }

@@ -29,7 +29,9 @@ final class RubricBarController: CommonGraph
         return fmt
     }()
     
-    @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
+    let context = mainObjectContext
+
+//    @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
     @objc dynamic var customSortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))]
     
     var label  = [String]()
@@ -63,7 +65,7 @@ final class RubricBarController: CommonGraph
         
         NotificationCenter.receive( instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
         
-        mainContext = mainObjectContext
+//        mainContext = context
         
         Rubric.shared.getAllDatas()
         self.arrayController.sortDescriptors = customSortDescriptors
@@ -170,7 +172,7 @@ final class RubricBarController: CommonGraph
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listTransactions = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try context!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }

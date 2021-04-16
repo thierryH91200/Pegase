@@ -15,18 +15,12 @@ final class Document: NSPersistentDocument {
         
         guard let context = self.managedObjectContext else { fatalError("no MOC") }
         if context.concurrencyType != NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType {
-//            guard let undoManager = context.undoManager else { fatalError("no undoManager") }
-            
-            /// persistentStoreCoordinator
+            guard let undoManager = context.undoManager else { fatalError("no undoManager") }
             guard let persistentStoreCoordinator = context.persistentStoreCoordinator else { fatalError("no persistentStoreCoordinator") }
             let newContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
             newContext.persistentStoreCoordinator = persistentStoreCoordinator
-//            newContext.undoManager = undoManager
+            newContext.undoManager = undoManager
             self.managedObjectContext = newContext
-            if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                self.managedObjectContext = context
-            }
-
         }
         
         assert(self.managedObjectContext?.concurrencyType == NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
@@ -42,9 +36,9 @@ final class Document: NSPersistentDocument {
     
     override func makeWindowControllers() {
         
-        guard let context = self.managedObjectContext else { fatalError("context is nil") }
+//        let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        mainObjectContext = self.managedObjectContext //else { fatalError("context is nil") }
         
-        mainObjectContext = context
         self.initializeLibraryAndShowMainWindow()
         
         let windowController = controller()
@@ -75,9 +69,11 @@ final class Document: NSPersistentDocument {
     
     private func setupForNilLibrary() {
         
+        let context = mainObjectContext
+
         //create library
         // MARK: create root
-        let root = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: mainObjectContext) as! EntityAccount
+        let root = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: context!) as! EntityAccount
         root.isRoot = true
         root.name = "Root"
         root.uuid = UUID()
@@ -109,13 +105,13 @@ final class Document: NSPersistentDocument {
         jeanAccount.type = 0
         
         // MARK: create headers
-        let header1 = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: mainObjectContext) as! EntityAccount
+        let header1 = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: context!) as! EntityAccount
         header1.isHeader = true
         header1.name = Localizations.General.BankAccount.Singular
         header1.uuid = UUID()
         header1.parent = root
         
-        let header2 = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: mainObjectContext) as! EntityAccount
+        let header2 = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: context!) as! EntityAccount
         header2.isHeader = true
         header2.name = Localizations.General.BankAccount.Singular
         header2.uuid = UUID()

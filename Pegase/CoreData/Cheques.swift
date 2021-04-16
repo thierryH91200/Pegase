@@ -5,6 +5,16 @@ final class CarnetCheques {
     static let shared = CarnetCheques()
     private var entities = [EntityCarnetCheques]()
     
+    var viewContext : NSManagedObjectContext?
+
+    init () {
+        if let context = mainObjectContext
+ {
+            self.viewContext = context
+        }
+    }
+
+    
     func getAllDatas() -> [EntityCarnetCheques] {
         
         do {
@@ -12,7 +22,7 @@ final class CarnetCheques {
             let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
             
-            entities = try mainObjectContext.fetch(fetchRequest)
+            entities = try viewContext!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }
@@ -25,7 +35,7 @@ final class CarnetCheques {
         if entities.isEmpty == true {
             
             
-            let entityCarnetCheques = NSEntityDescription.insertNewObject(forEntityName: "EntityCarnetCheques", into: mainObjectContext) as? EntityCarnetCheques
+            let entityCarnetCheques = NSEntityDescription.insertNewObject(forEntityName: "EntityCarnetCheques", into: viewContext!) as? EntityCarnetCheques
             
             entityCarnetCheques!.name = Localizations.ModePaiement.Cheque
             entityCarnetCheques!.prefix = "CH"

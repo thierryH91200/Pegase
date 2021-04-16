@@ -5,10 +5,20 @@ final class Echeanciers {
     static let shared = Echeanciers()
     private var entities = [EntitySchedule]()
     
+    var viewContext : NSManagedObjectContext?
+
+    init () {
+        if let context = mainObjectContext
+ {
+            self.viewContext = context
+        }
+    }
+
+    
     // delete Entity
     func remove(entity: EntitySchedule)
     {
-        mainObjectContext.delete(entity)
+        viewContext!.delete(entity)
     }
 
     func getAllDatas() -> [EntitySchedule] {
@@ -18,7 +28,7 @@ final class Echeanciers {
             let predicate = NSPredicate(format: "account == %@", currentAccount!)
             fetchRequest.predicate = predicate
             
-            entities = try mainObjectContext.fetch(fetchRequest)
+            entities = try viewContext!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }
@@ -28,7 +38,7 @@ final class Echeanciers {
     func createSousOperation (entitySchedule: EntitySchedule) -> EntitySousOperations{
         
         // create sous operation
-        let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as! EntitySousOperations
+        let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: viewContext!) as! EntitySousOperations
 
         // la rubrique existe t elle ??
         var name = entitySchedule.category?.rubric?.name
@@ -54,7 +64,7 @@ final class Echeanciers {
 
         entitySchedule.nextOccurence += 1
         
-        let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as! EntityTransactions
+        let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: viewContext!) as! EntityTransactions
         
         entityOperation.dateCree       = Date()
         entityOperation.dateModifie    = Date()
@@ -77,7 +87,7 @@ final class Echeanciers {
         
         if entitySchedule.compteLie != nil {
             
-            let entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as! EntityTransactions
+            let entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: viewContext!) as! EntityTransactions
 
             entityOperationsTransfert.dateCree      = entityOperation.dateCree
             entityOperationsTransfert.dateModifie   = entityOperation.dateModifie

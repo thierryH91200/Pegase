@@ -66,6 +66,9 @@ final class ModeOfPaymentViewController: NSViewController
     
     // MARK: - Add ModePaiement
     @IBAction func addModePaiement(_ sender: Any) {
+        
+        let context = mainObjectContext
+
         self.modeModalWindowController = ModeModalWindowController()
         let windowAdd = modeModalWindowController.window!
         let windowApp = self.view.window
@@ -77,7 +80,7 @@ final class ModeOfPaymentViewController: NSViewController
                 let name          = self.modeModalWindowController.name.stringValue
                 let color         = self.modeModalWindowController.colorWell.color
                 
-                let entityMode        = NSEntityDescription.insertNewObject(forEntityName: "EntityPaymentMode", into: mainObjectContext) as! EntityPaymentMode
+                let entityMode        = NSEntityDescription.insertNewObject(forEntityName: "EntityPaymentMode", into: context!) as! EntityPaymentMode
                 entityMode.name       = name
                 entityMode.color     = color
                 
@@ -158,6 +161,9 @@ final class ModeOfPaymentViewController: NSViewController
     func changeModePaiement(oldModePaiement: EntityPaymentMode, newModePaiement: EntityPaymentMode) {
         var listeOperations = [EntityTransactions]()
         
+        let context = mainObjectContext
+
+        
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
         let p2 = NSPredicate(format: "modePaiement.name == %@", oldModePaiement.name!)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
@@ -166,7 +172,7 @@ final class ModeOfPaymentViewController: NSViewController
         fetchRequest.predicate = predicate
         
         do {
-            listeOperations = try mainObjectContext.fetch(fetchRequest)
+            listeOperations = try context!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }

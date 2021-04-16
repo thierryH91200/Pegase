@@ -163,6 +163,9 @@ final class CategoryBarController1: CommonGraph
     private func updateChartData()
     {
 //        var rubricColor : RubricColor
+        
+        let context = mainObjectContext
+
 
         (startDate, endDate) = (sliderViewController?.calcStartEndDate())!
         
@@ -177,7 +180,7 @@ final class CategoryBarController1: CommonGraph
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listTransactions = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try context!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }

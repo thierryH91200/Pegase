@@ -226,6 +226,9 @@ extension MainWindowController {
     // MARK: - Import Operations Simplifiee
     @IBAction func ImportOperationsSimplifiee(_ sender: Any) {
         
+        let context = mainObjectContext
+
+        
         let panel = NSOpenPanel()
         panel.canChooseFiles = true
         panel.canChooseDirectories = false
@@ -272,7 +275,7 @@ extension MainWindowController {
                     {
                         let amount = key[keyAmount] ?? "0.0"
                                                
-                        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as! EntityTransactions
+                        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as! EntityTransactions
 
                         entity.account = currentAccount
                         
@@ -290,7 +293,7 @@ extension MainWindowController {
                         entity.statut = numStatut
                         
                         // EntitySousOperations
-                        let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as! EntitySousOperations
+                        let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: context!) as! EntitySousOperations
                         entitySousOperation.amount = Double(amount)!
                         entitySousOperation.libelle = key[keyLibelle] ?? keyLibelle
                         

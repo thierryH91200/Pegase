@@ -6,7 +6,8 @@ final class ChequiersViewController: NSViewController {
     @IBOutlet var arrayController: NSArrayController!
     @IBOutlet weak var menuLocal: NSMenu!
     
-    @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
+//    @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
+    let context = mainObjectContext
     @objc dynamic var predicate =  NSPredicate(format: "account == %@", currentAccount!)
     
     var chequierModalWindowController: ChequierModalWindowController!
@@ -15,7 +16,7 @@ final class ChequiersViewController: NSViewController {
         super.viewDidLoad()
         
         NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
-        mainContext = mainObjectContext
+//        mainContext = mainObjectContext
         
         tableView.rowHeight = 24.0
         updateData()
@@ -68,6 +69,9 @@ final class ChequiersViewController: NSViewController {
     
     @IBAction func addChequier(_ sender: Any) {
         
+//        let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+
+        
         self.chequierModalWindowController = ChequierModalWindowController()
         let windowAdd = chequierModalWindowController.window!
         let windowApp = self.view.window
@@ -82,7 +86,7 @@ final class ChequiersViewController: NSViewController {
                 let numNext       = self.chequierModalWindowController.numNext.intValue
                 let numberCheques = self.chequierModalWindowController.numberCheques.intValue
                 
-                let entityCarnetCheques        = NSEntityDescription.insertNewObject(forEntityName: "EntityCarnetCheques", into: mainObjectContext) as! EntityCarnetCheques
+                let entityCarnetCheques        = NSEntityDescription.insertNewObject(forEntityName: "EntityCarnetCheques", into: self.context!) as! EntityCarnetCheques
                 
                 entityCarnetCheques.name       = name
                 entityCarnetCheques.prefix     = prefix

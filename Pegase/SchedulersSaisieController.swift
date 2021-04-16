@@ -243,9 +243,11 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
     
     @IBAction func enregistrerAction(_ sender: Any) {
         
+        let context = mainObjectContext
+        
         if edition == false
         {
-            entitySchedule = NSEntityDescription.insertNewObject(forEntityName: "EntitySchedule", into: mainObjectContext) as? EntitySchedule
+            entitySchedule = NSEntityDescription.insertNewObject(forEntityName: "EntitySchedule", into: context!) as? EntitySchedule
 
             entitySchedule?.dateCree = Date()
             entitySchedule?.account = currentAccount

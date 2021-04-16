@@ -53,6 +53,9 @@ extension RubriqueViewController : NSMenuDelegate {
     // MARK: - Rubrique
     @IBAction func addRubrique(_ sender: NSButton) {
         
+        let context = mainObjectContext
+
+        
         self.rubriqueModalWindowController = RubriqueModalWindowController()
 
         self.view.window?.beginSheet(rubriqueModalWindowController.window!, completionHandler: {(_ returnCode: NSApplication.ModalResponse) -> Void in
@@ -62,7 +65,7 @@ extension RubriqueViewController : NSMenuDelegate {
                 let name = self.rubriqueModalWindowController.name.stringValue
                 let color = self.rubriqueModalWindowController.colorWell.color
                 
-                let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityRubric", into: mainObjectContext) as! EntityRubric
+                let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityRubric", into: context!) as! EntityRubric
 
                 
                 entity.name = name
@@ -121,6 +124,9 @@ extension RubriqueViewController : NSMenuDelegate {
 
     @IBAction func removeRubrique(_ sender: NSButton) {
         
+        let context = mainObjectContext
+
+        
         let entityPreference = Preference.shared.getAllDatas()
         var entityOperations = [EntityTransactions]()
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
@@ -164,7 +170,7 @@ extension RubriqueViewController : NSMenuDelegate {
             fetchRequest.predicate = predicate
             
             do {
-                entityOperations = try mainObjectContext.fetch(fetchRequest)
+                entityOperations = try context!.fetch(fetchRequest)
             } catch {
                 print("Error fetching data from CoreData !")
             }
@@ -177,13 +183,17 @@ extension RubriqueViewController : NSMenuDelegate {
                 }
             }
             print("This element was 🗑! : ", entityRubric!.name!)
-            self.managedObjectContext.delete(entityRubric!)
+            let context = mainObjectContext
+            context!.delete(entityRubric!)
             self.updateData()
         })
     }
     
     // MARK: Categorie
     @IBAction func addCategorie(_ sender: NSButton) {
+        
+        let context = mainObjectContext
+
         
         let selected = anOutlineView.selectedRowIndexes.map { Int($0) }
         var entityRubric: EntityRubric
@@ -209,7 +219,7 @@ extension RubriqueViewController : NSMenuDelegate {
                 let name = self.categorieModalWindowController.name.stringValue
                 let objectif = self.categorieModalWindowController.objectif.doubleValue
                 
-                let entityCategory = NSEntityDescription.insertNewObject(forEntityName: "EntityCategory", into: mainObjectContext) as! EntityCategory
+                let entityCategory = NSEntityDescription.insertNewObject(forEntityName: "EntityCategory", into: context!) as! EntityCategory
 
                 entityCategory.name = name
                 entityCategory.objectif = objectif
@@ -273,11 +283,10 @@ extension RubriqueViewController : NSMenuDelegate {
         
     }
     
-
-    
-
-    
     @IBAction func removeCategory(_ sender: NSButton) {
+        
+        let context = mainObjectContext
+
         
         let entityPreference = Preference.shared.getAllDatas()
         var entityOperations = [EntityTransactions]()
@@ -324,7 +333,7 @@ extension RubriqueViewController : NSMenuDelegate {
             fetchRequest.predicate = predicate
             
             do {
-                entityOperations = try mainObjectContext.fetch(fetchRequest)
+                entityOperations = try context!.fetch(fetchRequest)
                 
             } catch {
                 print("Error fetching data from CoreData !")
@@ -338,7 +347,9 @@ extension RubriqueViewController : NSMenuDelegate {
                 }
             }
             print("This element was 🗑! : ", entityCategory!.name!)
-            self.managedObjectContext.delete(entityCategory!)
+//            let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+
+            context!.delete(entityCategory!)
             self.updateData()
         })
     }

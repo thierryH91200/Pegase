@@ -11,6 +11,8 @@ final class IncomeExpenseBarController: CommonGraph {
     @IBOutlet weak var splitView: NSSplitView!
     
     let hourSeconds = 3600.0 * 24.0 // one day
+    let context = mainObjectContext
+
 
     var startDate = Date()
     var endDate = Date()
@@ -150,7 +152,7 @@ final class IncomeExpenseBarController: CommonGraph {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listTransactions = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try context!.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")

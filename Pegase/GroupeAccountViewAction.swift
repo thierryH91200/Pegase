@@ -154,6 +154,9 @@ extension AccountGroupViewController: NSMenuDelegate {
     }
     
     @IBAction func addGroupAccount(_ sender: Any) {
+        
+        let context = mainObjectContext
+
         self.groupModalWindowController = GroupModalWindowController()
         let windowAdd = groupModalWindowController.window!
         let windowApp = self.view.window
@@ -165,7 +168,7 @@ extension AccountGroupViewController: NSMenuDelegate {
                 let name = self.groupModalWindowController.nameGroup.stringValue
                 
                 //create source list headers
-                let header = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: mainObjectContext) as! EntityAccount
+                let header = NSEntityDescription.insertNewObject(forEntityName: "EntityAccount", into: context!) as! EntityAccount
                 header.isHeader = true
                 header.name = name
                 header.uuid = UUID()
@@ -217,6 +220,8 @@ extension AccountGroupViewController: NSMenuDelegate {
     
     func deleteSelection() {
         
+        let context = mainObjectContext
+        
         let selected = anSideBar.selectedRowIndexes
         
         let sourceListItems = selected.map({ return anSideBar.item(atRow: $0) })
@@ -227,10 +232,10 @@ extension AccountGroupViewController: NSMenuDelegate {
                 let entities = entitie.children?.array as! [EntityAccount]
                 
                 for child in entities {
-                    mainObjectContext.delete(child)
+                    context!.delete(child)
                 }
             }
-            mainObjectContext.delete(entitie)
+            context!.delete(entitie)
         }
     }
     

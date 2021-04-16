@@ -18,7 +18,7 @@ final class RubriqueViewController: NSViewController {
 
     var selectIndex = [1]
     
-    @objc var managedObjectContext: NSManagedObjectContext = mainObjectContext
+//    @objc var managedObjectContext: NSManagedObjectContext = mainObjectContext
     @objc dynamic var customSortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))]
     
     var rubriqueModalWindowController: RubriqueModalWindowController!

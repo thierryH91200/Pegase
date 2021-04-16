@@ -5,6 +5,16 @@ final class Preference {
     static let shared = Preference()
     var entityPreference = [EntityPreference]()
     
+    var viewContext : NSManagedObjectContext?
+
+    init () {
+        if let context = mainObjectContext
+ {
+            self.viewContext = context
+        }
+    }
+
+    
     func getAllDatas() -> EntityPreference {
         
         guard currentAccount != nil else { return entityPreference[0] }
@@ -14,7 +24,7 @@ final class Preference {
         fetchRequest.predicate = predicate
         
         do {
-            entityPreference = try mainObjectContext.fetch(fetchRequest)
+            entityPreference = try viewContext!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }
@@ -28,7 +38,7 @@ final class Preference {
     // MARK: - Create
     func create ( account: EntityAccount) -> EntityPreference {
         
-        let entityPreference = NSEntityDescription.insertNewObject(forEntityName: "EntityPreference", into: mainObjectContext) as? EntityPreference
+        let entityPreference = NSEntityDescription.insertNewObject(forEntityName: "EntityPreference", into: viewContext!) as? EntityPreference
 
         var rubric = Rubric.shared.getAllDatas()
         rubric = rubric.sorted { $0.name! < $1.name! }

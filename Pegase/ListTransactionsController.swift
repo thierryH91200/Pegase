@@ -25,7 +25,7 @@ final class ListTransactionsController: NSViewController {
     public typealias TrackingSubOperations  = IdOperations
     public typealias TrackingSubOperation   = EntitySousOperations
     
-    @objc var managedObjectContext2 = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//    @objc var managedObjectContext2 = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var theDocument = NSPersistentDocument()
     
     enum ListeOperationsDisplayProperty: String {
@@ -460,8 +460,11 @@ final class ListTransactionsController: NSViewController {
 extension ListTransactionsController: FilterDelegate {
     
     func applyFilter( fetchRequest: NSFetchRequest<EntityTransactions>) {
+        
+        let context = mainObjectContext
+
         do {
-            listeOperations = try mainObjectContext.fetch(fetchRequest)
+            listeOperations = try context!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }

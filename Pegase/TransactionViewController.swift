@@ -22,7 +22,10 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var gridView: NSGridView!
     
-    @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
+    let context = mainObjectContext
+
+    
+//    @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
     //    @objc dynamic var predicate =  NSPredicate(format: "account == %@", compteCourant!)
     
     @IBOutlet weak var buttonSave: NSButton!
@@ -128,7 +131,6 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         
         //        self.resetOperation()
 
-        
         self.initChart()
     }
     
@@ -316,10 +318,13 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     // edition = false => creation 1 operation
     // edition = true => edition 1 to n operation(s)
     func contextSaveEdition() {
+        
+        let context = mainObjectContext
+
         // creation = one operation
         if edition == false {
             
-            self.entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as? EntityTransactions
+            self.entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as? EntityTransactions
 
             self.entityOperation?.dateCree = Date()
             self.entityOperation?.uuid = UUID()
@@ -403,7 +408,8 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     }
     
     func getTodoItems() {
-        if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+        if let context = mainObjectContext
+ {
             do {
                 entityOperations = try context.fetch(EntityTransactions.fetchRequest())
                 print("get: \(entityOperations)")
@@ -420,7 +426,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         print("Operation Liée")        
         if oneOperation.operationLiee == nil {
             
-            self.entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: mainObjectContext) as? EntityTransactions
+            self.entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as? EntityTransactions
             self.entityOperationsTransfert?.operationLiee = oneOperation
             oneOperation.operationLiee = entityOperationsTransfert
         
@@ -462,7 +468,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
 //        entityOperationsTransfert?.removeFromSousOperations(setSout!)
         for sousOperation in subOperations {
             
-            let entitySousOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: mainObjectContext) as? EntitySousOperations
+            let entitySousOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: context!) as? EntitySousOperations
 
             // la rubrique existe t elle ??
             let labelCat = (sousOperation.category?.name)!

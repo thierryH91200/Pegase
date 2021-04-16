@@ -5,6 +5,16 @@ final class PaymentMode {
     static let shared = PaymentMode()
     private var entitiesModePaiement = [EntityPaymentMode]()
     
+    var viewContext : NSManagedObjectContext?
+
+    init () {
+        if let context = mainObjectContext
+ {
+            self.viewContext = context
+        }
+    }
+
+    
     func findModePaiement(entity: EntityPaymentMode) -> Int {
         
         let i = entitiesModePaiement.firstIndex { $0 === entity }
@@ -23,7 +33,7 @@ final class PaymentMode {
     @discardableResult
     func create ( account: EntityAccount,  name: String, color: NSColor) -> EntityPaymentMode {
         
-        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityPaymentMode", into: mainObjectContext) as! EntityPaymentMode
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityPaymentMode", into: viewContext!) as! EntityPaymentMode
         entity.name = name
         entity.color = color
         entity.uuid = UUID()
@@ -44,7 +54,7 @@ final class PaymentMode {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         do {
-            let searchResults = try mainObjectContext.fetch(fetchRequest)
+            let searchResults = try viewContext!.fetch(fetchRequest)
             let result = searchResults.isEmpty == false ? searchResults.first : nil
             return result
         } catch {
@@ -56,7 +66,7 @@ final class PaymentMode {
     // MARK: - delete ModePaiement
     func remove(entity: EntityPaymentMode)
     {
-        mainObjectContext.delete(entity)
+        viewContext!.delete(entity)
     }
     
     func loadModePaiement () -> NSPopUpButton {
@@ -93,7 +103,7 @@ final class PaymentMode {
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
             fetchRequest.predicate = predicate
             
-            entitiesModePaiement = try mainObjectContext.fetch(fetchRequest)
+            entitiesModePaiement = try viewContext!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }
@@ -131,7 +141,7 @@ final class PaymentMode {
                 fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
                 fetchRequest.predicate = predicate
                 
-                entitiesModePaiement = try mainObjectContext.fetch(fetchRequest)
+                entitiesModePaiement = try viewContext!.fetch(fetchRequest)
             } catch {
                 print("Error fetching data from CoreData")
             }

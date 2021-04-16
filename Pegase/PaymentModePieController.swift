@@ -111,6 +111,8 @@ final class PaymentModePieController: CommonGraph {
     
     func updateChartData()
     {
+        let context = mainObjectContext
+
         var dataArrayExpense = [DataGraph]()
         var dataArrayIncome = [DataGraph]()
 
@@ -126,7 +128,7 @@ final class PaymentModePieController: CommonGraph {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         do {
-            listTransactions = try mainObjectContext.fetch(fetchRequest)
+            listTransactions = try context!.fetch(fetchRequest)
             
         } catch {
             print("Error fetching data from CoreData")

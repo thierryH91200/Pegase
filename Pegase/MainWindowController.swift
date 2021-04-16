@@ -65,6 +65,9 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     var quote = ""
     var exportTmp = ""
     
+    let context = mainObjectContext
+
+    
     private var center: UNUserNotificationCenter?
     private let handler = NotificationHandler()
     private let notifyCategoryIdentifier = "test"
@@ -75,10 +78,10 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     }
     
     func windowWillClose(_ notification: Notification) {
-        if mainObjectContext.hasChanges == true {
+        if context!.hasChanges == true {
             print ( "mainObjectContext.hasChanges" )
             do {
-                try mainObjectContext.save()
+                try context!.save()
             } catch {
                 print("error")
             }
@@ -88,6 +91,9 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        
+//        let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+
         
         preferencesItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
         preferencesItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
@@ -113,7 +119,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         do {
-            entityAccount = try mainObjectContext.fetch(request)
+            entityAccount = try context!.fetch(request)
         } catch { print(error) }
         
         if entityAccount.isEmpty {
