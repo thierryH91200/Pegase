@@ -7,17 +7,19 @@ final class Preference {
     
     var viewContext : NSManagedObjectContext?
 
+
     init () {
         if let context = mainObjectContext
- {
-            self.viewContext = context
+        {            self.viewContext = context
         }
     }
-
+    
     
     func getAllDatas() -> EntityPreference {
         
-        guard currentAccount != nil else { return entityPreference[0] }
+        guard currentAccount != nil else {
+//            fatalError("currentAccount is Invalid")
+            return entityPreference[0] }
         
         let fetchRequest = NSFetchRequest<EntityPreference>(entityName: "EntityPreference")
         let predicate = NSPredicate(format: "account == %@", currentAccount!)

@@ -221,7 +221,8 @@ final class ListTransactionsController: NSViewController {
         self.datePicker.showPromptWhenEmpty = false
         self.datePicker.referenceDate = Date()
         self.datePicker.dateFieldPlaceHolder = ""
-        self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
+        //        self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
+                self.datePicker.dateValue = Date()
         self.datePicker.minDate = Date()
     }
     
@@ -238,13 +239,16 @@ final class ListTransactionsController: NSViewController {
     
     @objc func updateChangeAccount(_ notification: Notification) {
         
-        self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
-        self.delegate?.resetOperation()
-        
-        self.getAllData()
-        self.reloadData(true)
-        
-        self.resetChange()
+        printTimeElapsedWhenRunningCode(title:"updateChangeAccount ") {
+            
+            self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
+            self.delegate?.resetOperation()
+            
+            self.getAllData()
+            self.reloadData(true)
+            
+            self.resetChange()
+        }
         
         //        let count = listeOperations.count
         //        let str = String(format: "%d opérations", count)
@@ -502,50 +506,14 @@ extension ListTransactionsController: OperationsDelegate {
     
     func getAllData() {
         
-        ////        DispatchQueue.main.async(execute: {() -> Void in
-        //            self.progressIndicator.isHidden = false
-        //            self.progressIndicator.startAnimation(nil)
-        //
-        ////            for _ in 0..<1000 {
-        //                self.listeOperations.removeAll()
-        //                self.listeOperations = ListeOperations.shared.getAll(ascending: false)
-        //                self.transformData()
-        ////            }
-        //
-        //            self.progressIndicator.isHidden = true
-        //            self.progressIndicator.stopAnimation(nil)
-        ////        })
-        //
-        
-        //        progressIndicator.isHidden = false
-        //        progressIndicator.startAnimation(nil)
-        
-        //        for _ in 0..<1000 {
         listeOperations = ListTransactions.shared.getAllDatas(ascending: false)
         self.transformData()
-        //        }
-        
     }
     
     func reloadData(_ expand: Bool = true) {
         
-        
-        //        var item = [Any]()
-        //        let numberOfChildren = self.outlineListView.numberOfChildren(ofItem: nil)
-        //
-        //        for i in 0 ..< numberOfChildren {
-        //            item.append( self.outlineListView.item(atRow: i)!)
-        //            self.outlineListView.expandItem(item[i])
-        //        }
-        //        for i in 0 ..< numberOfChildren {
-        //            self.outlineListView.expandItem(item[i])
-        //        }
-        
-        //        self.outlineListView.selectRowIndexes(NSIndexSet(index: 1) as IndexSet, byExtendingSelection: false)
-        
         DispatchQueue.main.async {
             self.outlineListView.reloadData()
-
             self.outlineListView.expandItem(nil, expandChildren: expand)
         }
 

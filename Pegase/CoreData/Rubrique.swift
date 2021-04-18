@@ -14,12 +14,11 @@ final class Rubric {
 
     init () {
         if let context = mainObjectContext
- {
+        {
             self.viewContext = context
         }
     }
 
-    
     func findOrCreate ( account: EntityAccount,  name: String, color: NSColor, uuid: UUID) -> EntityRubric {
         
         var entityRubric = find( account: account, name: name )
@@ -111,18 +110,18 @@ final class Rubric {
     
     func defaultEntity()
     {
-        var isEmpty: Bool {
-            do {
-                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "EntityRubric")
-                let predicate = NSPredicate(format: "account == %@", currentAccount!)
-                
-                fetchRequest.predicate = predicate
-                let isEmpty  = try viewContext!.count(for: fetchRequest)
-                return isEmpty == 0 ? true : false
-            } catch {
-                return true
-            }
-        }
+//        var isEmpty: Bool {
+//            do {
+//                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "EntityRubric")
+//                let predicate = NSPredicate(format: "account == %@", currentAccount!)
+//
+//                fetchRequest.predicate = predicate
+//                let isEmpty  = try viewContext!.count(for: fetchRequest)
+//                return isEmpty == 0 ? true : false
+//            } catch {
+//                return true
+//            }
+//        }
         
         if entitiesRubric.isEmpty == true {
             var content = ""
@@ -139,7 +138,7 @@ final class Rubric {
             {
                 for key in keys
                 {
-                    if isEmpty == false {
+//                    if isEmpty == false {
                         do {
                             let p1 = NSPredicate(format: "account == %@", currentAccount!)
                             let p2 = NSPredicate(format: "name == %@", key["rubrique"]!)
@@ -153,13 +152,18 @@ final class Rubric {
                         } catch {
                             print("Error fetching data from CoreData")
                         }
-                    }
-                    
+//                    }
                     addRubric(key)
                 }
             }
             do {
+                let p1 = NSPredicate(format: "account == %@", currentAccount!)
+//                let p2 = NSPredicate(format: "name == %@", key["rubrique"]!)
+                let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1])
+
                 let fetchRequest = NSFetchRequest<EntityRubric>(entityName: "EntityRubric")
+                fetchRequest.predicate = predicate
+
                 fetchRequest.sortDescriptors = [NSSortDescriptor(key: RubriqueDisplayProperty.name.rawValue, ascending: true)]
                 entitiesRubric = try viewContext!.fetch(fetchRequest)
             } catch {

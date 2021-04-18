@@ -41,8 +41,11 @@ extension ListTransactionsController {
         
         guard (outlineListView) != nil else { return }
         
-        copy(sender)
-        paste(sender)
+        printTimeElapsedWhenRunningCode(title:"copy paste ") {
+            
+            copy(sender)
+            paste(sender)
+        }
         
     }
     

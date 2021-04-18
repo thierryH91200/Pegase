@@ -53,9 +53,10 @@ final class ListTransactions {
         return comments.uniqueElements
     }
     
-    func getAllDatas(ascending: Bool = true ) -> [EntityTransactions] {
+    func getAllDatas(ascending: Bool = true , forcing : Bool = false) -> [EntityTransactions] {
         
         guard currentAccount != nil else { return [] }
+//        guard forcing == true else { return [] }
         self.ascending = ascending
         
         let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")

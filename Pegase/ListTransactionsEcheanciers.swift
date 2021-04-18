@@ -8,6 +8,7 @@ extension ListTransactionsController: NSDatePickerCellDelegate {
                         timeInterval proposedTimeInterval: UnsafeMutablePointer<TimeInterval>?) {
         
         guard datePicker.isEnabled == true else { return }
+        guard currentAccount != nil else { return }
         
         let proposedDate = proposedDateValue.pointee as Date
         guard proposedDate != datePicker.dateValue else { return }

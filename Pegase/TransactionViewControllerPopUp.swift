@@ -2,12 +2,17 @@ import AppKit
 
 extension TransactionViewController {
 
-    // MARK: -
-    // MARK: PopUp Account
+    // MARK: - PopUp Account
     func loadAccount () {
         let  transfertMenu = NSMenu()
+        transfertMenu.removeAllItems()
+
         
         let accounts = Account.shared.getAllDatas()
+        print("accounts count : ",accounts.count)
+
+        guard accounts.count < 100 else { return }
+        print("accounts : ",accounts.count)
         for account in accounts where account.isAccount == true
         {
             transfertMenu.addItem(accountItemFor(account) )

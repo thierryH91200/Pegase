@@ -93,32 +93,40 @@ class AppDelegate: NSObject, NSApplicationDelegate { // , UNUserNotificationCent
     }()
     
     @IBAction func saveAction(_ sender: AnyObject?) {
+        
+        let accounts = Account.shared.getAllDatas()
+        print("accounts count : ",accounts.count)
+//        return
+
 
         // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
-//        let context = mainObjectContext
-        let context = persistentContainer.viewContext
-
-        if !context.commitEditing() {
-            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
-        }
-        if context.hasChanges == true {
-            do {
-                try context.save()
-                print("save Action")
-            } catch {
-                // Customize this code block to include application-specific recovery steps.
-                let nserror = error as NSError
-                NSApplication.shared.presentError(nserror)
+        let context = mainObjectContext
+//        let context = persistentContainer.viewContext
+//        let context = persistentContainer.newBackgroundContext()
+        
+        context?.perform {
+            
+            if !(context?.commitEditing())! {
+                NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
             }
-            context.reset()
-
+            if context!.hasChanges == true {
+                do {
+                    try context!.save()
+                    print("save Action")
+                } catch {
+                    // Customize this code block to include application-specific recovery steps.
+                    let nserror = error as NSError
+                    NSApplication.shared.presentError(nserror)
+                }
+                context!.reset()
+            }
         }
     }
     
-//    func windowWillReturnUndoManager(window: NSWindow) -> UndoManager? {
-//        // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
-//        return persistentContainer.viewContext.undoManager
-//    }
+    func windowWillReturnUndoManager(window: NSWindow) -> UndoManager? {
+        // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
+        return persistentContainer.viewContext.undoManager
+    }
 
 
 //    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {

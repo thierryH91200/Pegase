@@ -76,7 +76,6 @@ extension EntityTransactions {
         self.willAccessValue(forKey: "sectionYear")
         var tmp = self.primitiveValue(forKey: "sectionYear") as? String
         self.didAccessValue(forKey: "sectionYear")
-//        print("sectionYear AV", tmp ?? "default")
         
         if tmp == nil {
             if let timeStamp = self.value(forKey: "dateOperation") as? Date {
@@ -94,7 +93,6 @@ extension EntityTransactions {
                 self.setPrimitiveValue(tmp, forKey: "sectionYear")
             }
         }
-//        print("sectionYear AP", tmp ?? "default")
         return tmp
     }
 
