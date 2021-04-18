@@ -78,6 +78,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     }
     
     func windowWillClose(_ notification: Notification) {
+        return
         if context!.hasChanges == true {
             print ( "mainObjectContext.hasChanges" )
             do {

@@ -10,15 +10,24 @@ final class Preference {
 
     init () {
         if let context = mainObjectContext
-        {            self.viewContext = context
+        {
+            self.viewContext = context
         }
     }
     
     
     func getAllDatas() -> EntityPreference {
         
+        
+//        let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+//        context?.deleteAllData()
+
+        
         guard currentAccount != nil else {
 //            fatalError("currentAccount is Invalid")
+            let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+            context?.deleteAllData()
+
             return entityPreference[0] }
         
         let fetchRequest = NSFetchRequest<EntityPreference>(entityName: "EntityPreference")

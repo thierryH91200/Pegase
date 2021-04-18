@@ -245,7 +245,25 @@ extension ListTransactionsController {
             if !trimmedString.isEmpty {
                 let uuid = UUID(uuidString: trimmedString)
                 let entities = ListTransactions.shared.find(uuid: uuid!)
-                let newEntities = entities.copyEntireObjectGraph(context: context!) as! EntityTransactions
+                
+                var accounts = Account.shared.getAllDatas()
+                print("accounts before count : ",accounts.count)
+                               
+//                var newEntities : EntityTransactions?
+//                EntityTransactions
+
+//                do {
+//                    newEntities = try entities.deepcopy(context:  context!) as? EntityTransactions
+//                } catch {
+//                    print("error")
+//                }
+
+                let newEntities = entities.saveTransactions(context: context!, entityTrans: entities) 
+                //                let newEntities = entities.copyEntireObjectGraph(context: context!) as! EntityTransactions
+
+                accounts = Account.shared.getAllDatas()
+                print("accounts after count : ",accounts.count)
+
 
                 newEntities.uuid = UUID()       // new UUID
                 newEntities.account = currentAccount
