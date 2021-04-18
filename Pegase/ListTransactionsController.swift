@@ -389,7 +389,6 @@ final class ListTransactionsController: NSViewController {
         
         balanceCalculation()
         let IdOperation = (0 ..< listeOperations.count).map { (i) -> IdOperations in
-            print( listeOperations[i].sectionYear!)
             return IdOperations(year : listeOperations[i].sectionYear!, id: listeOperations[i].sectionIdentifier!, entityOperations: listeOperations[i])
         }
         
@@ -403,7 +402,7 @@ final class ListTransactionsController: NSViewController {
         // convert to struct - more fast and easy to sort
         var allGroupedYear : [ GroupedYearOperations ] = []
         
-        printTimeElapsedWhenRunningCode(title:"convert dict to struct : ") {
+        printTimeElapsedWhenRunningCode(title:"convert dict to struct") {
             for grouped in groupedID {
                 let groupedYear = GroupedYearOperations(dictionary: grouped)
                 allGroupedYear.append(groupedYear)

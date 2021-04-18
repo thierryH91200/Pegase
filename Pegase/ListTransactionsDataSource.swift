@@ -46,7 +46,6 @@ extension ListTransactionsController: NSOutlineViewDataSource {
     }
     
     func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
-//        print(object)
         return object
     }
 

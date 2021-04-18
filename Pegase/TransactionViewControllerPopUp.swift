@@ -9,10 +9,8 @@ extension TransactionViewController {
 
         
         let accounts = Account.shared.getAllDatas()
-        print("accounts count : ",accounts.count)
-
         guard accounts.count < 100 else { return }
-        print("accounts : ",accounts.count)
+        
         for account in accounts where account.isAccount == true
         {
             transfertMenu.addItem(accountItemFor(account) )

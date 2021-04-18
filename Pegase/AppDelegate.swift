@@ -13,7 +13,6 @@ class AppDelegate: NSObject, NSApplicationDelegate { // , UNUserNotificationCent
     
     var splashScreenWindowController: SplashScreenWindowController! = nil
     
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         //        let center = UNUserNotificationCenter.current()
@@ -92,10 +91,8 @@ class AppDelegate: NSObject, NSApplicationDelegate { // , UNUserNotificationCent
         return container
     }()
     
-    @IBAction func saveAction(_ sender: AnyObject?) {
+    @IBAction func saveAction(_ sender: Any?) {
         
-        let accounts = Account.shared.getAllDatas()
-        print("accounts count : ",accounts.count)
         return
 
 

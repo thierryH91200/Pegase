@@ -78,7 +78,6 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     }
     
     func windowWillClose(_ notification: Notification) {
-        return
         if context!.hasChanges == true {
             print ( "mainObjectContext.hasChanges" )
             do {
@@ -95,7 +94,6 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
         
 //        let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 
-        
         preferencesItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
         preferencesItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
         printItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true

@@ -33,9 +33,4 @@ func timeElapsedInSecondsWhenRunningCode(operation: ()->()) -> Double {
 }
 
 
-//printTimeElapsedWhenRunningCode(title:"drawExtras") {
-//    renderer.drawExtras(context: context)
-//}
-
-
 

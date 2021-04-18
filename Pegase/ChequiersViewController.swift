@@ -1,4 +1,5 @@
-import AppKit
+
+import Cocoa
 
 final class ChequiersViewController: NSViewController {
     
@@ -6,8 +7,8 @@ final class ChequiersViewController: NSViewController {
     @IBOutlet var arrayController: NSArrayController!
     @IBOutlet weak var menuLocal: NSMenu!
     
-//    @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
-    let context = mainObjectContext
+    @objc dynamic var context: NSManagedObjectContext! = mainObjectContext
+//    let context = mainObjectContext
     @objc dynamic var predicate =  NSPredicate(format: "account == %@", currentAccount!)
     
     var chequierModalWindowController: ChequierModalWindowController!
@@ -16,19 +17,18 @@ final class ChequiersViewController: NSViewController {
         super.viewDidLoad()
         
         NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
-//        mainContext = mainObjectContext
         
         tableView.rowHeight = 24.0
         updateData()
     }
     
     @objc func updateChangeAccount(_ note: Notification) {
-        updateData()
+//        updateData()
     }
     
     func updateData() {
-        guard currentAccount != nil else { return }
-        arrayController.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
+//        guard currentAccount != nil else { return }
+//        arrayController.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)
     }
     
     @IBAction func editChequier(_ sender: Any) {
@@ -68,10 +68,7 @@ final class ChequiersViewController: NSViewController {
     
     
     @IBAction func addChequier(_ sender: Any) {
-        
-//        let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-
-        
+                
         self.chequierModalWindowController = ChequierModalWindowController()
         let windowAdd = chequierModalWindowController.window!
         let windowApp = self.view.window
@@ -95,7 +92,7 @@ final class ChequiersViewController: NSViewController {
                 entityCarnetCheques.nbCheques  = numberCheques
                 
                 entityCarnetCheques.uuid = UUID()
-//                entityCarnetCheques.account = currentAccount
+                entityCarnetCheques.account = currentAccount
                 
                 currentAccount?.addToCarnetCheques(entityCarnetCheques)
                 

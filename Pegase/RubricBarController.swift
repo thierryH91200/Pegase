@@ -64,9 +64,7 @@ final class RubricBarController: CommonGraph
         super.viewDidLoad()
         
         NotificationCenter.receive( instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
-        
-//        mainContext = context
-        
+               
         Rubric.shared.getAllDatas()
         self.arrayController.sortDescriptors = customSortDescriptors
         self.arrayController.filterPredicate = NSPredicate(format: "account == %@", currentAccount!)

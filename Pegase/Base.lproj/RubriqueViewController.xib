@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -69,7 +68,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cNK-qR-OpL">
-                    <rect key="frame" x="332" y="1" width="131" height="32"/>
+                    <rect key="frame" x="355" y="1" width="125" height="32"/>
                     <buttonCell key="cell" type="push" title="Remove Rubric" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Id4-fw-bUa">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -79,7 +78,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gZp-6h-Lk3">
-                    <rect key="frame" x="501" y="1" width="148" height="32"/>
+                    <rect key="frame" x="516" y="1" width="142" height="32"/>
                     <buttonCell key="cell" type="push" title="Remove Category" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OPU-b7-N9X">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -89,7 +88,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vVT-EK-Df4">
-                    <rect key="frame" x="332" y="28" width="131" height="32"/>
+                    <rect key="frame" x="355" y="27" width="125" height="32"/>
                     <buttonCell key="cell" type="push" title="Add Rubric" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="a2j-qa-2wx">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -99,7 +98,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2FN-Td-TRZ">
-                    <rect key="frame" x="649" y="13" width="102" height="32"/>
+                    <rect key="frame" x="656" y="13" width="96" height="32"/>
                     <buttonCell key="cell" type="push" title="Expand all" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="caJ-Bl-EAD">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -111,18 +110,18 @@
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="21" horizontalPageScroll="10" verticalLineScroll="21" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBv-oC-Ljf">
                     <rect key="frame" x="312" y="76" width="600" height="400"/>
                     <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="Uko-1H-xnb">
-                        <rect key="frame" x="1" y="0.0" width="598" height="399"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="1" y="1" width="598" height="398"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <outlineView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowHeight="18" rowSizeStyle="automatic" headerView="VdQ-ks-805" viewBased="YES" indentationPerLevel="16" outlineTableColumn="UYJ-bA-3af" id="NPp-ZC-9Pj">
-                                <rect key="frame" x="0.0" y="0.0" width="598" height="376"/>
+                                <rect key="frame" x="0.0" y="0.0" width="598" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="2" height="3"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <tableViewGridLines key="gridStyleMask" vertical="YES" dashed="YES"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="595" minWidth="40" maxWidth="1000" id="UYJ-bA-3af">
+                                    <tableColumn width="565" minWidth="40" maxWidth="1000" id="UYJ-bA-3af">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Rubrique">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -135,11 +134,11 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView identifier="RubriqueCell" id="wMK-kY-MRc" customClass="KSHeaderCellView3" customModule="Pegase" customModuleProvider="target">
-                                                <rect key="frame" x="1" y="1" width="595" height="18"/>
+                                                <rect key="frame" x="11" y="1" width="575" height="18"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="RJk-x0-Yk0">
-                                                        <rect key="frame" x="9" y="-1" width="367" height="21"/>
+                                                        <rect key="frame" x="9" y="-1" width="347" height="21"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="header table" id="NMJ-fc-9dW">
                                                             <font key="font" metaFont="system" size="18"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -151,7 +150,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XcA-ut-1em">
-                                                        <rect key="frame" x="380" y="4" width="88" height="16"/>
+                                                        <rect key="frame" x="360" y="4" width="88" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="84" id="BYi-6b-4DA"/>
                                                         </constraints>
@@ -167,7 +166,7 @@
                                                         </connections>
                                                     </textField>
                                                     <colorWell enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iat-la-qdQ">
-                                                        <rect key="frame" x="501" y="-2" width="44" height="22"/>
+                                                        <rect key="frame" x="481" y="-2" width="44" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="44" id="6Nu-pF-1ar"/>
                                                         </constraints>
@@ -194,11 +193,11 @@
                                                 </connections>
                                             </tableCellView>
                                             <tableCellView identifier="CategoryCell" id="ndj-6W-KcO" customClass="KSTableCellView2" customModule="Pegase" customModuleProvider="target">
-                                                <rect key="frame" x="1" y="22" width="595" height="14"/>
+                                                <rect key="frame" x="11" y="22" width="575" height="14"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="VbX-Gj-2U2">
-                                                        <rect key="frame" x="443" y="-1" width="100" height="16"/>
+                                                        <rect key="frame" x="423" y="-1" width="100" height="16"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Table View Cell" id="K1n-xm-q3n">
                                                             <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="currency" lenient="YES" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="2" maximumFractionDigits="2" id="ZHg-lB-sXB"/>
                                                             <font key="font" metaFont="system"/>
@@ -257,13 +256,13 @@
                         <rect key="frame" x="224" y="17" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <tableHeaderView key="headerView" id="VdQ-ks-805">
+                    <tableHeaderView key="headerView" wantsLayer="YES" id="VdQ-ks-805">
                         <rect key="frame" x="0.0" y="0.0" width="598" height="23"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J57-yp-niB">
-                    <rect key="frame" x="501" y="28" width="148" height="32"/>
+                    <rect key="frame" x="516" y="27" width="142" height="32"/>
                     <buttonCell key="cell" type="push" title="Add Category" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="v8h-np-1L4">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>

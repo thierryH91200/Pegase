@@ -197,17 +197,14 @@ extension NSManagedObject {
                     // Clone it, and assign then to the clone
                     let clonedRelatedObject = try relatedObject.deepcopy(context: context, cache: &alreadyCopied)
                     cloned.setValue(clonedRelatedObject, forKey: relation.key)
-                    
                 }
             }
         
         return cloned
     }
     
-    func saveTransactions(context: NSManagedObjectContext, entityTrans: EntityTransactions) -> EntityTransactions
+    func duplicateTransactions(context: NSManagedObjectContext, entityTrans: EntityTransactions) -> EntityTransactions
     {
-        
-        
         let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context) as? EntityTransactions
         
         entityOperation?.dateCree = Date()
@@ -241,10 +238,7 @@ extension NSManagedObject {
             entityOperation?.addToSousOperations(ent)
         }
 //        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
-        
-        
         return entityOperation!
-        
     }
     
     func saveSubTransactions(context: NSManagedObjectContext, entityTrans: EntitySousOperations) -> EntitySousOperations
