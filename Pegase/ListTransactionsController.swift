@@ -42,6 +42,7 @@ final class ListTransactionsController: NSViewController {
         case rubrique
         case solde
         case statut
+        case checkNumber
     }
     
     enum TypeOfColor: String {
@@ -515,7 +516,5 @@ extension ListTransactionsController: OperationsDelegate {
             self.outlineListView.reloadData()
             self.outlineListView.expandItem(nil, expandChildren: expand)
         }
-
-        
     }
 }

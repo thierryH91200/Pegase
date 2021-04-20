@@ -116,11 +116,9 @@ OS X 10.14 or later, 64-bit processor
 ## Installation
 
 ## CocoaPods
-it is not my priority
 Pegase not include CocoaPods
 
 ## Carthage
-it is not my priority
 Pegase not include Carthage
 
 carthage update --platform macos --use-submodules

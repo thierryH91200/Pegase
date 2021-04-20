@@ -40,7 +40,8 @@ class AppDelegate: NSObject, NSApplicationDelegate { // , UNUserNotificationCent
         dict["mode"]           = false
         dict["bankStatement"] = false
         dict["statut"]         = false
-        
+        dict["checkNumber"]     = false
+
         dict["montant"]        = false
         dict["depense"]        = true
         dict["recette"]        = true

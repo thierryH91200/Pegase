@@ -139,7 +139,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         switch propertyEnum
         {
 
-        case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .solde:
+        case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .solde, .checkNumber:
             textField.stringValue = ""
             
         case .rubrique:
@@ -309,6 +309,14 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             } else {
                 textField.stringValue = ""
             }
+            
+        case .checkNumber:
+            if let number = quake.checkNumber {
+                textField.stringValue = String(number)
+            } else {
+                textField.stringValue = ""
+            }
+            paragraph.alignment = .right
         }
         
         textField.sizeToFit()

@@ -26,6 +26,7 @@ extension TransactionViewController: ListeOperationsDelegate {
         self.setModePaiement.removeAll()
         self.setReleve.removeAll()
         self.setStatut.removeAll()
+        self.setNumber.removeAll()
         self.setTransfert.removeAll()
         
         self.setDateOperation.insert(Date())
@@ -33,7 +34,8 @@ extension TransactionViewController: ListeOperationsDelegate {
         self.setModePaiement.insert("string")
         self.setReleve.insert(0)
         self.setStatut.insert(0)
-        
+        self.setNumber.insert("string")
+
         self.entityPreference = Preference.shared.getAllDatas()
         
         self.loadAccount()
@@ -54,6 +56,9 @@ extension TransactionViewController: ListeOperationsDelegate {
         self.textFieldReleveBancaire.doubleValue = 0.0
         self.textFieldReleveBancaire.placeholderString = ""
         
+        self.numCheque.stringValue = ""
+        self.numCheque.placeholderString = ""
+
         self.textFieldMontant.doubleValue = 0.0
         
         self.subOperations.removeAll()
@@ -134,6 +139,7 @@ extension TransactionViewController: ListeOperationsDelegate {
         self.setMontant.removeAll()
         self.setReleve.removeAll()
         self.setStatut.removeAll()
+        self.setNumber.removeAll()
         self.setTransfert.removeAll()
         
         for quake in quakes {
@@ -150,6 +156,12 @@ extension TransactionViewController: ListeOperationsDelegate {
             let statut = quake.statut
             self.setStatut.insert(statut)
             
+            if let number = quake.checkNumber {
+                self.setNumber.insert(number)
+            } else {
+                self.setNumber.insert("string")
+            }
+
             let compteLie = quake.operationLiee?.account
             let transfert = compteLie?.initAccount?.codeAccount ?? ""
             //            if transfert != "" {
@@ -163,6 +175,16 @@ extension TransactionViewController: ListeOperationsDelegate {
             self.setDateOperation.insert(dateOperation)
         }
         
+        if setNumber.count > 1 {
+            self.numCheque.stringValue =  ""
+            self.numCheque.alignment =  .left
+            self.numCheque.placeholderString = Localizations.Transaction.MultipleValue
+        } else {
+            self.numCheque.stringValue = setNumber.first!
+            self.numCheque.alignment =  .right
+            self.numCheque.placeholderString = ""
+        }
+
         if setReleve.count > 1 {
             self.textFieldReleveBancaire.stringValue =  ""
             self.textFieldReleveBancaire.alignment =  .left
@@ -230,7 +252,6 @@ extension TransactionViewController: ListeOperationsDelegate {
         } else {
             let mode = popUpStatut.itemTitle(at: 0)
             if mode == Localizations.Transaction.MultipleValue {
-                
                 self.popUpStatut.menu?.removeItem(at: 0)
             }
             let statut = Int16(0)

@@ -28,192 +28,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3AD638F3-1446-466A-911D-4B44F880AE6B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/RubricBarController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "updateChartData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5CA4B76C-A4E9-4EEE-BD63-38962CF3647D"
+            uuid = "8B5739DA-2EA0-4FDB-8C84-FB381A35A889"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/RubricBarController.swift"
+            filePath = "Pegase/TransactionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "controlTextDidEndEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "63A6E5AC-4B78-4D3A-B696-6F2402023677"
-            shouldBeEnabled = "Yes"
+            uuid = "12D3C431-73FB-4D9B-981B-8B01C0375227"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/RubricBarController.swift"
+            filePath = "Pegase/TransactionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "controlTextDidEndEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "56DCB3DA-886A-4215-BE85-1E51DA20B738"
-            shouldBeEnabled = "Yes"
+            uuid = "7D6B016F-1941-4375-B1B3-4B2907D81DEF"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/RubricBarController.swift"
+            filePath = "Pegase/TransactionViewControllerDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "viewWillAppear()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "56DCB3DA-886A-4215-BE85-1E51DA20B738 - bd8ca5ca58650e55"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pegase.RubricBarController.viewWillAppear() -&gt; ()"
-                  moduleName = "Pegase"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/RubricBarController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "247">
-               </Location>
-               <Location
-                  uuid = "56DCB3DA-886A-4215-BE85-1E51DA20B738 - 83bf952d617c29ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Pegase.RubricBarController.viewWillAppear() -&gt; ()"
-                  moduleName = "Pegase"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/RubricBarController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C428DB48-0F3C-444A-B922-B19E3CD12731"
-            shouldBeEnabled = "Yes"
+            uuid = "77FB6BFE-3C09-4115-BF2D-F8947592DFF4"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/RubricBarController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "viewDidAppear()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E09457FA-458B-4B33-8784-A745534431FF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/CategoryBarController1.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "updateChartData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "29087574-F614-4B8C-8D96-45A7F2363599"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/CategoryBarController.swift"
+            filePath = "Pegase/TransactionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
             endingLineNumber = "202"
-            landmarkName = "updateChartDataCat(_:)"
+            landmarkName = "controlTextDidEndEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "94318B34-52E3-45AC-AAAF-A049C94BBFC4"
+            uuid = "16FFCD34-F0CA-4194-9544-256EFA91FA40"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/RubriqueViewController.swift"
+            filePath = "Pegase/TransactionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "selectionDidChange(_:)"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "controlTextDidEndEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D7E451C4-640B-475B-A307-E29121E83B8C"
+            uuid = "2ACD8BEA-EEF7-4A42-9E2B-813639830E72"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/TransactionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "willShowPopup(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "889AC865-B6E1-4F2B-AE98-7B141D226FCF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/ChequiersViewController.swift"
+            filePath = "Pegase/TransactionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "addChequier(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F439F438-6935-4E19-9EB9-92209FFA4989"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pegase/ChequiersViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "addChequier(_:)"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
+            landmarkName = "contextSaveEdition()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

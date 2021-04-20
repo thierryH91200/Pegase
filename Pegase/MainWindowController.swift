@@ -92,8 +92,6 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     override func windowDidLoad() {
         super.windowDidLoad()
         
-//        let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-
         preferencesItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
         preferencesItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
         printItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true

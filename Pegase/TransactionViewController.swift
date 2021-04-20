@@ -67,6 +67,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     var setMontant       = Set<Double>()
     var setModePaiement  = Set<String>()
     var setStatut        = Set<Int16>()
+    var setNumber        = Set<String>()
     var setTransfert     = Set<String>()
     var setCheck_In_Date = Set<Date>()
     var setDateOperation = Set<Date>()
@@ -108,6 +109,8 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         NotificationCenter.receive(instance: self, name: key1,  selector: #selector(updateChangeCompte(_:)))
         NotificationCenter.receive(instance: self, name: key2,  selector: #selector(updateChangeCompte(_:)))
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.willShowPopup(_:)), name: NSPopUpButton.willPopUpNotification, object: nil)
+        
         self.modeOperation.bezelStyle = .texturedSquare
         self.modeOperation.isBordered = false //Important
         self.modeOperation.wantsLayer = true
@@ -118,14 +121,11 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         
         self.textFieldMontant.isEnabled = false
 
-        
         self.numCheque.isEnabled = true
         self.addView.isHidden = false
         
         numCheque.delegate = self
         textFieldReleveBancaire.delegate = self
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(willShowPopup), name: NSPopUpButton.willPopUpNotification, object: nil);
 
         dateOperation.locale = Locale.current
         
@@ -139,6 +139,15 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     }
 
     @objc func willShowPopup(_ notification: Notification) {
+        var bar = ""
+        if let popUpButton = notification.object as? NSPopUpButton {
+            if popUpButton == popUpStatut {
+                bar = "popUpStatut"
+                saveActions(false)
+            }
+        }
+        print("bar = ",bar)
+
 //                guard let btn = notification.object as? NSPopUpButton else {
 //                    return;
 //                }
@@ -181,26 +190,26 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     func controlTextDidEndEditing (_ notification: Notification) {
     
 //        super.controlTextDidEndEditing(notification)
-
-        guard let textField = notification.object as? NSTextField else { return  }
-        
         var bar = ""
-        if textField == textFieldReleveBancaire {
-            bar = "textFieldReleveBancaire"
-            saveActions(notification)
-        }
-        if textField == numCheque {
-            bar = "numCheque"
-            saveActions(notification)
+        if let textField = notification.object as? NSTextField {
+            
+            if textField == textFieldReleveBancaire {
+                bar = "textFieldReleveBancaire"
+                saveActions(false)
+            }
+            if textField == numCheque {
+                bar = "numCheque"
+                saveActions(false)
+            }
         }
         
-        guard let popUpButton = notification.object as? NSPopUpButton else { return  }
-        if popUpButton == popUpStatut {
-            bar = "popUpStatut"
-            saveActions(notification)
+        if let popUpButton = notification.object as? NSPopUpButton {
+            if popUpButton == popUpStatut {
+                bar = "popUpStatut"
+                saveActions(false)
+            }
         }
-
-        print(bar)
+        print("bar = ",bar)
     }
     
     private func initChart() {
@@ -336,7 +345,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             self.entityOperations.append(entityOperation!)
         }
         
-        // creation = one operation
+        // edition = true
         if self.entityOperations.count == 1 && edition == true {
             
             let setSousOperation = NSSet(array: subOperations)
@@ -351,6 +360,10 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     // edition = false => create  1 operation
     // edition = true  => edition 1 to n operation(s)
     @IBAction func saveActions(_ sender: Any) {
+        var resetOp = true
+        if let reset = sender as? Bool {
+            resetOp = reset
+        }
         
         printTimeElapsedWhenRunningCode(title:"saveActions ") {
             self.contextSaveEdition()
@@ -388,7 +401,12 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
                     let statut = Int16(item?.tag ?? 0)
                     oneOperation.statut = statut
                 }
-                
+                // checkNumber
+                if (setNumber.count > 1 && numCheque.stringValue != "") || setNumber.count == 1 {
+                    let item = self.numCheque.stringValue
+                    oneOperation.checkNumber = item
+                }
+
                 // Operation Link
                 if (setTransfert.isEmpty == false && popUpTransfert.indexOfSelectedItem != 0)  {
                     createOperationLiee(oneOperation: oneOperation)
@@ -401,9 +419,10 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             self.delegate?.reloadData(true)
             
             NotificationCenter.send(.updateBalance)
-            
-            self.resetOperation()
+            if resetOp == true {
+                self.resetOperation()
 //        self.delegate?.resetChange()
+            }
         }
     }
     
