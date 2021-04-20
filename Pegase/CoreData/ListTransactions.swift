@@ -9,7 +9,7 @@ final class ListTransactions {
     
     init () {
         if let context = mainObjectContext
- {
+        {
             self.viewContext = context
         }
     }
@@ -62,7 +62,7 @@ final class ListTransactions {
         let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         let predicate = NSPredicate(format: "account == %@", currentAccount!)
         fetchRequest.predicate = predicate
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: ascending)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "datePointage", ascending: ascending)]
         
         do {
             entities = try viewContext!.fetch(fetchRequest)
@@ -126,7 +126,7 @@ struct GroupedMonthOperations {
         let idAllOperation = (0 ..< idOperations.count).map { (i) -> IdOperations in
             return IdOperations(year : idOperations[i].year, id: idOperations[i].id, entityOperations: idOperations[i].entityOperations)
         }
-        self.idOperation = idAllOperation.sorted(by: { $0.entityOperations.dateOperation!.timeIntervalSince1970 > $1.entityOperations.dateOperation!.timeIntervalSince1970 })
+        self.idOperation = idAllOperation.sorted(by: { $0.entityOperations.datePointage!.timeIntervalSince1970 > $1.entityOperations.datePointage!.timeIntervalSince1970 })
     }
 }
 

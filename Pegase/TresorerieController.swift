@@ -157,9 +157,11 @@ final class TresorerieController: NSViewController
         var indexDate = 0.0
         var sameDate = true
         
-        var soldeRealise = 0.0
-        var soldePrevu  = 0.0
-        var soldeEngage = 0.0
+        let initAccount = InitAccount.shared.getAllDatas()
+        
+        var soldeRealise = initAccount.realise
+        var soldePrevu  = initAccount.prevu
+        var soldeEngage = initAccount.engage
         
         var prevu  = 0.0
         var engage = 0.0
@@ -172,7 +174,7 @@ final class TresorerieController: NSViewController
             sameDate = true
             while sameDate == true {
                 
-                indexDate = ( (listTransactions[index ].dateOperation?.timeIntervalSince1970)! - firstDate ) / hourSeconds
+                indexDate = ( (listTransactions[index ].datePointage?.timeIntervalSince1970)! - firstDate ) / hourSeconds
                 
                 // même jour mais le statut peut être différent ??
                 if Int(indexDate) == indexSlider {
@@ -363,16 +365,16 @@ extension TresorerieController: ChartViewDelegate
         dateFormatter.timeStyle = .none
         
         let date = Date(timeIntervalSince1970: intervalSince1970 )
-        let dateOperation = date.noon
+        let datePointage = date.noon
         
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
 //        let p3 = NSPredicate(format: "account == %@", compteCourant!)
-        let p3 = NSPredicate(format: "dateOperation == %@", dateOperation as CVarArg )
+        let p3 = NSPredicate(format: "datePointage == %@", datePointage as CVarArg )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [ p1, p3])
         
         let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         fetchRequest.predicate = predicate
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "datePointage", ascending: true)]
         
         delegate?.applyFilter(fetchRequest: fetchRequest)
     }

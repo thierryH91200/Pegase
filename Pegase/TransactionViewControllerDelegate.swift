@@ -34,7 +34,7 @@ extension TransactionViewController: ListeOperationsDelegate {
         self.setModePaiement.insert("string")
         self.setReleve.insert(0)
         self.setStatut.insert(0)
-        self.setNumber.insert("string")
+        self.setNumber.insert("")
 
         self.entityPreference = Preference.shared.getAllDatas()
         
@@ -159,14 +159,12 @@ extension TransactionViewController: ListeOperationsDelegate {
             if let number = quake.checkNumber {
                 self.setNumber.insert(number)
             } else {
-                self.setNumber.insert("string")
+                self.setNumber.insert("")
             }
 
             let compteLie = quake.operationLiee?.account
             let transfert = compteLie?.initAccount?.codeAccount ?? ""
-            //            if transfert != "" {
             self.setTransfert.insert(transfert)
-            //            }
             
             let datePointage = quake.datePointage ?? Date()
             self.setCheck_In_Date.insert(datePointage)

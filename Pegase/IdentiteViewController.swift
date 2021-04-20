@@ -6,7 +6,9 @@ final class IdentiteViewController: NSViewController {
     @IBOutlet var arrayControllerBanque: NSArrayController!
     @IBOutlet var arrayControllerIdentite: NSArrayController!
     
-    let context = mainObjectContext
+//    let context = mainObjectContext
+    @objc var managedObjectContext: NSManagedObjectContext = mainObjectContext
+
     @objc dynamic var predicate =  NSPredicate(format: "account == %@", currentAccount!)
     
     public override func viewDidDisappear()

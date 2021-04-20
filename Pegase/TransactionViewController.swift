@@ -360,9 +360,11 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     // edition = false => create  1 operation
     // edition = true  => edition 1 to n operation(s)
     @IBAction func saveActions(_ sender: Any) {
+        
         var resetOp = true
         if let reset = sender as? Bool {
             resetOp = reset
+            return
         }
         
         printTimeElapsedWhenRunningCode(title:"saveActions ") {

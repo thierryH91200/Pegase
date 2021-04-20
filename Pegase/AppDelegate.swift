@@ -14,6 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate { // , UNUserNotificationCent
     var splashScreenWindowController: SplashScreenWindowController! = nil
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+//        UserDefaults.standard.set(true, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
+
         // Insert code here to initialize your application
         //        let center = UNUserNotificationCenter.current()
         //        center.delegate = self

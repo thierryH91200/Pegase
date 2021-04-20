@@ -32,11 +32,6 @@ extension SousOperationModalWindowController : NSComboBoxDelegate {
 
             comboBoxCategory.selectItem(at: 0)
         }
-        
-//        if comboBox == self.comboBoxCategory
-//        {
-//            print("selectItem via comboBoxCategorie")
-//        }
     }
 
 }
