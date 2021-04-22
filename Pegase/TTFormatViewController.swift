@@ -50,7 +50,9 @@ final class TTFormatViewController: NSViewController {
         }
         encodingMenu.selectItem(withTag: 0x1e)
         useFirstRowAsHeaderCheckbox.state = .on
-        reverseSignAmountCheckBbox.state = .on
+        if reverseSignAmountCheckBbox != nil {
+            reverseSignAmountCheckBbox.state = .on
+        }
         
         filePath?.isEditable = false
         if popUpCompte != nil {
@@ -86,7 +88,7 @@ final class TTFormatViewController: NSViewController {
         
         config.escapeCharacter = (escapeControl.label(forSegment: escapeControl.selectedSegment))!
         config.isFirstRowAsHeader = useFirstRowAsHeaderCheckbox.state == .on
-        config.isReverseSignAmountCheckBbox = reverseSignAmountCheckBbox.state == .on
+        config.isReverseSignAmountCheckBbox = reverseSignAmountCheckBbox?.state == .on
         delegate?.configurationChanged(for: self)
     }
     
@@ -116,7 +118,9 @@ final class TTFormatViewController: NSViewController {
             escapeControl.selectSegment(withTag: 2)
         }
         useFirstRowAsHeaderCheckbox.state = config.isFirstRowAsHeader ? .on : .off
-        reverseSignAmountCheckBbox.state = config.isReverseSignAmountCheckBbox ? .on : .off
+        if reverseSignAmountCheckBbox != nil {
+            reverseSignAmountCheckBbox.state = config.isReverseSignAmountCheckBbox ? .on : .off
+        }
         
     }
     

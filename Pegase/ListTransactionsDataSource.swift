@@ -35,19 +35,19 @@ extension ListTransactionsController: NSOutlineViewDataSource {
         return extractedFunc(item)
     }
     
-    func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
-        if let group = item as? GroupedMonthOperations {
-            return (group.month)
-        }
-        if let group = item as? GroupedYearOperations {
-            return (group.year)
-        }
-        return nil
-    }
+//    func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
+//        if let group = item as? GroupedMonthOperations {
+//            return (group.month)
+//        }
+//        if let group = item as? GroupedYearOperations {
+//            return (group.year)
+//        }
+//        return nil
+//    }
     
-    func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
-        return object
-    }
+//    func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
+//        return object
+//    }
 
     
     
@@ -56,9 +56,9 @@ extension ListTransactionsController: NSOutlineViewDataSource {
 //        guard let uriAsString = object as? String,
 //        let uri = URL(string: uriAsString) else { return nil }
 //
-//        if let psc = self.managedObjectContext.persistentStoreCoordinator,
+//        if let psc = mainObjectContext.persistentStoreCoordinator,
 //            let moID = psc.managedObjectID(forURIRepresentation: uri),
-//            let group = self.managedObjectContext.object(with: moID) as? TrackingIdTransactions,
+//            let group = mainObjectContext.object(with: moID) as? TrackingIdTransactions,
 //            let nodes = self.expensesTreeController.arrangedObjects.children {
 //            return self.findNode(for: group, in: nodes)
 //        }

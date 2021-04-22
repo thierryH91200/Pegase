@@ -30,4 +30,3 @@ class KSStatutCellView: NSTableCellView {
     @IBOutlet weak var statutPopup: NSPopUpButton?
 }
 
-

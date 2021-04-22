@@ -203,13 +203,20 @@ final class ListTransactionsController: NSViewController {
         self.outlineListView.doubleAction = #selector(doubleClicked)
         
         self.outlineListView.rowSizeStyle = .custom
-        self.outlineListView.reloadData()
         self.outlineListView.allowsEmptySelection = false
         
-        self.outlineListView.autosaveExpandedItems = true
-        self.outlineListView.autosaveName = "listeTransaction"
+//        self.outlineListView.autosaveExpandedItems = true
+        self.outlineListView.autosaveName = "savesave" + (currentAccount?.name!)!
         
-        self.outlineListView.expandItem(nil, expandChildren: true)
+//        self.outlineListView.autosaveExpandedItems = false
+//        self.outlineListView.reloadData()
+//        self.outlineListView.autosaveExpandedItems = true
+        reloadData(true)
+
+
+
+        
+//        self.outlineListView.expandItem(nil, expandChildren: true)
         
         outlineListView.menu = menuTable
     }
@@ -222,8 +229,7 @@ final class ListTransactionsController: NSViewController {
         self.datePicker.showPromptWhenEmpty = false
         self.datePicker.referenceDate = Date()
         self.datePicker.dateFieldPlaceHolder = ""
-        //        self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
-                self.datePicker.dateValue = Date()
+        self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
         self.datePicker.minDate = Date()
     }
     
@@ -261,7 +267,7 @@ final class ListTransactionsController: NSViewController {
     // ------------------------------------------------------------------------
     deinit
     {
-        NotificationCenter.default.removeObserver(self, name: .selectionDidChangeOutLine, object: nil)
+        NotificationCenter.remove(instance: self, name: .selectionDidChangeOutLine)
     }
     
     func resetChange() {
@@ -501,9 +507,6 @@ extension ListTransactionsController: OperationsDelegate {
         //        self.labelInfo.stringValue = str
     }
     
-    
-    
-    
     func getAllData() {
         
         listeOperations = ListTransactions.shared.getAllDatas(ascending: false)
@@ -513,8 +516,26 @@ extension ListTransactionsController: OperationsDelegate {
     func reloadData(_ expand: Bool = true) {
         
         DispatchQueue.main.async {
+            //            self.outlineListView.autosaveExpandedItems = false
+            //            self.outlineListView.reloadData()
+            //            self.outlineListView.autosaveExpandedItems = true
+            //            self.outlineListView.expandItem(nil, expandChildren: expand)
+            
+            
             self.outlineListView.reloadData()
-            self.outlineListView.expandItem(nil, expandChildren: expand)
+//            self.outlineListView.expandItem(nil, expandChildren: expand)
+
+            
+            if self.outlineListView.autosaveExpandedItems,
+               let autosaveName = self.outlineListView.autosaveName,
+               let persistentObjects = UserDefaults.standard.array(forKey: "NSOutlineView Items \(autosaveName)"),
+               let itemIds = persistentObjects as? [String] {
+                
+                itemIds.forEach {
+                    let item = self.outlineListView.dataSource?.outlineView?(self.outlineListView, itemForPersistentObject: $0)
+                    self.outlineListView.expandItem(item)
+                }
+            }
         }
     }
 }

@@ -463,34 +463,34 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         return false
     }
     
-    func outlineViewItemWillCollapse(_ notification: Notification) {
-        guard let item = notification.userInfo?["NSObject"] as? IdOperations else { return  }
-
-        let ov = notification.object as? NSOutlineView
-
-        let optionKeyIsDown = true
-        //NSApp.currentEvent?.modifierFlags == .option //nil && NSEvent.ModifierFlags.option == .option
-//        let optionKeyIsDown = NSEvent.ModifierFlags.option == .option
-        print("collapse : optionKeyIsDown = ",optionKeyIsDown)
-        ov!.collapseItem(item)
-    }
+//    func outlineViewItemWillCollapse(_ notification: Notification) {
+//        guard let item = notification.userInfo?["NSObject"] as? IdOperations else { return  }
+//
+//        let ov = notification.object as? NSOutlineView
+//
+//        let optionKeyIsDown = true
+//        //NSApp.currentEvent?.modifierFlags == .option //nil && NSEvent.ModifierFlags.option == .option
+////        let optionKeyIsDown = NSEvent.ModifierFlags.option == .option
+//        print("collapse : optionKeyIsDown = ",optionKeyIsDown)
+//        ov!.collapseItem(item)
+//    }
     
-    func outlineViewItemDidExpand(_ notification: Notification) {
-        guard let item = notification.userInfo?["NSObject"] as? IdOperations else { return  }
-        
-        let ov = notification.object as? NSOutlineView
-        
-//        let optionKeyIsDown = NSApp.currentEvent?.modifierFlags != nil &&
-//        NSApp.currentEvent?.ModifierFlags.rawValue == 1048840
-        let optionKeyIsDown = true //NSApp.currentEvent?.modifierFlags
-        print("expand : optionKeyIsDown = ",optionKeyIsDown )
-
-//        let isExpanded = ov?.isItemExpanded(item)
-//        let isParentExpanded = ov?.parent(forItem: item).map(ov!.isItemExpanded)
-        ov!.expandItem(item, expandChildren: optionKeyIsDown)
-
-//        print("DELEGATE DID EXPAND", isExpanded ?? "nil", isParentExpanded ?? "nil")
-    }
+//    func outlineViewItemDidExpand(_ notification: Notification) {
+//        guard let item = notification.userInfo?["NSObject"] as? IdOperations else { return  }
+//        
+//        let ov = notification.object as? NSOutlineView
+//        
+////        let optionKeyIsDown = NSApp.currentEvent?.modifierFlags != nil &&
+////        NSApp.currentEvent?.ModifierFlags.rawValue == 1048840
+//        let optionKeyIsDown = true //NSApp.currentEvent?.modifierFlags
+//        print("expand : optionKeyIsDown = ",optionKeyIsDown )
+//
+////        let isExpanded = ov?.isItemExpanded(item)
+////        let isParentExpanded = ov?.parent(forItem: item).map(ov!.isItemExpanded)
+//        ov!.expandItem(item, expandChildren: optionKeyIsDown)
+//
+////        print("DELEGATE DID EXPAND", isExpanded ?? "nil", isParentExpanded ?? "nil")
+//    }
 
     
 }

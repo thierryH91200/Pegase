@@ -28,128 +28,192 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8B5739DA-2EA0-4FDB-8C84-FB381A35A889"
+            uuid = "35F6B205-1D4A-462D-8C63-D043C3C4A7BB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/TransactionViewController.swift"
+            filePath = "Pegase/Extension/OutlineViewController+Expansion.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "controlTextDidEndEditing(_:)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "outlineView(_:persistentObjectForItem:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "12D3C431-73FB-4D9B-981B-8B01C0375227"
+            uuid = "E50A799C-9689-4D61-9861-0D2CF00F553A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/TransactionViewController.swift"
+            filePath = "Pegase/Extension/OutlineViewController+Expansion.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "controlTextDidEndEditing(_:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "outlineView(_:itemForPersistentObject:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7D6B016F-1941-4375-B1B3-4B2907D81DEF"
+            uuid = "6966ED5C-9E2F-4C4E-A7E3-CE388894094B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/TransactionViewControllerDelegate.swift"
+            filePath = "Pegase/Extension/OutlineViewController+Expansion.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "resetOperation()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "outlineView(_:itemForPersistentObject:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "77FB6BFE-3C09-4115-BF2D-F8947592DFF4"
+            uuid = "08183B76-8D06-4240-9847-6FB7114A1CAA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/TransactionViewController.swift"
+            filePath = "Pegase/Extension/OutlineViewController+Expansion.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "controlTextDidEndEditing(_:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "outlineView(_:itemForPersistentObject:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "16FFCD34-F0CA-4194-9544-256EFA91FA40"
+            uuid = "0FEB1DF3-FA3B-4D87-B44F-7EC72392CDA7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/TransactionViewController.swift"
+            filePath = "Pegase/ListTransactionsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "controlTextDidEndEditing(_:)"
+            startingLineNumber = "535"
+            endingLineNumber = "535"
+            landmarkName = "reloadData(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2ACD8BEA-EEF7-4A42-9E2B-813639830E72"
+            uuid = "B3D947CC-27BA-48A2-8F57-EDE480785957"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/TransactionViewController.swift"
+            filePath = "Pegase/Extension/OutlineViewController+Expansion.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "willShowPopup(_:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "outlineView(_:persistentObjectForItem:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "889AC865-B6E1-4F2B-AE98-7B141D226FCF"
+            uuid = "FC01D5BA-2DB3-4B49-8EBC-210E5DE7C396"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/TransactionViewController.swift"
+            filePath = "Pegase/Extension/OutlineViewController+Expansion.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
-            landmarkName = "contextSaveEdition()"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "firstNode(where:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC01D5BA-2DB3-4B49-8EBC-210E5DE7C396 - 8dcb9eba5d6c280d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == Swift.String&gt;.firstNode(where: (Swift.String) throws -&gt; Swift.Bool) throws -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/Extension/OutlineViewController+Expansion.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "547">
+               </Location>
+               <Location
+                  uuid = "FC01D5BA-2DB3-4B49-8EBC-210E5DE7C396 - 8dcb9eba5d6c280d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Array&lt;&#x3c4;_0_0 where &#x3c4;_0_0 == Swift.String&gt;.firstNode(where: (Swift.String) throws -&gt; Swift.Bool) throws -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/Extension/OutlineViewController+Expansion.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "851">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71F3C92E-8A99-447C-9259-43EA7CE87ACA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/Extension/OutlineViewController+Expansion.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "firstNode(where:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0AEC4101-2635-4E18-BE99-50F8E2BB3A89"
+            uuid = "5A67BFA1-5820-42AF-A6F8-A9F634B06A05"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/TresorerieController.swift"
+            filePath = "Pegase/Extension/OutlineViewController+Expansion.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "updateChartData()"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "outlineView(_:persistentObjectForItem:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F535BB41-98D8-4BA9-BC81-C14658BECD2E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/Extension/OutlineViewController+Expansion.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "outlineView(_:persistentObjectForItem:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

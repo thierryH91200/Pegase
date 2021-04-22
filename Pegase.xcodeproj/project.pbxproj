@@ -11,10 +11,13 @@
 		030D80212454BDC700FEC639 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 030D80202454BDC700FEC639 /* SwiftDate */; };
 		0312B136243200D500EA13F6 /* IncomeExpensePieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0312B134243200D500EA13F6 /* IncomeExpensePieController.xib */; };
 		0312B137243200D500EA13F6 /* IncomeExpensePieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */; };
+		0313E658262FFC9C002DBD63 /* OutlineViewController+Expansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0313E656262FFC9C002DBD63 /* OutlineViewController+Expansion.swift */; };
 		0315EA522475B034002505A6 /* AccountModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0315EA542475B034002505A6 /* AccountModalWindowController.xib */; };
 		0315EA5E2475B049002505A6 /* GroupModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0315EA602475B049002505A6 /* GroupModalWindowController.xib */; };
 		031871BE25E534C00099AF17 /* notification.strings in Resources */ = {isa = PBXBuildFile; fileRef = 031871C025E534C00099AF17 /* notification.strings */; };
 		031AF98C25494BE000B442AB /* Transformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031AF98B25494BE000B442AB /* Transformable.swift */; };
+		031C2D292631770F005F6AA1 /* BankStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C2D272631770F005F6AA1 /* BankStatement.swift */; };
+		031C2D2A26317710005F6AA1 /* BankStatement.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031C2D282631770F005F6AA1 /* BankStatement.xib */; };
 		03213B0523F9048200002DD7 /* TTFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFD23F9048200002DD7 /* TTFormatViewController.xib */; };
 		03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFE23F9048200002DD7 /* ImportWindowController.xib */; };
 		03213B0723F9048200002DD7 /* ImportWindowControllerParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */; };
@@ -262,6 +265,7 @@
 		0304DF8E2548545D00C51A0C /* TransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		0312B134243200D500EA13F6 /* IncomeExpensePieController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeExpensePieController.xib; sourceTree = "<group>"; };
 		0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpensePieController.swift; sourceTree = "<group>"; };
+		0313E656262FFC9C002DBD63 /* OutlineViewController+Expansion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OutlineViewController+Expansion.swift"; sourceTree = "<group>"; };
 		0315EA532475B034002505A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AccountModalWindowController.xib; sourceTree = "<group>"; };
 		0315EA572475B03B002505A6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AccountModalWindowController.strings; sourceTree = "<group>"; };
 		0315EA592475B03C002505A6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AccountModalWindowController.strings; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 		031871C225E534C60099AF17 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/notification.strings; sourceTree = "<group>"; };
 		031871C325E534C80099AF17 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/notification.strings; sourceTree = "<group>"; };
 		031AF98B25494BE000B442AB /* Transformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformable.swift; sourceTree = "<group>"; };
+		031C2D272631770F005F6AA1 /* BankStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankStatement.swift; sourceTree = "<group>"; };
+		031C2D282631770F005F6AA1 /* BankStatement.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankStatement.xib; sourceTree = "<group>"; };
 		03213AFD23F9048200002DD7 /* TTFormatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTFormatViewController.xib; sourceTree = "<group>"; };
 		03213AFE23F9048200002DD7 /* ImportWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportWindowController.xib; sourceTree = "<group>"; };
 		03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportWindowControllerParserDelegate.swift; sourceTree = "<group>"; };
@@ -601,6 +607,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031C2D2526317673005F6AA1 /* Relevé Bancaire */ = {
+			isa = PBXGroup;
+			children = (
+				031C2D272631770F005F6AA1 /* BankStatement.swift */,
+				031C2D282631770F005F6AA1 /* BankStatement.xib */,
+			);
+			name = "Relevé Bancaire";
+			sourceTree = "<group>";
+		};
 		03213AEF23F9045600002DD7 /* Import */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +647,7 @@
 		03213B1723F904A100002DD7 /* SuiviCompte */ = {
 			isa = PBXGroup;
 			children = (
+				031C2D2526317673005F6AA1 /* Relevé Bancaire */,
 				03213B1923F904AE00002DD7 /* Tresorerie */,
 				03213B1823F904A900002DD7 /* Web */,
 			);
@@ -1135,6 +1151,7 @@
 				03AF08AC260CC33B0020CD24 /* Error.swift */,
 				034EC90523F87F51006944DD /* MLTextField.swift */,
 				034EC90123F87F50006944DD /* Notification.swift */,
+				0313E656262FFC9C002DBD63 /* OutlineViewController+Expansion.swift */,
 				034EC90923F87F51006944DD /* NSImage.swift */,
 				034EC90423F87F51006944DD /* NSPasteboard+Additions.swift */,
 				034EC90823F87F51006944DD /* NSTableCellView.swift */,
@@ -1383,6 +1400,7 @@
 				03213BCD23F90AAB00002DD7 /* icons8-safe-100.png in Resources */,
 				03213C7B23F931BC00002DD7 /* CurtainViewController.xib in Resources */,
 				03213CEA23F9781E00002DD7 /* ParameterController.xib in Resources */,
+				031C2D2A26317710005F6AA1 /* BankStatement.xib in Resources */,
 				031871BE25E534C00099AF17 /* notification.strings in Resources */,
 				03213B8B23F9085700002DD7 /* RubricBarController.xib in Resources */,
 				03213C1E23F90C1B00002DD7 /* CategorieModalWindowController.xib in Resources */,
@@ -1464,6 +1482,7 @@
 				036AF0A624260445008C6564 /* AvatarView.swift in Sources */,
 				034EC8BD23F87E97006944DD /* NSPredicateEditorRowTemplate.swift in Sources */,
 				03213B1623F9048D00002DD7 /* CSVWriter.swift in Sources */,
+				031C2D292631770F005F6AA1 /* BankStatement.swift in Sources */,
 				03213B3423F9050000002DD7 /* ListTransactionsController.swift in Sources */,
 				034ECB5D23F87FAF006944DD /* AccountGroupViewDataSource.swift in Sources */,
 				03213B0A23F9048200002DD7 /* ImportWindowControllerExtension.swift in Sources */,
@@ -1584,6 +1603,7 @@
 				034ECA7B23F87FAE006944DD /* AccountGroupViewDragDrop.swift in Sources */,
 				03213C1323F90C0E00002DD7 /* ComboColorWellCell.swift in Sources */,
 				034EC8FB23F87EF1006944DD /* Cheques.swift in Sources */,
+				0313E658262FFC9C002DBD63 /* OutlineViewController+Expansion.swift in Sources */,
 				034EC8F523F87EF1006944DD /* Rubrique.swift in Sources */,
 				03213C0523F90BD200002DD7 /* RubriqueViewController.swift in Sources */,
 				034EC91423F87F51006944DD /* NSImage.swift in Sources */,
