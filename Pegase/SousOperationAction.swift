@@ -45,6 +45,8 @@ extension SousOperationModalWindowController  {
         let selectCat = comboBoxCategory.indexOfSelectedItem
         let entityCategory = entityCategories[selectCat]
         entitySousOperation?.category = entityCategory
+        
+//        entitySousOperation?.id = UUID().uuidString
 
         window?.sheetParent?.endSheet(window!, returnCode: .OK)
         self.window!.close()

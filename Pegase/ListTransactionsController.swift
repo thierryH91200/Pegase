@@ -206,17 +206,13 @@ final class ListTransactionsController: NSViewController {
         self.outlineListView.allowsEmptySelection = false
         
 //        self.outlineListView.autosaveExpandedItems = true
-        self.outlineListView.autosaveName = "savesave" + (currentAccount?.name!)!
+        let id = currentAccount?.uuid.uuidString
+        self.outlineListView.autosaveName = "savesave" + (id)!
         
 //        self.outlineListView.autosaveExpandedItems = false
 //        self.outlineListView.reloadData()
 //        self.outlineListView.autosaveExpandedItems = true
         reloadData(true)
-
-
-
-        
-//        self.outlineListView.expandItem(nil, expandChildren: true)
         
         outlineListView.menu = menuTable
     }
@@ -248,6 +244,9 @@ final class ListTransactionsController: NSViewController {
         
         printTimeElapsedWhenRunningCode(title:"updateChangeAccount ") {
             
+            let id = currentAccount?.uuid.uuidString
+            self.outlineListView.autosaveName = "savesave" + (id)!
+
             self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
             self.delegate?.resetOperation()
             
@@ -256,11 +255,7 @@ final class ListTransactionsController: NSViewController {
             
             self.resetChange()
         }
-        
-        //        let count = listeOperations.count
-        //        let str = String(format: "%d opérations", count)
-        //        self.labelInfo.stringValue = str
-    }
+   }
     
     // ------------------------------------------------------------------------
     //    dealloc
@@ -516,24 +511,23 @@ extension ListTransactionsController: OperationsDelegate {
     func reloadData(_ expand: Bool = true) {
         
         DispatchQueue.main.async {
-            //            self.outlineListView.autosaveExpandedItems = false
-            //            self.outlineListView.reloadData()
-            //            self.outlineListView.autosaveExpandedItems = true
-            //            self.outlineListView.expandItem(nil, expandChildren: expand)
-            
-            
+            self.outlineListView.autosaveExpandedItems = true
             self.outlineListView.reloadData()
-//            self.outlineListView.expandItem(nil, expandChildren: expand)
-
             
             if self.outlineListView.autosaveExpandedItems,
                let autosaveName = self.outlineListView.autosaveName,
                let persistentObjects = UserDefaults.standard.array(forKey: "NSOutlineView Items \(autosaveName)"),
-               let itemIds = persistentObjects as? [String] {
-                
-                itemIds.forEach {
+                let itemIds = persistentObjects as? [String] {
+                let items = itemIds.sorted()
+                items.forEach {
+                    
                     let item = self.outlineListView.dataSource?.outlineView?(self.outlineListView, itemForPersistentObject: $0)
-                    self.outlineListView.expandItem(item)
+                    if let item = item as? GroupedYearOperations {
+                        self.outlineListView.expandItem(item)
+                    }
+                    if let item = item as? GroupedMonthOperations {
+                        self.outlineListView.expandItem(item)
+                    }
                 }
             }
         }

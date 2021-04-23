@@ -101,7 +101,7 @@ public extension Sequence where Element: Equatable {
 }
 
 // MARK: convert dictionary to struct
-struct GroupedYearOperations {
+class GroupedYearOperations {
     let year : String
     var allMonth : [GroupedMonthOperations]
     
@@ -116,7 +116,7 @@ struct GroupedYearOperations {
     }
 }
 
-struct GroupedMonthOperations {
+class GroupedMonthOperations {
     let month : String
     let idOperation : [ IdOperations ]
     
@@ -130,7 +130,7 @@ struct GroupedMonthOperations {
     }
 }
 
-struct IdOperations {
+class IdOperations {
     let year : String
     let id: String
     let entityOperations: EntityTransactions
