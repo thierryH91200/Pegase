@@ -5,7 +5,7 @@ import TFDate
 // OperationController -> ListeOperationsController
 @objc public protocol OperationsDelegate {
     func getAllData()
-    func reloadData(_ expand: Bool )
+    func reloadData(_ expand: Bool, _ auto: Bool)
 }
 
 final class TransactionViewController: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate {
@@ -21,12 +21,6 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     @IBOutlet weak var addView: NSView!
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var gridView: NSGridView!
-    
-    let context = mainObjectContext
-
-    
-//    @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
-    //    @objc dynamic var predicate =  NSPredicate(format: "account == %@", compteCourant!)
     
     @IBOutlet weak var buttonSave: NSButton!
     @IBOutlet weak var modeOperation: NSButton!
@@ -49,10 +43,12 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     @IBOutlet weak var dateOperation: TFDatePicker!
     @IBOutlet weak var datePointage: TFDatePicker!
     
+    @IBOutlet weak var numCheque: NSTextField!
+    
     @objc var date4: Date?
     @objc var date5: Date?
     
-    @IBOutlet weak var numCheque: NSTextField!
+    let context = mainObjectContext
     
     var entityOperation: EntityTransactions?
     var entityOperations : [EntityTransactions] = []
@@ -94,8 +90,8 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        NotificationCenter.default.removeObserver(self, name: key1, object: nil)
-        NotificationCenter.default.removeObserver(self, name: key2, object: nil)
+        NotificationCenter.remove(instance: self, name: key1)
+        NotificationCenter.remove(instance: self, name: key2)
     }
     
     override func viewDidAppear() {
@@ -109,7 +105,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         NotificationCenter.receive(instance: self, name: key1,  selector: #selector(updateChangeCompte(_:)))
         NotificationCenter.receive(instance: self, name: key2,  selector: #selector(updateChangeCompte(_:)))
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.willShowPopup(_:)), name: NSPopUpButton.willPopUpNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.willShowPopup(_:)), name: .selectionDidChangePopUp, object: nil)
         
         self.modeOperation.bezelStyle = .texturedSquare
         self.modeOperation.isBordered = false //Important
@@ -147,41 +143,8 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             }
         }
         print("bar = ",bar)
-
-//                guard let btn = notification.object as? NSPopUpButton else {
-//                    return;
-//                }
-        //        guard let btn = notification.object as? NSPopUpButton, self.actionButton == btn else {
-        //            return;
-        //        }
-//
-//        guard let menu = btn.menu?.item(withTitle: "Share")?.submenu else {
-//            return;
-//        }
-//
-//        print("menu:", menu.items.map({ it in it.title }));
-//
-//        menu.removeAllItems();
-//
-//        guard let item = self.item else {
-//            return;
-//        }
-//        guard let localUrl = DownloadStore.instance.url(for: "\(item.id)") else {
-//            return;
-//        }
-//
-//        let sharingServices = NSSharingService.sharingServices(forItems: [localUrl]);
-//        for service in sharingServices {
-//            let item = menu.addItem(withTitle: service.title, action: nil, keyEquivalent: "");
-//            item.image = service.image;
-//            item.target = self;
-//            item.action = #selector(shareItemSelected);
-//            item.isEnabled = true;
-//        }
-//        print("menu:", menu.items.map({ it in it.title }));
     }
 
-    
     @objc func updateChangeCompte(_ notification: Notification) {
 
         self.resetOperation()
@@ -418,7 +381,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
             
             self.delegate?.getAllData()
-            self.delegate?.reloadData(true)
+            self.delegate?.reloadData(true, true)
             
             NotificationCenter.send(.updateBalance)
             if resetOp == true {
@@ -437,7 +400,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             } catch {
             }
             self.delegate?.getAllData()
-                    self.delegate?.reloadData(true)
+                    self.delegate?.reloadData(true, true)
 
         }
     }

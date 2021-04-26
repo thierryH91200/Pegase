@@ -333,6 +333,7 @@ extension CategoryBarController1: ChartViewDelegate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: false)]
         
         self.delegate?.applyFilter(fetchRequest: fetchRequest)
+        self.delegate?.expandAll()
     }
     
     public func chartValueNothingSelected(_ chartView: ChartViewBase)

@@ -2,7 +2,7 @@ import AppKit
 //import SwiftDate
 import TFDate
 
-// ListeOperationsController -> OperationController
+// ListTransactionsController -> OperationController
 @objc public protocol ListeOperationsDelegate
 {
     /// Called when a value has been selected inside the outline.
@@ -10,11 +10,12 @@ import TFDate
     func resetOperation()
 }
 
-// xxxxController -> ListeOperationsController
+// xxxxController -> ListTransactionsController
 @objc public protocol  FilterDelegate
 {
-    func applyFilter( fetchRequest: NSFetchRequest<EntityTransactions>)
     func updateListeOperations( liste: [EntityTransactions])
+    func applyFilter( fetchRequest: NSFetchRequest<EntityTransactions>)
+    func expandAll()
 }
 
 final class ListTransactionsController: NSViewController {
@@ -25,7 +26,6 @@ final class ListTransactionsController: NSViewController {
     public typealias TrackingSubOperations  = IdOperations
     public typealias TrackingSubOperation   = EntitySousOperations
     
-//    @objc var managedObjectContext2 = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var theDocument = NSPersistentDocument()
     
     enum ListeOperationsDisplayProperty: String {
@@ -205,15 +205,15 @@ final class ListTransactionsController: NSViewController {
         self.outlineListView.rowSizeStyle = .custom
         self.outlineListView.allowsEmptySelection = false
         
-//        self.outlineListView.autosaveExpandedItems = true
+        self.outlineListView.autosaveExpandedItems = true
         let id = currentAccount?.uuid.uuidString
-        self.outlineListView.autosaveName = "savesave" + (id)!
+        self.outlineListView.autosaveName = "save" + (id)!
         
-//        self.outlineListView.autosaveExpandedItems = false
-//        self.outlineListView.reloadData()
-//        self.outlineListView.autosaveExpandedItems = true
-        reloadData(true)
-        
+        //        self.outlineListView.autosaveExpandedItems = false
+        //        self.outlineListView.reloadData()
+        //        self.outlineListView.autosaveExpandedItems = true
+        self.reloadData(false, true)
+
         outlineListView.menu = menuTable
     }
     
@@ -245,17 +245,17 @@ final class ListTransactionsController: NSViewController {
         printTimeElapsedWhenRunningCode(title:"updateChangeAccount ") {
             
             let id = currentAccount?.uuid.uuidString
-            self.outlineListView.autosaveName = "savesave" + (id)!
-
+            self.outlineListView.autosaveName = "save" + (id)!
+            
             self.datePicker.dateValue = (currentAccount?.dateEcheancier!)!
             self.delegate?.resetOperation()
             
             self.getAllData()
-            self.reloadData(true)
+            self.reloadData(false, true)
             
             self.resetChange()
         }
-   }
+    }
     
     // ------------------------------------------------------------------------
     //    dealloc
@@ -404,7 +404,7 @@ final class ListTransactionsController: NSViewController {
         // convert to struct - more fast and easy to sort
         var allGroupedYear : [ GroupedYearOperations ] = []
         
-        printTimeElapsedWhenRunningCode(title:"convert dict to struct") {
+        printTimeElapsedWhenRunningCode(title:"convert dict to class") {
             for grouped in groupedID {
                 let groupedYear = GroupedYearOperations(dictionary: grouped)
                 allGroupedYear.append(groupedYear)
@@ -460,6 +460,33 @@ final class ListTransactionsController: NSViewController {
         self.resetChange()
     }
     
+    @IBAction func compactOperation(_ sender: Any) {
+        let selectedRow = outlineListView.selectedRowIndexes
+        guard selectedRow.isEmpty == false else { return }
+        
+        var listTransactions = [EntityTransactions]()
+        
+//        let context = mainObjectContext
+
+//        var entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as? EntityTransactions
+
+        
+        for row in selectedRow {
+            let item = outlineListView.item(atRow: row) as? IdOperations
+            listTransactions.append(item!.entityOperations)
+        }
+        
+//        for list in listTransactions {
+//            ListTransactions.shared.remove(entity: list)
+//        }
+        
+        self.getAllData()
+        self.outlineListView.reloadData()
+        self.reloadData(true)
+        
+        self.resetChange()
+    }
+
 }
 
 extension ListTransactionsController: FilterDelegate {
@@ -467,7 +494,7 @@ extension ListTransactionsController: FilterDelegate {
     func applyFilter( fetchRequest: NSFetchRequest<EntityTransactions>) {
         
         let context = mainObjectContext
-
+        
         do {
             listeOperations = try context!.fetch(fetchRequest)
         } catch {
@@ -496,10 +523,6 @@ extension ListTransactionsController: OperationsDelegate {
         self.reloadData()
         
         self.resetChange()
-        
-        //        let count = listeOperations.count
-        //        let str = String(format: "%d opérations", count)
-        //        self.labelInfo.stringValue = str
     }
     
     func getAllData() {
@@ -508,17 +531,26 @@ extension ListTransactionsController: OperationsDelegate {
         self.transformData()
     }
     
-    func reloadData(_ expand: Bool = true) {
+    func reloadData(_ expand: Bool = false,_ auto: Bool = false) {
         
         DispatchQueue.main.async {
-            self.outlineListView.autosaveExpandedItems = true
+            self.outlineListView.autosaveExpandedItems = false
             self.outlineListView.reloadData()
+            self.outlineListView.autosaveExpandedItems = auto
+
+            let autosaveName = self.outlineListView.autosaveName
+            print(autosaveName!)
+            
+            if expand == true {
+                self.outlineListView.expandItem(nil, expandChildren: true)
+                return
+            }
             
             if self.outlineListView.autosaveExpandedItems,
                let autosaveName = self.outlineListView.autosaveName,
                let persistentObjects = UserDefaults.standard.array(forKey: "NSOutlineView Items \(autosaveName)"),
-                let itemIds = persistentObjects as? [String] {
-                let items = itemIds.sorted()
+               let itemIds = persistentObjects as? [String] {
+                let items = itemIds.sorted{ $0 < $1}
                 items.forEach {
                     
                     let item = self.outlineListView.dataSource?.outlineView?(self.outlineListView, itemForPersistentObject: $0)
@@ -530,6 +562,12 @@ extension ListTransactionsController: OperationsDelegate {
                     }
                 }
             }
+        }
+    }
+    
+    func expandAll() {
+        if listeOperations.count > 0 {
+            self.outlineListView.expandItem(nil, expandChildren: true)
         }
     }
 }

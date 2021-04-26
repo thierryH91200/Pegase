@@ -113,17 +113,13 @@ extension SousOperationModalWindowController  : AutoCompleteTableViewDelegate {
         
         let searchString = textField.stringValue
         autoCompleteFilterArray = libelles.filter{ $0.capitalized.hasPrefix(searchString) }
-
-//        let matches = (0..<autoCompleteFilterArray.count).map { (i) -> String in
-//            return autoCompleteFilterArray[i]
-//        }
         return autoCompleteFilterArray
     }
     
-    func tableViewSelection(_ notification: Notification)
-    {
-        print("tableViewSelection")
-    }
+//    func tableViewSelection(_ notification: Notification)
+//    {
+//        print("tableViewSelection")
+//    }
 
 }
 

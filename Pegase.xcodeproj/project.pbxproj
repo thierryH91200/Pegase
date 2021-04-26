@@ -1036,10 +1036,10 @@
 				034EC8B623F87E31006944DD /* Info.plist */,
 				034EC8BE23F87EA1006944DD /* Document.swift */,
 				034EC8C823F87EB1006944DD /* MainWindowController.swift */,
+				039BAC3C242CAD4600C375BB /* MainWindowController.xib */,
 				034EC8C523F87EB1006944DD /* MainWindowDelegate.swift */,
 				034EC8CC23F87EB2006944DD /* MainWindowSplitViewDelegate.swift */,
 				034EC8CB23F87EB1006944DD /* MainWindowToolBar.swift */,
-				039BAC3C242CAD4600C375BB /* MainWindowController.xib */,
 				0357250E2433AC720015B462 /* MyPrintViewOutline.swift */,
 				034EC8C623F87EB1006944DD /* MyPrintViewOutlineOld.swift */,
 				034EC8BC23F87E97006944DD /* NSPredicateEditorRowTemplate.swift */,
@@ -2045,7 +2045,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = thierry.Pegase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2070,7 +2070,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = thierry.Pegase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

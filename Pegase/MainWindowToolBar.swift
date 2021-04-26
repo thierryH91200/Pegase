@@ -67,7 +67,7 @@ extension MainWindowController {
         if isHidden == true {
             splitViewPrincipal.setPosition(splitViewPrincipal.bounds.width, ofDividerAt: 1)
         } else {
-            splitViewPrincipal.setPosition( splitViewPrincipal.bounds.width - 240, ofDividerAt: 1)
+            splitViewPrincipal.setPosition( splitViewPrincipal.bounds.width - 249, ofDividerAt: 1)
         }
         operationView.isHidden = isHidden
         segmentedControl.setSelected(!isHidden, forSegment: 2)

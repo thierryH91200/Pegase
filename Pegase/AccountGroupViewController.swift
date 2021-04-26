@@ -14,7 +14,7 @@ final class AccountGroupViewController: NSViewController {
     var groupModalWindowController: GroupModalWindowController!
     var accountModalWindowController: AccountModalWindowController!
     
-    let key = Notification.Name.updateBalance
+    private let key = Notification.Name.updateBalance
     
     var rootSourceListItem: EntityAccount!
     
@@ -66,8 +66,8 @@ final class AccountGroupViewController: NSViewController {
     //    dealloc
     // -------------------------------------------------------------------------
     deinit {
-        NotificationCenter.default.removeObserver(self, name: .selectionDidChangeOutLine, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .updateBalance, object: nil)
+        NotificationCenter.remove(instance: self, name: .selectionDidChangeOutLine)
+        NotificationCenter.remove(instance: self, name: .updateBalance)
     }
     
     @objc func updateBalance(_ notification: Notification) {
@@ -96,7 +96,7 @@ final class AccountGroupViewController: NSViewController {
                 Rubric.shared.getAllDatas()
                 PaymentMode.shared.getAllDatas()
 
-                Account.shared.printAccount(entityAccount: currentAccount!, description: "select")
+//                Account.shared.printAccount(entityAccount: currentAccount!, description: "select")
                 NotificationCenter.send(.updateAccount)
             }
         }

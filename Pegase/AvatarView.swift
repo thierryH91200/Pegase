@@ -20,7 +20,6 @@ class AvatarView: NSView {
     
     
     // MARK: - Init
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

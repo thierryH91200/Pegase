@@ -3,46 +3,6 @@ import UserNotifications
 
 final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserNotificationCenterDelegate {
     
-    var importWindowController: ImportWindowController?
-    var accessoryViewController: TTFormatViewController?
-    
-    var listTransactionsController: ListTransactionsController?
-    var transactionController: TransactionViewController?
-    var sourceListViewController: SourceListViewController?
-    var groupeAccountViewController: AccountGroupViewController?
-    
-    var tresorerieController: TresorerieController?
-    var rubricPieController: RubricPieController?
-    var categoryBarController: CategoryBarController?
-    var categoryBarController1: CategoryBarController1?
-    var modePaiementPieController: PaymentModePieController?
-    var incomeExpenseBarController: IncomeExpenseBarController?
-    var rubricBarController: RubricBarController?
-
-    var parameterController: ParameterController?
-    
-    var echeanciersSaisieController: SchedulersSaisieController?
-    var echeanciersViewController: SchedulerViewController?
-    
-    var identiteViewController: IdentiteViewController?
-    var webViewController: WebViewController?
-    var advancedFilterViewController: AdvancedFilterViewController?
-
-    @IBOutlet weak var preferencesItem: NSToolbarItem!
-    @IBOutlet weak var printItem: NSToolbarItem!
-    @IBOutlet weak var suqreButton: NSToolbarItem!
-    @IBOutlet weak var segmentedItem: NSToolbarItem!
-    
-    
-    let preferencesWindowController = PreferencesWindowController(
-        viewControllers: [
-//           GeneralViewController() ,
-            AccountViewController() ,
-            PersonViewController()
-        ]
-    )
-    var rateWindowController: RateWindowController?
-
     @IBOutlet weak var operationView: NSView!
     @IBOutlet weak var tableTargetView: NSView!
     @IBOutlet weak var accountView: NSView!
@@ -59,6 +19,47 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     @IBOutlet weak var searchField: NSSearchField!
     @IBOutlet weak var colorPopUp: NSPopUpButton!
     
+    @IBOutlet weak var preferencesItem: NSToolbarItem!
+    @IBOutlet weak var printItem: NSToolbarItem!
+    @IBOutlet weak var suqreButton: NSToolbarItem!
+    @IBOutlet weak var segmentedItem: NSToolbarItem!
+
+    var listTransactionsController: ListTransactionsController?
+    var transactionController: TransactionViewController?
+    var sourceListViewController: SourceListViewController?
+    var groupeAccountViewController: AccountGroupViewController?
+    
+    var tresorerieController: TresorerieController?
+    var rubricPieController: RubricPieController?
+    var categoryBarController: CategoryBarController?
+    var categoryBarController1: CategoryBarController1?
+    var modePaiementPieController: PaymentModePieController?
+    var incomeExpenseBarController: IncomeExpenseBarController?
+    var rubricBarController: RubricBarController?
+
+    var parameterController: ParameterController?
+    
+    var echeanciersViewController: SchedulerViewController?
+    var echeanciersSaisieController: SchedulersSaisieController?
+    
+    var identiteViewController: IdentiteViewController?
+    var webViewController: WebViewController?
+    var advancedFilterViewController: AdvancedFilterViewController?
+
+    var rateWindowController: RateWindowController?
+    
+    var importWindowController: ImportWindowController?
+    var accessoryViewController: TTFormatViewController?
+    
+
+    let preferencesWindowController = PreferencesWindowController(
+        viewControllers: [
+//           GeneralViewController() ,
+            AccountViewController() ,
+            PersonViewController()
+        ]
+    )
+
     let defaults = UserDefaults.standard
     
     var delimiter = ""
@@ -67,7 +68,6 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     
     let context = mainObjectContext
 
-    
     private var center: UNUserNotificationCenter?
     private let handler = NotificationHandler()
     private let notifyCategoryIdentifier = "test"
@@ -86,21 +86,20 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
                 print("error")
             }
         }
-        
     }
     
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        preferencesItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
-        preferencesItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
-        printItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
-        printItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
-        suqreButton.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
-        suqreButton.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
-        segmentedItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
-        segmentedItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
-
+//        preferencesItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+//        preferencesItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+//        printItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+//        printItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+//        suqreButton.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+//        suqreButton.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+//        segmentedItem.view?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+//        segmentedItem.view?.widthAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+//
         printItem.label = "Print"
 
         self.window?.delegate = self
@@ -162,26 +161,25 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
 //        notificationsHelper.scheduleNotification(timeInterval: 1, repeats: false)
     }
     
-    private func initNotifications() {
-        guard let center = self.center else { return }
-        
-        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-            if granted {
-  //              print("Successful authorized!")
-                // Define the custom actions.
-                let byeAction = UNNotificationAction(identifier: NotificationActionsEnum.bye.rawValue, title: NSLocalizedString("Bye", comment: ""), options: UNNotificationActionOptions(rawValue: 0))
-                let helloAction = UNNotificationAction(identifier: NotificationActionsEnum.sayHello.rawValue, title: NSLocalizedString("Hello", comment: ""), options: UNNotificationActionOptions(rawValue: 0))
-                
-                // Define the notification type
-                let testCategory = UNNotificationCategory(identifier: self.notifyCategoryIdentifier, actions: [byeAction, helloAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
-                
-                center.setNotificationCategories([testCategory])
-            } else {
-                print("Authorization denied!  ", error?.localizedDescription ?? "error")
-                return
-            }
-        }
-    }
+//    private func initNotifications() {
+//        guard let center = self.center else { return }
+//        
+//        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+//            if granted {
+//                // Define the custom actions.
+//                let byeAction = UNNotificationAction(identifier: NotificationActionsEnum.bye.rawValue, title: NSLocalizedString("Bye", comment: ""), options: UNNotificationActionOptions(rawValue: 0))
+//                let helloAction = UNNotificationAction(identifier: NotificationActionsEnum.sayHello.rawValue, title: NSLocalizedString("Hello", comment: ""), options: UNNotificationActionOptions(rawValue: 0))
+//                
+//                // Define the notification type
+//                let testCategory = UNNotificationCategory(identifier: self.notifyCategoryIdentifier, actions: [byeAction, helloAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
+//                center.setNotificationCategories([testCategory])
+//                
+//            } else {
+//                print("Authorization denied!  ", error?.localizedDescription ?? "error")
+//                return
+//            }
+//        }
+//    }
 
     private func justForTheFun() {
         

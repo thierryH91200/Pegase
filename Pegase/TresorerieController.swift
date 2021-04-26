@@ -377,6 +377,8 @@ extension TresorerieController: ChartViewDelegate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "datePointage", ascending: true)]
         
         delegate?.applyFilter(fetchRequest: fetchRequest)
+        delegate?.expandAll()
+
     }
     
 }

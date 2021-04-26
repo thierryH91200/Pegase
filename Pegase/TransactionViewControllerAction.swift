@@ -83,7 +83,7 @@ extension TransactionViewController  {
                 self.setDataCount()
                 
                 self.delegate?.getAllData()
-                self.delegate?.reloadData(true)
+                self.delegate?.reloadData(true, false)
                 
                 NotificationCenter.send(.updateBalance)
 //                self.resetOperation()
@@ -131,7 +131,7 @@ extension TransactionViewController  {
                 self.setDataCount()
                 
                 self.delegate?.getAllData()
-                self.delegate?.reloadData(true)
+                self.delegate?.reloadData(true, false)
                 
                 NotificationCenter.send(.updateBalance)
                 self.resetOperation()

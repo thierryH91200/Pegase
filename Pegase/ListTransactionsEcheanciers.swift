@@ -45,7 +45,7 @@ extension ListTransactionsController: NSDatePickerCellDelegate {
         
 //        print("datePickerCell")
         getAllData()
-        reloadData()
+        reloadData(false)
         currentAccount?.dateEcheancier = proposedDate
     }
     
