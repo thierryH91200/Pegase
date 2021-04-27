@@ -26,7 +26,7 @@ final class ListTransactionsController: NSViewController {
     public typealias TrackingSubOperations  = IdOperations
     public typealias TrackingSubOperation   = EntitySousOperations
     
-    var theDocument = NSPersistentDocument()
+//    var theDocument = NSPersistentDocument()
     
     enum ListeOperationsDisplayProperty: String {
         case categorie
@@ -123,7 +123,7 @@ final class ListTransactionsController: NSViewController {
         .font: NSFont.systemFont(ofSize: NSFont.systemFontSize, weight: .bold),
         .foregroundColor: NSColor.black]
     
-    var listeOperations = [EntityTransactions]()
+    var listTransactions = [EntityTransactions]()
     
     let formatterPrice: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -204,14 +204,12 @@ final class ListTransactionsController: NSViewController {
         
         self.outlineListView.rowSizeStyle = .custom
         self.outlineListView.allowsEmptySelection = false
-        
+        self.outlineListView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
+
         self.outlineListView.autosaveExpandedItems = true
         let id = currentAccount?.uuid.uuidString
         self.outlineListView.autosaveName = "save" + (id)!
         
-        //        self.outlineListView.autosaveExpandedItems = false
-        //        self.outlineListView.reloadData()
-        //        self.outlineListView.autosaveExpandedItems = true
         self.reloadData(false, true)
 
         outlineListView.menu = menuTable
@@ -390,8 +388,8 @@ final class ListTransactionsController: NSViewController {
         var groupedID : [ String:  [ String :  [IdOperations] ] ] = [:]
         
         balanceCalculation()
-        let IdOperation = (0 ..< listeOperations.count).map { (i) -> IdOperations in
-            return IdOperations(year : listeOperations[i].sectionYear!, id: listeOperations[i].sectionIdentifier!, entityOperations: listeOperations[i])
+        let IdOperation = (0 ..< listTransactions.count).map { (i) -> IdOperations in
+            return IdOperations(year : listTransactions[i].sectionYear!, id: listTransactions[i].sectionIdentifier!, entityOperations: listTransactions[i])
         }
         
         // Grouped year / month
@@ -420,21 +418,21 @@ final class ListTransactionsController: NSViewController {
         var soldePrevu  = initCompte.prevu
         var soldeEngage = initCompte.engage
         let soldeInitial = soldePrevu + soldeEngage + soldeRealise
-        let count = listeOperations.count
+        let count = listTransactions.count
         
         for index in stride(from: count - 1, to: -1, by: -1)
         {
-            let propertyEnum = TypeOfStatut(rawValue: Int(listeOperations[index].statut))!
+            let propertyEnum = TypeOfStatut(rawValue: Int(listTransactions[index].statut))!
             switch propertyEnum
             {
             case .planifie:
-                soldePrevu += listeOperations[index].amount
+                soldePrevu += listTransactions[index].amount
             case .engage:
-                soldeEngage += self.listeOperations[index].amount
+                soldeEngage += self.listTransactions[index].amount
             case .realise:
-                soldeRealise += self.listeOperations[index].amount
+                soldeRealise += self.listTransactions[index].amount
             }
-            listeOperations[index].solde = index == count - 1 ? listeOperations[index].amount + soldeInitial : listeOperations[index + 1].solde + listeOperations[index ].amount
+            listTransactions[index].solde = index == count - 1 ? listTransactions[index].amount + soldeInitial : listTransactions[index + 1].solde + listTransactions[index ].amount
         }
         
         self.soldeBanque.doubleValue = soldeRealise
@@ -496,20 +494,20 @@ extension ListTransactionsController: FilterDelegate {
         let context = mainObjectContext
         
         do {
-            listeOperations = try context!.fetch(fetchRequest)
+            listTransactions = try context!.fetch(fetchRequest)
         } catch {
             print("Error fetching data from CoreData")
         }
         transformData()
-        reloadData()
+        reloadData(true, false)
     }
     
     func updateListeOperations( liste: [EntityTransactions]) {
         
-        listeOperations = liste
+        listTransactions = liste
         
         self.transformData()
-        self.reloadData()
+        self.reloadData(true, false)
     }
 }
 
@@ -527,7 +525,7 @@ extension ListTransactionsController: OperationsDelegate {
     
     func getAllData() {
         
-        listeOperations = ListTransactions.shared.getAllDatas(ascending: false)
+        listTransactions = ListTransactions.shared.getAllDatas(ascending: false)
         self.transformData()
     }
     
@@ -538,9 +536,6 @@ extension ListTransactionsController: OperationsDelegate {
             self.outlineListView.reloadData()
             self.outlineListView.autosaveExpandedItems = auto
 
-            let autosaveName = self.outlineListView.autosaveName
-            print(autosaveName!)
-            
             if expand == true {
                 self.outlineListView.expandItem(nil, expandChildren: true)
                 return
@@ -552,7 +547,6 @@ extension ListTransactionsController: OperationsDelegate {
                let itemIds = persistentObjects as? [String] {
                 let items = itemIds.sorted{ $0 < $1}
                 items.forEach {
-                    
                     let item = self.outlineListView.dataSource?.outlineView?(self.outlineListView, itemForPersistentObject: $0)
                     if let item = item as? GroupedYearOperations {
                         self.outlineListView.expandItem(item)
@@ -566,7 +560,7 @@ extension ListTransactionsController: OperationsDelegate {
     }
     
     func expandAll() {
-        if listeOperations.count > 0 {
+        if listTransactions.count > 0 {
             self.outlineListView.expandItem(nil, expandChildren: true)
         }
     }

@@ -31,7 +31,7 @@ final class RubricBarController: CommonGraph
     
     let context = mainObjectContext
 
-//    @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
+    @objc dynamic var mainContext: NSManagedObjectContext! = mainObjectContext
     @objc dynamic var customSortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))]
     
     var label  = [String]()

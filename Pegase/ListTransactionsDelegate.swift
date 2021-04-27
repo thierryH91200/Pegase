@@ -468,7 +468,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         ov!.autosaveExpandedItems = true
 
         let optionKeyIsDown = optionKeyPressed()
-        if optionKeyIsDown == true && listeOperations.count > 0 {
+        if optionKeyIsDown == true && listTransactions.count > 0 {
 //            ov!.collapseItem(nil, collapseChildren: true)
         }
         print("collapse : optionKeyIsDown", optionKeyIsDown)
@@ -479,7 +479,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         ov!.autosaveExpandedItems = true
 
         let optionKeyIsDown = optionKeyPressed()
-        if optionKeyIsDown == true && listeOperations.count > 0 {
+        if optionKeyIsDown == true && listTransactions.count > 0 {
             ov!.expandItem(nil, expandChildren: true)
         }
         print("expand : optionKeyIsDown", optionKeyIsDown)
