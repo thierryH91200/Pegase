@@ -1,19 +1,19 @@
 import AppKit
 
-final class Echeanciers {
+final class Echeanciers : NSObject {
     
     static let shared = Echeanciers()
     private var entities = [EntitySchedule]()
     
     var viewContext : NSManagedObjectContext?
 
-    init () {
+    override init () {
         if let context = mainObjectContext
- {
+        {
             self.viewContext = context
         }
     }
-
+    
     
     // delete Entity
     func remove(entity: EntitySchedule)

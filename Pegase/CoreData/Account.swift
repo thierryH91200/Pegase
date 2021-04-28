@@ -1,12 +1,12 @@
 import AppKit
 
-final class Account {
+final class Account : NSObject {
     
     static let shared = Account()
     var entities = [EntityAccount]()
     var viewContext : NSManagedObjectContext?
     
-    init () {
+    override init () {
         if let context = mainObjectContext
         {
             self.viewContext = context

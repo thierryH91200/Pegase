@@ -47,9 +47,9 @@ final class RubriqueViewController: NSViewController {
         anOutlineView.doubleAction = #selector(doubleClicked)
         anTreeController.sortDescriptors = customSortDescriptors
         
-        addRubric.isEnabled = false
-        removeRubric.isEnabled = false
-        addCategory.isEnabled = false
+        addRubric.isEnabled      = false
+        removeRubric.isEnabled   = false
+        addCategory.isEnabled    = false
         removeCategory.isEnabled = false
     }
     

@@ -48,6 +48,33 @@ extension SourceListViewController: NSOutlineViewDelegate {
     {
         return !isSourceGroupItem(item)
     }
+    
+    func outlineViewItemWillCollapse(_ notification: Notification) {
+        let ov = notification.object as? NSOutlineView
+        ov!.autosaveExpandedItems = true
+        
+        let optionKeyIsDown = optionKeyPressed()
+        if optionKeyIsDown == true {
+            ov!.animator().collapseItem(nil, collapseChildren: true)
+        }
+    }
+    
+    func outlineViewItemDidExpand(_ notification: Notification) {
+        let ov = notification.object as? NSOutlineView
+        ov!.autosaveExpandedItems = true
+
+        let optionKeyIsDown = optionKeyPressed()
+        if optionKeyIsDown == true {
+            ov!.animator().expandItem(nil, expandChildren: true)
+        }
+    }
+    
+    func optionKeyPressed() -> Bool
+    {
+        let optionKey = NSEvent.modifierFlags.contains(NSEvent.ModifierFlags.option)
+        return optionKey
+    }
+
 
 
 }

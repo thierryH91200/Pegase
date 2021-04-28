@@ -1,6 +1,6 @@
 import AppKit
 
-final class Rubric {
+final class Rubric : NSObject {
     
     fileprivate enum RubriqueDisplayProperty: String {
         case name
@@ -12,7 +12,7 @@ final class Rubric {
     
     var viewContext : NSManagedObjectContext?
 
-    init () {
+    override init () {
         if let context = mainObjectContext
         {
             self.viewContext = context
@@ -110,19 +110,6 @@ final class Rubric {
     
     func defaultEntity()
     {
-//        var isEmpty: Bool {
-//            do {
-//                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "EntityRubric")
-//                let predicate = NSPredicate(format: "account == %@", currentAccount!)
-//
-//                fetchRequest.predicate = predicate
-//                let isEmpty  = try viewContext!.count(for: fetchRequest)
-//                return isEmpty == 0 ? true : false
-//            } catch {
-//                return true
-//            }
-//        }
-        
         if entitiesRubric.isEmpty == true {
             var content = ""
             do {

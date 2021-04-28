@@ -1,15 +1,15 @@
 import AppKit
 
-final class PaymentMode {
+final class PaymentMode : NSObject {
     
     static let shared = PaymentMode()
     private var entitiesModePaiement = [EntityPaymentMode]()
     
     var viewContext : NSManagedObjectContext?
 
-    init () {
+    override init () {
         if let context = mainObjectContext
- {
+        {
             self.viewContext = context
         }
     }
@@ -41,7 +41,6 @@ final class PaymentMode {
         
         return entity
     }
-    
     
     func find( account: EntityAccount = currentAccount!, name: String) -> EntityPaymentMode? {
         

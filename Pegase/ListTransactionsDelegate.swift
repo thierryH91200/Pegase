@@ -469,9 +469,8 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         
         let optionKeyIsDown = optionKeyPressed()
         if optionKeyIsDown == true && listTransactions.count > 0 {
-//            ov!.collapseItem(nil, collapseChildren: true)
+//            ov!.animator().collapseItem(nil, collapseChildren: true)
         }
-//        print("collapse : optionKeyIsDown", optionKeyIsDown)
     }
     
     func outlineViewItemDidExpand(_ notification: Notification) {
@@ -480,9 +479,8 @@ extension ListTransactionsController: NSOutlineViewDelegate {
 
         let optionKeyIsDown = optionKeyPressed()
         if optionKeyIsDown == true && listTransactions.count > 0 {
-            ov!.expandItem(nil, expandChildren: true)
+            ov!.animator().expandItem(nil, expandChildren: true)
         }
-//        print("expand : optionKeyIsDown", optionKeyIsDown)
     }
     
     func optionKeyPressed() -> Bool
@@ -490,5 +488,4 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         let optionKey = NSEvent.modifierFlags.contains(NSEvent.ModifierFlags.option)
         return optionKey
     }
-    
 }

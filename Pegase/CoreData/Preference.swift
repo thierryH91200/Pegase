@@ -1,6 +1,6 @@
 import AppKit
 
-final class Preference {
+final class Preference : NSObject {
     
     static let shared = Preference()
     var entityPreference = [EntityPreference]()
@@ -8,7 +8,7 @@ final class Preference {
     var viewContext : NSManagedObjectContext?
 
 
-    init () {
+    override init () {
         if let context = mainObjectContext
         {
             self.viewContext = context

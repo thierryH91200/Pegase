@@ -24,34 +24,33 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     @IBOutlet weak var suqreButton: NSToolbarItem!
     @IBOutlet weak var segmentedItem: NSToolbarItem!
 
-    var listTransactionsController: ListTransactionsController?
-    var transactionController: TransactionViewController?
-    var sourceListViewController: SourceListViewController?
-    var groupeAccountViewController: AccountGroupViewController?
+    var listTransactionsController   : ListTransactionsController?
+    var transactionController        : TransactionViewController?
+    var sourceListViewController     : SourceListViewController?
+    var groupeAccountViewController  : AccountGroupViewController?
     
-    var tresorerieController: TresorerieController?
-    var rubricPieController: RubricPieController?
-    var categoryBarController: CategoryBarController?
-    var categoryBarController1: CategoryBarController1?
-    var modePaiementPieController: PaymentModePieController?
-    var incomeExpenseBarController: IncomeExpenseBarController?
-    var rubricBarController: RubricBarController?
+    var tresorerieController         : TresorerieController?
+    var rubricPieController          : RubricPieController?
+    var categoryBarController        : CategoryBarController?
+    var categoryBarController1       : CategoryBarController1?
+    var modePaiementPieController    : PaymentModePieController?
+    var incomeExpenseBarController   : IncomeExpenseBarController?
+    var rubricBarController          : RubricBarController?
 
-    var parameterController: ParameterController?
+    var parameterController          : ParameterController?
     
-    var echeanciersViewController: SchedulerViewController?
-    var echeanciersSaisieController: SchedulersSaisieController?
+    var echeanciersViewController    : SchedulerViewController?
+    var echeanciersSaisieController  : SchedulersSaisieController?
     
-    var identiteViewController: IdentiteViewController?
-    var webViewController: WebViewController?
-    var advancedFilterViewController: AdvancedFilterViewController?
+    var identiteViewController       : IdentiteViewController?
+    var webViewController            : WebViewController?
+    var advancedFilterViewController : AdvancedFilterViewController?
 
-    var rateWindowController: RateWindowController?
+    var rateWindowController         : RateWindowController?
     
-    var importWindowController: ImportWindowController?
-    var accessoryViewController: TTFormatViewController?
+    var importWindowController       : ImportWindowController?
+    var accessoryViewController      : TTFormatViewController?
     
-
     let preferencesWindowController = PreferencesWindowController(
         viewControllers: [
 //           GeneralViewController() ,

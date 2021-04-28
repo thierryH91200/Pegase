@@ -1,12 +1,12 @@
 import AppKit
 
-final class Categories {
+final class Categories : NSObject {
         
     static let shared = Categories()
     private var entities = [EntityCategory]()
     var viewContext : NSManagedObjectContext?
 
-    init () {
+    override init () {
         if let context = mainObjectContext
         {
             self.viewContext = context

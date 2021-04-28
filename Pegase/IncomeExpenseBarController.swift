@@ -13,10 +13,9 @@ final class IncomeExpenseBarController: CommonGraph {
     let hourSeconds = 3600.0 * 24.0 // one day
     let context = mainObjectContext
 
-
     var startDate = Date()
-    var endDate = Date()
-    
+    var endDate   = Date()
+
     let formatterPrice: NumberFormatter = {
         let _formatter = NumberFormatter()
         _formatter.locale = Locale.current
@@ -282,14 +281,14 @@ extension IncomeExpenseBarController: ChartViewDelegate
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
     {
         var index = highlight.x
-        let ent = entry.x
+        let entryX = entry.x
         let dataSetIndex = Int(highlight.dataSetIndex)
         
         let firstDate = sliderViewController?.firstDate
         
         index = 0
         var date2 = Date(timeIntervalSince1970: ((index * self.hourSeconds) + firstDate!))
-        let idx = Int(ent)
+        let idx = Int(entryX)
         date2 = date2 + idx.months
         let startDate = date2.startOfMonth()
         let endDate = date2.endOfMonth()

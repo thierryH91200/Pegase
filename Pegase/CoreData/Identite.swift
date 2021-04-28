@@ -1,26 +1,24 @@
 import AppKit
 
 // MARK: - Bank
-final class Bank {
+final class Bank : NSObject {
     
     static let shared = Bank()
     var entitiesBank = [EntityBank]()
     
     var viewContext : NSManagedObjectContext?
 
-    init () {
+    override init () {
         if let context = mainObjectContext
- {
+        {
             self.viewContext = context
         }
     }
 
-    
     func create() -> EntityBank {
         
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityBank", into: viewContext!) as? EntityBank
 
-        
         entity!.adress = ""
         entity!.bank = ""
         entity!.cp = 0
@@ -57,20 +55,20 @@ final class Bank {
 }
 
 // MARK: - InitAccount
-final class InitAccount {
+final class InitAccount : NSObject {
     
     static let shared = InitAccount()
     var entitiesInitAccount = [EntityInitAccount]()
 
     var viewContext : NSManagedObjectContext?
 
-    init () {
+    override init () {
         if let context = mainObjectContext
- {
+        {
             self.viewContext = context
         }
     }
-
+    
     
     func create(numAccount : String = "" ) -> EntityInitAccount {
         let entity = NSEntityDescription.insertNewObject(forEntityName: "EntityInitAccount", into: viewContext!) as? EntityInitAccount
@@ -116,14 +114,14 @@ final class InitAccount {
 }
 
 // MARK: - Identite
-final class Identity {
+final class Identity : NSObject {
     
     static let shared = Identity()
     var entitiesIdentite = [EntityIdentity]()
     
     var viewContext : NSManagedObjectContext?
 
-    init () {
+    override init () {
         if let context = mainObjectContext
  {
             self.viewContext = context

@@ -1,19 +1,18 @@
 import AppKit
 
-final class CarnetCheques {
+final class CarnetCheques : NSObject {
     
     static let shared = CarnetCheques()
     private var entities = [EntityCarnetCheques]()
     
     var viewContext : NSManagedObjectContext?
 
-    init () {
+    override init () {
         if let context = mainObjectContext
- {
+        {
             self.viewContext = context
         }
     }
-
     
     func getAllDatas() -> [EntityCarnetCheques] {
         

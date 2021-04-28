@@ -1,13 +1,13 @@
 import AppKit
 
-final class ListTransactions {
+final class ListTransactions : NSObject {
     
     static let shared = ListTransactions()
     var entities = [EntityTransactions]()
     var ascending = false
     var viewContext : NSManagedObjectContext?
     
-    init () {
+    override init () {
         if let context = mainObjectContext
         {
             self.viewContext = context
@@ -100,8 +100,8 @@ public extension Sequence where Element: Equatable {
     }
 }
 
-// MARK: convert dictionary to struct
-class GroupedYearOperations {
+// MARK: convert dictionary to class
+class GroupedYearOperations : NSObject {
     let year : String
     var allMonth : [GroupedMonthOperations]
     
@@ -116,8 +116,8 @@ class GroupedYearOperations {
     }
 }
 
-class GroupedMonthOperations {
-    let month : String
+class GroupedMonthOperations : NSObject {
+    let month       : String
     let idOperation : [ IdOperations ]
     
     init( month: String, idOperations: [IdOperations]) {
@@ -130,10 +130,10 @@ class GroupedMonthOperations {
     }
 }
 
-class IdOperations {
-    let year : String
-    let id: String
-    let entityOperations: EntityTransactions
+class IdOperations : NSObject {
+    let year             : String
+    let id               : String
+    let entityOperations : EntityTransactions
     
     init( year: String, id: String, entityOperations: EntityTransactions) {
         self.year = year
@@ -142,44 +142,3 @@ class IdOperations {
     }
 }
 
-//public typealias TrackingYear           = [ GroupedYearOperations ]
-//public typealias TrackingMonth          = GroupedYearOperations
-//public typealias TrackingIdOperations   = GroupedMonthOperations
-//public typealias TrackingSubOperations  = IdOperations
-//public typealias TrackingSubOperation   = EntitySousOperations
-
-//struct GroupedYearOperations {
-//    let year : String
-//    var allMonth : [GroupedMonthOperations]
-//
-//    init( dictionary: ((key: String, value: [String: [IdOperations]]))) {
-//        self.year = dictionary.key
-//
-//        let groupedID = dictionary.value
-//        allMonth = [GroupedMonthOperations]()
-//        var oneMonth : [GroupedMonthOperations] = []
-//
-//        for grouped in groupedID {
-//            let groupedMonth = GroupedMonthOperations(month: grouped.key, idOpes: grouped.value)
-//            oneMonth.append(groupedMonth)
-//        }
-//        self.allMonth = oneMonth.sorted(by: {$0.month > $1.month})
-//    }
-//}
-//
-//struct GroupedMonthOperations {
-//    let month : String
-//    let idOperation : [ IdOperations ]
-//
-//    init( month: String, idOpes: [IdOperations]) {
-//        self.month = month
-//
-//        var idAllOperation : [IdOperations] = []
-//        for idOpe in idOpes {
-//            let idOperation = IdOperations(year: idOpe.year, id: idOpe.id, entityOperations: idOpe.entityOperations)
-//            idAllOperation.append(idOperation)
-//        }
-//        self.idOperation = idAllOperation.sorted(by: {Double($0.entityOperations.dateOperation!.timeIntervalSince1970) > Double($1.entityOperations.dateOperation!.timeIntervalSince1970)})
-//    }
-//}
-//
