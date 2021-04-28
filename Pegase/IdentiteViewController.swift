@@ -14,7 +14,7 @@ final class IdentiteViewController: NSViewController {
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-//        NotificationCenter.default.removeObserver(self, name: .updateCompte, object: nil)
+  //      NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     
     override public func viewDidAppear()
@@ -26,7 +26,7 @@ final class IdentiteViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeCompte(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeCompte(_:)), name: .updateAccount)
 
         arrayControllerCompte.setSelectionIndex(0)
         arrayControllerBanque.setSelectionIndex(0)

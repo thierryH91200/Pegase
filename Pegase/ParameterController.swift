@@ -13,15 +13,15 @@ final class ParameterController: NSViewController {
     {
         super.viewDidDisappear()
         
-        NotificationCenter.default.removeObserver(chequiersViewController!, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: chequiersViewController!, name: .updateAccount)
         
-        NotificationCenter.default.removeObserver(modeOfPaymentViewController!, name: .updateAccount, object: nil)
-        NotificationCenter.default.removeObserver(modeOfPaymentViewController!, name: .selectionDidChangeTable, object: nil)
+        NotificationCenter.remove(instance: modeOfPaymentViewController!, name: .updateAccount)
+        NotificationCenter.remove(instance: modeOfPaymentViewController!, name: .selectionDidChangeTable)
 
-        NotificationCenter.default.removeObserver(rubriqueViewController!, name: .updateAccount, object: nil)
-        NotificationCenter.default.removeObserver(rubriqueViewController!, name: .selectionDidChangeOutLine, object: nil)
+        NotificationCenter.remove(instance: rubriqueViewController!, name: .updateAccount)
+        NotificationCenter.remove(instance: rubriqueViewController!, name: .selectionDidChangeOutLine)
 
-        NotificationCenter.default.removeObserver(preferenceOperationViewController!, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: preferenceOperationViewController!, name: .updateAccount)
     }
 
     

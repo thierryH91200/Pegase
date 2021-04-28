@@ -22,7 +22,7 @@ final class PreferenceOperationViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeCompte(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeCompte(_:)), name: .updateAccount)
         updateData()
     }
     

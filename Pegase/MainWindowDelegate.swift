@@ -23,7 +23,7 @@ extension MainWindowController: SourceListDelegate
             
             isSplitRightHidden = false
             isSplitCenterHidden =  true
-            operationViewSecondary.isHidden = true
+            transactionViewSecondary.isHidden = true
             
             let mainView = splitViewPrincipal.subviews.first!
             mainView.isHidden = false
@@ -59,7 +59,7 @@ extension MainWindowController: SourceListDelegate
             self.webViewController = WebViewController()
             vc = (webViewController?.view)!
             
-            operationViewSecondary.isHidden = true
+            transactionViewSecondary.isHidden = true
             isSplitRightHidden = true
             isSplitCenterHidden =  true
             segmentedControl.setEnabled(false, forSegment: 1)
@@ -151,7 +151,7 @@ extension MainWindowController: SourceListDelegate
             
             isSplitRightHidden = false
             isSplitCenterHidden =  true
-            self.operationViewSecondary.isHidden = true
+            self.transactionViewSecondary.isHidden = true
             self.segmentedControl.setEnabled(false, forSegment: 1)
             self.segmentedControl.setEnabled(true, forSegment: 2)
             
@@ -161,7 +161,7 @@ extension MainWindowController: SourceListDelegate
             
             isSplitRightHidden              = true
             isSplitCenterHidden             =  true
-            self.operationViewSecondary.isHidden = true
+            self.transactionViewSecondary.isHidden = true
             self.segmentedControl.setEnabled(false, forSegment: 1)
             self.segmentedControl.setEnabled(false, forSegment: 2)
             

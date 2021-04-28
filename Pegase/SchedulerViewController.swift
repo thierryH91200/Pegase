@@ -34,8 +34,8 @@ final class SchedulerViewController: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount))
-        NotificationCenter.receive(instance: self, name: .selectionDidChangeTable, selector: #selector(selectionDidChange))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeAccount), name: .updateAccount)
+        NotificationCenter.receive(instance: self, selector: #selector(selectionDidChange), name: .selectionDidChangeTable)
     }
     
     override public func viewDidAppear()

@@ -3,12 +3,12 @@ import UserNotifications
 
 final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserNotificationCenterDelegate {
     
-    @IBOutlet weak var operationView: NSView!
-    @IBOutlet weak var tableTargetView: NSView!
     @IBOutlet weak var accountView: NSView!
+    @IBOutlet weak var tableTargetView: NSView!
+    @IBOutlet weak var transactionView: NSView!
+    @IBOutlet weak var transactionViewSecondary: NSView!
     @IBOutlet weak var affichageView: NSView!
-    @IBOutlet weak var operationViewSecondary: NSView!
-    
+
     @IBOutlet weak var menuColor: NSMenu!
     @IBOutlet weak var popUpColor: NSPopUpButton!
     
@@ -220,10 +220,10 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     func setUpViewtTransaction()
     {
         self.transactionController = TransactionViewController()
-        Commun.shared.addSubview(subView: transactionController!.view, toView: operationView)
+        Commun.shared.addSubview(subView: transactionController!.view, toView: transactionView)
         
-        Commun.shared.setUpLayoutConstraints(item: transactionController!.view, toItem: operationView)
-        self.transactionController!.view.frame = operationView.bounds
+        Commun.shared.setUpLayoutConstraints(item: transactionController!.view, toItem: transactionView)
+        self.transactionController!.view.frame = transactionView.bounds
         self.transactionController?.delegate = listTransactionsController
     }
     
@@ -240,21 +240,21 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
             self.listTransactionsController?.datePicker.isEnabled = false
         }
         
-        Commun.shared.addSubview(subView: vc, toView: operationViewSecondary)
+        Commun.shared.addSubview(subView: vc, toView: transactionViewSecondary)
         vc.translatesAutoresizingMaskIntoConstraints = false
         
         var viewBindingsDict = [String: AnyObject]()
         viewBindingsDict["vc"] = vc
-        operationViewSecondary.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
-        operationViewSecondary.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
+        transactionViewSecondary.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
+        transactionViewSecondary.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
     }
     
     func setUpViewSaisieEcheancier()
     {
         self.echeanciersSaisieController = SchedulersSaisieController()
-        Commun.shared.addSubview(subView: (echeanciersSaisieController?.view)!, toView: operationView)
+        Commun.shared.addSubview(subView: (echeanciersSaisieController?.view)!, toView: transactionView)
         
-        Commun.shared.setUpLayoutConstraints(item: echeanciersSaisieController!.view, toItem: operationView)
-        self.echeanciersSaisieController!.view.frame = operationView.bounds
+        Commun.shared.setUpLayoutConstraints(item: echeanciersSaisieController!.view, toItem: transactionView)
+        self.echeanciersSaisieController!.view.frame = transactionView.bounds
     }
 }

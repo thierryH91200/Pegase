@@ -466,12 +466,12 @@ extension ListTransactionsController: NSOutlineViewDelegate {
     func outlineViewItemWillCollapse(_ notification: Notification) {
         let ov = notification.object as? NSOutlineView
         ov!.autosaveExpandedItems = true
-
+        
         let optionKeyIsDown = optionKeyPressed()
         if optionKeyIsDown == true && listTransactions.count > 0 {
 //            ov!.collapseItem(nil, collapseChildren: true)
         }
-        print("collapse : optionKeyIsDown", optionKeyIsDown)
+//        print("collapse : optionKeyIsDown", optionKeyIsDown)
     }
     
     func outlineViewItemDidExpand(_ notification: Notification) {
@@ -482,7 +482,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         if optionKeyIsDown == true && listTransactions.count > 0 {
             ov!.expandItem(nil, expandChildren: true)
         }
-        print("expand : optionKeyIsDown", optionKeyIsDown)
+//        print("expand : optionKeyIsDown", optionKeyIsDown)
     }
     
     func optionKeyPressed() -> Bool

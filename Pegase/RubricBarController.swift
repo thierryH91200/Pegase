@@ -42,7 +42,7 @@ final class RubricBarController: CommonGraph
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     
     override func viewDidAppear() {
@@ -63,7 +63,7 @@ final class RubricBarController: CommonGraph
     {
         super.viewDidLoad()
         
-        NotificationCenter.receive( instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
+        NotificationCenter.receive( instance: self, selector: #selector(updateChangeAccount(_:)), name: .updateAccount)
                
         Rubric.shared.getAllDatas()
         self.arrayController.sortDescriptors = customSortDescriptors
@@ -195,7 +195,6 @@ final class RubricBarController: CommonGraph
                 self.dataArray.append( DataGraph(section: section, name: name, value: value, color: color))
             }
         }
-        
         self.dataArray = self.dataArray.sorted(by: { $0.name < $1.name })
         self.dataArray = self.dataArray.sorted(by: { $0.section < $1.section })
     }

@@ -24,7 +24,7 @@ extension NotificationCenter {
     }
     
     // Receive(addObserver) Notification
-    static func receive(instance: Any, name: Notification.Name, selector: Selector) {
+    static func receive(instance: Any, selector: Selector, name: Notification.Name) {
         self.default.addObserver(
             instance,
             selector: selector,

@@ -65,7 +65,7 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     
     override func viewDidLoad() {
@@ -79,7 +79,7 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
         modeOperation2.isBordered = false //Important
         modeOperation2.wantsLayer = true
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeCompte(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeCompte(_:)), name: .updateAccount)
 
         dateDebut.delegate = self
         dateFin.delegate = self

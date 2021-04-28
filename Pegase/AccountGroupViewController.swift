@@ -28,7 +28,7 @@ final class AccountGroupViewController: NSViewController {
         super.viewDidAppear()
         
         anSideBar.selectRowIndexes([1], byExtendingSelection: true)
-        NotificationCenter.receive(instance: self, name: key, selector: #selector(updateBalance(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateBalance(_:)), name: key)
     }
     
     // -------------------------------------------------------------------------
@@ -57,7 +57,7 @@ final class AccountGroupViewController: NSViewController {
         // listen for selection changes from the NSOutlineView inside MainWindowController
         // note: nous commençons à observer après que outlineview a reçu des donnees
         // nous ne recevrons pas de notifications inutiles au démarrage
-        NotificationCenter.receive(instance: self, name: .selectionDidChangeOutLine, selector: #selector(selectionDidChange(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(selectionDidChange(_:)), name: .selectionDidChangeOutLine)
 
         anSideBar.selectRowIndexes([1], byExtendingSelection: false)
     }

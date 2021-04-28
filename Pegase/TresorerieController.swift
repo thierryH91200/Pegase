@@ -21,7 +21,7 @@ final class TresorerieController: NSViewController
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     
     override public func viewDidAppear()
@@ -51,7 +51,7 @@ final class TresorerieController: NSViewController
         Commun.shared.addSubview(subView: vc, toView: viewHorizontal)
         Commun.shared.setUpLayoutConstraints(item: vc, toItem: viewHorizontal)
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeAccount(_:)), name: .updateAccount)
         
         self.initGraph()
                 
@@ -84,7 +84,7 @@ final class TresorerieController: NSViewController
     
     deinit
     {
-        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     
     func initGraph() {

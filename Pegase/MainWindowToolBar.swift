@@ -54,7 +54,7 @@ extension MainWindowController {
         } else {
             splitViewCentre.setPosition( splitViewCentre.bounds.height / 2, ofDividerAt: 0)
         }
-        operationViewSecondary.isHidden = isHidden
+        transactionViewSecondary.isHidden = isHidden
         
         segmentedControl.setSelected(!isHidden, forSegment: 1)
         splitViewCentre.adjustSubviews()
@@ -69,7 +69,7 @@ extension MainWindowController {
         } else {
             splitViewPrincipal.setPosition( splitViewPrincipal.bounds.width - 249, ofDividerAt: 1)
         }
-        operationView.isHidden = isHidden
+        transactionView.isHidden = isHidden
         segmentedControl.setSelected(!isHidden, forSegment: 2)
         splitViewPrincipal.adjustSubviews()
     }

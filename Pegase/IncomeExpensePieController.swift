@@ -33,7 +33,7 @@ class IncomeExpensePieController: CommonGraph {
      public override func viewDidDisappear()
      {
          super.viewDidDisappear()
-         NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
      }
      
      override public func viewWillAppear()
@@ -49,7 +49,7 @@ class IncomeExpensePieController: CommonGraph {
         super.viewDidLoad()
         // Do view setup here.
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeAccount), name: .updateAccount)
         
         chartView.delegate = self
         chartView2.delegate = self

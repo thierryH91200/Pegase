@@ -27,7 +27,7 @@ final class CategoryBarController: CommonGraph
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     
     override func viewDidAppear() {
@@ -48,7 +48,7 @@ final class CategoryBarController: CommonGraph
     {
         super.viewDidLoad()
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeAccount), name: .updateAccount)
         
         backToBrands.isEnabled = false
         

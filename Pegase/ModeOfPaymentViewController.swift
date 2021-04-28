@@ -20,13 +20,13 @@ final class ModeOfPaymentViewController: NSViewController
         
         // listen for selection changes from the NSOutlineView inside MainWindowController
         // note: we start observing after our outline view is populated so we don't receive unnecessary notifications at startup
-        NotificationCenter.receive(instance: self, name: .selectionDidChangeTable, selector: #selector(selectionDidChange(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(selectionDidChange(_:)), name: .selectionDidChangeTable)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.receive( instance: self, name: .updateAccount, selector: #selector(updateChangeAccount))
+        NotificationCenter.receive( instance: self, selector: #selector(updateChangeAccount), name: .updateAccount)
         
         updateData()
     }

@@ -52,14 +52,14 @@ final class IncomeExpenseBarController: CommonGraph {
     {
         super.viewDidDisappear()
         print("\(self) viewDidDisappear : ", ".updateAccount")
-        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeCompte(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeCompte(_:)), name: .updateAccount)
 
         if sliderViewController == nil {
             sliderViewController = SliderViewHorizontalController(nibName: "SliderViewHorizontalController", bundle: nil)
@@ -275,7 +275,6 @@ extension IncomeExpenseBarController: SliderHorizontalDelegate {
         updateChartData()
         setDataCount()
     }
-
 }
 
 extension IncomeExpenseBarController: ChartViewDelegate
@@ -296,12 +295,11 @@ extension IncomeExpenseBarController: ChartViewDelegate
         let endDate = date2.endOfMonth()
 
         let p1 = NSPredicate(format: "account == %@", currentAccount!)
-        let p2 = dataSetIndex == 0 ? NSPredicate(format: "amount < 0" ) : NSPredicate(format: "amount > 0" )
-        
+        let p2 = dataSetIndex == 0 ? NSPredicate(format: "amount < 0" ) : NSPredicate(format: "amount >= 0" )
         let p3 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )
         let p4 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2, p3, p4])
-        
+
         let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: false)]
@@ -321,7 +319,8 @@ extension Date {
     }
     
     func endOfMonth() -> Date {
-        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+//        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: 0), to: self.startOfMonth())!
     }
 }
 

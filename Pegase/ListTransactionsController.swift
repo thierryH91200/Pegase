@@ -167,8 +167,8 @@ final class ListTransactionsController: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
-        NotificationCenter.receive(instance: self, name: .selectionDidChangeOutLine, selector: #selector(selectionDidChange(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeAccount(_:)), name: .updateAccount)
+        NotificationCenter.receive(instance: self, selector: #selector(selectionDidChange(_:)), name: .selectionDidChangeOutLine)
     }
     
     override func viewDidLoad() {
@@ -227,7 +227,7 @@ final class ListTransactionsController: NSViewController {
         self.datePicker.minDate = Date()
     }
     
-    /// Called when the a row in the sidebar is double clicked
+    // Called when the a row in the sidebar is double clicked
     @objc private func doubleClicked(_ sender: Any?) {
         let clickedRow = outlineListView.item(atRow: outlineListView.clickedRow)
         
@@ -371,7 +371,6 @@ final class ListTransactionsController: NSViewController {
             self.labelInfo.attributedStringValue = attributedText
             
             self.delegate?.editionOperations(operationsSelected)
-            
             self.becomeFirstResponder()
         }
     }

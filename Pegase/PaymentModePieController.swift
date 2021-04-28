@@ -25,7 +25,7 @@ final class PaymentModePieController: CommonGraph {
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     
     override public func viewWillAppear()
@@ -41,7 +41,7 @@ final class PaymentModePieController: CommonGraph {
         super.viewDidLoad()
         // Do view setup here.
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeCompte(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeCompte(_:)), name: .updateAccount)
         
         chartView.delegate = self
         chartView2.delegate = self

@@ -40,7 +40,7 @@ final class CategoryBarController1: CommonGraph
     
     public override func viewDidDisappear() {
         super.viewDidDisappear()
-        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     
     override func viewDidAppear() {
@@ -60,7 +60,7 @@ final class CategoryBarController1: CommonGraph
     {
         super.viewDidLoad()
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeCompte(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeCompte(_:)), name: .updateAccount)
         
         if sliderViewController == nil {
             sliderViewController = SliderViewHorizontalController(nibName: "SliderViewHorizontalController", bundle: nil)
@@ -162,8 +162,6 @@ final class CategoryBarController1: CommonGraph
     /// https://stackoverflow.com/questions/40657193/swift-3-sum-value-with-group-by-of-an-array-of-objects
     private func updateChartData()
     {
-//        var rubricColor : RubricColor
-        
         let context = mainObjectContext
 
 
@@ -199,13 +197,17 @@ final class CategoryBarController1: CommonGraph
                 
                 let amount    = sousOperation.amount
                 
-                let nameRubrique = sousOperation.category?.rubric?.name
+                let nameRubric = sousOperation.category?.rubric?.name
                 let color    = sousOperation.category?.rubric?.color as! NSColor
-                let rubricColor = RubricColor(name : nameRubrique!, color: color)
+                let rubricColor = RubricColor(name : nameRubric!, color: color)
+                
+                if nameRubric == "Banque" {
+                    print(nameRubric!)
+                }
 
                 setUniqueRubrique.insert(rubricColor)
                 
-                let data = DataGraph(section: id, name: nameRubrique!, value: amount, color: color)
+                let data = DataGraph(section: id, name: nameRubric!, value: amount, color: color)
                 dataRubrique.append( data)
             }
         }
@@ -215,13 +217,13 @@ final class CategoryBarController1: CommonGraph
         resultArray.removeAll()
         let allRubricKeys = Set<String>(dataRubrique.map { $0.section })
         for keyRubric in allRubricKeys {
-            for nameRubric in arrayUniqueRubriques {
-                let data = dataRubrique.filter({ $0.section == keyRubric && $0.name == nameRubric.name  })
+            for dataRubric in arrayUniqueRubriques {
+                let data = dataRubrique.filter({ $0.section == keyRubric && $0.name == dataRubric.name  })
                 if data.isEmpty == false {
                     let sum = data.map({ $0.value }).reduce(0, +)
-                    resultArray.append(DataGraph(section: keyRubric ,name: nameRubric.name, value: sum, color: nameRubric.color))
+                    resultArray.append(DataGraph(section: keyRubric ,name: dataRubric.name, value: sum, color: dataRubric.color))
                 } else {
-                    resultArray.append(DataGraph(section: keyRubric ,name: nameRubric.name, value: 0, color: nameRubric.color))
+                    resultArray.append(DataGraph(section: keyRubric ,name: dataRubric.name, value: 0, color: dataRubric.color))
                 }
             }
         }

@@ -28,13 +28,13 @@ final class RubriqueViewController: NSViewController {
         super.viewDidAppear()
         
         view.window!.title = Localizations.General.Rubrique
-        NotificationCenter.receive(instance: self, name:.selectionDidChangeOutLine, selector: #selector(selectionDidChange))
+        NotificationCenter.receive(instance: self, selector: #selector(selectionDidChange), name:.selectionDidChangeOutLine)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeCompte(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeCompte(_:)), name: .updateAccount)
         updateData()
         
         anOutlineView.allowsEmptySelection = false

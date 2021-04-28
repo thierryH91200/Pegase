@@ -31,7 +31,7 @@ final class RubricPieController: NSViewController
     override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     
     override func viewWillAppear()
@@ -47,7 +47,7 @@ final class RubricPieController: NSViewController
     {
         super.viewDidLoad()
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeAccount(_:)), name: .updateAccount)
         
         self.chartView.delegate = self
         self.chartView2.delegate = self

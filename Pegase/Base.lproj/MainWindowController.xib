@@ -11,8 +11,6 @@
                 <outlet property="affichageView" destination="MTg-uc-flv" id="WqQ-fH-jmA"/>
                 <outlet property="colorPopUp" destination="Twh-f9-5Zl" id="maT-34-L6X"/>
                 <outlet property="menuColor" destination="4zM-8Y-pIn" id="huS-3o-Uu9"/>
-                <outlet property="operationView" destination="UUv-fM-B7s" id="Xv2-8F-Xi1"/>
-                <outlet property="operationViewSecondary" destination="zSk-OV-6Ch" id="Aeq-CI-Aag"/>
                 <outlet property="popUpColor" destination="Twh-f9-5Zl" id="TzB-N2-U1X"/>
                 <outlet property="preferencesItem" destination="3B0-RB-4Tk" id="rCQ-Pk-7AY"/>
                 <outlet property="printItem" destination="OI4-5D-jUy" id="zZ1-m2-1uV"/>
@@ -24,6 +22,8 @@
                 <outlet property="splitViewPrincipal" destination="9sw-IE-OkM" id="W87-ao-3gT"/>
                 <outlet property="suqreButton" destination="bq9-jA-dQw" id="Q4V-Hy-O7J"/>
                 <outlet property="tableTargetView" destination="D4M-Yi-dH1" id="eTA-gt-slk"/>
+                <outlet property="transactionView" destination="UUv-fM-B7s" id="Xv2-8F-Xi1"/>
+                <outlet property="transactionViewSecondary" destination="zSk-OV-6Ch" id="Aeq-CI-Aag"/>
                 <outlet property="window" destination="XTv-FI-MId" id="Nhb-Ts-lER"/>
             </connections>
         </customObject>

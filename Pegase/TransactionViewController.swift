@@ -102,10 +102,10 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.receive(instance: self, name: key1,  selector: #selector(updateChangeCompte(_:)))
-        NotificationCenter.receive(instance: self, name: key2,  selector: #selector(updateChangeCompte(_:)))
+        NotificationCenter.receive(instance: self,  selector: #selector(updateChangeCompte(_:)), name: key1)
+        NotificationCenter.receive(instance: self,  selector: #selector(updateChangeCompte(_:)), name: key2)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.willShowPopup(_:)), name: .selectionDidChangePopUp, object: nil)
+        NotificationCenter.receive(instance: self, selector: #selector(self.willShowPopup(_:)), name: .selectionDidChangePopUp )
         
         self.modeOperation.bezelStyle = .texturedSquare
         self.modeOperation.isBordered = false //Important

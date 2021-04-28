@@ -16,7 +16,7 @@ final class BankStatement: NSViewController {
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        NotificationCenter.default.removeObserver(self, name: .updateAccount, object: nil)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
     }
 
     override public func viewDidAppear()

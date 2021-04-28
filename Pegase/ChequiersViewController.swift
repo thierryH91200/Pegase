@@ -16,7 +16,7 @@ final class ChequiersViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.receive(instance: self, name: .updateAccount, selector: #selector(updateChangeAccount(_:)))
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeAccount(_:)), name: .updateAccount)
         
         tableView.rowHeight = 24.0
         updateData()

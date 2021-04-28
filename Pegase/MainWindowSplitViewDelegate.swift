@@ -4,14 +4,14 @@ import AppKit
 extension MainWindowController: NSSplitViewDelegate {
     
     func splitView(_ splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
-        if splitViewPrincipal == splitView && operationView == subview && operationView.isHidden == false {
+        if splitViewPrincipal == splitView && transactionView == subview && transactionView.isHidden == false {
             return true
         }
         if splitViewPrincipal == splitView && affichageView == subview && affichageView.isHidden == false {
             return true
         }
 
-        if splitViewCentre == splitView && operationViewSecondary == subview && operationViewSecondary.isHidden == false {
+        if splitViewCentre == splitView && transactionViewSecondary == subview && transactionViewSecondary.isHidden == false {
             return true
         }
         return false

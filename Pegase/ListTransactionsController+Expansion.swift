@@ -27,10 +27,10 @@ extension ListTransactionsController {
     /* When the outline view is restoring the saved expanded items, this method is called for each
      	expanded item, to translate the archived object to an outline view item.
      */
-// MARK: - Tag: RestoreExpansion
+// MARK: - RestoreExpansion
     func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
         
-        print("Restore Expansion : ",outlineView.autosaveName!)
+//        print("Restore Expansion : ",outlineView.autosaveName!)
         
         if let group = object as? String {
             let len1 = group.count == 4
@@ -58,10 +58,10 @@ extension ListTransactionsController {
     /* When the outline view is saving the expanded items, this method is called for each expanded
      	item, to translate the outline view item to an archived object.
      */
-// MARK: - Tag: EncodeExpansion
+// MARK: - EncodeExpansion
     func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
         
-        print("Encode Expansion : ",outlineView.autosaveName!)
+//        print("Encode Expansion : ",outlineView.autosaveName!)
                 
         if let group = item as? GroupedYearOperations {
             return (group.year)
