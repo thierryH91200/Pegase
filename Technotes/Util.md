@@ -11,13 +11,6 @@ Xcode 9/10 and Swift 4.2
 
 
 
-## ThemeKit
-
-### Summary
-ThemeKit is a lightweight theming library completely written in Swift that provides theming capabilities to both Swift and Objective-C macOS applications.
-
-### Link
-https://github.com/luckymarmot/ThemeKit
 
 ## SwiftDate
 

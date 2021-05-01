@@ -103,30 +103,30 @@ final class TresorerieController: NSViewController
         chartView.scaleXEnabled = false
         
         // MARK: xAxis
-        let xAxis = chartView.xAxis
-        xAxis.labelPosition = .bottom
-        xAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
-        xAxis.drawAxisLineEnabled = true
-        xAxis.drawGridLinesEnabled = true
+        let xAxis                             = chartView.xAxis
+        xAxis.labelPosition                   = .bottom
+        xAxis.labelFont                       = NSFont(name : "HelveticaNeue-Light", size : CGFloat(10.0))!
+        xAxis.drawAxisLineEnabled             = true
+        xAxis.drawGridLinesEnabled            = true
         xAxis.drawLimitLinesBehindDataEnabled = true
-        xAxis.avoidFirstLastClippingEnabled = false
-        xAxis.granularity = 1.0
-        xAxis.spaceMin = xAxis.granularity / 5
-        xAxis.spaceMax = xAxis.granularity / 5
-        xAxis.labelRotationAngle = -45.0
-        xAxis.labelTextColor           = .labelColor
+        xAxis.avoidFirstLastClippingEnabled   = false
+        xAxis.granularity                     = 1.0
+        xAxis.spaceMin                        = xAxis.granularity / 5
+        xAxis.spaceMax                        = xAxis.granularity / 5
+        xAxis.labelRotationAngle              = -45.0
+        xAxis.labelTextColor                  = .labelColor
 
 //        xAxis.nameAxis = "Date (s)"
 //        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
-        let leftAxis = chartView.leftAxis
-        leftAxis.labelPosition = .outsideChart
-        leftAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(12.0))!
+        let leftAxis                  = chartView.leftAxis
+        leftAxis.labelPosition        = .outsideChart
+        leftAxis.labelFont            = NSFont(name : "HelveticaNeue-Light", size : CGFloat(12.0))!
         leftAxis.drawGridLinesEnabled = true
-        leftAxis.granularityEnabled = true
-        leftAxis.yOffset = -9.0
-        leftAxis.labelTextColor           = .labelColor
+        leftAxis.granularityEnabled   = true
+        leftAxis.yOffset              = -9.0
+        leftAxis.labelTextColor       = .labelColor
 
 //        leftAxis.nameAxis = "Amount"
 //        leftAxis.nameAxisEnabled = true
@@ -135,12 +135,12 @@ final class TresorerieController: NSViewController
         chartView.rightAxis.enabled = false
         
         // MARK: legend
-        let legend = chartView.legend
-        legend.enabled = true
-        legend.form = .square
-        legend.drawInside = false
-        legend.orientation = .horizontal
-        legend.verticalAlignment = .bottom
+        let legend                 = chartView.legend
+        legend.enabled             = true
+        legend.form                = .square
+        legend.drawInside          = false
+        legend.orientation         = .horizontal
+        legend.verticalAlignment   = .bottom
         legend.horizontalAlignment = .left
         
         // MARK: description
@@ -160,8 +160,8 @@ final class TresorerieController: NSViewController
         let initAccount = InitAccount.shared.getAllDatas()
         
         var soldeRealise = initAccount.realise
-        var soldePrevu  = initAccount.prevu
-        var soldeEngage = initAccount.engage
+        var soldePrevu   = initAccount.prevu
+        var soldeEngage  = initAccount.engage
         
         var prevu  = 0.0
         var engage = 0.0

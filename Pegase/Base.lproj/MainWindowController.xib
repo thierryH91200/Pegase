@@ -108,7 +108,7 @@
                 </constraints>
                 <accessibility identifier="view20"/>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="98A9D07C-EF3F-4675-8C25-00EF196A7E7E" displayMode="iconAndLabel" sizeMode="regular" id="RKk-tk-6Wo">
+            <toolbar key="toolbar" implicitIdentifier="98A9D07C-EF3F-4675-8C25-00EF196A7E7E" displayMode="iconOnly" sizeMode="regular" id="RKk-tk-6Wo">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="DB745FC8-3855-48C1-82E7-C2A3E09F5DDB" explicitItemIdentifier="NSToolBarPreference" label="Preference" paletteLabel="Preference" tag="-1" image="NSPreferencesGeneral" sizingBehavior="auto" id="3B0-RB-4Tk">
                         <connections>
@@ -200,7 +200,7 @@
                             </connections>
                         </searchField>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="DFAB3495-9EC7-4592-AB5A-EFF54F52A6E5" label="Search advanced" paletteLabel="Toolbar Item" tag="-1" image="Search" sizingBehavior="auto" id="FZM-Br-BYZ">
+                    <toolbarItem implicitItemIdentifier="DFAB3495-9EC7-4592-AB5A-EFF54F52A6E5" label="Search" paletteLabel="Search" tag="-1" image="Search" sizingBehavior="auto" id="FZM-Br-BYZ">
                         <connections>
                             <action selector="AdvancedFilter:" target="-1" id="aKL-eu-j3L"/>
                         </connections>

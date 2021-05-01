@@ -328,7 +328,7 @@ final class ListTransactionsController: NSViewController {
         if selectedRow.isEmpty == false {
             
             self.removeButton.isHidden = false
-            var operationsSelected = [EntityTransactions]()
+            var transactionsSelected = [EntityTransactions]()
             
             var amount = 0.0
             var solde = 0.0
@@ -343,7 +343,7 @@ final class ListTransactionsController: NSViewController {
             for row in selectedRow {
                 let item = outlineView.item(atRow: row) as? IdOperations
                 
-                operationsSelected.append((item?.entityOperations)!)
+                transactionsSelected.append((item?.entityOperations)!)
                 
                 amount = (item?.entityOperations.amount)!
                 solde += amount
@@ -370,7 +370,7 @@ final class ListTransactionsController: NSViewController {
             let attributedText = NSAttributedString(string: info, attributes: attribute)
             self.labelInfo.attributedStringValue = attributedText
             
-            self.delegate?.editionOperations(operationsSelected)
+            self.delegate?.editionOperations(transactionsSelected)
             self.becomeFirstResponder()
         }
     }

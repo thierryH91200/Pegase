@@ -75,6 +75,4 @@ extension SourceListViewController: NSOutlineViewDelegate {
         return optionKey
     }
 
-
-
 }

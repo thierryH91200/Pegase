@@ -121,6 +121,7 @@ Pegase not include CocoaPods
 ## Carthage
 Pegase not include Carthage
 
+
 carthage update --platform macos --use-submodules
 $(SRCROOT)/Carthage/Build/Mac/Charts.framework
 $(SRCROOT)/Carthage/Build/Mac/SwiftDate.framework
