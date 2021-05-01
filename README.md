@@ -119,8 +119,6 @@ OS X 10.14 or later, 64-bit processor
 Pegase not include CocoaPods
 
 ## Carthage
-Pegase not include Carthage
-
 
 carthage update --platform macos --use-submodules
 $(SRCROOT)/Carthage/Build/Mac/Charts.framework
