@@ -86,7 +86,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             }
             
             let expense = Localizations.General.Expenses
-            let income = Localizations.General.Income
+            let income  = Localizations.General.Income
             
             let expenseStr = formatterPrice.string(from: NSDecimalNumber(value: expenses))
             let expenseFormatted = "\(expense) : \( expenseStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)

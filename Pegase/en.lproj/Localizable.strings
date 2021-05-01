@@ -85,12 +85,12 @@
 "ImportSimplifiee.statut" = "Statut";
 
 // MARK: -  ListeOperation
-"ListeOperation.info" = "Expenses : %@ Income : %@ Total : %@";
+"ListeOperation.info" = "Expenses : %@ Incomes : %@ Total : %@";
 
 "ListeOperation.transaction.plural" = "%d transaction";
-"ListeOperation.transaction.selectionnee.plural" = "%d selected transactions";
+"ListeOperation.transaction.selectionnee.plural" = "%d selected transactions ";
 
-"ListeOperation.transaction.selectionnee.singular" = "%d selected transaction";
+"ListeOperation.transaction.selectionnee.singular" = "%d selected transaction ";
 "ListeOperation.transaction.singular" = "%d transaction";
 
 // MARK: -  Mode

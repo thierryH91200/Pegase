@@ -113,19 +113,19 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             entityOperation.dateCree = Date()
             entityOperation.dateModifie = Date()
             
-            /// Date operation
+            /// Date transaction
             var headerColumn = itemHeader[1].representedObject as!  [HeaderColumnForMenu]
             if headerColumn.isEmpty == false {
                 
-                var dateOperation =  Date().noon
+                var dateTransaction =  Date().noon
                 let column = headerColumn[0].numCol
                 let date = data[ column]
                 if date == "" {
-                    dateOperation = Date().noon
+                    dateTransaction = Date().noon
                 } else {
-                    dateOperation = dateFormatter.date(from: date)!.noon
+                    dateTransaction = dateFormatter.date(from: date)!.noon
                 }
-                entityOperation.dateOperation = dateOperation
+                entityOperation.dateOperation = dateTransaction
             } else {
                 entityOperation.dateOperation = Date().noon
             }

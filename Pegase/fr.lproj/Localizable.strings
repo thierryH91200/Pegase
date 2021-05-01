@@ -65,38 +65,38 @@
 "GroupeAccount.RemoveAlert.MessageText" = "Supprimer cet élement";
 
 // MARK: -  ImportSimplifiee
-"ImportSimplifiee.Menu.catégorie" = "Category";
-"ImportSimplifiee.Menu.dateOperation" = "Date Transaction";
+"ImportSimplifiee.Menu.catégorie" = "Categorie";
+"ImportSimplifiee.Menu.dateOperation" = "Date Operation";
 "ImportSimplifiee.Menu.datePointage" = "Date Pointage";
 "ImportSimplifiee.Menu.ignoreCol" = "Ignore_Column";
 "ImportSimplifiee.Menu.libelle" = "Comment";
 "ImportSimplifiee.Menu.modePaiement" = "Mode Paiement";
 "ImportSimplifiee.Menu.montant" = "Montant";
-"ImportSimplifiee.Menu.rubrique" = "Rubric";
+"ImportSimplifiee.Menu.rubrique" = "Rubrique";
 "ImportSimplifiee.Menu.statut" = "Statut";
 
-"ImportSimplifiee.category" = "Category";
+"ImportSimplifiee.category" = "Categorie";
 "ImportSimplifiee.comment" = "Comment";
-"ImportSimplifiee.compte" = "account";
+"ImportSimplifiee.compte" = "Compte";
 "ImportSimplifiee.dateOperation" = "Date Transaction";
 "ImportSimplifiee.datePointage" = "Date Pointage";
 "ImportSimplifiee.mode" = "Mode Paiement";
-"ImportSimplifiee.montant" = "Amount";
+"ImportSimplifiee.montant" = "Montant";
 "ImportSimplifiee.statut" = "Statut";
 
 // MARK: -  ListeOperation
-"ListeOperation.info" = "Expenses : %@ Income : %@ Total : %@";
+"ListeOperation.info" = "Dépenses : %@ Revenus : %@ Total : %@";
 
-"ListeOperation.transaction.plural" = "%d transaction";
-"ListeOperation.transaction.selectionnee.plural" = "%d selected transactions";
+"ListeOperation.transaction.plural" = "%d opérations ";
+"ListeOperation.transaction.selectionnee.plural" = "%d opérations selectionnées ";
 
-"ListeOperation.transaction.selectionnee.singular" = "%d selected transaction";
-"ListeOperation.transaction.singular" = "%d transaction";
+"ListeOperation.transaction.selectionnee.singular" = "%d opération selectionnée ";
+"ListeOperation.transaction.singular" = "%d opérations ";
 
 // MARK: -  Mode
 "Mode.Delete" = "Delete";
 "Mode.InformativeText" = "Are you sure you would like to delete the item ?";
-"Mode.MessageText" = "Delete this element";
+"Mode.MessageText" = "Supprimer cet élement";
 
 // MARK: -  ModePaiement
 "ModePaiement.Bank_Card" = "Carte Bancaire";

@@ -412,12 +412,12 @@ final class ListTransactionsController: NSViewController {
     
     private func balanceCalculation()
     {
-        let initCompte = InitAccount.shared.getAllDatas()
+        let initCompte   = InitAccount.shared.getAllDatas()
         var soldeRealise = initCompte.realise
-        var soldePrevu  = initCompte.prevu
-        var soldeEngage = initCompte.engage
+        var soldePrevu   = initCompte.prevu
+        var soldeEngage  = initCompte.engage
         let soldeInitial = soldePrevu + soldeEngage + soldeRealise
-        let count = listTransactions.count
+        let count        = listTransactions.count
         
         for index in stride(from: count - 1, to: -1, by: -1)
         {
@@ -441,7 +441,7 @@ final class ListTransactionsController: NSViewController {
         NotificationCenter.send(.updateBalance)
     }
     
-    @IBAction func removeOperation(_ sender: Any) {
+    @IBAction func removeTransaction(_ sender: Any) {
         let selectedRow = outlineListView.selectedRowIndexes
         guard selectedRow.isEmpty == false else { return }
         
@@ -457,7 +457,7 @@ final class ListTransactionsController: NSViewController {
         self.resetChange()
     }
     
-    @IBAction func compactOperation(_ sender: Any) {
+    @IBAction func compactTransaction(_ sender: Any) {
         let selectedRow = outlineListView.selectedRowIndexes
         guard selectedRow.isEmpty == false else { return }
         

@@ -163,9 +163,9 @@ extension EntityAccount {
         self.didAccessValue(forKey: "solde")
         
         _balance = 0.0
-        let arrayOperations = operations?.allObjects as! [EntityTransactions]
-        for operation in arrayOperations {
-            _balance += operation.amount
+        let arraytransactions = operations?.allObjects as! [EntityTransactions]
+        for transaction in arraytransactions {
+            _balance += transaction.amount
         }
         self.setPrimitiveValue(_balance, forKey: "total")
         return _balance

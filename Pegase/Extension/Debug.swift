@@ -25,9 +25,9 @@ func printTimeElapsedWhenRunningCode(title:String, operation:()->()) {
     print("Time elapsed for \(title): \(timeElapsed) s.")
 }
 
-func timeElapsedInSecondsWhenRunningCode(operation: ()->()) -> Double {
+func timeElapsedInSecondsWhenRunningCode(transaction: ()->()) -> Double {
     let startTime = CFAbsoluteTimeGetCurrent()
-    operation()
+    transaction()
     let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
     return Double(timeElapsed)
 }
