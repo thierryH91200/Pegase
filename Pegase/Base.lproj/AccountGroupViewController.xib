@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18121" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,15 +15,14 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="1X6-8f-2mg">
+        <customView identifier="acccount00" id="1X6-8f-2mg">
             <rect key="frame" x="0.0" y="0.0" width="414" height="486"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ayl-Le-8aj">
-                    <rect key="frame" x="32" y="-1" width="23" height="26"/>
+                <button identifier="sq10" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ayl-Le-8aj">
+                    <rect key="frame" x="31" y="-1" width="16" height="26"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="9WR-jQ-3pq"/>
-                        <constraint firstAttribute="width" constant="23" id="BWY-z4-2rj"/>
                     </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fVI-Zd-mI6">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -33,8 +32,8 @@
                         <action selector="removeAction:" target="-2" id="9no-WD-F61"/>
                     </connections>
                 </button>
-                <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1je-IE-YpJ">
-                    <rect key="frame" x="55" y="-1" width="359" height="24"/>
+                <button identifier="sq20" horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1je-IE-YpJ">
+                    <rect key="frame" x="47" y="-1" width="367" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="KEA-Ag-dfJ"/>
                     </constraints>
@@ -43,10 +42,9 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
-                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="hit-Jc-lgY" userLabel="AddButton">
-                    <rect key="frame" x="0.0" y="-1" width="32" height="24"/>
+                <popUpButton identifier="sq30" translatesAutoresizingMaskIntoConstraints="NO" id="hit-Jc-lgY" userLabel="AddButton">
+                    <rect key="frame" x="0.0" y="-1" width="31" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="32" id="eHC-rK-Fka"/>
                         <constraint firstAttribute="height" constant="22" id="tcW-hs-VPG"/>
                     </constraints>
                     <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="mixed" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" id="TV8-Lo-CEd">
@@ -77,7 +75,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="70" horizontalPageScroll="10" verticalLineScroll="70" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGC-nl-EVD">
+                <scrollView identifier="out10" autohidesScrollers="YES" horizontalLineScroll="70" horizontalPageScroll="10" verticalLineScroll="70" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGC-nl-EVD">
                     <rect key="frame" x="0.0" y="24" width="414" height="442"/>
                     <clipView key="contentView" drawsBackground="NO" id="TYy-R4-fUn">
                         <rect key="frame" x="1" y="1" width="412" height="440"/>
@@ -291,11 +289,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BSx-tv-IM5">
-                    <rect key="frame" x="382" y="-2" width="32" height="26"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="32" id="hOV-c0-6sy"/>
-                    </constraints>
+                <button identifier="sq40" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BSx-tv-IM5">
+                    <rect key="frame" x="398" y="1" width="16" height="33"/>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSLockLockedTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5rp-9J-aU2">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -325,6 +320,7 @@
                 <constraint firstItem="BSx-tv-IM5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ayl-Le-8aj" secondAttribute="trailing" constant="8" symbolic="YES" id="ucp-1K-T0E"/>
                 <constraint firstItem="tGC-nl-EVD" firstAttribute="top" secondItem="vus-5B-rad" secondAttribute="bottom" id="y6y-HH-8Be"/>
             </constraints>
+            <accessibility identifier="account10"/>
             <point key="canvasLocation" x="-181" y="-40"/>
         </customView>
         <menu id="4jj-o3-RF5">

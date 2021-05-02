@@ -203,7 +203,7 @@ final class ListTransactionsController: NSViewController {
         self.outlineListView.doubleAction = #selector(doubleClicked)
         
         self.outlineListView.rowSizeStyle = .custom
-        self.outlineListView.allowsEmptySelection = false
+        self.outlineListView.allowsEmptySelection = true
         self.outlineListView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
 
         self.outlineListView.autosaveExpandedItems = true
@@ -215,6 +215,15 @@ final class ListTransactionsController: NSViewController {
         outlineListView.menu = menuTable
     }
     
+    // ------------------------------------------------------------------------
+    //    dealloc
+    // ------------------------------------------------------------------------
+    deinit
+    {
+        NotificationCenter.remove(instance: self, name: .selectionDidChangeOutLine)
+        NotificationCenter.remove(instance: self, name: .updateAccount)
+    }
+
     func setUpDatePicker() {
         
         self.datePicker.delegate = self
@@ -252,15 +261,8 @@ final class ListTransactionsController: NSViewController {
             self.reloadData(false, true)
             
             self.resetChange()
+            outlineListView.deselectAll(nil)
         }
-    }
-    
-    // ------------------------------------------------------------------------
-    //    dealloc
-    // ------------------------------------------------------------------------
-    deinit
-    {
-        NotificationCenter.remove(instance: self, name: .selectionDidChangeOutLine)
     }
     
     func resetChange() {

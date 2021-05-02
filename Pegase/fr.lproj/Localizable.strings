@@ -38,9 +38,9 @@
 "General.Category" = "Categorie";
 "General.Date Operation" = "Date Transaction";
 "General.Date Pointage" = "Date Pointage";
-"General.Expenses" = "Dépense";
+"General.Expenses" = "Dépenses";
 "General.Identity" = "Identity";
-"General.Income" = "Recette";
+"General.Income" = "Revenus";
 "General.Libelle" = "Comment";
 "General.Liste des opérations" = "Liste des transactions";
 "General.Mode Paiement" = "Mode Paiement";

@@ -122,10 +122,10 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
         } else {
             currentAccount = entityAccount.first
         }
-        
+                    
         self.setUpGroupeAccount()
         self.setUpSourceList()
-        
+
         self.justForTheFun()
         
         self.splitViewPrincipal.autosaveName = NSSplitView.AutosaveName( "splitViewPrincipal")

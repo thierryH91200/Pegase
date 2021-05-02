@@ -393,15 +393,15 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     
     func getTodoItems() {
         if let context = mainObjectContext
- {
+        {
             do {
                 entityOperations = try context.fetch(EntityTransactions.fetchRequest())
                 print("get: \(entityOperations)")
             } catch {
             }
             self.delegate?.getAllData()
-                    self.delegate?.reloadData(true, true)
-
+            self.delegate?.reloadData(true, true)
+            
         }
     }
 
@@ -487,7 +487,6 @@ extension TransactionViewController: NSMenuDelegate {
             }
         }
     }
-    
 }
 
 extension TransactionViewController: NSWindowDelegate, NSAlertDelegate {

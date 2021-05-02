@@ -62,7 +62,8 @@ final class ListTransactions : NSObject {
         let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
         let predicate = NSPredicate(format: "account == %@", currentAccount!)
         fetchRequest.predicate = predicate
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "datePointage", ascending: ascending)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "datePointage", ascending: ascending),
+                                        NSSortDescriptor(key: "dateOperation", ascending: ascending)]
         
         do {
             entities = try viewContext!.fetch(fetchRequest)

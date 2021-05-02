@@ -34,25 +34,25 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView identifier="operationView" wantsLayer="YES" misplaced="YES" id="XLY-hj-aKs">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="851"/>
+        <customView identifier="operationView" wantsLayer="YES" id="XLY-hj-aKs">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="851"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HNV-fd-rFo">
+                <button identifier="cr00" horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HNV-fd-rFo">
                     <rect key="frame" x="0.0" y="809" width="365" height="22"/>
                     <buttonCell key="cell" type="square" title="Creation mode" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Vt-JO-eHx">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="systemBold"/>
                     </buttonCell>
                 </button>
-                <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hJa-1H-CrV">
+                <button identifier="cr10" horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hJa-1H-CrV">
                     <rect key="frame" x="0.0" y="0.0" width="365" height="22"/>
                     <buttonCell key="cell" type="square" title="Creation mode" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="imH-56-LpJ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="systemBold"/>
                     </buttonCell>
                 </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EYn-LT-ATq">
+                <button identifier="ca10" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EYn-LT-ATq">
                     <rect key="frame" x="145" y="38" width="76" height="32"/>
                     <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qRn-tw-gIV">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -65,7 +65,7 @@ Gw
                         <action selector="annulerAction:" target="-2" id="NES-mh-bdA"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-5u-dsV">
+                <button identifier="sa10" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-5u-dsV">
                     <rect key="frame" x="258" y="38" width="64" height="32"/>
                     <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O56-55-rg3">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -75,14 +75,14 @@ Gw
                         <action selector="saveActions:" target="-2" id="saC-6C-4PY"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-RJ-Cys">
+                <button identifier="op10" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-RJ-Cys">
                     <rect key="frame" x="0.0" y="830" width="365" height="22"/>
                     <buttonCell key="cell" type="smallSquare" title="Operation" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hFD-G4-FOE">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="systemBold"/>
                     </buttonCell>
                 </button>
-                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fF-HD-HLv">
+                <scrollView identifier="scop10" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fF-HD-HLv">
                     <rect key="frame" x="10" y="123" width="345" height="676"/>
                     <clipView key="contentView" id="6K4-jp-YVa">
                         <rect key="frame" x="1" y="1" width="343" height="674"/>

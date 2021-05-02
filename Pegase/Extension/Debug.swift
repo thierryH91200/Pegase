@@ -14,7 +14,7 @@ extension NSLayoutConstraint {
     
     override open var description: String {
         let id = identifier ?? "00"
-        return "id: \(id), constant: \(constant)"
+        return "id: \(id), constante: \(constant)"
     }
 }
 
