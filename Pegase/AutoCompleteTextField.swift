@@ -242,8 +242,8 @@ class AutoCompleteTableRowView : NSTableRowView
         if self.selectionHighlightStyle != .none
         {
             let selectionRect = NSInsetRect(self.bounds, 0.5, 0.5)
-            NSColor.yellow.setStroke()
-            NSColor.yellow.setFill()
+            NSColor.selectedMenuItemColor.setStroke()
+            NSColor.selectedMenuItemColor.setFill()
             let selectionPath = NSBezierPath(roundedRect: selectionRect, xRadius: 0.0, yRadius: 0.0)
             selectionPath.fill()
             selectionPath.stroke()
@@ -254,10 +254,10 @@ class AutoCompleteTableRowView : NSTableRowView
         get
         {
             if self.isSelected == true {
-                return NSView.BackgroundStyle.emphasized
+                return NSView.BackgroundStyle.dark
             }
             else {
-                return NSView.BackgroundStyle.normal
+                return NSView.BackgroundStyle.light
             }
         }
     }

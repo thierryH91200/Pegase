@@ -116,10 +116,10 @@ extension SousOperationModalWindowController  : AutoCompleteTableViewDelegate {
         return autoCompleteFilterArray
     }
     
-//    func tableViewSelection(_ notification: Notification)
-//    {
-//        print("tableViewSelection")
-//    }
+    func tableViewSelection(_ notification: Notification)
+    {
+        print("tableViewSelection")
+    }
 
 }
 
