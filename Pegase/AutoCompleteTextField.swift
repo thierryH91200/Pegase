@@ -254,10 +254,10 @@ class AutoCompleteTableRowView : NSTableRowView
         get
         {
             if self.isSelected == true {
-                return NSView.BackgroundStyle.dark
+                return NSView.BackgroundStyle.emphasized
             }
             else {
-                return NSView.BackgroundStyle.light
+                return NSView.BackgroundStyle.normal
             }
         }
     }

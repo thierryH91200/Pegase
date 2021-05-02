@@ -260,38 +260,34 @@ final class ListTransactionsController: NSViewController {
             self.getAllData()
             self.reloadData(false, true)
             
-            self.resetChange()
             outlineListView.deselectAll(nil)
+            self.resetChange()
         }
     }
     
     func resetChange() {
         self.removeButton.isHidden = true
-        let count = outlineListView.numberOfRows
-        
-        var amount = 0.0
-        var total = 0.0
+
+        var amount  = 0.0
+        var total   = 0.0
         var expense = 0.0
-        var income = 0.0
-        var info = ""
-        var select = ""
-        var number = 0
+        var income  = 0.0
+        var info    = ""
+        var select  = ""
+        var number  = 0
         
         let formatter = NumberFormatter()
         formatter.locale = Locale.current
         formatter.numberStyle = .currency
         
-        for row in 0..<count {
-            let item = outlineListView.item(atRow: row) as? IdOperations
-            if item != nil {
-                number += 1
-                amount = (item?.entityOperations.amount)!
-                total += amount
-                if amount < 0 {
-                    expense += amount
-                } else {
-                    income += amount
-                }
+        number = listTransactions.count
+        for listTransaction in listTransactions {
+            amount = listTransaction.amount
+            total += amount
+            if amount < 0 {
+                expense += amount
+            } else {
+                income += amount
             }
         }
         
