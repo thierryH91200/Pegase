@@ -462,24 +462,24 @@ extension MainWindowController: NSControlTextEditingDelegate {
             listTransactionsController?.getAllData()
         } else {
             let p1 = NSPredicate(format: "account == %@", currentAccount!)
-            let placer = (self.searchField.cell as? NSSearchFieldCell)?.placeholderString
+            let placeHolder = (self.searchField.cell as? NSSearchFieldCell)?.placeholderString
             
-            if placer == Localizations.searchMenu.title.all {
+            if placeHolder == Localizations.searchMenu.title.all {
                 let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.libelle CONTAINS[cd] \"%@\").@count > 0", searchString)
                 let p3 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.name CONTAINS[cd] %@).@count > 0", searchString)
                 let p4 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric.name CONTAINS[cd] %@).@count > 0", searchString)
                 predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2, p3, p4])
             }
-            if placer == Localizations.searchMenu.title.libelle {
+            if placeHolder == Localizations.searchMenu.title.libelle {
                 let predicateFormat = String(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.libelle CONTAINS[cd] \"%@\").@count > 0", searchString)
                 let p2 = NSPredicate(format: predicateFormat)
                 predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
             }
-            if placer == Localizations.searchMenu.title.categorie {
+            if placeHolder == Localizations.searchMenu.title.categorie {
                 let p3 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.name CONTAINS[cd] %@).@count > 0", searchString)
                 predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p3])
             }
-            if placer == Localizations.searchMenu.title.rubric {
+            if placeHolder == Localizations.searchMenu.title.rubric {
                 let p4 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric.name CONTAINS[cd] %@).@count > 0", searchString)
                 predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p4])
             }

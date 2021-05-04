@@ -99,7 +99,7 @@ final class RubricPieController: NSViewController
         paragraphStyle.alignment = .center
         
         let attribut: [ NSAttributedString.Key: Any] =
-            [  .font: NSFont(name: "HelveticaNeue-Light", size: 15.0)!,
+              [.font: NSFont(name: "HelveticaNeue-Light", size: 15.0)!,
                .foregroundColor: NSColor.textColor,
                .paragraphStyle: paragraphStyle]
         

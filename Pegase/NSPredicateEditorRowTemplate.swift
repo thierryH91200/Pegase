@@ -117,7 +117,7 @@ extension NSPredicateEditorRowTemplate {
         case .endsWith:
             operatorName = "ENDSWITH"
         case .contains:
-            operatorName = "CONTAINS"
+            operatorName = "CONTAINS[cd]"
         case .lessThan:
             operatorName = "<"
         case .lessThanOrEqualTo:
@@ -135,11 +135,11 @@ extension NSPredicateEditorRowTemplate {
         case .in:
             operatorName = "'in'"
         case .customSelector:
-            operatorName = "CONTAINS"
+            operatorName = "CONTAINS[cd]"
         case .between:
             operatorName = "BETWEEN"
         @unknown default:
-            operatorName = "CONTAINS"
+            operatorName = "CONTAINS[cd]"
         }
         return operatorName
     }
@@ -152,8 +152,8 @@ final class RowTemplateRelationshipRubrique: NSPredicateEditorRowTemplate {
         let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
         let operatorType = predicate.predicateOperatorType
         let operatorName = findOperatorType(operatorType: operatorType)
-        let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric.name %@ %@).@count > 0", operatorName, predicate.rightExpression)
         
+        let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric.name %@ %@).@count > 0", operatorName, predicate.rightExpression)
         let newPredicate = NSPredicate(format: predicateFormat)
         return newPredicate
     }
@@ -166,8 +166,8 @@ final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
         let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
         let operatorType = predicate.predicateOperatorType
         let operatorName = findOperatorType(operatorType: operatorType)
-        let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $category.name %@ %@).@count > 0", operatorName, predicate.rightExpression)
         
+        let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $category.name %@ %@).@count > 0", operatorName, predicate.rightExpression)
         let newPredicate = NSPredicate(format: predicateFormat)
         return newPredicate
     }
