@@ -16,7 +16,7 @@ final class AdvancedFilterViewController: NSViewController {
     
     /// predicateEditorAction
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender:
     @IBAction func predicateEditorAction(_ sender: NSButton) {
         print("predicate value changed")
     }
@@ -24,12 +24,12 @@ final class AdvancedFilterViewController: NSViewController {
     @IBAction func generateQuery(_ sender: NSButton) {
 
         let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
+        print("predicateEditor ", predicateEditor.predicate)
         fetchRequest.predicate = predicateEditor.predicate
         print(predicateEditor.predicate?.description ?? "predicateEditor.predicate")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]
         
         self.delegate?.applyFilter(fetchRequest: fetchRequest)
     }
-    
 }
 

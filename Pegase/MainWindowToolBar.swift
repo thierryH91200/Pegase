@@ -124,7 +124,6 @@ extension MainWindowController {
         }
         
         if isAlreadyRunning == false {
-//            let path = NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: "com.apple.calculator")
             guard let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.apple.calculator") else { return }
 
             let configuration = NSWorkspace.OpenConfiguration()
@@ -414,7 +413,7 @@ extension MainWindowController {
     
     func createMenuForSearchField() {
         let menu = NSMenu()
-        menu.title =  Localizations.searchMenu.title.menu
+//        menu.title =  Localizations.searchMenu.title.menu
         
         let allMenuItem = NSMenuItem()
         allMenuItem.title =  Localizations.searchMenu.title.all
@@ -426,9 +425,22 @@ extension MainWindowController {
         fNameMenuItem.target = self
         fNameMenuItem.action = #selector(changeSearchFieldItem(_:))
         
+        let cNameMenuItem = NSMenuItem()
+        cNameMenuItem.title = Localizations.searchMenu.title.categorie
+        cNameMenuItem.target = self
+        cNameMenuItem.action = #selector(changeSearchFieldItem(_:))
+        
+        let rNameMenuItem = NSMenuItem()
+        rNameMenuItem.title = Localizations.searchMenu.title.rubric
+        rNameMenuItem.target = self
+        rNameMenuItem.action = #selector(changeSearchFieldItem(_:))
+        
+        menu.removeAllItems()
         menu.addItem(allMenuItem)
         menu.addItem(fNameMenuItem)
-        
+        menu.addItem(cNameMenuItem)
+        menu.addItem(rNameMenuItem)
+
         self.searchField.searchMenuTemplate = menu
         self.changeSearchFieldItem(allMenuItem)
     }
@@ -450,20 +462,34 @@ extension MainWindowController: NSControlTextEditingDelegate {
             listTransactionsController?.getAllData()
         } else {
             let p1 = NSPredicate(format: "account == %@", currentAccount!)
+            let placer = (self.searchField.cell as? NSSearchFieldCell)?.placeholderString
             
-            if (self.searchField.cell as? NSSearchFieldCell)?.placeholderString == "All" {
-                let p2 = NSPredicate(format: "libelle contains %@", searchString)
-                predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
-            } else if (self.searchField.cell as? NSSearchFieldCell)?.placeholderString == "Libellé" {
-                let p2 = NSPredicate(format: "libelle contains %@", searchString)
+            if placer == Localizations.searchMenu.title.all {
+                let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.libelle CONTAINS[cd] \"%@\").@count > 0", searchString)
+                let p3 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.name CONTAINS[cd] %@).@count > 0", searchString)
+                let p4 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric.name CONTAINS[cd] %@).@count > 0", searchString)
+                predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2, p3, p4])
+            }
+            if placer == Localizations.searchMenu.title.libelle {
+                let predicateFormat = String(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.libelle CONTAINS[cd] \"%@\").@count > 0", searchString)
+                let p2 = NSPredicate(format: predicateFormat)
                 predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2])
             }
-            
+            if placer == Localizations.searchMenu.title.categorie {
+                let p3 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.name CONTAINS[cd] %@).@count > 0", searchString)
+                predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p3])
+            }
+            if placer == Localizations.searchMenu.title.rubric {
+                let p4 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric.name CONTAINS[cd] %@).@count > 0", searchString)
+                predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p4])
+            }
+
             let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
             fetchRequest.predicate = predicate
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: false)]
             
             listTransactionsController?.applyFilter(fetchRequest: fetchRequest)
+
         }
     }
 }

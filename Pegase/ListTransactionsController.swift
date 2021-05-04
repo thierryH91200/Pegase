@@ -497,6 +497,7 @@ extension ListTransactionsController: FilterDelegate {
         }
         transformData()
         reloadData(true, false)
+        resetChange()
     }
     
     func updateListeOperations( liste: [EntityTransactions]) {

@@ -140,6 +140,8 @@
 // MARK: -  searchMenu
 "searchMenu.title.all" = "all";
 "searchMenu.title.libelle" = "libelle";
+"searchMenu.title.categorie" = "categorie";
+"searchMenu.title.rubric" = "rubrique";
 "searchMenu.title.menu" = "menu";
 
 // MARK: -  MenuBar

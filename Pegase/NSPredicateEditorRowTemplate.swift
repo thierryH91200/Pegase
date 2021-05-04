@@ -147,7 +147,7 @@ extension NSPredicateEditorRowTemplate {
 
 final class RowTemplateRelationshipRubrique: NSPredicateEditorRowTemplate {
     
-    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate{
+    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate {
         
         let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
         let operatorType = predicate.predicateOperatorType
@@ -161,7 +161,7 @@ final class RowTemplateRelationshipRubrique: NSPredicateEditorRowTemplate {
 
 final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
     
-    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate{
+    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate {
         
         let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
         let operatorType = predicate.predicateOperatorType
@@ -180,8 +180,8 @@ final class RowTemplateRelationshipLibelle: NSPredicateEditorRowTemplate {
         let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
         let operatorType = predicate.predicateOperatorType
         let operatorName = findOperatorType(operatorType: operatorType)
-        let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $sousOperation.libelle %@ %@).@count > 0", operatorName, predicate.rightExpression)
-        
+        let predicateFormat = String(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.libelle %@ %@).@count > 0", operatorName, predicate.rightExpression)
+
         let newPredicate = NSPredicate(format: predicateFormat)
         return newPredicate
     }

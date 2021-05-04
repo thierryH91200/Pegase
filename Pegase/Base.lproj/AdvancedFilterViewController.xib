@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tvC-hv-B4U">
-                    <rect key="frame" x="813" y="12" width="75" height="32"/>
+                    <rect key="frame" x="820" y="13" width="69" height="32"/>
                     <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LZZ-6Z-4iW">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -327,7 +326,7 @@
                                     <predicateEditorRowTemplate rowType="simple" id="jUP-2Y-nUb">
                                         <array key="leftExpressionObject">
                                             <expression type="keyPath">
-                                                <string key="keyPath">releveBancaire</string>
+                                                <string key="keyPath">bankStatement</string>
                                             </expression>
                                         </array>
                                         <integer key="rightExpressionObject" value="700"/>
@@ -337,7 +336,7 @@
                                                 <items>
                                                     <menuItem title="Relevé bancaire" state="on" id="2vQ-ZV-vdo">
                                                         <expression key="representedObject" type="keyPath">
-                                                            <string key="keyPath">releveBancaire</string>
+                                                            <string key="keyPath">bankStatement</string>
                                                         </expression>
                                                     </menuItem>
                                                 </items>
