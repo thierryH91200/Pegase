@@ -64,7 +64,7 @@ final class ListTransactions : NSObject {
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "datePointage", ascending: ascending),
                                         NSSortDescriptor(key: "dateOperation", ascending: ascending)]
-        
+
         do {
             entities = try viewContext!.fetch(fetchRequest)
         } catch {

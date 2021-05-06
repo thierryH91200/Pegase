@@ -9,7 +9,9 @@ extension TransactionViewController {
 
         
         let accounts = Account.shared.getAllDatas()
-        guard accounts.count < 100 else { return }
+        guard accounts.count < 100 else {
+            let error = String( format: "accounts.count : %d", accounts.count )
+            fatalError(error) }
         
         for account in accounts where account.isAccount == true
         {
@@ -50,11 +52,11 @@ extension TransactionViewController {
         if account != nil {
             self.entityCompteTransfert = account
             self.nameCompte.stringValue = (account?.name)!
-            self.nomTitulaire.stringValue = (account?.identity?.name)!
+            self.nameTitulaire.stringValue = (account?.identity?.name)!
             self.prenomTitulaire.stringValue = (account?.identity?.surName)!
         } else {
             self.nameCompte.stringValue = ""
-            self.nomTitulaire.stringValue = ""
+            self.nameTitulaire.stringValue = ""
             self.prenomTitulaire.stringValue = ""
         }
     }

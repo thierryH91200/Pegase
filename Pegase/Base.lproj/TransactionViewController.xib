@@ -18,7 +18,7 @@
                 <outlet property="modeOperation" destination="HNV-fd-rFo" id="CeS-Ql-IS3"/>
                 <outlet property="modeOperation2" destination="hJa-1H-CrV" id="4jr-6E-jyg"/>
                 <outlet property="nameCompte" destination="r47-Uy-n7c" id="Bjt-mM-2zB"/>
-                <outlet property="nomTitulaire" destination="kYU-cJ-xrc" id="ffB-Ol-kAp"/>
+                <outlet property="nameTitulaire" destination="kYU-cJ-xrc" id="ffB-Ol-kAp"/>
                 <outlet property="numCheque" destination="Icb-JM-RnW" id="gBV-sT-Hgh"/>
                 <outlet property="outlineViewSSOpe" destination="DgR-hH-UaB" id="xoQ-Ww-wnj"/>
                 <outlet property="pieChartView" destination="aSO-gS-etR" id="jdm-Fv-cfw"/>

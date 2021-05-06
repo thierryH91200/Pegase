@@ -38,7 +38,7 @@ extension TransactionViewController: ListeOperationsDelegate {
         self.loadAccount()
         self.popUpTransfert.itemTitle(at: 0)
         self.nameCompte.stringValue = ""
-        self.nomTitulaire.stringValue = ""
+        self.nameTitulaire.stringValue = ""
         self.prenomTitulaire.stringValue = ""
         
         self.loadStatut()
@@ -261,7 +261,7 @@ extension TransactionViewController: ListeOperationsDelegate {
             popUpTransfert.menu?.insertItem(menuItemMultiplevalue, at: 0)
             popUpTransfert.selectItem(at: 0)
             nameCompte.stringValue = Localizations.Transaction.MultipleValue
-            nomTitulaire.stringValue = Localizations.Transaction.MultipleValue
+            nameTitulaire.stringValue = Localizations.Transaction.MultipleValue
             prenomTitulaire.stringValue = Localizations.Transaction.MultipleValue
         } else {
             var transfert = popUpTransfert.itemTitle(at: 0)
@@ -274,12 +274,12 @@ extension TransactionViewController: ListeOperationsDelegate {
             if linkedAccount != nil {
                 popUpTransfert.selectItem(withTitle: setTransfert.first ?? transfert)
                 nameCompte.stringValue = (linkedAccount?.name)!
-                nomTitulaire.stringValue = (linkedAccount?.identity?.name)!
+                nameTitulaire.stringValue = (linkedAccount?.identity?.name)!
                 prenomTitulaire.stringValue = (linkedAccount?.identity?.surName)!
             } else {
                 popUpTransfert.selectItem(at: 0)
                 nameCompte.stringValue = ""
-                nomTitulaire.stringValue = ""
+                nameTitulaire.stringValue = ""
                 prenomTitulaire.stringValue = ""
             }
         }

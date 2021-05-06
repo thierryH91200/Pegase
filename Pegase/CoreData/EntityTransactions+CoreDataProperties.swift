@@ -10,8 +10,8 @@ extension EntityTransactions {
 
     @NSManaged public var dateCree: Date?
     @NSManaged public var dateModifie: Date?
-//    @NSManaged public var dateOperation: Date?
-    @NSManaged public var datePointage: Date?
+    @NSManaged public var dateOperation: Date?
+//    @NSManaged public var datePointage: Date?
     @NSManaged public var checkNumber: String?
     @NSManaged public var bankStatement: Double
 //    @NSManaged public var sectionIdentifier: String?
@@ -45,6 +45,7 @@ extension EntityTransactions {
 }
 
 extension EntityTransactions {
+    
     @objc var sectionIdentifier: String? {
         // Create and cache the section identifier on demand.
         
@@ -53,7 +54,7 @@ extension EntityTransactions {
         self.didAccessValue(forKey: "sectionIdentifier")
         
         if tmp == nil {
-            if let timeStamp = self.value(forKey: "dateOperation") as? Date {
+            if let timeStamp = self.value(forKey: "datePointage") as? Date {
                 /*
                  Sections are organized by month and year. Create the section
                  identifier as a string representing the number (year * 100) + month;
@@ -70,6 +71,7 @@ extension EntityTransactions {
         }
         return tmp
     }
+    
     @objc var sectionYear: String? {
         // Create and cache the section identifier on demand.
         
@@ -78,7 +80,7 @@ extension EntityTransactions {
         self.didAccessValue(forKey: "sectionYear")
         
         if tmp == nil {
-            if let timeStamp = self.value(forKey: "dateOperation") as? Date {
+            if let timeStamp = self.value(forKey: "datePointage") as? Date {
                 /*
                  Sections are organized by month and year. Create the section
                  identifier as a string representing the number (year * 100) + month;
@@ -97,7 +99,6 @@ extension EntityTransactions {
     }
 
     @objc var amount: Double {
-        // Create and cache the section identifier on demand.
         
         self.willAccessValue(forKey: "amount")
         var _total = self.primitiveValue(forKey: "amount") as! Double
@@ -112,22 +113,37 @@ extension EntityTransactions {
         return _total
     }
     
-    @objc var dateOperation: Date? {
+    @objc var datePointage: Date? {
         get {
-            self.willAccessValue(forKey: "dateOperation")
-            let tmp = self.primitiveValue(forKey: "dateOperation") as? Date
-            self.didAccessValue(forKey: "dateOperation")
+            self.willAccessValue(forKey: "datePointage")
+            let tmp = self.primitiveValue(forKey: "datePointage") as? Date
+            self.didAccessValue(forKey: "datePointage")
             return tmp
         }
         set {
-            self.willChangeValue(forKey: "dateOperation")
-            self.setPrimitiveValue(newValue, forKey: "dateOperation")
-            self.didChangeValue(forKey: "dateOperation")
+            self.willChangeValue(forKey: "datePointage")
+            self.setPrimitiveValue(newValue, forKey: "datePointage")
+            self.didChangeValue(forKey: "datePointage")
             // If the time stamp changes, the section identifier become invalid.
             self.setPrimitiveValue(nil, forKey: "sectionIdentifier")
         }
     }
-        
+//    @objc var dateOperation: Date? {
+//        get {
+//            self.willAccessValue(forKey: "dateOperation")
+//            let tmp = self.primitiveValue(forKey: "dateOperation") as? Date
+//            self.didAccessValue(forKey: "dateOperation")
+//            return tmp
+//        }
+//        set {
+//            self.willChangeValue(forKey: "dateOperation")
+//            self.setPrimitiveValue(newValue, forKey: "dateOperation")
+//            self.didChangeValue(forKey: "dateOperation")
+//            // If the time stamp changes, the section identifier become invalid.
+//            self.setPrimitiveValue(nil, forKey: "sectionIdentifier")
+//        }
+//    }
+
 }
 
 

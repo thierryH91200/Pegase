@@ -10,9 +10,6 @@ import TFDate
 
 final class TransactionViewController: NSViewController, NSTextFieldDelegate, NSControlTextEditingDelegate {
     
-    let appDelegate = NSApplication.shared.delegate as! AppDelegate;
-
-    
     public weak var delegate: OperationsDelegate?
     
     @IBOutlet weak var outlineViewSSOpe: NSOutlineView!
@@ -34,7 +31,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     @IBOutlet weak var popUpTransfert: NSPopUpButton!
     
     @IBOutlet weak var nameCompte: NSTextField!
-    @IBOutlet weak var nomTitulaire: NSTextField!
+    @IBOutlet weak var nameTitulaire: NSTextField!
     @IBOutlet weak var prenomTitulaire: NSTextField!
     
     @IBOutlet weak var textFieldMontant: NSTextField!
@@ -48,7 +45,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     @objc var date4: Date?
     @objc var date5: Date?
     
-    let context = mainObjectContext
+//    let context = mainObjectContext
     
     var entityOperation: EntityTransactions?
     var entityOperations : [EntityTransactions] = []
@@ -102,8 +99,8 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.receive(instance: self,  selector: #selector(updateChangeCompte(_:)), name: key1)
-        NotificationCenter.receive(instance: self,  selector: #selector(updateChangeCompte(_:)), name: key2)
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeCompte(_:)), name: key1)
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeCompte(_:)), name: key2)
         
         NotificationCenter.receive(instance: self, selector: #selector(self.willShowPopup(_:)), name: .selectionDidChangePopUp )
         
@@ -135,7 +132,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     }
 
     @objc func willShowPopup(_ notification: Notification) {
-        var bar = ""
+        var bar = "willShowPopup"
         if let popUpButton = notification.object as? NSPopUpButton {
             if popUpButton == popUpStatut {
                 bar = "popUpStatut"
@@ -401,13 +398,15 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             }
             self.delegate?.getAllData()
             self.delegate?.reloadData(true, true)
-            
         }
     }
 
     func createOperationLiee(oneOperation: EntityTransactions ) {
 
-        print("Operation Liée")        
+        print("Operation Liée")
+        
+        let context = mainObjectContext
+
         if oneOperation.operationLiee == nil {
             
             self.entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as? EntityTransactions

@@ -39,10 +39,10 @@
 "BUc-fk-XZE.title" = "begins with";
 
 /* Class = "NSMenuItem"; title = "is"; ObjectID = "BmD-8G-f8g"; */
-"BmD-8G-f8g.title" = "is";
+"BmD-8G-f8g.title" = "est";
 
 /* Class = "NSMenuItem"; title = "is"; ObjectID = "C3B-Aj-Y49"; */
-"C3B-Aj-Y49.title" = "is";
+"C3B-Aj-Y49.title" = "est";
 
 /* Class = "NSMenuItem"; title = "begins with"; ObjectID = "C48-c4-TeA"; */
 "C48-c4-TeA.title" = "begins with";
@@ -54,7 +54,7 @@
 "CtB-R8-F3o.title" = "Montant";
 
 /* Class = "NSMenu"; title = "Libelle"; ObjectID = "DJz-fv-UOZ"; */
-"DJz-fv-UOZ.title" = "Libelle";
+"DJz-fv-UOZ.title" = "Libellé";
 
 /* Class = "NSMenuItem"; title = "is less than or equal to"; ObjectID = "Dig-8P-Epb"; */
 "Dig-8P-Epb.title" = "is less than or equal to";
@@ -72,7 +72,7 @@
 "HoV-HF-2vJ.title" = "is greater than or equal to";
 
 /* Class = "NSMenuItem"; title = "Staus"; ObjectID = "IcM-0A-0Lu"; */
-"IcM-0A-0Lu.title" = "Staus";
+"IcM-0A-0Lu.title" = "Status";
 
 /* Class = "NSMenuItem"; title = "begins with"; ObjectID = "KVC-O4-jYc"; */
 "KVC-O4-jYc.title" = "begins with";
