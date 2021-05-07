@@ -45,8 +45,6 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     @objc var date4: Date?
     @objc var date5: Date?
     
-//    let context = mainObjectContext
-    
     var entityOperation: EntityTransactions?
     var entityOperations : [EntityTransactions] = []
     var entityOperationsTransfert: EntityTransactions?
@@ -113,24 +111,22 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         self.modeOperation2.wantsLayer = true
         
         self.textFieldMontant.isEnabled = false
-
+        
         self.numCheque.isEnabled = true
         self.addView.isHidden = false
         
         numCheque.delegate = self
         textFieldReleveBancaire.delegate = self
-
+        
         dateOperation.locale = Locale.current
         
-        //        self.resetOperation()
-
         self.initChart()
     }
     
     @IBAction func popUpButtonUsed(_ sender: Any) {
         print("sender.indexOfSelectedItem")
     }
-
+    
     @objc func willShowPopup(_ notification: Notification) {
         var bar = "willShowPopup"
         if let popUpButton = notification.object as? NSPopUpButton {
@@ -141,15 +137,15 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         }
         print("bar = ",bar)
     }
-
+    
     @objc func updateChangeCompte(_ notification: Notification) {
-
+        
         self.resetOperation()
     }
     
     func controlTextDidEndEditing (_ notification: Notification) {
-    
-//        super.controlTextDidEndEditing(notification)
+        
+        //        super.controlTextDidEndEditing(notification)
         var bar = ""
         if let textField = notification.object as? NSTextField {
             
@@ -196,7 +192,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         self.pieChartView.drawEntryLabelsEnabled = false
         
         initializeLegend(self.pieChartView.legend)
-
+        
         self.pieChartView.chartDescription?.enabled = false
         self.pieChartView.noDataText = Localizations.Chart.No_chart_Data_Available
         self.pieChartView.holeColor = .windowBackgroundColor
@@ -211,11 +207,11 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         legend.xEntrySpace = 7
         legend.yEntrySpace = 0
         legend.yOffset = 0
-
+        
         legend.font = NSFont(name: "HelveticaNeue-Light", size: 8.0)!
         legend.textColor = NSColor.labelColor
     }
-
+    
     // MARK: update Chart Data
     func updateChartData()
     {
@@ -244,7 +240,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             return }
         
         self.addView.isHidden = groupedBonds.isEmpty == false ? true : false
-
+        
         // MARK: PieChartDataEntry
         var entries = [PieChartDataEntry]()
         var colors : [NSColor] = []
@@ -289,19 +285,21 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     func contextSaveEdition() {
         
         let context = mainObjectContext
-
+        
         // creation = one operation
         if edition == false {
             
+            // Create entityOperation
             self.entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as? EntityTransactions
-
             self.entityOperation?.dateCree = Date()
             self.entityOperation?.uuid = UUID()
             self.entityOperation?.account = currentAccount
-
+            
+            // Create entitySousOperation
+            let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: context!) as! EntitySousOperations
+            self.subOperations.append(entitySousOperation)
             let setSousOperation = NSSet(array: subOperations)
             self.entityOperation?.addToSousOperations(setSousOperation)
-
             self.entityOperations.append(entityOperation!)
         }
         
@@ -309,9 +307,6 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         if self.entityOperations.count == 1 && edition == true {
             
             let setSousOperation = NSSet(array: subOperations)
-            
-//            let sub = entityOperations.first?.sousOperations
-//            self.entityOperations.first?.removeFromSousOperations(sub!)
             self.entityOperations.first?.addToSousOperations(setSousOperation)
         }
     }
@@ -368,7 +363,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
                     let item = self.numCheque.stringValue
                     oneOperation.checkNumber = item
                 }
-
+                
                 // Operation Link
                 if (setTransfert.isEmpty == false && popUpTransfert.indexOfSelectedItem != 0)  {
                     createOperationLiee(oneOperation: oneOperation)
@@ -383,7 +378,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             NotificationCenter.send(.updateBalance)
             if resetOp == true {
                 self.resetOperation()
-//        self.delegate?.resetChange()
+                //        self.delegate?.resetChange()
             }
         }
     }
@@ -400,19 +395,17 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             self.delegate?.reloadData(true, true)
         }
     }
-
+    
     func createOperationLiee(oneOperation: EntityTransactions ) {
-
-        print("Operation Liée")
         
+        print("Operation Liée")
         let context = mainObjectContext
-
         if oneOperation.operationLiee == nil {
             
             self.entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as? EntityTransactions
             self.entityOperationsTransfert?.operationLiee = oneOperation
             oneOperation.operationLiee = entityOperationsTransfert
-        
+            
         } else {
             entityOperationsTransfert = oneOperation.operationLiee
         }
@@ -424,7 +417,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         
         entityOperationsTransfert?.dateModifie   = oneOperation.dateModifie
         entityOperationsTransfert?.dateCree      = oneOperation.dateCree
-
+        
         
         /// Date operation
         entityOperationsTransfert?.dateOperation = oneOperation.dateOperation
@@ -443,16 +436,16 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         entityOperationsTransfert?.bankStatement = oneOperation.bankStatement
         
         let entityPreference = Preference.shared.getAllDatas()
-
+        
         let setSout = oneOperation.sousOperations
         subOperations = setSout?.allObjects as! [EntitySousOperations]
         
         print("count subOperations = ", subOperations.count )
-//        entityOperationsTransfert?.removeFromSousOperations(setSout!)
+        //        entityOperationsTransfert?.removeFromSousOperations(setSout!)
         for sousOperation in subOperations {
             
             let entitySousOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: context!) as? EntitySousOperations
-
+            
             // la rubrique existe t elle ??
             let labelCat = (sousOperation.category?.name)!
             let entityCategory = Categories.shared.find(name: labelCat)
@@ -463,7 +456,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             
             // Libelle
             entitySousOperationsTransfert!.libelle       = sousOperation.libelle
-           
+            
             entityOperationsTransfert?.addToSousOperations(entitySousOperationsTransfert!)
             
             print("count = ", entityOperationsTransfert?.sousOperations?.count ?? 0)

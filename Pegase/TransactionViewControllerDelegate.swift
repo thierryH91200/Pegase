@@ -2,7 +2,7 @@ import AppKit
 
 extension TransactionViewController: ListeOperationsDelegate {
     
-    // MARK: razData
+    // MARK: - resetOperation
     func resetOperation() {
         
         self.edition = false
@@ -79,7 +79,7 @@ extension TransactionViewController: ListeOperationsDelegate {
         self.datePointage.dateValue = Date()
     }
     
-    // MARK: editionDatas
+    // MARK: - edition Operations
     func editionOperations(_ quakes: [EntityTransactions]) {
         
         self.edition = true

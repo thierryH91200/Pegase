@@ -149,6 +149,7 @@
 		03213CDF23F9780900002DD7 /* RubriqueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CE123F9780900002DD7 /* RubriqueViewController.xib */; };
 		03213CEA23F9781E00002DD7 /* ParameterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213CEC23F9781E00002DD7 /* ParameterController.xib */; };
 		0325988E2527506700FCB5BD /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325988C2527506700FCB5BD /* AutoCompleteTextField.swift */; };
+		0325F25526441124003027AE /* DSFFloatLabelledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325F25326441124003027AE /* DSFFloatLabelledTextField.swift */; };
 		032C13062455A1F400831E23 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 032C13052455A1F400831E23 /* Charts */; };
 		032CE32924E9529000660A8B /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 032CE32824E9523100660A8B /* MyDB.sqlite */; };
 		032CE32B24E9B27B00660A8B /* NSOpenPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032CE32A24E9B27B00660A8B /* NSOpenPanel.swift */; };
@@ -469,6 +470,7 @@
 		03213CF223F9782300002DD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ParameterController.strings; sourceTree = "<group>"; };
 		03213CF423F9782400002DD7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ParameterController.strings; sourceTree = "<group>"; };
 		0325988C2527506700FCB5BD /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
+		0325F25326441124003027AE /* DSFFloatLabelledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSFFloatLabelledTextField.swift; sourceTree = "<group>"; };
 		032A5CE12502340800D787AD /* Capture10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture10.png; sourceTree = "<group>"; };
 		032CE32824E9523100660A8B /* MyDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyDB.sqlite; sourceTree = "<group>"; };
 		032CE32A24E9B27B00660A8B /* NSOpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOpenPanel.swift; sourceTree = "<group>"; };
@@ -1150,6 +1152,7 @@
 				034EC90223F87F51006944DD /* HeaderCell.swift */,
 				034EC90623F87F51006944DD /* ManagedObject.swift */,
 				03AF08AC260CC33B0020CD24 /* Error.swift */,
+				0325F25326441124003027AE /* DSFFloatLabelledTextField.swift */,
 				034EC90523F87F51006944DD /* MLTextField.swift */,
 				034EC90123F87F50006944DD /* Notification.swift */,
 				034EC90923F87F51006944DD /* NSImage.swift */,
@@ -1593,6 +1596,7 @@
 				034EC8F723F87EF1006944DD /* Categories.swift in Sources */,
 				03AC6B8A25E3CCC8004C7223 /* NotificationHandler.swift in Sources */,
 				034EC90B23F87F51006944DD /* NSUserInterfaceItemIdentifier.swift in Sources */,
+				0325F25526441124003027AE /* DSFFloatLabelledTextField.swift in Sources */,
 				034EC8CF23F87EB2006944DD /* MainWindowDelegate.swift in Sources */,
 				03213B4223F9053A00002DD7 /* TransactionViewControllerAction.swift in Sources */,
 				034ECB7323F88044006944DD /* AccountModalWindowController.swift in Sources */,
