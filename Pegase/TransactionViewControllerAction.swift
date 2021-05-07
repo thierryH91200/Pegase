@@ -51,7 +51,6 @@ extension TransactionViewController  {
             }
             self.sousOperationModalWindowController = nil
         })
-        
     }
     
     @IBAction func editSubOperation(_ sender: Any) {

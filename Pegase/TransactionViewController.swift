@@ -305,7 +305,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         
         // edition = true
         if self.entityOperations.count == 1 && edition == true {
-            
+            // ???????
             let setSousOperation = NSSet(array: subOperations)
             self.entityOperations.first?.addToSousOperations(setSousOperation)
         }

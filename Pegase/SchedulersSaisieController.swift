@@ -147,10 +147,10 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
                 default:
                     dateFin.dateValue = dateDeb1 + nombre.months
                 }
-            
+                
             case "dateFin":
                 print("\(changeText) : *** Error ***")
-            
+                
             default:
                 print("\(changeText) : \(dateDebut.dateValue)    \(dateFin.dateValue)   \(frequence.stringValue) ")
             }

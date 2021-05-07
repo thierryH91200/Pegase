@@ -187,25 +187,8 @@ extension SchedulerViewController: NSTableViewDelegate {
     }
     
     func tableView(_: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 60
+        return 40
     }
-
-
-//    func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
-//
-//        if edge == .trailing {
-//            let deleteAction = NSTableViewRowAction(style: .destructive, title: "Delete") { (_, _) in
-//                let quake = self.entityEcheancier[row]
-//                Echeanciers.shared.remove(entity: quake )
-//                self.updateData()
-//            }
-//            let flagAction = NSTableViewRowAction(style: .regular, title: "Flag") { (_, _) in
-//                print("Flag")
-//            }
-//            return [makeDeleteAction(), flagAction]
-//        }
-//        return []
-//    }
     
     private func makeDeleteAction() -> NSTableViewRowAction {
         let a = NSTableViewRowAction(
@@ -232,5 +215,4 @@ extension SchedulerViewController: EcheanciersDelegate {
         
         tableView.reloadData()
     }
-    
 }
