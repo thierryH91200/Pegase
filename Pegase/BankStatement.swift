@@ -33,9 +33,10 @@ final class BankStatement: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        tableBankStatement.autosaveName = "saveBankStatement"
-        tableBankStatement.autosaveTableColumns = true
         
+        let id = currentAccount?.uuid.uuidString
+        self.tableBankStatement.autosaveName = "saveBankStatement" + (id)!
+        self.tableBankStatement.autosaveTableColumns = true
     }
     
 }

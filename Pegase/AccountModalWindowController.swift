@@ -93,10 +93,10 @@ extension AccountModalWindowController: PopOverModalDelegate
     
 }
 
-//let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true).first as! String
-//// self.fileName is whatever the filename that you need to append to base directory here.
+// let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true).first as! String
+// self.fileName is whatever the filename that you need to append to base directory here.
 //
-//let path = documentsDirectory.stringByAppendingPathComponent(self.fileName)
+// let path = documentsDirectory.stringByAppendingPathComponent(self.fileName)
 //
-//let success = data.writeToFile(path, atomically: true)
-//if !success { // handle error }
+// let success = data.writeToFile(path, atomically: true)
+// if !success { // handle error }

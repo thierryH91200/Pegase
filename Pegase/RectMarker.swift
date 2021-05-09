@@ -101,8 +101,7 @@ open class RectMarker: MarkerImage
         context.restoreGState()
     }
     
-    func drawRoundedRect(rect: CGRect, inContext context: CGContext?,
-                         radius: CGFloat, borderColor: CGColor, fillColor: CGColor) {
+    func drawRoundedRect(rect: CGRect, inContext context: CGContext?, radius: CGFloat, borderColor: CGColor, fillColor: CGColor) {
         // 1
         let path = CGMutablePath()
         

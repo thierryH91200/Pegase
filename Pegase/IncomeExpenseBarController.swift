@@ -50,7 +50,6 @@ final class IncomeExpenseBarController: CommonGraph {
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        print("\(self) viewDidDisappear : ", ".updateAccount")
         NotificationCenter.remove(instance: self, name: .updateAccount)
     }
     

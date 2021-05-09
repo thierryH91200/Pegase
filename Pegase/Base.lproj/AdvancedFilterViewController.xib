@@ -217,7 +217,7 @@
                                             </menu>
                                         </popUpMenus>
                                     </predicateEditorRowTemplate>
-                                    <predicateEditorRowTemplate rowType="simple" id="tBD-EK-kXf">
+                                    <predicateEditorRowTemplate rowType="simple" id="tBD-EK-kXf" customClass="RowTemplateRelationshipStatus" customModule="Pegase" customModuleProvider="target">
                                         <array key="leftExpressionObject">
                                             <expression type="keyPath">
                                                 <string key="keyPath">name</string>
@@ -225,13 +225,13 @@
                                         </array>
                                         <array key="rightExpressionObject">
                                             <expression type="constant">
-                                                <string key="constantValue">Constant Value</string>
+                                                <string key="constantValue">Prevue</string>
                                             </expression>
                                             <expression type="constant">
-                                                <string key="constantValue">Constant Value</string>
+                                                <string key="constantValue">Engagé</string>
                                             </expression>
                                             <expression type="constant">
-                                                <string key="constantValue">Constant Value</string>
+                                                <string key="constantValue">Réalisé</string>
                                             </expression>
                                         </array>
                                         <popUpMenus>
@@ -265,19 +265,19 @@
                                             </menu>
                                             <menu id="4yt-t9-qVX">
                                                 <items>
-                                                    <menuItem title="Prévue" state="on" id="wrD-5K-ZwY">
+                                                    <menuItem title="Prevue" state="on" id="stZ-wi-SV4">
                                                         <expression key="representedObject" type="constant">
-                                                            <string key="constantValue">Constant Value</string>
+                                                            <string key="constantValue">Prevue</string>
                                                         </expression>
                                                     </menuItem>
-                                                    <menuItem title="Réalisé" id="FqF-71-TMe">
+                                                    <menuItem title="Engagé" id="1Gl-F6-DVE">
                                                         <expression key="representedObject" type="constant">
-                                                            <string key="constantValue">Constant Value</string>
+                                                            <string key="constantValue">Engagé</string>
                                                         </expression>
                                                     </menuItem>
-                                                    <menuItem title="Pointé" id="6WT-TD-Alh">
+                                                    <menuItem title="Réalisé" id="uk5-I5-OUi">
                                                         <expression key="representedObject" type="constant">
-                                                            <string key="constantValue">Constant Value</string>
+                                                            <string key="constantValue">Réalisé</string>
                                                         </expression>
                                                     </menuItem>
                                                 </items>

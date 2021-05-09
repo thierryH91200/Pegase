@@ -58,8 +58,6 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
             PersonViewController()
         ]
     )
-
-    let defaults = UserDefaults.standard
     
     var delimiter = ""
     var quote = ""

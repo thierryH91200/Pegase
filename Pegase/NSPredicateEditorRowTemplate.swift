@@ -172,6 +172,22 @@ final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
         return newPredicate
     }
 }
+final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
+    
+    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate {
+        
+        let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
+        let operatorType = predicate.predicateOperatorType
+        let operatorName = findOperatorType(operatorType: operatorType)
+//        let right = TypeOfStatut(rawValue: predicate.rightExpression.r)
+        
+        let predicateFormat  = String(format : "%@ %@ %@", predicate.leftExpression , operatorName, predicate.rightExpression)
+        print(predicateFormat)
+        
+        let newPredicate = NSPredicate(format: predicateFormat)
+        return newPredicate
+    }
+}
 
 final class RowTemplateRelationshipLibelle: NSPredicateEditorRowTemplate {
     
@@ -194,9 +210,10 @@ final class RowTemplateRelationshipMontant: NSPredicateEditorRowTemplate {
         let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
         let operatorType = predicate.predicateOperatorType
         let operatorName = findOperatorType(operatorType: operatorType)
+
         let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $sousOperation.amount %@ %@).@count > 0", operatorName, predicate.rightExpression)
-        
         let newPredicate = NSPredicate(format: predicateFormat)
+        
         return newPredicate
     }
 }

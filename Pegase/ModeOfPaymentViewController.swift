@@ -27,7 +27,6 @@ final class ModeOfPaymentViewController: NSViewController
         super.viewDidLoad()
         
         NotificationCenter.receive( instance: self, selector: #selector(updateChangeAccount), name: .updateAccount)
-        
         updateData()
     }
     

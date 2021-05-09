@@ -78,7 +78,7 @@
 "ImportSimplifiee.category" = "Categorie";
 "ImportSimplifiee.comment" = "Comment";
 "ImportSimplifiee.compte" = "Compte";
-"ImportSimplifiee.dateOperation" = "Date Transaction";
+"ImportSimplifiee.dateOperation" = "Date de l'opération";
 "ImportSimplifiee.datePointage" = "Date Pointage";
 "ImportSimplifiee.mode" = "Mode Paiement";
 "ImportSimplifiee.montant" = "Montant";
@@ -128,9 +128,9 @@
 "Rubric.MessageText" = "Delete this element";
 
 // MARK: -  Statut
-"Statut.Engaged" = "Engaged";
-"Statut.Planifie" = "Plannifie";
-"Statut.Realise" = "Executed";
+"Statut.Engaged" = "Engagé";
+"Statut.Planifie" = "Prévue";
+"Statut.Realise" = "Réalisé";
 
 // MARK: -  alert
 "alert.title_error" = "Error";
@@ -138,15 +138,15 @@
 "alert.title_warning" = "Warning";
 
 // MARK: -  searchMenu
-"searchMenu.title.all" = "all";
-"searchMenu.title.libelle" = "libelle";
-"searchMenu.title.categorie" = "categorie";
+"searchMenu.title.all" = "tous";
+"searchMenu.title.libelle" = "libellé";
+"searchMenu.title.categorie" = "catégorie";
 "searchMenu.title.rubric" = "rubrique";
 "searchMenu.title.menu" = "menu";
 
 // MARK: -  MenuBar
 "MenuBar.SuivieDeTresorerie.CourbeDeTrésorerie" = "Courbe de trésorerie";
-"MenuBar.SuivieDeTresorerie.ListeDesOpérations" = "List of Transactions";
+"MenuBar.SuivieDeTresorerie.ListeDesOpérations" = "Liste des opérations";
 "MenuBar.SuivieDeTresorerie.Name" = "Suivie de Tresorerie";
 "MenuBar.SuivieDeTresorerie.SiteWebDeLaBanque" = "Site Web de la banque";
 

@@ -207,21 +207,7 @@ extension MainWindowController {
         importWindowController?.delegate = listTransactionsController
         importWindowController?.showWindow(nil)
     }
-    
-    func findStatut ( statut: String) -> Int16 {
-        if TypeOfStatut(rawValue: 0 )?.label == statut {
-            return 0
-        }
-        if TypeOfStatut(rawValue: 1 )?.label == statut {
-            return 1
-        }
-        if TypeOfStatut(rawValue: 2 )?.label == statut {
-            return 2
-        }
-        return 1
         
-    }
-    
     // MARK: - Import Operations Simplifiee
     @IBAction func ImportOperationsSimplifiee(_ sender: Any) {
         
@@ -287,8 +273,8 @@ extension MainWindowController {
                         let entityModePaiement = PaymentMode.shared.find(name: labelMode) ?? (entityPreference.paymentMode)!
                         entity.paymentMode = entityModePaiement
                         
-                        let labelStatut = TypeOfStatut(rawValue: entityPreference.statut)!.label
-                        let numStatut = self.findStatut( statut: key[statut] ?? labelStatut)
+                        let labelStatut = Statut.TypeOfStatut(rawValue: entityPreference.statut)!.label
+                        let numStatut = Statut.shared.findStatut( statut: key[statut] ?? labelStatut)
                         entity.statut = numStatut
                         
                         // EntitySousOperations

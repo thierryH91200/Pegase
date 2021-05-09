@@ -5,7 +5,6 @@ final class CurtainViewController: NSViewController {
     @IBOutlet weak var secureText: NSSecureTextField!
     
     var size = CGSize.zero
-    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +21,7 @@ final class CurtainViewController: NSViewController {
     }
     
     @IBAction func confirm(_ sender: Any) {
-        let passWord = defaults.string(forKey: "password")
+        let passWord = Defaults.string(forKey: "password")
         
         if passWord == secureText.stringValue || passWord == nil {
             if presentingViewController != nil {

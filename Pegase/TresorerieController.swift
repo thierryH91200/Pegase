@@ -179,7 +179,7 @@ final class TresorerieController: NSViewController
                 // même jour mais le statut peut être différent ??
                 if Int(indexDate) == indexSlider {
                     
-                    let propertyEnum = TypeOfStatut(rawValue: listTransactions[index].statut)!
+                    let propertyEnum = Statut.TypeOfStatut(rawValue: listTransactions[index].statut)!
                     switch propertyEnum
                     {
                     case .planifie:

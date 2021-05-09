@@ -53,46 +53,46 @@ final class ListTransactionsController: NSViewController {
         case mode     = "mode"
     }
     
-    enum TypeOfStatut: Int {
-        case planifie
-        case engage
-        case realise
-        
-        var label: String
-        {
-            switch self {
-            case .planifie: return Localizations.Statut.Planifie
-            case .engage: return Localizations.Statut.Engaged
-            case .realise: return Localizations.Statut.Realise
-            }
-        }
-        var color: NSColor
-        {
-            switch self {
-            case .planifie:
-                return .green
-            case .engage:
-                return .blue
-            case .realise:
-                return .black
-            }
-        }
-        var attribut: [NSAttributedString.Key: Any]
-        {
-            var attribut = [NSAttributedString.Key: Any]()
-            attribut[.foregroundColor] = self.color
-            
-            switch self {
-            case .planifie:
-                attribut[.font ] = NSFont(name: "Avenir-Oblique", size: 12.0)!
-            case .engage:
-                attribut[.font ] = NSFont(name: "Avenir", size: 12.0)!
-            case .realise:
-                attribut[.font ] = NSFont(name: "Avenir", size: 12.0)!
-            }
-            return attribut
-        }
-    }
+//    enum TypeOfStatut: Int {
+//        case planifie
+//        case engage
+//        case realise
+//
+//        var label: String
+//        {
+//            switch self {
+//            case .planifie: return Localizations.Statut.Planifie
+//            case .engage: return Localizations.Statut.Engaged
+//            case .realise: return Localizations.Statut.Realise
+//            }
+//        }
+//        var color: NSColor
+//        {
+//            switch self {
+//            case .planifie:
+//                return .green
+//            case .engage:
+//                return .blue
+//            case .realise:
+//                return .black
+//            }
+//        }
+//        var attribut: [NSAttributedString.Key: Any]
+//        {
+//            var attribut = [NSAttributedString.Key: Any]()
+//            attribut[.foregroundColor] = self.color
+//
+//            switch self {
+//            case .planifie:
+//                attribut[.font ] = NSFont(name: "Avenir-Oblique", size: 12.0)!
+//            case .engage:
+//                attribut[.font ] = NSFont(name: "Avenir", size: 12.0)!
+//            case .realise:
+//                attribut[.font ] = NSFont(name: "Avenir", size: 12.0)!
+//            }
+//            return attribut
+//        }
+//    }
     
     //    private let _undoManager = UndoManager()
     //    override var undoManager: UndoManager {
@@ -156,7 +156,6 @@ final class ListTransactionsController: NSViewController {
         super.viewDidAppear()
         view.window!.title = Localizations.General.Liste_des_opérations
         self.resetChange()
-        
     }
     
     // -----------------------------------------------------------------------
@@ -206,10 +205,11 @@ final class ListTransactionsController: NSViewController {
         self.outlineListView.allowsEmptySelection = true
         self.outlineListView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
 
-        self.outlineListView.autosaveExpandedItems = true
-        self.outlineListView.autosaveTableColumns = true
         let id = currentAccount?.uuid.uuidString
         self.outlineListView.autosaveName = "save" + (id)!
+        self.outlineListView.autosaveExpandedItems = true
+        self.outlineListView.autosaveTableColumns = true
+
 
         self.reloadData(false, true)
 
@@ -399,13 +399,13 @@ final class ListTransactionsController: NSViewController {
         // convert to struct - more fast and easy to sort
         var allGroupedYear : [ GroupedYearOperations ] = []
         
-        printTimeElapsedWhenRunningCode(title:"convert dict to class") {
+//        printTimeElapsedWhenRunningCode(title:"convert dict to class") {
             for grouped in groupedID {
                 let groupedYear = GroupedYearOperations(dictionary: grouped)
                 allGroupedYear.append(groupedYear)
             }
             groupedSorted = allGroupedYear.sorted(by: {$0.year > $1.year })
-        }
+//        }
     }
     
     private func balanceCalculation()
@@ -419,7 +419,7 @@ final class ListTransactionsController: NSViewController {
         
         for index in stride(from: count - 1, to: -1, by: -1)
         {
-            let propertyEnum = TypeOfStatut(rawValue: Int(listTransactions[index].statut))!
+            let propertyEnum = Statut.TypeOfStatut(rawValue: Int16(listTransactions[index].statut))!
             switch propertyEnum
             {
             case .planifie:

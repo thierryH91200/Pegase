@@ -212,6 +212,25 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         
         switch propertyEnum
         {
+        case .dateOperation:
+            paragraph.alignment = .center
+            var time = Date()
+            if quake.dateOperation != nil {
+                time = quake.dateOperation!
+            }
+            let formattedDate = formatterDate.string(from: time)
+            textField.stringValue = formattedDate
+            
+        case .datePointage:
+            paragraph.alignment = .center
+            var time = Date()
+            if quake.datePointage != nil {
+                time = quake.datePointage!
+            }
+            let formatteddate = formatterDate.string(from: time)
+            textField.stringValue = formatteddate
+            
+
         case .rubrique:
             if sousOperations.count == 1 {
                 textField.stringValue = sousOperations[0].category?.rubric?.name ?? ""
@@ -235,24 +254,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
                 cellView = CrossHatchView()
                 textField.stringValue = ""
             }
-            
-        case .dateOperation:
-            paragraph.alignment = .center
-            var time = Date()
-            if quake.dateOperation != nil {
-                time = quake.dateOperation!
-            }
-            let formattedDate = formatterDate.string(from: time)
-            textField.stringValue = formattedDate
-            
-        case .datePointage:
-            paragraph.alignment = .center
-            var time = Date()
-            if quake.datePointage != nil {
-                time = quake.datePointage!
-            }
-            let formatteddate = formatterDate.string(from: time)
-            textField.stringValue = formatteddate
             
         case .mode:
             paragraph.alignment = .left
@@ -300,8 +301,18 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             paragraph.alignment = .right
             
         case .statut:
-            let state = TypeOfStatut(rawValue: Int(quake.statut))?.label
-            textField.stringValue = state!
+            var label = ""
+            switch Statut.TypeOfStatut(rawValue: Int16(quake.statut)) {
+            case .engage:
+                label = Localizations.Statut.Engaged
+            case .planifie:
+                label = Localizations.Statut.Planifie
+            case .realise:
+                label = Localizations.Statut.Realise
+            default:
+                label = Localizations.Statut.Engaged
+            }
+            textField.stringValue = label
             
         case .liee:
             if let liee = quake.operationLiee {
@@ -369,7 +380,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             attrs[.foregroundColor] = sousOperations.first?.category?.rubric?.color
             
         case .some(.statut):
-            let statutEnum = TypeOfStatut(rawValue: (Int(quake.statut)))!
+            let statutEnum = Statut.TypeOfStatut(rawValue: Int16(quake.statut))!
             attrs = statutEnum.attribut
             
         case .some(.mode):

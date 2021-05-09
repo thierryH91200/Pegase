@@ -43,7 +43,6 @@ extension ListTransactionsController: NSDatePickerCellDelegate {
             entitySchedule.dateValeur = dateValeur
         }
         
-//        print("datePickerCell")
         getAllData()
         reloadData(false)
         currentAccount?.dateEcheancier = proposedDate

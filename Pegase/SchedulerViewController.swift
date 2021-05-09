@@ -23,7 +23,6 @@ final class SchedulerViewController: NSViewController {
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()
-        print("EcheanciersViewController viewDidDisappear : ", "updateCompte")
         NotificationCenter.remove( instance: self, name: .updateAccount)
         NotificationCenter.remove( instance: self, name: .selectionDidChangeTable)
     }

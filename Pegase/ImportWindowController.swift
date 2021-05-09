@@ -24,9 +24,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
     @IBOutlet var m_window: NSWindow!
     
     var menuHeader = NSMenu()
-    
-    let defaults = UserDefaults.standard
-    
+        
     var headerColumnForMenu = [HeaderColumnForMenu]()
     
     var statusBarFormatViewController: TTFormatViewController?
@@ -152,7 +150,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             if headerColumn.isEmpty == false {
                 let column = headerColumn[0].numCol
                 let statut = data[ column]
-                entityOperation.statut = findStatut(statut: statut)
+                entityOperation.statut = Statut.shared.findStatut(statut: statut)
             } else {
                 entityOperation.statut = entityPreference.statut
             }

@@ -6,8 +6,6 @@ import Cocoa
 import UserNotifications
 
 
-let defaults = UserDefaults.standard
-
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate { // , UNUserNotificationCenterDelegate {
     
@@ -15,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate { // , UNUserNotificationCent
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        UserDefaults.standard.set(true, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
+        Defaults.set(true, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
 
         // Insert code here to initialize your application
         //        let center = UNUserNotificationCenter.current()

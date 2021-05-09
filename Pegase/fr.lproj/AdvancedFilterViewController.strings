@@ -1,6 +1,6 @@
 
 /* Class = "NSMenuItem"; title = "is"; ObjectID = "1tC-Rw-FAK"; */
-"1tC-Rw-FAK.title" = "is";
+"1tC-Rw-FAK.title" = "est";
 
 /* Class = "NSMenuItem"; title = "is greater than"; ObjectID = "21l-Jf-opp"; */
 "21l-Jf-opp.title" = "is greater than";
@@ -21,7 +21,7 @@
 "6WT-TD-Alh.title" = "Pointé";
 
 /* Class = "NSMenu"; title = "Libelle"; ObjectID = "6YQ-ia-bi8"; */
-"6YQ-ia-bi8.title" = "Libelle";
+"6YQ-ia-bi8.title" = "Libellé";
 
 /* Class = "NSMenuItem"; title = "is less than"; ObjectID = "83s-gb-LGE"; */
 "83s-gb-LGE.title" = "is less than";
@@ -81,13 +81,13 @@
 "Kkk-j7-Mc0.title" = "is less than";
 
 /* Class = "NSMenuItem"; title = "is not"; ObjectID = "KxZ-KY-pIk"; */
-"KxZ-KY-pIk.title" = "is not";
+"KxZ-KY-pIk.title" = "n'est pas";
 
 /* Class = "NSButtonCell"; title = "Apply"; ObjectID = "LZZ-6Z-4iW"; */
 "LZZ-6Z-4iW.title" = "Apply";
 
 /* Class = "NSMenuItem"; title = "is"; ObjectID = "MK3-ro-yBt"; */
-"MK3-ro-yBt.title" = "is";
+"MK3-ro-yBt.title" = "est";
 
 /* Class = "NSMenuItem"; title = "begins with"; ObjectID = "N0Y-aE-nAH"; */
 "N0Y-aE-nAH.title" = "begins with";
@@ -96,7 +96,7 @@
 "OWa-gZ-Efd.title" = "ends with";
 
 /* Class = "NSMenuItem"; title = "is not"; ObjectID = "QdU-og-aHq"; */
-"QdU-og-aHq.title" = "is not";
+"QdU-og-aHq.title" = "n'est pas";
 
 /* Class = "NSMenuItem"; title = "Rubrique"; ObjectID = "REe-cn-lOp"; */
 "REe-cn-lOp.title" = "Rubrique";
@@ -108,16 +108,16 @@
 "TCn-sg-Tk5.title" = "is";
 
 /* Class = "NSMenuItem"; title = "is not"; ObjectID = "U2T-9h-ETt"; */
-"U2T-9h-ETt.title" = "is not";
+"U2T-9h-ETt.title" = "n'est pas";
 
 /* Class = "NSMenuItem"; title = "ends with"; ObjectID = "Yek-bp-gSi"; */
 "Yek-bp-gSi.title" = "ends with";
 
 /* Class = "NSMenuItem"; title = "is not"; ObjectID = "djB-ah-avD"; */
-"djB-ah-avD.title" = "is not";
+"djB-ah-avD.title" = "n'est pas";
 
 /* Class = "NSMenuItem"; title = "is not"; ObjectID = "fVn-bY-KE5"; */
-"fVn-bY-KE5.title" = "is not";
+"fVn-bY-KE5.title" = "n'est pas";
 
 /* Class = "NSMenuItem"; title = "is less than"; ObjectID = "fjl-eq-Kr1"; */
 "fjl-eq-Kr1.title" = "is less than";
@@ -126,7 +126,7 @@
 "ggf-QS-7Xf.title" = "Date Pointage";
 
 /* Class = "NSMenuItem"; title = "is not"; ObjectID = "ghh-YP-sNP"; */
-"ghh-YP-sNP.title" = "is not";
+"ghh-YP-sNP.title" = "n'est pas";
 
 /* Class = "NSMenuItem"; title = "is less than"; ObjectID = "gtb-pk-ogl"; */
 "gtb-pk-ogl.title" = "is less than";
@@ -150,7 +150,7 @@
 "phd-4s-YNo.title" = "is";
 
 /* Class = "NSMenuItem"; title = "is not"; ObjectID = "rbX-jA-N7b"; */
-"rbX-jA-N7b.title" = "is not";
+"rbX-jA-N7b.title" = "n'est pas";
 
 /* Class = "NSMenuItem"; title = "contains"; ObjectID = "ry9-NC-Nx3"; */
 "ry9-NC-Nx3.title" = "contains";
