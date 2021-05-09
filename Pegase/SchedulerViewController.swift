@@ -47,11 +47,14 @@ final class SchedulerViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        mainContext = mainObjectContext
+        let id = currentAccount?.uuid.uuidString
+        self.tableView.autosaveName = "saveEcheancier" + (id)!
+        self.tableView.autosaveTableColumns = true
+        
         updateData()
     }
     
-    @objc func updateChangeAccount(_ note: Notification) {
+    @objc func updateChangeAccount(_ notification: Notification) {
         updateData()
     }
     
@@ -70,7 +73,8 @@ final class SchedulerViewController: NSViewController {
     }
     
     func tableView( _ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        return MyNSTableRowView()
+//        return MyNSTableRowView()
+        return MenuTableRowView()
     }
     
     @IBAction func removeEcheanciers(_ sender: NSButton) {
@@ -78,7 +82,6 @@ final class SchedulerViewController: NSViewController {
         if selectedRow >= 0 {
             let quake = entityEcheancier[selectedRow]
             Echeanciers.shared.remove(entity: quake )
-//            self.tableView.reloadData()
             updateData()
         }
     }
@@ -93,82 +96,68 @@ extension SchedulerViewController: NSTableViewDataSource {
 
 extension SchedulerViewController: NSTableViewDelegate {
     
+//    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+//            return MenuTableRowView()
+//    }
+//
+    
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
+        var result : NSTableCellView?
         let identifier = tableColumn!.identifier
         switch identifier {
         case .echLibelle :
-            let result = tableView.makeView(withIdentifier: .echLibelle, owner: self) as! NSTableCellView
-            result.textField?.stringValue = entityEcheancier[row].libelle!
-            return result
-            
+            result = tableView.makeView(withIdentifier: .echLibelle, owner: self) as? NSTableCellView
+            result?.textField?.stringValue = entityEcheancier[row].libelle!
         case .echDateDebut:
-            let result = tableView.makeView(withIdentifier: .echDateDebut, owner: self) as! NSTableCellView
+            result = tableView.makeView(withIdentifier: .echDateDebut, owner: self) as? NSTableCellView
             let time = entityEcheancier[row].dateDebut!
             let formatteddate = formatterDate.string(from: time)
-            result.textField?.stringValue = formatteddate
-            return result
+            result?.textField?.stringValue = formatteddate
         case .echDateFin:
-            let result = tableView.makeView(withIdentifier: .echDateFin, owner: self) as! NSTableCellView
+            result = tableView.makeView(withIdentifier: .echDateFin, owner: self) as? NSTableCellView
             let time = entityEcheancier[row].dateFin!
             let formatteddate = formatterDate.string(from: time)
-            result.textField?.stringValue = formatteddate
-            return result
+            result?.textField?.stringValue = formatteddate
         case .echDateValeur:
-            let result = tableView.makeView(withIdentifier: .echDateValeur, owner: self) as! NSTableCellView
+            result = tableView.makeView(withIdentifier: .echDateValeur, owner: self) as? NSTableCellView
             let time = entityEcheancier[row].dateValeur!
             let formatteddate = formatterDate.string(from: time)
-            result.textField?.stringValue = formatteddate
-            return result
-            
+            result?.textField?.stringValue = formatteddate
         case .echOccurence:
-            let result = tableView.makeView(withIdentifier: .echOccurence, owner: self) as! NSTableCellView
-            result.textField?.intValue = Int32(entityEcheancier[row].occurence)
-            return result
+            result = tableView.makeView(withIdentifier: .echOccurence, owner: self) as? NSTableCellView
+            result?.textField?.intValue = Int32(entityEcheancier[row].occurence)
         case .echFrequence:
-            let result = tableView.makeView(withIdentifier: .echFrequence, owner: self) as! NSTableCellView
-            result.textField?.intValue = Int32(entityEcheancier[row].frequence)
-            return result
+            result = tableView.makeView(withIdentifier: .echFrequence, owner: self) as? NSTableCellView
+            result?.textField?.intValue = Int32(entityEcheancier[row].frequence)
         case .echModePaiement:
-            let result = tableView.makeView(withIdentifier: .echModePaiement, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].paymentMode?.name)!
-            return result
-            
+            result = tableView.makeView(withIdentifier: .echModePaiement, owner: self) as? NSTableCellView
+            result?.textField?.stringValue = (entityEcheancier[row].paymentMode?.name)!
         case .echRubrique:
-            let result = tableView.makeView(withIdentifier: .echRubrique, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].category?.rubric!.name)!
-            return result
+            result = tableView.makeView(withIdentifier: .echRubrique, owner: self) as? NSTableCellView
+            result?.textField?.stringValue = (entityEcheancier[row].category?.rubric!.name)!
         case .echCategorie:
-            let result = tableView.makeView(withIdentifier: .echCategorie, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].category?.name)!
-            return result
+            result = tableView.makeView(withIdentifier: .echCategorie, owner: self) as? NSTableCellView
+            result?.textField?.stringValue = (entityEcheancier[row].category?.name)!
         case .echMontant:
-            let result = tableView.makeView(withIdentifier: .echMontant, owner: self) as! NSTableCellView
-            result.textField?.doubleValue = entityEcheancier[row].amount
-            return result
-            
+            result = tableView.makeView(withIdentifier: .echMontant, owner: self) as? NSTableCellView
+            result?.textField?.doubleValue = entityEcheancier[row].amount
         case .account:
-            let result = tableView.makeView(withIdentifier: .account , owner: self) as! NSTableCellView
-            result.textField?.stringValue = entityEcheancier[row].account!.name!
-            return result
+            result = tableView.makeView(withIdentifier: .account , owner: self) as? NSTableCellView
+            result?.textField?.stringValue = entityEcheancier[row].account!.name!
         case .nameAccount:
-            let result = tableView.makeView(withIdentifier: .nameAccount, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].account?.identity?.name)!
-            return result
+            result = tableView.makeView(withIdentifier: .nameAccount, owner: self) as? NSTableCellView
+            result?.textField?.stringValue = (entityEcheancier[row].account?.identity?.name)!
         case .surNameAccount:
-            let result = tableView.makeView(withIdentifier: .surNameAccount, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].account?.identity?.surName)!
-            return result
-            
+            result = tableView.makeView(withIdentifier: .surNameAccount, owner: self) as? NSTableCellView
+            result?.textField?.stringValue = (entityEcheancier[row].account?.identity?.surName)!
         case .numberAccount:
-            let result = tableView.makeView(withIdentifier: .numberAccount, owner: self) as! NSTableCellView
-            result.textField?.stringValue = (entityEcheancier[row].account?.initAccount?.codeAccount)!
-            return result
-            
+             result = tableView.makeView(withIdentifier: .numberAccount, owner: self) as? NSTableCellView
+            result?.textField?.stringValue = (entityEcheancier[row].account?.initAccount?.codeAccount)!
         default:
-            return nil
-            
+            result = nil
         }
+        return result
     }
     
     func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
@@ -187,7 +176,7 @@ extension SchedulerViewController: NSTableViewDelegate {
     }
     
     func tableView(_: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 40
+        return 30
     }
     
     private func makeDeleteAction() -> NSTableViewRowAction {
@@ -205,14 +194,12 @@ extension SchedulerViewController: NSTableViewDelegate {
         Echeanciers.shared.remove(entity: quake )
         self.updateData()
     }
-
 }
 
 extension SchedulerViewController: EcheanciersDelegate {
     func updateData() {
         guard currentAccount != nil else { return }
         entityEcheancier = Echeanciers.shared.getAllDatas()
-        
         tableView.reloadData()
     }
 }

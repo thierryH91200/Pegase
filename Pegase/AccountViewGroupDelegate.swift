@@ -57,13 +57,13 @@ extension AccountGroupViewController: NSOutlineViewDelegate {
             return view
         }
         
-        if entityAccount.isFolder == true
-        {
-            let view = outlineView.makeView(withIdentifier: .FolderCell, owner: self) as! NSTableCellView
-            view.textField?.stringValue = entityAccount.name!
-            view.textField?.textColor = .textColor
-            return view
-        }
+//        if entityAccount.isFolder == true
+//        {
+//            let view = outlineView.makeView(withIdentifier: .FolderCell, owner: self) as! NSTableCellView
+//            view.textField?.stringValue = entityAccount.name!
+//            view.textField?.textColor = .textColor
+//            return view
+//        }
         
         if entityAccount.isAccount == true
         {

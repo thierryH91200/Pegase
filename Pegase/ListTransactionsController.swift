@@ -207,9 +207,10 @@ final class ListTransactionsController: NSViewController {
         self.outlineListView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
 
         self.outlineListView.autosaveExpandedItems = true
+        self.outlineListView.autosaveTableColumns = true
         let id = currentAccount?.uuid.uuidString
         self.outlineListView.autosaveName = "save" + (id)!
-        
+
         self.reloadData(false, true)
 
         outlineListView.menu = menuTable
@@ -227,7 +228,6 @@ final class ListTransactionsController: NSViewController {
     func setUpDatePicker() {
         
         self.datePicker.delegate = self
-        
         self.datePicker.allowEmptyDate = false
         self.datePicker.showPromptWhenEmpty = false
         self.datePicker.referenceDate = Date()

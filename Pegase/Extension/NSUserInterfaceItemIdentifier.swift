@@ -6,9 +6,8 @@ extension NSUserInterfaceItemIdentifier {
     static let CategoryCell       = NSUserInterfaceItemIdentifier("CategoryCell")
     
     static let HeaderCell         = NSUserInterfaceItemIdentifier("HeaderCell")
-    static let FolderCell         = NSUserInterfaceItemIdentifier("PlaylistFolderCell")
-    
     static let AccountCell        = NSUserInterfaceItemIdentifier("PlaylistCell")
+    
     static let collectionViewItem = NSUserInterfaceItemIdentifier("KSRetailCollectionViewItem")
     
     static let FeedCellHeader     = NSUserInterfaceItemIdentifier("FeedCellHeader")

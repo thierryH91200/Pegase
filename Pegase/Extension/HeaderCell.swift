@@ -33,6 +33,23 @@ class MyNSTableRowView: NSTableRowView {
     }
 }
 
+class MenuTableRowView: NSTableRowView {
+
+    override func drawSelection(in dirtyRect: NSRect) {
+        if self.selectionHighlightStyle != .none {
+            let selectionRect = NSInsetRect(self.bounds, 2.5, 2.5)
+            
+            if let color = NSColor.init(named: NSColor.Name("menu_table_selection_color")) {
+                color.setFill()
+            }
+            
+            let selectionPath = NSBezierPath.init(roundedRect: selectionRect, xRadius: 0, yRadius: 0)
+            selectionPath.fill()
+        }
+    }
+    
+}
+
 // MARK: - KSHeaderCellView
 final class KSHeaderCellView: NSTableCellView {
     

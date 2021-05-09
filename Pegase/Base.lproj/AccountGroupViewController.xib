@@ -100,44 +100,8 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView identifier="PlaylistFolderCell" id="4ru-Jf-AFj">
-                                                <rect key="frame" x="11" y="0.0" width="389" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <imageView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2p-uB-csv">
-                                                        <rect key="frame" x="3" y="1" width="19" height="19"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="19" id="A9b-j9-CxT"/>
-                                                            <constraint firstAttribute="width" constant="19" id="MrZ-Cv-qZa"/>
-                                                        </constraints>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSFolder" id="Ccn-Zi-Rjh"/>
-                                                    </imageView>
-                                                    <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fP0-Vq-NvN">
-                                                        <rect key="frame" x="28" y="3" width="360" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Playlist Folder Cell" id="w6J-XX-0BI">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                        <connections>
-                                                            <binding destination="4ru-Jf-AFj" name="value" keyPath="objectValue.item.name" id="bao-0d-u8m"/>
-                                                        </connections>
-                                                    </textField>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="fP0-Vq-NvN" firstAttribute="leading" secondItem="C2p-uB-csv" secondAttribute="trailing" constant="8" id="3rd-Io-PbE"/>
-                                                    <constraint firstItem="C2p-uB-csv" firstAttribute="leading" secondItem="4ru-Jf-AFj" secondAttribute="leading" constant="3" id="dpf-MU-6XQ"/>
-                                                    <constraint firstItem="C2p-uB-csv" firstAttribute="top" secondItem="4ru-Jf-AFj" secondAttribute="top" constant="1" id="ipT-jc-UP5"/>
-                                                    <constraint firstItem="fP0-Vq-NvN" firstAttribute="top" secondItem="4ru-Jf-AFj" secondAttribute="top" constant="2" id="rBf-pn-bwj"/>
-                                                    <constraint firstAttribute="trailing" secondItem="fP0-Vq-NvN" secondAttribute="trailing" constant="3" id="sQF-vH-O9A"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="imageView" destination="C2p-uB-csv" id="aVx-8M-Wob"/>
-                                                    <outlet property="textField" destination="fP0-Vq-NvN" id="ZXV-rE-lvw"/>
-                                                </connections>
-                                            </tableCellView>
                                             <tableCellView identifier="HeaderCell" id="9AH-ii-zoa" customClass="SourceListCellView" customModule="Pegase" customModuleProvider="target">
-                                                <rect key="frame" x="11" y="21" width="389" height="70"/>
+                                                <rect key="frame" x="11" y="0.0" width="389" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hq6-Ug-3Mi">
@@ -199,7 +163,7 @@
                                                 </connections>
                                             </tableCellView>
                                             <tableCellView identifier="PlaylistCell" id="trg-sX-JvK" customClass="CompteListCellView" customModule="Pegase" customModuleProvider="target">
-                                                <rect key="frame" x="11" y="91" width="389" height="60"/>
+                                                <rect key="frame" x="11" y="70" width="389" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j3U-VN-rlu">
@@ -373,7 +337,6 @@
     <resources>
         <image name="019-folder" width="256" height="256"/>
         <image name="NSAddTemplate" width="14" height="13"/>
-        <image name="NSFolder" width="32" height="32"/>
         <image name="NSLockLockedTemplate" width="14" height="15"/>
         <image name="NSRemoveTemplate" width="14" height="4"/>
         <image name="icons8-museum-80" width="64" height="64"/>
