@@ -221,6 +221,7 @@
 		037993B72413F353001ADDA6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037993B62413F353001ADDA6 /* ChartView.swift */; };
 		039BAC3A242CAD4600C375BB /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039BAC3C242CAD4600C375BB /* MainWindowController.xib */; };
 		039E0BE5247FA5FD00BE8ED7 /* rubrique.csv in Resources */ = {isa = PBXBuildFile; fileRef = 039E0BE7247FA5FD00BE8ED7 /* rubrique.csv */; };
+		039F181F26486237009685E7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039F181E26486237009685E7 /* String.swift */; };
 		03AC6B8625E3C005004C7223 /* NotificationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC6B8425E3C005004C7223 /* NotificationsHelper.swift */; };
 		03AC6B8A25E3CCC8004C7223 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC6B8825E3CCC8004C7223 /* NotificationHandler.swift */; };
 		03AC6B8B25E3CCC8004C7223 /* NotificationActionsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC6B8925E3CCC8004C7223 /* NotificationActionsEnum.swift */; };
@@ -575,6 +576,7 @@
 		039E0BEA247FA60700BE8ED7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text; name = en; path = en.lproj/rubrique.csv; sourceTree = "<group>"; };
 		039E0BEB247FA60900BE8ED7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text; name = it; path = it.lproj/rubrique.csv; sourceTree = "<group>"; };
 		039E0BEC247FA60A00BE8ED7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text; name = es; path = es.lproj/rubrique.csv; sourceTree = "<group>"; };
+		039F181E26486237009685E7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		03AC6B8425E3C005004C7223 /* NotificationsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsHelper.swift; sourceTree = "<group>"; };
 		03AC6B8825E3CCC8004C7223 /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		03AC6B8925E3CCC8004C7223 /* NotificationActionsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationActionsEnum.swift; sourceTree = "<group>"; };
@@ -1148,21 +1150,22 @@
 			children = (
 				03AC6B8C25E3CD28004C7223 /* Notification */,
 				034EC90723F87F51006944DD /* Calendar.swift */,
+				037993B62413F353001ADDA6 /* ChartView.swift */,
 				034EC90A23F87F51006944DD /* Debug.swift */,
+				0325F25326441124003027AE /* DSFFloatLabelledTextField.swift */,
+				03AF08AC260CC33B0020CD24 /* Error.swift */,
 				034EC90223F87F51006944DD /* HeaderCell.swift */,
 				034EC90623F87F51006944DD /* ManagedObject.swift */,
-				03AF08AC260CC33B0020CD24 /* Error.swift */,
-				0325F25326441124003027AE /* DSFFloatLabelledTextField.swift */,
 				034EC90523F87F51006944DD /* MLTextField.swift */,
 				034EC90123F87F50006944DD /* Notification.swift */,
 				034EC90923F87F51006944DD /* NSImage.swift */,
+				032CE32A24E9B27B00660A8B /* NSOpenPanel.swift */,
 				034EC90423F87F51006944DD /* NSPasteboard+Additions.swift */,
 				034EC90823F87F51006944DD /* NSTableCellView.swift */,
 				034EC90023F87F50006944DD /* NSUserInterfaceItemIdentifier.swift */,
 				034EC90323F87F51006944DD /* NSWindow.swift */,
-				037993B62413F353001ADDA6 /* ChartView.swift */,
-				032CE32A24E9B27B00660A8B /* NSOpenPanel.swift */,
 				031AF98B25494BE000B442AB /* Transformable.swift */,
+				039F181E26486237009685E7 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1516,6 +1519,7 @@
 				03213C1F23F90C1B00002DD7 /* CategorieModalWindowController.swift in Sources */,
 				03213BDD23F90B3500002DD7 /* IdentiteViewController.swift in Sources */,
 				03213B6B23F905E000002DD7 /* AccountViewController.swift in Sources */,
+				039F181F26486237009685E7 /* String.swift in Sources */,
 				034EC8D323F87EB2006944DD /* RateConfigure.swift in Sources */,
 				034EC8D623F87EB2006944DD /* MainWindowSplitViewDelegate.swift in Sources */,
 				034EC8D523F87EB2006944DD /* MainWindowToolBar.swift in Sources */,

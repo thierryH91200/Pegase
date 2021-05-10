@@ -128,9 +128,9 @@
 "Rubric.MessageText" = "Delete this element";
 
 // MARK: -  Statut
-"Statut.Engaged" = "Engagé";
 "Statut.Planifie" = "Prévue";
-"Statut.Realise" = "Réalisé";
+"Statut.Engaged"  = "Engagé";
+"Statut.Realise"  = "Réalisé";
 
 // MARK: -  alert
 "alert.title_error" = "Error";

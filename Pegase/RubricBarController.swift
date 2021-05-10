@@ -1,5 +1,6 @@
 import AppKit
 import Charts
+import SwiftDate
 
 
 final class RubricBarController: CommonGraph
@@ -12,6 +13,9 @@ final class RubricBarController: CommonGraph
     @IBOutlet var chartView: BarChartView!
 
     @IBOutlet weak var splitView: NSSplitView!
+    
+    let hourSeconds = 3600.0 * 24.0 // one day
+
     
     var startDate = Date()
     var endDate = Date()
@@ -112,7 +116,7 @@ final class RubricBarController: CommonGraph
         // MARK: xAxis
         let xAxis                      = chartView.xAxis
         xAxis.granularity = 1
-        xAxis.gridLineWidth = 2.0
+        xAxis.gridLineWidth = 1.0
         xAxis.labelFont      = NSFont(name: "HelveticaNeue-Light", size: CGFloat(12.0))!
         xAxis.labelPosition = .bottom
         xAxis.labelTextColor           = .labelColor
@@ -126,6 +130,7 @@ final class RubricBarController: CommonGraph
         leftAxis.granularity           = 1
         leftAxis.valueFormatter        = CurrencyValueFormatter()
         leftAxis.labelTextColor        = .labelColor
+        leftAxis.gridLineWidth = 1.0
 
         // MARK: rightAxis
         chartView.rightAxis.enabled    = false
@@ -187,13 +192,13 @@ final class RubricBarController: CommonGraph
             
             section = listTransaction.sectionIdentifier!
             let sousOperations = listTransaction.sousOperations?.allObjects  as! [EntitySousOperations]
-            
+            value = 0.0
             for sousOperation in sousOperations where (sousOperation.category?.rubric!.name)! == nameRubrique {
                 name  = (sousOperation.category?.rubric!.name)!
-                value = sousOperation.amount
+                value += sousOperation.amount
                 color = sousOperation.category?.rubric?.color as! NSColor
-                self.dataArray.append( DataGraph(section: section, name: name, value: value, color: color))
             }
+            self.dataArray.append( DataGraph(section: section, name: name, value: value, color: color))
         }
         self.dataArray = self.dataArray.sorted(by: { $0.name < $1.name })
         self.dataArray = self.dataArray.sorted(by: { $0.section < $1.section })
@@ -222,15 +227,15 @@ final class RubricBarController: CommonGraph
         
         // MARK: BarChartDataEntry
         var entriesData = [BarChartDataEntry]()
-        
+
         var colors : [NSColor] = []
         label.removeAll()
         
         var components = DateComponents()
         var dateString = ""
-        
+
         var i = 0
-        
+
         var value = [Double]()
         let allSection = Set<String>(dataArray.map { $0.section })
         let allKeySection = allSection.sorted()
@@ -269,7 +274,7 @@ final class RubricBarController: CommonGraph
             dataSet.colors = colors
             dataSet.valueFormatter = DefaultValueFormatter(formatter: formatterPrice)
             dataSet.stackLabels = [nameRubrique]
-            dataSet.barBorderWidth = 2.0
+            dataSet.barBorderWidth = 1.0
             
             var dataSets = [BarChartDataSet]()
             dataSets.append(dataSet)
@@ -297,7 +302,6 @@ final class RubricBarController: CommonGraph
             chartView.animate(xAxisDuration: 1)
         }
     }
-    
 }
 
 // NSTableViewDelegate
@@ -319,7 +323,6 @@ extension RubricBarController: NSTableViewDelegate {
             self.setDataCount()
         }
     }
-    
 }
 
 extension RubricBarController: SliderHorizontalDelegate {
@@ -327,20 +330,36 @@ extension RubricBarController: SliderHorizontalDelegate {
         self.updateChartData()
         self.setDataCount()
     }
-    
 }
 
 extension RubricBarController: ChartViewDelegate
 {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
     {
-        guard chartView.chartDescription?.text == "Rubrique" else { return }
+        var index = highlight.x
+        let entryX = entry.x
+//        let dataSetIndex = Int(highlight.dataSetIndex)
         
-        print("chartValueSelected : x = \(highlight.x)")
-        let index = Int(highlight.x)
+        let firstDate = sliderViewController?.firstDate
         
-        chartView.chartDescription?.text = label[index]
-        setDataCount()
+        index = 1
+        var date2 = Date(timeIntervalSince1970: ((index * self.hourSeconds) + firstDate!))
+        let idx = Int(entryX)
+        date2 = date2 + idx.months
+        let startDate = date2.startOfMonth()
+        let endDate = date2.endOfMonth()
+
+        let p1 = NSPredicate(format: "account == %@", currentAccount!)
+        let p2 = NSPredicate(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric.name == %@).@count > 0", nameRubrique)
+        let p3 = NSPredicate(format: "dateOperation >= %@", startDate as CVarArg )
+        let p4 = NSPredicate(format: "dateOperation <= %@", endDate as CVarArg )
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [p1, p2, p3, p4])
+
+        let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: false)]
+        
+        delegate?.applyFilter(fetchRequest: fetchRequest)
     }
     
     public func chartValueNothingSelected(_ chartView: ChartViewBase)

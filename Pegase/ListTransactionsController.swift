@@ -47,52 +47,11 @@ final class ListTransactionsController: NSViewController {
     
     enum TypeOfColor: String {
         case unie     = "unie"
-        case income  = "recette/depense"
+        case income   = "recette/depense"
         case rubrique = "rubrique"
         case statut   = "statut"
         case mode     = "mode"
     }
-    
-//    enum TypeOfStatut: Int {
-//        case planifie
-//        case engage
-//        case realise
-//
-//        var label: String
-//        {
-//            switch self {
-//            case .planifie: return Localizations.Statut.Planifie
-//            case .engage: return Localizations.Statut.Engaged
-//            case .realise: return Localizations.Statut.Realise
-//            }
-//        }
-//        var color: NSColor
-//        {
-//            switch self {
-//            case .planifie:
-//                return .green
-//            case .engage:
-//                return .blue
-//            case .realise:
-//                return .black
-//            }
-//        }
-//        var attribut: [NSAttributedString.Key: Any]
-//        {
-//            var attribut = [NSAttributedString.Key: Any]()
-//            attribut[.foregroundColor] = self.color
-//
-//            switch self {
-//            case .planifie:
-//                attribut[.font ] = NSFont(name: "Avenir-Oblique", size: 12.0)!
-//            case .engage:
-//                attribut[.font ] = NSFont(name: "Avenir", size: 12.0)!
-//            case .realise:
-//                attribut[.font ] = NSFont(name: "Avenir", size: 12.0)!
-//            }
-//            return attribut
-//        }
-//    }
     
     //    private let _undoManager = UndoManager()
     //    override var undoManager: UndoManager {

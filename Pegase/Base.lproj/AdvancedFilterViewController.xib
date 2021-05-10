@@ -220,12 +220,12 @@
                                     <predicateEditorRowTemplate rowType="simple" id="tBD-EK-kXf" customClass="RowTemplateRelationshipStatus" customModule="Pegase" customModuleProvider="target">
                                         <array key="leftExpressionObject">
                                             <expression type="keyPath">
-                                                <string key="keyPath">name</string>
+                                                <string key="keyPath">statut</string>
                                             </expression>
                                         </array>
                                         <array key="rightExpressionObject">
                                             <expression type="constant">
-                                                <string key="constantValue">Prevue</string>
+                                                <string key="constantValue">Prévue</string>
                                             </expression>
                                             <expression type="constant">
                                                 <string key="constantValue">Engagé</string>
@@ -237,25 +237,16 @@
                                         <popUpMenus>
                                             <menu id="d3a-Ci-ugt">
                                                 <items>
-                                                    <menuItem title="Staus" state="on" id="IcM-0A-0Lu">
+                                                    <menuItem title="Statut" state="on" id="IcM-0A-0Lu">
                                                         <expression key="representedObject" type="keyPath">
-                                                            <string key="keyPath">name</string>
+                                                            <string key="keyPath">statut</string>
                                                         </expression>
                                                     </menuItem>
                                                 </items>
                                             </menu>
                                             <menu id="eBJ-NQ-fvy">
                                                 <items>
-                                                    <menuItem title="contains" state="on" id="8Ii-Vv-MJt">
-                                                        <integer key="representedObject" value="99"/>
-                                                    </menuItem>
-                                                    <menuItem title="begins with" id="C48-c4-TeA">
-                                                        <integer key="representedObject" value="8"/>
-                                                    </menuItem>
-                                                    <menuItem title="ends with" id="lRK-HP-8gw">
-                                                        <integer key="representedObject" value="9"/>
-                                                    </menuItem>
-                                                    <menuItem title="is" id="1tC-Rw-FAK">
+                                                    <menuItem title="is" state="on" id="1tC-Rw-FAK">
                                                         <integer key="representedObject" value="4"/>
                                                     </menuItem>
                                                     <menuItem title="is not" id="jxh-HV-sil">
@@ -265,9 +256,9 @@
                                             </menu>
                                             <menu id="4yt-t9-qVX">
                                                 <items>
-                                                    <menuItem title="Prevue" state="on" id="stZ-wi-SV4">
+                                                    <menuItem title="Prévue" state="on" id="stZ-wi-SV4">
                                                         <expression key="representedObject" type="constant">
-                                                            <string key="constantValue">Prevue</string>
+                                                            <string key="constantValue">Prévue</string>
                                                         </expression>
                                                     </menuItem>
                                                     <menuItem title="Engagé" id="1Gl-F6-DVE">

@@ -179,15 +179,17 @@ final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
         let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
         let operatorType = predicate.predicateOperatorType
         let operatorName = findOperatorType(operatorType: operatorType)
-//        let right = TypeOfStatut(rawValue: predicate.rightExpression.r)
-        
-        let predicateFormat  = String(format : "%@ %@ %@", predicate.leftExpression , operatorName, predicate.rightExpression)
-        print(predicateFormat)
+        var right = String(format: "%@", predicate.rightExpression)
+        right = right[1 ..< right.count - 1 ]
+        let findRight = Statut.shared.findStatut(statut: right)
+
+        let predicateFormat  = String(format : "%@ %@ %d", predicate.leftExpression , operatorName, findRight)
         
         let newPredicate = NSPredicate(format: predicateFormat)
         return newPredicate
     }
 }
+
 
 final class RowTemplateRelationshipLibelle: NSPredicateEditorRowTemplate {
     

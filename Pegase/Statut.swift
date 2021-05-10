@@ -48,7 +48,7 @@ class Statut : NSObject {
         if TypeOfStatut(rawValue: 2 )?.label == statut {
             return 2
         }
-        return 1
+        return -1
         
     }
 }

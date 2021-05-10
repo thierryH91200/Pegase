@@ -24,16 +24,15 @@ final class IncomeExpenseBarController: CommonGraph {
     }()
     
     var resultArrayExpense = [DataGraph]()
-    var resultArrayIncome = [DataGraph]()
+    var resultArrayIncome  = [DataGraph]()
+    var label  = [String]()
 
     let formatterDate: DateFormatter = {
         let fmt = DateFormatter()
         fmt.dateFormat = DateFormatter.dateFormat(fromTemplate: "MM yy", options: 0, locale: Locale.current)
         return fmt
     }()
-    
-    var label  = [String]()
-    
+
     override func viewDidAppear() {
         super.viewDidAppear()
         view.window!.title = "Bar Chart"
@@ -317,7 +316,6 @@ extension Date {
     }
     
     func endOfMonth() -> Date {
-//        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
         return Calendar.current.date(byAdding: DateComponents(month: 1, day: 0), to: self.startOfMonth())!
     }
 }
