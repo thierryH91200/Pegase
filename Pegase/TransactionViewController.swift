@@ -213,8 +213,10 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     }
     
     // MARK: update Chart Data
-    func updateChartData()
-    {
+    func updateChartData() {
+    guard subOperations.isEmpty == false else {
+        fatalError("subOperations.isEmpty")
+    }
         self.dataRubricPie.removeAll()
         
         var nameRubric = ""
@@ -296,8 +298,9 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             self.entityOperation?.account = currentAccount
             
             // Create entitySousOperation
-            let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: context!) as! EntitySousOperations
-            self.subOperations.append(entitySousOperation)
+//            subOperations.removeAll()
+//            let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: context!) as! EntitySousOperations
+//            self.subOperations.append(entitySousOperation)
             let setSousOperation = NSSet(array: subOperations)
             self.entityOperation?.addToSousOperations(setSousOperation)
             self.entityOperations.append(entityOperation!)

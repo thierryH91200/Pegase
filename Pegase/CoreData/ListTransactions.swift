@@ -47,7 +47,8 @@ final class ListTransactions : NSObject {
             let sousOperations = entityOperation.sousOperations?.allObjects as! [EntitySousOperations]
             
             for sousOperation in sousOperations {
-                comments.append(sousOperation.libelle!)
+                let libelle = sousOperation.libelle ?? "vide"
+                comments.append(libelle)
             }
         }
         return comments.uniqueElements

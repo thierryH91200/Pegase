@@ -338,7 +338,6 @@ extension RubricBarController: ChartViewDelegate
     {
         var index = highlight.x
         let entryX = entry.x
-//        let dataSetIndex = Int(highlight.dataSetIndex)
         
         let firstDate = sliderViewController?.firstDate
         
