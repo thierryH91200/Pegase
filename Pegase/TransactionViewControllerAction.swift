@@ -39,7 +39,6 @@ extension TransactionViewController  {
                 self.removeButton.isEnabled = true
                                 
                 self.calcAmount()
-                
                 self.updateChartData()
                 self.setDataCount()
                                 

@@ -133,7 +133,7 @@ extension ListTransactionsController: NSOutlineViewDataSource {
         if item is TrackingSubOperations {
 
             let idOperation = item as! TrackingSubOperations
-            let count = (idOperation.entityOperations.sousOperations?.count)!
+            let count = (idOperation.entityOperations.sousOperations?.count) ?? 0
             if count > 1 {
                 return true
             }

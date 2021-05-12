@@ -298,9 +298,6 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             self.entityOperation?.account = currentAccount
             
             // Create entitySousOperation
-//            subOperations.removeAll()
-//            let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: context!) as! EntitySousOperations
-//            self.subOperations.append(entitySousOperation)
             let setSousOperation = NSSet(array: subOperations)
             self.entityOperation?.addToSousOperations(setSousOperation)
             self.entityOperations.append(entityOperation!)
@@ -381,7 +378,6 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             NotificationCenter.send(.updateBalance)
             if resetOp == true {
                 self.resetOperation()
-                //        self.delegate?.resetChange()
             }
         }
     }
@@ -429,10 +425,10 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         entityOperationsTransfert?.datePointage  = oneOperation.datePointage
         
         // le modePaiement existe t il ??
-        let name = oneOperation.paymentMode?.name
-        let color = oneOperation.paymentMode?.color
-        let uuid = oneOperation.paymentMode?.uuid
-        let entityModePaiement = PaymentMode.shared.findOrCreate(account: compteTransfert, name: name!, color: color as! NSColor, uuid: uuid!)
+        let name               = oneOperation.paymentMode?.name
+        let color              = oneOperation.paymentMode?.color
+        let uuid               = oneOperation.paymentMode?.uuid
+        let entityModePaiement = PaymentMode.shared.findOrCreate(account : compteTransfert, name : name!, color : color as! NSColor, uuid : uuid!)
         entityOperationsTransfert?.paymentMode  = entityModePaiement
         
         entityOperationsTransfert?.statut        = oneOperation.statut
@@ -440,7 +436,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         
         let entityPreference = Preference.shared.getAllDatas()
         
-        let setSout = oneOperation.sousOperations
+        let setSout   = oneOperation.sousOperations
         subOperations = setSout?.allObjects as! [EntitySousOperations]
         
         print("count subOperations = ", subOperations.count )
