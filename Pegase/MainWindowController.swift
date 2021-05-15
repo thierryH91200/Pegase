@@ -75,14 +75,17 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     }
     
     func windowWillClose(_ notification: Notification) {
-        if context!.hasChanges == true {
-            print ( "mainObjectContext.hasChanges" )
-            do {
-                try context!.save()
-            } catch {
-                print("error")
-            }
-        }
+        
+        (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
+
+//        if context!.hasChanges == true {
+//            print ( "mainObjectContext.hasChanges" )
+//            do {
+//                try context!.save()
+//            } catch {
+//                print("error")
+//            }
+//        }
     }
     
     override func windowDidLoad() {

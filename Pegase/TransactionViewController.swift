@@ -373,7 +373,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
             
             self.delegate?.getAllData()
-            self.delegate?.reloadData(true, true)
+            self.delegate?.reloadData(false, true)
             
             NotificationCenter.send(.updateBalance)
             if resetOp == true {

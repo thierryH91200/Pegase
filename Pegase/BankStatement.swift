@@ -12,7 +12,6 @@ final class BankStatement: NSViewController {
     
     @IBOutlet weak var tableBankStatement: NSTableView!
     
-    
     public override func viewDidDisappear()
     {
         super.viewDidDisappear()

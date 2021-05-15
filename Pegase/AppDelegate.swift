@@ -95,22 +95,17 @@ class AppDelegate: NSObject, NSApplicationDelegate { // , UNUserNotificationCent
     
     @IBAction func saveAction(_ sender: Any?) {
         
-//        return
-//
-//
-        // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
-//        let context = mainObjectContext
         
         let context = persistentContainer.viewContext
 //        let context = persistentContainer.newBackgroundContext()
         
 //        context?.deleteAllData()
         
-//        context?.perform {
+        context.perform {
             
-//            if !(context?.commitEditing())! {
-//                NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
-//            }
+            if !(context.commitEditing()) {
+                NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
+            }
         if context.hasChanges == true {
                 do {
                     try context.save()
@@ -122,7 +117,7 @@ class AppDelegate: NSObject, NSApplicationDelegate { // , UNUserNotificationCent
                 }
             context.reset()
             }
-//        }
+        }
     }
     
     func windowWillReturnUndoManager(window: NSWindow) -> UndoManager? {
