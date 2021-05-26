@@ -37,7 +37,7 @@ final class Echeanciers : NSObject {
     
     func createSousOperation (entitySchedule: EntitySchedule) -> EntitySousOperations{
         
-        // create sous operation
+        // create sous transaction
         let entitySousOperation = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: viewContext!) as! EntitySousOperations
 
         // la rubrique existe t elle ??
@@ -64,50 +64,50 @@ final class Echeanciers : NSObject {
 
         entitySchedule.nextOccurence += 1
         
-        let entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: viewContext!) as! EntityTransactions
+        let entityTransaction = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: viewContext!) as! EntityTransactions
         
-        entityOperation.dateCree       = Date()
-        entityOperation.dateModifie    = Date()
-        entityOperation.dateOperation  = dateValeur
-        entityOperation.datePointage   = dateValeur
+        entityTransaction.dateCree       = Date()
+        entityTransaction.dateModifie    = Date()
+        entityTransaction.dateOperation  = dateValeur
+        entityTransaction.datePointage   = dateValeur
 
-        entityOperation.account        = entitySchedule.account
+        entityTransaction.account        = entitySchedule.account
                 
-        entityOperation.paymentMode    = entitySchedule.paymentMode
-        entityOperation.statut         = Date() >= dateValeur ? 2 : 1
+        entityTransaction.paymentMode    = entitySchedule.paymentMode
+        entityTransaction.statut         = Date() >= dateValeur ? 2 : 1
         
-        entityOperation.bankStatement = 0
-        entityOperation.uuid           = UUID()
+        entityTransaction.bankStatement = 0
+        entityTransaction.uuid           = UUID()
 
-        // create sous operation
+        // create sous transaction
         let entitySousOperation = createSousOperation(entitySchedule: entitySchedule)
         
-        // addd sous operation
-        entityOperation.addToSousOperations(  entitySousOperation)
+        // addd sous transaction
+        entityTransaction.addToSousOperations(  entitySousOperation)
         
         if entitySchedule.compteLie != nil {
             
-            let entityOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: viewContext!) as! EntityTransactions
+            let entityTransactionsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: viewContext!) as! EntityTransactions
 
-            entityOperationsTransfert.dateCree      = entityOperation.dateCree
-            entityOperationsTransfert.dateModifie   = entityOperation.dateModifie
-            entityOperationsTransfert.dateOperation = entityOperation.dateOperation
-            entityOperationsTransfert.datePointage  = entityOperation.datePointage
+            entityTransactionsTransfert.dateCree      = entityTransaction.dateCree
+            entityTransactionsTransfert.dateModifie   = entityTransaction.dateModifie
+            entityTransactionsTransfert.dateOperation = entityTransaction.dateOperation
+            entityTransactionsTransfert.datePointage  = entityTransaction.datePointage
             
             let compteLie = entitySchedule.compteLie!
-            entityOperationsTransfert.account        = compteLie
+            entityTransactionsTransfert.account        = compteLie
 
-            entityOperationsTransfert.statut        = entityOperation.statut
-            entityOperationsTransfert.bankStatement = entityOperation.bankStatement
+            entityTransactionsTransfert.statut        = entityTransaction.statut
+            entityTransactionsTransfert.bankStatement = entityTransaction.bankStatement
 
             // le modePaiement existe t il ??
-            let name = entityOperationsTransfert.paymentMode?.name
-            let color = entityOperationsTransfert.paymentMode?.color
-            let uuid = entityOperationsTransfert.paymentMode?.uuid
+            let name = entityTransactionsTransfert.paymentMode?.name
+            let color = entityTransactionsTransfert.paymentMode?.color
+            let uuid = entityTransactionsTransfert.paymentMode?.uuid
             let entityModePaiement = PaymentMode.shared.findOrCreate(account: compteLie, name: name!, color: color as! NSColor, uuid: uuid!)
-            entityOperationsTransfert.paymentMode  = entityModePaiement
+            entityTransactionsTransfert.paymentMode  = entityModePaiement
 
-            /// la rubrique existe t elle ??
+            // la rubrique existe t elle ??
             let entityRubric = Rubric.shared.findOrCreate(account: compteLie, name: name!, color: color as! NSColor, uuid: uuid!)
             
             /// la categorie existe t elle ?
@@ -117,9 +117,9 @@ final class Echeanciers : NSObject {
             entitySousOperation.category?.rubric = entityRubric
             entitySousOperation.amount       = -entitySchedule.amount
 
-            entityOperationsTransfert.addToSousOperations(entitySousOperation)
+            entityTransactionsTransfert.addToSousOperations(entitySousOperation)
             
-            entityOperationsTransfert.uuid          = UUID()
+            entityTransactionsTransfert.uuid          = UUID()
         }
     }
 }

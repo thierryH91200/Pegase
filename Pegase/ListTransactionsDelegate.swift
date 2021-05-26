@@ -68,8 +68,8 @@ extension ListTransactionsController: NSOutlineViewDelegate {
                 dateFormatted = dateString.padding(toLength: 40, withPad: " ", startingAt: 0)
             }
             let nbOperations = folderItem.idTransaction.count
-            let operationsString = "\(nbOperations) opérations"
-            let operationsFormatted = operationsString.padding(toLength: 30, withPad: " ", startingAt: 0)
+            let transactionsString = "\(nbOperations) opérations"
+            let transactionsFormatted = transactionsString.padding(toLength: 30, withPad: " ", startingAt: 0)
             
             var expenses = 0.0
             var incomes = 0.0
@@ -97,7 +97,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             let totalStr = formatterPrice.string(from: NSDecimalNumber(value: incomes + expenses))
             let totalFormatted = "Total : \(totalStr!)".padding(toLength: 30, withPad: " ", startingAt: 0)
             
-            title = "     " + dateFormatted + operationsFormatted + expenseFormatted + incomeFormatted + totalFormatted
+            title = "     " + dateFormatted + transactionsFormatted + expenseFormatted + incomeFormatted + totalFormatted
         }
         
         cellView = outlineView.makeView(withIdentifier: .FeedCellMonth, owner: self) as? KSHeaderCellView
