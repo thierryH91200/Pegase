@@ -32,8 +32,8 @@
 		03213B1523F9048D00002DD7 /* CSVConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B1023F9048C00002DD7 /* CSVConfig.swift */; };
 		03213B1623F9048D00002DD7 /* CSVWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B1123F9048D00002DD7 /* CSVWriter.swift */; };
 		03213B1E23F904D600002DD7 /* RectMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B1A23F904D600002DD7 /* RectMarker.swift */; };
-		03213B1F23F904D600002DD7 /* TresorerieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B1B23F904D600002DD7 /* TresorerieController.swift */; };
-		03213B2023F904D600002DD7 /* TresorerieController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B1C23F904D600002DD7 /* TresorerieController.xib */; };
+		03213B1F23F904D600002DD7 /* TresorerieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B1B23F904D600002DD7 /* TresorerieViewController.swift */; };
+		03213B2023F904D600002DD7 /* TresorerieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B1C23F904D600002DD7 /* TresorerieViewController.xib */; };
 		03213B2123F904D600002DD7 /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B1D23F904D600002DD7 /* DateValueFormatter.swift */; };
 		03213B2423F904DE00002DD7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213B2223F904DE00002DD7 /* WebViewController.swift */; };
 		03213B2523F904DE00002DD7 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213B2323F904DE00002DD7 /* WebViewController.xib */; };
@@ -299,8 +299,8 @@
 		03213B1023F9048C00002DD7 /* CSVConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVConfig.swift; sourceTree = "<group>"; };
 		03213B1123F9048D00002DD7 /* CSVWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVWriter.swift; sourceTree = "<group>"; };
 		03213B1A23F904D600002DD7 /* RectMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectMarker.swift; sourceTree = "<group>"; };
-		03213B1B23F904D600002DD7 /* TresorerieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TresorerieController.swift; sourceTree = "<group>"; };
-		03213B1C23F904D600002DD7 /* TresorerieController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TresorerieController.xib; sourceTree = "<group>"; };
+		03213B1B23F904D600002DD7 /* TresorerieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TresorerieViewController.swift; sourceTree = "<group>"; };
+		03213B1C23F904D600002DD7 /* TresorerieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TresorerieViewController.xib; sourceTree = "<group>"; };
 		03213B1D23F904D600002DD7 /* DateValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValueFormatter.swift; sourceTree = "<group>"; };
 		03213B2223F904DE00002DD7 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		03213B2323F904DE00002DD7 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
@@ -672,8 +672,8 @@
 			children = (
 				03213B1D23F904D600002DD7 /* DateValueFormatter.swift */,
 				03213B1A23F904D600002DD7 /* RectMarker.swift */,
-				03213B1B23F904D600002DD7 /* TresorerieController.swift */,
-				03213B1C23F904D600002DD7 /* TresorerieController.xib */,
+				03213B1B23F904D600002DD7 /* TresorerieViewController.swift */,
+				03213B1C23F904D600002DD7 /* TresorerieViewController.xib */,
 			);
 			name = Tresorerie;
 			sourceTree = "<group>";
@@ -1416,7 +1416,7 @@
 				03213BD323F90AAB00002DD7 /* icons8-expensive-100.png in Resources */,
 				03213B7F23F9082600002DD7 /* CategoryBarController1.xib in Resources */,
 				03213C2723F90C3300002DD7 /* ChequierModalWindowController.xib in Resources */,
-				03213B2023F904D600002DD7 /* TresorerieController.xib in Resources */,
+				03213B2023F904D600002DD7 /* TresorerieViewController.xib in Resources */,
 				03213C5823F926AD00002DD7 /* SousOperationModalWindowController.xib in Resources */,
 				03213B9023F9086600002DD7 /* RubricPieController.xib in Resources */,
 				034ECB6923F88033006944DD /* PopOverModalViewController.xib in Resources */,
@@ -1623,7 +1623,7 @@
 				034EC8D223F87EB2006944DD /* MainWindowController.swift in Sources */,
 				03213B0823F9048200002DD7 /* TTFormatViewController.swift in Sources */,
 				03213B3E23F9053A00002DD7 /* TransactionViewControllerPopUp.swift in Sources */,
-				03213B1F23F904D600002DD7 /* TresorerieController.swift in Sources */,
+				03213B1F23F904D600002DD7 /* TresorerieViewController.swift in Sources */,
 				03213B3223F9050000002DD7 /* ListTransactionsPasteboard.swift in Sources */,
 				03213BBE23F909D400002DD7 /* Statut.swift in Sources */,
 				03213B3D23F9053A00002DD7 /* TransactionViewControllerOutline.swift in Sources */,

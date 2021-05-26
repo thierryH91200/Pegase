@@ -69,7 +69,7 @@ extension ListTransactionsController {
         if let group = item as? GroupedMonthOperations {
             return (group.month)
         }
-        if let group = item as? IdOperations {
+        if let group = item as? IdTransactions {
             return (group.id)
         }
         return nil

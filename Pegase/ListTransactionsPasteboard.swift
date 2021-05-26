@@ -122,13 +122,14 @@ extension ListTransactionsController {
         guard (outlineListView) != nil else { return }
         let selectedRowIndexes = outlineListView.selectedRowIndexes
         if selectedRowIndexes.isEmpty == false {
+            
             let listItems = listItemsAtIndexes(selectedRowIndexes)
             
             writeListItems(listItems: listItems )
             removeListItems(listItems)
             
             for item in listItems {
-                ListTransactions.shared.remove(entity: item.entityOperations)
+                ListTransactions.shared.remove(entity: item.entityTransactions)
             }
         }
         (NSApplication.shared.delegate as? AppDelegate)?.saveAction(nil)
@@ -137,7 +138,7 @@ extension ListTransactionsController {
     }
     
     // MARK: - Divers
-    private func writeListItems(listItems: [IdOperations]) { //, toPasteboard pasteboard: NSPasteboard ) {
+    private func writeListItems(listItems: [IdTransactions]) { //, toPasteboard pasteboard: NSPasteboard ) {
         
         let pasteBoard = NSPasteboard.general
         pasteBoard.clearContents()
@@ -149,25 +150,25 @@ extension ListTransactionsController {
         pasteBoard.setString(uuidString, forType: NSPasteboard.PasteboardType.compatString)
     }
     
-    private func uuidFromListItems(items: [IdOperations]) -> String {
+    private func uuidFromListItems(items: [IdTransactions]) -> String {
         return items.reduce("") { string, item in
-            let uuid = item.entityOperations.uuid
+            let uuid = item.entityTransactions.uuid
             let str = uuid?.uuidString
             return "\(string)\(str ?? "nil")\n"
         }
     }
     
-    private func listItemsAtIndexes(_ indexes: IndexSet) -> [IdOperations] {
+    private func listItemsAtIndexes(_ indexes: IndexSet) -> [IdTransactions] {
         
         let rowIndexes = Array(indexes)
-        let listItems = (0 ..< rowIndexes.count).map { (i) -> IdOperations in
+        let listItems = (0 ..< rowIndexes.count).map { (i) -> IdTransactions in
             let row = rowIndexes[i] as Int
-            return self.outlineListView.item(atRow: row) as! IdOperations
+            return self.outlineListView.item(atRow: row) as! IdTransactions
         }
         return listItems
     }
     
-    private func removeListItems(_ listItems: [IdOperations]) {
+    private func removeListItems(_ listItems: [IdTransactions]) {
         guard !listItems.isEmpty else { return }
         
         

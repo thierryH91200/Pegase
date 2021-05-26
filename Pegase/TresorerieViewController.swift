@@ -336,7 +336,7 @@ final class TresorerieViewController: NSViewController
     
 }
 
-extension TresorerieController: SliderHorizontalDelegate {
+extension TresorerieViewController: SliderHorizontalDelegate {
     
     func setDataHorizontal()
     {
@@ -354,7 +354,7 @@ extension TresorerieController: SliderHorizontalDelegate {
     }
 }
 
-extension TresorerieController: ChartViewDelegate
+extension TresorerieViewController: ChartViewDelegate
 {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         

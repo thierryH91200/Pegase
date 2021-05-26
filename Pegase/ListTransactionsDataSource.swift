@@ -18,12 +18,12 @@ extension ListTransactionsController: NSOutlineViewDataSource {
         }
         // number EntityOperations
         if let folderItem = item as?  TrackingIdTransactions {
-            let nbIdOperations = folderItem.idOperation.count
+            let nbIdOperations = folderItem.idTransaction.count
             return nbIdOperations
         }
         // number EntitySousOperations
         if let idOperation = item as? TrackingSubOperations {
-            let nbSousOperations = idOperation.entityOperations.sousOperations?.count ?? 0
+            let nbSousOperations = idOperation.entityTransactions.sousOperations?.count ?? 0
             return nbSousOperations
         }
         debugPrint("numberOfChildrenOfItem : BAD ITEM")
@@ -91,12 +91,12 @@ extension ListTransactionsController: NSOutlineViewDataSource {
         }
         // EntityOperations
         if let folderItem = item as? TrackingIdTransactions  {
-            let idOperations = folderItem.idOperation[index]
+            let idOperations = folderItem.idTransaction[index]
             return idOperations
         }
         // EntitySousOperations
         if let idOperation = item as? TrackingSubOperations {
-            let sousOperations = idOperation.entityOperations.sousOperations?.allObjects as! [EntitySousOperations]
+            let sousOperations = idOperation.entityTransactions.sousOperations?.allObjects as! [EntitySousOperations]
             return sousOperations[index]
         }
         debugPrint("child index : BAD ITEM")
@@ -109,7 +109,7 @@ extension ListTransactionsController: NSOutlineViewDataSource {
     
     func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem: Any?) -> Any? {
         
-        if let item = byItem as? (key: String, value: [IdOperations]) {
+        if let item = byItem as? (key: String, value: [IdTransactions]) {
             return item.key
         }
         if let item = byItem as? EntityTransactions {
@@ -133,7 +133,7 @@ extension ListTransactionsController: NSOutlineViewDataSource {
         if item is TrackingSubOperations {
 
             let idOperation = item as! TrackingSubOperations
-            let count = (idOperation.entityOperations.sousOperations?.count) ?? 0
+            let count = (idOperation.entityTransactions.sousOperations?.count) ?? 0
             if count > 1 {
                 return true
             }

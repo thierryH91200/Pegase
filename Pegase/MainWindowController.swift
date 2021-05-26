@@ -29,7 +29,7 @@ final class MainWindowController: NSWindowController , NSWindowDelegate, UNUserN
     var sourceListViewController     : SourceListViewController?
     var groupeAccountViewController  : AccountGroupViewController?
     
-    var tresorerieController         : TresorerieController?
+    var tresorerieController         : TresorerieViewController?
     var rubricPieController          : RubricPieController?
     var categoryBarController        : CategoryBarController?
     var categoryBarController1       : CategoryBarController1?

@@ -23,7 +23,7 @@ final class ListTransactionsController: NSViewController {
     public typealias TrackingYear           = [ GroupedYearOperations ]
     public typealias TrackingMonth          = GroupedYearOperations
     public typealias TrackingIdTransactions = GroupedMonthOperations
-    public typealias TrackingSubOperations  = IdOperations
+    public typealias TrackingSubOperations  = IdTransactions
     public typealias TrackingSubOperation   = EntitySousOperations
     
 //    var theDocument = NSPersistentDocument()
@@ -298,11 +298,11 @@ final class ListTransactionsController: NSViewController {
             formatter.numberStyle = .currency
             
             for row in selectedRow {
-                let item = outlineView.item(atRow: row) as? IdOperations
+                let item = outlineView.item(atRow: row) as? IdTransactions
                 
-                transactionsSelected.append((item?.entityOperations)!)
+                transactionsSelected.append((item?.entityTransactions)!)
                 
-                amount = (item?.entityOperations.amount)!
+                amount = (item?.entityTransactions.amount)!
                 solde += amount
                 if amount < 0 {
                     expense += amount
@@ -341,11 +341,11 @@ final class ListTransactionsController: NSViewController {
     
     private func transformData()
     {
-        var groupedID : [ String:  [ String :  [IdOperations] ] ] = [:]
+        var groupedID : [ String:  [ String :  [IdTransactions] ] ] = [:]
         
         balanceCalculation()
-        let IdOperation = (0 ..< listTransactions.count).map { (i) -> IdOperations in
-            return IdOperations(year : listTransactions[i].sectionYear!, id: listTransactions[i].sectionIdentifier!, entityOperations: listTransactions[i])
+        let IdOperation = (0 ..< listTransactions.count).map { (i) -> IdTransactions in
+            return IdTransactions(year : listTransactions[i].sectionYear!, id: listTransactions[i].sectionIdentifier!, entityOperations: listTransactions[i])
         }
         
         // Grouped year / month
@@ -403,8 +403,8 @@ final class ListTransactionsController: NSViewController {
         guard selectedRow.isEmpty == false else { return }
         
         for row in selectedRow {
-            let item = outlineListView.item(atRow: row) as? IdOperations
-            ListTransactions.shared.remove(entity: (item?.entityOperations)!)
+            let item = outlineListView.item(atRow: row) as? IdTransactions
+            ListTransactions.shared.remove(entity: (item?.entityTransactions)!)
         }
         
         self.getAllData()
@@ -426,8 +426,8 @@ final class ListTransactionsController: NSViewController {
 
         
         for row in selectedRow {
-            let item = outlineListView.item(atRow: row) as? IdOperations
-            listTransactions.append(item!.entityOperations)
+            let item = outlineListView.item(atRow: row) as? IdTransactions
+            listTransactions.append(item!.entityTransactions)
         }
         
 //        for list in listTransactions {

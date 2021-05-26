@@ -107,11 +107,11 @@ class GroupedYearOperations : NSObject {
     let year : String
     var allMonth : [GroupedMonthOperations]
     
-    init( dictionary: (key: String, value: [String: [IdOperations]])) {
+    init( dictionary: (key: String, value: [String: [IdTransactions]])) {
         self.year = dictionary.key
         
         self.allMonth = [GroupedMonthOperations]()
-        let months = (dictionary.value).map { (key: String , value: [IdOperations]) -> GroupedMonthOperations in
+        let months = (dictionary.value).map { (key: String , value: [IdTransactions]) -> GroupedMonthOperations in
             return GroupedMonthOperations(month : key , idOperations: value)
         }
         self.allMonth = months.sorted(by: {$0.month > $1.month})
@@ -120,27 +120,27 @@ class GroupedYearOperations : NSObject {
 
 class GroupedMonthOperations : NSObject {
     let month       : String
-    let idOperation : [ IdOperations ]
+    let idTransaction : [ IdTransactions ]
     
-    init( month: String, idOperations: [IdOperations]) {
+    init( month: String, idOperations: [IdTransactions]) {
         
         self.month = month
-        let idAllOperation = (0 ..< idOperations.count).map { (i) -> IdOperations in
-            return IdOperations(year : idOperations[i].year, id: idOperations[i].id, entityOperations: idOperations[i].entityOperations)
+        let idAllOperation = (0 ..< idOperations.count).map { (i) -> IdTransactions in
+            return IdTransactions(year : idOperations[i].year, id: idOperations[i].id, entityOperations: idOperations[i].entityTransactions)
         }
-        self.idOperation = idAllOperation.sorted(by: { $0.entityOperations.datePointage!.timeIntervalSince1970 > $1.entityOperations.datePointage!.timeIntervalSince1970 })
+        self.idTransaction = idAllOperation.sorted(by: { $0.entityTransactions.datePointage!.timeIntervalSince1970 > $1.entityTransactions.datePointage!.timeIntervalSince1970 })
     }
 }
 
-class IdOperations : NSObject {
+class IdTransactions : NSObject {
     let year             : String
     let id               : String
-    let entityOperations : EntityTransactions
+    let entityTransactions : EntityTransactions
     
     init( year: String, id: String, entityOperations: EntityTransactions) {
         self.year = year
         self.id = id
-        self.entityOperations = entityOperations
+        self.entityTransactions = entityOperations
     }
 }
 

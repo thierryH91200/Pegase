@@ -24,7 +24,7 @@ final class AdvancedFilterViewController: NSViewController {
     @IBAction func generateQuery(_ sender: NSButton) {
 
         let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
-        print("predicateEditor ", predicateEditor.predicate)
+        print("predicateEditor : ", predicateEditor.predicate ?? "predicate default")
         fetchRequest.predicate = predicateEditor.predicate
         print(predicateEditor.predicate?.description ?? "predicateEditor.predicate")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateOperation", ascending: true)]

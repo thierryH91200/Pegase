@@ -67,7 +67,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
                 dateString = formatterDate.string(from: date)
                 dateFormatted = dateString.padding(toLength: 40, withPad: " ", startingAt: 0)
             }
-            let nbOperations = folderItem.idOperation.count
+            let nbOperations = folderItem.idTransaction.count
             let operationsString = "\(nbOperations) opérations"
             let operationsFormatted = operationsString.padding(toLength: 30, withPad: " ", startingAt: 0)
             
@@ -75,9 +75,9 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             var incomes = 0.0
             var amount = 0.0
             
-            for itemF in folderItem.idOperation
+            for itemF in folderItem.idTransaction
             {
-                amount = itemF.entityOperations.amount
+                amount = itemF.entityTransactions.amount
                 if amount < 0.0 {
                     expenses += amount
                 } else {
@@ -138,7 +138,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         
         switch propertyEnum
         {
-
         case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .solde, .checkNumber:
             textField.stringValue = ""
             
@@ -189,8 +188,8 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         
         let identifier = tableColumn!.identifier
         guard let propertyEnum = ListeOperationsDisplayProperty(rawValue: identifier.rawValue) else { return nil }
-        let quake = item.entityOperations
-        let sousOperations = item.entityOperations.sousOperations?.allObjects as! [EntitySousOperations]
+        let quake = item.entityTransactions
+        let sousOperations = item.entityTransactions.sousOperations?.allObjects as! [EntitySousOperations]
         
         if identifier.rawValue == "datePointage"
         {

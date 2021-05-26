@@ -31,7 +31,7 @@ extension MainWindowController: SourceListDelegate
             segmentedControl.setSelected(true, forSegment: 2)
             
         case "Courbe de trésorerie":
-            self.tresorerieController = TresorerieController()
+            self.tresorerieController = TresorerieViewController()
             vc = (tresorerieController?.view)!
             
             setUpGroupeListTransactionsSecondary(true)
