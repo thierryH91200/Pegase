@@ -120,7 +120,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         let identifier = tableColumn!.identifier
         guard let propertyEnum = ListeOperationsDisplayProperty(rawValue: identifier.rawValue) else { return nil }
         
-        let sousOperations = item
+        let splitOperations = item
         
         if identifier.rawValue == "datePointage"
         {
@@ -138,25 +138,25 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         
         switch propertyEnum
         {
-        case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .solde, .checkNumber:
+        case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .balance, .checkNumber:
             textField.stringValue = ""
             
         case .rubrique:
-            textField.stringValue = sousOperations.category?.rubric?.name ?? ""
+            textField.stringValue = splitOperations.category?.rubric?.name ?? ""
         case .categorie:
-            textField.stringValue = sousOperations.category?.name ?? ""
+            textField.stringValue = splitOperations.category?.name ?? ""
         case .libelle:
-            textField.stringValue = sousOperations.libelle ?? ""
+            textField.stringValue = splitOperations.libelle ?? ""
         case .montant:
-            let price = sousOperations.amount as NSNumber
+            let price = splitOperations.amount as NSNumber
             let formatted = formatterPrice.string(from: price)
             textField.stringValue = formatted!
             paragraph.alignment = .right
         case .depense:
             var price: NSNumber = 0.0
             var formatted = ""
-            if sousOperations.amount < 0 {
-                price = sousOperations.amount as NSNumber
+            if splitOperations.amount < 0 {
+                price = splitOperations.amount as NSNumber
                 formatted = formatterPrice.string(from: price)!
             }
             textField.stringValue = formatted
@@ -164,8 +164,8 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         case .recette:
             var price: NSNumber = 0.0
             var formatted = ""
-            if sousOperations.amount > 0 {
-                price = sousOperations.amount as NSNumber
+            if splitOperations.amount > 0 {
+                price = splitOperations.amount as NSNumber
                 formatted = formatterPrice.string(from: price)!
             }
             textField.stringValue = formatted
@@ -292,7 +292,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
                 textField.stringValue = ""
             }
 
-        case .solde:
+        case .balance:
             let solde = quake.solde
             let price = solde as NSNumber
             let formatted = formatterPrice.string(from: price)
@@ -362,7 +362,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
                 }
             //                attrs[.font] =  NSFont.boldSystemFont(ofSize: 12.0)
             
-            case  .solde:
+            case  .balance:
                 if quake.solde >= 0.0 {
                     attrs[.foregroundColor] = NSColor.green
                 } else {
@@ -414,7 +414,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
                     attrs[.foregroundColor] = NSColor.red
                 }
                 
-            case  .solde:
+            case  .balance:
                 break
             default:
                 break

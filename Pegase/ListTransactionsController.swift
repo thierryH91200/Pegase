@@ -40,7 +40,7 @@ final class ListTransactionsController: NSViewController {
         case recette
         case bankStatement
         case rubrique
-        case solde
+        case balance
         case statut
         case checkNumber
     }

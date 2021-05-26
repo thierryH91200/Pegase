@@ -72,7 +72,7 @@
 "imH-56-LpJ.title" = "Creation mode";
 
 /* Class = "NSMenuItem"; title = "Add operation"; ObjectID = "jcE-Wr-YbQ"; */
-"jcE-Wr-YbQ.title" = "Add operation";
+"jcE-Wr-YbQ.title" = "Add transaction";
 
 /* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "kh3-53-QoU"; */
 "kh3-53-QoU.title" = "Item 3";
@@ -81,7 +81,7 @@
 "okW-Ze-Dvq.title" = "Prénom";
 
 /* Class = "NSMenuItem"; title = "Remove operation"; ObjectID = "osS-Vv-07S"; */
-"osS-Vv-07S.title" = "Remove operation";
+"osS-Vv-07S.title" = "Remove transaction";
 
 /* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "p4E-G9-3tp"; */
 "p4E-G9-3tp.title" = "Item 1";
@@ -102,7 +102,7 @@
 "xmS-EK-UWx.title" = "Mode";
 
 /* Class = "NSMenuItem"; title = "Remove Operation"; ObjectID = "zQq-ss-8Vv"; */
-"zQq-ss-8Vv.title" = "Remove Operation";
+"zQq-ss-8Vv.title" = "Remove transaction";
 
 /* Class = "NSMenuItem"; title = "Planned"; ObjectID = "zz3-G1-phr"; */
 "zz3-G1-phr.title" = "Planned";

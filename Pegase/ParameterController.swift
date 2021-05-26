@@ -42,8 +42,8 @@ final class ParameterController: NSViewController {
         let rubricItem = NSTabViewItem(viewController: rubriqueViewController)
         rubricItem.label = Localizations.General.Rubrique
         
-        let operationItem = NSTabViewItem(viewController: preferenceOperationViewController)
-        operationItem.label = Localizations.General.Operation
+        let transactionItem = NSTabViewItem(viewController: preferenceOperationViewController)
+        transactionItem.label = Localizations.General.Operation
 
         let items = tabView.tabViewItems
         for item in items {
@@ -51,7 +51,7 @@ final class ParameterController: NSViewController {
         }
         tabView.addTabViewItem(rubricItem)
         tabView.addTabViewItem(modeItem)
-        tabView.addTabViewItem(operationItem)
+        tabView.addTabViewItem(transactionItem)
         tabView.addTabViewItem(chequiersItem)
         tabView.selectTabViewItem(at: 0)
     }
