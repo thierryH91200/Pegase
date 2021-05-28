@@ -15,8 +15,8 @@
                 <outlet property="datePointage" destination="Eem-MR-po3" id="lGY-gK-DrB"/>
                 <outlet property="gridView" destination="xVj-Nc-rk1" id="Feo-OL-z9I"/>
                 <outlet property="menuLocal" destination="P88-j3-pWA" id="21r-28-igQ"/>
-                <outlet property="modeOperation" destination="HNV-fd-rFo" id="CeS-Ql-IS3"/>
-                <outlet property="modeOperation2" destination="hJa-1H-CrV" id="4jr-6E-jyg"/>
+                <outlet property="modeTransaction" destination="HNV-fd-rFo" id="CeS-Ql-IS3"/>
+                <outlet property="modeTransaction2" destination="hJa-1H-CrV" id="4jr-6E-jyg"/>
                 <outlet property="nameCompte" destination="r47-Uy-n7c" id="Bjt-mM-2zB"/>
                 <outlet property="nameTitulaire" destination="kYU-cJ-xrc" id="ffB-Ol-kAp"/>
                 <outlet property="numCheque" destination="Icb-JM-RnW" id="gBV-sT-Hgh"/>

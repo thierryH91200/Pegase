@@ -18,6 +18,7 @@
 		031AF98C25494BE000B442AB /* Transformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031AF98B25494BE000B442AB /* Transformable.swift */; };
 		031C2D292631770F005F6AA1 /* BankStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C2D272631770F005F6AA1 /* BankStatement.swift */; };
 		031C2D2A26317710005F6AA1 /* BankStatement.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031C2D282631770F005F6AA1 /* BankStatement.xib */; };
+		031D80082660FFAF00A17580 /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 031D80072660F59700A17580 /* MyDB.sqlite */; };
 		03213B0523F9048200002DD7 /* TTFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFD23F9048200002DD7 /* TTFormatViewController.xib */; };
 		03213B0623F9048200002DD7 /* ImportWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03213AFE23F9048200002DD7 /* ImportWindowController.xib */; };
 		03213B0723F9048200002DD7 /* ImportWindowControllerParserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */; };
@@ -151,7 +152,6 @@
 		0325988E2527506700FCB5BD /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325988C2527506700FCB5BD /* AutoCompleteTextField.swift */; };
 		0325F25526441124003027AE /* DSFFloatLabelledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325F25326441124003027AE /* DSFFloatLabelledTextField.swift */; };
 		032C13062455A1F400831E23 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 032C13052455A1F400831E23 /* Charts */; };
-		032CE32924E9529000660A8B /* MyDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 032CE32824E9523100660A8B /* MyDB.sqlite */; };
 		032CE32B24E9B27B00660A8B /* NSOpenPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032CE32A24E9B27B00660A8B /* NSOpenPanel.swift */; };
 		034EC83323F87C60006944DD /* PegaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EC83223F87C60006944DD /* PegaseUITests.swift */; };
 		034EC89E23F87CE2006944DD /* CodingGuidelines.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89A23F87CE1006944DD /* CodingGuidelines.md */; };
@@ -285,6 +285,7 @@
 		031AF98B25494BE000B442AB /* Transformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformable.swift; sourceTree = "<group>"; };
 		031C2D272631770F005F6AA1 /* BankStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankStatement.swift; sourceTree = "<group>"; };
 		031C2D282631770F005F6AA1 /* BankStatement.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankStatement.xib; sourceTree = "<group>"; };
+		031D80072660F59700A17580 /* MyDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyDB.sqlite; sourceTree = "<group>"; };
 		03213AFD23F9048200002DD7 /* TTFormatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTFormatViewController.xib; sourceTree = "<group>"; };
 		03213AFE23F9048200002DD7 /* ImportWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportWindowController.xib; sourceTree = "<group>"; };
 		03213AFF23F9048200002DD7 /* ImportWindowControllerParserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportWindowControllerParserDelegate.swift; sourceTree = "<group>"; };
@@ -473,7 +474,6 @@
 		0325988C2527506700FCB5BD /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		0325F25326441124003027AE /* DSFFloatLabelledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSFFloatLabelledTextField.swift; sourceTree = "<group>"; };
 		032A5CE12502340800D787AD /* Capture10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture10.png; sourceTree = "<group>"; };
-		032CE32824E9523100660A8B /* MyDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyDB.sqlite; sourceTree = "<group>"; };
 		032CE32A24E9B27B00660A8B /* NSOpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOpenPanel.swift; sourceTree = "<group>"; };
 		034EC81623F87C5B006944DD /* Pegase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pegase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034EC82E23F87C5F006944DD /* PegaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PegaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -877,7 +877,7 @@
 		03213BBF23F90A9000002DD7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				032CE32824E9523100660A8B /* MyDB.sqlite */,
+				031D80072660F59700A17580 /* MyDB.sqlite */,
 				03213BC423F90AAB00002DD7 /* Assets.xcassets */,
 				03213BC323F90AAA00002DD7 /* curtain.jpg */,
 				03213BC623F90AAB00002DD7 /* icons8-credit-card-100.png */,
@@ -1359,7 +1359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032CE32924E9529000660A8B /* MyDB.sqlite in Resources */,
+				031D80082660FFAF00A17580 /* MyDB.sqlite in Resources */,
 				03213C9D23F9320600002DD7 /* IdentiteViewController.xib in Resources */,
 				03213B8023F9082600002DD7 /* CategoryBarController.xib in Resources */,
 				035115CA241FF2DE001AF54B /* Pegase.png in Resources */,

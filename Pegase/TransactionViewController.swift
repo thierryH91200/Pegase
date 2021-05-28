@@ -20,8 +20,8 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     @IBOutlet weak var gridView: NSGridView!
     
     @IBOutlet weak var buttonSave: NSButton!
-    @IBOutlet weak var modeOperation: NSButton!
-    @IBOutlet weak var modeOperation2: NSButton!
+    @IBOutlet weak var modeTransaction: NSButton!
+    @IBOutlet weak var modeTransaction2: NSButton!
     @IBOutlet weak var column0: NSGridColumn!
     @IBOutlet weak var addBUtton: NSPopUpButton!
     @IBOutlet weak var removeButton: NSButton!
@@ -63,8 +63,8 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     var setCheck_In_Date = Set<Date>()
     var setDateOperation = Set<Date>()
     
-    // edition = false => creation 1 operation
-    // edition = true => edition 1 to n operation(s)
+    // edition = false => creation 1 transaction
+    // edition = true => edition 1 to n transaction(s)
     var edition = false
     
     let key1 = Notification.Name.updateTransaction
@@ -102,13 +102,13 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         
         NotificationCenter.receive(instance: self, selector: #selector(self.willShowPopup(_:)), name: .selectionDidChangePopUp )
         
-        self.modeOperation.bezelStyle = .texturedSquare
-        self.modeOperation.isBordered = false //Important
-        self.modeOperation.wantsLayer = true
+        self.modeTransaction.bezelStyle = .texturedSquare
+        self.modeTransaction.isBordered = false //Important
+        self.modeTransaction.wantsLayer = true
         
-        self.modeOperation2.bezelStyle = .texturedSquare
-        self.modeOperation2.isBordered = false //Important
-        self.modeOperation2.wantsLayer = true
+        self.modeTransaction2.bezelStyle = .texturedSquare
+        self.modeTransaction2.isBordered = false //Important
+        self.modeTransaction2.wantsLayer = true
         
         self.textFieldMontant.isEnabled = false
         

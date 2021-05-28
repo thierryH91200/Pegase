@@ -6,11 +6,11 @@ extension TransactionViewController: ListeOperationsDelegate {
     func resetOperation() {
                 
         self.edition = false
-        self.modeOperation.title = Localizations.Transaction.ModeCreation
-        self.modeOperation.layer?.backgroundColor = NSColor.orange.cgColor
+        self.modeTransaction.title = Localizations.Transaction.ModeCreation
+        self.modeTransaction.layer?.backgroundColor = NSColor.orange.cgColor
         
-        self.modeOperation2.title = Localizations.Transaction.ModeCreation
-        self.modeOperation2.layer?.backgroundColor = NSColor.orange.cgColor
+        self.modeTransaction2.title = Localizations.Transaction.ModeCreation
+        self.modeTransaction2.layer?.backgroundColor = NSColor.orange.cgColor
         
         self.buttonSave.isEnabled = false
         self.addBUtton.isEnabled = true
@@ -94,11 +94,11 @@ extension TransactionViewController: ListeOperationsDelegate {
         self.entityOperations = quakes
         if self.entityOperations.count > 1 {
             
-            self.modeOperation.title = "Multiple Value"
-            self.modeOperation.layer?.backgroundColor  = NSColor.selectedControlColor.cgColor
+            self.modeTransaction.title = "Multiple Value"
+            self.modeTransaction.layer?.backgroundColor  = NSColor.selectedControlColor.cgColor
             
-            self.modeOperation2.title = "Multiple Value"
-            self.modeOperation2.layer?.backgroundColor = NSColor.selectedControlColor.cgColor
+            self.modeTransaction2.title = "Multiple Value"
+            self.modeTransaction2.layer?.backgroundColor = NSColor.selectedControlColor.cgColor
             
             self.dateOperation.allowEmptyDate = true
             self.dateOperation.showPromptWhenEmpty = true
@@ -113,11 +113,11 @@ extension TransactionViewController: ListeOperationsDelegate {
             
         } else {
             
-            self.modeOperation.title = Localizations.Transaction.ModeEdition
-            self.modeOperation.layer?.backgroundColor = NSColor.green.cgColor
+            self.modeTransaction.title = Localizations.Transaction.ModeEdition
+            self.modeTransaction.layer?.backgroundColor = NSColor.green.cgColor
             
-            self.modeOperation2.title = Localizations.Transaction.ModeEdition
-            self.modeOperation2.layer?.backgroundColor = NSColor.green.cgColor
+            self.modeTransaction2.title = Localizations.Transaction.ModeEdition
+            self.modeTransaction2.layer?.backgroundColor = NSColor.green.cgColor
 
             self.addBUtton.isEnabled = true
             let sousOperation = self.entityOperations.first?.sousOperations?.allObjects as! [EntitySousOperations]
