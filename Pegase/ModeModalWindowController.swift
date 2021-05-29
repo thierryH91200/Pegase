@@ -55,7 +55,5 @@ final class ModeModalWindowController: NSWindowController {
         
         self.window!.close()
         NSColorPanel.shared.orderOut(nil)
-
     }
-    
 }

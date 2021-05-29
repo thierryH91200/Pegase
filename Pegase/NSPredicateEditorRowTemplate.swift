@@ -167,7 +167,7 @@ final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
         let operatorType = predicate.predicateOperatorType
         let operatorName = findOperatorType(operatorType: operatorType)
         
-        let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $category.name %@ %@).@count > 0", operatorName, predicate.rightExpression)
+        let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.name %@ %@).@count > 0", operatorName, predicate.rightExpression)
         let newPredicate = NSPredicate(format: predicateFormat)
         return newPredicate
     }

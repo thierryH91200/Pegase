@@ -713,10 +713,10 @@
 		03213B3623F9051D00002DD7 /* SousOperation */ = {
 			isa = PBXGroup;
 			children = (
-				03213B4623F9055400002DD7 /* SousOperationAction.swift */,
-				03213B4423F9055400002DD7 /* SousOperationComboBoxDelegate.swift */,
 				03213B4323F9055400002DD7 /* SousOperationModalWindowController.swift */,
 				03213C5A23F926AD00002DD7 /* SousOperationModalWindowController.xib */,
+				03213B4423F9055400002DD7 /* SousOperationComboBoxDelegate.swift */,
+				03213B4623F9055400002DD7 /* SousOperationAction.swift */,
 			);
 			name = SousOperation;
 			sourceTree = "<group>";
