@@ -113,9 +113,9 @@ extension NSPredicateEditorRowTemplate {
         case .equalTo:
             operatorName = "=="
         case .beginsWith:
-            operatorName = "BEGINSWITH"
+            operatorName = "BEGINSWITH[cd]"
         case .endsWith:
-            operatorName = "ENDSWITH"
+            operatorName = "ENDSWITH[cd]"
         case .contains:
             operatorName = "CONTAINS[cd]"
         case .lessThan:

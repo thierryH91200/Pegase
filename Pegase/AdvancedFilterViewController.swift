@@ -14,13 +14,11 @@ final class AdvancedFilterViewController: NSViewController {
         }
     }
     
-    /// predicateEditorAction
-    ///
-    /// - Parameter sender:
     @IBAction func predicateEditorAction(_ sender: NSButton) {
-        print("predicate value changed")
+//        print("predicate value changed")
     }
     
+    // MARK: - generateQuery
     @IBAction func generateQuery(_ sender: NSButton) {
 
         let fetchRequest = NSFetchRequest<EntityTransactions>(entityName: "EntityTransactions")
