@@ -68,5 +68,181 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD98D962-1A7B-47A6-9AF2-B62785E8C17F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/NSPredicateEditorRowTemplate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "init(stringCompareForKeyPaths:operators:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD98D962-1A7B-47A6-9AF2-B62785E8C17F - 19a4a95de7e749fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.NSPredicateEditorRowTemplate.init(stringCompareForKeyPaths: Swift.Array&lt;Swift.String&gt;, operators: Swift.Array&lt;__C.NSPredicateOperatorType&gt;) -&gt; __C.NSPredicateEditorRowTemplate"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/NSPredicateEditorRowTemplate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "889">
+               </Location>
+               <Location
+                  uuid = "CD98D962-1A7B-47A6-9AF2-B62785E8C17F - 4e44b915dd411dd4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; __C.NSExpression in __C.NSPredicateEditorRowTemplate.init(stringCompareForKeyPaths: Swift.Array&lt;Swift.String&gt;, operators: Swift.Array&lt;__C.NSPredicateOperatorType&gt;) -&gt; __C.NSPredicateEditorRowTemplate"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/NSPredicateEditorRowTemplate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "385">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "08154CEE-6158-4C1C-9321-14E0D03F88F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/NSPredicateEditorRowTemplate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "init(forKeyPath:withValues:operators:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "59C0889F-AD74-490A-8E50-7F3D39CA4D22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/NSPredicateEditorRowTemplate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "init(compoundTypes:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "59C0889F-AD74-490A-8E50-7F3D39CA4D22 - fec29e5569659117"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.NSPredicateEditorRowTemplate.init(compoundTypes: Swift.Array&lt;__C.NSCompoundPredicateType&gt;) -&gt; __C.NSPredicateEditorRowTemplate"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/NSPredicateEditorRowTemplate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "509">
+               </Location>
+               <Location
+                  uuid = "59C0889F-AD74-490A-8E50-7F3D39CA4D22 - f0fa35bed0f316c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; __C.NSNumber in __C.NSPredicateEditorRowTemplate.init(compoundTypes: Swift.Array&lt;__C.NSCompoundPredicateType&gt;) -&gt; __C.NSPredicateEditorRowTemplate"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/NSPredicateEditorRowTemplate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "414">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D36D4DEB-3AA3-4DC5-A9E3-6296AFE5D549"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/NSPredicateEditorRowTemplate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "init(IntCompareForKeyPaths:operators:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D36D4DEB-3AA3-4DC5-A9E3-6296AFE5D549 - 4bc58bb4188436c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.NSPredicateEditorRowTemplate.init(IntCompareForKeyPaths: Swift.Array&lt;Swift.String&gt;, operators: Swift.Array&lt;__C.NSPredicateOperatorType&gt;) -&gt; __C.NSPredicateEditorRowTemplate"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/NSPredicateEditorRowTemplate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "835">
+               </Location>
+               <Location
+                  uuid = "D36D4DEB-3AA3-4DC5-A9E3-6296AFE5D549 - e489b2b4b12c90c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; __C.NSExpression in __C.NSPredicateEditorRowTemplate.init(IntCompareForKeyPaths: Swift.Array&lt;Swift.String&gt;, operators: Swift.Array&lt;__C.NSPredicateOperatorType&gt;) -&gt; __C.NSPredicateEditorRowTemplate"
+                  moduleName = "Pegase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/Pegase/Pegase/Pegase/NSPredicateEditorRowTemplate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "385">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17AA0A2A-D341-4C32-A282-E46651D06546"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pegase/NSPredicateEditorRowTemplate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "predicate(withSubpredicates:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

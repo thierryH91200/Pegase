@@ -38,7 +38,7 @@ extension NSPredicateEditorRowTemplate {
                    options: (Int(NSComparisonPredicate.Options.caseInsensitive.rawValue | NSComparisonPredicate.Options.diacriticInsensitive.rawValue)) )
     }
     
-    // String
+    // MARK: String
     convenience init( stringCompareForKeyPaths keyPaths: [String] , operators: [NSComparisonPredicate.Operator]) {
         
         let leftExpressions = (0..<keyPaths.count).map { (i) -> NSExpression in
@@ -55,7 +55,7 @@ extension NSPredicateEditorRowTemplate {
                    options: (Int(NSComparisonPredicate.Options.caseInsensitive.rawValue | NSComparisonPredicate.Options.diacriticInsensitive.rawValue)) )
     }
     
-    // Int
+    // MARK: Int
     convenience init( IntCompareForKeyPaths keyPaths: [String], operators: [NSComparisonPredicate.Operator] = [.equalTo, .notEqualTo]) {
         
         let leftExpressions = (0..<keyPaths.count).map { (i) -> NSExpression in
@@ -72,7 +72,7 @@ extension NSPredicateEditorRowTemplate {
                    options: 0 )
     }
     
-    // Date
+    // MARK: Date
     convenience init( DateCompareForKeyPaths keyPaths: [String] , operators: [NSComparisonPredicate.Operator]) {
         
         let leftExpressions = (0..<keyPaths.count).map { (i) -> NSExpression in
@@ -89,7 +89,7 @@ extension NSPredicateEditorRowTemplate {
                    options: 0 )
     }
     
-    // Bool
+    // MARK: Bool
     convenience init( BoolCompareForKeyPaths keyPaths: [String] , operators: [NSComparisonPredicate.Operator]) {
         
         let leftExpressions = (0..<keyPaths.count).map { (i) -> NSExpression in
@@ -172,6 +172,7 @@ final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
         return newPredicate
     }
 }
+
 final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
     
     override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate {
@@ -189,7 +190,6 @@ final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
         return newPredicate
     }
 }
-
 
 final class RowTemplateRelationshipLibelle: NSPredicateEditorRowTemplate {
     
@@ -214,6 +214,21 @@ final class RowTemplateRelationshipMontant: NSPredicateEditorRowTemplate {
         let operatorName = findOperatorType(operatorType: operatorType)
 
         let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $sousOperation.amount %@ %@).@count > 0", operatorName, predicate.rightExpression)
+        let newPredicate = NSPredicate(format: predicateFormat)
+        
+        return newPredicate
+    }
+}
+
+final class RowTemplateRelationshipMode: NSPredicateEditorRowTemplate {
+    
+    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate{
+        
+        let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
+        let operatorType = predicate.predicateOperatorType
+        let operatorName = findOperatorType(operatorType: operatorType)
+
+        let predicateFormat  = String(format : "paymentMode.name %@ %@", operatorName, predicate.rightExpression)
         let newPredicate = NSPredicate(format: predicateFormat)
         
         return newPredicate

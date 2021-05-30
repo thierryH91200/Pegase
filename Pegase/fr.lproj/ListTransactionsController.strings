@@ -15,13 +15,13 @@
 "6e4-Ij-2aJ.title" = "Text Cell";
 
 /* Class = "NSTableColumn"; headerCell.title = "Libelle"; ObjectID = "7VL-J2-KjH"; */
-"7VL-J2-KjH.headerCell.title" = "Libelle";
+"7VL-J2-KjH.headerCell.title" = "Libellé";
 
 /* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "7uB-r9-yaM"; */
 "7uB-r9-yaM.title" = "Table View Cell";
 
 /* Class = "NSTableColumn"; headerCell.title = "Spent"; ObjectID = "8fI-3H-gS5"; */
-"8fI-3H-gS5.headerCell.title" = "Dépence";
+"8fI-3H-gS5.headerCell.title" = "Dépense";
 
 /* Class = "NSMenuItem"; title = "Delete"; ObjectID = "9jr-HX-MN1"; */
 "9jr-HX-MN1.title" = "Supprimer";

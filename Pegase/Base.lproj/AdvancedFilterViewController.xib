@@ -397,19 +397,19 @@
                                             </menu>
                                         </popUpMenus>
                                     </predicateEditorRowTemplate>
-                                    <predicateEditorRowTemplate rowType="simple" id="jZm-AD-4dJ">
+                                    <predicateEditorRowTemplate rowType="simple" id="jZm-AD-4dJ" customClass="RowTemplateRelationshipMode" customModule="Pegase" customModuleProvider="target">
                                         <array key="leftExpressionObject">
                                             <expression type="keyPath">
-                                                <string key="keyPath">Mode Paiement</string>
+                                                <string key="keyPath">paymentMode.name</string>
                                             </expression>
                                         </array>
                                         <integer key="rightExpressionObject" value="700"/>
                                         <popUpMenus>
-                                            <menu id="EeJ-4d-CpS">
+                                            <menu title="Mode Payement" id="EeJ-4d-CpS">
                                                 <items>
-                                                    <menuItem title="Mode Paiement" state="on" id="lGW-94-3H6">
+                                                    <menuItem title="Mode payement" state="on" id="lGW-94-3H6">
                                                         <expression key="representedObject" type="keyPath">
-                                                            <string key="keyPath">Mode Paiement</string>
+                                                            <string key="keyPath">paymentMode.name</string>
                                                         </expression>
                                                     </menuItem>
                                                 </items>
