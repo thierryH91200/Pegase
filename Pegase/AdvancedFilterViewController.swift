@@ -13,15 +13,20 @@ final class AdvancedFilterViewController: NSViewController {
 
         let templateCompoundTypes = NSPredicateEditorRowTemplate( compoundTypes: [.and, .or, .not] )
 
-        let template1 = RowTemplateRelationshipRubrique(leftExpressions: [NSExpression(forKeyPath: "Rubric")])
+        let template1 = RowTemplateRelationshipDate(leftExpressions: [NSExpression(forKeyPath: "Date Operation")], leftEntity: "dateOperation")
+        let template2 = RowTemplateRelationshipDate(leftExpressions: [NSExpression(forKeyPath: "Date Pointage")], leftEntity: "datePointage")
+        
+        let template3 = RowTemplateRelationshipStatus(leftExpressions: [NSExpression(forKeyPath: "Status")])
+        let template4 = RowTemplateRelationshipMode(leftExpressions: [NSExpression(forKeyPath: "Mode")])
+        
+        let template5 = RowTemplateRelationshipLibelle(leftExpressions: [NSExpression(forKeyPath: "Libelle")])
+        let template6 = RowTemplateRelationshipRubrique(leftExpressions: [NSExpression(forKeyPath: "Rubric")])
+        let template7 = RowTemplateRelationshipCategory(leftExpressions: [NSExpression(forKeyPath: "Category")])
+        let template8 = RowTemplateRelationshipMontant(leftExpressions: [NSExpression(forKeyPath: "Montant")])
 
-        let template2 = RowTemplateRelationshipCategory(leftExpressions: [NSExpression(forKeyPath: "Category")])
-        let template3 = RowTemplateRelationshipMontant(leftExpressions: [NSExpression(forKeyPath: "Montant")])
-
-        let template4 = RowTemplateRelationshipStatus(leftExpressions: [NSExpression(forKeyPath: "Status")])
-        let template5 = RowTemplateRelationshipMode(leftExpressions: [NSExpression(forKeyPath: "Mode")])
                 
-        predicateEditor.rowTemplates = [ templateCompoundTypes, template1, template2, template3, template4, template5]
+        predicateEditor.rowTemplates.removeAll()
+        predicateEditor.rowTemplates = [ templateCompoundTypes, template1, template2, template3, template4, template5, template6, template7, template8]
         
         predicateEditor.canRemoveAllRows = false
 
@@ -31,7 +36,7 @@ final class AdvancedFilterViewController: NSViewController {
     }
     
     @IBAction func predicateEditorAction(_ sender: NSButton) {
-//        print("predicate value changed")
+        print("predicate value changed")
     }
     
     // MARK: - generateQuery
