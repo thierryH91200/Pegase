@@ -9,19 +9,32 @@
 import AppKit
 
 
+// MARK: - Rubrique
 final class RowTemplateRelationshipRubrique: NSPredicateEditorRowTemplate {
-    
+
+    var entityRubric = [EntityRubric]()
+    var arrayRub = [NSExpression]()
+
     override init() {
         super.init()
     }
     
     init(leftExpressions: [NSExpression]) {
-        let operators: [NSComparisonPredicate.Operator] = [ .equalTo, .notEqualTo, .beginsWith, .contains]
+        let operators: [NSComparisonPredicate.Operator] = [ .equalTo, .notEqualTo]
         var operatorsNSNumber: [NSNumber] = []
         for o in operators { operatorsNSNumber.append( NSNumber(value: o.rawValue) ) }
         
+        self.arrayRub = [NSExpression]()
+        self.arrayRub.removeAll()
+        self.entityRubric = [EntityRubric]()
+        self.entityRubric = Rubric.shared.getAllDatas()
+        
+        for i in 0..<entityRubric.count {
+            arrayRub.append(NSExpression(forKeyPath: entityRubric[i].name!))
+        }
+
         super.init(leftExpressions: leftExpressions ,
-                   rightExpressionAttributeType: .stringAttributeType,
+                   rightExpressions: arrayRub ,
                    modifier: .direct,
                    operators: operatorsNSNumber,
                    options: 0)
@@ -43,6 +56,7 @@ final class RowTemplateRelationshipRubrique: NSPredicateEditorRowTemplate {
     }
 }
 
+// MARK: - Category
 final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
     
     override init() {
@@ -60,7 +74,7 @@ final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
                    operators: operatorsNSNumber,
                    options: 0)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -77,6 +91,7 @@ final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
     }
 }
 
+// MARK: - Status
 final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
     
     override init() {
@@ -115,6 +130,7 @@ final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
     }
 }
 
+// MARK: - Libelle
 final class RowTemplateRelationshipLibelle: NSPredicateEditorRowTemplate {
     
     override init() {
@@ -149,6 +165,7 @@ final class RowTemplateRelationshipLibelle: NSPredicateEditorRowTemplate {
     }
 }
 
+// MARK: - Montant
 final class RowTemplateRelationshipMontant: NSPredicateEditorRowTemplate {
     
     override init() {
@@ -186,7 +203,10 @@ final class RowTemplateRelationshipMontant: NSPredicateEditorRowTemplate {
     }
 }
 
+// MARK: - Mode
 final class RowTemplateRelationshipMode: NSPredicateEditorRowTemplate {
+    
+    var arrayMode = [NSExpression]()
     
     override init() {
         super.init()
@@ -197,8 +217,16 @@ final class RowTemplateRelationshipMode: NSPredicateEditorRowTemplate {
         var operatorsNSNumber: [NSNumber] = []
         for o in operators { operatorsNSNumber.append( NSNumber(value: o.rawValue) ) }
         
+        let modesPaiement = PaymentMode.shared.getAllDatas()
+        for modePaiement in modesPaiement
+        {
+            arrayMode.append( NSExpression(forKeyPath: modePaiement.name!))
+        }
+
+        
         super.init(leftExpressions: leftExpressions ,
-                   rightExpressionAttributeType: .stringAttributeType,
+                   rightExpressions: arrayMode ,
+//                   rightExpressionAttributeType: .stringAttributeType,
                    modifier: .direct,
                    operators: operatorsNSNumber,
                    options: 0)
@@ -214,23 +242,24 @@ final class RowTemplateRelationshipMode: NSPredicateEditorRowTemplate {
         let operatorType = predicate.predicateOperatorType
         let operatorName = findOperatorType(operatorType: operatorType)
         
-        let predicateFormat  = String(format : "paymentMode.name %@ %@", operatorName, predicate.rightExpression)
+        let predicateFormat  = String(format : "paymentMode.name %@ \"%@\"", operatorName, predicate.rightExpression)
         let newPredicate = NSPredicate(format: predicateFormat)
         
         return newPredicate
     }
 }
 
+// MARK: - Date
 final class RowTemplateRelationshipDate: NSPredicateEditorRowTemplate {
     
-    var entity = ""
+    static var entity = ""
     
     override init() {
         super.init()
     }
 
     init(leftExpressions: [NSExpression], leftEntity : String) {
-        self.entity = leftEntity
+        RowTemplateRelationshipDate.entity = leftEntity
         let operators: [NSComparisonPredicate.Operator] = RowTemplateRelationshipMontant.dateOperators
         var operatorsNSNumber: [NSNumber] = []
         for o in operators { operatorsNSNumber.append( NSNumber(value: o.rawValue) ) }
@@ -261,7 +290,7 @@ final class RowTemplateRelationshipDate: NSPredicateEditorRowTemplate {
         
         let date = Date(timeIntervalSinceReferenceDate:  sentence!).noon
         let timeInterval = date.timeIntervalSinceReferenceDate
-        let predicateFormat = String(format : "%@ %@ CAST(%.2f, 'NSDate')", self.entity , operatorName, timeInterval)
+        let predicateFormat = String(format : "%@ %@ CAST(%.2f, 'NSDate')", RowTemplateRelationshipDate.entity , operatorName, timeInterval)
         
         let newPredicate = NSPredicate(format: predicateFormat)
         return newPredicate

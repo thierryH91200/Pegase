@@ -103,7 +103,7 @@
 "ModePaiement.Cheque" = "Chéque";
 "ModePaiement.Especes" = "Espéces";
 "ModePaiement.Prelevement" = "Prélevement";
-"ModePaiement.Remise" = "Discount";
+"ModePaiement.Remise" = "Remise";
 "ModePaiement.RetraitEspeces" = "Retrait espéces";
 "ModePaiement.Virement" = "Virement";
 
