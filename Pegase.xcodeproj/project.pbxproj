@@ -222,6 +222,7 @@
 		039BAC3A242CAD4600C375BB /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039BAC3C242CAD4600C375BB /* MainWindowController.xib */; };
 		039E0BE5247FA5FD00BE8ED7 /* rubrique.csv in Resources */ = {isa = PBXBuildFile; fileRef = 039E0BE7247FA5FD00BE8ED7 /* rubrique.csv */; };
 		039F181F26486237009685E7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039F181E26486237009685E7 /* String.swift */; };
+		03AB64CA2667559D00A3C5F5 /* NSPredicateEditorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB64C82667559D00A3C5F5 /* NSPredicateEditorRow.swift */; };
 		03AC6B8625E3C005004C7223 /* NotificationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC6B8425E3C005004C7223 /* NotificationsHelper.swift */; };
 		03AC6B8A25E3CCC8004C7223 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC6B8825E3CCC8004C7223 /* NotificationHandler.swift */; };
 		03AC6B8B25E3CCC8004C7223 /* NotificationActionsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC6B8925E3CCC8004C7223 /* NotificationActionsEnum.swift */; };
@@ -577,6 +578,7 @@
 		039E0BEB247FA60900BE8ED7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text; name = it; path = it.lproj/rubrique.csv; sourceTree = "<group>"; };
 		039E0BEC247FA60A00BE8ED7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text; name = es; path = es.lproj/rubrique.csv; sourceTree = "<group>"; };
 		039F181E26486237009685E7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		03AB64C82667559D00A3C5F5 /* NSPredicateEditorRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPredicateEditorRow.swift; sourceTree = "<group>"; };
 		03AC6B8425E3C005004C7223 /* NotificationsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsHelper.swift; sourceTree = "<group>"; };
 		03AC6B8825E3CCC8004C7223 /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		03AC6B8925E3CCC8004C7223 /* NotificationActionsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationActionsEnum.swift; sourceTree = "<group>"; };
@@ -1049,11 +1051,9 @@
 				03213B9123F9089300002DD7 /* NVDate.swift */,
 				034EC8C923F87EB1006944DD /* RateConfigure.swift */,
 				034EC8C723F87EB1006944DD /* RateWindowController.swift */,
-				034EC8BC23F87E97006944DD /* NSPredicateEditorRowTemplate.swift */,
-				034EC8BA23F87E8B006944DD /* AdvancedFilterViewController.swift */,
-				03213C2E23F90DDF00002DD7 /* AdvancedFilterViewController.xib */,
 				03213C3923F924D600002DD7 /* MainMenu.xib */,
 				03213C7123F92F1C00002DD7 /* Localizable.strings */,
+				03AB64CB2667F61600A3C5F5 /* Filter */,
 				034EC8D923F87EC8006944DD /* CoreData */,
 				034EC8FF23F87F43006944DD /* Extension */,
 				034EC91623F87F6D006944DD /* Generated */,
@@ -1218,6 +1218,17 @@
 				034ECB6423F88032006944DD /* PopOverModalViewController.xib */,
 			);
 			name = PopUp;
+			sourceTree = "<group>";
+		};
+		03AB64CB2667F61600A3C5F5 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				03AB64C82667559D00A3C5F5 /* NSPredicateEditorRow.swift */,
+				034EC8BC23F87E97006944DD /* NSPredicateEditorRowTemplate.swift */,
+				034EC8BA23F87E8B006944DD /* AdvancedFilterViewController.swift */,
+				03213C2E23F90DDF00002DD7 /* AdvancedFilterViewController.xib */,
+			);
+			name = Filter;
 			sourceTree = "<group>";
 		};
 		03AC6B8C25E3CD28004C7223 /* Notification */ = {
@@ -1631,6 +1642,7 @@
 				03213C1423F90C0E00002DD7 /* ColorGridController.swift in Sources */,
 				03213B4123F9053A00002DD7 /* TransactionViewControllerDelegate.swift in Sources */,
 				03213B2423F904DE00002DD7 /* WebViewController.swift in Sources */,
+				03AB64CA2667559D00A3C5F5 /* NSPredicateEditorRow.swift in Sources */,
 				034ECB5F23F87FAF006944DD /* CurtainViewController.swift in Sources */,
 				03213BE623F90B3F00002DD7 /* SchedulersSaisieControllerPopUp.swift in Sources */,
 			);

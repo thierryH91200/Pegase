@@ -10,6 +10,11 @@ import AppKit
 
 extension NSPredicateEditorRowTemplate {
     
+    static let numberOperators:[NSComparisonPredicate.Operator] = [.equalTo, .notEqualTo, .greaterThan, .greaterThanOrEqualTo, .lessThan, .lessThanOrEqualTo]
+    static let stringOperators:[NSComparisonPredicate.Operator] = [.equalTo, .notEqualTo, .beginsWith, .endsWith, .matches, .like]
+    static let boolOperators:[NSComparisonPredicate.Operator] = [.equalTo, .notEqualTo]
+    static let dateOperators:[NSComparisonPredicate.Operator] = [.equalTo, .notEqualTo, .greaterThan, .lessThan]
+
     convenience init( compoundTypes: [NSCompoundPredicate.LogicalType] ) {
         
         let compoundTypesNSNumber = (0..<compoundTypes.count).map { (i) -> NSNumber in
@@ -17,6 +22,34 @@ extension NSPredicateEditorRowTemplate {
         }
         self.init( compoundTypes: compoundTypesNSNumber )
     }
+    
+    convenience init? (forKeysPath keyPaths:String, ofType type:NSAttributeType, andPrefix prefix:String=""){
+        var templateOperator = [NSNumber]()
+        
+        //Setup depending on the type
+        switch type {
+        case .decimalAttributeType, .doubleAttributeType, .floatAttributeType, .integer16AttributeType, .integer32AttributeType, .integer64AttributeType:
+            templateOperator = NSPredicateEditorRowTemplate.numberOperators.map{NSNumber(value: $0.rawValue)}
+        case .dateAttributeType:
+            templateOperator = NSPredicateEditorRowTemplate.dateOperators.map{NSNumber(value: $0.rawValue)}
+        case .stringAttributeType:
+            templateOperator = NSPredicateEditorRowTemplate.stringOperators.map{NSNumber(value: $0.rawValue)}
+        case .booleanAttributeType:
+            templateOperator = NSPredicateEditorRowTemplate.boolOperators.map{NSNumber(value: $0.rawValue)}
+        default:
+            print("Attribute type: \(type) not implemented.")
+            return nil
+        }
+        //Generic values
+        let leftExp = NSExpression(forKeyPath: prefix + keyPaths)
+        let options = type == .stringAttributeType ? (Int(NSComparisonPredicate.Options.caseInsensitive.rawValue | NSComparisonPredicate.Options.diacriticInsensitive.rawValue)) : 0
+        self.init( leftExpressions: [leftExp],
+                   rightExpressionAttributeType: type,
+                   modifier: .direct,
+                   operators: templateOperator,
+                   options: options )
+    }
+
     
     // Constant values
     convenience init( forKeyPath keyPath: String, withValues values: [Any] , operators: [NSComparisonPredicate.Operator]) {
@@ -143,120 +176,5 @@ extension NSPredicateEditorRowTemplate {
         }
         return operatorName
     }
-}
-
-final class RowTemplateRelationshipRubrique: NSPredicateEditorRowTemplate {
-    
-    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate {
-        
-        let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
-        let operatorType = predicate.predicateOperatorType
-        let operatorName = findOperatorType(operatorType: operatorType)
-        
-        let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.rubric.name %@ %@).@count > 0", operatorName, predicate.rightExpression)
-        let newPredicate = NSPredicate(format: predicateFormat)
-        return newPredicate
-    }
-}
-
-final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
-    
-    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate {
-        
-        let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
-        let operatorType = predicate.predicateOperatorType
-        let operatorName = findOperatorType(operatorType: operatorType)
-        
-        let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $sousOperation.category.name %@ %@).@count > 0", operatorName, predicate.rightExpression)
-        let newPredicate = NSPredicate(format: predicateFormat)
-        return newPredicate
-    }
-}
-
-final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
-    
-    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate {
-        
-        let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
-        let operatorType = predicate.predicateOperatorType
-        let operatorName = findOperatorType(operatorType: operatorType)
-        var right = String(format: "%@", predicate.rightExpression)
-        right = right[1 ..< right.count - 1 ]
-        let findRight = Statut.shared.findStatut(statut: right)
-
-        let predicateFormat  = String(format : "%@ %@ %d", predicate.leftExpression , operatorName, findRight)
-        
-        let newPredicate = NSPredicate(format: predicateFormat)
-        return newPredicate
-    }
-}
-
-final class RowTemplateRelationshipLibelle: NSPredicateEditorRowTemplate {
-    
-    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate{
-        
-        let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
-        let operatorType = predicate.predicateOperatorType
-        let operatorName = findOperatorType(operatorType: operatorType)
-        let predicateFormat = String(format: "SUBQUERY(sousOperations, $sousOperation, $sousOperation.libelle %@ %@).@count > 0", operatorName, predicate.rightExpression)
-
-        let newPredicate = NSPredicate(format: predicateFormat)
-        return newPredicate
-    }
-}
-
-final class RowTemplateRelationshipMontant: NSPredicateEditorRowTemplate {
-    
-    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate{
-        
-        let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
-        let operatorType = predicate.predicateOperatorType
-        let operatorName = findOperatorType(operatorType: operatorType)
-
-        let predicateFormat  = String(format : "SUBQUERY(sousOperations, $sousOperation, $sousOperation.amount %@ %@).@count > 0", operatorName, predicate.rightExpression)
-        let newPredicate = NSPredicate(format: predicateFormat)
-        
-        return newPredicate
-    }
-}
-
-final class RowTemplateRelationshipMode: NSPredicateEditorRowTemplate {
-    
-    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate{
-        
-        let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
-        let operatorType = predicate.predicateOperatorType
-        let operatorName = findOperatorType(operatorType: operatorType)
-
-        let predicateFormat  = String(format : "paymentMode.name %@ %@", operatorName, predicate.rightExpression)
-        let newPredicate = NSPredicate(format: predicateFormat)
-        
-        return newPredicate
-    }
-}
-
-final class RowTemplateRelationshipDate: NSPredicateEditorRowTemplate {
-    
-    override func predicate(withSubpredicates subpredicates: [NSPredicate]?) -> NSPredicate{
-        
-        let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
-        
-        let operatorType = predicate.predicateOperatorType
-        let operatorName = findOperatorType(operatorType: operatorType)
-        
-        let rightExpression = predicate.rightExpression.description
-        let beginOfSentence = rightExpression.firstIndex(of: "(")!
-        let endOfSentence = rightExpression.firstIndex(of: ",")!
-        
-        let sentense = TimeInterval(rightExpression[rightExpression.index(after: beginOfSentence)..<endOfSentence])
-        
-        let date = Date(timeIntervalSinceReferenceDate:  sentense!).noon
-        let timeInterval = date.timeIntervalSinceReferenceDate
-        let predicateFormat = String(format : "%@ %@ CAST(%.2f, 'NSDate')", predicate.leftExpression , operatorName, timeInterval)
-
-        let newPredicate = NSPredicate(format: predicateFormat)
-        return newPredicate
-    }
-    
 }
 
