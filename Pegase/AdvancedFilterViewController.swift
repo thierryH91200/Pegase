@@ -35,7 +35,7 @@ final class AdvancedFilterViewController: NSViewController {
     }
     
     @IBAction func predicateEditorAction(_ sender: NSButton) {
-        print("predicate value changed")
+//        print("predicate value changed")
     }
     
     // MARK: - generateQuery
