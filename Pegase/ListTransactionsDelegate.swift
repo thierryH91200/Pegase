@@ -138,7 +138,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         
         switch propertyEnum
         {
-        case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .balance, .checkNumber:
+        case .dateOperation, .datePointage, .bankStatement, .statut, .liee, .mode, .solde, .checkNumber:
             textField.stringValue = ""
             
         case .rubrique:
@@ -292,7 +292,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
                 textField.stringValue = ""
             }
 
-        case .balance:
+        case .solde:
             let solde = quake.solde
             let price = solde as NSNumber
             let formatted = formatterPrice.string(from: price)
@@ -327,6 +327,9 @@ extension ListTransactionsController: NSOutlineViewDelegate {
                 textField.stringValue = ""
             }
             paragraph.alignment = .right
+            
+//        default:
+//            print("default")
         }
         
         textField.sizeToFit()
@@ -362,7 +365,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
                 }
             //                attrs[.font] =  NSFont.boldSystemFont(ofSize: 12.0)
             
-            case  .balance:
+            case  .solde:
                 if quake.solde >= 0.0 {
                     attrs[.foregroundColor] = NSColor.green
                 } else {
@@ -414,7 +417,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
                     attrs[.foregroundColor] = NSColor.red
                 }
                 
-            case  .balance:
+            case  .solde:
                 break
             default:
                 break

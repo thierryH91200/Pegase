@@ -304,11 +304,11 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         }
         
         // edition = true
-        if self.entityOperations.count == 1 && edition == true {
-            // ???????
-            let setSousOperation = NSSet(array: subOperations)
-            self.entityOperations.first?.addToSousOperations(setSousOperation)
-        }
+//        if self.entityOperations.count == 1 && edition == true {
+//            // ???????
+//            let setSousOperation = NSSet(array: subOperations)
+//            self.entityOperations.first?.addToSousOperations(setSousOperation)
+//        }
     }
     
     // MARK: - saveActions
@@ -406,7 +406,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             oneOperation.operationLiee = entityOperationsTransfert
             
         } else {
-            entityOperationsTransfert = oneOperation.operationLiee
+            self.entityOperationsTransfert = oneOperation.operationLiee
         }
         
         let menuItem = popUpTransfert.selectedItem
@@ -418,10 +418,10 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         entityOperationsTransfert?.dateCree      = oneOperation.dateCree
         
         
-        /// Date operation
+        // Date operation
         entityOperationsTransfert?.dateOperation = oneOperation.dateOperation
         
-        /// Date Pointage
+        // Date Pointage
         entityOperationsTransfert?.datePointage  = oneOperation.datePointage
         
         // le modePaiement existe t il ??
@@ -439,8 +439,11 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         let setSout   = oneOperation.sousOperations
         subOperations = setSout?.allObjects as! [EntitySousOperations]
         
-        print("count subOperations = ", subOperations.count )
-        //        entityOperationsTransfert?.removeFromSousOperations(setSout!)
+        print("count subOperations = ", entityOperationsTransfert?.sousOperations?.count ?? 0)
+//        entityOperationsTransfert?.removeFromSousOperations(setSout!)
+        entityOperationsTransfert?.sousOperations = nil
+        print("count subOperations = ", entityOperationsTransfert?.sousOperations?.count ?? 0)
+
         for sousOperation in subOperations {
             
             let entitySousOperationsTransfert = NSEntityDescription.insertNewObject(forEntityName: "EntitySousOperations", into: context!) as? EntitySousOperations

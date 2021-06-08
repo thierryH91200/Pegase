@@ -26,8 +26,7 @@ class AvatarInfo: NSObject, Codable {
         guard let colorData = try? NSKeyedArchiver.archivedData(withRootObject: color, requiringSecureCoding: false) else { return }
         self.colorData = colorData
     }
-    
-    
+
     func getImage() -> NSImage? {
         guard let imageData = imageData else { return nil }
         return NSImage(data: imageData)

@@ -12,28 +12,28 @@ import PDFKit
 
 final class BankStatement: NSViewController {
     
-//    @IBOutlet weak var tableBankStatement: NSTableView!
-//    @IBOutlet weak var noPdfFilesContainerView: NSView!
-//    @IBOutlet weak var pdfFilesContainerView: NSView!
-//    @IBOutlet weak var pdfFileListTableView: NSTableView!
-//    @IBOutlet weak var pdfPreviewView: PDFView!
-//
-//    
-//    let pasteboardType = NSPasteboard.PasteboardType(rawValue: "bindPDF.url")
-//    var urls: [URL] = []
-//
-//    public override func viewDidDisappear()
-//    {
-//        super.viewDidDisappear()
-//        NotificationCenter.remove(instance: self, name: .updateAccount)
-//    }
-//
-//    override public func viewDidAppear()
-//    {
-//        super.viewDidAppear()
-//        view.window!.title = "Bank Statement"
-//    }
-//    
+    @IBOutlet weak var tableBankStatement: NSTableView!
+    @IBOutlet weak var noPdfFilesContainerView: DragView!
+    @IBOutlet weak var pdfFilesContainerView: NSView!
+    @IBOutlet weak var pdfFileListTableView: NSTableView!
+    @IBOutlet weak var pdfPreviewView: PDFView!
+
+    
+    let pasteboardType = NSPasteboard.PasteboardType(rawValue: "bindPDF.url")
+    var urls: [URL] = []
+
+    public override func viewDidDisappear()
+    {
+        super.viewDidDisappear()
+        NotificationCenter.remove(instance: self, name: .updateAccount)
+    }
+
+    override public func viewDidAppear()
+    {
+        super.viewDidAppear()
+        view.window!.title = "Bank Statement"
+    }
+    
 //    override public func viewWillAppear()
 //    {
 //        super.viewWillAppear()
@@ -184,4 +184,87 @@ final class BankStatement: NSViewController {
 }
 
 
+import Cocoa
 
+
+@objc protocol DragViewDelegate
+{
+    func dragViewDidReceive(fileURLs: [URL])
+}
+
+class DragView: NSView
+{
+    @IBOutlet weak var delegate: DragViewDelegate?
+    let fileExtensions = ["pdf"]
+
+
+    required init?(coder: NSCoder)
+    {
+        super.init(coder: coder)
+        color(to: .clear)
+        registerForDraggedTypes([.fileURL])
+    }
+
+    override func draggingEntered(_ draggingInfo: NSDraggingInfo) -> NSDragOperation
+    {
+        var containsMatchingFiles = false
+        draggingInfo.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: nil)?.forEach
+        {
+            eachObject in
+            if let eachURL = eachObject as? URL
+            {
+                containsMatchingFiles = containsMatchingFiles || fileExtensions.contains(eachURL.pathExtension.lowercased())
+                if containsMatchingFiles { print(eachURL.path) }
+            }
+        }
+
+        switch (containsMatchingFiles)
+        {
+            case true:
+                color(to: .secondaryLabelColor)
+                return .copy
+            case false:
+                color(to: .disabledControlTextColor)
+                return .init()
+        }
+    }
+
+    override func performDragOperation(_ draggingInfo: NSDraggingInfo) -> Bool
+    {
+        // Collect URLs.
+        var matchingFileURLs: [URL] = []
+        draggingInfo.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: nil)?.forEach
+        {
+            eachObject in
+            if
+                let eachURL = eachObject as? URL,
+                fileExtensions.contains(eachURL.pathExtension.lowercased())
+            { matchingFileURLs.append(eachURL) }
+        }
+
+        // Only if any,
+        guard matchingFileURLs.count > 0
+        else { return false }
+
+        // Pass to delegate.
+        delegate?.dragViewDidReceive(fileURLs: matchingFileURLs)
+        return true
+    }
+
+    override func draggingExited(_ sender: NSDraggingInfo?)
+    { color(to: .clear) }
+
+    override func draggingEnded(_ sender: NSDraggingInfo)
+    { color(to: .clear) }
+
+}
+
+
+extension DragView
+{
+    func color(to color: NSColor)
+    {
+        self.wantsLayer = true
+        self.layer?.backgroundColor = color.cgColor
+    }
+}

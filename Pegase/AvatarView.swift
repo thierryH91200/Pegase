@@ -41,7 +41,7 @@ class AvatarView: NSView {
     
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         let canReadPasteboardObjects = sender.draggingPasteboard.canReadObject(forClasses: [NSImage.self, NSColor.self, NSString.self, NSURL.self],
-                                                                               options: acceptableUTITypes())
+                    options: acceptableUTITypes())
         
         if canReadPasteboardObjects {
             highlight()

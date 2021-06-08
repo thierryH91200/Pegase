@@ -35,7 +35,7 @@ final class RowTemplateRelationshipRubrique: NSPredicateEditorRowTemplate {
                    rightExpressions: arrayRub ,
                    modifier: .direct,
                    operators: operatorsNSNumber,
-                   options: 0)
+                   options: RowTemplateRelationshipRubrique.option)
     }
 
     required init?(coder: NSCoder) {
@@ -72,7 +72,7 @@ final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
                    rightExpressionAttributeType: .stringAttributeType,
                    modifier: .direct,
                    operators: operatorsNSNumber,
-                   options: 0)
+                   options: RowTemplateRelationshipCategory.option)
     }
 
     required init?(coder: NSCoder) {
@@ -122,7 +122,7 @@ final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
                    rightExpressions: arrStatus,
                    modifier: .direct,
                    operators: operatorsNSNumber,
-                   options: 0)
+                   options: RowTemplateRelationshipStatus.option)
     }
 
     required init?(coder: NSCoder) {
@@ -134,8 +134,7 @@ final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
         let predicate = super.predicate(withSubpredicates: subpredicates) as! NSComparisonPredicate
         let operatorType = predicate.predicateOperatorType
         let operatorName = findOperatorType(operatorType: operatorType)
-        var right = String(format: "%@", predicate.rightExpression)
-//        right = right[1 ..< right.count - 1 ]
+        let right = String(format: "%@", predicate.rightExpression)
         let findRight = Statut.shared.findStatut(statut: right)
         
         let predicateFormat  = String(format : "%@ %@ %d", RowTemplateRelationshipStatus.entity , operatorName, findRight)
@@ -158,12 +157,13 @@ final class RowTemplateRelationshipLibelle: NSPredicateEditorRowTemplate {
 
         let operators: [NSComparisonPredicate.Operator] = RowTemplateRelationshipLibelle.stringOperators
         for o in operators { operatorsNSNumber.append( NSNumber(value: o.rawValue) ) }
+        let option = RowTemplateRelationshipLibelle.option
         
         super.init(leftExpressions: leftExpressions ,
                    rightExpressionAttributeType: .stringAttributeType,
                    modifier: .direct,
                    operators: operatorsNSNumber,
-                   options: 0)
+                   options: option)
     }
 
     required init?(coder: NSCoder) {
@@ -231,8 +231,6 @@ final class RowTemplateRelationshipMode: NSPredicateEditorRowTemplate {
 
     init(leftExpressions: [NSExpression], leftEntity : String) {
         
-
-        
         var arrayMode = [NSExpression]()
 
         let operators: [NSComparisonPredicate.Operator] = RowTemplateRelationshipMode.boolOperators
@@ -251,7 +249,7 @@ final class RowTemplateRelationshipMode: NSPredicateEditorRowTemplate {
 //                   rightExpressionAttributeType: .stringAttributeType,
                    modifier: .direct,
                    operators: operatorsNSNumber,
-                   options: 0)
+                   options: RowTemplateRelationshipMode.option)
     }
     
     required init?(coder: NSCoder) {

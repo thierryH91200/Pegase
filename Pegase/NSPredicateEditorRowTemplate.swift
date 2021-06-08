@@ -11,9 +11,12 @@ import AppKit
 extension NSPredicateEditorRowTemplate {
     
     static let numberOperators:[NSComparisonPredicate.Operator] = [.equalTo, .notEqualTo, .greaterThan, .greaterThanOrEqualTo, .lessThan, .lessThanOrEqualTo]
-    static let stringOperators:[NSComparisonPredicate.Operator] = [.equalTo, .notEqualTo, .beginsWith, .endsWith, .matches, .like]
+    static let stringOperators:[NSComparisonPredicate.Operator] = [.equalTo, .notEqualTo, .beginsWith, .endsWith, .matches, .like,.contains]
     static let boolOperators:[NSComparisonPredicate.Operator] = [.equalTo, .notEqualTo]
     static let dateOperators:[NSComparisonPredicate.Operator] = [.equalTo, .notEqualTo, .greaterThan, .lessThan]
+    static let option = Int(NSComparisonPredicate.Options.caseInsensitive.rawValue)  // | NSComparisonPredicate.Options.diacriticInsensitive.rawValue)
+//    static let option = Int(NSComparisonPredicate.Options.caseInsensitive.rawValue | NSComparisonPredicate.Options.diacriticInsensitive.rawValue)
+
 
     convenience init( compoundTypes: [NSCompoundPredicate.LogicalType] ) {
         
@@ -68,7 +71,7 @@ extension NSPredicateEditorRowTemplate {
                    rightExpressions: constantValues,
                    modifier: .direct,
                    operators: operatorsNSNumber,
-                   options: (Int(NSComparisonPredicate.Options.caseInsensitive.rawValue | NSComparisonPredicate.Options.diacriticInsensitive.rawValue)) )
+                   options: Int(NSComparisonPredicate.Options.caseInsensitive.rawValue | NSComparisonPredicate.Options.diacriticInsensitive.rawValue))
     }
     
     // MARK: String
@@ -85,7 +88,7 @@ extension NSPredicateEditorRowTemplate {
                    rightExpressionAttributeType: .stringAttributeType,
                    modifier: .direct,
                    operators: operatorsNSNumber,
-                   options: (Int(NSComparisonPredicate.Options.caseInsensitive.rawValue | NSComparisonPredicate.Options.diacriticInsensitive.rawValue)) )
+                   options: Int(NSComparisonPredicate.Options.caseInsensitive.rawValue | NSComparisonPredicate.Options.diacriticInsensitive.rawValue)) 
     }
     
     // MARK: Int
@@ -132,11 +135,12 @@ extension NSPredicateEditorRowTemplate {
             return NSNumber(value: operators[i].rawValue)
         }
         
+        let option = Int(NSComparisonPredicate.Options.caseInsensitive.rawValue | NSComparisonPredicate.Options.diacriticInsensitive.rawValue)
         self.init( leftExpressions: leftExpressions,
                    rightExpressionAttributeType: .booleanAttributeType,
                    modifier: .direct,
                    operators: operatorsNSNumber,
-                   options: 0 )
+                   options: option )
     }
     
     func findOperatorType(operatorType : NSComparisonPredicate.Operator) -> String {
@@ -168,11 +172,11 @@ extension NSPredicateEditorRowTemplate {
         case .in:
             operatorName = "'in'"
         case .customSelector:
-            operatorName = "CONTAINS[cd]"
+            operatorName = "CONTAINS"
         case .between:
             operatorName = "BETWEEN"
         @unknown default:
-            operatorName = "CONTAINS[cd]"
+            operatorName = "CONTAINS"
         }
         return operatorName
     }
