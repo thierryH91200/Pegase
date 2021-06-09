@@ -439,10 +439,8 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         let setSout   = oneOperation.sousOperations
         subOperations = setSout?.allObjects as! [EntitySousOperations]
         
-        print("count subOperations = ", entityOperationsTransfert?.sousOperations?.count ?? 0)
 //        entityOperationsTransfert?.removeFromSousOperations(setSout!)
         entityOperationsTransfert?.sousOperations = nil
-        print("count subOperations = ", entityOperationsTransfert?.sousOperations?.count ?? 0)
 
         for sousOperation in subOperations {
             
@@ -460,8 +458,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
             entitySousOperationsTransfert!.libelle       = sousOperation.libelle
             
             entityOperationsTransfert?.addToSousOperations(entitySousOperationsTransfert!)
-            
-            print("count = ", entityOperationsTransfert?.sousOperations?.count ?? 0)
+//            print("count = ", entityOperationsTransfert?.sousOperations?.count ?? 0)
         }
         entityOperationsTransfert?.uuid          = UUID()
     }
