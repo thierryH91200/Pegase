@@ -29,15 +29,15 @@ extension ImportWindowController: NSMenuDelegate {
         
         dataArray.removeAll()
         dataArray.append(Localizations.ImportSimplifiee.Menu.ignoreCol)
-        dataArray.append(Localizations.ImportSimplifiee.Menu.dateOperation)
+        dataArray.append(Localizations.ImportSimplifiee.Menu.dateTransaction)
         dataArray.append(Localizations.ImportSimplifiee.Menu.datePointage)
         dataArray.append(Localizations.ImportSimplifiee.Menu.statut)
         dataArray.append(Localizations.ImportSimplifiee.Menu.modePaiement)
 
-        dataArray.append(Localizations.ImportSimplifiee.Menu.libelle)
-        dataArray.append(Localizations.ImportSimplifiee.Menu.montant)
-        dataArray.append(Localizations.ImportSimplifiee.Menu.rubrique)
-        dataArray.append(Localizations.ImportSimplifiee.Menu.catégorie)
+        dataArray.append(Localizations.ImportSimplifiee.Menu.comment)
+        dataArray.append(Localizations.ImportSimplifiee.Menu.amount)
+        dataArray.append(Localizations.ImportSimplifiee.Menu.rubric)
+        dataArray.append(Localizations.ImportSimplifiee.Menu.catégory)
         
         headerColumnForMenu.removeAll()
         headerColumnForMenu = (0 ..< tableColumns.count).map { (i) -> HeaderColumnForMenu in

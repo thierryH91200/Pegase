@@ -13,7 +13,7 @@ import TFDate
 // xxxxController -> ListTransactionsController
 @objc public protocol  FilterDelegate
 {
-    func updateListeOperations( liste: [EntityTransactions])
+    func updateListeTransactions( liste: [EntityTransactions])
     func applyFilter( fetchRequest: NSFetchRequest<EntityTransactions>)
     func expandAll()
 }
@@ -373,7 +373,7 @@ final class ListTransactionsController: NSViewController {
         var soldeRealise = initCompte.realise
         var soldePrevu   = initCompte.prevu
         var soldeEngage  = initCompte.engage
-        let soldeInitial = soldePrevu + soldeEngage + soldeRealise
+        let initialBalance = soldePrevu + soldeEngage + soldeRealise
         let count        = listTransactions.count
         
         for index in stride(from: count - 1, to: -1, by: -1)
@@ -388,7 +388,7 @@ final class ListTransactionsController: NSViewController {
             case .realise:
                 soldeRealise += self.listTransactions[index].amount
             }
-            listTransactions[index].solde = index == count - 1 ? listTransactions[index].amount + soldeInitial : listTransactions[index + 1].solde + listTransactions[index ].amount
+            listTransactions[index].solde = index == count - 1 ? listTransactions[index].amount + initialBalance : listTransactions[index + 1].solde + listTransactions[index ].amount
         }
         
         self.soldeBanque.doubleValue = soldeRealise
@@ -406,6 +406,9 @@ final class ListTransactionsController: NSViewController {
             let item = outlineListView.item(atRow: row) as? IdTransactions
             ListTransactions.shared.remove(entity: (item?.entityTransactions)!)
         }
+//        outlineListView.beginUpdates()
+//        outlineListView.removeItems(at: selectedRow, inParent: <#T##Any?#>, withAnimation: .slideDown)
+//        outlineListView.endUpdates()
         
         self.getAllData()
         self.outlineListView.reloadData()
@@ -440,7 +443,6 @@ final class ListTransactionsController: NSViewController {
         
         self.resetChange()
     }
-
 }
 
 extension ListTransactionsController: FilterDelegate {
@@ -459,7 +461,7 @@ extension ListTransactionsController: FilterDelegate {
         resetChange()
     }
     
-    func updateListeOperations( liste: [EntityTransactions]) {
+    func updateListeTransactions( liste: [EntityTransactions]) {
         
         listTransactions = liste
         

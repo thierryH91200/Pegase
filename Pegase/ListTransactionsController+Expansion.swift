@@ -30,8 +30,6 @@ extension ListTransactionsController {
 // MARK: - RestoreExpansion
     func outlineView(_ outlineView: NSOutlineView, itemForPersistentObject object: Any) -> Any? {
         
-//        print("Restore Expansion : ",outlineView.autosaveName!)
-        
         if let group = object as? String {
             let len1 = group.count == 4
             if len1 == true {
@@ -49,7 +47,6 @@ extension ListTransactionsController {
                     }
                 }
                 return (item)
-
             }
         }
         return nil
@@ -61,8 +58,6 @@ extension ListTransactionsController {
 // MARK: - EncodeExpansion
     func outlineView(_ outlineView: NSOutlineView, persistentObjectForItem item: Any?) -> Any? {
         
-//        print("Encode Expansion : ",outlineView.autosaveName!)
-                
         if let group = item as? GroupedYearOperations {
             return (group.year)
         }

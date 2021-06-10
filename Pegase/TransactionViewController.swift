@@ -45,7 +45,7 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
     @objc var date4: Date?
     @objc var date5: Date?
     
-    var entityOperation: EntityTransactions?
+    var entityTransaction: EntityTransactions?
     var entityOperations : [EntityTransactions] = []
     var entityOperationsTransfert: EntityTransactions?
     var entityPreference: EntityPreference?
@@ -292,15 +292,15 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         if edition == false {
             
             // Create entityOperation
-            self.entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as? EntityTransactions
-            self.entityOperation?.dateCree = Date()
-            self.entityOperation?.uuid = UUID()
-            self.entityOperation?.account = currentAccount
+            self.entityTransaction = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as? EntityTransactions
+            self.entityTransaction?.dateCree = Date()
+            self.entityTransaction?.uuid = UUID()
+            self.entityTransaction?.account = currentAccount
             
             // Create entitySousOperation
             let setSousOperation = NSSet(array: subOperations)
-            self.entityOperation?.addToSousOperations(setSousOperation)
-            self.entityOperations.append(entityOperation!)
+            self.entityTransaction?.addToSousOperations(setSousOperation)
+            self.entityOperations.append(entityTransaction!)
         }
         
         // edition = true

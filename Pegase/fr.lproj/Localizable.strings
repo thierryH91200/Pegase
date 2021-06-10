@@ -65,23 +65,23 @@
 "GroupeAccount.RemoveAlert.MessageText" = "Supprimer cet élement";
 
 // MARK: -  ImportSimplifiee
-"ImportSimplifiee.Menu.catégorie" = "Categorie";
-"ImportSimplifiee.Menu.dateOperation" = "Date Operation";
+"ImportSimplifiee.Menu.catégory" = "Category";
+"ImportSimplifiee.Menu.dateTransaction" = "Date Transaction";
 "ImportSimplifiee.Menu.datePointage" = "Date Pointage";
 "ImportSimplifiee.Menu.ignoreCol" = "Ignore_Column";
-"ImportSimplifiee.Menu.libelle" = "Comment";
+"ImportSimplifiee.Menu.comment" = "Comment";
 "ImportSimplifiee.Menu.modePaiement" = "Mode Paiement";
-"ImportSimplifiee.Menu.montant" = "Montant";
-"ImportSimplifiee.Menu.rubrique" = "Rubrique";
+"ImportSimplifiee.Menu.amount" = "Amount";
+"ImportSimplifiee.Menu.rubric" = "Rubric";
 "ImportSimplifiee.Menu.statut" = "Statut";
 
-"ImportSimplifiee.category" = "Categorie";
+"ImportSimplifiee.category" = "Category";
 "ImportSimplifiee.comment" = "Comment";
-"ImportSimplifiee.compte" = "Compte";
-"ImportSimplifiee.dateOperation" = "Date de l'opération";
+"ImportSimplifiee.compte" = "account";
+"ImportSimplifiee.dateOperation" = "Date Transaction";
 "ImportSimplifiee.datePointage" = "Date Pointage";
 "ImportSimplifiee.mode" = "Mode Paiement";
-"ImportSimplifiee.montant" = "Montant";
+"ImportSimplifiee.montant" = "Amount";
 "ImportSimplifiee.statut" = "Statut";
 
 // MARK: -  ListeOperation
@@ -107,7 +107,7 @@
 "ModePaiement.RetraitEspeces" = "Retrait espéces";
 "ModePaiement.Virement" = "Virement";
 
-// MARK: -  Operation
+// MARK: -  Transaction
 "Transaction.Mode" = "Mode ";
 "Transaction.ModeCreation" = "Creative mode";
 "Transaction.ModeEdition" = "Editing mode";

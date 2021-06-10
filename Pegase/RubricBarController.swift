@@ -180,7 +180,7 @@ final class RubricBarController: CommonGraph
             print("Error fetching data from CoreData")
         }
         
-        delegate?.updateListeOperations( liste: listTransactions)
+        delegate?.updateListeTransactions( liste: listTransactions)
         
         // grouped by month/year
         var name = ""

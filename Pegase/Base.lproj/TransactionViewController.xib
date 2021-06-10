@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19115.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -669,20 +670,20 @@ Gw
         </customView>
         <menu autoenablesItems="NO" id="P88-j3-pWA">
             <items>
-                <menuItem title="Add operation" id="jcE-Wr-YbQ">
+                <menuItem title="Add transaction" id="jcE-Wr-YbQ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="addSousOperation:" target="-2" id="vFb-s4-3iW"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Edit operation" tag="1" id="O7i-rP-jKG">
+                <menuItem title="Edit transaction" tag="1" id="O7i-rP-jKG">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="editSubOperation:" target="-2" id="mbS-gg-ARp"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="rUZ-as-vgW"/>
-                <menuItem title="Remove operation" tag="2" id="osS-Vv-07S">
+                <menuItem title="Remove transacion" tag="2" id="osS-Vv-07S">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="removeSubOperation:" target="-2" id="c6W-c3-nEI"/>

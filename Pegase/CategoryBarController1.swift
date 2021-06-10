@@ -53,7 +53,7 @@ final class CategoryBarController1: CommonGraph
         DispatchQueue.main.async(execute: {() -> Void in
             self.chartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
         })
-        delegate?.updateListeOperations(liste: [])
+        delegate?.updateListeTransactions(liste: [])
     }
     
     override func viewDidLoad()

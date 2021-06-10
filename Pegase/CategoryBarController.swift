@@ -41,7 +41,7 @@ final class CategoryBarController: CommonGraph
         DispatchQueue.main.async(execute: {() -> Void in
             self.chartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
         })
-        delegate?.updateListeOperations(liste: [])
+        delegate?.updateListeTransactions(liste: [])
     }
     
     override func viewDidLoad()
@@ -247,7 +247,7 @@ final class CategoryBarController: CommonGraph
         self.chartView.chartDescription?.text = "Rubrique"
         self.setDataHorizontal()
         
-        self.delegate?.updateListeOperations(liste: [])
+        self.delegate?.updateListeTransactions(liste: [])
     }
     
     private func setDataCount()
