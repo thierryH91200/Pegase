@@ -358,13 +358,11 @@ final class ListTransactionsController: NSViewController {
         // convert to struct - more fast and easy to sort
         var allGroupedYear : [ GroupedYearOperations ] = []
         
-//        printTimeElapsedWhenRunningCode(title:"convert dict to class") {
-            for grouped in groupedID {
-                let groupedYear = GroupedYearOperations(dictionary: grouped)
-                allGroupedYear.append(groupedYear)
-            }
-            groupedSorted = allGroupedYear.sorted(by: {$0.year > $1.year })
-//        }
+        for grouped in groupedID {
+            let groupedYear = GroupedYearOperations(dictionary: grouped)
+            allGroupedYear.append(groupedYear)
+        }
+        groupedSorted = allGroupedYear.sorted(by: {$0.year > $1.year })
     }
     
     private func balanceCalculation()
