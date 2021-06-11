@@ -231,6 +231,7 @@
 		03AF08AE260CC33B0020CD24 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AF08AC260CC33B0020CD24 /* Error.swift */; };
 		03C23B8B2449BCDF00EF0B9E /* Capture1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C23B8A2449BCDF00EF0B9E /* Capture1.png */; };
 		03D6923B25C4325D0012B66A /* UNCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6923925C4325D0012B66A /* UNCenter.swift */; };
+		03FA0D0C26735B210099E8BF /* memo.md in Resources */ = {isa = PBXBuildFile; fileRef = 034EC89D23F87CE2006944DD /* memo.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1370,6 +1371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FA0D0C26735B210099E8BF /* memo.md in Resources */,
 				031D80082660FFAF00A17580 /* MyDB.sqlite in Resources */,
 				03213C9D23F9320600002DD7 /* IdentiteViewController.xib in Resources */,
 				03213B8023F9082600002DD7 /* CategoryBarController.xib in Resources */,
