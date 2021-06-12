@@ -584,6 +584,7 @@
 		03AC6B8925E3CCC8004C7223 /* NotificationActionsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationActionsEnum.swift; sourceTree = "<group>"; };
 		03ACCCD123FAD00500098CFC /* TFDate.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TFDate.xcodeproj; path = "../../NSCustomControl/ZZZ DatePicker/TFDate/TFDate/TFDate.xcodeproj"; sourceTree = "<group>"; };
 		03AF08AC260CC33B0020CD24 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		03B8A7F52674AE3900C2F4FE /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		03C23B8A2449BCDF00EF0B9E /* Capture1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Capture1.png; sourceTree = "<group>"; };
 		03D6923925C4325D0012B66A /* UNCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNCenter.swift; sourceTree = "<group>"; };
 		03F3F4D324169CD60040700D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AccountViewController.strings; sourceTree = "<group>"; };
@@ -1089,6 +1090,7 @@
 				034EC89B23F87CE1006944DD /* DevelopmentAlphaBeta.md */,
 				034EC89D23F87CE2006944DD /* memo.md */,
 				034EC89C23F87CE2006944DD /* Util.md */,
+				03B8A7F52674AE3900C2F4FE /* Documentation.docc */,
 			);
 			path = Technotes;
 			sourceTree = "<group>";
