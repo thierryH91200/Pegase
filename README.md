@@ -24,6 +24,9 @@ Pegase
 
 # Personal account software
 
+<details>
+
+
 Pegase is a beautifully easy tool to keep track of your financial life on all your macOS 
 
 ![Capture1](Doc/Capture1.png)
@@ -35,6 +38,9 @@ Pegase is a beautifully easy tool to keep track of your financial life on all yo
 <em>DarkMode</em>
 </p>
 </p>
+
+</details>
+
 
 
 

@@ -397,17 +397,14 @@ final class ListTransactionsController: NSViewController {
     }
     
     @IBAction func removeTransaction(_ sender: Any) {
-        let selectedRow = outlineListView.selectedRowIndexes
-        guard selectedRow.isEmpty == false else { return }
+        let selectedRows = outlineListView.selectedRowIndexes
+        guard selectedRows.isEmpty == false else { return }
         
-        for row in selectedRow {
-            let item = outlineListView.item(atRow: row) as? IdTransactions
+        for selectedRow in selectedRows {
+            let item = outlineListView.item(atRow: selectedRow) as? IdTransactions
             ListTransactions.shared.remove(entity: (item?.entityTransactions)!)
         }
-//        outlineListView.beginUpdates()
-//        outlineListView.removeItems(at: selectedRow, inParent: <#T##Any?#>, withAnimation: .slideDown)
-//        outlineListView.endUpdates()
-        
+
         self.getAllData()
         self.outlineListView.reloadData()
         self.reloadData(true)
@@ -416,8 +413,8 @@ final class ListTransactionsController: NSViewController {
     }
     
     @IBAction func compactTransaction(_ sender: Any) {
-        let selectedRow = outlineListView.selectedRowIndexes
-        guard selectedRow.isEmpty == false else { return }
+        let selectedRows = outlineListView.selectedRowIndexes
+        guard selectedRows.isEmpty == false else { return }
         
         var listTransactions = [EntityTransactions]()
         
@@ -425,9 +422,8 @@ final class ListTransactionsController: NSViewController {
 
 //        var entityOperation = NSEntityDescription.insertNewObject(forEntityName: "EntityTransactions", into: context!) as? EntityTransactions
 
-        
-        for row in selectedRow {
-            let item = outlineListView.item(atRow: row) as? IdTransactions
+        for selectedRow in selectedRows {
+            let item = outlineListView.item(atRow: selectedRow) as? IdTransactions
             listTransactions.append(item!.entityTransactions)
         }
         

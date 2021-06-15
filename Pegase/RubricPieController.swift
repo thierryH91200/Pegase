@@ -223,9 +223,9 @@ final class RubricPieController: NSViewController
         dataSet.sliceSpace = 2.0
         dataSet.colors = colors
         dataSet.valueLinePart1OffsetPercentage = 0.8
-        dataSet.valueLinePart1Length = 0.4
-        dataSet.valueLinePart2Length = 0.5
-        dataSet.xValuePosition = .outsideSlice
+        dataSet.valueLinePart1Length = 0.9
+        dataSet.valueLinePart2Length = 0.9
+//        dataSet.xValuePosition = .outsideSlice
         dataSet.yValuePosition = .outsideSlice
         dataSet.entryLabelColor = .labelColor
         dataSet.valueColors = [.labelColor]
