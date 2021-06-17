@@ -126,19 +126,8 @@ OS X 10.14 or later, 64-bit processor
 ---
 ## Installation
 
-## CocoaPods
-Pegase not include CocoaPods
-
-## Carthage
-
-carthage update --platform macos --use-submodules
-$(SRCROOT)/Carthage/Build/Mac/Charts.framework
-$(SRCROOT)/Carthage/Build/Mac/SwiftDate.framework
-
 ## Pack Manager
 Pegase include pack Manager
-except TFDate
-
 
 ## Manually
 Download and drop /Sources folder in your project.
