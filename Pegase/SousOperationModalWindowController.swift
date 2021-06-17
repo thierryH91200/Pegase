@@ -6,7 +6,7 @@ final class SousOperationModalWindowController: NSWindowController {
     @IBOutlet weak var comboBoxCategory: NSComboBox!
     
     @IBOutlet weak var textFieldLibelle: AutoCompleteTextField!
-    @IBOutlet weak var textFieldAmount: CurrencyField!
+    @IBOutlet weak var textFieldAmount: NSTextField!
     @IBOutlet weak var amountSign: NSButton!
     
     @IBOutlet weak var modeOperation: NSButton!
@@ -32,6 +32,8 @@ final class SousOperationModalWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        
+        textFieldAmount.delegate = self
         
         self.modeOperation.bezelStyle = .texturedSquare
         self.modeOperation.isBordered = false
@@ -112,8 +114,35 @@ final class SousOperationModalWindowController: NSWindowController {
 //        textFieldAmount.stringValue = amountString
 //
 //    }
+    
+    func controlTextDidChange(_ obj: Notification) {
+        if let textfield = obj.object as? NSTextField,
+            textfield == self.textFieldAmount {
 
+            var stringValue = textfield.stringValue
 
+            // First step : Only '1234567890.' - @Clifton Labrum solution
+            let charSet = NSCharacterSet(charactersIn: "1234567890.").inverted
+            let chars = stringValue.components(separatedBy: charSet)
+            stringValue = chars.joined()
+
+            // Second step : only one '.'
+            let comma = NSCharacterSet(charactersIn: ".")
+            let chuncks = stringValue.components(separatedBy: comma as CharacterSet)
+            switch chuncks.count {
+            case 0:
+                stringValue = ""
+            case 1:
+                stringValue = "\(chuncks[0])"
+            default:
+                stringValue = "\(chuncks[0]).\(chuncks[1])"
+            }
+
+            // replace string
+            textfield.stringValue = stringValue
+
+        }
+    }
 }
 
 // MARK: - AutoCompleteTableViewDelegate
@@ -158,7 +187,6 @@ extension String {
         guard number != 0 as NSNumber else {
             return ""
         }
-
         return formatter.string(from: number)!
     }
 }

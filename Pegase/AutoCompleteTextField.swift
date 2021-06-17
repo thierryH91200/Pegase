@@ -220,6 +220,7 @@ extension AutoCompleteTextField : NSTableViewDelegate
     
     func tableViewSelectionDidChange(_ notification: Notification)
     {
+        print("tableViewSelectionDidChange")
         self.tableViewDelegate?.tableViewSelection!(notification)
     }
 

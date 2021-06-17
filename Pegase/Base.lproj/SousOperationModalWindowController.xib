@@ -180,7 +180,7 @@ Gw
                                 </button>
                             </gridCell>
                             <gridCell row="eqi-cD-Hxn" column="nbe-UP-Bdo" xPlacement="fill" id="aUq-OQ-jRa">
-                                <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VMz-9R-1Or" customClass="CurrencyField" customModule="Pegase" customModuleProvider="target">
+                                <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VMz-9R-1Or">
                                     <rect key="frame" x="144" y="0.0" width="197" height="21"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="right" placeholderString="Montant" drawsBackground="YES" id="OU6-0h-CWa">
                                         <font key="font" metaFont="system"/>

@@ -326,10 +326,13 @@ extension TransactionViewController: ListeOperationsDelegate {
         menuItem.isEnabled = true
         return menuItem
     }
+    
+
 }
 
 // MARK: CurrencyField
 class CurrencyField: NSTextField {
+    
     
     var percent: Double {
         return Double(Int(numbers) ?? 0) / 100
@@ -364,7 +367,7 @@ extension NumberFormatter {
     convenience init(numberStyle: NumberFormatter.Style) {
         self.init()
         self.numberStyle = numberStyle
-        self.isLenient = true
+//        self.isLenient = true
     }
 }
 struct Number {

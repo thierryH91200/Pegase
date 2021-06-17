@@ -165,6 +165,8 @@ final class ListTransactionsController: NSViewController {
         self.outlineListView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
 
         let id = currentAccount?.uuid.uuidString
+        outlineListView.sizeLastColumnToFit()
+
         self.outlineListView.autosaveName = "save" + (id)!
         self.outlineListView.autosaveExpandedItems = true
         self.outlineListView.autosaveTableColumns = true

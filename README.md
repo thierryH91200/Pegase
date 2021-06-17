@@ -35,7 +35,7 @@ Pegase is a beautifully easy tool to keep track of your financial life on all yo
 <p align="center">
 <img src="Doc/Capture10.png" alt="Sample">
 <p align="center">
-<em>DarkMode</em>
+<em>DarkMode</em> 
 </p>
 </p>
 

@@ -26,7 +26,7 @@ De même: travaillez toujours au plus haut niveau possible, mais pas plus haut e
 
 ### Language
 
-Ecrire le nouveau code en Swift 4.
+Ecrire le nouveau code en Swift 5.
 
 La seule exception à cette règle concerne les API C, qui sont souvent plus faciles à gérer dans Objective-C que dans Swift. Pourtant, c'est rare, et il est beaucoup plus probable qu'il soit nécessaire dans un framework de niveau inférieur tel que RSParser - cela ne devrait pas arriver au niveau de l'application.
 
