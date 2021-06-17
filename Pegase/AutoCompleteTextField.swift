@@ -193,7 +193,7 @@ extension AutoCompleteTextField : NSTableViewDelegate
 {
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView?
     {
-        AutoCompleteTableRowView()
+        return AutoCompleteTableRowView()
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView?
