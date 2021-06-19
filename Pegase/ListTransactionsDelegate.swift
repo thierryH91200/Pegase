@@ -5,7 +5,6 @@ import AppKit
 // MARK: NSTableViewDelegate
 extension ListTransactionsController: NSOutlineViewDelegate {
     
-    
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView?
     {
         outlineView.columnAutoresizingStyle = NSTableView.ColumnAutoresizingStyle.sequentialColumnAutoresizingStyle
@@ -328,8 +327,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             }
             paragraph.alignment = .right
             
-//        default:
-//            print("default")
         }
         
         textField.sizeToFit()
@@ -461,13 +458,13 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         return MyNSTableRowView()
     }
     
-    //    Show the expander triangle for group items..
+    // Show the expander triangle for group items..
     func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool
     {
         isSourceGroupItem(item)
     }
     
-    //Returns a Boolean value that indicates whether the outline view should select a given item.
+    // Returns a Boolean value that indicates whether the outline view should select a given item.
     public func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool
     {
         if item is TrackingSubOperations {
@@ -477,17 +474,32 @@ extension ListTransactionsController: NSOutlineViewDelegate {
     }
     
     func outlineViewItemWillCollapse(_ notification: Notification) {
-        let ov = notification.object as? NSOutlineView
-        ov!.autosaveExpandedItems = true
         
+        guard let item = notification.userInfo?["NSObject"] as? TrackingMonth else {
+            return
+        }
+        
+        let isExpanded = self.outlineListView.isItemExpanded( item )
+//        let isParentExpanded = self.outlineListView.parent(forItem: item).map(self.outlineListView.isItemExpanded(item))
+
+//        let ov = notification.object as? NSOutlineView
+//        ov!.autosaveExpandedItem/s = false
+//        let id = currentAccount?.uuid.uuidString
+//        self.outlineListView.autosaveName = "save" + (id)!
+//        ov!.autosaveExpandedItems = true
+
         let optionKeyIsDown = optionKeyPressed()
         if optionKeyIsDown == true && listTransactions.count > 0 {
-//            ov!.animator().collapseItem(nil, collapseChildren: true)
+            // ??????? crash
+//            ov!.collapseItem(nil, collapseChildren: true)
         }
     }
     
     func outlineViewItemDidExpand(_ notification: Notification) {
         let ov = notification.object as? NSOutlineView
+//        ov!.autosaveExpandedItems = false
+//        let id = currentAccount?.uuid.uuidString
+//        self.outlineListView.autosaveName = "save" + (id)!
         ov!.autosaveExpandedItems = true
 
         let optionKeyIsDown = optionKeyPressed()
@@ -495,6 +507,29 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             ov!.animator().expandItem(nil, expandChildren: true)
         }
     }
+    
+//    func outlineViewItemDidCollapse(_ notification: Notification) {
+//        guard let item = notification.userInfo?["NSObject"] as? Item else {
+//            return
+//        }
+//
+//        let isExpanded = self.outline.isItemExpanded(item)
+//        let isParentExpanded = self.outline.parent(forItem: item).map(self.outline.isItemExpanded)
+//
+//        print("DELEGATE DID COLLAPSE", item.name, isExpanded, isParentExpanded)
+//    }
+//
+//    func outlineViewItemDidExpand(_ notification: Notification) {
+//        guard let item = notification.userInfo?["NSObject"] as? Item else {
+//            return
+//        }
+//
+//        let isExpanded = self.outline.isItemExpanded(item)
+//        let isParentExpanded = self.outline.parent(forItem: item).map(self.outline.isItemExpanded)
+//
+//        print("DELEGATE DID EXPAND", item.name, isExpanded, isParentExpanded)
+//    }
+//
     
     func optionKeyPressed() -> Bool
     {

@@ -159,6 +159,8 @@ final class ListTransactionsController: NSViewController {
         self.theBox3.fillColor = NSColor(patternImage: NSImage(named: NSImage.Name( "Gradient"))!)
         
         self.outlineListView.doubleAction = #selector(doubleClicked)
+//        NotificationCenter.default.addObserver(self, selector: #selector(itemWillExpand(_:)), name: NSOutlineView.itemWillExpandNotification, object: self.outlineView);
+
         
         self.outlineListView.rowSizeStyle = .custom
         self.outlineListView.allowsEmptySelection = true
@@ -170,7 +172,6 @@ final class ListTransactionsController: NSViewController {
         self.outlineListView.autosaveName = "save" + (id)!
         self.outlineListView.autosaveExpandedItems = true
         self.outlineListView.autosaveTableColumns = true
-
 
         self.reloadData(false, true)
 

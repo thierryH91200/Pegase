@@ -7,48 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "94B5DF38-0913-4F48-91DF-1C0E20F7B03B"
+            uuid = "D4D0E310-6D1D-41B3-AB43-3CC0E69C7D41"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/SousOperationModalWindowController.swift"
+            filePath = "Pegase/ListTransactionsDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "controlTextDidChange(_:)"
+            startingLineNumber = "492"
+            endingLineNumber = "492"
+            landmarkName = "outlineViewItemWillCollapse(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "76032CD3-14F0-4879-A5B0-5B11152C941D"
-            shouldBeEnabled = "Yes"
+            uuid = "1CF9FF99-6FAA-49DE-8F40-4FAFD9B38776"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/AutoCompleteTextField.swift"
+            filePath = "Pegase/ListTransactionsDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
-            landmarkName = "tableViewSelectionDidChange(_:)"
+            startingLineNumber = "491"
+            endingLineNumber = "491"
+            landmarkName = "outlineViewItemWillCollapse(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9B0EA895-A4C0-4F09-A0B8-AABF0F05E81A"
+            uuid = "E844F994-00C1-4553-B3EB-483DC3563E7B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pegase/Extension/HeaderCell.swift"
+            filePath = "Pegase/ListTransactionsDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "drawSelection(in:)"
+            startingLineNumber = "478"
+            endingLineNumber = "478"
+            landmarkName = "outlineViewItemWillCollapse(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
