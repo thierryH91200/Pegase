@@ -473,33 +473,24 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         return false
     }
     
-    func outlineViewItemWillCollapse(_ notification: Notification) {
-        
-        guard let item = notification.userInfo?["NSObject"] as? TrackingMonth else {
-            return
-        }
-        
-        let isExpanded = self.outlineListView.isItemExpanded( item )
-//        let isParentExpanded = self.outlineListView.parent(forItem: item).map(self.outlineListView.isItemExpanded(item))
-
+//    func outlineViewItemWillExpand(_ notification: Notification) {
+//
+//        print("outlineViewItemWillExpand")
+//
 //        let ov = notification.object as? NSOutlineView
-//        ov!.autosaveExpandedItem/s = false
-//        let id = currentAccount?.uuid.uuidString
-//        self.outlineListView.autosaveName = "save" + (id)!
 //        ov!.autosaveExpandedItems = true
-
-        let optionKeyIsDown = optionKeyPressed()
-        if optionKeyIsDown == true && listTransactions.count > 0 {
-            // ??????? crash
-//            ov!.collapseItem(nil, collapseChildren: true)
-        }
-    }
-    
+//
+//        let optionKeyIsDown = optionKeyPressed()
+//        if optionKeyIsDown == true && listTransactions.count > 0 {
+////            ov!.animator().expandItem(nil, expandChildren: true)
+//        }
+//    }
+//
     func outlineViewItemDidExpand(_ notification: Notification) {
+        
+        print("outlineViewItemDidExpand")
+
         let ov = notification.object as? NSOutlineView
-//        ov!.autosaveExpandedItems = false
-//        let id = currentAccount?.uuid.uuidString
-//        self.outlineListView.autosaveName = "save" + (id)!
         ov!.autosaveExpandedItems = true
 
         let optionKeyIsDown = optionKeyPressed()
@@ -507,30 +498,33 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             ov!.animator().expandItem(nil, expandChildren: true)
         }
     }
-    
-//    func outlineViewItemDidCollapse(_ notification: Notification) {
-//        guard let item = notification.userInfo?["NSObject"] as? Item else {
-//            return
+
+//    func outlineViewItemWillCollapse(_ notification: Notification) {
+//
+//        print("outlineViewItemWillCollapse")
+//
+//        let ov = notification.object as? NSOutlineView
+////        ov!.autosaveExpandedItems = true
+//
+//        let optionKeyIsDown = optionKeyPressed()
+//        if optionKeyIsDown == true && listTransactions.count > 0 {
+////            ov!.animator().collapseItem(nil, collapseChildren:  true)
 //        }
-//
-//        let isExpanded = self.outline.isItemExpanded(item)
-//        let isParentExpanded = self.outline.parent(forItem: item).map(self.outline.isItemExpanded)
-//
-//        print("DELEGATE DID COLLAPSE", item.name, isExpanded, isParentExpanded)
 //    }
 //
-//    func outlineViewItemDidExpand(_ notification: Notification) {
-//        guard let item = notification.userInfo?["NSObject"] as? Item else {
-//            return
-//        }
-//
-//        let isExpanded = self.outline.isItemExpanded(item)
-//        let isParentExpanded = self.outline.parent(forItem: item).map(self.outline.isItemExpanded)
-//
-//        print("DELEGATE DID EXPAND", item.name, isExpanded, isParentExpanded)
-//    }
-//
-    
+    func outlineViewItemDidCollapse(_ notification: Notification) {
+        
+        print("outlineViewItemDidCollapse")
+        
+        let ov = notification.object as? NSOutlineView
+        ov!.autosaveExpandedItems = true
+
+        let optionKeyIsDown = optionKeyPressed()
+        if optionKeyIsDown == true && listTransactions.count > 0 {
+            ov!.animator().collapseItem(nil, collapseChildren:  true)
+        }
+    }
+
     func optionKeyPressed() -> Bool
     {
         let optionKey = NSEvent.modifierFlags.contains(NSEvent.ModifierFlags.option)
