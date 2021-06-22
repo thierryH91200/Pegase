@@ -13,6 +13,9 @@ final class SchedulerViewController: NSViewController {
     @IBOutlet weak var tableView: NSTableView!
     var entityEcheancier =  [EntitySchedule]()
     
+    let accountPasteboardType = NSPasteboard.PasteboardType(rawValue: "scheduler.account")
+
+    
     let formatterDate: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .none
@@ -49,6 +52,9 @@ final class SchedulerViewController: NSViewController {
         let id = currentAccount?.uuid.uuidString
         self.tableView.autosaveName = "saveEcheancier" + (id)!
         self.tableView.autosaveTableColumns = true
+        
+        tableView.registerForDraggedTypes([accountPasteboardType])
+
         
         updateData()
     }
@@ -91,6 +97,48 @@ extension SchedulerViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return entityEcheancier.count
     }
+    
+    func tableView(_ tableView: NSTableView,
+                   pasteboardWriterForRow row: Int) -> NSPasteboardWriting? {
+        let account = entityEcheancier[row]
+        let pasteboardItem = NSPasteboardItem()
+        pasteboardItem.setString(account.uuid!.uuidString, forType: accountPasteboardType)
+        return pasteboardItem
+    }
+
+    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
+            if dropOperation == .above {
+                return .move
+            } else {
+                return []
+            }
+    }
+    
+    // For the destination table view
+     func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
+         guard
+             let item = info.draggingPasteboard.pasteboardItems?.first,
+             let theString = item.string(forType: accountPasteboardType),
+             let account = entityEcheancier.first(where: { $0.uuid?.uuidString == theString }),
+             let originalRow = entityEcheancier.firstIndex(of: account)
+             else { return false }
+
+         var newRow = row
+         // When you drag an item downwards, the "new row" index is actually --1. Remember dragging operation is `.above`.
+         if originalRow < newRow {
+             newRow = row - 1
+         }
+
+         // Animate the rows
+         tableView.beginUpdates()
+         tableView.moveRow(at: originalRow, to: newRow)
+         tableView.endUpdates()
+
+         // Persist the ordering by saving your data model
+//         saveAccountsReordered(at: originalRow, to: newRow)
+
+         return true
+     }
 }
 
 extension SchedulerViewController: NSTableViewDelegate {

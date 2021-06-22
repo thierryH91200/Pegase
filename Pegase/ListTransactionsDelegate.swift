@@ -473,19 +473,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         return false
     }
     
-//    func outlineViewItemWillExpand(_ notification: Notification) {
-//
-//        print("outlineViewItemWillExpand")
-//
-//        let ov = notification.object as? NSOutlineView
-//        ov!.autosaveExpandedItems = true
-//
-//        let optionKeyIsDown = optionKeyPressed()
-//        if optionKeyIsDown == true && listTransactions.count > 0 {
-////            ov!.animator().expandItem(nil, expandChildren: true)
-//        }
-//    }
-//
     func outlineViewItemDidExpand(_ notification: Notification) {
         
         print("outlineViewItemDidExpand")
@@ -499,19 +486,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         }
     }
 
-//    func outlineViewItemWillCollapse(_ notification: Notification) {
-//
-//        print("outlineViewItemWillCollapse")
-//
-//        let ov = notification.object as? NSOutlineView
-////        ov!.autosaveExpandedItems = true
-//
-//        let optionKeyIsDown = optionKeyPressed()
-//        if optionKeyIsDown == true && listTransactions.count > 0 {
-////            ov!.animator().collapseItem(nil, collapseChildren:  true)
-//        }
-//    }
-//
     func outlineViewItemDidCollapse(_ notification: Notification) {
         
         print("outlineViewItemDidCollapse")

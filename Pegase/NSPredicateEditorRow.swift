@@ -10,6 +10,10 @@ import AppKit
 
 
 // MARK: - Rubrique
+
+// func init()
+// func init(leftExpressions: [NSExpression])
+// func predicate
 final class RowTemplateRelationshipRubrique: NSPredicateEditorRowTemplate {
 
     var entityRubric = [EntityRubric]()
@@ -55,6 +59,9 @@ final class RowTemplateRelationshipRubrique: NSPredicateEditorRowTemplate {
 }
 
 // MARK: - Category
+// func init()
+// func init(leftExpressions: [NSExpression])
+// func predicate
 final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
     
     override init() {
@@ -92,6 +99,9 @@ final class RowTemplateRelationshipCategory: NSPredicateEditorRowTemplate {
 }
 
 // MARK: - Status
+// func init()
+// func (leftExpressions: [NSExpression], leftEntity : String)
+// func predicate
 final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
     
     static var entity = ""
@@ -145,6 +155,9 @@ final class RowTemplateRelationshipStatus: NSPredicateEditorRowTemplate {
 }
 
 // MARK: - Libelle
+// func init()
+// func init(leftExpressions: [NSExpression])
+// func predicate
 final class RowTemplateRelationshipLibelle: NSPredicateEditorRowTemplate {
     
     override init() {
@@ -183,6 +196,9 @@ final class RowTemplateRelationshipLibelle: NSPredicateEditorRowTemplate {
 }
 
 // MARK: - Montant
+// func init()
+// func init(leftExpressions: [NSExpression])
+// func predicate
 final class RowTemplateRelationshipMontant: NSPredicateEditorRowTemplate {
     
     override init() {
@@ -270,6 +286,10 @@ final class RowTemplateRelationshipMode: NSPredicateEditorRowTemplate {
 }
 
 // MARK: - Date
+// func init()
+// func init(leftExpressions: [NSExpression], leftEntity : String)
+// func predicate
+
 final class RowTemplateRelationshipDate: NSPredicateEditorRowTemplate {
     
     static var entity = ""

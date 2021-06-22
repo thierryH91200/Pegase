@@ -84,21 +84,42 @@ class AppDelegate: NSObject, NSApplicationDelegate { // , UNUserNotificationCent
     }
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Document")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                print("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
+      
+      let container = NSPersistentContainer(name: "Document")
+      
+      /*add necessary support for migration*/
+      let description = NSPersistentStoreDescription()
+      description.shouldMigrateStoreAutomatically = true
+      description.shouldInferMappingModelAutomatically = true
+      container.persistentStoreDescriptions =  [description]
+      /*add necessary support for migration*/
+      
+      container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        
+        if let error = error as NSError? {
+          fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
+      })
+      return container
     }()
+
+    
+//    lazy var persistentContainer: NSPersistentContainer = {
+//        let container = NSPersistentContainer(name: "Document")
+//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+//            if let error = error as NSError? {
+//                print("Unresolved error \(error), \(error.userInfo)")
+//            }
+//        })
+//        return container
+//    }()
+//
     
     @IBAction func saveAction(_ sender: Any?) {
         
-        
         let context = persistentContainer.viewContext
+
 //        let context = persistentContainer.newBackgroundContext()
-        
 //        context?.deleteAllData()
         
         context.perform {

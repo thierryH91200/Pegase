@@ -79,7 +79,7 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
         modeOperation2.isBordered = false //Important
         modeOperation2.wantsLayer = true
         
-        NotificationCenter.receive(instance: self, selector: #selector(updateChangeCompte(_:)), name: .updateAccount)
+        NotificationCenter.receive(instance: self, selector: #selector(updateChangeAccount(_:)), name: .updateAccount)
 
         dateDebut.delegate = self
         dateFin.delegate = self
@@ -113,7 +113,7 @@ final class SchedulersSaisieController: NSViewController, NSTextFieldDelegate, N
         razData()
     }
     
-    @objc func updateChangeCompte(_ notification: Notification) {
+    @objc func updateChangeAccount(_ notification: Notification) {
         
         razData()
     }
