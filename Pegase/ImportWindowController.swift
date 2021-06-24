@@ -277,7 +277,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             }
             setupHeaderMenu()
         } else {
-            Swift.print("file selection was canceled")
+            print("file selection was canceled")
         }
     }
     

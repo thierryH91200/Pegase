@@ -36,6 +36,7 @@ extension ImportWindowController: ParserDelegate {
             anTableView?.removeTableColumn(col)
         }
         
+        nColumns += 1
         for i in 0 ..< nColumns {
             let col = NSTableColumn(identifier: NSUserInterfaceItemIdentifier( "\(i)"))
             col.sizeToFit()
@@ -43,7 +44,11 @@ extension ImportWindowController: ParserDelegate {
             col.resizingMask = [.userResizingMask, .autoresizingMask]
             
             if (statusBarFormatViewController?.config.isFirstRowAsHeader)! && headerData.count > i {
+                if i > 0 {
                 col.headerCell.title = headerData[i]
+                } else {
+                    col.headerCell.title = "Num"
+                }
             }
             anTableView?.addTableColumn(col)
         }

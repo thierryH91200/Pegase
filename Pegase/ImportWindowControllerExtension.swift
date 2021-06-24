@@ -13,13 +13,21 @@ extension ImportWindowController:  NSTableViewDataSource {
 extension ImportWindowController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
+        let cell : NSTableCellView
+        
         guard let identifier = tableColumn?.identifier else { return nil }
         guard let col = Int(identifier.rawValue) else { return nil }
         
         let rowData = allData[row]
         
         if rowData.count > col {
-            let cell = cellView(tableColumn: tableColumn, string: rowData[col])
+            if col == 0 {
+                cell = cellView(tableColumn: tableColumn, string: String(row))  // num row
+
+            }
+            else {
+                cell = cellView(tableColumn: tableColumn, string: rowData[col - 1])
+            }
             return cell
         } else {
             return nil
@@ -82,29 +90,8 @@ extension ImportWindowController: TTFormatViewControllerDelegate {
         do {
             try parser.parse()
         } catch {
-            Swift.print("Error fetching data from CoreData")
+            print("Error fetching data from CoreData")
         }
     }
     
 }
-
-//extension NSOpenPanel {
-//    var selectUrl: URL? {
-//        title = "Select file"
-//        allowsMultipleSelection = false
-//        canChooseDirectories = false
-//        canChooseFiles = true
-//        canCreateDirectories = false
-//        allowedFileTypes = ["csv", "txt"]
-//        return runModal() == .OK ? urls.first : nil
-//    }
-//    //    var selectUrls: [URL]? {
-//    //        title = "Select files"
-//    //        allowsMultipleSelection = true
-//    //        canChooseDirectories = false
-//    //        canChooseFiles = true
-//    //        canCreateDirectories = false
-//    //        allowedFileTypes = ["csv", "txt"]
-//    //        return runModal() == .OK ? urls : nil
-//    //    }
-//}
