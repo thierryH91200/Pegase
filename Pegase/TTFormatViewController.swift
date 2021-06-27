@@ -89,6 +89,7 @@ final class TTFormatViewController: NSViewController {
         config.escapeCharacter = (escapeControl.label(forSegment: escapeControl.selectedSegment))!
         config.isFirstRowAsHeader = useFirstRowAsHeaderCheckbox.state == .on
         config.isReverseSignAmountCheckBbox = reverseSignAmountCheckBbox?.state == .on
+        
         delegate?.configurationChanged(for: self)
     }
     

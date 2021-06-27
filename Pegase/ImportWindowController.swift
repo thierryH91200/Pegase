@@ -34,8 +34,11 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
     var url = ""
     
     var allData = [[String]]()
+    var allDataRow = [[String]]()
+
     var dataLine = [String]()
     var headerData = [String]()
+    var dataRow = [String]()
     var dataArray = [String]()
     
     var csvConfig =  CSV.Configuration()
@@ -111,7 +114,7 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
             entityOperation.dateCree = Date()
             entityOperation.dateModifie = Date()
             
-            /// Date transaction
+            // Date transaction
             var headerColumn = itemHeader[1].representedObject as!  [HeaderColumnForMenu]
             if headerColumn.isEmpty == false {
                 

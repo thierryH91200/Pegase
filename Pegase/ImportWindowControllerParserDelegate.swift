@@ -5,6 +5,7 @@ extension ImportWindowController: ParserDelegate {
     func parserDidBeginDocument(_ parser: CSV.Parser) {
         allData.removeAll()
         headerData.removeAll()
+        dataRow.removeAll()
         nColumns = 0
     }
     
@@ -14,7 +15,11 @@ extension ImportWindowController: ParserDelegate {
     }
     
     func parser(_ parser: CSV.Parser, didReadFieldAt index: UInt, value: String) {
-        if (statusBarFormatViewController?.config.isFirstRowAsHeader)! && line == 0 {
+        
+        dataRow.append(value)
+        
+        let isFirstRowAsHeader = statusBarFormatViewController?.config.isFirstRowAsHeader
+        if isFirstRowAsHeader == true && line == 0 {
             headerData.append(value)
         } else {
             dataLine.append(value)
@@ -25,7 +30,10 @@ extension ImportWindowController: ParserDelegate {
         if dataLine.count > nColumns {
             nColumns = dataLine.count
         }
-        let isFirstRowAsHeader = (statusBarFormatViewController?.config.isFirstRowAsHeader)!
+        
+        allDataRow.append( dataLine)
+        
+        let isFirstRowAsHeader = statusBarFormatViewController?.config.isFirstRowAsHeader
         if !(isFirstRowAsHeader == true && line == 0) {
             allData.append(dataLine)
         }
@@ -35,7 +43,7 @@ extension ImportWindowController: ParserDelegate {
         while let col = anTableView?.tableColumns.last {
             anTableView?.removeTableColumn(col)
         }
-        
+
         nColumns += 1
         for i in 0 ..< nColumns {
             let col = NSTableColumn(identifier: NSUserInterfaceItemIdentifier( "\(i)"))
@@ -43,12 +51,13 @@ extension ImportWindowController: ParserDelegate {
             col.headerCell.alignment = .center
             col.resizingMask = [.userResizingMask, .autoresizingMask]
             
-            if (statusBarFormatViewController?.config.isFirstRowAsHeader)! && headerData.count > i {
-                if i > 0 {
+            let isFirstRowAsHeader = statusBarFormatViewController?.config.isFirstRowAsHeader
+            if isFirstRowAsHeader == true && headerData.count > i {
+                //                if i > 0 {
                 col.headerCell.title = headerData[i]
-                } else {
-                    col.headerCell.title = "Num"
-                }
+                //                } else {
+                //                    col.headerCell.title = "Num" + String(i)
+                //                }
             }
             anTableView?.addTableColumn(col)
         }

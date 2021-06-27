@@ -75,15 +75,15 @@ extension ImportWindowController: NSMenuDelegate {
         let items = menuHeader.items
         
         // Item existant précedent
-        for i in 0 ..< items.count {
-            var headerColumnForMenu = items[i].representedObject as!  [HeaderColumnForMenu]
+        for item in items {
+            var headerColumnForMenu = item.representedObject as!  [HeaderColumnForMenu]
             let index = headerColumnForMenu.firstIndex { $0.numMenu == indexMenu }
             if index != nil {
                 
                 print("remove oldItem")
                 var oldItem = headerColumnForMenu[index!]
                 headerColumnForMenu.remove(at: index!)
-                items[i].representedObject = headerColumnForMenu
+                item.representedObject = headerColumnForMenu
                 
                 print("move oldItem")
                 var headerColumnForMenu1 = items[0].representedObject as! [HeaderColumnForMenu]

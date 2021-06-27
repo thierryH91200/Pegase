@@ -5,6 +5,7 @@ import AppKit
 extension ImportWindowController:  NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
+        print("allData.count : ", allData.count)
         return allData.count
     }
 }
@@ -12,22 +13,16 @@ extension ImportWindowController:  NSTableViewDataSource {
 // MARK: NSTableViewDelegate
 extension ImportWindowController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        
-        let cell : NSTableCellView
-        
+                
         guard let identifier = tableColumn?.identifier else { return nil }
         guard let col = Int(identifier.rawValue) else { return nil }
-        
-        let rowData = allData[row]
+        if row  >= allData.count {
+            return nil
+        }
+        let rowData = allData[row ]
         
         if rowData.count > col {
-            if col == 0 {
-                cell = cellView(tableColumn: tableColumn, string: String(row))  // num row
-
-            }
-            else {
-                cell = cellView(tableColumn: tableColumn, string: rowData[col - 1])
-            }
+            let cell = cellView(tableColumn: tableColumn, string: rowData[col])
             return cell
         } else {
             return nil
@@ -68,7 +63,6 @@ extension ImportWindowController: NSTableViewDelegate {
         
         return cell
     }
-    
 }
 
 // MARK: TTFormatViewControllerDelegate
