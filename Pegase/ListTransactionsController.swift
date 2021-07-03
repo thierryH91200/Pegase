@@ -134,10 +134,14 @@ final class ListTransactionsController: NSViewController {
         
         createOutlineContextMenu()
         
+        soldeBanque.font = NSFont(name : "Silom", size : 16.0)!
+        soldeReel.font   = NSFont(name : "Silom", size : 16.0)!
+        soldeFinal.font  = NSFont(name : "Silom", size : 16.0)!
+
+        
         //vintage playback view
         self.theBox1.contentView?.isHidden = false
         self.theBox1.boxType = .custom
-        //        self.theBox1.borderType = .bezelBorder
         self.theBox1.borderWidth = 1.1
         self.theBox1.cornerRadius = 3
         self.theBox1.fillColor = NSColor(patternImage: NSImage(named: NSImage.Name( "Gradient"))!)
@@ -145,7 +149,6 @@ final class ListTransactionsController: NSViewController {
         //vintage playback view
         self.theBox2.contentView?.isHidden = false
         self.theBox2.boxType = .custom
-        //        self.theBox2.borderType = .bezelBorder
         self.theBox2.borderWidth = 1.1
         self.theBox2.cornerRadius = 3
         self.theBox2.fillColor = NSColor(patternImage: NSImage(named: NSImage.Name( "Gradient"))!)
@@ -153,7 +156,6 @@ final class ListTransactionsController: NSViewController {
         //vintage playback view
         self.theBox3.contentView?.isHidden = false
         self.theBox3.boxType = .custom
-        //        self.theBox3.borderType = .bezelBorder
         self.theBox3.borderWidth = 1.1
         self.theBox3.cornerRadius = 3
         self.theBox3.fillColor = NSColor(patternImage: NSImage(named: NSImage.Name( "Gradient"))!)

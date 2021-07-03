@@ -24,18 +24,20 @@ class MyNSTableRowView: NSTableRowView {
     override func drawSelection(in dirtyRect: NSRect) {
         super.drawSelection(in: dirtyRect)
 
-        struct SharedColors {
-            static let backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
-        }
-        
-        NSColor.selectedControlColor.set()
-        __NSRectFill(dirtyRect)
+//        struct SharedColors {
+//            static let backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
+//        }
+//
+//        NSColor.selectedControlColor.set()
+//        __NSRectFill(dirtyRect)
     }
 }
 
 class MenuTableRowView: NSTableRowView {
 
     override func drawSelection(in dirtyRect: NSRect) {
+        super.drawSelection(in: dirtyRect)
+
         if self.selectionHighlightStyle != .none {
             let selectionRect = NSInsetRect(self.bounds, 2.5, 2.5)
             

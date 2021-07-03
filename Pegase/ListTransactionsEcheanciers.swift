@@ -10,12 +10,14 @@ extension ListTransactionsController: NSDatePickerCellDelegate {
         guard datePicker.isEnabled == true else { return }
         guard currentAccount != nil else { return }
         
-        let proposedDate = proposedDateValue.pointee as Date
-        guard proposedDate != datePicker.dateValue else { return }
+        var proposedDate = proposedDateValue.pointee as Date
+        proposedDate = proposedDate.noon
+        let datePickerValue = datePicker.dateValue.noon
+        guard proposedDate != datePickerValue else { return }
         
-        let entityEcheanciers = Echeanciers.shared.getAllDatas()
+        let entitySchedules = Schedules.shared.getAllDatas()
         
-        for entitySchedule in entityEcheanciers {
+        for entitySchedule in entitySchedules {
             var dateValeur =  entitySchedule.dateValeur!
             let frequence = Int(entitySchedule.frequence)
             
@@ -38,7 +40,7 @@ extension ListTransactionsController: NSDatePickerCellDelegate {
                     print("what ????")
                 }
                 entitySchedule.nextOccurence += 1
-                Echeanciers.shared.createOperation(entitySchedule: entitySchedule, dateValeur: dateValeur)
+                Schedules.shared.createOperation(entitySchedule: entitySchedule, dateValeur: dateValeur)
             }
             entitySchedule.dateValeur = dateValeur
         }

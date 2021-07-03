@@ -1,8 +1,8 @@
 import AppKit
 
-final class Echeanciers : NSObject {
+final class Schedules : NSObject {
     
-    static let shared = Echeanciers()
+    static let shared = Schedules()
     private var entities = [EntitySchedule]()
     
     var viewContext : NSManagedObjectContext?

@@ -86,7 +86,7 @@ final class SchedulerViewController: NSViewController {
         let selectedRow = tableView.selectedRow
         if selectedRow >= 0 {
             let quake = entityEcheancier[selectedRow]
-            Echeanciers.shared.remove(entity: quake )
+            Schedules.shared.remove(entity: quake )
             updateData()
         }
     }
@@ -238,7 +238,7 @@ extension SchedulerViewController: NSTableViewDelegate {
     
     private func removeRowAndRecord(action: NSTableViewRowAction, row: Int) {
         let quake = self.entityEcheancier[row]
-        Echeanciers.shared.remove(entity: quake )
+        Schedules.shared.remove(entity: quake )
         self.updateData()
     }
 }
@@ -246,7 +246,7 @@ extension SchedulerViewController: NSTableViewDelegate {
 extension SchedulerViewController: EcheanciersDelegate {
     func updateData() {
         guard currentAccount != nil else { return }
-        entityEcheancier = Echeanciers.shared.getAllDatas()
+        entityEcheancier = Schedules.shared.getAllDatas()
         tableView.reloadData()
     }
 }

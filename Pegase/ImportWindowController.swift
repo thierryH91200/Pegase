@@ -42,11 +42,11 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
     var dataArray = [String]()
     
     var csvConfig =  CSV.Configuration()
-    
+
     override var windowNibName: NSNib.Name? {
         return "ImportWindowController"
     }
-    
+
     override func windowDidLoad() {
         super.windowDidLoad()
         
@@ -63,15 +63,13 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         
         setupHeaderMenu()
         readParseFile()
-//        self.close()
-
     }
     
     /// Pops up the menu at the specified location.
     @IBAction func tableViewClick(_ sender: NSTableView) {
         
         let column = sender.clickedColumn
-        let row = sender.clickedRow
+        let row    = sender.clickedRow
         
         guard column > -1, row == -1 else { return }
         
@@ -100,7 +98,6 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         dateFormatter.dateFormat = formatDate
         
         let itemHeader = menuHeader.items
-        
         
         let reverse = statusBarFormatViewController?.reverseSignAmountCheckBbox.state
         let sign = reverse == .on ? -1 : 1
@@ -244,7 +241,6 @@ final class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
         
         delegate?.getAllData()
         delegate?.reloadData(true, false)
-        
         NotificationCenter.send(.updateBalance)
         
         self.close()

@@ -444,7 +444,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
     // indicates whether a given row should be drawn in the “group row” style.
     public func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool
     {
-        
         if item is TrackingMonth {
             return true
         }

@@ -298,7 +298,6 @@ final class CategoryBarController: CommonGraph
             chartView.notifyDataSetChanged()
         }
     }
-    
 }
 
 extension CategoryBarController: SliderHorizontalDelegate {
