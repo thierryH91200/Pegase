@@ -21,19 +21,43 @@ import AppKit
 
 class MyNSTableRowView: NSTableRowView {
     
+    init()
+    {
+        super.init(frame: .zero)
+        isTargetForDropOperation = false
+        draggingDestinationFeedbackStyle = .none
+        selectionHighlightStyle = .none
+    }
+    
+    required init?(coder decoder: NSCoder) { nil }
+
+    
+    override func drawBackground(in dirtyRect: NSRect) {} // this avoids a visual bug
+    override func drawSeparator(in dirtyRect: NSRect) {}
+    
+    struct SharedColors {
+        static let backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
+    }
+
+
     override func drawSelection(in dirtyRect: NSRect) {
         super.drawSelection(in: dirtyRect)
 
-//        struct SharedColors {
-//            static let backgroundColor = NSColor(red: 0.76, green: 0.82, blue: 0.92, alpha: 1)
-//        }
-//
-//        NSColor.selectedControlColor.set()
-//        __NSRectFill(dirtyRect)
+        if isSelected == false {
+            NSColor.selectedControlColor.set()
+            __NSRectFill(dirtyRect)
+        } else {
+            SharedColors.backgroundColor.set()
+            __NSRectFill(dirtyRect)
+
+            
+        }
     }
 }
 
 class MenuTableRowView: NSTableRowView {
+    
+
 
     override func drawSelection(in dirtyRect: NSRect) {
         super.drawSelection(in: dirtyRect)
@@ -41,9 +65,10 @@ class MenuTableRowView: NSTableRowView {
         if self.selectionHighlightStyle != .none {
             let selectionRect = NSInsetRect(self.bounds, 2.5, 2.5)
             
-            if let color = NSColor.init(named: NSColor.Name("menu_table_selection_color")) {
+//            if let color = NSColor.init(named: NSColor.Name("menu_table_selection_color")) {
+                let color = NSColor.lightGray
                 color.setFill()
-            }
+            
             
             let selectionPath = NSBezierPath.init(roundedRect: selectionRect, xRadius: 0, yRadius: 0)
             selectionPath.fill()

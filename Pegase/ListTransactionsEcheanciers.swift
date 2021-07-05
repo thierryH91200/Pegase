@@ -12,10 +12,15 @@ extension ListTransactionsController: NSDatePickerCellDelegate {
         
         var proposedDate = proposedDateValue.pointee as Date
         proposedDate = proposedDate.noon
+        
         let datePickerValue = datePicker.dateValue.noon
+        
         guard proposedDate != datePickerValue else { return }
         
         let entitySchedules = Schedules.shared.getAllDatas()
+        
+        let  proposedTime = proposedTimeInterval?.pointee
+        print( proposedTime! )
         
         for entitySchedule in entitySchedules {
             var dateValeur =  entitySchedule.dateValeur!
