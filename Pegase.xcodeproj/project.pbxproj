@@ -13,6 +13,7 @@
 		0312B137243200D500EA13F6 /* IncomeExpensePieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */; };
 		0313E658262FFC9C002DBD63 /* ListTransactionsController+Expansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0313E656262FFC9C002DBD63 /* ListTransactionsController+Expansion.swift */; };
 		03144200268998DE00B87E0E /* DreagVieew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031441FF268998DE00B87E0E /* DreagVieew.swift */; };
+		0314F5B82693247600D10D07 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0314F5B52693247600D10D07 /* Document.xcdatamodeld */; };
 		0315EA522475B034002505A6 /* AccountModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0315EA542475B034002505A6 /* AccountModalWindowController.xib */; };
 		0315EA5E2475B049002505A6 /* GroupModalWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0315EA602475B049002505A6 /* GroupModalWindowController.xib */; };
 		031871BE25E534C00099AF17 /* notification.strings in Resources */ = {isa = PBXBuildFile; fileRef = 031871C025E534C00099AF17 /* notification.strings */; };
@@ -221,7 +222,6 @@
 		037993B72413F353001ADDA6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037993B62413F353001ADDA6 /* ChartView.swift */; };
 		039BAC3A242CAD4600C375BB /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039BAC3C242CAD4600C375BB /* MainWindowController.xib */; };
 		039E0BE5247FA5FD00BE8ED7 /* rubrique.csv in Resources */ = {isa = PBXBuildFile; fileRef = 039E0BE7247FA5FD00BE8ED7 /* rubrique.csv */; };
-		039EEA032688E15800C7DB17 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 039EEA012688E15800C7DB17 /* Document.xcdatamodeld */; };
 		039F181F26486237009685E7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039F181E26486237009685E7 /* String.swift */; };
 		03AB64CA2667559D00A3C5F5 /* NSPredicateEditorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB64C82667559D00A3C5F5 /* NSPredicateEditorRow.swift */; };
 		03AC6B8625E3C005004C7223 /* NotificationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC6B8425E3C005004C7223 /* NotificationsHelper.swift */; };
@@ -271,6 +271,7 @@
 		0312B135243200D500EA13F6 /* IncomeExpensePieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpensePieController.swift; sourceTree = "<group>"; };
 		0313E656262FFC9C002DBD63 /* ListTransactionsController+Expansion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListTransactionsController+Expansion.swift"; sourceTree = "<group>"; };
 		031441FF268998DE00B87E0E /* DreagVieew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreagVieew.swift; sourceTree = "<group>"; };
+		0314F5B62693247600D10D07 /* TaskCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskCoreData.xcdatamodel; sourceTree = "<group>"; };
 		0315EA532475B034002505A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AccountModalWindowController.xib; sourceTree = "<group>"; };
 		0315EA572475B03B002505A6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AccountModalWindowController.strings; sourceTree = "<group>"; };
 		0315EA592475B03C002505A6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AccountModalWindowController.strings; sourceTree = "<group>"; };
@@ -578,7 +579,6 @@
 		039E0BEA247FA60700BE8ED7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text; name = en; path = en.lproj/rubrique.csv; sourceTree = "<group>"; };
 		039E0BEB247FA60900BE8ED7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text; name = it; path = it.lproj/rubrique.csv; sourceTree = "<group>"; };
 		039E0BEC247FA60A00BE8ED7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text; name = es; path = es.lproj/rubrique.csv; sourceTree = "<group>"; };
-		039EEA022688E15800C7DB17 /* TaskCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskCoreData.xcdatamodel; sourceTree = "<group>"; };
 		039F181E26486237009685E7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		03AB64C82667559D00A3C5F5 /* NSPredicateEditorRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPredicateEditorRow.swift; sourceTree = "<group>"; };
 		03AC6B8425E3C005004C7223 /* NotificationsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsHelper.swift; sourceTree = "<group>"; };
@@ -1058,7 +1058,7 @@
 				03213C7123F92F1C00002DD7 /* Localizable.strings */,
 				034EC91C23F87F9E006944DD /* AccountGroup */,
 				034EC8D923F87EC8006944DD /* CoreData */,
-				039EEA012688E15800C7DB17 /* Document.xcdatamodeld */,
+				0314F5B52693247600D10D07 /* Document.xcdatamodeld */,
 				034EC8FF23F87F43006944DD /* Extension */,
 				03AB64CB2667F61600A3C5F5 /* Filter */,
 				034EC91623F87F6D006944DD /* Generated */,
@@ -1603,13 +1603,13 @@
 				034ECB6723F88033006944DD /* PopOverModalViewController.swift in Sources */,
 				034EC8E823F87EDB006944DD /* EntityRubric+CoreDataClass.swift in Sources */,
 				03213C1923F90C0E00002DD7 /* ComboColorWell.swift in Sources */,
-				039EEA032688E15800C7DB17 /* Document.xcdatamodeld in Sources */,
 				034ECB5E23F87FAF006944DD /* AccountGroupTableCellView.swift in Sources */,
 				03213B1523F9048D00002DD7 /* CSVConfig.swift in Sources */,
 				03213C1723F90C0E00002DD7 /* ColorView.swift in Sources */,
 				036AF0A82426044E008C6564 /* AvatarInfo.swift in Sources */,
 				03213B4823F9055400002DD7 /* SousOperationComboBoxDelegate.swift in Sources */,
 				034ECB6B23F88033006944DD /* KSBackgroundView.swift in Sources */,
+				0314F5B82693247600D10D07 /* Document.xcdatamodeld in Sources */,
 				034EC91123F87F51006944DD /* ManagedObject.swift in Sources */,
 				03213BE923F90B3F00002DD7 /* SchedulersSaisieController.swift in Sources */,
 				032CE32B24E9B27B00660A8B /* NSOpenPanel.swift in Sources */,
@@ -2211,14 +2211,14 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		039EEA012688E15800C7DB17 /* Document.xcdatamodeld */ = {
+		0314F5B52693247600D10D07 /* Document.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				039EEA022688E15800C7DB17 /* TaskCoreData.xcdatamodel */,
+				0314F5B62693247600D10D07 /* TaskCoreData.xcdatamodel */,
 			);
-			currentVersion = 039EEA022688E15800C7DB17 /* TaskCoreData.xcdatamodel */;
+			currentVersion = 0314F5B62693247600D10D07 /* TaskCoreData.xcdatamodel */;
 			name = Document.xcdatamodeld;
-			path = "../../Pegase copie/Pegase/Document.xcdatamodeld";
+			path = ../../../../../.Trash/pegase11/Pegase/Pegase/Document.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
