@@ -134,7 +134,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Référence account</string>
+		<string>Référence du compte</string>
 		<key>icon</key>
 		<string>note</string>
 		<key>children</key>
@@ -145,7 +145,7 @@
 				<key>icon</key>
 				<string>person</string>
 				<key>name</key>
-				<string>Identity</string>
+				<string>Identité</string>
 			</dict>
 			<dict>
 				<key>nameView</key>
@@ -153,7 +153,7 @@
 				<key>icon</key>
 				<string>calendar</string>
 				<key>name</key>
-				<string>Scheduler</string>
+				<string>Echeancier</string>
 			</dict>
 			<dict>
 				<key>nameView</key>
@@ -161,7 +161,7 @@
 				<key>icon</key>
 				<string>bookmark</string>
 				<key>name</key>
-				<string>Settings</string>
+				<string>Réglages</string>
 			</dict>
 		</array>
 	</dict>

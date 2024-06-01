@@ -35,6 +35,24 @@ final class SchedulerViewController: NSViewController {
 
         case amount
     }
+    
+    enum typeFreq       : Int16 {
+        case day
+        case week
+        case month
+        case year
+
+        var label       : String
+        {
+            switch self {
+            case .day   : return Localizations.TypeFreq.day
+            case .week  : return Localizations.TypeFreq.week
+            case .month : return Localizations.TypeFreq.month
+            case .year  : return Localizations.TypeFreq.year
+            }
+        }
+    }
+
 
     var entitySchedules : [EntitySchedule] = []
     var entitySchedule : EntitySchedule?
@@ -188,13 +206,13 @@ extension SchedulerViewController: NSTableViewDataSource {
             newRow = row - 1
         }
         
-            // Animate the rows
+        // Animate the rows
         tableView.beginUpdates()
         tableView.moveRow(at: originalRow, to: newRow)
         tableView.endUpdates()
         
-            // Persist the ordering by saving your data model
-            //         saveAccountsReordered(at: originalRow, to: newRow)
+        // Persist the ordering by saving your data model
+        //         saveAccountsReordered(at: originalRow, to: newRow)
         
         return true
     }
@@ -321,7 +339,8 @@ extension SchedulerViewController: NSTableViewDelegate {
                 cellView?.textField?.intValue = Int32(entitySchedule.frequence)
             case .echTypeFrequence:
                 cellView = tableView.makeView(withIdentifier: .echTypeFrequence, owner: self) as? CategoryCellView
-                cellView?.textField?.intValue = Int32(entitySchedule.typeFrequence)
+                let nameFreq = typeFreq(rawValue: entitySchedule.typeFrequence)?.label
+                cellView?.textField?.stringValue = nameFreq!
             case .echModePaiement:
                 cellView = tableView.makeView(withIdentifier: .echModePaiement, owner: self) as? CategoryCellView
                 cellView?.textField?.stringValue = (entitySchedule.paymentMode?.name)!
@@ -367,7 +386,9 @@ extension SchedulerViewController: NSTableViewDelegate {
 
             view.occurence?.intValue = Int32(entitySchedule.occurence)
             view.frequence?.intValue =  Int32(entitySchedule.frequence)
-            view.typeFrequence?.intValue =  Int32(entitySchedule.typeFrequence)
+
+            let nameFreq = typeFreq(rawValue: entitySchedule.typeFrequence)?.label
+            view.typeFrequence?.stringValue =  nameFreq!
 
             view.rubrique?.stringValue = (entitySchedule.category?.rubric?.name)!
             view.categorie?.stringValue = (entitySchedule.category?.name)!
@@ -386,7 +407,6 @@ extension SchedulerViewController: NSTableViewDelegate {
             return 150.0
         }
     }
-
 
     func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
         switch edge {

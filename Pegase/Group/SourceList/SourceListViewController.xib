@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22690"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,13 +20,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="28" horizontalPageScroll="10" verticalLineScroll="28" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53Q-dr-7Cc">
-                    <rect key="frame" x="0.0" y="0.0" width="339" height="533"/>
+                    <rect key="frame" x="0.0" y="0.0" width="339" height="531"/>
                     <clipView key="contentView" drawsBackground="NO" id="fhE-fS-wPb">
-                        <rect key="frame" x="1" y="1" width="337" height="531"/>
+                        <rect key="frame" x="1" y="1" width="337" height="529"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="28" rowSizeStyle="systemDefault" viewBased="YES" indentationPerLevel="13" autosaveExpandedItems="YES" outlineTableColumn="Uiq-eH-hcF" id="kvP-D7-jKP">
-                                <rect key="frame" x="0.0" y="0.0" width="337" height="531"/>
+                                <rect key="frame" x="0.0" y="0.0" width="337" height="529"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="0.0"/>
                                 <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -47,7 +48,7 @@
                                                 <rect key="frame" x="11" y="0.0" width="314" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ox4-3t-87h">
+                                                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ox4-3t-87h">
                                                         <rect key="frame" x="26" y="0.0" width="253" height="16"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Header Label" usesSingleLineMode="YES" id="5P6-Xf-3ru">
                                                             <font key="font" metaFont="system"/>
@@ -56,7 +57,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3cu-3Y-O7c">
-                                                        <rect key="frame" x="3" y="-2.5" width="17" height="21"/>
+                                                        <rect key="frame" x="3" y="-2" width="17" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="17" id="Upe-22-svt"/>
                                                         </constraints>
@@ -82,14 +83,14 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qYa-6a-609">
-                                                        <rect key="frame" x="32" y="-8.5" width="24" height="29"/>
+                                                        <rect key="frame" x="32" y="-8" width="24" height="29"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="hlI-x8-YSd"/>
                                                             <constraint firstAttribute="width" constant="24" id="jdE-Ah-y4b"/>
                                                         </constraints>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="note.text" catalog="system" id="T5J-uv-aQo"/>
                                                     </imageView>
-                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="fMq-m8-qEe">
+                                                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="fMq-m8-qEe">
                                                         <rect key="frame" x="62" y="1" width="96" height="16"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="dFS-yK-nif">
                                                             <font key="font" metaFont="system"/>
@@ -130,7 +131,7 @@
                     </scroller>
                 </scrollView>
                 <button focusRingType="none" horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MHY-FJ-9va">
-                    <rect key="frame" x="0.0" y="532" width="339" height="19"/>
+                    <rect key="frame" x="0.0" y="530" width="339" height="19"/>
                     <buttonCell key="cell" type="recessed" title="Affichage" bezelStyle="recessed" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="ULG-5x-aFd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="systemBold" size="12"/>
@@ -150,7 +151,7 @@
         </customView>
     </objects>
     <resources>
-        <image name="chart.xyaxis.line" catalog="system" width="17" height="14"/>
-        <image name="note.text" catalog="system" width="16" height="14"/>
+        <image name="chart.xyaxis.line" catalog="system" width="18" height="14"/>
+        <image name="note.text" catalog="system" width="17" height="14"/>
     </resources>
 </document>

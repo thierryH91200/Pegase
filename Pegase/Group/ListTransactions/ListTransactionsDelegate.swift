@@ -219,14 +219,6 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         
         switch propertyEnum
         {
-        case .dateTransaction:
-            alignment = .center
-            var time = Date()
-            if quake.dateOperation != nil {
-                time = quake.dateOperation!
-            }
-            let formattedDate = formatterDate.string(from: time)
-            textField.stringValue = formattedDate
             
         case .datePointage:
             alignment = .center
@@ -236,8 +228,16 @@ extension ListTransactionsController: NSOutlineViewDelegate {
             }
             let formattedDate = formatterDate.string(from: time)
             textField.stringValue = formattedDate
-            
 
+        case .dateTransaction:
+            alignment = .center
+            var time = Date()
+            if quake.dateOperation != nil {
+                time = quake.dateOperation!
+            }
+            let formattedDate = formatterDate.string(from: time)
+            textField.stringValue = formattedDate
+            
         case .rubric:
             if sousOperations.count == 1 {
                 textField.stringValue = sousOperations[0].category?.rubric?.name ?? ""

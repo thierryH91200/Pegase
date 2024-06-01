@@ -1,0 +1,150 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "1fA-Mw-VKC.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Mode\"; ObjectID = \"1fA-Mw-VKC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Mode"
+          }
+        }
+      }
+    },
+    "6aZ-oN-JXw.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Amount\"; ObjectID = \"6aZ-oN-JXw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Amount"
+          }
+        }
+      }
+    },
+    "6EZ-aL-yqg.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Recette\"; ObjectID = \"6EZ-aL-yqg\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Recette"
+          }
+        }
+      }
+    },
+    "AfG-27-T9J.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Categorie\"; ObjectID = \"AfG-27-T9J\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Categorie"
+          }
+        }
+      }
+    },
+    "FrH-bk-iRh.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Date Pointage\"; ObjectID = \"FrH-bk-iRh\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Date Pointage"
+          }
+        }
+      }
+    },
+    "iwY-s5-MNt.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Numéro chéque\"; ObjectID = \"iwY-s5-MNt\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Numéro chéque"
+          }
+        }
+      }
+    },
+    "MK1-xF-F2j.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Relevé\"; ObjectID = \"MK1-xF-F2j\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Relevé"
+          }
+        }
+      }
+    },
+    "Ogl-SJ-s8h.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Expense\"; ObjectID = \"Ogl-SJ-s8h\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expense"
+          }
+        }
+      }
+    },
+    "oUv-nH-rPl.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Rubric\"; ObjectID = \"oUv-nH-rPl\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rubric"
+          }
+        }
+      }
+    },
+    "R0O-2I-xwb.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Comment\"; ObjectID = \"R0O-2I-xwb\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Comment"
+          }
+        }
+      }
+    },
+    "RIy-Fh-qk8.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Date Transaction\"; ObjectID = \"RIy-Fh-qk8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Date Transaction"
+          }
+        }
+      }
+    },
+    "wrl-vh-XQl.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Statut\"; ObjectID = \"wrl-vh-XQl\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Statut"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -66,9 +66,9 @@
 
 /* MARK: -  ListTransaction */
 "ListTransaction.info" = "Dépenses : %@ Revenus : %@ Total : %@";
-"ListTransaction.transaction.singular" = "1 transaction";
+"ListTransaction.transaction.singular" = "%d transaction";
 "ListTransaction.transaction.plural" = "%d transactions";
-"ListTransaction.transaction.selectionnee.singular" = "1 transaction selectionnée ";
+"ListTransaction.transaction.selectionnee.singular" = "%d transaction selectionnée ";
 "ListTransaction.transaction.selectionnee.plural" = "%d transactions selectionnées ";
 
 // MARK: -  Check
@@ -127,5 +127,10 @@
 "chooseColor.mode" = "Mode";
 "chooseColor.statut" = "Statut";
 
+// MARK: -type freq
+"TypeFreq.day" = "Jour";
+"TypeFreq.week" = "Semaine";
+"TypeFreq.month" = "Mois";
+"TypeFreq.year" = "Année";
 
 

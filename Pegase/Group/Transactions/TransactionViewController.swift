@@ -405,7 +405,6 @@ final class TransactionViewController: NSViewController, NSTextFieldDelegate, NS
         self.dataRubricPie.removeAll()
         self.setDataCount()
         
-        
         resetListTransactions()
         
         if resetOp == true {

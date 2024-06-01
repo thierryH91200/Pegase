@@ -327,7 +327,7 @@ final class ListTransactionsController: NSViewController {
         let strIncome = formatter.string(from: income as NSNumber)!
         
         if number < 2 {
-            select =   Localizations.ListTransaction.transaction.singular
+            select =   Localizations.ListTransaction.transaction.singular(number)
         } else {
             select =   Localizations.ListTransaction.transaction.plural(number)
         }
@@ -392,7 +392,7 @@ final class ListTransactionsController: NSViewController {
             let count = selectedRow.count
             
             if count < 2 {
-                select =   Localizations.ListTransaction.transaction.selectionnee.singular
+                select =   Localizations.ListTransaction.transaction.selectionnee.singular(count)
             } else {
                 select =   Localizations.ListTransaction.transaction.selectionnee.plural(count)
             }
@@ -406,7 +406,6 @@ final class ListTransactionsController: NSViewController {
             if optionKeyIsDown == true {
                 self.delegate?.editSubOperation(0)
             }
-
             self.becomeFirstResponder()
         }
     }

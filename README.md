@@ -8,6 +8,11 @@ Pegase
 <img src="https://img.shields.io/badge/License-Apache-lightgrey" />
 <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
 
+<p align="center">
+<a href="https://github.com/thierryh91200/Pegase/releases">Releases</a> ·
+</p>
+
+
 ![Github All Releases](https://img.shields.io/github/downloads/thierryH91200/pegase/total.svg)
 </p>
 

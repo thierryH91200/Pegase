@@ -57,10 +57,10 @@
 
 // MARK: -  ListTransaction
 "ListTransaction.info" = "Expenses : %@ Incomes : %@ Total : %@";
-"ListTransaction.transaction.plural" = "%d transaction";
-"ListTransaction.transaction.selectionnee.plural" = "%d selected transactions ";
-"ListTransaction.transaction.selectionnee.singular" = "1 selected transaction ";
-"ListTransaction.transaction.singular" = "1 transaction";
+"ListTransaction.transaction.singular" = "%d transaction";
+"ListTransaction.transaction.plural" = "%d transactions";
+"ListTransaction.transaction.selectionnee.singular" = "%d selected transaction";
+"ListTransaction.transaction.selectionnee.plural" = "%d selected transactions";
 
 // MARK: -  Mode
 "Mode.Delete" = "Delete";
@@ -124,3 +124,9 @@
 "searchMenu.title.category" = "Category";
 "searchMenu.title.comment" = "Comment";
 "searchMenu.title.rubric" = "Rubric";
+
+// MARK: -type freq
+"TypeFreq.day" = "day";
+"TypeFreq.week" = "week";
+"TypeFreq.month" = "month";
+"TypeFreq.year" = "year";
