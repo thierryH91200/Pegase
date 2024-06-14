@@ -15,6 +15,7 @@ import SwiftUI
 import NotificationCenter
 import UserNotifications
 import SwiftyTranslate
+import Sparkle
 
 typealias TFDatePicker = NSDatePicker
 
@@ -23,7 +24,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var splashScreenWindowController: SplashScreenWindowController! = nil
     var checkUpdatePresenter = GitHubPresenter.shared
+    
+    let updaterController: SPUStandardUpdaterController
 
+    
+//    private let updater = SoftwareUpdater()
     
     private var isAutomaticUpdateCheck = false
     
@@ -42,8 +47,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // This way we can subclass NSDocumentController and use our class as the shared instance
         _ = DocumentController.init()
         
-//        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
-//        super.init()
+        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+        super.init()
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -312,6 +317,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         isAutomaticUpdateCheck = false
         checkUpdate()
     }
+
 }
 
 extension NSApplication {

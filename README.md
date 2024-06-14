@@ -22,7 +22,7 @@ Pegase
 
 
 <p align="center">
-<img src="Doc/Bergerac.png" alt="Sample">
+<img src="Doc/Pegase.png" alt="Sample">
 <p align="center">
 <em></em>
 </p>
@@ -32,18 +32,17 @@ Pegase
 
  📒 Documentation
  
-  It's currently a work in progress.
+ It's currently a work in progress.
  
  Want to help with translations?
  
  https://www.lafinancepourtous.com
  
- 
  https://cuisineantigaspi.com
  
 # Personal account software
 
-[latest release](https://github.com/thierryh91200/bergerac/releases/latest)
+[latest release](https://github.com/thierryh91200/Pegase/releases/latest)
 
 Pegase is a beautifully easy tool to keep track of your financial life on all your macOS 
 
@@ -160,7 +159,7 @@ OS X 12.3 or later, 64-bit processor
 ## Installation
 
 ## Pack Manager
-Bergerac include pack Manager
+Pegase include pack Manager
 
 ## Manually
 Download and drop /Sources folder in your project.
@@ -188,4 +187,4 @@ Thanks to everyone who helped test this software and contributed suggestions.
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/thierryH91200/Bergerac.svg)](https://starchart.cc/thierryH91200/Bergerac)
+[![Stargazers over time](https://starchart.cc/thierryH91200/Pegase.svg)](https://starchart.cc/thierryH91200/Pegase)

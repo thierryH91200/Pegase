@@ -2,6 +2,14 @@ import AppKit
 
 
 extension SourceListViewController: NSOutlineViewDelegate {
+    /*
+     *Must implement
+     *outlineView:numberOfChildrenOfItem:
+     *outlineView::rowViewForItem
+     *outlineView:child:ofItem:
+     *outlineView:objectValueForTableColumn:byItem:
+     */
+
         
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
 
@@ -35,7 +43,6 @@ extension SourceListViewController: NSOutlineViewDelegate {
         return nil
     }
 
-    
     func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
         return MyNSTableRowView()
     }
