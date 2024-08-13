@@ -193,6 +193,7 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         guard tableColumn != nil else { return nil }
         
         let identifier = tableColumn!.identifier
+        let column = outlineView.tableColumn(withIdentifier: identifier)
         guard let propertyEnum = ListeOperationsDisplayProperty(rawValue: identifier.rawValue) else { return nil }
         let quake = item.entityTransaction
         let sousOperations = item.entityTransaction.sousOperations?.allObjects as! [EntitySousOperations]
@@ -221,12 +222,22 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         {
             
         case .datePointage:
+            column!.width = 150 // Exemple : changer la largeur à 150
             alignment = .center
             var time = Date()
             if quake.datePointage != nil {
                 time = quake.datePointage!
             }
             let formattedDate = formatterDate.string(from: time)
+            if let column = outlineView.tableColumn(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "datePointage")) {
+                let field = cellView?.textField
+                let font = field?.font
+                let size = measureText(formattedDate, font: font! )
+                if Int(size.width) + 150 > maxSizeColPointage       {
+                    maxSizeColPointage = Int(size.width) + 150
+                    column.width = CGFloat(maxSizeColPointage) // Exemple : changer la largeur à 150
+                }
+            }
             textField.stringValue = formattedDate
 
         case .dateTransaction:
@@ -400,5 +411,15 @@ extension ListTransactionsController: NSOutlineViewDelegate {
         let optionKey = NSEvent.modifierFlags.contains(NSEvent.ModifierFlags.option)
         return optionKey
     }
+    
+    func measureText(_ text: String, font: NSFont) -> CGSize {
+        let attributes: [NSAttributedString.Key: Any] = [.font: font]
+        let attributedString = NSAttributedString(string: text, attributes: attributes)
+        
+        let size = attributedString.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil).size
+        
+        return size
+    }
+
 
 }

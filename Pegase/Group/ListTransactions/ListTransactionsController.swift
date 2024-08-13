@@ -66,7 +66,6 @@ final class ListTransactionsController: NSViewController {
     @IBOutlet weak var theBox1: NSBox!
     @IBOutlet weak var theBox2: NSBox!
     @IBOutlet weak var theBox3: NSBox!
-
     
     @IBOutlet weak var bankBalance: NSTextField!
     @IBOutlet weak var realBalance: NSTextField!
@@ -111,6 +110,8 @@ final class ListTransactionsController: NSViewController {
     /// the key in user defaults
     let kUserDefaultsKeyVisibleColumns = "kUserDefaultsKeyVisibleColumns"
     
+    var maxSizeColPointage = 100
+    
     var groupedSorted = [ GroupedYearOperations ]()
     var solde = false
     
@@ -119,6 +120,9 @@ final class ListTransactionsController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        outlineListView.delegate = self
+        outlineListView.dataSource = self
         
         self.outlineListView.layout()
         self.outlineListView.usesAutomaticRowHeights = false
@@ -276,6 +280,7 @@ final class ListTransactionsController: NSViewController {
     
     @objc func updateChangeAccount(_ notification: Notification) {
         
+        maxSizeColPointage = 100
         var name = ""
         if secondaryView == true {
             name = "save" + "Secondary" + (currentAccount?.uuid.uuidString)!
