@@ -3,7 +3,14 @@
 
 Pegase
 ======================
+
+
+
 <p align="center">
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg)
+[![GitHub license](https://img.shields.io/github/license/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/blob/main/LICENSE)
+
+
 <img src="https://img.shields.io/badge/Swift-5.6-orange.svg" />
 <img src="https://img.shields.io/badge/License-Apache-lightgrey" />
 <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
