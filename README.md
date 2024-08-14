@@ -6,6 +6,10 @@ Pegase
 
 
 
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg)
+[![GitHub license](https://img.shields.io/github/license/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/blob/main/LICENSE)
+
+
 <p align="center">
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg)
 [![GitHub license](https://img.shields.io/github/license/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/blob/main/LICENSE)
