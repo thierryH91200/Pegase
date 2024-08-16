@@ -1,12 +1,12 @@
 
+<p align="center">
+<img src="Doc/Pegase.png" alt="Sample">
+<p align="center">
+<em></em>
+</p>
+</p>
 
-
-Pegase
-======================
-
-
-
-<h1 align="center">DockDoor</h1>
+<h1 align="center">Pegase</h1>
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg)
 [![GitHub license](https://img.shields.io/github/license/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/blob/main/LICENSE)
@@ -22,25 +22,11 @@ Pegase
 <img src="https://img.shields.io/badge/License-Apache-lightgrey" />
 <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
 
-<p align="center">
-<a href="https://github.com/thierryh91200/Pegase/releases">Releases</a> ·
-</p>
 
 
-![Github All Releases](https://img.shields.io/github/downloads/thierryH91200/pegase/total.svg)
-</p>
+## Installation
 
-[![CodeFactor](https://www.codefactor.io/repository/github/thierryh91200/Pegase/badge)](https://www.codefactor.io/repository/github/thierryH91200/pegase)
-
-
-
-
-<p align="center">
-<img src="Doc/Pegase.png" alt="Sample">
-<p align="center">
-<em></em>
-</p>
-</p>
+[Download the latest release here](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg).
 
 # 🎉 Features
 
