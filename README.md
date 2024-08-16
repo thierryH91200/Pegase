@@ -6,15 +6,11 @@ Pegase
 
 
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg)
-[![GitHub license](https://img.shields.io/github/license/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/blob/main/LICENSE)
+<h1 align="center">DockDoor</h1>
 
-
-<p align="center">
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg)
 [![GitHub license](https://img.shields.io/github/license/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/stargazers)
-</p>
 
 ## Installation
 
