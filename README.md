@@ -23,7 +23,6 @@
 <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
 
 
-
 ## Installation
 
 [Download the latest release here](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg).
