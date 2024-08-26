@@ -9,23 +9,18 @@
 <h1 align="center">Pegase</h1>
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg)
+
 [![GitHub license](https://img.shields.io/github/license/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/stargazers)
 
 ## Installation
 
-[Download the latest release here](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg).
-
-
-
 <img src="https://img.shields.io/badge/Swift-5.6-orange.svg" />
-<img src="https://img.shields.io/badge/License-Apache-lightgrey" />
 <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
-
 
 ## Installation
 
-[Download the latest release here](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg).
+[Download the latest release here](https://github.com/thierryh91200/Pegase/releases/latest)
 
 # 🎉 Features
 
