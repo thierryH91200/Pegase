@@ -16,8 +16,11 @@
 
 ## Installation
 
-<a href="https://github.com/thierryh91200/Pegase/"><img src="Doc/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
-
+<div>
+<h3>Pegase - for Apple Silicon and Intel</h3>
+<p></p>
+<a href="https://github.com/thierryh91200/Pegase/releases"><img src="Doc/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+</div>
 
 [Download the latest release here](https://github.com/thierryh91200/Pegase/releases/latest)
 
