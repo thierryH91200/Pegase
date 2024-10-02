@@ -16,7 +16,7 @@
 
 ## Installation
 
-<a href="https://github.com/thierryh91200/Pegase/"><img src=".Doc/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+<a href="https://github.com/thierryh91200/Pegase/"><img src="Doc/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 
 
 [Download the latest release here](https://github.com/thierryh91200/Pegase/releases/latest)
