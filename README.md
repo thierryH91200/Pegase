@@ -9,13 +9,15 @@
 <h1 align="center">Pegase</h1>
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg)
-
 [![GitHub license](https://img.shields.io/github/license/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/stargazers)
 <img src="https://img.shields.io/badge/Swift-5.6-orange.svg" />
 <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" />
 
 ## Installation
+
+<a href="https://github.com/thierryh91200/Pegase/"><img src=".Doc/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+
 
 [Download the latest release here](https://github.com/thierryh91200/Pegase/releases/latest)
 
@@ -49,7 +51,6 @@ Well seen !!!!!
 :white_check_mark: **Set** goals and limits
 
 :white_check_mark: **Save** at your pace, even small amounts, to deal with the unexpected without compromising your budget.
-
 
 We wish you all great savings.
 
@@ -166,7 +167,6 @@ Congratulations!
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
-
 
 Feel free to contribute to this project by providing ideas or opening pull requests with new features or solving an existing issue.
 
