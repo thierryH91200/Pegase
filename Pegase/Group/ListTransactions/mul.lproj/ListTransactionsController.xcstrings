@@ -1,0 +1,474 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "0hj-kT-D0O.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Delete\"; ObjectID = \"0hj-kT-D0O\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprime"
+          }
+        }
+      }
+    },
+    "1yl-IP-2m2.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Créer les opérations prévus  jusqu'au\"; ObjectID = \"1yl-IP-2m2\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Créer les opérations prévus  jusqu'au"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer les opérations prévus  jusqu'au"
+          }
+        }
+      }
+    },
+    "8YN-Ur-793.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Date pointage\"; ObjectID = \"8YN-Ur-793\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Date pointage"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de pointage"
+          }
+        }
+      }
+    },
+    "91D-SN-btd.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Label\"; ObjectID = \"91D-SN-btd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etiquette"
+          }
+        }
+      }
+    },
+    "AJz-cF-1Lb.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Comment\"; ObjectID = \"AJz-cF-1Lb\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Comment"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LIbellé"
+          }
+        }
+      }
+    },
+    "Dqb-LB-V2C.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Label\"; ObjectID = \"Dqb-LB-V2C\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etiquette"
+          }
+        }
+      }
+    },
+    "DUn-Wo-lZy.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Income\"; ObjectID = \"DUn-Wo-lZy\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Income"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revenu"
+          }
+        }
+      }
+    },
+    "EC9-lu-0SD.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Mode\"; ObjectID = \"EC9-lu-0SD\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Mode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode"
+          }
+        }
+      }
+    },
+    "Ezd-wG-WRa.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Balance\"; ObjectID = \"Ezd-wG-WRa\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Balance"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde"
+          }
+        }
+      }
+    },
+    "fLz-am-WUc.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"checkNumber\"; ObjectID = \"fLz-am-WUc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "checkNumber"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numéro de chéque"
+          }
+        }
+      }
+    },
+    "gMS-6Q-EGu.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Real balance\"; ObjectID = \"gMS-6Q-EGu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Real balance"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde réel"
+          }
+        }
+      }
+    },
+    "HHl-GU-kes.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Final balance\"; ObjectID = \"HHl-GU-kes\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Final balance"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde final"
+          }
+        }
+      }
+    },
+    "HuG-sm-ruO.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Amount\"; ObjectID = \"HuG-sm-ruO\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Amount"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montant"
+          }
+        }
+      }
+    },
+    "IAP-gn-MQw.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Date transaction\"; ObjectID = \"IAP-gn-MQw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Date transaction"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date de la transaction"
+          }
+        }
+      }
+    },
+    "izq-ED-lIf.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Category\"; ObjectID = \"izq-ED-lIf\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Category"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catégorie"
+          }
+        }
+      }
+    },
+    "iZZ-V3-XPp.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Statut\"; ObjectID = \"iZZ-V3-XPp\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Statut"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statut"
+          }
+        }
+      }
+    },
+    "QmG-US-IZQ.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Rubric\"; ObjectID = \"QmG-US-IZQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rubric"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rubrique"
+          }
+        }
+      }
+    },
+    "Szn-HO-kuM.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Switch to Detail Display Mode\"; ObjectID = \"Szn-HO-kuM\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Switch to Detail Display Mode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passer au mode d'affichage détaillé"
+          }
+        }
+      }
+    },
+    "tq5-Ng-lvA.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Statement\"; ObjectID = \"tq5-Ng-lvA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Statement"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etat"
+          }
+        }
+      }
+    },
+    "TsE-qC-aZZ.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Label\"; ObjectID = \"TsE-qC-aZZ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etiquette"
+          }
+        }
+      }
+    },
+    "tux-Wo-qaN.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Compacte les opérations\"; ObjectID = \"tux-Wo-qaN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Compacte les opérations"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compacte les opérations"
+          }
+        }
+      }
+    },
+    "v73-hJ-ZA5.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Link\"; ObjectID = \"v73-hJ-ZA5\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Link"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lien"
+          }
+        }
+      }
+    },
+    "VhR-W0-zkq.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Label\"; ObjectID = \"VhR-W0-zkq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etiquette"
+          }
+        }
+      }
+    },
+    "vQG-TY-8WS.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Bank balance\"; ObjectID = \"vQG-TY-8WS\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bank balance"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solde bancaire"
+          }
+        }
+      }
+    },
+    "W1U-GV-Tul.headerCell.title" : {
+      "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Expense\"; ObjectID = \"W1U-GV-Tul\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expense"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dépense"
+          }
+        }
+      }
+    },
+    "WrF-4S-IuZ.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Editer les sous operations\"; ObjectID = \"WrF-4S-IuZ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Editer les sous operations"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editer les sous operations"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -214,7 +214,6 @@ final class ImportTransactionsWindowController: ImportWindowController {
 
         self.close()
     }
-    
 
 }
 

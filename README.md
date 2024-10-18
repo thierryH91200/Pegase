@@ -8,6 +8,10 @@
 
 <h1 align="center">Pegase</h1>
 
+<!-- version -->
+<a href="https://github.com/thierryh91200/Pegase/releases">
+<img src="https://img.shields.io/github/release-pre/thierryh91200/MonitorControl.svg?style=flat" alt="latest version"/>
+</a>
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/releases/latest/download/Pegase.dmg)
 [![GitHub license](https://img.shields.io/github/license/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/thierryh91200/Pegase)](https://github.com/thierryh91200/Pegase/stargazers)

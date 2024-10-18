@@ -313,8 +313,8 @@
 		0327A21D29C0D68F0027871E /* SchedulersDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0327A21B29C0D68F0027871E /* SchedulersDetailView.swift */; };
 		0327A21E29C0D68F0027871E /* SchedulersDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0327A21C29C0D68F0027871E /* SchedulersDetailView.xib */; };
 		0327A22029C0D8EF0027871E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0327A21F29C0D8EF0027871E /* Assets.xcassets */; };
+		035549E72CBACA99007B84A0 /* ListTransactionsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035549E62CBACA99007B84A0 /* ListTransactionsController.storyboard */; };
 		037515BB2C1C89DA0088FFC3 /* ListTransactionsController2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037515BA2C1C89DA0088FFC3 /* ListTransactionsController2.storyboard */; };
-		037845892C2E995E00923E72 /* ListTransactionsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037845882C2E995E00923E72 /* ListTransactionsController.storyboard */; };
 		03B52F952C08910C00C16809 /* appcastTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 03B52F942C08910C00C16809 /* appcastTest.xml */; };
 		03C2B42C2C01076A0010C664 /* SchedulerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C2B42B2C01076A0010C664 /* SchedulerViewController.xib */; };
 /* End PBXBuildFile section */
@@ -642,8 +642,9 @@
 		0327A21B29C0D68F0027871E /* SchedulersDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulersDetailView.swift; sourceTree = "<group>"; };
 		0327A21C29C0D68F0027871E /* SchedulersDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchedulersDetailView.xib; sourceTree = "<group>"; };
 		0327A21F29C0D8EF0027871E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		035549E52CBACA99007B84A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ListTransactionsController.storyboard; sourceTree = "<group>"; };
+		035549E82CBACA99007B84A0 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/ListTransactionsController.xcstrings; sourceTree = "<group>"; };
 		037515BA2C1C89DA0088FFC3 /* ListTransactionsController2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListTransactionsController2.storyboard; sourceTree = "<group>"; };
-		037845882C2E995E00923E72 /* ListTransactionsController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListTransactionsController.storyboard; sourceTree = "<group>"; };
 		03B52F942C08910C00C16809 /* appcastTest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcastTest.xml; sourceTree = "<group>"; };
 		03C2B42A2C01076A0010C664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SchedulerViewController.xib; sourceTree = "<group>"; };
 		03C2B42D2C01076A0010C664 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/SchedulerViewController.xcstrings; sourceTree = "<group>"; };
@@ -1334,7 +1335,7 @@
 			isa = PBXGroup;
 			children = (
 				0327A16029C0D15F0027871E /* ListTransactionsController.swift */,
-				037845882C2E995E00923E72 /* ListTransactionsController.storyboard */,
+				035549E62CBACA99007B84A0 /* ListTransactionsController.storyboard */,
 				037515BA2C1C89DA0088FFC3 /* ListTransactionsController2.storyboard */,
 				0327A15F29C0D15F0027871E /* ListTransactionsController3.storyboard */,
 				0327A16129C0D15F0027871E /* ListTransactionsController+Expansion.swift */,
@@ -1682,7 +1683,7 @@
 				0327A0F129C0CF110027871E /* ChequiersDetailView.xib in Resources */,
 				0327A17829C0D1F20027871E /* AdvancedFilterViewController.xib in Resources */,
 				030715AA29C0A5B30028240B /* Capture5.png in Resources */,
-				037845892C2E995E00923E72 /* ListTransactionsController.storyboard in Resources */,
+				035549E72CBACA99007B84A0 /* ListTransactionsController.storyboard in Resources */,
 				0327A0C729C0CBFE0027871E /* MyDB.sqlite in Resources */,
 				0327A11729C0CF800027871E /* CategorieModalWindowController.xib in Resources */,
 				030715A829C0A5B30028240B /* Capture7.png in Resources */,
@@ -2073,6 +2074,15 @@
 				0327A0BA29C0CAAF0027871E /* es */,
 			);
 			name = Feeds.plist;
+			sourceTree = "<group>";
+		};
+		035549E62CBACA99007B84A0 /* ListTransactionsController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				035549E52CBACA99007B84A0 /* Base */,
+				035549E82CBACA99007B84A0 /* mul */,
+			);
+			name = ListTransactionsController.storyboard;
 			sourceTree = "<group>";
 		};
 		03C2B42B2C01076A0010C664 /* SchedulerViewController.xib */ = {

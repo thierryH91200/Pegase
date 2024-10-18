@@ -31,6 +31,10 @@ class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
 //    @IBOutlet weak var infoView: NSView!
     @IBOutlet var m_window: NSWindow!
     
+    @objc open var formSize = CGFloat(8.0)
+    @objc open var formToTextSpace = CGFloat(5.0)
+    @objc open var entries = [String]()
+
     var menuHeader = NSMenu()
     
     var headerEmptyColumnForMenu = [HeaderColumnForMenu]()
@@ -96,9 +100,7 @@ class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
     func readParseFile() {
         
         if let url = NSOpenPanel().selectUrl {
-            
-//            infoView.isHidden = true
-            
+                        
             self.url = url.path
             let stream = InputStream(fileAtPath: self.url)
             
@@ -136,14 +138,4 @@ class ImportWindowController: NSWindowController, NSSearchFieldDelegate {
     }
 }
 
-//extension String {
-//    public func removeFormatAmount() -> Double {
-//        let formatter = NumberFormatter()
-//        formatter.locale = Locale.current
-//        formatter.numberStyle = .currency
-//        formatter.currencySymbol = Locale.current.currencySymbol
-//        formatter.decimalSeparator = Locale.current.groupingSeparator
-//        return formatter.number(from: self)?.doubleValue ?? 0.00
-//    }
-//}
 

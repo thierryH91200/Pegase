@@ -27,14 +27,14 @@ public struct Localizations {
 
         public struct transaction {
 
-            /// Base translation: %d transactions
-            public static func plural(_ value1 : Int) -> String {
-                return String(format: NSLocalizedString("ListTransaction.transaction.plural", comment: ""), value1)
-            }
-
             /// Base translation: %d transaction
             public static func singular(_ value1 : Int) -> String {
                 return String(format: NSLocalizedString("ListTransaction.transaction.singular", comment: ""), value1)
+            }
+
+            /// Base translation: %d transactions
+            public static func plural(_ value1 : Int) -> String {
+                return String(format: NSLocalizedString("ListTransaction.transaction.plural", comment: ""), value1)
             }
 
 
@@ -59,19 +59,19 @@ public struct Localizations {
 
         public struct Menu {
 
-            /// Base translation: Category
-            public static var category : String = NSLocalizedString("SimplifiedImport.Menu.category", comment: "")
-
             /// Base translation: Statut
             public static var statut : String = NSLocalizedString("SimplifiedImport.Menu.statut", comment: "")
 
             /// Base translation: Amount
             public static var amount : String = NSLocalizedString("SimplifiedImport.Menu.amount", comment: "")
 
+            /// Base translation: Category
+            public static var category : String = NSLocalizedString("SimplifiedImport.Menu.category", comment: "")
+
             /// Base translation: Rubric
             public static var rubric : String = NSLocalizedString("SimplifiedImport.Menu.rubric", comment: "")
 
-            /// Base translation: Date Transaction
+            /// Base translation: Transaction Date
             public static var dateTransaction : String = NSLocalizedString("SimplifiedImport.Menu.dateTransaction", comment: "")
 
             /// Base translation: Bank Statement
@@ -80,7 +80,7 @@ public struct Localizations {
             /// Base translation: Payment method
             public static var paymentMethod : String = NSLocalizedString("SimplifiedImport.Menu.paymentMethod", comment: "")
 
-            /// Base translation: Date Pointage
+            /// Base translation: Date of Pointing
             public static var datePointage : String = NSLocalizedString("SimplifiedImport.Menu.datePointage", comment: "")
 
             /// Base translation: Comment
@@ -136,11 +136,11 @@ public struct Localizations {
         /// Base translation: Star Now!
         public static var likeButtonTitle : String = NSLocalizedString("RateConfigure.likeButtonTitle", comment: "")
 
-        /// Base translation: We look forward to your Star and Pull Request to make Bergerac better and better : ) ⭐️⭐️⭐️⭐️⭐️?
-        public static var detailText : String = NSLocalizedString("RateConfigure.detailText", comment: "")
-
         /// Base translation: Love Bergerac?
         public static var name : String = NSLocalizedString("RateConfigure.name", comment: "")
+
+        /// Base translation: We look forward to your Star and Pull Request to make Bergerac better and better : ) ⭐️⭐️⭐️⭐️⭐️?
+        public static var detailText : String = NSLocalizedString("RateConfigure.detailText", comment: "")
 
         /// Base translation: Perhaps later
         public static var ignoreButtonTitle : String = NSLocalizedString("RateConfigure.ignoreButtonTitle", comment: "")
@@ -175,11 +175,11 @@ public struct Localizations {
 
     public struct Statut {
 
-        /// Base translation: Plannifie
-        public static var Planifie : String = NSLocalizedString("Statut.Planifie", comment: "")
-
         /// Base translation: Engaged
         public static var Engaged : String = NSLocalizedString("Statut.Engaged", comment: "")
+
+        /// Base translation: Plannifie
+        public static var Planifie : String = NSLocalizedString("Statut.Planifie", comment: "")
 
         /// Base translation: Executed
         public static var Realise : String = NSLocalizedString("Statut.Realise", comment: "")
@@ -198,11 +198,11 @@ public struct Localizations {
         /// Base translation: week
         public static var week : String = NSLocalizedString("TypeFreq.week", comment: "")
 
-        /// Base translation: month
-        public static var month : String = NSLocalizedString("TypeFreq.month", comment: "")
-
         /// Base translation: day
         public static var day : String = NSLocalizedString("TypeFreq.day", comment: "")
+
+        /// Base translation: month
+        public static var month : String = NSLocalizedString("TypeFreq.month", comment: "")
 
         /// Base translation: year
         public static var year : String = NSLocalizedString("TypeFreq.year", comment: "")
@@ -241,11 +241,11 @@ public struct Localizations {
         /// Base translation: List transactions
         public static var List_Transactions : String = NSLocalizedString("General.List Transactions", comment: "")
 
-        /// Base translation: Balance
-        public static var Solde : String = NSLocalizedString("General.Solde", comment: "")
-
         /// Base translation: Cancel
         public static var Cancel : String = NSLocalizedString("General.Cancel", comment: "")
+
+        /// Base translation: Balance
+        public static var Solde : String = NSLocalizedString("General.Solde", comment: "")
 
         /// Base translation: Income
         public static var Income : String = NSLocalizedString("General.Income", comment: "")
@@ -347,14 +347,14 @@ public struct Localizations {
 
     public struct Mode {
 
-        /// Base translation: Are you sure you would like to delete the item ?
-        public static var InformativeText : String = NSLocalizedString("Mode.InformativeText", comment: "")
+        /// Base translation: Delete this element
+        public static var MessageText : String = NSLocalizedString("Mode.MessageText", comment: "")
 
         /// Base translation: Delete
         public static var Delete : String = NSLocalizedString("Mode.Delete", comment: "")
 
-        /// Base translation: Delete this element
-        public static var MessageText : String = NSLocalizedString("Mode.MessageText", comment: "")
+        /// Base translation: Are you sure you would like to delete the item ?
+        public static var InformativeText : String = NSLocalizedString("Mode.InformativeText", comment: "")
 
     }
 
@@ -376,11 +376,11 @@ public struct Localizations {
         /// Base translation: Statut
         public static var statut : String = NSLocalizedString("chooseColor.statut", comment: "")
 
-        /// Base translation: Rubric
-        public static var rubric : String = NSLocalizedString("chooseColor.rubric", comment: "")
-
         /// Base translation: United
         public static var unie : String = NSLocalizedString("chooseColor.unie", comment: "")
+
+        /// Base translation: Rubric
+        public static var rubric : String = NSLocalizedString("chooseColor.rubric", comment: "")
 
         /// Base translation: Mode
         public static var mode : String = NSLocalizedString("chooseColor.mode", comment: "")

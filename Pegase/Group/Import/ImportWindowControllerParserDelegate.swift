@@ -56,16 +56,49 @@ extension ImportWindowController: ParserDelegate {
             
             let isFirstRowAsHeader = statusBarFormatViewController?.config.isFirstRowAsHeader
             if isFirstRowAsHeader == true && headerData.count > i {
-                //                if i > 0 {
                 col.headerCell.title = headerData[i]
-                //                } else {
-                //                    col.headerCell.title = "Num" + String(i)
-                //                }
             }
+            let font = col.headerCell.font!
+            let size = getMaximumEntrySize(withFont: font)
             anTableView?.addTableColumn(col)
         }
         anTableView?.reloadData()
         anTableView.sizeToFit()
     }
+    
+    @objc open func getMaximumEntrySize(withFont font: NSFont) -> CGSize
+    {
+        var maxW = CGFloat(0.0)
+        var maxH = CGFloat(0.0)
+        
+        var maxFormSize: CGFloat = 0.0
 
+//        for entry in entries
+//        {
+//            let formSize = entry.formSize.isNaN ? self.formSize : entry.formSize
+//            if formSize > maxFormSize
+//            {
+//                maxFormSize = formSize
+//            }
+//            
+//            let label = entry
+//            
+//            let size = (label as NSString).size(withAttributes: [NSAttributedString.Key.font: font])
+//            
+//            if size.width > maxW
+//            {
+//                maxW = size.width
+//            }
+//            if size.height > maxH
+//            {
+//                maxH = size.height
+//            }
+//        }
+//        
+        return CGSize(
+            width: maxW + maxFormSize + formToTextSpace,
+            height: maxH
+        )
+    }
+    
 }

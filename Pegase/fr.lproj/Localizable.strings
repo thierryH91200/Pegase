@@ -1,26 +1,7 @@
 
 
 
-
-
-
-/* MARK: -  Chart */
-"Chart.No_chart_Data_Available." = "No chart Data available.";
-"Graph.Income" = "Revenu";
-"Graph.Expense" = "Dépense";
-"Graph.Rubrique" = "Rubrique";
-
-/* MARK: -  Document */
-"Document.Bank_Account" = "Compte bancaire";
-"Document.Carte_de_crédit" = "Carte bancaire card";
-"Document.Current account" = "Compte courant";
-"Document.Especes" = "Cash account";
-"Document.IdName" = "Doe";
-"Document.IdPrenom" = "John";
-"Document.OpenProjectPanelMessage" = "Ouvre le Projet";
-"Document.Save" = "Epargne";
-
-/* MARK: -  Account */
+/* MARK: -  General */
 "General.Account" = "Compte";
 "General.Account2.Zero" = "0 compte";
 "General.Account2.Singular" = "1 compte";
@@ -45,24 +26,32 @@
 "General.Solde" = "Balance";
 "General.Statut" = "Statut";
 
+/* MARK: -  Chart */
+"Chart.No_chart_Data_Available." = "No chart Data available.";
+"Graph.Income" = "Revenu";
+"Graph.Expense" = "Dépense";
+"Graph.Rubrique" = "Rubrique";
+
+// MARK: -  Check
+"Check.MessageText" = "Delete the check ?";
+"Check.InformativeText" = "Are you sure you would like to delete the check ?";
+"Check.Delete" = "Supprimer";
+
+/* MARK: -  Document */
+"Document.Bank_Account" = "Compte bancaire";
+"Document.Carte_de_crédit" = "Carte bancaire card";
+"Document.Current account" = "Compte courant";
+"Document.Especes" = "Cash account";
+"Document.IdName" = "Doe";
+"Document.IdPrenom" = "John";
+"Document.OpenProjectPanelMessage" = "Ouvre le Projet";
+"Document.Save" = "Epargne";
+
 /* MARK: -  GroupeAccount */
 "GroupeAccount.RemoveAlert.Cancel" = "Annuler";
 "GroupeAccount.RemoveAlert.Delete" = "Supprimer";
 "GroupeAccount.RemoveAlert.InformativeText" = "Are you sure you would like to delete this item ?";
 "GroupeAccount.RemoveAlert.MessageText" = "Supprimer cet élement";
-
-/* MARK: -  ImportSimplifiee */
-"SimplifiedImport.Menu.ignoreCol" = "Ignore Colonne";
-"SimplifiedImport.Menu.dateTransaction" = "Date Transaction";
-"SimplifiedImport.Menu.datePointage" = "Date Pointage";
-"SimplifiedImport.Menu.statut" = "Statut";
-"SimplifiedImport.Menu.paymentMethod" = "Mode de paiement";
-"SimplifiedImport.Menu.bankStatement" = "Relevé bancaire";
-
-"SimplifiedImport.Menu.comment" = "Libellé";
-"SimplifiedImport.Menu.rubric" = "Rubrique";
-"SimplifiedImport.Menu.category" = "Categorie";
-"SimplifiedImport.Menu.amount" = "Montant";
 
 /* MARK: -  ListTransaction */
 "ListTransaction.info" = "Dépenses : %@ Revenus : %@ Total : %@";
@@ -71,20 +60,10 @@
 "ListTransaction.transaction.selectionnee.singular" = "%d transaction selectionnée ";
 "ListTransaction.transaction.selectionnee.plural" = "%d transactions selectionnées ";
 
-// MARK: -  Check
-"Check.MessageText" = "Delete the check ?";
-"Check.InformativeText" = "Are you sure you would like to delete the check ?";
-"Check.Delete" = "Supprimer";
-
 /* MARK: -  Mode */
 "Mode.MessageText" = "Supprimer cet élément";
 "Mode.InformativeText" = "Are you sure you would like to delete the item ?";
 "Mode.Delete" = "Supprimer";
-
-/* MARK: -  Rubric */
-"Rubric.MessageText" = "Delete this element";
-"Rubric.InformativeText" = "L'élement supprimé ne pourra pas être restauré. Il sera remplacé dans les opérations par la valeur par défaut";
-"Rubric.Delete" = "Supprimer";
 
 // MARK: -  PaymentMethod
 "PaymentMethod.Bank_Card" = "Carte bancaire";
@@ -94,6 +73,24 @@
 "PaymentMethod.Discount" = "Remise";
 "PaymentMethod.RetraitEspeces" = "Retrait espéces";
 "PaymentMethod.Transfers" = "Transfers";
+
+/* MARK: -  Rubric */
+"Rubric.MessageText" = "Delete this element";
+"Rubric.InformativeText" = "L'élement supprimé ne pourra pas être restauré. Il sera remplacé dans les opérations par la valeur par défaut";
+"Rubric.Delete" = "Supprimer";
+
+/* MARK: -  ImportSimplifiee */
+"SimplifiedImport.Menu.ignoreCol" = "Ignore Colonne";
+"SimplifiedImport.Menu.dateTransaction" = "Date de la Transaction";
+"SimplifiedImport.Menu.datePointage" = "Date de Pointage";
+"SimplifiedImport.Menu.statut" = "Statut";
+"SimplifiedImport.Menu.paymentMethod" = "Mode de paiement";
+"SimplifiedImport.Menu.bankStatement" = "Relevé bancaire";
+
+"SimplifiedImport.Menu.comment" = "Libellé";
+"SimplifiedImport.Menu.rubric" = "Rubrique";
+"SimplifiedImport.Menu.category" = "Categorie";
+"SimplifiedImport.Menu.amount" = "Montant";
 
 /* MARK: -  RateConfigure */
 "RateConfigure.detailText" = "We look forward to your Star and Pull Request to make Pegase better and better : )\n⭐️⭐️⭐️⭐️⭐️?";
@@ -107,18 +104,11 @@
 "Statut.Realise" = "Réalisé";
 
 /* MARK: -  Transaction */
-/* Multiple Value */
 "Transaction.ModeCreation" = "Mode Création";
 "Transaction.ModeEdition" = "Mode Edition";
 "Transaction.MultipleValue" = "Valeur Multiple";
 "Transaction.NoTransfert" = "(pas de transfert)";
 "Transaction.operation" = "Transactions";
-
-/* MARK: -  searchMenu */
-"searchMenu.title.all" = "Tous";
-"searchMenu.title.comment" = "Comment";
-"searchMenu.title.rubric" = "Rubrique";
-"searchMenu.title.category" = "Categorie";
 
 /* MARK: *choose color */
 "chooseColor.unie" = "Unie";
@@ -126,6 +116,12 @@
 "chooseColor.rubric" = "Rubrique";
 "chooseColor.mode" = "Mode";
 "chooseColor.statut" = "Statut";
+
+/* MARK: -  searchMenu */
+"searchMenu.title.all" = "Tous";
+"searchMenu.title.comment" = "Comment";
+"searchMenu.title.rubric" = "Rubrique";
+"searchMenu.title.category" = "Categorie";
 
 // MARK: -type freq
 "TypeFreq.day" = "Jour";
